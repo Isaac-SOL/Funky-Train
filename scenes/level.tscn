@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://capa820ir3vho"]
+
+[ext_resource type="Script" uid="uid://d3y48j1b2i22e" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ppgk2"]
+[ext_resource type="Texture2D" uid="uid://bsl6gktr74jkq" path="res://assets/textures/grass/grass1.png" id="1_w7c3h"]
+[ext_resource type="Resource" uid="uid://c3axel685jlwo" path="res://assets/HTerrain/data.hterrain" id="2_2r41h"]
+[ext_resource type="Script" uid="uid://dw84e0nu3ialr" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_klq6b"]
+[ext_resource type="Script" uid="uid://cpdd44k8ek70j" path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" id="5_b121j"]
+[ext_resource type="Texture2D" uid="uid://37ak5bnxjixy" path="res://assets/textures/grass/foliage.png" id="6_8c41q"]
+[ext_resource type="Texture2D" uid="uid://6jmdwj3vn6m0" path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" id="7_olg7q"]
+
+[sub_resource type="Resource" id="Resource_1tp2x"]
+script = ExtResource("3_klq6b")
+mode = 0
+textures = [[ExtResource("1_w7c3h")], [null]]
+
+[node name="level" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.146186, 0.478152, 0, 0.956305, 0.292372, -0.5, 0.253201, -0.828184, 0, 0, 0)
+light_color = Color(0.791999, 0.791999, 0.791999, 1)
+light_energy = 1.5
+shadow_enabled = true
+
+[node name="HTerrain" type="Node3D" parent="."]
+script = ExtResource("1_ppgk2")
+centered = true
+_terrain_data = ExtResource("2_2r41h")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_1tp2x")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = false
+shader_params/u_tile_reduction = null
+metadata/_custom_type_script = "uid://d3y48j1b2i22e"
+
+[node name="HTerrainDetailLayer" type="Node3D" parent="HTerrain"]
+script = ExtResource("5_b121j")
+texture = ExtResource("6_8c41q")
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = null
+shader_params/u_roughness = null
+metadata/_editor_icon = ExtResource("7_olg7q")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.865903, 0, 0.500212, 0, 1, 0, -0.500212, 0, 0.865903, 45.6891, 8.51912, 57.9762)
