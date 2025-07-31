@@ -15,6 +15,7 @@ imgui/config="uid://w3qgqtnxvopv"
 [application]
 
 config/name="Funky TRain"
+run/main_scene="uid://bmfvmpqul8dce"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -25,6 +26,16 @@ ImGuiRoot="*res://addons/imgui-godot/data/ImGuiRoot.tscn"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/imgui-godot/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://materials/": "purple",
+"res://meshes/rails/": "gray",
+"res://objects/": "orange",
+"res://scenes/": "gray",
+"res://scripts/": "blue"
+}
 
 [rendering]
 

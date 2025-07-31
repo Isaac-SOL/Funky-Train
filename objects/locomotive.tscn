@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2gtvjpbbcs2j"]
+
+[ext_resource type="Script" uid="uid://dlylwsenxbljj" path="res://scripts/locomotive.gd" id="1_2c63q"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_r5u47"]
+size = Vector3(0.5, 0.5, 2)
+
+[node name="Locomotive" type="PathFollow3D"]
+transform = Transform3D(-4.37099e-08, 0, -0.999971, 0, 0.999962, 0, 0.999966, 0, -4.37101e-08, 0, 0, 0)
+script = ExtResource("1_2c63q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_r5u47")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1.00003, 0, 0, 0, 0.898137, 0.439797, 0, -0.439798, 0.898134, 0, 2.98, 3.7)

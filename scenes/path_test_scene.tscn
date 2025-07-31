@@ -1,0 +1,126 @@
+[gd_scene load_steps=16 format=3 uid="uid://bmfvmpqul8dce"]
+
+[ext_resource type="PackedScene" uid="uid://c7adtd3m5hihf" path="res://objects/rail_section.tscn" id="1_71sj3"]
+[ext_resource type="PackedScene" uid="uid://b2gtvjpbbcs2j" path="res://objects/locomotive.tscn" id="2_gd5r5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gd5r5"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_r5u47"]
+sky_material = SubResource("ProceduralSkyMaterial_gd5r5")
+
+[sub_resource type="Environment" id="Environment_bmein"]
+background_mode = 2
+sky = SubResource("Sky_r5u47")
+tonemap_mode = 2
+
+[sub_resource type="Curve3D" id="Curve3D_gd5r5"]
+_data = {
+"points": PackedVector3Array(-1.66903, -0.147171, 0.283185, 1, 0, 0, 0, 0, 0, -1, 0, 0, 2.37323, 0, -3.00137, 8, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_r5u47"]
+
+[sub_resource type="Curve3D" id="Curve3D_bmein"]
+_data = {
+"points": PackedVector3Array(-1.76908, -0.113597, -0.0882057, 1, 0, 0, 0, 0, 0, -1.33983, -0.0965705, 0.936519, 1.33983, 0.0965705, -0.936519, 5.73861, -0.0951204, -1.3665, 0.0668678, 0, 3.20955, -0.0668678, 0, -3.20955, 8.40266, 9.53674e-07, -8.02462),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_w8c38"]
+
+[sub_resource type="Curve3D" id="Curve3D_ajlx6"]
+_data = {
+"points": PackedVector3Array(-1.76908, -0.113597, -0.0882057, -0.0668678, 0, -3.20955, 0, 0, 0, 2.84241, -0.0965576, 0.535043, -2.84241, 0.0965576, -0.535043, -6.82745, -0.0950937, -5.89248, 0.969765, 0, -3.04306, -0.969765, 0, 3.04306, -25.1345, -9.53674e-07, -4.1552),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_j0n6l"]
+
+[sub_resource type="Curve3D" id="Curve3D_2ai2v"]
+_data = {
+"points": PackedVector3Array(-1.76908, -0.113597, -0.0882057, -0.969765, 0, 3.04306, 0, 0, 0, 3.31207, -0.0965576, 2.85388, -3.31207, 0.0965576, -2.85388, -5.364, -0.0950928, 4.41689, -4.18003, 0, -2.54146, 4.18003, 0, 2.54146, -8.03428, 0, 10.9772, -1, 0, 0, 2.67522, 0, -0.568483, 8.73184, 0, 12.1798),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_20gy4"]
+
+[sub_resource type="Curve3D" id="Curve3D_rresx"]
+_data = {
+"points": PackedVector3Array(-1.76908, -0.113597, -0.0882057, -0.0668678, 0, -3.20955, 0, 0, 0, -3.00962, -0.0965576, -1.97297, 3.00962, 0.0965576, 1.97297, 7.55965, -0.0950937, -2.31264, 2.84242, 0, -2.40769, -2.84242, 0, 2.40769, 4.95323, -0.0186777, 11.4942, 2.47458, 0, 1.97297, -2.47458, 0, -1.97297, -20.1938, -0.00988865, 12.0962, -1, 0, 0, 4.49488, 0, -0.387467, -16.4027, -9.53674e-07, 8.02462),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_7uw5n"]
+
+[node name="PathTestScene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bmein")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 16.7499, 0)
+shadow_enabled = true
+
+[node name="Rail" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_71sj3")]
+curve = SubResource("Curve3D_gd5r5")
+in_sections = [NodePath("../Rail4"), NodePath("../Rail5")]
+out_sections = [NodePath("../Rail2")]
+
+[node name="BakedRailsMesh" parent="Rail" index="0"]
+mesh = SubResource("ImmediateMesh_r5u47")
+
+[node name="Locomotive" parent="Rail" instance=ExtResource("2_gd5r5")]
+transform = Transform3D(-4.37099e-08, 0, -0.999971, 0, 0.999962, 0, 0.999966, 0, -4.37101e-08, 0, 0, 0)
+rotation_mode = 2
+loop = false
+speed = 2.0
+
+[node name="Rail2" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_71sj3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+curve = SubResource("Curve3D_bmein")
+in_sections = [NodePath("../Rail")]
+out_sections = [NodePath("../Rail3"), NodePath("../Rail5")]
+
+[node name="BakedRailsMesh" parent="Rail2" index="0"]
+mesh = SubResource("ImmediateMesh_w8c38")
+
+[node name="Rail3" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_71sj3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4027, 9.53674e-07, -8.02462)
+curve = SubResource("Curve3D_ajlx6")
+in_sections = [NodePath("../Rail2")]
+out_sections = [NodePath("../Rail4")]
+
+[node name="BakedRailsMesh" parent="Rail3" index="0"]
+mesh = SubResource("ImmediateMesh_j0n6l")
+
+[node name="Rail4" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_71sj3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.73184, 0, -12.1798)
+curve = SubResource("Curve3D_2ai2v")
+in_sections = [NodePath("../Rail3")]
+out_sections = [NodePath("../Rail")]
+
+[node name="BakedRailsMesh" parent="Rail4" index="0"]
+mesh = SubResource("ImmediateMesh_20gy4")
+
+[node name="Rail5" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_71sj3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4027, 9.53674e-07, -8.02462)
+curve = SubResource("Curve3D_rresx")
+in_sections = [NodePath("../Rail2")]
+out_sections = [NodePath("../Rail")]
+
+[node name="BakedRailsMesh" parent="Rail5" index="0"]
+mesh = SubResource("ImmediateMesh_7uw5n")
+
+[editable path="Rail"]
+[editable path="Rail2"]
+[editable path="Rail3"]
+[editable path="Rail4"]
+[editable path="Rail5"]
