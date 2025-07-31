@@ -60,7 +60,6 @@ func _process(delta: float) -> void:
 	
 	bpm_timer -= delta * beats_per_minute / 60
 	if bpm_timer <= 0:
-		print(bpm_counter)
 		bpm_timer += 1.0
 		bpm_counter += 1
 		if bpm_counter >= beats_per_measure:
@@ -111,10 +110,12 @@ func add_character(new_character: CharacterInfo):
 	new_carriage.character = new_character
 	carriages.append(new_carriage)
 	get_section().add_child(new_carriage)
+	Main.instance.update_characters_ui()
 
 func remove_carriage(carriage: Carriage):
 	carriages.remove_at(carriages.find(carriage))
 	carriage.queue_free()
+	Main.instance.update_characters_ui()
 
 func restart():
 	locked = false
@@ -127,7 +128,7 @@ func get_properties() -> Array[String]:
 
 func kick_up():
 	%MeshInstance3D.scale = Vector3(1.0, 1.5, 1.0)
-	var tween = get_tree().create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
+	var tween = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
 	tween.tween_property(%MeshInstance3D, "scale", Vector3.ONE, 0.5)
 
 func imgui():

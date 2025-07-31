@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bmfvmpqul8dce"]
+[gd_scene load_steps=30 format=3 uid="uid://bmfvmpqul8dce"]
 
 [ext_resource type="Script" uid="uid://rytmmqnltko8" path="res://scripts/main.gd" id="1_2ai2v"]
 [ext_resource type="PackedScene" uid="uid://c7adtd3m5hihf" path="res://objects/rail_section.tscn" id="1_71sj3"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c52bcth5d22s5" path="res://icon.svg" id="7_j0n6l"]
 [ext_resource type="Script" uid="uid://b2pnmy42f765x" path="res://scripts/lever_direction.gd" id="8_20gy4"]
 [ext_resource type="Script" uid="uid://cgr64t0pp5eet" path="res://scripts/lever_speed.gd" id="9_rresx"]
+[ext_resource type="PackedScene" uid="uid://c5pt7sikhf8db" path="res://objects/texture_character_ui.tscn" id="11_1x2nj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gd5r5"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -87,6 +88,7 @@ font_size = 48
 [node name="PathTestScene" type="Node3D"]
 script = ExtResource("1_2ai2v")
 character_leave_button_scene = ExtResource("2_j0n6l")
+character_icon_scene = ExtResource("11_1x2nj")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bmein")
@@ -152,7 +154,7 @@ out_sections = [NodePath("../Rail")]
 mesh = SubResource("ImmediateMesh_vdho3")
 
 [node name="StationGodot2" parent="Rail5" instance=ExtResource("2_ajlx6")]
-transform = Transform3D(0.0152727, 0.000286726, 0.999874, 0.00671255, 0.999959, -0.000389287, -0.999851, 0.00671765, 0.0152704, -10.5126, -0.0132076, 13.441)
+transform = Transform3D(0.0152727, 0.000286726, 0.999874, 0.00671254, 0.999959, -0.000389287, -0.999851, 0.00671765, 0.0152704, -10.5126, -0.0132076, 13.441)
 progress = 40.425
 waiting_character = ExtResource("7_7uw5n")
 
@@ -226,6 +228,22 @@ mouse_filter = 0
 mouse_default_cursor_shape = 11
 texture = ExtResource("7_2ai2v")
 script = ExtResource("9_rresx")
+
+[node name="MarginContainerCharacters" type="MarginContainer" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_right = 96.0
+offset_bottom = 96.0
+
+[node name="PanelCharacters" type="Panel" parent="CanvasLayer/MarginContainerCharacters"]
+layout_mode = 2
+
+[node name="HBoxContainerCharacters" type="HBoxContainer" parent="CanvasLayer/MarginContainerCharacters"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TextureLocomotive" parent="CanvasLayer/MarginContainerCharacters/HBoxContainerCharacters" instance=ExtResource("11_1x2nj")]
+unique_name_in_owner = true
+layout_mode = 2
 
 [node name="PanelStation" type="Panel" parent="CanvasLayer"]
 unique_name_in_owner = true
