@@ -10,7 +10,8 @@ transform = Transform3D(-4.37099e-08, 0, -0.999971, 0, 0.999962, 0, 0.999966, 0,
 script = ExtResource("1_2c63q")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.265, 0)
 mesh = SubResource("BoxMesh_r5u47")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1.00003, 0, 0, 0, 0.898137, 0.439797, 0, -0.439798, 0.898134, 0, 2.98, 3.7)
+transform = Transform3D(0.941778, -0.147915, 0.302064, 1.80602e-08, 0.898137, 0.439802, -0.336334, -0.414178, 0.84581, 1.97975, 2.33587, 5.44378)

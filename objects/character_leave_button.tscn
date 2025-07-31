@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://lp0v4qbqartt"]
+
+[ext_resource type="Texture2D" uid="uid://c52bcth5d22s5" path="res://icon.svg" id="1_ufa4e"]
+
+[node name="CharacterLeaveButton" type="Button"]
+theme_override_font_sizes/font_size = 32
+text = "Lui là"
+icon = ExtResource("1_ufa4e")

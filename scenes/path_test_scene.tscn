@@ -1,7 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://bmfvmpqul8dce"]
+[gd_scene load_steps=23 format=3 uid="uid://bmfvmpqul8dce"]
 
+[ext_resource type="Script" uid="uid://rytmmqnltko8" path="res://scripts/main.gd" id="1_2ai2v"]
 [ext_resource type="PackedScene" uid="uid://c7adtd3m5hihf" path="res://objects/rail_section.tscn" id="1_71sj3"]
+[ext_resource type="PackedScene" uid="uid://dcpxd04n7oj0i" path="res://objects/station.tscn" id="2_ajlx6"]
 [ext_resource type="PackedScene" uid="uid://b2gtvjpbbcs2j" path="res://objects/locomotive.tscn" id="2_gd5r5"]
+[ext_resource type="PackedScene" uid="uid://lp0v4qbqartt" path="res://objects/character_leave_button.tscn" id="2_j0n6l"]
+[ext_resource type="Resource" uid="uid://boc3h2ovuouuv" path="res://objects/characters/base_character.tres" id="4_20gy4"]
+[ext_resource type="Texture2D" uid="uid://c52bcth5d22s5" path="res://icon.svg" id="7_j0n6l"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gd5r5"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -15,52 +20,60 @@ background_mode = 2
 sky = SubResource("Sky_r5u47")
 tonemap_mode = 2
 
-[sub_resource type="Curve3D" id="Curve3D_gd5r5"]
+[sub_resource type="Curve3D" id="Curve3D_ajlx6"]
 _data = {
 "points": PackedVector3Array(-1.66903, -0.147171, 0.283185, 1, 0, 0, 0, 0, 0, -1, 0, 0, 2.37323, 0, -3.00137, 8, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_r5u47"]
-
-[sub_resource type="Curve3D" id="Curve3D_bmein"]
-_data = {
-"points": PackedVector3Array(-1.76908, -0.113597, -0.0882057, 1, 0, 0, 0, 0, 0, -1.33983, -0.0965705, 0.936519, 1.33983, 0.0965705, -0.936519, 5.73861, -0.0951204, -1.3665, 0.0668678, 0, 3.20955, -0.0668678, 0, -3.20955, 8.40266, 9.53674e-07, -8.02462),
-"tilts": PackedFloat32Array(0, 0, 0)
-}
-point_count = 3
-
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_w8c38"]
-
-[sub_resource type="Curve3D" id="Curve3D_ajlx6"]
-_data = {
-"points": PackedVector3Array(-1.76908, -0.113597, -0.0882057, -0.0668678, 0, -3.20955, 0, 0, 0, 2.84241, -0.0965576, 0.535043, -2.84241, 0.0965576, -0.535043, -6.82745, -0.0950937, -5.89248, 0.969765, 0, -3.04306, -0.969765, 0, 3.04306, -25.1345, -9.53674e-07, -4.1552),
-"tilts": PackedFloat32Array(0, 0, 0)
-}
-point_count = 3
-
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_j0n6l"]
 
 [sub_resource type="Curve3D" id="Curve3D_2ai2v"]
+_data = {
+"points": PackedVector3Array(-1.76908, -0.113597, -0.0882057, 1, 0, 0, 0, 0, 0, -1.33983, -0.0965705, 0.936519, 1.33983, 0.0965705, -0.936519, 5.73861, -0.0951204, -1.3665, 0.0668678, 0, 3.20955, -0.0668678, 0, -3.20955, 8.4027, 9.53674e-07, -8.02462),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_20gy4"]
+
+[sub_resource type="Curve3D" id="Curve3D_rresx"]
+_data = {
+"points": PackedVector3Array(-1.76908, -0.113597, -0.0882057, -0.0668678, 0, -3.20955, 0, 0, 0, 2.84241, -0.0965576, 0.535043, -2.84241, 0.0965576, -0.535043, -6.82745, -0.0950937, -5.89248, 2.10235, -0.10162, 0.10503, -2.10235, 0.10162, -0.10503, -18.2331, -0.622707, -8.43763, 0.969765, 0, -3.04306, -0.969765, 0, 3.04306, -25.1345, -9.53674e-07, -4.15518),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_7uw5n"]
+
+[sub_resource type="Curve3D" id="Curve3D_1x2nj"]
 _data = {
 "points": PackedVector3Array(-1.76908, -0.113597, -0.0882057, -0.969765, 0, 3.04306, 0, 0, 0, 3.31207, -0.0965576, 2.85388, -3.31207, 0.0965576, -2.85388, -5.364, -0.0950928, 4.41689, -4.18003, 0, -2.54146, 4.18003, 0, 2.54146, -8.03428, 0, 10.9772, -1, 0, 0, 2.67522, 0, -0.568483, 8.73184, 0, 12.1798),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_20gy4"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_qdokm"]
 
-[sub_resource type="Curve3D" id="Curve3D_rresx"]
+[sub_resource type="Curve3D" id="Curve3D_c18if"]
 _data = {
 "points": PackedVector3Array(-1.76908, -0.113597, -0.0882057, -0.0668678, 0, -3.20955, 0, 0, 0, -3.00962, -0.0965576, -1.97297, 3.00962, 0.0965576, 1.97297, 7.55965, -0.0950937, -2.31264, 2.84242, 0, -2.40769, -2.84242, 0, 2.40769, 4.95323, -0.0186777, 11.4942, 2.47458, 0, 1.97297, -2.47458, 0, -1.97297, -20.1938, -0.00988865, 12.0962, -1, 0, 0, 4.49488, 0, -0.387467, -16.4027, -9.53674e-07, 8.02462),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_7uw5n"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_0ihyj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qdokm"]
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_ajlx6"]
+font_size = 48
 
 [node name="PathTestScene" type="Node3D"]
+script = ExtResource("1_2ai2v")
+character_leave_button_scene = ExtResource("2_j0n6l")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bmein")
@@ -70,54 +83,163 @@ transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -
 shadow_enabled = true
 
 [node name="Rail" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_71sj3")]
-curve = SubResource("Curve3D_gd5r5")
+curve = SubResource("Curve3D_ajlx6")
 in_sections = [NodePath("../Rail4"), NodePath("../Rail5")]
 out_sections = [NodePath("../Rail2")]
 
 [node name="BakedRailsMesh" parent="Rail" index="0"]
-mesh = SubResource("ImmediateMesh_r5u47")
-
-[node name="Locomotive" parent="Rail" instance=ExtResource("2_gd5r5")]
-transform = Transform3D(-4.37099e-08, 0, -0.999971, 0, 0.999962, 0, 0.999966, 0, -4.37101e-08, 0, 0, 0)
-rotation_mode = 2
-loop = false
-speed = 2.0
+mesh = SubResource("ImmediateMesh_j0n6l")
 
 [node name="Rail2" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_71sj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
-curve = SubResource("Curve3D_bmein")
+curve = SubResource("Curve3D_2ai2v")
 in_sections = [NodePath("../Rail")]
 out_sections = [NodePath("../Rail3"), NodePath("../Rail5")]
 
 [node name="BakedRailsMesh" parent="Rail2" index="0"]
-mesh = SubResource("ImmediateMesh_w8c38")
+mesh = SubResource("ImmediateMesh_20gy4")
 
 [node name="Rail3" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_71sj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4027, 9.53674e-07, -8.02462)
-curve = SubResource("Curve3D_ajlx6")
+curve = SubResource("Curve3D_rresx")
 in_sections = [NodePath("../Rail2")]
 out_sections = [NodePath("../Rail4")]
 
 [node name="BakedRailsMesh" parent="Rail3" index="0"]
-mesh = SubResource("ImmediateMesh_j0n6l")
+mesh = SubResource("ImmediateMesh_7uw5n")
+
+[node name="Station" parent="Rail3" instance=ExtResource("2_ajlx6")]
+transform = Transform3D(-0.347156, 0.0953186, 0.932944, 0.014395, 0.995232, -0.0963275, -0.937692, -0.0200109, -0.346877, -21.1019, -0.379277, -7.92489)
+progress = 24.3272
+waiting_character = ExtResource("4_20gy4")
 
 [node name="Rail4" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_71sj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.73184, 0, -12.1798)
-curve = SubResource("Curve3D_2ai2v")
+curve = SubResource("Curve3D_1x2nj")
 in_sections = [NodePath("../Rail3")]
 out_sections = [NodePath("../Rail")]
 
 [node name="BakedRailsMesh" parent="Rail4" index="0"]
-mesh = SubResource("ImmediateMesh_20gy4")
+mesh = SubResource("ImmediateMesh_qdokm")
+
+[node name="Locomotive" parent="Rail4" instance=ExtResource("2_gd5r5")]
+transform = Transform3D(0.000837849, 2.47463e-09, -0.999969, 0, 0.999961, 2.47465e-09, 0.999965, -2.07344e-12, 0.000837853, 1.31125, 0, 12.5322)
+progress = 29.7235
+rotation_mode = 2
+loop = false
+speed = 2.0
 
 [node name="Rail5" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_71sj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4027, 9.53674e-07, -8.02462)
-curve = SubResource("Curve3D_rresx")
+curve = SubResource("Curve3D_c18if")
 in_sections = [NodePath("../Rail2")]
 out_sections = [NodePath("../Rail")]
 
 [node name="BakedRailsMesh" parent="Rail5" index="0"]
-mesh = SubResource("ImmediateMesh_7uw5n")
+mesh = SubResource("ImmediateMesh_0ihyj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelStation" type="Panel" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 321.0
+offset_top = 34.0
+offset_right = -321.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelStation"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainerNewChar" type="VBoxContainer" parent="CanvasLayer/PanelStation/MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="LabelTitre" type="Label" parent="CanvasLayer/PanelStation/MarginContainer/VBoxContainerNewChar"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Un nouveau perso !"
+label_settings = SubResource("LabelSettings_qdokm")
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/PanelStation/MarginContainer/VBoxContainerNewChar"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PanelStation/MarginContainer/VBoxContainerNewChar/CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("7_j0n6l")
+
+[node name="Container" type="Control" parent="CanvasLayer/PanelStation/MarginContainer/VBoxContainerNewChar"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelStation/MarginContainer/VBoxContainerNewChar/Container"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -26.5
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="ButtonPrendre" type="Button" parent="CanvasLayer/PanelStation/MarginContainer/VBoxContainerNewChar/Container/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Prendre"
+
+[node name="ButtonLaisser" type="Button" parent="CanvasLayer/PanelStation/MarginContainer/VBoxContainerNewChar/Container/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Laisser
+"
+
+[node name="VBoxContainerPutChar" type="VBoxContainer" parent="CanvasLayer/PanelStation/MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelStation/MarginContainer/VBoxContainerPutChar"]
+layout_mode = 2
+text = "Qui Laisser ?"
+label_settings = SubResource("LabelSettings_ajlx6")
+horizontal_alignment = 1
+
+[node name="VBoxContainerLeaveButtons" type="VBoxContainer" parent="CanvasLayer/PanelStation/MarginContainer/VBoxContainerPutChar"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ButtonNoOne" type="Button" parent="CanvasLayer/PanelStation/MarginContainer/VBoxContainerPutChar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Personne"
+
+[connection signal="pressed" from="CanvasLayer/PanelStation/MarginContainer/VBoxContainerNewChar/Container/HBoxContainer/ButtonPrendre" to="." method="_on_button_prendre_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelStation/MarginContainer/VBoxContainerNewChar/Container/HBoxContainer/ButtonLaisser" to="." method="_on_button_laisser_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelStation/MarginContainer/VBoxContainerPutChar/ButtonNoOne" to="." method="_on_button_no_one_pressed"]
 
 [editable path="Rail"]
 [editable path="Rail2"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp8m3srgvvdef"]
+
+[ext_resource type="PackedScene" uid="uid://bvlp4g2b1r1uw" path="res://objects/carriage.tscn" id="1_2d7lj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2d7lj"]
+size = Vector3(0.5, 0.5, 3)
+
+[node name="CarriageLong" instance=ExtResource("1_2d7lj")]
+length = 3.0
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = SubResource("BoxMesh_2d7lj")
