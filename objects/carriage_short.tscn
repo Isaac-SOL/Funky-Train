@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bv2hn0vnwu3y5"]
+
+[ext_resource type="PackedScene" uid="uid://bvlp4g2b1r1uw" path="res://objects/carriage.tscn" id="1_tuql0"]
+[ext_resource type="Texture2D" uid="uid://c4epponf44j4k" path="res://textures/godart.png" id="2_vw8de"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tta4q"]
+albedo_texture = ExtResource("2_vw8de")
+
+[sub_resource type="BoxMesh" id="BoxMesh_vw8de"]
+material = SubResource("StandardMaterial3D_tta4q")
+size = Vector3(0.5, 0.5, 1)
+
+[node name="CarriageShort" instance=ExtResource("1_tuql0")]
+length = 1.0
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = SubResource("BoxMesh_vw8de")
