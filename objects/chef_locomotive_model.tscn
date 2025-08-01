@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://br1jpuxan8gji"]
+
+[ext_resource type="PackedScene" uid="uid://ctuor0rsde614" path="res://meshes/chef_locomotive.glb" id="1_eirca"]
+
+[node name="chef_locomotive" instance=ExtResource("1_eirca")]

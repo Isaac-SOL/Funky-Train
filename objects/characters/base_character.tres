@@ -8,5 +8,6 @@
 script = ExtResource("1_3oy3k")
 name = "Godot Bro"
 sprite = ExtResource("3_31wv1")
+color = Color(0.278431, 0.54902, 0.74902, 1)
 carriage = ExtResource("1_r873o")
 metadata/_custom_type_script = "uid://rkfd1kwn018t"

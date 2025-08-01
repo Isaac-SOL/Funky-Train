@@ -8,9 +8,11 @@ static var instance: Locomotive
 @export var length: float = 2
 @export var spacing: float = 0.2
 @export var carriages: Array[Carriage] = []
+@export var rails_gradient: GradientTexture1D
 @export_group("Music Sync")
 @export var beats_per_minute: float = 120.0
 @export var beats_per_measure: int = 4
+@export var kick_up_effect: float = 1.3
 
 var speed: float = 0.0
 var target_speed: float
@@ -27,6 +29,8 @@ func _ready() -> void:
 	for carriage: Carriage in carriages:
 		carriage.locomotive = self
 	restart()
+	await get_tree().process_frame
+	update_characters()
 
 func _process(delta: float) -> void:
 	if locked:
@@ -110,12 +114,16 @@ func add_character(new_character: CharacterInfo):
 	new_carriage.character = new_character
 	carriages.append(new_carriage)
 	get_section().add_child(new_carriage)
-	Main.instance.update_characters_ui()
+	update_characters()
 
 func remove_carriage(carriage: Carriage):
 	carriages.remove_at(carriages.find(carriage))
 	carriage.queue_free()
+	update_characters()
+
+func update_characters():
 	Main.instance.update_characters_ui()
+	set_rails_gradient(get_gradient())
 
 func restart():
 	locked = false
@@ -127,9 +135,43 @@ func get_properties() -> Array[String]:
 	return props
 
 func kick_up():
-	%MeshInstance3D.scale = Vector3(1.0, 1.5, 1.0)
+	%MeshInstance3D.scale = Vector3(1.0, kick_up_effect, 1.0)
 	var tween = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
-	tween.tween_property(%MeshInstance3D, "scale", Vector3.ONE, 0.5)
+	tween.tween_property(%MeshInstance3D, "scale", Vector3.ONE, 0.666)
+
+func lerp_hsv(col1: Color, col2: Color, t: float):
+	var v1 := Vector3(col1.h, col1.s, col1.v)
+	var v2 := Vector3(col2.h, col2.s, col2.v)
+	var vt: Vector3 = lerp(v1, v2, t)
+	return Color.from_hsv(vt.x, vt.y, vt.z)
+
+func get_gradient() -> Array[Color]:
+	var res: Array[Color] = []
+	if carriages.size() == 0:
+		var col := Color.from_hsv(1.0, 0.0, 0.75)
+		for i in range(5):
+			res.append(col)
+			col.v -= 0.1
+	elif carriages.size() == 1:
+		var col := carriages[0].character.color
+		for i in range(5):
+			res.append(col)
+			col.v -= 0.1
+	elif carriages.size() == 2:
+		var col1 := carriages[0].character.color
+		var col2 := carriages[1].character.color
+		for i in range(5):
+			res.append(lerp_hsv(col1, col2, i / 4.0))
+	return res
+
+func set_rails_gradient(colors: Array[Color]):
+	var gradient := rails_gradient.gradient
+	while(gradient.get_point_count() > 1):
+		gradient.remove_point(0)
+	gradient.set_offset(0, 0.0)
+	gradient.set_color(0, colors[0])
+	for i in range(1, colors.size()):
+		gradient.add_point(float(i) / colors.size(), colors[i])
 
 func imgui():
 	ImGui.Begin("Locomotive")
