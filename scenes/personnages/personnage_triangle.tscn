@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfln4belomymj"]
+
+[ext_resource type="Script" uid="uid://eoyxaxq2q24" path="res://scripts/personnage/personnage.gd" id="1_roqms"]
+[ext_resource type="Texture2D" uid="uid://c47w8oaysm637" path="res://assets/modele/2D/personnages_triangle.png" id="2_2t2pe"]
+
+[node name="personnage_triangle" type="Node3D" node_paths=PackedStringArray("sprite_3d")]
+script = ExtResource("1_roqms")
+sprite_3d = NodePath("Sprite3D")
+metadata/_custom_type_script = "uid://eoyxaxq2q24"
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+billboard = 2
+texture = ExtResource("2_2t2pe")

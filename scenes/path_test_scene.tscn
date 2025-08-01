@@ -125,7 +125,7 @@ out_sections = [NodePath("../Rail4")]
 mesh = SubResource("ImmediateMesh_jkok2")
 
 [node name="StationGodot" parent="Rail3" instance=ExtResource("2_ajlx6")]
-transform = Transform3D(-0.347156, 0.0953186, 0.932944, 0.014395, 0.995231, -0.0963275, -0.937692, -0.0200109, -0.346877, -21.1019, -0.379277, -7.92489)
+transform = Transform3D(-0.347155, 0.095319, 0.932944, 0.0143952, 0.995231, -0.096328, -0.937692, -0.0200108, -0.346876, -21.1018, -0.379279, -7.9249)
 progress = 24.3272
 waiting_character = ExtResource("4_20gy4")
 
@@ -154,7 +154,7 @@ out_sections = [NodePath("../Rail")]
 mesh = SubResource("ImmediateMesh_vdho3")
 
 [node name="StationGodot2" parent="Rail5" instance=ExtResource("2_ajlx6")]
-transform = Transform3D(0.0152727, 0.000286726, 0.999874, 0.00671254, 0.999959, -0.000389287, -0.999851, 0.00671765, 0.0152704, -10.5126, -0.0132076, 13.441)
+transform = Transform3D(0.0152698, 0.000286745, 0.999874, 0.00671249, 0.999959, -0.000389286, -0.999851, 0.0067176, 0.0152675, -10.5126, -0.0132075, 13.441)
 progress = 40.425
 waiting_character = ExtResource("7_7uw5n")
 

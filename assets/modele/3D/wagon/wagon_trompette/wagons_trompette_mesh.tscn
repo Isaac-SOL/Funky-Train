@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://csn2g3daush57"]
+
+[ext_resource type="PackedScene" uid="uid://kxcc4ajlkpup" path="res://assets/modele/3D/wagon/wagon_trompette/wagons_trompette.glb" id="1_7gaa3"]
+
+[node name="wagons_trompette_mesh" instance=ExtResource("1_7gaa3")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)

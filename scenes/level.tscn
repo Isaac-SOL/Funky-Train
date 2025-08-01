@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://capa820ir3vho"]
+[gd_scene load_steps=19 format=3 uid="uid://capa820ir3vho"]
 
 [ext_resource type="Script" uid="uid://d3y48j1b2i22e" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ppgk2"]
 [ext_resource type="Resource" uid="uid://c3axel685jlwo" path="res://assets/HTerrain/data.hterrain" id="2_2r41h"]
@@ -8,6 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://bo2gdx8joos8y" path="res://scenes/wagon/chef_locomotive.tscn" id="6_2r41h"]
 [ext_resource type="PackedScene" uid="uid://dn43ddadp7f0a" path="res://scenes/wagon/wagon_batterie.tscn" id="7_klq6b"]
 [ext_resource type="PackedScene" uid="uid://b3o252k3b06o0" path="res://scenes/wagon/wagon_guitare.tscn" id="8_b121j"]
+[ext_resource type="PackedScene" uid="uid://ds23ml7f4mn3r" path="res://scenes/wagon/wagon_trompette.tscn" id="9_8c41q"]
+[ext_resource type="PackedScene" uid="uid://cneyhk6ouhtrg" path="res://scenes/personnages/personnage_batterie.tscn" id="10_ux5qa"]
+[ext_resource type="PackedScene" uid="uid://b3unlf21vunh0" path="res://scenes/personnages/personnage_guitare.tscn" id="11_82cfe"]
+[ext_resource type="PackedScene" uid="uid://c6q23mh8f6g0u" path="res://scenes/personnages/personnage_miaou.tscn" id="12_gunhw"]
+[ext_resource type="PackedScene" uid="uid://usgohfm8d35i" path="res://scenes/personnages/personnage_saxophone.tscn" id="13_8gofh"]
+[ext_resource type="PackedScene" uid="uid://bbmuc3ifpotvt" path="res://scenes/personnages/personnage_synthé.tscn" id="14_h6wmr"]
+[ext_resource type="PackedScene" uid="uid://bfln4belomymj" path="res://scenes/personnages/personnage_triangle.tscn" id="15_pqd0y"]
+[ext_resource type="PackedScene" uid="uid://cm8epolu4ioif" path="res://scenes/personnages/personnage_trompette.tscn" id="16_5k0ak"]
+[ext_resource type="PackedScene" uid="uid://cabynbqwkyvd1" path="res://scenes/personnages/personnage_vocoder.tscn" id="17_wu01b"]
 
 [sub_resource type="Resource" id="Resource_1tp2x"]
 script = ExtResource("3_klq6b")
@@ -43,7 +52,7 @@ shader_params/u_tile_reduction = null
 metadata/_custom_type_script = "uid://d3y48j1b2i22e"
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.862169, 0, -0.506621, 0, 1, 0, 0.506621, 0, -0.862169, 37.7816, 6.90403, 44.8704)
+transform = Transform3D(-0.861028, 0.191668, -0.471057, -0.00795722, 0.92107, 0.389317, 0.508496, 0.338961, -0.791541, 35.4061, 6.90403, 44.8704)
 
 [node name="wagon" type="Node3D" parent="."]
 
@@ -58,3 +67,32 @@ transform = Transform3D(0.999219, 0.0395214, 0, -0.0395214, 0.999219, 0, 0, 0, 1
 
 [node name="wagon_guitare" parent="wagon" instance=ExtResource("8_b121j")]
 transform = Transform3D(0.998194, 0.0600729, 0, -0.0600729, 0.998194, 0, 0, 0, 1, 37.3964, 4.31485, 49.3303)
+
+[node name="wagon_trompette" parent="wagon" instance=ExtResource("9_8c41q")]
+transform = Transform3D(0.999937, 0.0111654, 0.00110113, -0.0111363, 0.999659, -0.0236388, -0.0013647, 0.0236251, 0.99972, 34.464, 4.47322, 49.3266)
+
+[node name="personnage" type="Node3D" parent="."]
+
+[node name="personnage_guitare" parent="personnage" instance=ExtResource("11_82cfe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.377, 4.90362, 47.2086)
+
+[node name="personnage_miaou" parent="personnage" instance=ExtResource("12_gunhw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.604, 4.89754, 46.6801)
+
+[node name="personnage_saxophone" parent="personnage" instance=ExtResource("13_8gofh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.4554, 4.83706, 45.2119)
+
+[node name="personnage_synthé" parent="personnage" instance=ExtResource("14_h6wmr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.377, 5.01815, 45.4767)
+
+[node name="personnage_triangle" parent="personnage" instance=ExtResource("15_pqd0y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.7877, 4.84174, 46.9558)
+
+[node name="personnage_trompette" parent="personnage" instance=ExtResource("16_5k0ak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.9559, 5.10145, 47.9892)
+
+[node name="personnage_vocoder" parent="personnage" instance=ExtResource("17_wu01b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.7643, 5.00426, 45.6093)
+
+[node name="personnage_batterie" parent="." instance=ExtResource("10_ux5qa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.9477, 4.97593, 47.5926)
