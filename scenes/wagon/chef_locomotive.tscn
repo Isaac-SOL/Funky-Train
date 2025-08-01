@@ -101,4 +101,10 @@ libraries = {
 }
 autoplay = "metronome"
 
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(-3.8147e-08, 0.488256, -0.872701, 2.13423e-08, 0.872701, 0.488256, 1, 8.38703e-16, -4.37114e-08, 1.24561, 1.43812, 0)
+light_color = Color(1, 1, 0.670588, 1)
+spot_range = 14.827
+spot_angle = 23.52
+
 [editable path="chef_locomotive_mesh"]
