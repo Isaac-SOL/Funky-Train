@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo2gdx8joos8y"]
+
+[ext_resource type="PackedScene" uid="uid://deftlljjnqptf" path="res://assets/modele/3D/wagon/chef_locomotive/chef_locomotive_mesh.tscn" id="1_0lnh4"]
+[ext_resource type="Script" uid="uid://dqclrpibg0m2f" path="res://scripts/wagon/wagon.gd" id="1_rr1dn"]
+
+[node name="chef_locomotive" type="Node3D" node_paths=PackedStringArray("wheel_1", "wheel_2", "wheel_3", "wheel_4", "wheel_5", "wheel_6", "wheel_7", "wheel_8")]
+script = ExtResource("1_rr1dn")
+wheel_1 = NodePath("chef_locomotive_mesh/medium_wheel_2")
+wheel_2 = NodePath("chef_locomotive_mesh/big_wheel_2")
+wheel_3 = NodePath("chef_locomotive_mesh/small_wheel_2_1")
+wheel_4 = NodePath("chef_locomotive_mesh/small_wheel_2_2")
+wheel_5 = NodePath("chef_locomotive_mesh/medium_wheel_1")
+wheel_6 = NodePath("chef_locomotive_mesh/big_wheel_1")
+wheel_7 = NodePath("chef_locomotive_mesh/small_wheel_1_1")
+wheel_8 = NodePath("chef_locomotive_mesh/small_wheel_1_2")
+metadata/_custom_type_script = "uid://dqclrpibg0m2f"
+
+[node name="chef_locomotive_mesh" parent="." instance=ExtResource("1_0lnh4")]
+
+[editable path="chef_locomotive_mesh"]

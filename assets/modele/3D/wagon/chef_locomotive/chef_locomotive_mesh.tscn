@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://deftlljjnqptf"]
+
+[ext_resource type="PackedScene" uid="uid://pmpslsgaj0q6" path="res://assets/modele/3D/wagon/chef_locomotive/chef_locomotive.glb" id="1_30u56"]
+
+[node name="chef_locomotive_mesh" instance=ExtResource("1_30u56")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)

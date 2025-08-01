@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn43ddadp7f0a"]
+
+[ext_resource type="Script" uid="uid://dqclrpibg0m2f" path="res://scripts/wagon/wagon.gd" id="1_wvn4m"]
+[ext_resource type="PackedScene" uid="uid://dr28ko58ts6m1" path="res://assets/modele/3D/wagon/wagon_batterie/wagons_batterie_mesh.tscn" id="2_eiixy"]
+
+[node name="wagon_batterie" type="Node3D" node_paths=PackedStringArray("wheel_1", "wheel_2", "wheel_3", "wheel_4", "wheel_5", "wheel_6", "wheel_7", "wheel_8")]
+script = ExtResource("1_wvn4m")
+wheel_1 = NodePath("wagons_batterie_mesh/roue_004")
+wheel_2 = NodePath("wagons_batterie_mesh/roue_005")
+wheel_3 = NodePath("wagons_batterie_mesh/roue_006")
+wheel_4 = NodePath("wagons_batterie_mesh/roue_007")
+wheel_5 = NodePath("wagons_batterie_mesh/roue_008")
+wheel_6 = NodePath("wagons_batterie_mesh/roue_009")
+wheel_7 = NodePath("wagons_batterie_mesh/roue_010")
+wheel_8 = NodePath("wagons_batterie_mesh/roue_011")
+metadata/_custom_type_script = "uid://dqclrpibg0m2f"
+
+[node name="wagons_batterie_mesh" parent="." instance=ExtResource("2_eiixy")]
+
+[editable path="wagons_batterie_mesh"]

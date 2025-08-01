@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://51kvji61lwpi"]
+
+[ext_resource type="PackedScene" uid="uid://kvchfmc20qfd" path="res://assets/modele/3D/wagon/wagon_guitare/wagons_guitare.glb" id="1_grfu8"]
+
+[node name="wagons_guitare_mesh" instance=ExtResource("1_grfu8")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
