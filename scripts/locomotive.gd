@@ -190,7 +190,7 @@ func imgui():
 		direction = not direction
 	ImGui.Text("Right" if direction else "Left")
 	var next_station := get_section().get_next_station(progress)
-	ImGui.Text("Next station : " + str((next_station.progress - progress) if next_station else "None"))
+	ImGui.Text("Next station : " + (str(next_station.progress - progress) if next_station else "None"))
 	if ImGui.CollapsingHeader("Carriages"):
 		ImGui.TreePush("carriage_tree")
 		for carriage in carriages:

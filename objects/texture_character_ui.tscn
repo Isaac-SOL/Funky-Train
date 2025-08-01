@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c5pt7sikhf8db"]
 
-[ext_resource type="Texture2D" uid="uid://b0ckw73qej7is" path="res://textures/locomo.png" id="1_x10wy"]
+[ext_resource type="Texture2D" uid="uid://b0ckw73qej7is" path="res://assets/textures/locomo.png" id="1_x10wy"]
 
 [node name="TextureLocomotive" type="TextureRect"]
 custom_minimum_size = Vector2(96, 96)
