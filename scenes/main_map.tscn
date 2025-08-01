@@ -319,7 +319,7 @@ unique_name_in_owner = true
 transform = Transform3D(0.941779, -0.147915, 0.302064, 1.80602e-08, 0.898138, 0.439802, -0.336334, -0.414178, 0.845811, 1.97975, 2.33587, 5.44378)
 
 [node name="Station4" parent="Rails/RailS4" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.000827115, 0, -0.999996, 0, 1, 0, 0.999996, 0, -0.000827115, 16.1874, 0, -0.000769002)
+transform = Transform3D(-0.000827114, 0, -0.999995, 0, 1, 0, 0.999995, 0, -0.000827114, 16.1874, 0, -0.000769002)
 progress = 16.1862
 waiting_character = ExtResource("9_jikhd")
 
@@ -418,7 +418,7 @@ out_sections = [NodePath("../RailS4")]
 mesh = SubResource("ImmediateMesh_m75v2")
 
 [node name="Station5" parent="Rails/RailS5" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.0804744, 0, 0.99675, 0, 1, 0, -0.99675, 0, -0.0804744, -40.9523, 0, 0.159052)
+transform = Transform3D(-0.0804743, 0, 0.996749, 0, 1, 0, -0.996749, 0, -0.0804743, -40.9523, 0, 0.159052)
 progress = 40.9557
 waiting_character = ExtResource("7_b6lr4")
 
@@ -442,7 +442,7 @@ out_requirements_2 = Array[String](["A", "C"])
 mesh = SubResource("ImmediateMesh_1u5kr")
 
 [node name="Station6" parent="Rails/RailS6" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.0470021, 0, -0.99889, 0, 1, 0, 0.99889, 0, -0.0470021, 30.8616, 0, -4.91119)
+transform = Transform3D(-0.047002, 0, -0.998889, 0, 1, 0, 0.998889, 0, -0.047002, 30.8616, 0, -4.91119)
 progress = 31.4626
 waiting_character = ExtResource("10_qvxoj")
 
@@ -465,7 +465,7 @@ out_sections = [NodePath("../RailS8_S1"), NodePath("../RailS8_S7")]
 mesh = SubResource("ImmediateMesh_c5b55")
 
 [node name="Station8" parent="Rails/RailS8" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.998877, 0, -0.0472385, 0, 1, 0, 0.0472385, 0, -0.998877, 14.4835, 0, 33.4404)
+transform = Transform3D(-0.998876, 0, -0.0472384, 0, 1, 0, 0.0472384, 0, -0.998876, 14.4835, 0, 33.4404)
 progress = 37.8308
 waiting_character = ExtResource("8_ha36p")
 
@@ -506,7 +506,7 @@ out_sections = [NodePath("../RailS2S3")]
 mesh = SubResource("ImmediateMesh_b036x")
 
 [node name="Station1" parent="Rails/RailS1" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.0337068, 0, 0.999426, 0, 1, 0, -0.999426, 0, -0.0337068, -33.2739, 0, 0.875955)
+transform = Transform3D(-0.0337068, 0, 0.999425, 0, 1, 0, -0.999425, 0, -0.0337068, -33.2739, 0, 0.875955)
 progress = 33.2863
 
 [node name="RailS9" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
