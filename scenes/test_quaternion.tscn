@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://biljuh5y33hn5"]
+
+[ext_resource type="Script" uid="uid://wrgu8dfp4pw3" path="res://leeklib/shaker_3d.gd" id="1_m26bi"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_m26bi"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_allse"]
+sky_material = SubResource("ProceduralSkyMaterial_m26bi")
+
+[sub_resource type="Environment" id="Environment_gdfn1"]
+background_mode = 2
+sky = SubResource("Sky_allse")
+tonemap_mode = 2
+
+[sub_resource type="PrismMesh" id="PrismMesh_allse"]
+size = Vector3(0.5, 1, 1)
+
+[sub_resource type="GDScript" id="GDScript_gdfn1"]
+script/source = "extends Marker3D
+
+func _process(delta: float) -> void:
+	rotate(Vector3.UP, delta)
+	ImGui.Begin(\"Aiguille\")
+	ImGui.Text(str(rotation_degrees.y))
+	ImGui.Text(str($\"../Shaker3D\".rotation_degrees.y))
+	var other_quat: Quaternion = $\"../Shaker3D\".quaternion
+	ImGui.Text(str(quaternion))
+	ImGui.Text(str(other_quat))
+	ImGui.Text(str(Util.decayq(quaternion, other_quat, 8.0 * delta)))
+	ImGui.Text(str((quaternion - other_quat) * exp(-8.0 * delta)))
+	ImGui.End()
+"
+
+[sub_resource type="PrismMesh" id="PrismMesh_28qmo"]
+size = Vector3(0.5, 1.5, 0.5)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gdfn1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Shaker3D" type="Node3D" parent="." node_paths=PackedStringArray("target_node")]
+script = ExtResource("1_m26bi")
+target_node = NodePath("../Marker3D")
+follow_rotation = true
+follow_global_coordinates = true
+move_speed = 8.0
+rotation_speed = 8.0
+metadata/_custom_type_script = "uid://wrgu8dfp4pw3"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Shaker3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -0.346289)
+mesh = SubResource("PrismMesh_allse")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+script = SubResource("GDScript_gdfn1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Marker3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -1.00164e-08, -0.575438)
+mesh = SubResource("PrismMesh_28qmo")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.568548, 0.82265, 0, -0.82265, 0.568548, 0.0643734, 3.21713, 1.223)

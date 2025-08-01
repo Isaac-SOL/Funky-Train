@@ -13,6 +13,7 @@ var signals_up: bool = false
 
 func _ready() -> void:
 	instance = self
+	await get_tree().process_frame
 
 func stop_at_station(station: Station):
 	active_station = station
@@ -73,6 +74,9 @@ func set_signals(reqs_left: Array[String], reqs_right: Array[String]):
 	set_single_signal(reqs_right, %SignalisationRight)
 	signals_up = true
 
+func set_direction_valid(valid: bool):
+	%LeverDirection.modulate = Color.WHITE if valid else Color.RED
+
 func reset_signals():
 	for child in %SignalisationLeft.get_children():
 		child.queue_free()
@@ -110,3 +114,7 @@ func _on_character_leave_pressed(carriage: Carriage):
 	Locomotive.instance.remove_carriage(carriage)
 	active_station.set_character(carriage.character)
 	leave_station()
+
+
+func _on_check_box_toggled(toggled_on: bool) -> void:
+	Locomotive.instance.stop_at_stations = toggled_on

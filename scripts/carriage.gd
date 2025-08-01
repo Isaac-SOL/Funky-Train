@@ -34,5 +34,5 @@ func change_section(new_section: RailSection):
 
 func kick_up():
 	%MeshInstance3D.scale = Vector3(1.0, 1.5, 1.0)
-	var tween = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
+	var tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
 	tween.tween_property(%MeshInstance3D, "scale", Vector3.ONE, 0.5)

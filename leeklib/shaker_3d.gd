@@ -51,7 +51,7 @@ func _process(delta):
 	if follow_position:
 		position = Util.decayv3(position, target_position, move_speed * delta)
 	if follow_rotation:
-		quaternion = Util.decayq(quaternion, base_rot, rotation_speed * delta)
+		quaternion = Util.decayq_closest(quaternion, base_rot, rotation_speed * delta)
 
 func shake(amount: float, duration: float):
 	if amount < current_radius: return
