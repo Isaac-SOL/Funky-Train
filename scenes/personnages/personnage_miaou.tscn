@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6q23mh8f6g0u"]
+
+[ext_resource type="Script" uid="uid://eoyxaxq2q24" path="res://scripts/personnage/personnage.gd" id="1_q1jjv"]
+[ext_resource type="Texture2D" uid="uid://c2wwj1bdh64sh" path="res://assets/modele/2D/personnages/personnages_miaou.png" id="2_6jwxn"]
+
+[node name="personnage_miaou" type="Node3D" node_paths=PackedStringArray("sprite_3d")]
+script = ExtResource("1_q1jjv")
+sprite_3d = NodePath("Sprite3D")
+metadata/_custom_type_script = "uid://eoyxaxq2q24"
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+billboard = 2
+texture = ExtResource("2_6jwxn")

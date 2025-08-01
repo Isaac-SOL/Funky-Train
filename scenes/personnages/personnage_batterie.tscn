@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cneyhk6ouhtrg"]
+
+[ext_resource type="Texture2D" uid="uid://qii11fokxfim" path="res://assets/modele/2D/personnages/personnages_batterie.png" id="1_7icpa"]
+[ext_resource type="Script" uid="uid://eoyxaxq2q24" path="res://scripts/personnage/personnage.gd" id="1_7ts4s"]
+
+[node name="personnage_batterie" type="Node3D" node_paths=PackedStringArray("sprite_3d")]
+script = ExtResource("1_7ts4s")
+sprite_3d = NodePath("Sprite3D")
+metadata/_custom_type_script = "uid://eoyxaxq2q24"
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+billboard = 2
+double_sided = false
+texture = ExtResource("1_7icpa")

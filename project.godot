@@ -15,12 +15,13 @@ imgui/config="uid://w3qgqtnxvopv"
 [application]
 
 config/name="Funky TRain"
-run/main_scene="uid://ddei87jmflwu2"
+run/main_scene="uid://capa820ir3vho"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
+Global="*res://scripts/global/Global.gd"
 ImGuiRoot="*res://addons/imgui-godot/data/ImGuiRoot.tscn"
 
 [display]

@@ -40,6 +40,8 @@ sky_material = SubResource("ProceduralSkyMaterial_gd5r5")
 background_mode = 2
 sky = SubResource("Sky_r5u47")
 tonemap_mode = 2
+fog_light_color = Color(0.941782, 0.947839, 0.957362, 1)
+fog_light_energy = 0.15
 
 [sub_resource type="Curve3D" id="Curve3D_ha36p"]
 _data = {
@@ -283,6 +285,7 @@ font_size = 48
 font_size = 48
 
 [node name="PathTestScene" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.04882, 0)
 script = ExtResource("1_rk4p5")
 character_list = Array[ExtResource("2_7tq10")]([ExtResource("3_8yhmk"), ExtResource("4_j8ata"), ExtResource("5_7eykx"), ExtResource("6_36g7h"), ExtResource("7_b6lr4"), ExtResource("8_ha36p"), ExtResource("9_jikhd"), ExtResource("10_qvxoj"), ExtResource("11_sxppv"), ExtResource("12_on5gu")])
 character_leave_button_scene = ExtResource("5_ol44e")
@@ -297,6 +300,7 @@ transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -
 light_energy = 0.5
 light_indirect_energy = 0.5
 shadow_enabled = true
+directional_shadow_pancake_size = 100.0
 
 [node name="Rails" type="Node3D" parent="."]
 
@@ -311,7 +315,7 @@ out_requirements_1 = Array[String](["F"])
 mesh = SubResource("ImmediateMesh_jikhd")
 
 [node name="Locomotive" parent="Rails/RailS4" instance=ExtResource("9_8yhmk")]
-transform = Transform3D(0.000341717, 0, -0.999967, 0, 0.999961, 0, 0.999963, 0, 0.000341718, 3.32755, 0, -0.00207399)
+transform = Transform3D(0.000341716, 0, -0.999964, 0, 0.999958, 0, 0.999961, 0, 0.000341717, 3.32755, 0, -0.00207399)
 progress = 3.32767
 rotation_mode = 2
 loop = false
@@ -522,7 +526,7 @@ out_requirements_2 = Array[String](["-C", "-J"])
 mesh = SubResource("ImmediateMesh_f2hcf")
 
 [node name="Station9" parent="Rails/RailS9" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.999948, 0, 0.00985284, 0, 1, 0, -0.00985284, 0, -0.999948, 14.0784, 0, 22.6973)
+transform = Transform3D(-0.999948, 0, 0.0098526, 0, 1, 0, -0.0098526, 0, -0.999948, 14.0784, 0, 22.6972)
 progress = 31.7688
 waiting_character = ExtResource("3_8yhmk")
 
@@ -589,6 +593,7 @@ waiting_character = ExtResource("6_36g7h")
 
 [node name="Ground" type="MeshInstance3D" parent="."]
 transform = Transform3D(3.94145, 0, 0, 0, 1, 0, 0, 0, 2.66728, 31.181, -0.744017, 16.9719)
+visible = false
 cast_shadow = 0
 mesh = SubResource("PlaneMesh_5ne2v")
 
@@ -604,6 +609,7 @@ rotation_speed = 8.0
 metadata/_custom_type_script = "uid://wrgu8dfp4pw3"
 
 [node name="Camera3D" type="Camera3D" parent="CameraShaker"]
+current = true
 
 [node name="ScreenEffect" type="MeshInstance3D" parent="CameraShaker/Camera3D"]
 transform = Transform3D(0.999966, 0, 0, 0, 0.999962, 0, 0, 0, 0.999971, -2.98013e-08, 2.6076e-08, -1.03348)

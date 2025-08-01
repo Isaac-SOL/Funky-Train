@@ -2,7 +2,6 @@ extends Node3D
 class_name Wagon
 
 
-@export var rotation_speed: int =  180  # degrees/sec
 @export var wheel_1: MeshInstance3D
 @export var wheel_2: MeshInstance3D
 @export var wheel_3: MeshInstance3D
@@ -11,6 +10,8 @@ class_name Wagon
 @export var wheel_6: MeshInstance3D
 @export var wheel_7: MeshInstance3D
 @export var wheel_8: MeshInstance3D
+
+var wheel_speed = Global.wheel_speed
 
 
 # Called when the node enters the scene tree for the first time.
@@ -33,4 +34,4 @@ func _process(delta):
 
 func spin_wheel(wheel: MeshInstance3D, delta):
 	if wheel:
-		wheel.rotate_z(deg_to_rad(-rotation_speed * delta))
+		wheel.rotate_z(deg_to_rad(-wheel_speed * delta))
