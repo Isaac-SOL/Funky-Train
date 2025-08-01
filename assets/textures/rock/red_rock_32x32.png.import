@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct7b1lt7ddqah"
-path.s3tc="res://.godot/imported/Buisson6.png-e1e4053ce39d0ec57151ff7d0ae803d4.s3tc.ctex"
+uid="uid://hv4prc1tkwg0"
+path.s3tc="res://.godot/imported/red_rock_32x32.png-56f83412a63161bdcd7faaed19670e30.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/modele/2D/environment/nature/Buisson6.png"
-dest_files=["res://.godot/imported/Buisson6.png-e1e4053ce39d0ec57151ff7d0ae803d4.s3tc.ctex"]
+source_file="res://assets/textures/rock/red_rock_32x32.png"
+dest_files=["res://.godot/imported/red_rock_32x32.png-56f83412a63161bdcd7faaed19670e30.s3tc.ctex"]
 
 [params]
 

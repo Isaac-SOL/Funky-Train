@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b58auulia0ewn"]
+
+[ext_resource type="Texture2D" uid="uid://bakk7yodkoprp" path="res://assets/modele/2D/environment/nature/montagne2.png" id="1_y0o52"]
+
+[node name="rock_2" type="Sprite3D"]
+billboard = 2
+alpha_cut = 1
+texture = ExtResource("1_y0o52")

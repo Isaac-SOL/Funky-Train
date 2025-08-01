@@ -38,6 +38,8 @@ sky_material = SubResource("ProceduralSkyMaterial_gd5r5")
 background_mode = 2
 sky = SubResource("Sky_r5u47")
 tonemap_mode = 2
+fog_light_color = Color(0.941782, 0.947839, 0.957362, 1)
+fog_light_energy = 0.15
 
 [sub_resource type="Curve3D" id="Curve3D_36g7h"]
 _data = {
@@ -296,6 +298,7 @@ transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -
 light_energy = 0.5
 light_indirect_energy = 0.5
 shadow_enabled = true
+directional_shadow_pancake_size = 100.0
 
 [node name="Rails" type="Node3D" parent="."]
 
@@ -310,7 +313,7 @@ out_requirements_1 = Array[String](["F"])
 mesh = SubResource("ImmediateMesh_b6lr4")
 
 [node name="Locomotive" parent="Rails/RailS4" instance=ExtResource("9_8yhmk")]
-transform = Transform3D(0.000341717, 0, -0.999967, 0, 0.999961, 0, 0.999963, 0, 0.000341718, 3.32755, 0, -0.00207399)
+transform = Transform3D(0.000341716, 0, -0.999964, 0, 0.999958, 0, 0.999961, 0, 0.000341717, 3.32755, 0, -0.00207399)
 progress = 3.32767
 rotation_mode = 2
 loop = false
@@ -320,7 +323,7 @@ unique_name_in_owner = true
 transform = Transform3D(0.941779, -0.147915, 0.302064, 1.80602e-08, 0.898138, 0.439802, -0.336334, -0.414178, 0.845811, 1.97975, 2.33587, 5.44378)
 
 [node name="Station4" parent="Rails/RailS4" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.000827113, 0, -0.999994, 0, 1, 0, 0.999994, 0, -0.000827113, 16.1874, 0, -0.000769002)
+transform = Transform3D(-0.00082711, 0, -0.99999, 0, 0.999998, 0, 0.99999, 0, -0.00082711, 16.1874, 0, -0.000769002)
 progress = 16.1862
 waiting_character = ExtResource("9_jikhd")
 
@@ -419,7 +422,7 @@ out_sections = [NodePath("../RailS4")]
 mesh = SubResource("ImmediateMesh_m75v2")
 
 [node name="Station5" parent="Rails/RailS5" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.0804742, 0, 0.996748, 0, 1, 0, -0.996748, 0, -0.0804742, -40.9523, 0, 0.159052)
+transform = Transform3D(-0.0804742, 0, 0.996747, 0, 1, 0, -0.996747, 0, -0.0804742, -40.9523, 0, 0.159052)
 progress = 40.9557
 waiting_character = ExtResource("7_b6lr4")
 
