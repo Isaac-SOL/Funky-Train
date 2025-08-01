@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ciahpvaw0bi3k"]
+
+[ext_resource type="PackedScene" uid="uid://b8r53yeqdrdfu" path="res://assets/modele/3D/wagon/wagon_triangle/wagon_triangle.glb" id="1_o3cj2"]
+
+[node name="wagon_triangle_mesh" instance=ExtResource("1_o3cj2")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)

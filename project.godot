@@ -25,17 +25,19 @@ ImGuiRoot="*res://addons/imgui-godot/data/ImGuiRoot.tscn"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/imgui-godot/plugin.cfg")
+enabled=PackedStringArray("res://addons/imgui-godot/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg")
 
 [file_customization]
 
 folder_colors={
+"res://addons/": "red",
+"res://assets/": "green",
+"res://assets/textures/": "green",
 "res://materials/": "purple",
 "res://meshes/rails/": "gray",
 "res://objects/": "orange",
 "res://scenes/": "gray",
-"res://scripts/": "blue",
-"res://textures/": "green"
+"res://scripts/": "blue"
 }
 
 [rendering]

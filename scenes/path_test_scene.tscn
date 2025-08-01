@@ -139,7 +139,7 @@ out_sections = [NodePath("../Rail")]
 mesh = SubResource("ImmediateMesh_yffd2")
 
 [node name="Locomotive" parent="Rail4" instance=ExtResource("2_gd5r5")]
-transform = Transform3D(0.000837849, 2.47463e-09, -0.999969, 0, 0.999961, 2.47465e-09, 0.999965, -2.07344e-12, 0.000837853, 1.31125, 0, 12.5322)
+transform = Transform3D(0.000838326, -3.70622e-09, -0.999969, 0, 0.999961, -3.70625e-09, 0.999965, 3.10713e-12, 0.000838329, 1.31128, 0, 12.5322)
 progress = 29.7235
 rotation_mode = 2
 loop = false
@@ -318,8 +318,7 @@ text = "Prendre"
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
-text = "Laisser
-"
+text = "Laisser"
 
 [node name="VBoxContainerPutChar" type="VBoxContainer" parent="CanvasLayer/PanelStation/MarginContainer"]
 unique_name_in_owner = true

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dr28ko58ts6m1"]
+
+[ext_resource type="PackedScene" uid="uid://c44vxckdcf46f" path="res://assets/modele/3D/wagon/wagon_batterie/wagons_batterie.glb" id="1_b50wh"]
+
+[node name="wagons_batterie_mesh" instance=ExtResource("1_b50wh")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)

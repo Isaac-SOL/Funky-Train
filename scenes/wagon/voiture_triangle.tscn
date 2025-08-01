@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bams4837w8bcp"]
+
+[ext_resource type="Script" uid="uid://dqclrpibg0m2f" path="res://scripts/wagon/wagon.gd" id="1_6l4jl"]
+[ext_resource type="PackedScene" uid="uid://ciahpvaw0bi3k" path="res://assets/modele/3D/wagon/wagon_triangle/wagon_triangle_mesh.tscn" id="1_m5mh5"]
+
+[node name="wagon_triangle" type="Node3D" node_paths=PackedStringArray("wheel_1", "wheel_2", "wheel_3", "wheel_4")]
+script = ExtResource("1_6l4jl")
+wheel_1 = NodePath("wagon_triangle_mesh/wheel_1")
+wheel_2 = NodePath("wagon_triangle_mesh/wheel_2")
+wheel_3 = NodePath("wagon_triangle_mesh/wheel_3")
+wheel_4 = NodePath("wagon_triangle_mesh/wheel_4")
+metadata/_custom_type_script = "uid://dqclrpibg0m2f"
+
+[node name="wagon_triangle_mesh" parent="." instance=ExtResource("1_m5mh5")]
+
+[editable path="wagon_triangle_mesh"]
