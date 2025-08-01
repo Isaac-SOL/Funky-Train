@@ -61,6 +61,7 @@ void fragment() {
 	final_color *= sobel_scalar;
 	
 	ALBEDO = final_color;
+	ALPHA = 1.0;
 }
 
 //void light() {

@@ -9,6 +9,8 @@ static var instance: Locomotive
 @export var spacing: float = 0.2
 @export var carriages: Array[Carriage] = []
 @export var rails_gradient: GradientTexture1D
+@export var bypass: bool = false
+@export var show_signals_at_distance: float = 30.0
 @export_group("Music Sync")
 @export var beats_per_minute: float = 120.0
 @export var beats_per_measure: int = 4
@@ -33,6 +35,7 @@ func _ready() -> void:
 	update_characters()
 
 func _process(delta: float) -> void:
+	# Acceleration / Deceleration
 	if locked:
 		speed = 0.0
 	else:
@@ -44,6 +47,8 @@ func _process(delta: float) -> void:
 			speed -= normal_speed * delta / stop_time
 			if speed < target_speed:
 				speed = target_speed
+	
+	# Stop at stations
 	
 	var next_station = get_section().get_next_station(progress)
 	var temp_progress := progress + delta * speed
@@ -62,6 +67,13 @@ func _process(delta: float) -> void:
 		carriage.set_carriage_progress(next_carriage_end - (carriage.length / 2.0), get_section())
 		next_carriage_end -= carriage.length + spacing
 	
+	# Show signals
+	
+	if not Main.instance.signals_up and get_distance_to_section_end() < show_signals_at_distance:
+		Main.instance.set_signals(get_section().out_requirements_1, get_section().out_requirements_2)
+	
+	# Animation
+	
 	bpm_timer -= delta * beats_per_minute / 60
 	if bpm_timer <= 0:
 		bpm_timer += 1.0
@@ -76,6 +88,8 @@ func _process(delta: float) -> void:
 	imgui()
 
 func check_requirements(req_list: Array[String]) -> bool:
+	if bypass:
+		return true
 	var props := get_properties()
 	for req in req_list:
 		if req.begins_with("-"):
@@ -108,6 +122,7 @@ func change_section(new_section: RailSection):
 	get_parent().remove_child(self)
 	new_section.add_child(self)
 	curr_section_length = get_parent().curve.get_baked_length()
+	Main.instance.reset_signals()
 
 func add_character(new_character: CharacterInfo):
 	var new_carriage: Carriage = new_character.carriage.instantiate()
@@ -133,6 +148,9 @@ func get_properties() -> Array[String]:
 	for carriage in carriages:
 		props.append(carriage.character.name)
 	return props
+
+func get_distance_to_section_end() -> float:
+	return get_section().curve.get_baked_length() - progress
 
 func kick_up():
 	%MeshInstance3D.scale = Vector3(1.0, kick_up_effect, 1.0)
@@ -162,6 +180,26 @@ func get_gradient() -> Array[Color]:
 		var col2 := carriages[1].character.color
 		for i in range(5):
 			res.append(lerp_hsv(col1, col2, i / 4.0))
+	elif carriages.size() == 3:
+		var col1 := carriages[0].character.color
+		var col2 := carriages[1].character.color
+		var col3 := carriages[2].character.color
+		var col12 = lerp_hsv(col1, col2, 0.5)
+		var col23 = lerp_hsv(col2, col3, 0.5)
+		res.append_array([col1, col12, col2, col23, col3])
+	elif carriages.size() == 4:
+		var lead2 := carriages[0].character.color
+		lead2.v -= 0.3
+		res.append_array([
+			carriages[0].character.color,
+			lead2,
+			carriages[1].character.color,
+			carriages[2].character.color,
+			carriages[3].character.color,
+		])
+	else:
+		for carriage: Carriage in carriages:
+			res.append(carriage.character.color)
 	return res
 
 func set_rails_gradient(colors: Array[Color]):
@@ -186,9 +224,10 @@ func imgui():
 	var v3: Array = [locked]
 	if ImGui.Checkbox("Locked", v3):
 		locked = v3[0]
-	if ImGui.Button("Direction"):
-		direction = not direction
-	ImGui.Text("Right" if direction else "Left")
+	ImGui.Text("Direction : " + ("Right" if direction else "Left"))
+	var v4: Array = [bypass]
+	if ImGui.Checkbox("Bypass", v4):
+		bypass = v4[0]
 	var next_station := get_section().get_next_station(progress)
 	ImGui.Text("Next station : " + (str(next_station.progress - progress) if next_station else "None"))
 	if ImGui.CollapsingHeader("Carriages"):

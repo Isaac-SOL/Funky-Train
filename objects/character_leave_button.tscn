@@ -6,3 +6,4 @@
 theme_override_font_sizes/font_size = 32
 text = "Lui là"
 icon = ExtResource("1_ufa4e")
+expand_icon = true

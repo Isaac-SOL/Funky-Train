@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=4 format=3 uid="uid://deyja52yjw00e"]
+
+[ext_resource type="PackedScene" uid="uid://bvlp4g2b1r1uw" path="res://objects/carriage.tscn" id="1_2jdqh"]
+[ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_6fdos"]
+[ext_resource type="Texture2D" uid="uid://dm7xfle4helcq" path="res://assets/textures/J.png" id="3_2jdqh"]
+
+[resource]
+script = ExtResource("2_6fdos")
+name = "J"
+sprite = ExtResource("3_2jdqh")
+color = Color(1, 1, 1, 1)
+carriage = ExtResource("1_2jdqh")
+metadata/_custom_type_script = "uid://rkfd1kwn018t"
