@@ -28,33 +28,22 @@ background_mode = 2
 sky = SubResource("Sky_r5u47")
 tonemap_mode = 2
 
-<<<<<<< HEAD
 [sub_resource type="Curve3D" id="Curve3D_0ihyj"]
-=======
-[sub_resource type="Curve3D" id="Curve3D_c18if"]
->>>>>>> nicolas
 _data = {
 "points": PackedVector3Array(-1.66903, -0.147171, 0.283185, 1, 0, 0, 0, 0, 0, -1, 0, 0, 2.37323, 0, -3.00137, 8, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
-<<<<<<< HEAD
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_1jv2l"]
 
 [sub_resource type="Curve3D" id="Curve3D_jkok2"]
-=======
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_0ihyj"]
-
-[sub_resource type="Curve3D" id="Curve3D_1jv2l"]
->>>>>>> nicolas
 _data = {
 "points": PackedVector3Array(-1.76908, -0.113597, -0.0882057, 1, 0, 0, 0, 0, 0, -1.33983, -0.0965705, 0.936519, 1.33983, 0.0965705, -0.936519, 5.73861, -0.0951204, -1.3665, 0.0668678, 0, 3.20955, -0.0668678, 0, -3.20955, 8.4027, 9.53674e-07, -8.02462),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
 
-<<<<<<< HEAD
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_6nout"]
 
 [sub_resource type="Curve3D" id="Curve3D_yffd2"]
@@ -65,9 +54,6 @@ _data = {
 point_count = 4
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_17aas"]
-=======
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_jkok2"]
->>>>>>> nicolas
 
 [sub_resource type="Curve3D" id="Curve3D_vdho3"]
 _data = {
@@ -94,22 +80,15 @@ _data = {
 }
 point_count = 5
 
-<<<<<<< HEAD
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_frps4"]
 
 [sub_resource type="Curve3D" id="Curve3D_ajlhj"]
-=======
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_u8mta"]
-
-[sub_resource type="Curve3D" id="Curve3D_frps4"]
->>>>>>> nicolas
 _data = {
 "points": PackedVector3Array(-8.1327, 0, -0.012283, 8.1327, 0, 0.012283, 0, 0, 0, 3.2323, -0.0965576, 1.59339, -3.2323, 0.0965576, -1.59339, -5.02413, -0.0950928, -9.00174, 0.969765, 0, -3.04306, 6.19145, 0, 1.04708, -16.7318, 0, -12.1798),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
 
-<<<<<<< HEAD
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_5ne2v"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajlhj"]
@@ -130,9 +109,6 @@ shader_parameter/depth_gradient_strength = 0.53
 [sub_resource type="QuadMesh" id="QuadMesh_vdho3"]
 material = SubResource("ShaderMaterial_mkonq")
 size = Vector2(10, 10)
-=======
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_ajlhj"]
->>>>>>> nicolas
 
 [sub_resource type="LabelSettings" id="LabelSettings_qdokm"]
 font_size = 48
