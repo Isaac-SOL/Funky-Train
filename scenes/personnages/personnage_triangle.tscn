@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bfln4belomymj"]
 
 [ext_resource type="Script" uid="uid://eoyxaxq2q24" path="res://scripts/personnage/personnage.gd" id="1_roqms"]
-[ext_resource type="Texture2D" uid="uid://c47w8oaysm637" path="res://assets/modele/2D/personnages_triangle.png" id="2_2t2pe"]
+[ext_resource type="Texture2D" uid="uid://c47w8oaysm637" path="res://assets/modele/2D/personnages/personnages_triangle.png" id="2_2t2pe"]
 
 [node name="personnage_triangle" type="Node3D" node_paths=PackedStringArray("sprite_3d")]
 script = ExtResource("1_roqms")

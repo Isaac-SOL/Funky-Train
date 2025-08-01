@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://usgohfm8d35i"]
 
 [ext_resource type="Script" uid="uid://eoyxaxq2q24" path="res://scripts/personnage/personnage.gd" id="1_ehhfh"]
-[ext_resource type="Texture2D" uid="uid://cp3dr4p4yn3bg" path="res://assets/modele/2D/personnages_saxophone.png" id="2_n2s2s"]
+[ext_resource type="Texture2D" uid="uid://cp3dr4p4yn3bg" path="res://assets/modele/2D/personnages/personnages_saxophone.png" id="2_n2s2s"]
 
 [node name="personnage_saxophone" type="Node3D" node_paths=PackedStringArray("sprite_3d")]
 script = ExtResource("1_ehhfh")
