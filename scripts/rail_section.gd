@@ -3,8 +3,8 @@ class_name RailSection extends Path3D
 
 static var ID_COUNT: int = 0
 
-@export var in_sections: Array[RailSection]
-@export var out_sections: Array[RailSection]
+@export var in_sections: Array[RailSection] = []
+@export var out_sections: Array[RailSection] = []
 @export var out_requirements_1: Array[String]
 @export var out_requirements_2: Array[String]
 @export_tool_button("Rebake") var rebake_button = rebake
@@ -19,9 +19,16 @@ func _ready() -> void:
 		get_parent().set_editable_instance(self, true)
 		if curve:
 			curve = curve.duplicate()
+		in_sections = in_sections.duplicate()
+		out_sections = out_sections.duplicate()
+		out_requirements_1 = out_requirements_1.duplicate()
+		out_requirements_2 = out_requirements_2.duplicate()
 	else:
 		id = ID_COUNT
 		ID_COUNT += 1
+		assert(in_sections.size() > 0)
+		assert(out_sections.size() > 0)
+		assert(out_sections.size() <= 2)
 
 func add_station(station: Station):
 	stations.append(station)

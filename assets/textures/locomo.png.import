@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0o6y71cnwrw0"
-path="res://.godot/imported/levier.png-61a514dfdca40c1380a79f31998d2814.ctex"
+uid="uid://b0ckw73qej7is"
+path="res://.godot/imported/locomo.png-271751d290fa22dfef4e9c967c026175.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/levier.png"
-dest_files=["res://.godot/imported/levier.png-61a514dfdca40c1380a79f31998d2814.ctex"]
+source_file="res://assets/textures/locomo.png"
+dest_files=["res://.godot/imported/locomo.png-271751d290fa22dfef4e9c967c026175.ctex"]
 
 [params]
 

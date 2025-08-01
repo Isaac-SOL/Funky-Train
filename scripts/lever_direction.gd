@@ -6,7 +6,7 @@ var is_dragging: bool = false
 var is_right: bool = false
 var drag_pos: Vector2 = Vector2.ZERO
 
-func mouse_down(event: InputEventMouseButton):
+func mouse_down(_event: InputEventMouseButton):
 	is_dragging = true
 	drag_pos = Vector2.ZERO
 

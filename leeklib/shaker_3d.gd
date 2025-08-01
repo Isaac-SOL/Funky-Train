@@ -6,6 +6,7 @@ enum ShakeAxis { FORWARD, UP, RIGHT, ALL }
 @export var target_node: Node3D
 @export var follow_position: bool = true
 @export var follow_rotation: bool = false
+@export var follow_global_coordinates: bool = false
 @export var shake_interval: float = 0.035
 @export var shake_factor: float = 10
 @export var move_speed: float = 20
@@ -23,8 +24,12 @@ var current_radius: float
 func _process(delta):
 	# Move target
 	if target_node:
-		base_pos = target_node.position
-		base_rot = target_node.quaternion
+		if follow_global_coordinates:
+			base_pos = get_parent_node_3d().to_local(target_node.global_position)
+			base_rot = get_parent_node_3d().global_basis.get_rotation_quaternion().inverse() * target_node.global_basis.get_rotation_quaternion()
+		else:
+			base_pos = target_node.position
+			base_rot = target_node.quaternion
 	
 	# Apply impulsions
 	next_shake -= delta

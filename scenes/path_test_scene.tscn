@@ -1,15 +1,18 @@
-[gd_scene load_steps=30 format=3 uid="uid://bmfvmpqul8dce"]
+[gd_scene load_steps=37 format=3 uid="uid://bmfvmpqul8dce"]
 
 [ext_resource type="Script" uid="uid://rytmmqnltko8" path="res://scripts/main.gd" id="1_2ai2v"]
 [ext_resource type="PackedScene" uid="uid://c7adtd3m5hihf" path="res://objects/rail_section.tscn" id="1_71sj3"]
 [ext_resource type="PackedScene" uid="uid://dcpxd04n7oj0i" path="res://objects/station.tscn" id="2_ajlx6"]
+[ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_c18if"]
 [ext_resource type="PackedScene" uid="uid://b2gtvjpbbcs2j" path="res://objects/locomotive.tscn" id="2_gd5r5"]
 [ext_resource type="PackedScene" uid="uid://lp0v4qbqartt" path="res://objects/character_leave_button.tscn" id="2_j0n6l"]
 [ext_resource type="Resource" uid="uid://boc3h2ovuouuv" path="res://objects/characters/base_character.tres" id="4_20gy4"]
-[ext_resource type="Texture2D" uid="uid://c0o6y71cnwrw0" path="res://textures/levier.png" id="7_2ai2v"]
+[ext_resource type="Script" uid="uid://wrgu8dfp4pw3" path="res://leeklib/shaker_3d.gd" id="7_0ihyj"]
+[ext_resource type="Texture2D" uid="uid://c0o6y71cnwrw0" path="res://assets/textures/levier.png" id="7_2ai2v"]
 [ext_resource type="Resource" uid="uid://7weavlk3cbvm" path="res://objects/characters/godot2.tres" id="7_7uw5n"]
 [ext_resource type="Texture2D" uid="uid://c52bcth5d22s5" path="res://icon.svg" id="7_j0n6l"]
 [ext_resource type="Script" uid="uid://b2pnmy42f765x" path="res://scripts/lever_direction.gd" id="8_20gy4"]
+[ext_resource type="Shader" uid="uid://byrwhib36s4tv" path="res://materials/edge_detection.gdshader" id="9_qdokm"]
 [ext_resource type="Script" uid="uid://cgr64t0pp5eet" path="res://scripts/lever_speed.gd" id="9_rresx"]
 [ext_resource type="PackedScene" uid="uid://c5pt7sikhf8db" path="res://objects/texture_character_ui.tscn" id="11_1x2nj"]
 
@@ -25,59 +28,78 @@ background_mode = 2
 sky = SubResource("Sky_r5u47")
 tonemap_mode = 2
 
-[sub_resource type="Curve3D" id="Curve3D_1x2nj"]
+[sub_resource type="Curve3D" id="Curve3D_0ihyj"]
 _data = {
 "points": PackedVector3Array(-1.66903, -0.147171, 0.283185, 1, 0, 0, 0, 0, 0, -1, 0, 0, 2.37323, 0, -3.00137, 8, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_qdokm"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_1jv2l"]
 
-[sub_resource type="Curve3D" id="Curve3D_c18if"]
+[sub_resource type="Curve3D" id="Curve3D_jkok2"]
 _data = {
 "points": PackedVector3Array(-1.76908, -0.113597, -0.0882057, 1, 0, 0, 0, 0, 0, -1.33983, -0.0965705, 0.936519, 1.33983, 0.0965705, -0.936519, 5.73861, -0.0951204, -1.3665, 0.0668678, 0, 3.20955, -0.0668678, 0, -3.20955, 8.4027, 9.53674e-07, -8.02462),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_0ihyj"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_6nout"]
 
-[sub_resource type="Curve3D" id="Curve3D_1jv2l"]
+[sub_resource type="Curve3D" id="Curve3D_yffd2"]
 _data = {
 "points": PackedVector3Array(-1.76908, -0.113597, -0.0882057, -0.0668678, 0, -3.20955, 0, 0, 0, 2.84241, -0.0965576, 0.535043, -2.84241, 0.0965576, -0.535043, -6.82745, -0.0950937, -5.89248, 2.10235, -0.10162, 0.10503, -2.10235, 0.10162, -0.10503, -18.2331, -0.622707, -8.43763, 0.969765, 0, -3.04306, -0.969765, 0, 3.04306, -25.1345, -9.53674e-07, -4.15518),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_jkok2"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_17aas"]
 
-[sub_resource type="Curve3D" id="Curve3D_6nout"]
+[sub_resource type="Curve3D" id="Curve3D_vdho3"]
 _data = {
 "points": PackedVector3Array(-1.76908, -0.113597, -0.0882057, -0.969765, 0, 3.04306, 0, 0, 0, 3.31207, -0.0965576, 2.85388, -3.31207, 0.0965576, -2.85388, -5.364, -0.0950928, 4.41689, -4.18003, 0, -2.54146, 4.18003, 0, 2.54146, -8.03428, 0, 10.9772, -1, 0, 0, 2.67522, 0, -0.568483, 8.73184, 0, 12.1798),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_yffd2"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_of6ln"]
 
-[sub_resource type="Curve3D" id="Curve3D_17aas"]
+[sub_resource type="Curve3D" id="Curve3D_u8mta"]
 _data = {
 "points": PackedVector3Array(-1.76908, -0.113597, -0.0882057, -0.0668678, 0, -3.20955, 0, 0, 0, -3.00962, -0.0965576, -1.97297, 3.00962, 0.0965576, 1.97297, 7.55965, -0.0950937, -2.31264, 2.84242, 0, -2.40769, -2.84242, 0, 2.40769, 4.95323, -0.0186777, 11.4942, 2.47458, 0, 1.97297, -2.47458, 0, -1.97297, -20.1938, -0.00988865, 12.0962, -1, 0, 0, 4.49488, 0, -0.387467, -16.4027, -9.53674e-07, 8.02462),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_vdho3"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_frps4"]
 
-[sub_resource type="Curve3D" id="Curve3D_of6ln"]
+[sub_resource type="Curve3D" id="Curve3D_ajlhj"]
 _data = {
 "points": PackedVector3Array(-8.1327, 0, -0.012283, 8.1327, 0, 0.012283, 0, 0, 0, 3.2323, -0.0965576, 1.59339, -3.2323, 0.0965576, -1.59339, -5.02413, -0.0950928, -9.00174, 0.969765, 0, -3.04306, 6.19145, 0, 1.04708, -16.7318, 0, -12.1798),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_u8mta"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_5ne2v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajlhj"]
+albedo_color = Color(0.197831, 0.537274, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5ne2v"]
+material = SubResource("StandardMaterial3D_ajlhj")
+size = Vector2(50, 50)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mkonq"]
+render_priority = -100
+shader = ExtResource("9_qdokm")
+shader_parameter/depth_gradient_color = Color(1, 0.7, 0, 1)
+shader_parameter/depth_gradient_start = 5.0
+shader_parameter/depth_gradient_end = 20.0
+shader_parameter/depth_gradient_strength = 0.53
+
+[sub_resource type="QuadMesh" id="QuadMesh_vdho3"]
+material = SubResource("ShaderMaterial_mkonq")
+size = Vector2(10, 10)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qdokm"]
 font_size = 48
@@ -87,6 +109,7 @@ font_size = 48
 
 [node name="PathTestScene" type="Node3D"]
 script = ExtResource("1_2ai2v")
+character_list = Array[ExtResource("2_c18if")]([ExtResource("4_20gy4"), ExtResource("7_7uw5n")])
 character_leave_button_scene = ExtResource("2_j0n6l")
 character_icon_scene = ExtResource("11_1x2nj")
 
@@ -95,48 +118,50 @@ environment = SubResource("Environment_bmein")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 16.7499, 0)
+light_energy = 0.5
+light_indirect_energy = 0.5
 shadow_enabled = true
 
 [node name="Rail" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_71sj3")]
-curve = SubResource("Curve3D_1x2nj")
+curve = SubResource("Curve3D_0ihyj")
 in_sections = [NodePath("../Rail4"), NodePath("../Rail5")]
 out_sections = [NodePath("../Rail6"), NodePath("../Rail2")]
 out_requirements_1 = Array[String](["Godot Bro"])
 
 [node name="BakedRailsMesh" parent="Rail" index="0"]
-mesh = SubResource("ImmediateMesh_qdokm")
+mesh = SubResource("ImmediateMesh_1jv2l")
 
 [node name="Rail2" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_71sj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
-curve = SubResource("Curve3D_c18if")
+curve = SubResource("Curve3D_jkok2")
 in_sections = [NodePath("../Rail")]
 out_sections = [NodePath("../Rail3"), NodePath("../Rail5")]
 
 [node name="BakedRailsMesh" parent="Rail2" index="0"]
-mesh = SubResource("ImmediateMesh_0ihyj")
+mesh = SubResource("ImmediateMesh_6nout")
 
 [node name="Rail3" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_71sj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4027, 9.53674e-07, -8.02462)
-curve = SubResource("Curve3D_1jv2l")
+curve = SubResource("Curve3D_yffd2")
 in_sections = [NodePath("../Rail2")]
 out_sections = [NodePath("../Rail4")]
 
 [node name="BakedRailsMesh" parent="Rail3" index="0"]
-mesh = SubResource("ImmediateMesh_jkok2")
+mesh = SubResource("ImmediateMesh_17aas")
 
 [node name="StationGodot" parent="Rail3" instance=ExtResource("2_ajlx6")]
-transform = Transform3D(-0.347156, 0.0953186, 0.932944, 0.014395, 0.995231, -0.0963275, -0.937692, -0.0200109, -0.346877, -21.1019, -0.379277, -7.92489)
+transform = Transform3D(-0.347155, 0.0953188, 0.932944, 0.0143952, 0.995228, -0.0963279, -0.937692, -0.0200108, -0.346876, -21.1018, -0.379279, -7.9249)
 progress = 24.3272
 waiting_character = ExtResource("4_20gy4")
 
 [node name="Rail4" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_71sj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.73184, 0, -12.1798)
-curve = SubResource("Curve3D_6nout")
+curve = SubResource("Curve3D_vdho3")
 in_sections = [NodePath("../Rail3"), NodePath("../Rail6")]
 out_sections = [NodePath("../Rail")]
 
 [node name="BakedRailsMesh" parent="Rail4" index="0"]
-mesh = SubResource("ImmediateMesh_yffd2")
+mesh = SubResource("ImmediateMesh_of6ln")
 
 [node name="Locomotive" parent="Rail4" instance=ExtResource("2_gd5r5")]
 transform = Transform3D(0.000838326, -3.70622e-09, -0.999969, 0, 0.999961, -3.70625e-09, 0.999965, 3.10713e-12, 0.000838329, 1.31128, 0, 12.5322)
@@ -144,28 +169,56 @@ progress = 29.7235
 rotation_mode = 2
 loop = false
 
+[node name="CameraFollowPos" type="Marker3D" parent="Rail4/Locomotive"]
+unique_name_in_owner = true
+transform = Transform3D(0.941779, -0.147915, 0.302064, 1.80602e-08, 0.898138, 0.439802, -0.336334, -0.414178, 0.845811, 1.97975, 2.33587, 5.44378)
+
 [node name="Rail5" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_71sj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4027, 9.53674e-07, -8.02462)
-curve = SubResource("Curve3D_17aas")
+curve = SubResource("Curve3D_u8mta")
 in_sections = [NodePath("../Rail2")]
 out_sections = [NodePath("../Rail")]
 
 [node name="BakedRailsMesh" parent="Rail5" index="0"]
-mesh = SubResource("ImmediateMesh_vdho3")
+mesh = SubResource("ImmediateMesh_frps4")
 
 [node name="StationGodot2" parent="Rail5" instance=ExtResource("2_ajlx6")]
-transform = Transform3D(0.0152727, 0.000286726, 0.999874, 0.00671254, 0.999959, -0.000389287, -0.999851, 0.00671765, 0.0152704, -10.5126, -0.0132076, 13.441)
+transform = Transform3D(0.0152698, 0.000286745, 0.999874, 0.00671248, 0.999959, -0.000389286, -0.999848, 0.0067176, 0.0152675, -10.5126, -0.0132075, 13.441)
 progress = 40.425
 waiting_character = ExtResource("7_7uw5n")
 
 [node name="Rail6" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_71sj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
-curve = SubResource("Curve3D_of6ln")
+curve = SubResource("Curve3D_ajlhj")
 in_sections = [NodePath("../Rail")]
 out_sections = [NodePath("../Rail4")]
 
 [node name="BakedRailsMesh" parent="Rail6" index="0"]
-mesh = SubResource("ImmediateMesh_u8mta")
+mesh = SubResource("ImmediateMesh_5ne2v")
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.744017, 0)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_5ne2v")
+
+[node name="CameraShaker" type="Node3D" parent="." node_paths=PackedStringArray("target_node")]
+unique_name_in_owner = true
+transform = Transform3D(0.337113, 0.414042, -0.845532, 1.93061e-08, 0.898103, 0.439785, 0.941464, -0.148257, 0.302763, -12.8625, 2.33578, 2.33664)
+script = ExtResource("7_0ihyj")
+target_node = NodePath("../Rail4/Locomotive/CameraFollowPos")
+follow_rotation = true
+follow_global_coordinates = true
+move_speed = 8.0
+rotation_speed = 8.0
+metadata/_custom_type_script = "uid://wrgu8dfp4pw3"
+
+[node name="Camera3D" type="Camera3D" parent="CameraShaker"]
+
+[node name="ScreenEffect" type="MeshInstance3D" parent="CameraShaker/Camera3D"]
+transform = Transform3D(0.999966, 0, 0, 0, 0.999962, 0, 0, 0, 0.999971, -2.98013e-08, 2.6076e-08, -1.03348)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_vdho3")
+skeleton = NodePath("../../../Rail4/Locomotive")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

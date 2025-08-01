@@ -1,19 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2gtvjpbbcs2j"]
+[gd_scene load_steps=4 format=3 uid="uid://b2gtvjpbbcs2j"]
 
 [ext_resource type="Script" uid="uid://dlylwsenxbljj" path="res://scripts/locomotive.gd" id="1_2c63q"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_r5u47"]
-size = Vector3(0.5, 0.5, 2)
+[ext_resource type="Texture2D" uid="uid://c8na840ixxrgk" path="res://materials/rails_gradient.tres" id="2_5cgl7"]
+[ext_resource type="PackedScene" uid="uid://ctuor0rsde614" path="res://meshes/chef_locomotive.glb" id="3_ue4hp"]
 
 [node name="Locomotive" type="PathFollow3D"]
 transform = Transform3D(-4.37099e-08, 0, -0.999971, 0, 0.999962, 0, 0.999966, 0, -4.37101e-08, 0, 0, 0)
 script = ExtResource("1_2c63q")
+length = 1.4
+rails_gradient = ExtResource("2_5cgl7")
 beats_per_minute = 90.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.265, 0)
-mesh = SubResource("BoxMesh_r5u47")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.941778, -0.147915, 0.302064, 1.80602e-08, 0.898137, 0.439802, -0.336334, -0.414178, 0.84581, 1.97975, 2.33587, 5.44378)
+[node name="chef_locomotive" parent="MeshInstance3D" instance=ExtResource("3_ue4hp")]
+transform = Transform3D(-1.09278e-09, 0, 0.025, 0, 0.025, 0, -0.025, 0, -1.09278e-09, 0, 0, 0)

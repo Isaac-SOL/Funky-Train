@@ -15,13 +15,20 @@ imgui/config="uid://w3qgqtnxvopv"
 [application]
 
 config/name="Funky TRain"
-run/main_scene="uid://bmfvmpqul8dce"
+run/main_scene="uid://ddei87jmflwu2"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 ImGuiRoot="*res://addons/imgui-godot/data/ImGuiRoot.tscn"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="ignore"
 
 [editor_plugins]
 

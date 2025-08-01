@@ -11,7 +11,7 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_mlm8x"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_e7jeh"]
 
 [node name="Rail" type="Path3D"]
 curve = SubResource("Curve3D_x140k")
@@ -19,7 +19,8 @@ script = ExtResource("1_x140k")
 
 [node name="BakedRailsMesh" type="MeshInstance3D" parent="." node_paths=PackedStringArray("path")]
 unique_name_in_owner = true
-mesh = SubResource("ImmediateMesh_mlm8x")
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_e7jeh")
 skeleton = NodePath("../..")
 script = ExtResource("2_e7jeh")
 path = NodePath("..")

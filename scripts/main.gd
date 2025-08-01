@@ -2,16 +2,21 @@ class_name Main extends Node3D
 
 static var instance: Main
 
+@export var character_list: Array[CharacterInfo]
 @export var character_leave_button_scene: PackedScene
 @export var character_icon_scene: PackedScene
+@export var character_signalisation_scene: PackedScene
 
 var active_station: Station
+var signals_up: bool = false
+@onready var camera_follow_pos: Node3D = %CameraFollowPos
 
 func _ready() -> void:
 	instance = self
 
 func stop_at_station(station: Station):
 	active_station = station
+	%CameraShaker.target_node = active_station.get_camera_pos()
 	var character_info := station.waiting_character
 	if character_info:
 		%LabelTitre.text = character_info.name
@@ -40,17 +45,50 @@ func update_characters_ui():
 	await get_tree().process_frame
 	%MarginContainerCharacters.size = Vector2.ZERO
 
+func leave_station():
+	Locomotive.instance.restart()
+	active_station = null
+	%CameraShaker.target_node = camera_follow_pos
+
+func get_character(character_name: String) -> CharacterInfo:
+	for char: CharacterInfo in character_list:
+		if char.name == character_name:
+			return char
+	return null
+
+func set_single_signal(reqs: Array[String], parent_node: Control):
+	for r: String in reqs:
+		var char_name: String = r
+		var forbidden: bool = false
+		if r.begins_with("-"):
+			char_name = r.substr(1)
+			forbidden = true
+		var new_signal: CharacterSignalisation = character_signalisation_scene.instantiate()
+		parent_node.add_child(new_signal)
+		new_signal.load_character(get_character(char_name))
+		new_signal.set_forbidden(forbidden)
+
+func set_signals(reqs_left: Array[String], reqs_right: Array[String]):
+	set_single_signal(reqs_left, %SignalisationLeft)
+	set_single_signal(reqs_right, %SignalisationRight)
+	signals_up = true
+
+func reset_signals():
+	for child in %SignalisationLeft.get_children():
+		child.queue_free()
+	for child in %SignalisationRight.get_children():
+		child.queue_free()
+	signals_up = false
+
 func _on_button_prendre_pressed() -> void:
 	close_add_character()
 	Locomotive.instance.add_character(active_station.waiting_character)
 	active_station.remove_character()
-	Locomotive.instance.restart()
-	active_station = null
+	leave_station()
 
 func _on_button_laisser_pressed() -> void:
 	close_add_character()
-	Locomotive.instance.restart()
-	active_station = null
+	leave_station()
 
 func close_add_character():
 	%PanelStation.visible = false
@@ -64,13 +102,11 @@ func close_character_leave():
 
 func _on_button_no_one_pressed() -> void:
 	close_character_leave()
-	Locomotive.instance.restart()
-	active_station = null
+	leave_station()
 	
 
 func _on_character_leave_pressed(carriage: Carriage):
 	close_character_leave()
 	Locomotive.instance.remove_carriage(carriage)
 	active_station.set_character(carriage.character)
-	Locomotive.instance.restart()
-	active_station = null
+	leave_station()

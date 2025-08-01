@@ -1,0 +1,915 @@
+[gd_scene load_steps=84 format=3 uid="uid://ddei87jmflwu2"]
+
+[ext_resource type="Script" uid="uid://rytmmqnltko8" path="res://scripts/main.gd" id="1_rk4p5"]
+[ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_7tq10"]
+[ext_resource type="Resource" uid="uid://kjtlh674xflv" path="res://objects/characters/A.tres" id="3_8yhmk"]
+[ext_resource type="Resource" uid="uid://d0g3t66itnkbt" path="res://objects/characters/B.tres" id="4_j8ata"]
+[ext_resource type="Resource" uid="uid://cmu0o1vkd5een" path="res://objects/characters/C.tres" id="5_7eykx"]
+[ext_resource type="PackedScene" uid="uid://lp0v4qbqartt" path="res://objects/character_leave_button.tscn" id="5_ol44e"]
+[ext_resource type="PackedScene" uid="uid://c5pt7sikhf8db" path="res://objects/texture_character_ui.tscn" id="6_5ubli"]
+[ext_resource type="Resource" uid="uid://vx3hx6wjuujk" path="res://objects/characters/D.tres" id="6_36g7h"]
+[ext_resource type="PackedScene" uid="uid://c7adtd3m5hihf" path="res://objects/rail_section.tscn" id="7_2wvi4"]
+[ext_resource type="Resource" uid="uid://cf34n44v4encj" path="res://objects/characters/E.tres" id="7_b6lr4"]
+[ext_resource type="PackedScene" uid="uid://dcpxd04n7oj0i" path="res://objects/station.tscn" id="8_cly8o"]
+[ext_resource type="Resource" uid="uid://bbwah2dbir55v" path="res://objects/characters/F.tres" id="8_ha36p"]
+[ext_resource type="PackedScene" uid="uid://b2gtvjpbbcs2j" path="res://objects/locomotive.tscn" id="9_8yhmk"]
+[ext_resource type="Resource" uid="uid://cyjyqmljaf6nv" path="res://objects/characters/G.tres" id="9_jikhd"]
+[ext_resource type="Script" uid="uid://wrgu8dfp4pw3" path="res://leeklib/shaker_3d.gd" id="10_j8ata"]
+[ext_resource type="Resource" uid="uid://ca22gm0ixic23" path="res://objects/characters/H.tres" id="10_qvxoj"]
+[ext_resource type="Shader" uid="uid://byrwhib36s4tv" path="res://materials/edge_detection.gdshader" id="11_7eykx"]
+[ext_resource type="Resource" uid="uid://b0t7w0yywn1hj" path="res://objects/characters/I.tres" id="11_sxppv"]
+[ext_resource type="Texture2D" uid="uid://c0o6y71cnwrw0" path="res://assets/textures/levier.png" id="12_36g7h"]
+[ext_resource type="Resource" uid="uid://deyja52yjw00e" path="res://objects/characters/J.tres" id="12_on5gu"]
+[ext_resource type="Script" uid="uid://b2pnmy42f765x" path="res://scripts/lever_direction.gd" id="13_b6lr4"]
+[ext_resource type="Script" uid="uid://cgr64t0pp5eet" path="res://scripts/lever_speed.gd" id="14_ha36p"]
+[ext_resource type="PackedScene" uid="uid://b74sqcme40821" path="res://objects/character_signalisation.tscn" id="15_j8ata"]
+[ext_resource type="Texture2D" uid="uid://c52bcth5d22s5" path="res://icon.svg" id="15_jikhd"]
+[ext_resource type="Texture2D" uid="uid://dxhm12w2qma87" path="res://assets/textures/arrow.png" id="21_7eykx"]
+[ext_resource type="Texture2D" uid="uid://c3cr1pqc7y6vq" path="res://assets/textures/speeds.png" id="25_36g7h"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gd5r5"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_r5u47"]
+sky_material = SubResource("ProceduralSkyMaterial_gd5r5")
+
+[sub_resource type="Environment" id="Environment_bmein"]
+background_mode = 2
+sky = SubResource("Sky_r5u47")
+tonemap_mode = 2
+
+[sub_resource type="Curve3D" id="Curve3D_36g7h"]
+_data = {
+"points": PackedVector3Array(-3.18665, 0, 0.00383526, 3.18665, 0, -0.00383526, 0, 0, 0, -2.91532, 0, -0.00383526, 2.91532, 0, 0.00383526, 16.9347, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_b6lr4"]
+
+[sub_resource type="Curve3D" id="Curve3D_ha36p"]
+_data = {
+"points": PackedVector3Array(-3.18665, 0, 0.00383526, 2.91532, 0, 0.00383526, 0, 0, 0, -0.0616646, 0, 4.56317, 0.0616646, 0, -4.56317, 8.97926, 0, -5.43315, -0.0165462, 0, 2.95982, 0.0165462, 0, -2.95982, 8.78284, 2.1418, -18.0909, -0.466579, 0.805542, 1.94408, 0.466579, -0.805542, -1.94408, 9.46254, 0.888184, -28.431, -2.99388, 0, 0.194408, 2.99388, 0, -0.194408, 13.3507, 0, -34.1077, -7.05278, 0, -0.287865, 0, 0, 0, 22.4567, 0, -33.3636),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_jikhd"]
+
+[sub_resource type="Curve3D" id="Curve3D_qvxoj"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 2.91532, 0, 0.00383526, 0, 0, 0, -2.89839, 0, -0.0491591, 2.89839, 0, 0.0491591, 16.9347, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_sxppv"]
+
+[sub_resource type="Curve3D" id="Curve3D_on5gu"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 2.89839, 0, 0.0491591, 0, 0, 0, -3.22351, 0, -0.0617786, 3.22351, 0, 0.0617786, 16.9347, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_xi2te"]
+
+[sub_resource type="Curve3D" id="Curve3D_ld8ne"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 3.22351, 0, 0.0617786, 0, 0, 0, -0.0453262, 0, 9.60894, 0.0453262, 0, -9.60894, 17.3541, 0, -9.39877),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_0n326"]
+
+[sub_resource type="Curve3D" id="Curve3D_psaan"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 0.0453262, 0, -9.60894, 0, 0, 0, 3.58069, 0, 0, -3.58069, 0, 0, -8.25165, 0, -10.7408),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_alxc0"]
+
+[sub_resource type="Curve3D" id="Curve3D_k8pig"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 0.0453262, 0, -9.60894, 0, 0, 0, 0.863609, 0, 12.1624, -0.863609, 0, -12.1624, 24.638, 0, -6.27773),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_k43kg"]
+
+[sub_resource type="Curve3D" id="Curve3D_ajnxc"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -0.863609, 0, -12.1624, 0, 0, 0, 5.75579, 0, -0.947386, -5.75579, 0, 0.947386, -15.8083, 0, -5.59718, 3.58069, 0, 0, -14.6813, 0, 4.17409, -32.8897, 0, -4.46309),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_3xitk"]
+
+[sub_resource type="Curve3D" id="Curve3D_6c0ht"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -3.58069, 0, 0, 0, 0, 0, 3.58069, 0, 0, -3.58069, 0, 0, -19.9719, 0, 0.139595),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_uvcog"]
+
+[sub_resource type="Curve3D" id="Curve3D_4kkmd"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -3.58069, 0, 0, 0, 0, 0, 3.58069, 0, 0, -3.58069, 0, 0, -19.9719, 0, 0.139595, 5.61147, 0, -0.0616627, -5.61147, 0, 0.0616627, -34.4689, 0, 0.102537, 0.67831, 0, -10.113, -0.67831, 0, 10.113, -50.1317, 0, 8.85889, -3.18665, 0, 0.00383526, 0, 0, 0, -39.9347, 0, 20),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_m75v2"]
+
+[sub_resource type="Curve3D" id="Curve3D_xnq8m"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -3.58069, 0, 0, 0, 0, 0, 0.143932, 0, 5.61344, -0.143932, 0, -5.61344, -11.3384, 0, -6.23881, -7.05278, 0, -0.287865, 7.05278, 0, 0.287865, -0.543343, 0, -13.3636),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_yqb2n"]
+
+[sub_resource type="Curve3D" id="Curve3D_1n0wa"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 7.05278, 0, 0.287865, 0, 0, 0, -15.1417, 0, -0.288391, 15.1417, 0, 0.288391, 28.2896, 0, -4.99628, -5.82934, 0, -5.32556, 5.82934, 0, 5.32556, 63.773, 0, 4.67047),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_1u5kr"]
+
+[sub_resource type="Curve3D" id="Curve3D_x6ept"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 5.82934, 0, 5.32556, 0, 0, 0, -8.83099, 0, -13.8062, 8.83099, 0, 13.8062, 28.8668, 0, 26.3689, 1.3057, 0, -18.7149, -0.266418, 0, 11.8554, 34.2527, 0, 77.406),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_lin8e"]
+
+[sub_resource type="Curve3D" id="Curve3D_pi7hh"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 5.82934, 0, 5.32556, 0, 0, 0, -2.50691, 0, -7.05847, 2.50691, 0, 7.05847, 11.7142, 0, 15.8268, 0, 0, -7.63702, 0, 0, 7.63702, 14.6515, 0, 41.0877),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_c5b55"]
+
+[sub_resource type="Curve3D" id="Curve3D_0em68"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 0, 0, 7.63702, 0, 0, 0, 8.12558, 0, 5.46145, -8.12558, 0, -5.46145, -18.4275, 0, 7.55735, 0.863609, 0, 12.1624, 0, 0, 7.63702, -25.0196, 0, -28.0712),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_32gdk"]
+
+[sub_resource type="Curve3D" id="Curve3D_58e0p"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 0, 0, 7.63702, 0, 0, 0, 1.3057, 0, -18.7149, 3.06374, 0, 17.1836, 19.6012, 0, 36.3183),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_n0na2"]
+
+[sub_resource type="Curve3D" id="Curve3D_q32ya"]
+_data = {
+"points": PackedVector3Array(1.3057, 0, -18.7149, -1.3057, 0, 18.7149, 0, 0, 0, 21.1382, 0, -0.211388, -21.1382, 0, 0.211388, -36.3609, 0, 18.7189),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_0akn5"]
+
+[sub_resource type="Curve3D" id="Curve3D_4vm3s"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -21.1382, 0, 0.211388, 0, 0, 0, 21.1382, 0, -0.211388, -21.1382, 0, 0.211388, -61.1214, 0, 1.56815),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_b036x"]
+
+[sub_resource type="Curve3D" id="Curve3D_h5p03"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 3.22351, 0, 0.0617786, 0, 0, 0, -0.0719643, 0, -9.06785, 0.0719643, 0, 9.06785, 13.9527, 0, 10.2656, 0.143936, 0, -6.7649, -0.143936, 0, 6.7649, 14.0247, 0, 25.9544),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_8pqvy"]
+
+[sub_resource type="Curve3D" id="Curve3D_5hpoa"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -0.143936, 0, 6.7649, 0, 0, 0, -0.0719643, 0, -9.06785, 0.0719643, 0, 9.06785, -0.324795, 0, 26.244, 21.1382, 0, -0.211388, -9.59085, 0, 0, -24.8941, 0, 43.0456),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_f2hcf"]
+
+[sub_resource type="Curve3D" id="Curve3D_50cgf"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -21.1382, 0, 0.211388, 0, 0, 0, 5.06184, 0, 23.1779, -5.06184, 0, -23.1779, -70.0364, 0, -31.5873),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_j2ebv"]
+
+[sub_resource type="Curve3D" id="Curve3D_5xo5t"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -5.06184, 0, -23.1779, 0, 0, 0, -3.7206, 0, 3.42687, 3.7206, 0, -3.42687, 7.25831, 0, -33.8418, -3.18665, 0, 0.00383526, -5.06184, 0, -23.1779, 30.1017, 0, -37.4127),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_8t3do"]
+
+[sub_resource type="Curve3D" id="Curve3D_la7dy"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -5.06184, 0, -23.1779, 0, 0, 0, -4.6018, 0, -11.8472, 4.6018, 0, 11.8472, 32.0639, 0, 0.0735931, -9.49733, 0, -0.783279, 9.49733, 0, 0.783279, 66.4305, 0, 14.956, -5.19194, 0.286269, 0.0174255, 5.19194, -0.286269, -0.0174255, 94.5553, 2.86567, 14.3555, -14.0455, 1.39763, 0.783306, 14.0455, -1.39763, -0.783306, 112.116, 1.08379, 13.2477, -5.28717, 0, -5.28717, 5.28717, 0, 5.28717, 145.797, 0, 13.9331, 21.1382, 0, -0.211388, -5.06184, 0, -23.1779, 131.158, 0, 30.0192),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_78d7u"]
+
+[sub_resource type="Curve3D" id="Curve3D_kkyah"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -0.143936, 0, 6.7649, 0, 0, 0, 7.48457, 0, -1.07951, -7.48457, 0, 1.07951, -10.0685, 0, 11.8558, 8.34818, 0, 5.39754, -8.34818, 0, -5.39754, -46.429, 0, 10.4732, -0.2159, 0, 8.85195, 0.2159, 0, -8.85195, -42.7285, 0, -15.0778, -2.89839, 0, -0.0491591, -0.143936, 0, 6.7649, -30.9594, 0, -25.9544),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_w3ksl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajlhj"]
+albedo_color = Color(0.197831, 0.537274, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5ne2v"]
+material = SubResource("StandardMaterial3D_ajlhj")
+size = Vector2(50, 50)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mkonq"]
+render_priority = -100
+shader = ExtResource("11_7eykx")
+shader_parameter/depth_gradient_color = Color(1, 0.7, 0, 1)
+shader_parameter/depth_gradient_start = 5.0
+shader_parameter/depth_gradient_end = 20.0
+shader_parameter/depth_gradient_strength = 0.53
+
+[sub_resource type="QuadMesh" id="QuadMesh_vdho3"]
+material = SubResource("ShaderMaterial_mkonq")
+size = Vector2(10, 10)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qdokm"]
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_ajlx6"]
+font_size = 48
+
+[node name="PathTestScene" type="Node3D"]
+script = ExtResource("1_rk4p5")
+character_list = Array[ExtResource("2_7tq10")]([ExtResource("3_8yhmk"), ExtResource("4_j8ata"), ExtResource("5_7eykx"), ExtResource("6_36g7h"), ExtResource("7_b6lr4"), ExtResource("8_ha36p"), ExtResource("9_jikhd"), ExtResource("10_qvxoj"), ExtResource("11_sxppv"), ExtResource("12_on5gu")])
+character_leave_button_scene = ExtResource("5_ol44e")
+character_icon_scene = ExtResource("6_5ubli")
+character_signalisation_scene = ExtResource("15_j8ata")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bmein")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 16.7499, 0)
+light_energy = 0.5
+light_indirect_energy = 0.5
+shadow_enabled = true
+
+[node name="Rails" type="Node3D" parent="."]
+
+[node name="RailS4" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9347, 0, 0)
+curve = SubResource("Curve3D_36g7h")
+in_sections = [NodePath("../RailS5"), NodePath("../RailS3_S4")]
+out_sections = [NodePath("../RailS4_S6_bridge"), NodePath("../RailS4_S11")]
+out_requirements_1 = Array[String](["F"])
+
+[node name="BakedRailsMesh" parent="Rails/RailS4" index="0"]
+mesh = SubResource("ImmediateMesh_b6lr4")
+
+[node name="Locomotive" parent="Rails/RailS4" instance=ExtResource("9_8yhmk")]
+transform = Transform3D(0.000341717, 0, -0.999967, 0, 0.999961, 0, 0.999963, 0, 0.000341718, 3.32755, 0, -0.00207399)
+progress = 3.32767
+rotation_mode = 2
+loop = false
+
+[node name="CameraFollowPos" type="Marker3D" parent="Rails/RailS4/Locomotive"]
+unique_name_in_owner = true
+transform = Transform3D(0.941779, -0.147915, 0.302064, 1.80602e-08, 0.898138, 0.439802, -0.336334, -0.414178, 0.845811, 1.97975, 2.33587, 5.44378)
+
+[node name="Station4" parent="Rails/RailS4" instance=ExtResource("8_cly8o")]
+transform = Transform3D(-0.000827114, 0, -0.999995, 0, 1, 0, 0.999995, 0, -0.000827114, 16.1874, 0, -0.000769002)
+progress = 16.1862
+waiting_character = ExtResource("9_jikhd")
+
+[node name="RailS4_S6_bridge" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+curve = SubResource("Curve3D_ha36p")
+in_sections = [NodePath("../RailS4")]
+out_sections = [NodePath("../RailS6")]
+
+[node name="BakedRailsMesh" parent="Rails/RailS4_S6_bridge" index="0"]
+mesh = SubResource("ImmediateMesh_jikhd")
+
+[node name="RailS4_S11" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+curve = SubResource("Curve3D_qvxoj")
+in_sections = [NodePath("../RailS4")]
+out_sections = [NodePath("../RailS11")]
+
+[node name="BakedRailsMesh" parent="Rails/RailS4_S11" index="0"]
+mesh = SubResource("ImmediateMesh_sxppv")
+
+[node name="RailS11" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9347, 0, 0)
+curve = SubResource("Curve3D_on5gu")
+in_sections = [NodePath("../RailS4_S11"), NodePath("../RailS10")]
+out_sections = [NodePath("../RailS11_fork"), NodePath("../RailS9")]
+out_requirements_2 = Array[String](["I"])
+
+[node name="BakedRailsMesh" parent="Rails/RailS11" index="0"]
+mesh = SubResource("ImmediateMesh_xi2te")
+
+[node name="Station11" parent="Rails/RailS11" instance=ExtResource("8_cly8o")]
+transform = Transform3D(-0.00646113, 0, -0.999978, 0, 1, 0, 0.999978, 0, -0.00646113, 15.719, 0, -0.0139241)
+progress = 15.719
+waiting_character = ExtResource("4_j8ata")
+
+[node name="RailS11_fork" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8694, 0, 0)
+curve = SubResource("Curve3D_ld8ne")
+in_sections = [NodePath("../RailS11")]
+out_sections = [NodePath("../RailS11_fork2"), NodePath("../RailS11_fork3")]
+out_requirements_2 = Array[String](["-E"])
+
+[node name="BakedRailsMesh" parent="Rails/RailS11_fork" index="0"]
+mesh = SubResource("ImmediateMesh_0n326")
+
+[node name="RailS11_fork2" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.2235, 0, -9.39877)
+curve = SubResource("Curve3D_psaan")
+in_sections = [NodePath("../RailS11_fork")]
+out_sections = [NodePath("../Rail_pre_S5")]
+
+[node name="BakedRailsMesh" parent="Rails/RailS11_fork2" index="0"]
+mesh = SubResource("ImmediateMesh_alxc0")
+
+[node name="RailS11_fork3" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.2235, 0, -9.39877)
+curve = SubResource("Curve3D_k8pig")
+in_sections = [NodePath("../RailS11_fork")]
+out_sections = [NodePath("../RailS7")]
+
+[node name="BakedRailsMesh" parent="Rails/RailS11_fork3" index="0"]
+mesh = SubResource("ImmediateMesh_k43kg")
+
+[node name="RailS7" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.8615, 0, -15.6765)
+curve = SubResource("Curve3D_ajnxc")
+in_sections = [NodePath("../RailS11_fork3"), NodePath("../RailS8_S7")]
+out_sections = [NodePath("../Rail_pre_S5")]
+
+[node name="BakedRailsMesh" parent="Rails/RailS7" index="0"]
+mesh = SubResource("ImmediateMesh_3xitk")
+
+[node name="Station7" parent="Rails/RailS7" instance=ExtResource("8_cly8o")]
+transform = Transform3D(-0.0639434, 0, 0.997951, 0, 1, 0, -0.997951, 0, -0.0639434, -23.7239, 0, -4.75922)
+progress = 29.0127
+waiting_character = ExtResource("5_7eykx")
+
+[node name="Rail_pre_S5" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9719, 0, -20.1396)
+curve = SubResource("Curve3D_6c0ht")
+in_sections = [NodePath("../RailS11_fork2"), NodePath("../RailS7")]
+out_sections = [NodePath("../RailS5"), NodePath("../Rail_pre_S6")]
+out_requirements_2 = Array[String](["-B"])
+
+[node name="BakedRailsMesh" parent="Rails/Rail_pre_S5" index="0"]
+mesh = SubResource("ImmediateMesh_uvcog")
+
+[node name="RailS5" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -20)
+curve = SubResource("Curve3D_4kkmd")
+in_sections = [NodePath("../Rail_pre_S5")]
+out_sections = [NodePath("../RailS4")]
+
+[node name="BakedRailsMesh" parent="Rails/RailS5" index="0"]
+mesh = SubResource("ImmediateMesh_m75v2")
+
+[node name="Station5" parent="Rails/RailS5" instance=ExtResource("8_cly8o")]
+transform = Transform3D(-0.0804743, 0, 0.996749, 0, 1, 0, -0.996749, 0, -0.0804743, -40.9523, 0, 0.159052)
+progress = 40.9557
+waiting_character = ExtResource("7_b6lr4")
+
+[node name="Rail_pre_S6" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -20)
+curve = SubResource("Curve3D_xnq8m")
+in_sections = [NodePath("../Rail_pre_S5")]
+out_sections = [NodePath("../RailS6")]
+
+[node name="BakedRailsMesh" parent="Rails/Rail_pre_S6" index="0"]
+mesh = SubResource("ImmediateMesh_yqb2n")
+
+[node name="RailS6" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4567, 0, -33.3636)
+curve = SubResource("Curve3D_1n0wa")
+in_sections = [NodePath("../Rail_pre_S6"), NodePath("../RailS4_S6_bridge")]
+out_sections = [NodePath("../Rail_skip_S8"), NodePath("../RailS8")]
+out_requirements_2 = Array[String](["A", "C"])
+
+[node name="BakedRailsMesh" parent="Rails/RailS6" index="0"]
+mesh = SubResource("ImmediateMesh_1u5kr")
+
+[node name="Station6" parent="Rails/RailS6" instance=ExtResource("8_cly8o")]
+transform = Transform3D(-0.047002, 0, -0.998889, 0, 1, 0, 0.998889, 0, -0.047002, 30.8616, 0, -4.91119)
+progress = 31.4626
+waiting_character = ExtResource("10_qvxoj")
+
+[node name="Rail_skip_S8" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.2296, 0, -28.6931)
+curve = SubResource("Curve3D_x6ept")
+in_sections = [NodePath("../RailS6")]
+out_sections = [NodePath("../Rail_pre_S1")]
+
+[node name="BakedRailsMesh" parent="Rails/Rail_skip_S8" index="0"]
+mesh = SubResource("ImmediateMesh_lin8e")
+
+[node name="RailS8" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.2296, 0, -28.6931)
+curve = SubResource("Curve3D_pi7hh")
+in_sections = [NodePath("../RailS6")]
+out_sections = [NodePath("../RailS8_S1"), NodePath("../RailS8_S7")]
+
+[node name="BakedRailsMesh" parent="Rails/RailS8" index="0"]
+mesh = SubResource("ImmediateMesh_c5b55")
+
+[node name="Station8" parent="Rails/RailS8" instance=ExtResource("8_cly8o")]
+transform = Transform3D(-0.998876, 0, -0.0472384, 0, 1, 0, 0.0472384, 0, -0.998876, 14.4835, 0, 33.4404)
+progress = 37.8308
+waiting_character = ExtResource("8_ha36p")
+
+[node name="RailS8_S7" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.8812, 0, 12.3947)
+curve = SubResource("Curve3D_0em68")
+in_sections = [NodePath("../RailS8")]
+out_sections = [NodePath("../RailS7")]
+
+[node name="BakedRailsMesh" parent="Rails/RailS8_S7" index="0"]
+mesh = SubResource("ImmediateMesh_32gdk")
+
+[node name="RailS8_S1" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.8812, 0, 12.3947)
+curve = SubResource("Curve3D_58e0p")
+in_sections = [NodePath("../RailS8")]
+out_sections = [NodePath("../Rail_pre_S1")]
+
+[node name="BakedRailsMesh" parent="Rails/RailS8_S1" index="0"]
+mesh = SubResource("ImmediateMesh_n0na2")
+
+[node name="Rail_pre_S1" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.482, 0, 48.713)
+curve = SubResource("Curve3D_q32ya")
+in_sections = [NodePath("../RailS8_S1"), NodePath("../Rail_skip_S8")]
+out_sections = [NodePath("../RailS1")]
+
+[node name="BakedRailsMesh" parent="Rails/Rail_pre_S1" index="0"]
+mesh = SubResource("ImmediateMesh_0akn5")
+
+[node name="RailS1" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.1214, 0, 67.4319)
+curve = SubResource("Curve3D_4vm3s")
+in_sections = [NodePath("../Rail_pre_S1"), NodePath("../RailS3_S1")]
+out_sections = [NodePath("../RailS2S3")]
+
+[node name="BakedRailsMesh" parent="Rails/RailS1" index="0"]
+mesh = SubResource("ImmediateMesh_b036x")
+
+[node name="Station1" parent="Rails/RailS1" instance=ExtResource("8_cly8o")]
+transform = Transform3D(-0.0337068, 0, 0.999425, 0, 1, 0, -0.999425, 0, -0.0337068, -33.2739, 0, 0.875955)
+progress = 33.2863
+
+[node name="RailS9" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8694, 0, 0)
+curve = SubResource("Curve3D_h5p03")
+in_sections = [NodePath("../RailS11")]
+out_sections = [NodePath("../RailS9_S2"), NodePath("../RailS10")]
+out_requirements_2 = Array[String](["-C", "-J"])
+
+[node name="BakedRailsMesh" parent="Rails/RailS9" index="0"]
+mesh = SubResource("ImmediateMesh_8pqvy")
+
+[node name="Station9" parent="Rails/RailS9" instance=ExtResource("8_cly8o")]
+transform = Transform3D(-0.999948, 0, 0.00985284, 0, 1, 0, -0.00985284, 0, -0.999948, 14.0784, 0, 22.6973)
+progress = 31.7688
+waiting_character = ExtResource("3_8yhmk")
+
+[node name="RailS9_S2" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.8941, 0, 25.9544)
+curve = SubResource("Curve3D_5hpoa")
+in_sections = [NodePath("../RailS9")]
+out_sections = [NodePath("../RailS2S3")]
+
+[node name="BakedRailsMesh" parent="Rails/RailS9_S2" index="0"]
+mesh = SubResource("ImmediateMesh_f2hcf")
+
+[node name="RailS2S3" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 69)
+curve = SubResource("Curve3D_50cgf")
+in_sections = [NodePath("../RailS1"), NodePath("../RailS9_S2")]
+out_sections = [NodePath("../RailS3_S4"), NodePath("../RailS3_S1")]
+out_requirements_1 = Array[String](["-G"])
+
+[node name="BakedRailsMesh" parent="Rails/RailS2S3" index="0"]
+mesh = SubResource("ImmediateMesh_j2ebv")
+
+[node name="Station2" parent="Rails/RailS2S3" instance=ExtResource("8_cly8o")]
+transform = Transform3D(0.220027, 0, 0.975492, 0, 1, 0, -0.975492, 0, 0.220027, -27.8198, 0, -3.25098)
+progress = 28.0665
+waiting_character = ExtResource("12_on5gu")
+
+[node name="Station3" parent="Rails/RailS2S3" instance=ExtResource("8_cly8o")]
+transform = Transform3D(0.853647, 0, 0.520848, 0, 1, 0, -0.520848, 0, 0.853647, -67.3271, 0, -24.9179)
+progress = 74.2141
+waiting_character = ExtResource("11_sxppv")
+
+[node name="RailS3_S4" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.0364, 0, 37.4127)
+curve = SubResource("Curve3D_5xo5t")
+in_sections = [NodePath("../RailS2S3")]
+out_sections = [NodePath("../RailS4")]
+
+[node name="BakedRailsMesh" parent="Rails/RailS3_S4" index="0"]
+mesh = SubResource("ImmediateMesh_8t3do")
+
+[node name="RailS3_S1" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.0364, 0, 37.4127)
+curve = SubResource("Curve3D_la7dy")
+in_sections = [NodePath("../RailS2S3")]
+out_sections = [NodePath("../RailS1")]
+
+[node name="BakedRailsMesh" parent="Rails/RailS3_S1" index="0"]
+mesh = SubResource("ImmediateMesh_78d7u")
+
+[node name="RailS10" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.8941, 0, 25.9544)
+curve = SubResource("Curve3D_kkyah")
+in_sections = [NodePath("../RailS9")]
+out_sections = [NodePath("../RailS11")]
+
+[node name="BakedRailsMesh" parent="Rails/RailS10" index="0"]
+mesh = SubResource("ImmediateMesh_w3ksl")
+
+[node name="Station10" parent="Rails/RailS10" instance=ExtResource("8_cly8o")]
+transform = Transform3D(0.109115, 0, 0.994026, 0, 1, 0, -0.994026, 0, 0.109115, -36.8345, 0, 13.3015)
+progress = 44.2793
+waiting_character = ExtResource("6_36g7h")
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.94145, 0, 0, 0, 1, 0, 0, 0, 2.66728, 31.181, -0.744017, 16.9719)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_5ne2v")
+
+[node name="CameraShaker" type="Node3D" parent="." node_paths=PackedStringArray("target_node")]
+unique_name_in_owner = true
+transform = Transform3D(0.337113, 0.414042, -0.845532, 1.93061e-08, 0.898103, 0.439785, 0.941464, -0.148257, 0.302763, -12.8625, 2.33578, 2.33664)
+script = ExtResource("10_j8ata")
+target_node = NodePath("../Rails/RailS4/Locomotive/CameraFollowPos")
+follow_rotation = true
+follow_global_coordinates = true
+move_speed = 8.0
+rotation_speed = 8.0
+metadata/_custom_type_script = "uid://wrgu8dfp4pw3"
+
+[node name="Camera3D" type="Camera3D" parent="CameraShaker"]
+
+[node name="ScreenEffect" type="MeshInstance3D" parent="CameraShaker/Camera3D"]
+transform = Transform3D(0.999966, 0, 0, 0, 0.999962, 0, 0, 0, 0.999971, -2.98013e-08, 2.6076e-08, -1.03348)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_vdho3")
+skeleton = NodePath("../../../Rails/RailS4/Locomotive")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DirectionUI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/DirectionUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -234.0
+offset_top = -173.0
+offset_right = 234.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/DirectionUI/Panel"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -163.0
+offset_top = -95.0
+offset_right = -99.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("21_7eykx")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/DirectionUI/Panel"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 93.0
+offset_top = -95.0
+offset_right = 157.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("21_7eykx")
+expand_mode = 1
+flip_h = true
+
+[node name="LeverDirection" type="TextureRect" parent="CanvasLayer/DirectionUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -256.0
+offset_right = 128.0
+grow_horizontal = 2
+grow_vertical = 0
+rotation = -0.610865
+pivot_offset = Vector2(128, 256)
+mouse_filter = 0
+mouse_default_cursor_shape = 10
+texture = ExtResource("12_36g7h")
+script = ExtResource("13_b6lr4")
+
+[node name="SignalisationLeft" type="VBoxContainer" parent="CanvasLayer/DirectionUI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -218.0
+offset_top = -74.0
+offset_right = -178.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 2
+
+[node name="SignalisationRight" type="VBoxContainer" parent="CanvasLayer/DirectionUI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 160.0
+offset_top = -166.0
+offset_right = 224.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 2
+
+[node name="SpeedUI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="LeverSpeed" type="TextureRect" parent="CanvasLayer/SpeedUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -256.0
+offset_right = 128.0
+grow_horizontal = 2
+grow_vertical = 0
+rotation = -0.785398
+pivot_offset = Vector2(128, 256)
+mouse_filter = 0
+mouse_default_cursor_shape = 11
+texture = ExtResource("12_36g7h")
+script = ExtResource("14_ha36p")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/SpeedUI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -128.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("25_36g7h")
+
+[node name="MarginContainerCharacters" type="MarginContainer" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_right = 96.0
+offset_bottom = 96.0
+
+[node name="PanelCharacters" type="Panel" parent="CanvasLayer/MarginContainerCharacters"]
+layout_mode = 2
+
+[node name="HBoxContainerCharacters" type="HBoxContainer" parent="CanvasLayer/MarginContainerCharacters"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TextureLocomotive" parent="CanvasLayer/MarginContainerCharacters/HBoxContainerCharacters" instance=ExtResource("6_5ubli")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PanelStation" type="Panel" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 321.0
+offset_top = 34.0
+offset_right = -321.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelStation"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainerNewChar" type="VBoxContainer" parent="CanvasLayer/PanelStation/MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="LabelTitre" type="Label" parent="CanvasLayer/PanelStation/MarginContainer/VBoxContainerNewChar"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Un nouveau perso !"
+label_settings = SubResource("LabelSettings_qdokm")
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/PanelStation/MarginContainer/VBoxContainerNewChar"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PanelStation/MarginContainer/VBoxContainerNewChar/CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("15_jikhd")
+
+[node name="Container" type="Control" parent="CanvasLayer/PanelStation/MarginContainer/VBoxContainerNewChar"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelStation/MarginContainer/VBoxContainerNewChar/Container"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -26.5
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="ButtonPrendre" type="Button" parent="CanvasLayer/PanelStation/MarginContainer/VBoxContainerNewChar/Container/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Prendre"
+
+[node name="ButtonLaisser" type="Button" parent="CanvasLayer/PanelStation/MarginContainer/VBoxContainerNewChar/Container/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Laisser"
+
+[node name="VBoxContainerPutChar" type="VBoxContainer" parent="CanvasLayer/PanelStation/MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelStation/MarginContainer/VBoxContainerPutChar"]
+layout_mode = 2
+text = "Qui Laisser ?"
+label_settings = SubResource("LabelSettings_ajlx6")
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/PanelStation/MarginContainer/VBoxContainerPutChar"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainerLeaveButtons" type="VBoxContainer" parent="CanvasLayer/PanelStation/MarginContainer/VBoxContainerPutChar/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ButtonNoOne" type="Button" parent="CanvasLayer/PanelStation/MarginContainer/VBoxContainerPutChar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Personne"
+
+[connection signal="gui_input" from="CanvasLayer/DirectionUI/LeverDirection" to="CanvasLayer/DirectionUI/LeverDirection" method="_on_gui_input"]
+[connection signal="gui_input" from="CanvasLayer/SpeedUI/LeverSpeed" to="CanvasLayer/SpeedUI/LeverSpeed" method="_on_gui_input"]
+[connection signal="pressed" from="CanvasLayer/PanelStation/MarginContainer/VBoxContainerNewChar/Container/HBoxContainer/ButtonPrendre" to="." method="_on_button_prendre_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelStation/MarginContainer/VBoxContainerNewChar/Container/HBoxContainer/ButtonLaisser" to="." method="_on_button_laisser_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelStation/MarginContainer/VBoxContainerPutChar/ButtonNoOne" to="." method="_on_button_no_one_pressed"]
+
+[editable path="Rails/RailS4"]
+[editable path="Rails/RailS4_S6_bridge"]
+[editable path="Rails/RailS4_S11"]
+[editable path="Rails/RailS11"]
+[editable path="Rails/RailS11_fork"]
+[editable path="Rails/RailS11_fork2"]
+[editable path="Rails/RailS11_fork3"]
+[editable path="Rails/RailS7"]
+[editable path="Rails/Rail_pre_S5"]
+[editable path="Rails/RailS5"]
+[editable path="Rails/Rail_pre_S6"]
+[editable path="Rails/RailS6"]
+[editable path="Rails/Rail_skip_S8"]
+[editable path="Rails/RailS8"]
+[editable path="Rails/RailS8_S7"]
+[editable path="Rails/RailS8_S1"]
+[editable path="Rails/Rail_pre_S1"]
+[editable path="Rails/RailS1"]
+[editable path="Rails/RailS9"]
+[editable path="Rails/RailS9_S2"]
+[editable path="Rails/RailS2S3"]
+[editable path="Rails/RailS3_S4"]
+[editable path="Rails/RailS3_S1"]
+[editable path="Rails/RailS10"]

@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://b74sqcme40821"]
+
+[ext_resource type="Texture2D" uid="uid://c0jllh6hysg1s" path="res://assets/textures/need.png" id="1_thldm"]
+[ext_resource type="Texture2D" uid="uid://dm7xfle4helcq" path="res://assets/textures/J.png" id="2_mhgbf"]
+[ext_resource type="Script" uid="uid://bm5gw3y4br76d" path="res://scripts/character_signalisation.gd" id="2_wwhi1"]
+[ext_resource type="Texture2D" uid="uid://d7hg2lm4vdl" path="res://assets/textures/forbidden.png" id="3_wwhi1"]
+
+[node name="CharacterSignalisation" type="TextureRect"]
+custom_minimum_size = Vector2(64, 64)
+texture = ExtResource("1_thldm")
+expand_mode = 1
+script = ExtResource("2_wwhi1")
+
+[node name="CharacterTexture" type="TextureRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mhgbf")
+expand_mode = 1
+
+[node name="ForbiddenTexture" type="TextureRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_wwhi1")
+expand_mode = 1
