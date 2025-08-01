@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm8epolu4ioif"]
+
+[ext_resource type="Script" uid="uid://eoyxaxq2q24" path="res://scripts/personnage/personnage.gd" id="1_x2r8k"]
+[ext_resource type="Texture2D" uid="uid://cmwu0ft1mn30n" path="res://assets/modele/2D/personnages/personnages_trompette.png" id="2_7wjrw"]
+
+[node name="personnage_trompette" type="Node3D" node_paths=PackedStringArray("sprite_3d")]
+script = ExtResource("1_x2r8k")
+sprite_3d = NodePath("Sprite3D")
+metadata/_custom_type_script = "uid://eoyxaxq2q24"
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+billboard = 2
+texture = ExtResource("2_7wjrw")

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3b1jfnwdtos5"
-path.s3tc="res://.godot/imported/level_slot0_albedo_bump.png-072727021c72ed911fa84673a2cd1f33.s3tc.ctex"
+uid="uid://dwx03j3l8wumw"
+path.s3tc="res://.godot/imported/dlv_ground4a.png-12c4d7debbf6f8af9a1bbcb5c64cc54f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/level_slot0_albedo_bump.png"
-dest_files=["res://.godot/imported/level_slot0_albedo_bump.png-072727021c72ed911fa84673a2cd1f33.s3tc.ctex"]
+source_file="res://assets/textures/grass/dlv_ground4a.png"
+dest_files=["res://.godot/imported/dlv_ground4a.png-12c4d7debbf6f8af9a1bbcb5c64cc54f.s3tc.ctex"]
 
 [params]
 
@@ -24,12 +24,12 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
+roughness/mode=0
 roughness/src_normal=""
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

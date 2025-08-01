@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://37ak5bnxjixy"
-path.s3tc="res://.godot/imported/foliage.png-933ced5af789ed488a80cf66727a79bb.s3tc.ctex"
+uid="uid://cw5o5qfbwrjvr"
+path.s3tc="res://.godot/imported/montagne3.png-27a394fa1e7b83f2d68d803797e0e9ec.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/grass/foliage.png"
-dest_files=["res://.godot/imported/foliage.png-933ced5af789ed488a80cf66727a79bb.s3tc.ctex"]
+source_file="res://assets/modele/2D/environment/nature/montagne3.png"
+dest_files=["res://.godot/imported/montagne3.png-27a394fa1e7b83f2d68d803797e0e9ec.s3tc.ctex"]
 
 [params]
 
