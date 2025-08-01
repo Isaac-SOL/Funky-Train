@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3o252k3b06o0"]
+
+[ext_resource type="Script" uid="uid://dqclrpibg0m2f" path="res://scripts/wagon/wagon.gd" id="1_dj4fc"]
+[ext_resource type="PackedScene" uid="uid://51kvji61lwpi" path="res://assets/modele/3D/wagon/wagon_guitare/wagons_guitare_mesh.tscn" id="2_twyui"]
+
+[node name="wagon_guitare" type="Node3D" node_paths=PackedStringArray("wheel_1", "wheel_2", "wheel_3", "wheel_4", "wheel_5", "wheel_6", "wheel_7", "wheel_8")]
+script = ExtResource("1_dj4fc")
+wheel_1 = NodePath("wagons_guitare_mesh/medium_wheel_2_001")
+wheel_2 = NodePath("wagons_guitare_mesh/medium_wheel_2_002")
+wheel_3 = NodePath("wagons_guitare_mesh/small_wheel_2_003")
+wheel_4 = NodePath("wagons_guitare_mesh/small_wheel_2_004")
+wheel_5 = NodePath("wagons_guitare_mesh/small_wheel_2_005")
+wheel_6 = NodePath("wagons_guitare_mesh/small_wheel_2_006")
+wheel_7 = NodePath("wagons_guitare_mesh/medium_wheel_2_003")
+wheel_8 = NodePath("wagons_guitare_mesh/medium_wheel_2_004")
+metadata/_custom_type_script = "uid://dqclrpibg0m2f"
+
+[node name="wagons_guitare_mesh" parent="." instance=ExtResource("2_twyui")]
+
+[editable path="wagons_guitare_mesh"]

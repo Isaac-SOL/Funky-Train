@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://capa820ir3vho"]
+
+[ext_resource type="Script" uid="uid://d3y48j1b2i22e" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ppgk2"]
+[ext_resource type="Resource" uid="uid://c3axel685jlwo" path="res://assets/HTerrain/data.hterrain" id="2_2r41h"]
+[ext_resource type="Script" uid="uid://dw84e0nu3ialr" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_klq6b"]
+[ext_resource type="Texture2D" uid="uid://bp7amcfurrt7d" path="res://assets/textures/grass/grass_32x32.png" id="4_mx8sn"]
+[ext_resource type="PackedScene" uid="uid://bams4837w8bcp" path="res://scenes/wagon/voiture_triangle.tscn" id="5_ppgk2"]
+[ext_resource type="PackedScene" uid="uid://bo2gdx8joos8y" path="res://scenes/wagon/chef_locomotive.tscn" id="6_2r41h"]
+[ext_resource type="PackedScene" uid="uid://dn43ddadp7f0a" path="res://scenes/wagon/wagon_batterie.tscn" id="7_klq6b"]
+[ext_resource type="PackedScene" uid="uid://b3o252k3b06o0" path="res://scenes/wagon/wagon_guitare.tscn" id="8_b121j"]
+
+[sub_resource type="Resource" id="Resource_1tp2x"]
+script = ExtResource("3_klq6b")
+mode = 0
+textures = [[ExtResource("4_mx8sn")], [null]]
+
+[node name="level" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.146186, 0.478152, 0, 0.956305, 0.292372, -0.5, 0.253201, -0.828184, 0, 0, 0)
+light_color = Color(0.791999, 0.791999, 0.791999, 1)
+light_energy = 1.5
+shadow_enabled = true
+
+[node name="HTerrain" type="Node3D" parent="."]
+script = ExtResource("1_ppgk2")
+centered = true
+_terrain_data = ExtResource("2_2r41h")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_1tp2x")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = false
+shader_params/u_tile_reduction = null
+metadata/_custom_type_script = "uid://d3y48j1b2i22e"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.862169, 0, -0.506621, 0, 1, 0, 0.506621, 0, -0.862169, 37.7816, 6.90403, 44.8704)
+
+[node name="wagon" type="Node3D" parent="."]
+
+[node name="voiture_triangle" parent="wagon" instance=ExtResource("5_ppgk2")]
+transform = Transform3D(1, 0, 0, 0, 0.998271, -0.0587837, 0, 0.0587837, 0.998271, 43.8514, 3.96033, 49.3267)
+
+[node name="chef_locomotive" parent="wagon" instance=ExtResource("6_2r41h")]
+transform = Transform3D(0.998041, -0.0276082, 0.0561465, 0.0315985, 0.996942, -0.0714699, -0.0540017, 0.073104, 0.995861, 47.3017, 4.02344, 49.229)
+
+[node name="wagon_batterie" parent="wagon" instance=ExtResource("7_klq6b")]
+transform = Transform3D(0.999219, 0.0395214, 0, -0.0395214, 0.999219, 0, 0, 0, 1, 40.8908, 4.16284, 49.3193)
+
+[node name="wagon_guitare" parent="wagon" instance=ExtResource("8_b121j")]
+transform = Transform3D(0.998194, 0.0600729, 0, -0.0600729, 0.998194, 0, 0, 0, 1, 37.3964, 4.31485, 49.3303)
