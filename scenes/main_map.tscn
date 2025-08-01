@@ -281,6 +281,7 @@ font_size = 48
 font_size = 48
 
 [node name="PathTestScene" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.04882, 0)
 script = ExtResource("1_rk4p5")
 character_list = Array[ExtResource("2_7tq10")]([ExtResource("3_8yhmk"), ExtResource("4_j8ata"), ExtResource("5_7eykx"), ExtResource("6_36g7h"), ExtResource("7_b6lr4"), ExtResource("8_ha36p"), ExtResource("9_jikhd"), ExtResource("10_qvxoj"), ExtResource("11_sxppv"), ExtResource("12_on5gu")])
 character_leave_button_scene = ExtResource("5_ol44e")
@@ -319,7 +320,7 @@ unique_name_in_owner = true
 transform = Transform3D(0.941779, -0.147915, 0.302064, 1.80602e-08, 0.898138, 0.439802, -0.336334, -0.414178, 0.845811, 1.97975, 2.33587, 5.44378)
 
 [node name="Station4" parent="Rails/RailS4" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.000827114, 0, -0.999995, 0, 1, 0, 0.999995, 0, -0.000827114, 16.1874, 0, -0.000769002)
+transform = Transform3D(-0.000827113, 0, -0.999994, 0, 1, 0, 0.999994, 0, -0.000827113, 16.1874, 0, -0.000769002)
 progress = 16.1862
 waiting_character = ExtResource("9_jikhd")
 
@@ -418,7 +419,7 @@ out_sections = [NodePath("../RailS4")]
 mesh = SubResource("ImmediateMesh_m75v2")
 
 [node name="Station5" parent="Rails/RailS5" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.0804743, 0, 0.996749, 0, 1, 0, -0.996749, 0, -0.0804743, -40.9523, 0, 0.159052)
+transform = Transform3D(-0.0804742, 0, 0.996748, 0, 1, 0, -0.996748, 0, -0.0804742, -40.9523, 0, 0.159052)
 progress = 40.9557
 waiting_character = ExtResource("7_b6lr4")
 
@@ -442,7 +443,7 @@ out_requirements_2 = Array[String](["A", "C"])
 mesh = SubResource("ImmediateMesh_1u5kr")
 
 [node name="Station6" parent="Rails/RailS6" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.047002, 0, -0.998889, 0, 1, 0, 0.998889, 0, -0.047002, 30.8616, 0, -4.91119)
+transform = Transform3D(-0.047002, 0, -0.998888, 0, 1, 0, 0.998888, 0, -0.047002, 30.8616, 0, -4.91119)
 progress = 31.4626
 waiting_character = ExtResource("10_qvxoj")
 
@@ -465,7 +466,7 @@ out_sections = [NodePath("../RailS8_S1"), NodePath("../RailS8_S7")]
 mesh = SubResource("ImmediateMesh_c5b55")
 
 [node name="Station8" parent="Rails/RailS8" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.998876, 0, -0.0472384, 0, 1, 0, 0.0472384, 0, -0.998876, 14.4835, 0, 33.4404)
+transform = Transform3D(-0.998875, 0, -0.0472384, 0, 1, 0, 0.0472384, 0, -0.998875, 14.4835, 0, 33.4404)
 progress = 37.8308
 waiting_character = ExtResource("8_ha36p")
 
@@ -506,7 +507,7 @@ out_sections = [NodePath("../RailS2S3")]
 mesh = SubResource("ImmediateMesh_b036x")
 
 [node name="Station1" parent="Rails/RailS1" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.0337068, 0, 0.999425, 0, 1, 0, -0.999425, 0, -0.0337068, -33.2739, 0, 0.875955)
+transform = Transform3D(-0.0337067, 0, 0.999424, 0, 1, 0, -0.999424, 0, -0.0337067, -33.2739, 0, 0.875955)
 progress = 33.2863
 
 [node name="RailS9" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
@@ -520,7 +521,7 @@ out_requirements_2 = Array[String](["-C", "-J"])
 mesh = SubResource("ImmediateMesh_8pqvy")
 
 [node name="Station9" parent="Rails/RailS9" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.999948, 0, 0.00985284, 0, 1, 0, -0.00985284, 0, -0.999948, 14.0784, 0, 22.6973)
+transform = Transform3D(-0.999948, 0, 0.0098526, 0, 1, 0, -0.0098526, 0, -0.999948, 14.0784, 0, 22.6972)
 progress = 31.7688
 waiting_character = ExtResource("3_8yhmk")
 
@@ -587,6 +588,7 @@ waiting_character = ExtResource("6_36g7h")
 
 [node name="Ground" type="MeshInstance3D" parent="."]
 transform = Transform3D(3.94145, 0, 0, 0, 1, 0, 0, 0, 2.66728, 31.181, -0.744017, 16.9719)
+visible = false
 cast_shadow = 0
 mesh = SubResource("PlaneMesh_5ne2v")
 
@@ -602,6 +604,7 @@ rotation_speed = 8.0
 metadata/_custom_type_script = "uid://wrgu8dfp4pw3"
 
 [node name="Camera3D" type="Camera3D" parent="CameraShaker"]
+current = true
 
 [node name="ScreenEffect" type="MeshInstance3D" parent="CameraShaker/Camera3D"]
 transform = Transform3D(0.999966, 0, 0, 0, 0.999962, 0, 0, 0, 0.999971, -2.98013e-08, 2.6076e-08, -1.03348)

@@ -1,10 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://capa820ir3vho"]
+[gd_scene load_steps=31 format=3 uid="uid://capa820ir3vho"]
 
 [ext_resource type="Script" uid="uid://d3y48j1b2i22e" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ppgk2"]
 [ext_resource type="Resource" uid="uid://c3axel685jlwo" path="res://assets/HTerrain/data.hterrain" id="2_2r41h"]
 [ext_resource type="Script" uid="uid://dw84e0nu3ialr" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_klq6b"]
 [ext_resource type="Texture2D" uid="uid://buano34kf71u8" path="res://assets/textures/grass/light_grass.png" id="4_h6wmr"]
 [ext_resource type="Script" uid="uid://cpdd44k8ek70j" path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" id="5_8gofh"]
+[ext_resource type="Texture2D" uid="uid://cm5mcoa2q2adj" path="res://assets/textures/sand/sand_32x32.png" id="5_556r4"]
 [ext_resource type="PackedScene" uid="uid://bams4837w8bcp" path="res://scenes/wagon/voiture_triangle.tscn" id="5_ppgk2"]
 [ext_resource type="PackedScene" uid="uid://bo2gdx8joos8y" path="res://scenes/wagon/chef_locomotive.tscn" id="6_2r41h"]
 [ext_resource type="Texture2D" uid="uid://c1qnwv56e3mib" path="res://assets/modele/2D/environment/nature/arbre2.png" id="6_8gofh"]
@@ -21,27 +22,24 @@
 [ext_resource type="PackedScene" uid="uid://c6q23mh8f6g0u" path="res://scenes/personnages/personnage_miaou.tscn" id="12_gunhw"]
 [ext_resource type="Texture2D" uid="uid://cw5o5qfbwrjvr" path="res://assets/modele/2D/environment/nature/montagne3.png" id="12_xy2fk"]
 [ext_resource type="PackedScene" uid="uid://usgohfm8d35i" path="res://scenes/personnages/personnage_saxophone.tscn" id="13_8gofh"]
+[ext_resource type="Texture2D" uid="uid://ciweow80fcdx6" path="res://assets/modele/2D/environment/nature/arbre1.png" id="13_cmcjb"]
 [ext_resource type="PackedScene" uid="uid://bbmuc3ifpotvt" path="res://scenes/personnages/personnage_synthé.tscn" id="14_h6wmr"]
 [ext_resource type="PackedScene" uid="uid://bfln4belomymj" path="res://scenes/personnages/personnage_triangle.tscn" id="15_pqd0y"]
 [ext_resource type="PackedScene" uid="uid://cm8epolu4ioif" path="res://scenes/personnages/personnage_trompette.tscn" id="16_5k0ak"]
 [ext_resource type="PackedScene" uid="uid://cabynbqwkyvd1" path="res://scenes/personnages/personnage_vocoder.tscn" id="17_wu01b"]
+[ext_resource type="PackedScene" uid="uid://ddei87jmflwu2" path="res://scenes/main_map.tscn" id="26_xy2fk"]
+[ext_resource type="PackedScene" uid="uid://ddhc7hdytvuvf" path="res://assets/shaders/water_shader.tscn" id="29_7agi7"]
 
 [sub_resource type="Resource" id="Resource_1tp2x"]
 script = ExtResource("3_klq6b")
 mode = 0
-textures = [[ExtResource("4_h6wmr")], [null]]
+textures = [[ExtResource("4_h6wmr"), ExtResource("5_556r4")], [null, null]]
 
 [node name="level" type="Node3D"]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.146186, 0.478152, 0, 0.956305, 0.292372, -0.5, 0.253201, -0.828184, 0, 0, 0)
-light_energy = 3.0
-light_specular = 0.2
-shadow_enabled = true
-shadow_opacity = 0.9
-
 [node name="HTerrain" type="Node3D" parent="."]
 script = ExtResource("1_ppgk2")
+ambient_wind = 0.1
 centered = true
 _terrain_data = ExtResource("2_2r41h")
 chunk_size = 32
@@ -57,7 +55,7 @@ cast_shadow = 1
 shader_params/u_ground_uv_scale = 1.0
 shader_params/u_depth_blending = true
 shader_params/u_triplanar = false
-shader_params/u_tile_reduction = null
+shader_params/u_tile_reduction = Vector4(1, 1, 1, 1)
 metadata/_custom_type_script = "uid://d3y48j1b2i22e"
 
 [node name="HTerrainDetailLayer" type="Node3D" parent="HTerrain"]
@@ -130,6 +128,19 @@ shader_params/u_instance_scale = Vector3(10, 10, 10)
 shader_params/u_roughness = 0.0
 metadata/_editor_icon = ExtResource("7_pqd0y")
 
+[node name="@Node3D@38128" type="Node3D" parent="HTerrain"]
+script = ExtResource("5_8gofh")
+layer_index = 6
+texture = ExtResource("13_cmcjb")
+view_distance = 500.0
+density = 0.2
+shader_params/u_globalmap_tint_bottom = 0.0
+shader_params/u_globalmap_tint_top = 0.0
+shader_params/u_bottom_ao = 0.0
+shader_params/u_instance_scale = Vector3(8, 8, 8)
+shader_params/u_roughness = 0.0
+metadata/_editor_icon = ExtResource("7_pqd0y")
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.861028, 0.191668, -0.471057, -0.00795722, 0.92107, 0.389317, 0.508496, 0.338961, -0.791541, 35.4061, 6.90403, 44.8704)
 
@@ -173,5 +184,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.9559, 5.10145, 47.9892)
 [node name="personnage_vocoder" parent="personnage" instance=ExtResource("17_wu01b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.7643, 5.00426, 45.6093)
 
-[node name="personnage_batterie" parent="." instance=ExtResource("10_ux5qa")]
+[node name="personnage_batterie" parent="personnage" instance=ExtResource("10_ux5qa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.9477, 4.97593, 47.5926)
+
+[node name="PathTestScene" parent="." instance=ExtResource("26_xy2fk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.586, 0.0779428, -18.5415)
+
+[node name="water_shader" parent="." instance=ExtResource("29_7agi7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -359.311, -2.5, 0)

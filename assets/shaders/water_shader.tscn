@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddhc7hdytvuvf"]
+
+[ext_resource type="Shader" uid="uid://b0di41ybtvcxw" path="res://assets/shaders/water_shader.gdshader" id="1_55vog"]
+[ext_resource type="Texture2D" uid="uid://cumu2lcbg6d6" path="res://assets/textures/water/water_1.bmp" id="2_hr7d7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hr7d7"]
+render_priority = 0
+shader = ExtResource("1_55vog")
+shader_parameter/slide_speed = 0.3
+shader_parameter/wobble_speed = 1.0
+shader_parameter/wobble_intensity = 0.4
+shader_parameter/texture_scale = 0.2
+shader_parameter/water = ExtResource("2_hr7d7")
+
+[sub_resource type="QuadMesh" id="QuadMesh_xs01w"]
+material = SubResource("ShaderMaterial_hr7d7")
+size = Vector2(1000, 1000)
+orientation = 1
+
+[node name="water_shader" type="MeshInstance3D"]
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_xs01w")
