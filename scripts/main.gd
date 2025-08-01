@@ -3,6 +3,7 @@ class_name Main extends Node3D
 static var instance: Main
 
 @export var character_leave_button_scene: PackedScene
+@export var character_icon_scene: PackedScene
 
 var active_station: Station
 
@@ -26,6 +27,18 @@ func stop_at_station(station: Station):
 			%VBoxContainerLeaveButtons.add_child(new_button)
 		%PanelStation.visible = true
 		%VBoxContainerPutChar.visible = true
+
+func update_characters_ui():
+	for child in %HBoxContainerCharacters.get_children():
+		if child != %TextureLocomotive:
+			child.queue_free()
+	for carriage: Carriage in Locomotive.instance.carriages:
+		var new_texture: TextureRect = character_icon_scene.instantiate()
+		new_texture.texture = carriage.character.sprite
+		%HBoxContainerCharacters.add_child(new_texture)
+		%HBoxContainerCharacters.move_child(new_texture, 0)
+	await get_tree().process_frame
+	%MarginContainerCharacters.size = Vector2.ZERO
 
 func _on_button_prendre_pressed() -> void:
 	close_add_character()
