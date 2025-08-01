@@ -25,36 +25,27 @@ background_mode = 2
 sky = SubResource("Sky_r5u47")
 tonemap_mode = 2
 
-[sub_resource type="Curve3D" id="Curve3D_1x2nj"]
+[sub_resource type="Curve3D" id="Curve3D_c18if"]
 _data = {
 "points": PackedVector3Array(-1.66903, -0.147171, 0.283185, 1, 0, 0, 0, 0, 0, -1, 0, 0, 2.37323, 0, -3.00137, 8, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_qdokm"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_0ihyj"]
 
-[sub_resource type="Curve3D" id="Curve3D_c18if"]
+[sub_resource type="Curve3D" id="Curve3D_1jv2l"]
 _data = {
 "points": PackedVector3Array(-1.76908, -0.113597, -0.0882057, 1, 0, 0, 0, 0, 0, -1.33983, -0.0965705, 0.936519, 1.33983, 0.0965705, -0.936519, 5.73861, -0.0951204, -1.3665, 0.0668678, 0, 3.20955, -0.0668678, 0, -3.20955, 8.4027, 9.53674e-07, -8.02462),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_0ihyj"]
-
-[sub_resource type="Curve3D" id="Curve3D_1jv2l"]
-_data = {
-"points": PackedVector3Array(-1.76908, -0.113597, -0.0882057, -0.0668678, 0, -3.20955, 0, 0, 0, 2.84241, -0.0965576, 0.535043, -2.84241, 0.0965576, -0.535043, -6.82745, -0.0950937, -5.89248, 2.10235, -0.10162, 0.10503, -2.10235, 0.10162, -0.10503, -18.2331, -0.622707, -8.43763, 0.969765, 0, -3.04306, -0.969765, 0, 3.04306, -25.1345, -9.53674e-07, -4.15518),
-"tilts": PackedFloat32Array(0, 0, 0, 0)
-}
-point_count = 4
-
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_jkok2"]
 
 [sub_resource type="Curve3D" id="Curve3D_6nout"]
 _data = {
-"points": PackedVector3Array(-1.76908, -0.113597, -0.0882057, -0.969765, 0, 3.04306, 0, 0, 0, 3.31207, -0.0965576, 2.85388, -3.31207, 0.0965576, -2.85388, -5.364, -0.0950928, 4.41689, -4.18003, 0, -2.54146, 4.18003, 0, 2.54146, -8.03428, 0, 10.9772, -1, 0, 0, 2.67522, 0, -0.568483, 8.73184, 0, 12.1798),
+"points": PackedVector3Array(-1.76908, -0.113597, -0.0882057, -0.0668678, 0, -3.20955, 0, 0, 0, 2.84241, -0.0965576, 0.535043, -2.84241, 0.0965576, -0.535043, -6.82745, -0.0950937, -5.89248, 2.10235, -0.10162, 0.10503, -2.10235, 0.10162, -0.10503, -18.2331, -0.622707, -8.43763, 0.969765, 0, -3.04306, -0.969765, 0, 3.04306, -25.1345, -9.53674e-07, -4.15518),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
@@ -63,21 +54,30 @@ point_count = 4
 
 [sub_resource type="Curve3D" id="Curve3D_17aas"]
 _data = {
+"points": PackedVector3Array(-1.76908, -0.113597, -0.0882057, -0.969765, 0, 3.04306, 0, 0, 0, 3.31207, -0.0965576, 2.85388, -3.31207, 0.0965576, -2.85388, -5.364, -0.0950928, 4.41689, -4.18003, 0, -2.54146, 4.18003, 0, 2.54146, -8.03428, 0, 10.9772, -1, 0, 0, 2.67522, 0, -0.568483, 8.73184, 0, 12.1798),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_vdho3"]
+
+[sub_resource type="Curve3D" id="Curve3D_of6ln"]
+_data = {
 "points": PackedVector3Array(-1.76908, -0.113597, -0.0882057, -0.0668678, 0, -3.20955, 0, 0, 0, -3.00962, -0.0965576, -1.97297, 3.00962, 0.0965576, 1.97297, 7.55965, -0.0950937, -2.31264, 2.84242, 0, -2.40769, -2.84242, 0, 2.40769, 4.95323, -0.0186777, 11.4942, 2.47458, 0, 1.97297, -2.47458, 0, -1.97297, -20.1938, -0.00988865, 12.0962, -1, 0, 0, 4.49488, 0, -0.387467, -16.4027, -9.53674e-07, 8.02462),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_vdho3"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_u8mta"]
 
-[sub_resource type="Curve3D" id="Curve3D_of6ln"]
+[sub_resource type="Curve3D" id="Curve3D_frps4"]
 _data = {
 "points": PackedVector3Array(-8.1327, 0, -0.012283, 8.1327, 0, 0.012283, 0, 0, 0, 3.2323, -0.0965576, 1.59339, -3.2323, 0.0965576, -1.59339, -5.02413, -0.0950928, -9.00174, 0.969765, 0, -3.04306, 6.19145, 0, 1.04708, -16.7318, 0, -12.1798),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_u8mta"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_ajlhj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qdokm"]
 font_size = 48
@@ -98,31 +98,31 @@ transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -
 shadow_enabled = true
 
 [node name="Rail" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_71sj3")]
-curve = SubResource("Curve3D_1x2nj")
+curve = SubResource("Curve3D_c18if")
 in_sections = [NodePath("../Rail4"), NodePath("../Rail5")]
 out_sections = [NodePath("../Rail6"), NodePath("../Rail2")]
 out_requirements_1 = Array[String](["Godot Bro"])
 
 [node name="BakedRailsMesh" parent="Rail" index="0"]
-mesh = SubResource("ImmediateMesh_qdokm")
+mesh = SubResource("ImmediateMesh_0ihyj")
 
 [node name="Rail2" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_71sj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
-curve = SubResource("Curve3D_c18if")
+curve = SubResource("Curve3D_1jv2l")
 in_sections = [NodePath("../Rail")]
 out_sections = [NodePath("../Rail3"), NodePath("../Rail5")]
 
 [node name="BakedRailsMesh" parent="Rail2" index="0"]
-mesh = SubResource("ImmediateMesh_0ihyj")
+mesh = SubResource("ImmediateMesh_jkok2")
 
 [node name="Rail3" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_71sj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4027, 9.53674e-07, -8.02462)
-curve = SubResource("Curve3D_1jv2l")
+curve = SubResource("Curve3D_6nout")
 in_sections = [NodePath("../Rail2")]
 out_sections = [NodePath("../Rail4")]
 
 [node name="BakedRailsMesh" parent="Rail3" index="0"]
-mesh = SubResource("ImmediateMesh_jkok2")
+mesh = SubResource("ImmediateMesh_yffd2")
 
 [node name="StationGodot" parent="Rail3" instance=ExtResource("2_ajlx6")]
 transform = Transform3D(-0.347155, 0.095319, 0.932944, 0.0143952, 0.995231, -0.0963279, -0.937692, -0.0200108, -0.346876, -21.1018, -0.379279, -7.9249)
@@ -131,12 +131,12 @@ waiting_character = ExtResource("4_20gy4")
 
 [node name="Rail4" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_71sj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.73184, 0, -12.1798)
-curve = SubResource("Curve3D_6nout")
+curve = SubResource("Curve3D_17aas")
 in_sections = [NodePath("../Rail3"), NodePath("../Rail6")]
 out_sections = [NodePath("../Rail")]
 
 [node name="BakedRailsMesh" parent="Rail4" index="0"]
-mesh = SubResource("ImmediateMesh_yffd2")
+mesh = SubResource("ImmediateMesh_vdho3")
 
 [node name="Locomotive" parent="Rail4" instance=ExtResource("2_gd5r5")]
 transform = Transform3D(0.000838326, -3.70622e-09, -0.999969, 0, 0.999961, -3.70625e-09, 0.999965, 3.10713e-12, 0.000838329, 1.31128, 0, 12.5322)
@@ -146,12 +146,12 @@ loop = false
 
 [node name="Rail5" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_71sj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4027, 9.53674e-07, -8.02462)
-curve = SubResource("Curve3D_17aas")
+curve = SubResource("Curve3D_of6ln")
 in_sections = [NodePath("../Rail2")]
 out_sections = [NodePath("../Rail")]
 
 [node name="BakedRailsMesh" parent="Rail5" index="0"]
-mesh = SubResource("ImmediateMesh_vdho3")
+mesh = SubResource("ImmediateMesh_u8mta")
 
 [node name="StationGodot2" parent="Rail5" instance=ExtResource("2_ajlx6")]
 transform = Transform3D(0.0152698, 0.000286745, 0.999874, 0.00671249, 0.999959, -0.000389286, -0.999851, 0.0067176, 0.0152675, -10.5126, -0.0132075, 13.441)
@@ -160,12 +160,12 @@ waiting_character = ExtResource("7_7uw5n")
 
 [node name="Rail6" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_71sj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
-curve = SubResource("Curve3D_of6ln")
+curve = SubResource("Curve3D_frps4")
 in_sections = [NodePath("../Rail")]
 out_sections = [NodePath("../Rail4")]
 
 [node name="BakedRailsMesh" parent="Rail6" index="0"]
-mesh = SubResource("ImmediateMesh_u8mta")
+mesh = SubResource("ImmediateMesh_ajlhj")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
