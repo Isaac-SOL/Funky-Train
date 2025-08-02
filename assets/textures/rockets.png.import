@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwrpgbrqs1ph7"
-path.s3tc="res://.godot/imported/rockets.png-2eef89ffe8ee72324d0a8d4afc06b43f.s3tc.ctex"
+path="res://.godot/imported/rockets.png-2eef89ffe8ee72324d0a8d4afc06b43f.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]

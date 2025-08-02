@@ -1082,10 +1082,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Personne"
 
-[node name="AudioStreamPlayer" parent="." instance=ExtResource("28_ha36p")]
-unique_name_in_owner = true
-stream_paused = false
-
 [connection signal="area_entered" from="Rails/RailS4_S6_bridge/AreaLoop" to="." method="_on_area_loop_area_entered"]
 [connection signal="area_exited" from="Rails/RailS4_S6_bridge/AreaLoop" to="." method="_on_area_loop_area_exited"]
 [connection signal="gui_input" from="CanvasLayer/DirectionUI/LeverDirection" to="CanvasLayer/DirectionUI/LeverDirection" method="_on_gui_input"]
