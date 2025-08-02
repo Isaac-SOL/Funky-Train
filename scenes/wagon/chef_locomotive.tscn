@@ -71,10 +71,10 @@ _data = {
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rr1dn"]
 angle_min = 1.07288e-05
 angle_max = 1.07288e-05
-direction = Vector3(5, -1, 0)
+direction = Vector3(5, -5, 0)
 spread = 5.0
-initial_velocity_min = -2.0
-initial_velocity_max = -2.0
+initial_velocity_min = -0.5
+initial_velocity_max = -0.5
 angular_velocity_min = -50.0
 angular_velocity_max = 50.0
 gravity = Vector3(0, 0, 0)
@@ -88,7 +88,7 @@ billboard_mode = 2
 
 [sub_resource type="QuadMesh" id="QuadMesh_4rl22"]
 material = SubResource("StandardMaterial3D_rxwfc")
-size = Vector2(0.7, 0.7)
+size = Vector2(0.3, 0.3)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4rl22"]
 transparency = 2
@@ -99,7 +99,7 @@ billboard_mode = 2
 
 [sub_resource type="QuadMesh" id="QuadMesh_0dcp3"]
 material = SubResource("StandardMaterial3D_4rl22")
-size = Vector2(0.7, 0.7)
+size = Vector2(0.3, 0.3)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0dcp3"]
 transparency = 2
@@ -110,7 +110,7 @@ billboard_mode = 2
 
 [sub_resource type="QuadMesh" id="QuadMesh_b8qg4"]
 material = SubResource("StandardMaterial3D_0dcp3")
-size = Vector2(0.8, 0.8)
+size = Vector2(0.3, 0.3)
 
 [node name="chef_locomotive" type="Node3D" node_paths=PackedStringArray("wheel_1", "wheel_2", "wheel_3", "wheel_4", "wheel_5", "wheel_6", "wheel_7", "wheel_8")]
 script = ExtResource("1_rr1dn")
@@ -145,7 +145,7 @@ spot_angle = 23.52
 
 [node name="GPUParticles3D_note1" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 2.7, 0)
-amount = 10
+amount = 30
 lifetime = 7.0
 preprocess = 1.0
 process_material = SubResource("ParticleProcessMaterial_rr1dn")
@@ -155,7 +155,7 @@ draw_pass_2 = null
 
 [node name="GPUParticles3D_note2" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 2.7, 0)
-amount = 10
+amount = 30
 lifetime = 7.0
 preprocess = 2.0
 process_material = SubResource("ParticleProcessMaterial_rr1dn")
@@ -165,7 +165,7 @@ draw_pass_2 = null
 
 [node name="GPUParticles3D_note3" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 2.7, 0)
-amount = 10
+amount = 30
 lifetime = 7.0
 preprocess = 3.0
 process_material = SubResource("ParticleProcessMaterial_rr1dn")
