@@ -84,10 +84,11 @@ func _process(delta: float) -> void:
 			bpm_counter -= beats_per_measure
 			kick_up()
 		for i in range(carriages.size()):
+			# TODO bug here ?
 			if i % beats_per_measure == bpm_counter - 1:
 				carriages[i].kick_up()
 	
-	#imgui()
+	imgui()
 
 func check_requirements(req_list: Array[String]) -> bool:
 	if bypass:
@@ -222,28 +223,28 @@ func set_rails_gradient(colors: Array[Color]):
 	for i in range(1, colors.size()):
 		gradient.add_point(float(i) / colors.size(), colors[i])
 
-#func imgui():
-	#ImGui.Begin("Locomotive")
-	#if get_parent():
-		#ImGui.Text("Section : " + str(get_parent().id))
-	#var v: Array = [speed]
-	#if ImGui.InputFloat("Speed", v):
-		#speed = v[0]
-	#var v2: Array = [target_speed]
-	#if ImGui.InputFloat("Target Speed", v2):
-		#target_speed = v2[0]
-	#var v3: Array = [locked]
-	#if ImGui.Checkbox("Locked", v3):
-		#locked = v3[0]
-	#ImGui.Text("Direction : " + ("Right" if direction else "Left"))
-	#var v4: Array = [bypass]
-	#if ImGui.Checkbox("Bypass", v4):
-		#bypass = v4[0]
-	#var next_station := get_section().get_next_station(progress)
-	#ImGui.Text("Next station : " + (str(next_station.progress - progress) if next_station else "None"))
-	#if ImGui.CollapsingHeader("Carriages"):
-		#ImGui.TreePush("carriage_tree")
-		#for carriage in carriages:
-			#ImGui.Text("Section : " + str(carriage.get_section().id))
-		#ImGui.TreePop()
-	#ImGui.End()
+func imgui():
+	ImGui.Begin("Locomotive")
+	if get_parent():
+		ImGui.Text("Section : " + str(get_parent().id))
+	var v: Array = [speed]
+	if ImGui.InputFloat("Speed", v):
+		speed = v[0]
+	var v2: Array = [target_speed]
+	if ImGui.InputFloat("Target Speed", v2):
+		target_speed = v2[0]
+	var v3: Array = [locked]
+	if ImGui.Checkbox("Locked", v3):
+		locked = v3[0]
+	ImGui.Text("Direction : " + ("Right" if direction else "Left"))
+	var v4: Array = [bypass]
+	if ImGui.Checkbox("Bypass", v4):
+		bypass = v4[0]
+	var next_station := get_section().get_next_station(progress)
+	ImGui.Text("Next station : " + (str(next_station.progress - progress) if next_station else "None"))
+	if ImGui.CollapsingHeader("Carriages"):
+		ImGui.TreePush("carriage_tree")
+		for carriage in carriages:
+			ImGui.Text("Section : " + str(carriage.get_section().id))
+		ImGui.TreePop()
+	ImGui.End()

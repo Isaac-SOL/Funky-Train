@@ -52,6 +52,11 @@ folder_colors={
 "res://scripts/": "blue"
 }
 
+[layer_names]
+
+3d_physics/layer_1="Locomotive"
+3d_physics/layer_2="loop"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

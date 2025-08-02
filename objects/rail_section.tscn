@@ -4,24 +4,26 @@
 [ext_resource type="Script" uid="uid://b4mxonouwg3a3" path="res://scripts/baked_rails_mesh.gd" id="2_e7jeh"]
 [ext_resource type="Material" uid="uid://2j8oioxr23sf" path="res://materials/rails_standard_mat.tres" id="3_jpovr"]
 
-[sub_resource type="Curve3D" id="Curve3D_x140k"]
+[sub_resource type="Curve3D" id="Curve3D_e7jeh"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.37323, 0, -3.00137, 8, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_e7jeh"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_jpovr"]
 
 [node name="Rail" type="Path3D"]
-curve = SubResource("Curve3D_x140k")
+curve = SubResource("Curve3D_e7jeh")
 script = ExtResource("1_x140k")
+use_tilt = null
 
 [node name="BakedRailsMesh" type="MeshInstance3D" parent="." node_paths=PackedStringArray("path")]
 unique_name_in_owner = true
 cast_shadow = 0
-mesh = SubResource("ImmediateMesh_e7jeh")
+mesh = SubResource("ImmediateMesh_jpovr")
 skeleton = NodePath("../..")
 script = ExtResource("2_e7jeh")
 path = NodePath("..")
 material = ExtResource("3_jpovr")
+rebake_with_tilt = null

@@ -14,6 +14,7 @@ var signals_up: bool = false
 @onready var camera_follow_pos: Node3D = %CameraFollowPos
 @onready var camera_pivot_x: Node3D = %CameraPivotX
 @onready var camera_pivot_y: Node3D = %CameraPivotY
+@onready var camera_loop_pos: Node3D = %CameraLoopPos
 var dragging_camera: bool = false
 
 func _ready() -> void:
@@ -142,3 +143,11 @@ func _on_character_leave_pressed(carriage: Carriage):
 
 func _on_check_box_toggled(toggled_on: bool) -> void:
 	Locomotive.instance.stop_at_stations = toggled_on
+
+
+func _on_area_loop_area_entered(area: Area3D) -> void:
+	%CameraShaker.target_node = camera_loop_pos
+
+
+func _on_area_loop_area_exited(area: Area3D) -> void:
+	%CameraShaker.target_node = camera_follow_pos
