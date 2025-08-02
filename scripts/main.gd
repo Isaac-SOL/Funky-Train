@@ -13,6 +13,8 @@ var signals_up: bool = false
 
 func _ready() -> void:
 	instance = self
+	#Preload Diologic timeline by starting a blanc timeline
+	Dialogic.start("timeline_blanc")
 
 func stop_at_station(station: Station):
 	active_station = station
