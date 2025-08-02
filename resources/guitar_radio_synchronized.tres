@@ -1,0 +1,8 @@
+[gd_resource type="AudioStreamSynchronized" load_steps=2 format=3 uid="uid://bahxc3n7001dg"]
+
+[ext_resource type="AudioStream" uid="uid://dremuykyc5lad" path="res://assets/tracks/train_jam_track_guitar_radio.ogg" id="1_ww7hs"]
+
+[resource]
+stream_count = 1
+stream_0/stream = ExtResource("1_ww7hs")
+stream_0/volume = 0.0

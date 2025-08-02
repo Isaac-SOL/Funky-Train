@@ -1,0 +1,8 @@
+[gd_resource type="AudioStreamSynchronized" load_steps=2 format=3 uid="uid://g516ojb8ig65"]
+
+[ext_resource type="AudioStream" uid="uid://1llfed5j6rab" path="res://assets/tracks/train_jam_track_trumpet.ogg" id="1_14e0g"]
+
+[resource]
+stream_count = 1
+stream_0/stream = ExtResource("1_14e0g")
+stream_0/volume = -60.0

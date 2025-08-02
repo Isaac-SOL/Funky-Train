@@ -36,3 +36,4 @@ func change_speed(new_speed: SpeedMode):
 	speed = new_speed
 	rotation_degrees = -32 + 32 * int(speed)
 	Locomotive.instance.target_speed = int(speed) * Locomotive.instance.normal_speed
+	%AudioStreamPlayer.changeCarSpeed(new_speed)
