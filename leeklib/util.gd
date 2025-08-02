@@ -15,6 +15,14 @@ static func decayv3(a: Vector3, b: Vector3, d: float) -> Vector3:
 static func decayq(a: Quaternion, b: Quaternion, d: float) -> Quaternion:
 	return b + (a - b) * exp(-d)
 
+# Useful when b may randomly flip
+static func decayq_closest(a: Quaternion, b: Quaternion, d: float) -> Quaternion:
+	var res1 := b + (a - b) * exp(-d)
+	var res2 := -b + (a + b) * exp(-d)
+	if ((b - res1).length_squared() > (-b - res2).length_squared()):
+		return res2
+	return res1
+
 static func clamp_angle(angle: float, custom_center: float = 0) -> float:
 	angle -= custom_center
 	if angle > PI:

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcpxd04n7oj0i"]
+[gd_scene load_steps=6 format=3 uid="uid://dcpxd04n7oj0i"]
 
 [ext_resource type="Script" uid="uid://d2yldh1vs7co5" path="res://scripts/station.gd" id="1_x4hb3"]
-[ext_resource type="Texture2D" uid="uid://c52bcth5d22s5" path="res://icon.svg" id="2_tdcyu"]
+[ext_resource type="PackedScene" uid="uid://csllfy35me8pa" path="res://assets/modele/3D/gamjam2025_gare.glb" id="2_a8vm7"]
+[ext_resource type="Texture2D" uid="uid://qii11fokxfim" path="res://assets/modele/2D/personnages/personnages_batterie.png" id="3_a8vm7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7uw5n"]
 albedo_color = Color(0.588235, 1, 0, 1)
@@ -14,15 +15,19 @@ size = Vector3(1, 1, 4)
 script = ExtResource("1_x4hb3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8028, 0.423988, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8028, 0.290532, 0)
+visible = false
 mesh = SubResource("BoxMesh_1x2nj")
+
+[node name="gamjam2025_gare" parent="." instance=ExtResource("2_a8vm7")]
+transform = Transform3D(-8.74228e-10, 0, 0.02, 0, 0.02, 0, -0.02, 0, -8.74228e-10, 2.43655, -0.133456, -1.06505e-07)
 
 [node name="CharacterSprite" type="Sprite3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.759589, 0.477752, 0)
-visible = false
-texture = ExtResource("2_tdcyu")
+transform = Transform3D(0.16361, 0, -0.0213712, 0, 0.165, 0, 0.0213712, 0, 0.16361, 0.916999, 0.916386, 0.0502111)
+alpha_cut = 1
+texture = ExtResource("3_a8vm7")
 
 [node name="CameraPos" type="Marker3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.995539, 0.0323382, -0.0886367, 0, 0.93943, 0.342742, 0.0943516, -0.341213, 0.935239, 0.666409, 0.93327, 1.85999)
+transform = Transform3D(0.995539, 0.0179142, -0.0926353, 0, 0.98181, 0.189867, 0.0943516, -0.18902, 0.97743, 0.68805, 0.755459, 1.63165)

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckvk1vpxrrfee"]
+
+[ext_resource type="PackedScene" uid="uid://bvlp4g2b1r1uw" path="res://objects/carriage.tscn" id="1_y7enc"]
+[ext_resource type="PackedScene" uid="uid://bams4837w8bcp" path="res://scenes/wagon/voiture_triangle.tscn" id="2_61um3"]
+
+[node name="CarriageTriangle" instance=ExtResource("1_y7enc")]
+length = 1.7
+
+[node name="MeshInstance3D" parent="." index="0"]
+visible = false
+
+[node name="wagon_triangle" parent="ChildRender" index="0" instance=ExtResource("2_61um3")]
+transform = Transform3D(-2.60083e-08, 0, 0.595, 0, 0.595, 0, -0.595, 0, -2.60083e-08, 0, 0, 0)

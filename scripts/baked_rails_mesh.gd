@@ -6,6 +6,7 @@ class_name BakedRailsMesh extends MeshInstance3D
 @export var vertex_per_meter : float = 5.0
 @export var width : float = 1.0
 @export var rebake_on_ready : bool = true
+@export var rebake_with_tilt: bool = false
 @export_tool_button("Rebake") var rebake_button = rebake
 
 func _ready() -> void:
@@ -22,7 +23,7 @@ func rebake():
 	print("Generating ", vertices_amount, " * 2 vertices")
 	for vi: int in range(vertices_amount):
 		var p := (vi / float(vertices_amount - 1)) * curve.get_baked_length()
-		var sample_tr := curve.sample_baked_with_rotation(p, true)
+		var sample_tr := curve.sample_baked_with_rotation(p, true, rebake_with_tilt)
 		var right_vec := sample_tr.basis.x.normalized() * width / 2.0
 		var right_pt := sample_tr.origin + right_vec
 		var left_pt := sample_tr.origin - right_vec

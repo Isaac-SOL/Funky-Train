@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://c11mim0c33c8c"]
+
+[ext_resource type="Shader" uid="uid://b0di41ybtvcxw" path="res://assets/shaders/water_shader.gdshader" id="1_n0nwk"]
+[ext_resource type="Texture2D" uid="uid://b4035n88f7ylr" path="res://assets/textures/water/water_1_uni.bmp" id="2_c6evl"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_n0nwk")
+shader_parameter/slide_speed = 0.3
+shader_parameter/wobble_speed = 1.0
+shader_parameter/wobble_intensity = 0.4
+shader_parameter/texture_scale = 0.05
+shader_parameter/water = ExtResource("2_c6evl")

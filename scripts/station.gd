@@ -25,6 +25,8 @@ func set_character(new_character: CharacterInfo):
 
 func load_character():
 	if waiting_character:
+		# TODO remove this line
+		%CharacterSprite.modulate = lerp(waiting_character.color, Color.WHITE, 0.5)
 		%CharacterSprite.texture = waiting_character.sprite
 		%CharacterSprite.visible = true
 		print(name + ": " + waiting_character.name)

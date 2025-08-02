@@ -5,7 +5,7 @@ enum SpeedMode { STOP = 0, NORMAL, DOUBLE }
 @export var distance_to_switch: float = 150.0
 
 var is_dragging: bool = false
-var speed: SpeedMode = SpeedMode.NORMAL
+var speed: SpeedMode = SpeedMode.STOP
 var drag_pos: Vector2 = Vector2.ZERO
 
 func mouse_down(_event: InputEventMouseButton):

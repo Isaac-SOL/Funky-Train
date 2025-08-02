@@ -72,6 +72,10 @@ window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="ignore"
 
+[editor]
+
+movie_writer/movie_file="A:/Pierre/Documents/GodotProjects/funky-train/export/movies/movie.avi"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/imgui-godot/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg")
@@ -101,6 +105,11 @@ dialogic_default_action={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+
+[layer_names]
+
+3d_physics/layer_1="Locomotive"
+3d_physics/layer_2="loop"
 
 [rendering]
 

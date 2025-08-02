@@ -1,13 +1,15 @@
-[gd_resource type="Resource" script_class="CharacterInfo" load_steps=4 format=3 uid="uid://deyja52yjw00e"]
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=5 format=3 uid="uid://deyja52yjw00e"]
 
-[ext_resource type="PackedScene" uid="uid://bvlp4g2b1r1uw" path="res://objects/carriage.tscn" id="1_2jdqh"]
+[ext_resource type="PackedScene" uid="uid://chccempimbf63" path="res://objects/carriage_trompette.tscn" id="1_2jdqh"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_6fdos"]
-[ext_resource type="Texture2D" uid="uid://dm7xfle4helcq" path="res://assets/textures/J.png" id="3_2jdqh"]
+[ext_resource type="Texture2D" uid="uid://cmwu0ft1mn30n" path="res://assets/modele/2D/personnages/personnages_trompette.png" id="3_6fdos"]
+[ext_resource type="Texture2D" uid="uid://dn378rqtyb4so" path="res://assets/modele/2D/personnages/personnages_trompette_c.png" id="4_6fdos"]
 
 [resource]
 script = ExtResource("2_6fdos")
 name = "J"
-sprite = ExtResource("3_2jdqh")
-color = Color(1, 1, 1, 1)
+sprite = ExtResource("3_6fdos")
+sprite_cadre = ExtResource("4_6fdos")
+color = Color(0.894118, 0.670588, 0.184314, 1)
 carriage = ExtResource("1_2jdqh")
 metadata/_custom_type_script = "uid://rkfd1kwn018t"
