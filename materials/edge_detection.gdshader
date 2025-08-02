@@ -5,6 +5,10 @@ render_mode unshaded;
 
 uniform sampler2D SCREEN_TEXTURE: hint_screen_texture, repeat_disable, filter_nearest;
 uniform sampler2D DEPTH_TEXTURE: hint_depth_texture, repeat_disable, filter_nearest;
+uniform float sobel_max: hint_range(0.0, 1.0);
+uniform float sobel_max_depth;
+uniform float sobel_min: hint_range(0.0, 1.0);
+uniform float sobel_min_depth;
 uniform vec3 depth_gradient_color: source_color;
 uniform float depth_gradient_start;
 uniform float depth_gradient_end;
@@ -44,8 +48,7 @@ void fragment() {
 	vec3 sobel = sqrt(gx * gx + gy * gy);
 	
 	// Shift to black & white
-	float sobel_scalar = max(sobel.r, max(sobel.g, sobel.b));
-	sobel_scalar = 1.0 - sobel_scalar;
+	float sobel_scalar = sobel.r + sobel.g + sobel.b;
 	
 	// === DEPTH GRADIENT ===
 	
@@ -55,6 +58,12 @@ void fragment() {
 	norm_depth *= depth_gradient_strength;
 	
 	// === IMAGE COMPOSITION ===
+	
+	float norm_depth_sobel = (lin_depth - sobel_max_depth) / (sobel_min_depth - sobel_max_depth);
+	norm_depth_sobel = clamp(norm_depth_sobel, 0.0, 1.0);
+	sobel_scalar *= mix(sobel_max, sobel_min, norm_depth_sobel);
+	sobel_scalar = 1.0 - sobel_scalar;
+	sobel_scalar = clamp(sobel_scalar, 0.0, 1.0);
 	
 	vec3 final_color = pixels[4];
 	final_color = mix(final_color, depth_gradient_color, norm_depth);

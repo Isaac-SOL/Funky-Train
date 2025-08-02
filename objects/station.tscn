@@ -21,6 +21,7 @@ mesh = SubResource("BoxMesh_1x2nj")
 unique_name_in_owner = true
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.759589, 0.477752, 0)
 visible = false
+alpha_cut = 1
 texture = ExtResource("2_tdcyu")
 
 [node name="CameraPos" type="Marker3D" parent="."]

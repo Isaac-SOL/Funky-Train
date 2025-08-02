@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cindjmdleanrp"]
+
+[ext_resource type="Shader" uid="uid://byrwhib36s4tv" path="res://materials/edge_detection.gdshader" id="1_2g7js"]
+
+[resource]
+render_priority = -100
+shader = ExtResource("1_2g7js")
+shader_parameter/sobel_max = 1.0
+shader_parameter/sobel_max_depth = 5.0
+shader_parameter/sobel_min = 0.1
+shader_parameter/sobel_min_depth = 50.0
+shader_parameter/depth_gradient_color = Color(1, 1, 0, 1)
+shader_parameter/depth_gradient_start = 5.0
+shader_parameter/depth_gradient_end = 40.0
+shader_parameter/depth_gradient_strength = 0.55

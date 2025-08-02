@@ -6,10 +6,15 @@ static var instance: Main
 @export var character_leave_button_scene: PackedScene
 @export var character_icon_scene: PackedScene
 @export var character_signalisation_scene: PackedScene
+@export var camera_sensitivity: Vector2 = Vector2.ONE
+@export var zoom_sensitivity: float = 1.0
 
 var active_station: Station
 var signals_up: bool = false
 @onready var camera_follow_pos: Node3D = %CameraFollowPos
+@onready var camera_pivot_x: Node3D = %CameraPivotX
+@onready var camera_pivot_y: Node3D = %CameraPivotY
+var dragging_camera: bool = false
 
 func _ready() -> void:
 	instance = self
@@ -83,6 +88,25 @@ func reset_signals():
 	for child in %SignalisationRight.get_children():
 		child.queue_free()
 	signals_up = false
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			dragging_camera = true
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		elif event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
+			dragging_camera = false
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			camera_follow_pos.position.z += zoom_sensitivity
+		elif event.button_index == MOUSE_BUTTON_WHEEL_UP:
+			camera_follow_pos.position.z -= zoom_sensitivity
+		camera_follow_pos.position.z = clampf(camera_follow_pos.position.z, 2.5, 10.0)
+	elif event is InputEventMouseMotion:
+		if dragging_camera:
+			camera_pivot_y.rotate_y(-event.relative.x * camera_sensitivity.y)
+			camera_pivot_x.rotate_x(-event.relative.y * camera_sensitivity.x)
+			camera_pivot_x.rotation_degrees.x = clampf(camera_pivot_x.rotation_degrees.x, -45.0, 20.0)
 
 func _on_button_prendre_pressed() -> void:
 	close_add_character()

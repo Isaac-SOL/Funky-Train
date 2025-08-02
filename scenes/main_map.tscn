@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://ddei87jmflwu2"]
+[gd_scene load_steps=85 format=3 uid="uid://ddei87jmflwu2"]
 
 [ext_resource type="Script" uid="uid://rytmmqnltko8" path="res://scripts/main.gd" id="1_rk4p5"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_7tq10"]
@@ -16,7 +16,6 @@
 [ext_resource type="Resource" uid="uid://cyjyqmljaf6nv" path="res://objects/characters/G.tres" id="9_jikhd"]
 [ext_resource type="Script" uid="uid://wrgu8dfp4pw3" path="res://leeklib/shaker_3d.gd" id="10_j8ata"]
 [ext_resource type="Resource" uid="uid://ca22gm0ixic23" path="res://objects/characters/H.tres" id="10_qvxoj"]
-[ext_resource type="Shader" uid="uid://byrwhib36s4tv" path="res://materials/edge_detection.gdshader" id="11_7eykx"]
 [ext_resource type="Resource" uid="uid://b0t7w0yywn1hj" path="res://objects/characters/I.tres" id="11_sxppv"]
 [ext_resource type="Texture2D" uid="uid://c0o6y71cnwrw0" path="res://assets/textures/levier.png" id="12_36g7h"]
 [ext_resource type="Resource" uid="uid://deyja52yjw00e" path="res://objects/characters/J.tres" id="12_on5gu"]
@@ -24,6 +23,7 @@
 [ext_resource type="Script" uid="uid://cgr64t0pp5eet" path="res://scripts/lever_speed.gd" id="14_ha36p"]
 [ext_resource type="PackedScene" uid="uid://b74sqcme40821" path="res://objects/character_signalisation.tscn" id="15_j8ata"]
 [ext_resource type="Texture2D" uid="uid://c52bcth5d22s5" path="res://icon.svg" id="15_jikhd"]
+[ext_resource type="Material" uid="uid://cindjmdleanrp" path="res://materials/main_screenspace.tres" id="20_ha36p"]
 [ext_resource type="Texture2D" uid="uid://dxhm12w2qma87" path="res://assets/textures/arrow.png" id="21_7eykx"]
 [ext_resource type="Texture2D" uid="uid://dm7xfle4helcq" path="res://assets/textures/J.png" id="21_ha36p"]
 [ext_resource type="Texture2D" uid="uid://fq26wcieaj8l" path="res://assets/textures/map.png" id="22_jikhd"]
@@ -266,16 +266,8 @@ albedo_color = Color(0.197831, 0.537274, 0, 1)
 material = SubResource("StandardMaterial3D_ajlhj")
 size = Vector2(50, 50)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mkonq"]
-render_priority = -100
-shader = ExtResource("11_7eykx")
-shader_parameter/depth_gradient_color = Color(1, 0.833333, 0, 1)
-shader_parameter/depth_gradient_start = 5.0
-shader_parameter/depth_gradient_end = 40.0
-shader_parameter/depth_gradient_strength = 0.55
-
 [sub_resource type="QuadMesh" id="QuadMesh_vdho3"]
-material = SubResource("ShaderMaterial_mkonq")
+material = ExtResource("20_ha36p")
 size = Vector2(10, 10)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qdokm"]
@@ -291,6 +283,7 @@ character_list = Array[ExtResource("2_7tq10")]([ExtResource("3_8yhmk"), ExtResou
 character_leave_button_scene = ExtResource("5_ol44e")
 character_icon_scene = ExtResource("6_5ubli")
 character_signalisation_scene = ExtResource("15_j8ata")
+camera_sensitivity = Vector2(0.003, 0.003)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bmein")
@@ -320,12 +313,20 @@ progress = 3.32767
 rotation_mode = 2
 loop = false
 
-[node name="CameraFollowPos" type="Marker3D" parent="Rails/RailS4/Locomotive"]
+[node name="CameraPivotY" type="Marker3D" parent="Rails/RailS4/Locomotive"]
 unique_name_in_owner = true
-transform = Transform3D(0.941779, -0.147915, 0.302064, 1.80602e-08, 0.898138, 0.439802, -0.336334, -0.414178, 0.845811, 1.97975, 2.33587, 5.44378)
+transform = Transform3D(0.917755, 0, 0.397148, 0, 1, 0, -0.397148, 0, 0.917755, 0, 2.2017, 0)
+
+[node name="CameraPivotX" type="Marker3D" parent="Rails/RailS4/Locomotive/CameraPivotY"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871557, 0, -0.0871557, 0.996195, 0, 0, 0)
+
+[node name="CameraFollowPos" type="Marker3D" parent="Rails/RailS4/Locomotive/CameraPivotY/CameraPivotX"]
+unique_name_in_owner = true
+transform = Transform3D(1.00003, 0, 0, 0, 1.00004, 0, 0, 0, 1.00003, -1.49017e-08, 0, 6.03638)
 
 [node name="Station4" parent="Rails/RailS4" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.000827113, 0, -0.999994, 0, 1, 0, 0.999994, 0, -0.000827113, 16.1874, 0, -0.000769002)
+transform = Transform3D(-0.000827112, 0, -0.999993, 0, 1, 0, 0.999993, 0, -0.000827112, 16.1874, 0, -0.000769002)
 progress = 16.1862
 waiting_character = ExtResource("9_jikhd")
 
@@ -424,7 +425,7 @@ out_sections = [NodePath("../RailS4")]
 mesh = SubResource("ImmediateMesh_yqb2n")
 
 [node name="Station5" parent="Rails/RailS5" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.0804742, 0, 0.996748, 0, 1, 0, -0.996748, 0, -0.0804742, -40.9523, 0, 0.159052)
+transform = Transform3D(-0.0804741, 0, 0.996747, 0, 1, 0, -0.996747, 0, -0.0804741, -40.9523, 0, 0.159052)
 progress = 40.9557
 waiting_character = ExtResource("7_b6lr4")
 
@@ -448,7 +449,7 @@ out_requirements_2 = Array[String](["A", "C"])
 mesh = SubResource("ImmediateMesh_lin8e")
 
 [node name="Station6" parent="Rails/RailS6" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.047002, 0, -0.998888, 0, 1, 0, 0.998888, 0, -0.047002, 30.8616, 0, -4.91119)
+transform = Transform3D(-0.0470019, 0, -0.998887, 0, 1, 0, 0.998887, 0, -0.0470019, 30.8616, 0, -4.91119)
 progress = 31.4626
 waiting_character = ExtResource("10_qvxoj")
 
@@ -471,7 +472,7 @@ out_sections = [NodePath("../RailS8_S1"), NodePath("../RailS8_S7")]
 mesh = SubResource("ImmediateMesh_32gdk")
 
 [node name="Station8" parent="Rails/RailS8" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.998875, 0, -0.0472384, 0, 1, 0, 0.0472384, 0, -0.998875, 14.4835, 0, 33.4404)
+transform = Transform3D(-0.998874, 0, -0.0472383, 0, 1, 0, 0.0472383, 0, -0.998874, 14.4835, 0, 33.4404)
 progress = 37.8308
 waiting_character = ExtResource("8_ha36p")
 
@@ -512,7 +513,7 @@ out_sections = [NodePath("../RailS2S3")]
 mesh = SubResource("ImmediateMesh_8pqvy")
 
 [node name="Station1" parent="Rails/RailS1" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.0337067, 0, 0.999424, 0, 1, 0, -0.999424, 0, -0.0337067, -33.2739, 0, 0.875955)
+transform = Transform3D(-0.0337067, 0, 0.999423, 0, 1, 0, -0.999423, 0, -0.0337067, -33.2739, 0, 0.875955)
 progress = 33.2863
 
 [node name="RailS9" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
@@ -599,9 +600,9 @@ mesh = SubResource("PlaneMesh_5ne2v")
 
 [node name="CameraShaker" type="Node3D" parent="." node_paths=PackedStringArray("target_node")]
 unique_name_in_owner = true
-transform = Transform3D(0.337113, 0.414042, -0.845532, 1.93061e-08, 0.898103, 0.439785, 0.941464, -0.148257, 0.302763, -12.8625, 2.33578, 2.33664)
+transform = Transform3D(0.337113, 0.414042, -0.845532, 1.93061e-08, 0.898103, 0.439785, 0.941464, -0.148257, 0.302763, -24.1607, 2.33578, 2.33664)
 script = ExtResource("10_j8ata")
-target_node = NodePath("../Rails/RailS4/Locomotive/CameraFollowPos")
+target_node = NodePath("../Rails/RailS4/Locomotive/CameraPivotY/CameraPivotX/CameraFollowPos")
 follow_rotation = true
 follow_global_coordinates = true
 move_speed = 8.0
@@ -612,7 +613,7 @@ metadata/_custom_type_script = "uid://wrgu8dfp4pw3"
 current = true
 
 [node name="ScreenEffect" type="MeshInstance3D" parent="CameraShaker/Camera3D"]
-transform = Transform3D(0.999966, 0, 0, 0, 0.999962, 0, 0, 0, 0.999971, -2.98013e-08, 2.6076e-08, -1.03348)
+transform = Transform3D(0.999966, 0, 0, 0, 0.999962, 0, 0, 0, 0.999971, 0, 0, -0.06)
 cast_shadow = 0
 mesh = SubResource("QuadMesh_vdho3")
 skeleton = NodePath("../../../Rails/RailS4/Locomotive")
