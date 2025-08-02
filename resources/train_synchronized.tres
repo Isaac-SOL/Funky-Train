@@ -1,0 +1,11 @@
+[gd_resource type="AudioStreamSynchronized" load_steps=3 format=3 uid="uid://m8etl8huntdv"]
+
+[ext_resource type="AudioStream" uid="uid://bhbjwtpy4f54o" path="res://assets/tracks/train_jam_track_train.ogg" id="1_bdgoj"]
+[ext_resource type="AudioStream" uid="uid://dnyq027un5rut" path="res://assets/tracks/train_jam_track_train_slow.ogg" id="2_wnvuv"]
+
+[resource]
+stream_count = 2
+stream_0/stream = ExtResource("1_bdgoj")
+stream_0/volume = -60.0
+stream_1/stream = ExtResource("2_wnvuv")
+stream_1/volume = -60.0

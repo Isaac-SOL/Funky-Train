@@ -1,0 +1,8 @@
+[gd_resource type="AudioStreamSynchronized" load_steps=2 format=3 uid="uid://drgk1cvrrof6t"]
+
+[ext_resource type="AudioStream" uid="uid://b34om1vq8eip1" path="res://assets/tracks/train_jam_track_vocoder.ogg" id="1_v05t4"]
+
+[resource]
+stream_count = 1
+stream_0/stream = ExtResource("1_v05t4")
+stream_0/volume = -60.0
