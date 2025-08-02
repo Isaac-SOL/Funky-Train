@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://capa820ir3vho"]
+[gd_scene load_steps=27 format=3 uid="uid://capa820ir3vho"]
 
 [ext_resource type="Script" uid="uid://d3y48j1b2i22e" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ppgk2"]
 [ext_resource type="Resource" uid="uid://c3axel685jlwo" path="res://assets/HTerrain/data.hterrain" id="2_2r41h"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://l2utvst2xqpe" path="res://assets/modele/2D/environment/nature/fleur3.png" id="17_kih21"]
 [ext_resource type="Texture2D" uid="uid://bwmtysrwuoxf6" path="res://assets/modele/2D/environment/nature/fleur1.png" id="18_w3o6u"]
 [ext_resource type="Texture2D" uid="uid://bbqishjjqfa17" path="res://assets/modele/2D/environment/nature/fleur2.png" id="19_2e2fo"]
+[ext_resource type="Texture2D" uid="uid://cn1teuf7rjgq" path="res://assets/modele/2D/environment/nature/arbre3.png" id="20_3ies3"]
 [ext_resource type="PackedScene" uid="uid://balsdmns2sot8" path="res://scenes/object/nature/rocks/rock_1.tscn" id="26_cmcjb"]
 [ext_resource type="PackedScene" uid="uid://ddei87jmflwu2" path="res://scenes/main_map.tscn" id="26_xy2fk"]
 [ext_resource type="PackedScene" uid="uid://b58auulia0ewn" path="res://scenes/object/nature/rocks/rock_2.tscn" id="27_cmcjb"]
@@ -182,6 +183,18 @@ shader_params/u_globalmap_tint_bottom = 0.0
 shader_params/u_globalmap_tint_top = 0.0
 shader_params/u_bottom_ao = 0.0
 shader_params/u_instance_scale = Vector3(2, 2, 2)
+shader_params/u_roughness = 1.0
+metadata/_editor_icon = ExtResource("7_pqd0y")
+
+[node name="@Node3D@26235" type="Node3D" parent="HTerrain"]
+script = ExtResource("5_8gofh")
+layer_index = 11
+texture = ExtResource("20_3ies3")
+density = 0.5
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = Vector3(6, 6, 6)
 shader_params/u_roughness = 1.0
 metadata/_editor_icon = ExtResource("7_pqd0y")
 
