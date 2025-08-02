@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dlylwsenxbljj" path="res://scripts/locomotive.gd" id="1_2c63q"]
 [ext_resource type="Texture2D" uid="uid://c8na840ixxrgk" path="res://materials/rails_gradient.tres" id="2_5cgl7"]
-[ext_resource type="PackedScene" uid="uid://ctuor0rsde614" path="res://meshes/chef_locomotive.glb" id="3_ue4hp"]
+[ext_resource type="PackedScene" uid="uid://bo2gdx8joos8y" path="res://scenes/wagon/chef_locomotive.tscn" id="3_ue4hp"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ue4hp"]
 radius = 2.77916
@@ -18,8 +18,8 @@ beats_per_minute = 90.0
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 unique_name_in_owner = true
 
-[node name="chef_locomotive" parent="MeshInstance3D" instance=ExtResource("3_ue4hp")]
-transform = Transform3D(-1.09278e-09, 0, 0.025, 0, 0.025, 0, -0.025, 0, -1.09278e-09, 0, 0, 0)
+[node name="chef_locomotive2" parent="MeshInstance3D" instance=ExtResource("3_ue4hp")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_mask = 2

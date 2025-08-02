@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d2yldh1vs7co5" path="res://scripts/station.gd" id="1_x4hb3"]
 [ext_resource type="PackedScene" uid="uid://csllfy35me8pa" path="res://assets/modele/3D/gamjam2025_gare.glb" id="2_a8vm7"]
-[ext_resource type="Texture2D" uid="uid://c52bcth5d22s5" path="res://icon.svg" id="2_tdcyu"]
+[ext_resource type="Texture2D" uid="uid://qii11fokxfim" path="res://assets/modele/2D/personnages/personnages_batterie.png" id="3_a8vm7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7uw5n"]
 albedo_color = Color(0.588235, 1, 0, 1)
@@ -24,10 +24,9 @@ transform = Transform3D(-8.74228e-10, 0, 0.02, 0, 0.02, 0, -0.02, 0, -8.74228e-1
 
 [node name="CharacterSprite" type="Sprite3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.550325, 0, -0.071885, 0, 0.555, 0, 0.071885, 0, 0.550325, 1.00327, 0.465898, 0.06148)
-visible = false
+transform = Transform3D(0.16361, 0, -0.0213712, 0, 0.165, 0, 0.0213712, 0, 0.16361, 0.916999, 0.916386, 0.0502111)
 alpha_cut = 1
-texture = ExtResource("2_tdcyu")
+texture = ExtResource("3_a8vm7")
 
 [node name="CameraPos" type="Marker3D" parent="."]
 unique_name_in_owner = true

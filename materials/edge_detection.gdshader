@@ -22,9 +22,9 @@ float get_linear_depth(float base_depth, vec2 screen_uv, mat4 inv_proj_matrix) {
 
 void fragment() {
 	vec2 pixel_size = 1.0 / VIEWPORT_SIZE;
-	
+
 	// ==== COLOR SOBEL =====
-	
+
 	vec3 pixels[9];
 	// [0, 1, 2]
 	// [3, 4, 5]
@@ -35,7 +35,7 @@ void fragment() {
 			pixels[i * 3 + j] = texture(SCREEN_TEXTURE, uv).rgb;
 		}
 	}
-	
+
 	// Sobel
 	vec3 gx = (
 		-pixels[0] + -2.0 * pixels[3] - pixels[6]
@@ -46,29 +46,29 @@ void fragment() {
 		+ pixels[6] + 2.0 * pixels[7] + pixels[8]
 	);
 	vec3 sobel = sqrt(gx * gx + gy * gy);
-	
+
 	// Shift to black & white
 	float sobel_scalar = sobel.r + sobel.g + sobel.b;
-	
+
 	// === DEPTH GRADIENT ===
-	
+
 	float lin_depth = get_linear_depth(texture(DEPTH_TEXTURE, SCREEN_UV).r, SCREEN_UV, INV_PROJECTION_MATRIX);
 	float norm_depth = (lin_depth - depth_gradient_start) / (depth_gradient_end - depth_gradient_start);
 	norm_depth = clamp(norm_depth, 0.0, 1.0);
 	norm_depth *= depth_gradient_strength;
-	
+
 	// === IMAGE COMPOSITION ===
-	
+
 	float norm_depth_sobel = (lin_depth - sobel_max_depth) / (sobel_min_depth - sobel_max_depth);
 	norm_depth_sobel = clamp(norm_depth_sobel, 0.0, 1.0);
 	sobel_scalar *= mix(sobel_max, sobel_min, norm_depth_sobel);
 	sobel_scalar = 1.0 - sobel_scalar;
 	sobel_scalar = clamp(sobel_scalar, 0.0, 1.0);
-	
+
 	vec3 final_color = pixels[4];
 	final_color = mix(final_color, depth_gradient_color, norm_depth);
 	final_color *= sobel_scalar;
-	
+
 	ALBEDO = final_color;
 	ALPHA = 1.0;
 }

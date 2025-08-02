@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://3p8k6p7egiba"]
+
+[ext_resource type="PackedScene" uid="uid://bvlp4g2b1r1uw" path="res://objects/carriage.tscn" id="1_5ab18"]
+[ext_resource type="PackedScene" uid="uid://b3o252k3b06o0" path="res://scenes/wagon/wagon_guitare.tscn" id="2_5ab18"]
+
+[node name="CarriageGuitare" instance=ExtResource("1_5ab18")]
+length = 2.5
+kick = 1.3
+
+[node name="MeshInstance3D" parent="." index="0"]
+visible = false
+
+[node name="wagon_guitare" parent="ChildRender" index="0" instance=ExtResource("2_5ab18")]
+transform = Transform3D(-2.66639e-08, 0, -0.61, 0, 0.61, 0, 0.61, 0, -2.66639e-08, 0, 0, 0)
+
+[node name="volets" parent="ChildRender/wagon_guitare/wagons_guitare_mesh" index="9"]
+visible = false
+
+[editable path="ChildRender/wagon_guitare"]
+[editable path="ChildRender/wagon_guitare/wagons_guitare_mesh"]

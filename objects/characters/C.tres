@@ -8,6 +8,7 @@
 script = ExtResource("2_827ek")
 name = "C"
 sprite = ExtResource("3_e1gjo")
-color = Color(1.15514e-06, 0.902502, 0.693979, 1)
+sprite_cadre = ExtResource("3_e1gjo")
+color = Color(0.894118, 0.670588, 0.184314, 1)
 carriage = ExtResource("1_e1gjo")
 metadata/_custom_type_script = "uid://rkfd1kwn018t"

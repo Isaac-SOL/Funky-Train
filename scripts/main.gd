@@ -27,18 +27,15 @@ func stop_at_station(station: Station):
 	var character_info := station.waiting_character
 	if character_info:
 		%LabelTitre.text = character_info.name
-		%TextureRect.texture = character_info.sprite
-		%PanelStation.visible = true
-		%VBoxContainerNewChar.visible = true
+		%MarginContainerStationGrab.visible = true
 	else:
 		for carriage in Locomotive.instance.carriages:
 			var new_button: Button = character_leave_button_scene.instantiate()
 			new_button.text = carriage.character.name
-			new_button.icon = carriage.character.sprite
+			new_button.icon = carriage.character.sprite_cadre
 			new_button.pressed.connect(_on_character_leave_pressed.bind(carriage))
 			%VBoxContainerLeaveButtons.add_child(new_button)
-		%PanelStation.visible = true
-		%VBoxContainerPutChar.visible = true
+		%PanelStationPut.visible = true
 
 func update_characters_ui():
 	for child in %HBoxContainerCharacters.get_children():
@@ -46,7 +43,7 @@ func update_characters_ui():
 			child.queue_free()
 	for carriage: Carriage in Locomotive.instance.carriages:
 		var new_texture: TextureRect = character_icon_scene.instantiate()
-		new_texture.texture = carriage.character.sprite
+		new_texture.texture = carriage.character.sprite_cadre
 		%HBoxContainerCharacters.add_child(new_texture)
 		%HBoxContainerCharacters.move_child(new_texture, 0)
 	await get_tree().process_frame
@@ -120,12 +117,10 @@ func _on_button_laisser_pressed() -> void:
 	leave_station()
 
 func close_add_character():
-	%PanelStation.visible = false
-	%VBoxContainerNewChar.visible = false
+	%MarginContainerStationGrab.visible = false
 
 func close_character_leave():
-	%PanelStation.visible = false
-	%VBoxContainerPutChar.visible = false
+	%PanelStationPut.visible = false
 	for child in %VBoxContainerLeaveButtons.get_children():
 		%VBoxContainerLeaveButtons.remove_child(child)
 
