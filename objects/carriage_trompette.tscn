@@ -4,10 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://ds23ml7f4mn3r" path="res://scenes/wagon/wagon_trompette.tscn" id="2_hdp4e"]
 
 [node name="CarriageTrompette" instance=ExtResource("1_hdp4e")]
-length = 1.6
+length = 1.4
+kick = 1.2
 
 [node name="MeshInstance3D" parent="." index="0"]
 visible = false
 
 [node name="wagon_trompette" parent="ChildRender" index="0" instance=ExtResource("2_hdp4e")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(-3.75918e-08, 0, 0.86, 0, 0.86, 0, -0.86, 0, -3.75918e-08, 0, 0, 0)

@@ -1,8 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://bams4837w8bcp"]
+[gd_scene load_steps=11 format=3 uid="uid://bams4837w8bcp"]
 
 [ext_resource type="Script" uid="uid://dqclrpibg0m2f" path="res://scripts/wagon/wagon.gd" id="1_6l4jl"]
 [ext_resource type="PackedScene" uid="uid://ciahpvaw0bi3k" path="res://assets/modele/3D/wagon/wagon_triangle/wagon_triangle_mesh.tscn" id="1_m5mh5"]
 [ext_resource type="PackedScene" uid="uid://bfln4belomymj" path="res://scenes/personnages/personnage_triangle.tscn" id="3_8gbvq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8gbvq"]
+albedo_color = Color(1, 0.411765, 0.282353, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_axacp"]
+material = SubResource("StandardMaterial3D_8gbvq")
+top_radius = 6.348
+bottom_radius = 6.348
+height = 34.163
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8je5o"]
+material = SubResource("StandardMaterial3D_8gbvq")
+top_radius = 9.857
+bottom_radius = 6.348
+height = 17.204
+cap_top = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_i0y66"]
+material = SubResource("StandardMaterial3D_8gbvq")
+flip_faces = true
+top_radius = 9.857
+bottom_radius = 6.348
+height = 17.204
+cap_top = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_pta6q"]
+material = SubResource("StandardMaterial3D_8gbvq")
+top_radius = 6.348
+bottom_radius = 0.0
+height = 11.941
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n4q7f"]
+albedo_color = Color(0.372549, 0.141176, 0.0980392, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8ar8n"]
+material = SubResource("StandardMaterial3D_n4q7f")
+top_radius = 2.254
+bottom_radius = 2.254
+height = 6.094
 
 [node name="wagon_triangle" type="Node3D" node_paths=PackedStringArray("wheel_1", "wheel_2", "wheel_3", "wheel_4")]
 script = ExtResource("1_6l4jl")
@@ -13,6 +52,30 @@ wheel_4 = NodePath("wagon_triangle_mesh/wheel_4")
 metadata/_custom_type_script = "uid://dqclrpibg0m2f"
 
 [node name="wagon_triangle_mesh" parent="." instance=ExtResource("1_m5mh5")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wagon_triangle_mesh"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 4.69142, 50.0861, 0)
+mesh = SubResource("CylinderMesh_axacp")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="wagon_triangle_mesh"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -17.9087, 50.0861, 0)
+mesh = SubResource("CylinderMesh_8je5o")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="wagon_triangle_mesh"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -17.9087, 50.0861, 0)
+mesh = SubResource("CylinderMesh_i0y66")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="wagon_triangle_mesh"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 27.7493, 50.0861, 0)
+mesh = SubResource("CylinderMesh_pta6q")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="wagon_triangle_mesh"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -11.1523, 41.3613, 0)
+mesh = SubResource("CylinderMesh_8ar8n")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="wagon_triangle_mesh"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 10.6139, 41.3613, 0)
+mesh = SubResource("CylinderMesh_8ar8n")
 
 [node name="personnage_triangle" parent="." instance=ExtResource("3_8gbvq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.167994, 0.980431, 0.272938)

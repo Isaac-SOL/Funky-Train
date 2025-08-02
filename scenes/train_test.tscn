@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://3n6jqwbsvfqh"]
+
+[ext_resource type="PackedScene" uid="uid://b2gtvjpbbcs2j" path="res://objects/locomotive.tscn" id="1_bp3yc"]
+[ext_resource type="PackedScene" uid="uid://d0wov6n4cqb15" path="res://objects/carriage_saxo.tscn" id="2_c4vld"]
+[ext_resource type="PackedScene" path="res://objects/carriage_keytar.tscn" id="3_4n7l7"]
+[ext_resource type="PackedScene" path="res://objects/carriage_vocoder.tscn" id="4_lt5oa"]
+[ext_resource type="PackedScene" uid="uid://bpwff1f4x5ej" path="res://objects/carriage_batterie.tscn" id="5_fc1qg"]
+[ext_resource type="PackedScene" uid="uid://3p8k6p7egiba" path="res://objects/carriage_guitare.tscn" id="6_1k5gc"]
+[ext_resource type="PackedScene" uid="uid://ckvk1vpxrrfee" path="res://objects/carriage_triangle.tscn" id="7_7u431"]
+[ext_resource type="PackedScene" uid="uid://chccempimbf63" path="res://objects/carriage_trompette.tscn" id="8_mktsg"]
+
+[sub_resource type="Curve3D" id="Curve3D_mjs1d"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 6.76066e-05, 0.00283849, -0.00180393, 0, 0, 0, 0, 0, 0, 18.7202, 0.00470161, 0.0137939),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="TrainTest" type="Node3D"]
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_mjs1d")
+
+[node name="Locomotive" parent="Path3D" instance=ExtResource("1_bp3yc")]
+transform = Transform3D(-0.000833163, -9.95204e-05, -0.999961, 3.63783e-12, 0.999953, -9.95213e-05, 0.999959, -8.29238e-08, -0.000833165, 18.6739, 0.00469701, 0.0137554)
+progress = 18.6704
+
+[node name="Carriage" parent="Path3D" instance=ExtResource("2_c4vld")]
+transform = Transform3D(-0.000833167, -9.95206e-05, -0.999965, 3.63784e-12, 0.999955, -9.95216e-05, 0.999963, -8.2924e-08, -0.000833168, 15.7823, 0.00440922, 0.011346)
+progress = 15.7821
+
+[node name="CarriageKeytar" parent="Path3D" instance=ExtResource("3_4n7l7")]
+transform = Transform3D(-0.000833165, -9.95206e-05, -0.999964, 3.63784e-12, 0.999955, -9.95216e-05, 0.999961, -8.2924e-08, -0.000833168, 12.5839, 0.0040909, 0.00868113)
+progress = 12.5839
+
+[node name="CarriageVocoder" parent="Path3D" instance=ExtResource("4_lt5oa")]
+transform = Transform3D(-0.000833165, -9.95206e-05, -0.999964, 0, 0.999955, -9.95216e-05, 0.999961, -8.29203e-08, -0.000833168, 10.7281, 0.0039062, 0.00713482)
+progress = 10.728
+
+[node name="CarriageBatterie" parent="Path3D" instance=ExtResource("5_fc1qg")]
+transform = Transform3D(-0.000833165, -9.95206e-05, -0.999965, 3.63784e-12, 0.999955, -9.95216e-05, 0.999961, -8.2924e-08, -0.000833168, 9.04774, 0.00373896, 0.00573472)
+progress = 9.04768
+kick = 1.2
+
+[node name="CarriageGuitare" parent="Path3D" instance=ExtResource("6_1k5gc")]
+transform = Transform3D(-0.000833166, -9.95207e-05, -0.999965, 3.63784e-12, 0.999956, -9.95217e-05, 0.999962, -8.2924e-08, -0.000833169, 7.0145, 0.0035366, 0.0040406)
+progress = 7.01447
+
+[node name="CarriageTriangle" parent="Path3D" instance=ExtResource("7_7u431")]
+transform = Transform3D(-0.000833166, -9.95207e-05, -0.999966, 0, 0.999956, -9.95217e-05, 0.999962, -8.29204e-08, -0.000833169, 4.43584, 0.00327996, 0.00189202)
+progress = 4.43609
+
+[node name="CarriageTrompette" parent="Path3D" instance=ExtResource("8_mktsg")]
+transform = Transform3D(-0.000833163, -9.95204e-05, -0.999962, 3.63783e-12, 0.999953, -9.95213e-05, 0.999958, -8.29238e-08, -0.000833166, 2.34837, 0.00307221, 0.000152705)
+progress = 2.34874
