@@ -1,13 +1,15 @@
-[gd_resource type="Resource" script_class="CharacterInfo" load_steps=4 format=3 uid="uid://bbwah2dbir55v"]
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=5 format=3 uid="uid://bbwah2dbir55v"]
 
-[ext_resource type="PackedScene" uid="uid://bvlp4g2b1r1uw" path="res://objects/carriage.tscn" id="1_bq8b3"]
+[ext_resource type="PackedScene" uid="uid://ckvk1vpxrrfee" path="res://objects/carriage_triangle.tscn" id="1_bq8b3"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_lm5v0"]
-[ext_resource type="Texture2D" uid="uid://dkubf7fcpqvwl" path="res://assets/textures/F.png" id="3_bq8b3"]
+[ext_resource type="Texture2D" uid="uid://c47w8oaysm637" path="res://assets/modele/2D/personnages/personnages_triangle.png" id="3_lm5v0"]
+[ext_resource type="Texture2D" uid="uid://cxdlvparc2ap2" path="res://assets/modele/2D/personnages/personnages_triangle_c.png" id="4_lm5v0"]
 
 [resource]
 script = ExtResource("2_lm5v0")
 name = "F"
-sprite = ExtResource("3_bq8b3")
-color = Color(0.876183, 0.192558, 1, 1)
+sprite = ExtResource("3_lm5v0")
+sprite_cadre = ExtResource("4_lm5v0")
+color = Color(0.968627, 0.282353, 0.0862745, 1)
 carriage = ExtResource("1_bq8b3")
 metadata/_custom_type_script = "uid://rkfd1kwn018t"

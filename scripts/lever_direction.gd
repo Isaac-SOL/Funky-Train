@@ -26,6 +26,8 @@ func _on_gui_input(event: InputEvent) -> void:
 			var offset = -drag_pos.x if is_right else drag_pos.x
 			if offset > distance_to_switch:
 				change_direction(not is_right)
+				if Locomotive.instance.get_distance_to_section_end() <= Locomotive.instance.show_signals_at_distance:
+					Main.instance.set_direction_valid(Locomotive.instance.check_direction_valid())
 				drag_pos = Vector2.ZERO
 
 func change_direction(right: bool):

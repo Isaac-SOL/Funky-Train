@@ -2,7 +2,7 @@ class_name Locomotive extends PathFollow3D
 
 static var instance: Locomotive
 
-@export var normal_speed: float = 2.0
+@export var normal_speed: float = 3.0
 @export var startup_time: float = 1.5
 @export var stop_time: float = 3.0
 @export var length: float = 2
@@ -23,9 +23,9 @@ var direction: bool = false
 var bpm_timer: float = 1.0
 var bpm_counter: int = 0
 var locked: bool = false
+var stop_at_stations: bool = true
 
 func _ready() -> void:
-	target_speed = normal_speed
 	instance = self
 	curr_section_length = get_parent().curve.get_baked_length()
 	for carriage: Carriage in carriages:
@@ -52,7 +52,7 @@ func _process(delta: float) -> void:
 	
 	var next_station = get_section().get_next_station(progress)
 	var temp_progress := progress + delta * speed
-	if next_station and next_station.progress < temp_progress:
+	if stop_at_stations and next_station and next_station.progress < temp_progress:
 		progress = next_station.progress
 		speed = 0.0
 		locked = true
@@ -71,6 +71,7 @@ func _process(delta: float) -> void:
 	
 	if not Main.instance.signals_up and get_distance_to_section_end() < show_signals_at_distance:
 		Main.instance.set_signals(get_section().out_requirements_1, get_section().out_requirements_2)
+		Main.instance.set_direction_valid(check_direction_valid())
 	
 	# Animation
 	
@@ -82,6 +83,7 @@ func _process(delta: float) -> void:
 			bpm_counter -= beats_per_measure
 			kick_up()
 		for i in range(carriages.size()):
+			# TODO bug here ?
 			if i % beats_per_measure == bpm_counter - 1:
 				carriages[i].kick_up()
 	
@@ -100,6 +102,12 @@ func check_requirements(req_list: Array[String]) -> bool:
 			if req not in props:
 				return false
 	return true
+
+func check_direction_valid() -> bool:
+	if direction:
+		return check_requirements(get_section().out_requirements_2)
+	else:
+		return check_requirements(get_section().out_requirements_1)
 
 func next_section() -> RailSection:
 	var out_sections := get_section().out_sections
@@ -123,6 +131,7 @@ func change_section(new_section: RailSection):
 	new_section.add_child(self)
 	curr_section_length = get_parent().curve.get_baked_length()
 	Main.instance.reset_signals()
+	Main.instance.set_direction_valid(true)
 
 func add_character(new_character: CharacterInfo):
 	var new_carriage: Carriage = new_character.carriage.instantiate()
@@ -139,6 +148,8 @@ func remove_carriage(carriage: Carriage):
 func update_characters():
 	Main.instance.update_characters_ui()
 	set_rails_gradient(get_gradient())
+	if get_distance_to_section_end() < show_signals_at_distance:
+		Main.instance.set_direction_valid(check_direction_valid())
 
 func restart():
 	locked = false
@@ -154,8 +165,8 @@ func get_distance_to_section_end() -> float:
 
 func kick_up():
 	%MeshInstance3D.scale = Vector3(1.0, kick_up_effect, 1.0)
-	var tween = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
-	tween.tween_property(%MeshInstance3D, "scale", Vector3.ONE, 0.666)
+	var tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
+	tween.tween_property(%MeshInstance3D, "scale", Vector3.ONE, 0.5)
 
 func lerp_hsv(col1: Color, col2: Color, t: float):
 	var v1 := Vector3(col1.h, col1.s, col1.v)

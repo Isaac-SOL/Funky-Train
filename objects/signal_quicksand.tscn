@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://0e3hodujsfcb"]
+
+[ext_resource type="Texture2D" uid="uid://segfk71rpuny" path="res://assets/textures/quicksand.png" id="1_wdjhl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grjvt"]
+albedo_color = Color(0.537011, 0.537011, 0.537011, 1)
+metallic = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_81qnm"]
+material = SubResource("StandardMaterial3D_grjvt")
+top_radius = 0.035
+bottom_radius = 0.035
+height = 1.5
+
+[node name="SignalQuicksand" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 2.06019, 0)
+texture = ExtResource("1_wdjhl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+mesh = SubResource("CylinderMesh_81qnm")

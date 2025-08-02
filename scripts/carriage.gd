@@ -2,6 +2,7 @@
 class_name Carriage extends PathFollow3D
 
 @export var length: float = 2
+@export var kick: float = 1.2
 
 var curr_section_length: float
 var direction: bool
@@ -33,6 +34,8 @@ func change_section(new_section: RailSection):
 	curr_section_length = get_parent().curve.get_baked_length()
 
 func kick_up():
-	%MeshInstance3D.scale = Vector3(1.0, 1.5, 1.0)
-	var tween = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
-	tween.tween_property(%MeshInstance3D, "scale", Vector3.ONE, 0.5)
+	for child in get_children():
+		if child is Node3D:
+			child.scale = Vector3(1.0, kick, 1.0)
+			var tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
+			tween.tween_property(child, "scale", Vector3.ONE, 0.5)

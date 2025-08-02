@@ -9,8 +9,11 @@ size = Vector3(0.5, 0.5, 1.5)
 transform = Transform3D(-4.37099e-08, 0, -0.999971, 0, 0.999962, 0, 0.999966, 0, -4.37101e-08, 0, 0, 0)
 script = ExtResource("1_tcupp")
 length = 1.5
+kick = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.265, 0)
 mesh = SubResource("BoxMesh_r5u47")
+
+[node name="ChildRender" type="Node3D" parent="."]

@@ -3,6 +3,7 @@ class_name RailSection extends Path3D
 
 static var ID_COUNT: int = 0
 
+@export var use_tilt: bool = false
 @export var in_sections: Array[RailSection] = []
 @export var out_sections: Array[RailSection] = []
 @export var out_requirements_1: Array[String]

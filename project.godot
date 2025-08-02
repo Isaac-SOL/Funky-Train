@@ -31,6 +31,10 @@ window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="ignore"
 
+[editor]
+
+movie_writer/movie_file="A:/Pierre/Documents/GodotProjects/funky-train/export/movies/movie.avi"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/imgui-godot/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg")
@@ -47,6 +51,11 @@ folder_colors={
 "res://scenes/": "gray",
 "res://scripts/": "blue"
 }
+
+[layer_names]
+
+3d_physics/layer_1="Locomotive"
+3d_physics/layer_2="loop"
 
 [rendering]
 

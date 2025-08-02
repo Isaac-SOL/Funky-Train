@@ -1,13 +1,14 @@
-[gd_scene load_steps=27 format=3 uid="uid://capa820ir3vho"]
+[gd_scene load_steps=30 format=3 uid="uid://capa820ir3vho"]
 
 [ext_resource type="Script" uid="uid://d3y48j1b2i22e" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ppgk2"]
 [ext_resource type="Resource" uid="uid://c3axel685jlwo" path="res://assets/HTerrain/data.hterrain" id="2_2r41h"]
 [ext_resource type="Script" uid="uid://dw84e0nu3ialr" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_klq6b"]
-[ext_resource type="Texture2D" uid="uid://buano34kf71u8" path="res://assets/textures/grass/light_grass.png" id="4_h6wmr"]
+[ext_resource type="Texture2D" uid="uid://cpf6nn2yurgni" path="res://assets/textures/grass/light_grass_2.png" id="4_wu01b"]
 [ext_resource type="Script" uid="uid://cpdd44k8ek70j" path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" id="5_8gofh"]
 [ext_resource type="Texture2D" uid="uid://cm5mcoa2q2adj" path="res://assets/textures/sand/sand_32x32.png" id="5_556r4"]
 [ext_resource type="Texture2D" uid="uid://c1qnwv56e3mib" path="res://assets/modele/2D/environment/nature/arbre2.png" id="6_8gofh"]
-[ext_resource type="Texture2D" uid="uid://hv4prc1tkwg0" path="res://assets/textures/rock/red_rock_32x32.png" id="6_kih21"]
+[ext_resource type="Texture2D" uid="uid://doyfe5bmov882" path="res://assets/textures/rock/red_rock_32x32_2.png" id="6_wu01b"]
+[ext_resource type="Texture2D" uid="uid://dqikv1day20xu" path="res://assets/textures/sand/dark_sand.png" id="7_556r4"]
 [ext_resource type="Texture2D" uid="uid://6jmdwj3vn6m0" path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" id="7_pqd0y"]
 [ext_resource type="Texture2D" uid="uid://dq3s1b4b7x2rj" path="res://assets/modele/2D/environment/nature/buisson3.png" id="8_pqd0y"]
 [ext_resource type="Texture2D" uid="uid://buupwh88wg1u1" path="res://assets/modele/2D/environment/nature/buisson4.png" id="9_pqd0y"]
@@ -20,8 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://bwmtysrwuoxf6" path="res://assets/modele/2D/environment/nature/fleur1.png" id="18_w3o6u"]
 [ext_resource type="Texture2D" uid="uid://bbqishjjqfa17" path="res://assets/modele/2D/environment/nature/fleur2.png" id="19_2e2fo"]
 [ext_resource type="Texture2D" uid="uid://cn1teuf7rjgq" path="res://assets/modele/2D/environment/nature/arbre3.png" id="20_3ies3"]
+[ext_resource type="PackedScene" uid="uid://0e3hodujsfcb" path="res://objects/signal_quicksand.tscn" id="26_556r4"]
 [ext_resource type="PackedScene" uid="uid://balsdmns2sot8" path="res://scenes/object/nature/rocks/rock_1.tscn" id="26_cmcjb"]
 [ext_resource type="PackedScene" uid="uid://ddei87jmflwu2" path="res://scenes/main_map.tscn" id="26_xy2fk"]
+[ext_resource type="PackedScene" uid="uid://cdt8uc23ggjdc" path="res://objects/signal_virage.tscn" id="27_556r4"]
 [ext_resource type="PackedScene" uid="uid://b58auulia0ewn" path="res://scenes/object/nature/rocks/rock_2.tscn" id="27_cmcjb"]
 [ext_resource type="PackedScene" uid="uid://cumpmjwkdpldv" path="res://scenes/object/nature/rocks/rock_3.tscn" id="28_556r4"]
 [ext_resource type="PackedScene" uid="uid://ddhc7hdytvuvf" path="res://assets/shaders/water_shader.tscn" id="29_7agi7"]
@@ -29,7 +32,7 @@
 [sub_resource type="Resource" id="Resource_1tp2x"]
 script = ExtResource("3_klq6b")
 mode = 0
-textures = [[ExtResource("4_h6wmr"), ExtResource("5_556r4"), ExtResource("6_kih21")], [null, null, null]]
+textures = [[ExtResource("4_wu01b"), ExtResource("5_556r4"), ExtResource("6_wu01b"), ExtResource("7_556r4")], [null, null, null, null]]
 
 [node name="level" type="Node3D"]
 
@@ -48,7 +51,7 @@ custom_globalmap_shader = null
 texture_set = SubResource("Resource_1tp2x")
 render_layers = 1
 cast_shadow = 1
-shader_params/u_ground_uv_scale = 1.0
+shader_params/u_ground_uv_scale = 2.0
 shader_params/u_depth_blending = true
 shader_params/u_triplanar = false
 shader_params/u_tile_reduction = Vector4(1, 1, 1, 1)
@@ -70,10 +73,11 @@ metadata/_editor_icon = ExtResource("7_pqd0y")
 script = ExtResource("5_8gofh")
 layer_index = 1
 texture = ExtResource("8_pqd0y")
+density = 0.3
 shader_params/u_globalmap_tint_bottom = null
 shader_params/u_globalmap_tint_top = null
 shader_params/u_bottom_ao = null
-shader_params/u_instance_scale = Vector3(0.7, 0.7, 0.7)
+shader_params/u_instance_scale = Vector3(2, 2, 2)
 shader_params/u_roughness = 1.0
 metadata/_editor_icon = ExtResource("7_pqd0y")
 
@@ -81,10 +85,11 @@ metadata/_editor_icon = ExtResource("7_pqd0y")
 script = ExtResource("5_8gofh")
 layer_index = 2
 texture = ExtResource("9_pqd0y")
+density = 0.3
 shader_params/u_globalmap_tint_bottom = null
 shader_params/u_globalmap_tint_top = null
 shader_params/u_bottom_ao = null
-shader_params/u_instance_scale = Vector3(0.7, 0.7, 0.7)
+shader_params/u_instance_scale = Vector3(2, 2, 2)
 shader_params/u_roughness = 1.0
 metadata/_editor_icon = ExtResource("7_pqd0y")
 
@@ -104,34 +109,35 @@ metadata/_editor_icon = ExtResource("7_pqd0y")
 script = ExtResource("5_8gofh")
 layer_index = 4
 texture = ExtResource("13_xy2fk")
-density = 1.0
+density = 0.1
 shader_params/u_globalmap_tint_bottom = null
 shader_params/u_globalmap_tint_top = null
 shader_params/u_bottom_ao = null
-shader_params/u_instance_scale = null
+shader_params/u_instance_scale = Vector3(2, 2, 2)
 shader_params/u_roughness = 1.0
 metadata/_editor_icon = ExtResource("7_pqd0y")
 
-[node name="@Node3D@57806" type="Node3D" parent="HTerrain"]
+[node name="_Node3D_57806" type="Node3D" parent="HTerrain"]
 script = ExtResource("5_8gofh")
 layer_index = 5
 texture = ExtResource("14_cmcjb")
-density = 1.0
+density = 0.1
 shader_params/u_globalmap_tint_bottom = null
 shader_params/u_globalmap_tint_top = null
 shader_params/u_bottom_ao = null
-shader_params/u_instance_scale = null
+shader_params/u_instance_scale = Vector3(2, 2, 2)
 shader_params/u_roughness = 1.0
 metadata/_editor_icon = ExtResource("7_pqd0y")
 
-[node name="@Node3D@58071" type="Node3D" parent="HTerrain"]
+[node name="_Node3D_58071" type="Node3D" parent="HTerrain"]
 script = ExtResource("5_8gofh")
 layer_index = 6
 texture = ExtResource("15_7agi7")
+density = 0.03
 shader_params/u_globalmap_tint_bottom = 0.9
 shader_params/u_globalmap_tint_top = 0.6
 shader_params/u_bottom_ao = 0.5
-shader_params/u_instance_scale = Vector3(0.3, 0.3, 0.3)
+shader_params/u_instance_scale = Vector3(1, 1, 1)
 shader_params/u_roughness = 1.0
 metadata/_editor_icon = ExtResource("7_pqd0y")
 
@@ -139,10 +145,11 @@ metadata/_editor_icon = ExtResource("7_pqd0y")
 script = ExtResource("5_8gofh")
 layer_index = 7
 texture = ExtResource("16_kih21")
+density = 0.03
 shader_params/u_globalmap_tint_bottom = 0.9
 shader_params/u_globalmap_tint_top = 0.6
 shader_params/u_bottom_ao = 0.5
-shader_params/u_instance_scale = Vector3(0.3, 0.3, 0.3)
+shader_params/u_instance_scale = Vector3(1, 1, 1)
 shader_params/u_roughness = 1.0
 metadata/_editor_icon = ExtResource("7_pqd0y")
 
@@ -150,11 +157,11 @@ metadata/_editor_icon = ExtResource("7_pqd0y")
 script = ExtResource("5_8gofh")
 layer_index = 8
 texture = ExtResource("17_kih21")
-density = 1.0
+density = 0.3
 shader_params/u_globalmap_tint_bottom = 0.0
 shader_params/u_globalmap_tint_top = 0.0
 shader_params/u_bottom_ao = 0.0
-shader_params/u_instance_scale = Vector3(0.7, 0.7, 0.7)
+shader_params/u_instance_scale = Vector3(2, 2, 2)
 shader_params/u_roughness = 1.0
 metadata/_editor_icon = ExtResource("7_pqd0y")
 
@@ -166,7 +173,7 @@ density = 0.5
 shader_params/u_globalmap_tint_bottom = null
 shader_params/u_globalmap_tint_top = null
 shader_params/u_bottom_ao = null
-shader_params/u_instance_scale = Vector3(0.8, 0.8, 0.8)
+shader_params/u_instance_scale = Vector3(2, 2, 2)
 shader_params/u_roughness = 1.0
 metadata/_editor_icon = ExtResource("7_pqd0y")
 
@@ -178,7 +185,7 @@ density = 0.5
 shader_params/u_globalmap_tint_bottom = 0.0
 shader_params/u_globalmap_tint_top = 0.0
 shader_params/u_bottom_ao = 0.0
-shader_params/u_instance_scale = Vector3(0.8, 0.8, 0.8)
+shader_params/u_instance_scale = Vector3(2, 2, 2)
 shader_params/u_roughness = 1.0
 metadata/_editor_icon = ExtResource("7_pqd0y")
 
@@ -207,27 +214,53 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -359.311, -2.5, 0)
 
 [node name="rock_1" parent="rock_env" instance=ExtResource("26_cmcjb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.2142, 5.17717, -6.67606)
+cast_shadow = 0
+billboard = 0
 
 [node name="rock_8" parent="rock_env" instance=ExtResource("26_cmcjb")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 92.6981, 4.93765, 12.9161)
+cast_shadow = 0
+billboard = 0
 
 [node name="rock_9" parent="rock_env" instance=ExtResource("26_cmcjb")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -29.4883, 4.05087, 8.14964)
+cast_shadow = 0
+billboard = 0
 
 [node name="rock_2" parent="rock_env" instance=ExtResource("26_cmcjb")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 63.8887, 5.17717, 13.8804)
+cast_shadow = 0
+billboard = 0
 
 [node name="rock_3" parent="rock_env" instance=ExtResource("27_cmcjb")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 47.3006, 4.53307, -22.1182)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 49.3464, 4.53307, -22.1182)
+cast_shadow = 0
+billboard = 0
 
 [node name="rock_4" parent="rock_env" instance=ExtResource("27_cmcjb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0184593, 5.08684, -6.82987)
+cast_shadow = 0
+billboard = 0
 
 [node name="rock_7" parent="rock_env" instance=ExtResource("27_cmcjb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.1809, 3.44388, 7.99284)
+cast_shadow = 0
+billboard = 0
 
 [node name="rock_5" parent="rock_env" instance=ExtResource("28_556r4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.694, 8.17501, 12.7012)
+cast_shadow = 0
+billboard = 0
 
 [node name="rock_6" parent="rock_env" instance=ExtResource("28_556r4")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 73.6881, 5.77042, -5.97444)
+cast_shadow = 0
+billboard = 0
+
+[node name="Signals" type="Node3D" parent="."]
+
+[node name="SignalQuicksand" parent="Signals" instance=ExtResource("26_556r4")]
+transform = Transform3D(1.42294, -0.162602, 0.445862, 0.170299, 1.4903, 0, -0.44298, 0.05062, 1.4322, -89.1879, -0.398549, 12.3478)
+
+[node name="SignalVirage" parent="Signals" instance=ExtResource("27_556r4")]
+transform = Transform3D(1.31794, 0, -0.716267, 0, 1.5, 0, 0.716267, 0, 1.31794, 16.249, -4.76837e-07, -29.5776)
