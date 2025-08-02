@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://capa820ir3vho"]
+[gd_scene load_steps=28 format=3 uid="uid://capa820ir3vho"]
 
 [ext_resource type="Script" uid="uid://d3y48j1b2i22e" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ppgk2"]
 [ext_resource type="Resource" uid="uid://c3axel685jlwo" path="res://assets/HTerrain/data.hterrain" id="2_2r41h"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bwmtysrwuoxf6" path="res://assets/modele/2D/environment/nature/fleur1.png" id="18_w3o6u"]
 [ext_resource type="Texture2D" uid="uid://bbqishjjqfa17" path="res://assets/modele/2D/environment/nature/fleur2.png" id="19_2e2fo"]
 [ext_resource type="Texture2D" uid="uid://cn1teuf7rjgq" path="res://assets/modele/2D/environment/nature/arbre3.png" id="20_3ies3"]
+[ext_resource type="PackedScene" uid="uid://bo2gdx8joos8y" path="res://scenes/wagon/chef_locomotive.tscn" id="26_556r4"]
 [ext_resource type="PackedScene" uid="uid://balsdmns2sot8" path="res://scenes/object/nature/rocks/rock_1.tscn" id="26_cmcjb"]
 [ext_resource type="PackedScene" uid="uid://ddei87jmflwu2" path="res://scenes/main_map.tscn" id="26_xy2fk"]
 [ext_resource type="PackedScene" uid="uid://b58auulia0ewn" path="res://scenes/object/nature/rocks/rock_2.tscn" id="27_cmcjb"]
@@ -231,3 +232,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.694, 8.17501, 12.7012)
 
 [node name="rock_6" parent="rock_env" instance=ExtResource("28_556r4")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 73.6881, 5.77042, -5.97444)
+
+[node name="chef_locomotive" parent="." instance=ExtResource("26_556r4")]
+transform = Transform3D(0.999084, -0.0427998, 0, 0.0427998, 0.999084, 0, 0, 0, 1, 5.67446, -0.0283263, -25.6752)
