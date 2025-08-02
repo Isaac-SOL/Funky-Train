@@ -1,0 +1,4 @@
+if {first_time.first_vocoder} == true:
+	vocoder: Hi there ! My name is Pytha, I love math and I play the triangle.
+else:
+	vocoder: Miss me ?

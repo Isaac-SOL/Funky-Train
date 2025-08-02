@@ -1,0 +1,4 @@
+if {first_time.first_triangle} == true:
+	triangle: Hi there ! My name is Pytha, I love rockets and all geometric shape with 3 edges.
+else:
+	triangle: Miss me ?

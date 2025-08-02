@@ -1,0 +1,4 @@
+if {first_time.first_guitar} == true:
+	guitar: Hi there ! My name is Pytha, I love math and I play the triangle.
+else:
+	guitar: Miss me ?

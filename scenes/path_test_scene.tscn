@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://wrgu8dfp4pw3" path="res://leeklib/shaker_3d.gd" id="7_0ihyj"]
 [ext_resource type="Texture2D" uid="uid://c0o6y71cnwrw0" path="res://assets/textures/levier.png" id="7_2ai2v"]
 [ext_resource type="Resource" uid="uid://7weavlk3cbvm" path="res://objects/characters/godot2.tres" id="7_7uw5n"]
-[ext_resource type="Texture2D" uid="uid://c52bcth5d22s5" path="res://icon.svg" id="7_j0n6l"]
+[ext_resource type="Texture2D" uid="uid://3f47h88l5y5w" path="res://icon.svg" id="7_j0n6l"]
 [ext_resource type="Script" uid="uid://b2pnmy42f765x" path="res://scripts/lever_direction.gd" id="8_20gy4"]
 [ext_resource type="Shader" uid="uid://byrwhib36s4tv" path="res://materials/edge_detection.gdshader" id="9_qdokm"]
 [ext_resource type="Script" uid="uid://cgr64t0pp5eet" path="res://scripts/lever_speed.gd" id="9_rresx"]
@@ -71,15 +71,6 @@ _data = {
 }
 point_count = 4
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_vdho3"]
-
-[sub_resource type="Curve3D" id="Curve3D_of6ln"]
-_data = {
-"points": PackedVector3Array(-1.76908, -0.113597, -0.0882057, -0.0668678, 0, -3.20955, 0, 0, 0, -3.00962, -0.0965576, -1.97297, 3.00962, 0.0965576, 1.97297, 7.55965, -0.0950937, -2.31264, 2.84242, 0, -2.40769, -2.84242, 0, 2.40769, 4.95323, -0.0186777, 11.4942, 2.47458, 0, 1.97297, -2.47458, 0, -1.97297, -20.1938, -0.00988865, 12.0962, -1, 0, 0, 4.49488, 0, -0.387467, -16.4027, -9.53674e-07, 8.02462),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
-}
-point_count = 5
-
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_frps4"]
 
 [sub_resource type="Curve3D" id="Curve3D_ajlhj"]
@@ -101,6 +92,10 @@ size = Vector2(50, 50)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mkonq"]
 render_priority = -100
 shader = ExtResource("9_qdokm")
+shader_parameter/sobel_max = 0.0
+shader_parameter/sobel_max_depth = 0.0
+shader_parameter/sobel_min = 0.0
+shader_parameter/sobel_min_depth = 0.0
 shader_parameter/depth_gradient_color = Color(1, 0.7, 0, 1)
 shader_parameter/depth_gradient_start = 5.0
 shader_parameter/depth_gradient_end = 20.0
@@ -159,7 +154,7 @@ out_sections = [NodePath("../Rail4")]
 mesh = SubResource("ImmediateMesh_17aas")
 
 [node name="StationGodot" parent="Rail3" instance=ExtResource("2_ajlx6")]
-transform = Transform3D(-0.347155, 0.0953188, 0.932944, 0.0143952, 0.995228, -0.0963279, -0.937692, -0.0200108, -0.346876, -21.1018, -0.379279, -7.9249)
+transform = Transform3D(-0.347155, 0.0953187, 0.932944, 0.0143952, 0.995228, -0.0963279, -0.937692, -0.0200108, -0.346876, -21.1018, -0.379279, -7.9249)
 progress = 24.3272
 waiting_character = ExtResource("4_20gy4")
 
@@ -173,10 +168,9 @@ out_sections = [NodePath("../Rail")]
 mesh = SubResource("ImmediateMesh_of6ln")
 
 [node name="Locomotive" parent="Rail4" instance=ExtResource("2_gd5r5")]
-transform = Transform3D(0.000838326, -3.70622e-09, -0.999969, 0, 0.999961, -3.70625e-09, 0.999965, 3.10713e-12, 0.000838329, 1.31128, 0, 12.5322)
+transform = Transform3D(-0.929144, 0.0041304, 0.369602, 0, 0.999898, -0.0111743, -0.369623, -0.0103828, -0.92909, -25.0228, -0.00186224, -4.46739)
 progress = 29.7235
 rotation_mode = 2
-loop = false
 
 [node name="CameraFollowPos" type="Marker3D" parent="Rail4/Locomotive"]
 unique_name_in_owner = true
@@ -192,7 +186,7 @@ out_sections = [NodePath("../Rail")]
 mesh = SubResource("ImmediateMesh_frps4")
 
 [node name="StationGodot2" parent="Rail5" instance=ExtResource("2_ajlx6")]
-transform = Transform3D(0.0152698, 0.000286745, 0.999874, 0.00671248, 0.999959, -0.000389286, -0.999848, 0.0067176, 0.0152675, -10.5126, -0.0132075, 13.441)
+transform = Transform3D(-4.36485e-08, 2.33266e-09, -0.999991, 0.0533652, 0.998556, 0, 0.998562, -0.0533649, -4.3711e-08, 8.73184, 0, 12.1798)
 progress = 40.425
 waiting_character = ExtResource("7_7uw5n")
 

@@ -1,0 +1,4 @@
+if {first_time.first_batterie} == true:
+	batterie: Hi there ! My name is Pytha, I love math and I play the triangle.
+else:
+	batterie: Miss me ?
