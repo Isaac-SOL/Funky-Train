@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://27kfdujhj7rp"]
+
+[ext_resource type="PackedScene" uid="uid://csllfy35me8pa" path="res://assets/modele/3D/gamjam2025_gare.glb" id="1_eph66"]
+
+[node name="gamjam2025_gare" instance=ExtResource("1_eph66")]
+
+[node name="gare" parent="." index="0"]
+layers = 3
+
+[node name="gare_aiguille" parent="." index="1"]
+layers = 3
+
+[node name="gare_aiguille_001" parent="." index="2"]
+layers = 3

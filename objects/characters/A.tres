@@ -1,14 +1,15 @@
-[gd_resource type="Resource" script_class="CharacterInfo" load_steps=4 format=3 uid="uid://kjtlh674xflv"]
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=5 format=3 uid="uid://kjtlh674xflv"]
 
-[ext_resource type="PackedScene" uid="uid://bvlp4g2b1r1uw" path="res://objects/carriage.tscn" id="1_py7kq"]
+[ext_resource type="PackedScene" path="res://objects/carriage_keytar.tscn" id="1_8di57"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_8di57"]
-[ext_resource type="Texture2D" uid="uid://cxircsdlwktca" path="res://assets/textures/A.png" id="3_8di57"]
+[ext_resource type="Texture2D" uid="uid://dtqd0tyo7jrmk" path="res://assets/modele/2D/personnages/personnages_synthé.png" id="3_wplcc"]
+[ext_resource type="Texture2D" uid="uid://bkbigk77efsar" path="res://assets/modele/2D/personnages/personnages_synthé_c.png" id="4_xa1si"]
 
 [resource]
 script = ExtResource("2_8di57")
 name = "A"
-sprite = ExtResource("3_8di57")
-sprite_cadre = ExtResource("3_8di57")
-color = Color(0.85098, 0, 0, 1)
-carriage = ExtResource("1_py7kq")
+sprite = ExtResource("3_wplcc")
+sprite_cadre = ExtResource("4_xa1si")
+color = Color(0.913725, 0.282353, 0.439216, 1)
+carriage = ExtResource("1_8di57")
 metadata/_custom_type_script = "uid://rkfd1kwn018t"

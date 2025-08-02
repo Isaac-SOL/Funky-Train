@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://l3fxtkqtoise"]
+
+[ext_resource type="PackedScene" uid="uid://bvlp4g2b1r1uw" path="res://objects/carriage.tscn" id="1_kcqss"]
+[ext_resource type="PackedScene" uid="uid://c12k3jpftqlr2" path="res://scenes/wagon/wagon_vocoder.tscn" id="2_b1p2m"]
+
+[node name="CarriageVocoder" instance=ExtResource("1_kcqss")]
+kick = 1.2
+
+[node name="MeshInstance3D" parent="." index="0"]
+visible = false
+
+[node name="wagon_vocoder" parent="ChildRender" index="0" instance=ExtResource("2_b1p2m")]
+transform = Transform3D(7.1723e-09, 0, -0.095, 0, 0.095, 0, 0.095, 0, 7.1723e-09, 0, 0, 0)

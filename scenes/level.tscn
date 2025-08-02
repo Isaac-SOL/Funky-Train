@@ -49,7 +49,7 @@ shader_type = "Classic4Lite"
 custom_shader = null
 custom_globalmap_shader = null
 texture_set = SubResource("Resource_1tp2x")
-render_layers = 1
+render_layers = 3
 cast_shadow = 1
 shader_params/u_ground_uv_scale = 2.0
 shader_params/u_depth_blending = true
@@ -200,9 +200,6 @@ shader_params/u_bottom_ao = null
 shader_params/u_instance_scale = Vector3(6, 6, 6)
 shader_params/u_roughness = 1.0
 metadata/_editor_icon = ExtResource("7_pqd0y")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.861028, 0.191668, -0.471057, -0.00795722, 0.92107, 0.389317, 0.508496, 0.338961, -0.791541, 35.4061, 6.90403, 44.8704)
 
 [node name="main_map" parent="." instance=ExtResource("26_xy2fk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.586, 0.0779428, -18.5415)

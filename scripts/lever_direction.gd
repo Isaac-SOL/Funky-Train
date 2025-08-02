@@ -32,5 +32,5 @@ func _on_gui_input(event: InputEvent) -> void:
 
 func change_direction(right: bool):
 	is_right = right
-	rotation_degrees = 35 if right else -35
+	rotation_degrees = 10 if right else -10
 	Locomotive.instance.direction = right

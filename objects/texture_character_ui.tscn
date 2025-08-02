@@ -3,6 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://b0ckw73qej7is" path="res://assets/textures/locomo.png" id="1_x10wy"]
 
 [node name="TextureLocomotive" type="TextureRect"]
-custom_minimum_size = Vector2(96, 96)
+custom_minimum_size = Vector2(50, 50)
 texture = ExtResource("1_x10wy")
 expand_mode = 1
