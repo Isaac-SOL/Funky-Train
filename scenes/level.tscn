@@ -254,8 +254,6 @@ billboard = 0
 
 [node name="rock_6" parent="rock_env" instance=ExtResource("28_556r4")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 73.6881, 5.77042, -5.97444)
-cast_shadow = 0
-billboard = 0
 
 [node name="Signals" type="Node3D" parent="."]
 

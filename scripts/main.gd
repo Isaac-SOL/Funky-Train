@@ -19,6 +19,8 @@ var dragging_camera: bool = false
 
 func _ready() -> void:
 	instance = self
+	#Preload Diologic timeline by starting a blanc timeline
+	Dialogic.start("timeline_blanc")
 	await get_tree().process_frame
 
 func stop_at_station(station: Station):
