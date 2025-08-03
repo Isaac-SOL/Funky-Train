@@ -433,7 +433,7 @@ progress = 40.9557
 waiting_character = ExtResource("7_b6lr4")
 
 [node name="Locomotive" parent="Rails/RailS5" instance=ExtResource("9_8yhmk")]
-transform = Transform3D(-0.576393, -0.000492677, 0.817125, -0.000854726, 0.999957, -7.64187e-11, -0.817123, -0.000698443, -0.576395, -46.805, 0, 1.95288)
+transform = Transform3D(-0.576393, -0.000492677, 0.817125, -0.000854726, 0.999957, -7.64186e-11, -0.817123, -0.000698443, -0.576395, -46.805, 0, 1.95288)
 progress = 47.4178
 
 [node name="CameraPivotY" type="Marker3D" parent="Rails/RailS5/Locomotive"]
@@ -1003,7 +1003,6 @@ text = "Personne"
 
 [node name="AudioStreamPlayer" parent="." instance=ExtResource("28_ha36p")]
 unique_name_in_owner = true
-stream_paused = false
 
 [connection signal="area_entered" from="Rails/RailS4_S6_bridge/AreaLoop" to="." method="_on_area_loop_area_entered"]
 [connection signal="area_exited" from="Rails/RailS4_S6_bridge/AreaLoop" to="." method="_on_area_loop_area_exited"]
