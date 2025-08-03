@@ -21,7 +21,7 @@ unique_name_in_owner = true
 [node name="chef_locomotive2" parent="MeshInstance3D" instance=ExtResource("3_ue4hp")]
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, 0, 0)
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." groups=["group_locomotive"]]
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]

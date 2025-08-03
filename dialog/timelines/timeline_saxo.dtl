@@ -1,4 +1,5 @@
 if {first_time.first_saxo} == true:
-	saxo: Hi there ! My name is Pytha, I love math and I play the triangle.
+	saxo: I would enjoy a little ride but I'm a bit sensitive I need a car that matches my standing, don't bother me too much.
+	set {first_time.first_saxo} = false
 else:
-	saxo: Miss me ?
+	saxo: Have you seen my friend Louis ?

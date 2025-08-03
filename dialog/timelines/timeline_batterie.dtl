@@ -1,4 +1,5 @@
 if {first_time.first_batterie} == true:
-	batterie: Hi there ! My name is Pytha, I love math and I play the triangle.
+	batterie: Heyyy lets go on a ride, my name's Ruddyyy. I like drummy and I'm curious about spiders. But theyyy seems afraid of me and my hair.
+	set {first_time.first_batterie} = false
 else:
-	batterie: Miss me ?
+	batterie: It's good to take a break.

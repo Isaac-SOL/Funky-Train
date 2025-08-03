@@ -11,4 +11,5 @@ sprite = ExtResource("3_ydwtm")
 sprite_cadre = ExtResource("3_ydwtm")
 color = Color(0.792157, 0.737255, 0.0745098, 1)
 carriage = ExtResource("1_ydwtm")
+instrument = "saxo"
 metadata/_custom_type_script = "uid://rkfd1kwn018t"

@@ -1,4 +1,5 @@
 if {first_time.first_guitar} == true:
-	guitar: Hi there ! My name is Pytha, I love math and I play the triangle.
+	guitar: Let's go for the party ! Let's gather everyone to play together at the beach.
+	set {first_time.first_guitar} = false
 else:
-	guitar: Miss me ?
+	guitar: Do you have everyone for the jam ?

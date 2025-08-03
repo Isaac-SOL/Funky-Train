@@ -5,3 +5,4 @@ class_name CharacterInfo extends Resource
 @export var sprite_cadre: Texture2D
 @export var color: Color
 @export var carriage: PackedScene
+@export var instrument: String

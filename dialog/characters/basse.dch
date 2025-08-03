@@ -2,18 +2,174 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 &"_translation_id": "",
-&"color": Color(1, 1, 1, 1),
+&"color": Color(0.564706, 0.529412, 0.192157, 1),
 &"custom_info": {
-"sound_mood_default": "",
-"sound_moods": {},
-"style": ""
+"sound_mood_default": "Mood 1",
+"sound_moods": {
+"Mood 1": {
+"mode": 0,
+"name": "Mood 1",
+"pitch_base": 1.6,
+"pitch_variance": 0.2,
+"skip_characters": 4.0,
+"sound_path": "res://assets/sounds/sfx/voices/voice_1.ogg",
+"volume_base": 0.0,
+"volume_variance": 0.0
+}
 },
-&"default_portrait": "",
+"style": "default_portrait_style"
+},
+&"default_portrait": "guitare_c",
 &"description": "",
-&"display_name": "basse",
+&"display_name": "Kim",
 &"mirror": false,
-&"nicknames": [""],
+&"nicknames": ["basse"],
 &"offset": Vector2(0, 0),
-&"portraits": {},
+&"portraits": {
+"batterie": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_batterie.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"batterie_c": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_batterie_c.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"guitare": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_guitare.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"guitare_c": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_guitare_c.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"miaou": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_miaou.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"miaou_c": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_miaou_c.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"saxophone": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_saxophone.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"saxophone_c": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_saxophone_c.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"synthé": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_synthé.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"synthé_c": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_synthé_c.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"triangle": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_triangle.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"triangle_c": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_triangle_c.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"trompette": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_trompette.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"trompette_c": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_trompette_c.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"vocoder": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_vocoder.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"vocoder_c": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_vocoder_c.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
 &"scale": 1.0
 }

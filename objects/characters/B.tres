@@ -11,4 +11,5 @@ sprite = ExtResource("3_eqcgt")
 sprite_cadre = ExtResource("3_eqcgt")
 color = Color(0, 0.425, 0.85, 1)
 carriage = ExtResource("1_eqcgt")
+instrument = "vocoder"
 metadata/_custom_type_script = "uid://rkfd1kwn018t"

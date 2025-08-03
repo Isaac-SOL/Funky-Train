@@ -1,0 +1,11 @@
+[gd_resource type="AudioStreamInteractive" load_steps=2 format=3 uid="uid://c6heifnub80nc"]
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_ulixf"]
+stream_count = 1
+stream_0/volume = 0.0
+
+[resource]
+clip_count = 1
+clip_0/name = &"ghost laugh"
+clip_0/stream = SubResource("AudioStreamSynchronized_ulixf")
+clip_0/auto_advance = 0

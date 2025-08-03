@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfkf0oq71xdhc"]
+
+[ext_resource type="Script" uid="uid://du8q0kh7wswdo" path="res://scripts/global/NodeAudio.gd" id="1_bcr8k"]
+[ext_resource type="AudioStream" uid="uid://cxybbqrfjq7y0" path="res://assets/sounds/Ressources/node_audio_interactive1.tres" id="2_t7usu"]
+[ext_resource type="AudioStream" uid="uid://c6heifnub80nc" path="res://assets/sounds/Ressources/node_audio_interactive3.tres" id="4_pe7m2"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_pssrc"]
+streams_count = 5
+
+[node name="NodeAudio" type="Node"]
+script = ExtResource("1_bcr8k")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_t7usu")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_pssrc")
+volume_db = -10.0
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_pe7m2")
+volume_db = -10.0
