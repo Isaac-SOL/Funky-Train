@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://m2gs6g88kh3b" path="res://scripts/level.gd" id="1_7agi7"]
 [ext_resource type="Script" uid="uid://d3y48j1b2i22e" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ppgk2"]
-[ext_resource type="Resource" uid="uid://c3axel685jlwo" path="res://assets/HTerrain/data.hterrain" id="2_2r41h"]
+[ext_resource type="Resource" path="res://assets/HTerrain/data.hterrain" id="2_2r41h"]
 [ext_resource type="Script" uid="uid://dw84e0nu3ialr" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_klq6b"]
 [ext_resource type="Texture2D" uid="uid://cpf6nn2yurgni" path="res://assets/textures/grass/light_grass_2.png" id="4_wu01b"]
 [ext_resource type="Script" uid="uid://cpdd44k8ek70j" path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" id="5_8gofh"]

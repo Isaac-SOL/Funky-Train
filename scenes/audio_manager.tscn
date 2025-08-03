@@ -1,0 +1,42 @@
+[gd_scene load_steps=13 format=3 uid="uid://b27ky1rmtucd2"]
+
+[ext_resource type="AudioStream" uid="uid://m8etl8huntdv" path="res://resources/train_synchronized.tres" id="1_3asnw"]
+[ext_resource type="AudioStream" uid="uid://bahxc3n7001dg" path="res://resources/guitar_radio_synchronized.tres" id="2_m6ggh"]
+[ext_resource type="Script" uid="uid://c7wyq7juvyemy" path="res://scripts/main_music_controller.gd" id="3_aoitu"]
+[ext_resource type="AudioStream" uid="uid://bflko23idruq1" path="res://resources/bass_synchronized.tres" id="3_ic5jq"]
+[ext_resource type="AudioStream" uid="uid://bwwbb0shr45tj" path="res://resources/cat_synchronized.tres" id="4_if78k"]
+[ext_resource type="AudioStream" uid="uid://b8xica1a6q1ss" path="res://resources/clavier_synchronized.tres" id="5_8igv3"]
+[ext_resource type="AudioStream" uid="uid://by784wpvupwt6" path="res://resources/drums_synchronized.tres" id="6_2y2jw"]
+[ext_resource type="AudioStream" uid="uid://df83ejp5ut7qs" path="res://resources/sax_synchronized.tres" id="7_2y5yn"]
+[ext_resource type="AudioStream" uid="uid://crq53ecn26ka1" path="res://resources/triangle_synchronized.tres" id="8_oucy0"]
+[ext_resource type="AudioStream" uid="uid://g516ojb8ig65" path="res://resources/trumpet_synchronized.tres" id="9_cuol6"]
+[ext_resource type="AudioStream" uid="uid://drgk1cvrrof6t" path="res://resources/vocoder_synchronized.tres" id="10_m1k83"]
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_2e2fo"]
+stream_count = 10
+stream_0/stream = ExtResource("1_3asnw")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("2_m6ggh")
+stream_1/volume = 0.0
+stream_2/stream = ExtResource("3_ic5jq")
+stream_2/volume = 0.0
+stream_3/stream = ExtResource("4_if78k")
+stream_3/volume = 0.0
+stream_4/stream = ExtResource("5_8igv3")
+stream_4/volume = 0.0
+stream_5/stream = ExtResource("6_2y2jw")
+stream_5/volume = 0.0
+stream_6/stream = ExtResource("7_2y5yn")
+stream_6/volume = 0.0
+stream_7/stream = ExtResource("8_oucy0")
+stream_7/volume = 0.0
+stream_8/stream = ExtResource("9_cuol6")
+stream_8/volume = 0.0
+stream_9/stream = ExtResource("10_m1k83")
+stream_9/volume = 0.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = SubResource("AudioStreamSynchronized_2e2fo")
+autoplay = true
+bus = &"Music"
+script = ExtResource("3_aoitu")
