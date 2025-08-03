@@ -41,6 +41,18 @@ func _ready() -> void:
 		AudioServer.set_bus_effect_enabled(1,0,true)
 	changeCarSpeed(0)
 	play()
+	
+func turn_whistle_on(enabled):
+	if enabled:
+		if $TrainWhislePlayer.playing:
+			var playback = $TrainWhislePlayer.get_stream_playback()
+			playback.switch_to_clip_by_name("Train Whistle Start")
+		else: 
+			$TrainWhislePlayer.play()
+	else:
+		if $TrainWhislePlayer.playing:
+			var playback = $TrainWhislePlayer.get_stream_playback()
+			playback.switch_to_clip_by_name("Train Whistle End")
 
 func self_fade_music_in(track: Track) -> void:
 	fade_music_in(self.stream, currentTween, track)

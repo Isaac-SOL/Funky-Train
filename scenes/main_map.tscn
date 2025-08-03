@@ -20,8 +20,6 @@
 [ext_resource type="Script" uid="uid://b2pnmy42f765x" path="res://scripts/lever_direction.gd" id="13_b6lr4"]
 [ext_resource type="Script" uid="uid://cgr64t0pp5eet" path="res://scripts/lever_speed.gd" id="14_ha36p"]
 [ext_resource type="PackedScene" uid="uid://b74sqcme40821" path="res://objects/character_signalisation.tscn" id="15_j8ata"]
-[ext_resource type="PackedScene" uid="uid://dj3gds7lk50n6" path="res://objects/dialogic_trigger.tscn" id="17_k43kg"]
-[ext_resource type="Script" uid="uid://di4q8eju5txb1" path="res://scripts/dialogue_info.gd" id="18_ajnxc"]
 [ext_resource type="ArrayMesh" uid="uid://clexao5yymery" path="res://meshes/bridgeRail5.tres" id="18_on5gu"]
 [ext_resource type="Material" uid="uid://cindjmdleanrp" path="res://materials/main_screenspace.tres" id="20_ha36p"]
 [ext_resource type="ArrayMesh" uid="uid://cbbm5vkgt284" path="res://scenes/bridgeRailBig.tres" id="20_xi2te"]
@@ -35,6 +33,8 @@
 [ext_resource type="Texture2D" uid="uid://cw300hiyse80y" path="res://assets/textures/UI/gamjam2025_UI_manette_empty.png" id="30_sxppv"]
 [ext_resource type="PackedScene" uid="uid://b27ky1rmtucd2" path="res://scenes/audio_manager.tscn" id="31_sxppv"]
 [ext_resource type="PackedScene" uid="uid://bqhfgqs02fntc" path="res://objects/quick_dialogue.tscn" id="33_ajnxc"]
+[ext_resource type="Texture2D" uid="uid://dr8o5lu8sg20r" path="res://assets/textures/UI/gamjam2025_UI_corde_siflet.png" id="32_ajnxc"]
+[ext_resource type="Script" uid="uid://d3muv4ahkxuu2" path="res://scripts/whistle_string.gd" id="33_3xitk"]
 [ext_resource type="AudioStream" uid="uid://be0h2esq2uneg" path="res://assets/sfx/clap_1.ogg" id="33_psaan"]
 [ext_resource type="AudioStream" uid="uid://boj2lurrcpx4j" path="res://assets/sfx/clap_2.ogg" id="34_alxc0"]
 [ext_resource type="AudioStream" uid="uid://c7jpca7m84wdr" path="res://assets/sfx/clap_3.ogg" id="35_k8pig"]
@@ -195,7 +195,7 @@ point_count = 3
 
 [sub_resource type="Curve3D" id="Curve3D_50cgf"]
 _data = {
-"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 7.05278, 0, 0.287865, 0, 0, 0, -10.4926, 0, -0.23365, 10.4926, 0, 0.23365, 20.4978, -8.10623e-06, -0.422661, -5.82934, 0, -5.32556, 5.82934, 0, 5.32556, 42.4056, 0, 7.20153),
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -3.58069, 0, 0, 0, 0, 0, 0.122089, 0, 3.7441, -0.122089, 0, -3.7441, -7.5083, 1.79081, -5.80505, -7.05278, 0, -0.287865, 7.05278, 0, 0.287865, 0.292305, 8.10623e-06, -12.3871),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
@@ -232,7 +232,7 @@ metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Curve3D" id="Curve3D_5xo5t"]
 _data = {
-"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 5.82934, 0, 5.32556, 0, 0, 0, -8.83099, 0, -13.8062, 8.83099, 0, 13.8062, 28.8668, 0, 26.3689, 1.3057, 0, -18.7149, -0.266418, 0, 11.8554, 34.2527, 0, 77.406),
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 7.05278, 0, 0.287865, 0, 0, 0, -10.4926, 0, -0.23365, 10.4926, 0, 0.23365, 20.4978, -8.10623e-06, -0.422661, -5.82934, 0, -5.32556, 5.82934, 0, 5.32556, 42.4056, 0, 7.20153),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
@@ -241,7 +241,7 @@ point_count = 3
 
 [sub_resource type="Curve3D" id="Curve3D_la7dy"]
 _data = {
-"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 5.82934, 0, 5.32556, 0, 0, 0, -2.50691, 0, -7.05847, 2.50691, 0, 7.05847, 11.7142, 0, 15.8268, 0, 0, -7.63702, 0, 0, 7.63702, 14.6515, 0, 41.0877),
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 5.82934, 0, 5.32556, 0, 0, 0, -8.83099, 0, -13.8062, 8.83099, 0, 13.8062, 28.8668, 0, 26.3689, 1.3057, 0, -18.7149, -0.266418, 0, 11.8554, 34.2527, 0, 77.406),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
@@ -250,7 +250,7 @@ point_count = 3
 
 [sub_resource type="Curve3D" id="Curve3D_kkyah"]
 _data = {
-"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 0, 0, 7.63702, 0, 0, 0, 8.12558, 0, 5.46145, -8.12558, 0, -5.46145, -18.4275, 0, 7.55735, 0.863609, 0, 12.1624, 0, 0, 7.63702, -25.0196, 0, -28.0712),
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 5.82934, 0, 5.32556, 0, 0, 0, -2.50691, 0, -7.05847, 2.50691, 0, 7.05847, 11.7142, 0, 15.8268, 0, 0, -7.63702, 0, 0, 7.63702, 14.6515, 0, 41.0877),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
@@ -259,16 +259,16 @@ point_count = 3
 
 [sub_resource type="Curve3D" id="Curve3D_vafob"]
 _data = {
-"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 0, 0, 7.63702, 0, 0, 0, 1.3057, 0, -18.7149, 3.06374, 0, 17.1836, 19.6012, 0, 36.3183),
-"tilts": PackedFloat32Array(0, 0)
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 0, 0, 7.63702, 0, 0, 0, 8.12558, 0, 5.46145, -8.12558, 0, -5.46145, -18.4275, 0, 7.55735, 0.863609, 0, 12.1624, 0, 0, 7.63702, -25.0196, 0, -28.0712),
+"tilts": PackedFloat32Array(0, 0, 0)
 }
-point_count = 2
+point_count = 3
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_sqwgn"]
 
 [sub_resource type="Curve3D" id="Curve3D_fork7"]
 _data = {
-"points": PackedVector3Array(1.3057, 0, -18.7149, -1.3057, 0, 18.7149, 0, 0, 0, 21.1382, 0, -0.211388, -21.1382, 0, 0.211388, -36.3609, 0, 18.7189),
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 0, 0, 7.63702, 0, 0, 0, 1.3057, 0, -18.7149, 3.06374, 0, 17.1836, 19.6012, 0, 36.3183),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -277,7 +277,7 @@ point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_hwpaj"]
 _data = {
-"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -21.1382, 0, 0.211388, 0, 0, 0, 21.1382, 0, -0.211388, -21.1382, 0, 0.211388, -61.1214, 0, 1.56815),
+"points": PackedVector3Array(1.3057, 0, -18.7149, -1.3057, 0, 18.7149, 0, 0, 0, 21.1382, 0, -0.211388, -21.1382, 0, 0.211388, -36.3609, 0, 18.7189),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -286,10 +286,10 @@ point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_rw4g1"]
 _data = {
-"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 3.22351, 0, 0.0617786, 0, 0, 0, -0.0719643, 0, -9.06785, 0.0719643, 0, 9.06785, 13.9527, 0, 10.2656, 0.143936, 0, -6.7649, -0.143936, 0, 6.7649, 14.0247, 0, 25.9544),
-"tilts": PackedFloat32Array(0, 0, 0)
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -21.1382, 0, 0.211388, 0, 0, 0, 21.1382, 0, -0.211388, -21.1382, 0, 0.211388, -61.1214, 0, 1.56815),
+"tilts": PackedFloat32Array(0, 0)
 }
-point_count = 3
+point_count = 2
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_uv8yl"]
 
@@ -323,7 +323,7 @@ metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Curve3D" id="Curve3D_b2ayy"]
 _data = {
-"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -0.143936, 0, 6.7649, 0, 0, 0, -0.0719643, 0, -9.06785, 0.0719643, 0, 9.06785, -0.324795, 0, 26.244, 21.1382, 0, -0.211388, -9.59085, 0, 0, -24.8941, 0, 43.0456),
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 3.22351, 0, 0.0617786, 0, 0, 0, -0.0719643, 0, -9.06785, 0.0719643, 0, 9.06785, 13.9527, 0, 10.2656, 0.143936, 0, -6.7649, -0.143936, 0, 6.7649, 14.0247, 0, 25.9544),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
@@ -331,6 +331,15 @@ point_count = 3
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_l71x2"]
 
 [sub_resource type="Curve3D" id="Curve3D_7iam4"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -0.143936, 0, 6.7649, 0, 0, 0, -0.0719643, 0, -9.06785, 0.0719643, 0, 9.06785, -0.324795, 0, 26.244, 21.1382, 0, -0.211388, -9.59085, 0, 0, -24.8941, 0, 43.0456),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_45vgs"]
+
+[sub_resource type="Curve3D" id="Curve3D_rw4g1"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -21.1382, 0, 0.211388, 0, 0, 0, 5.06184, 0, 23.1779, -5.06184, 0, -23.1779, -70.0364, 0, -31.5873),
 "tilts": PackedFloat32Array(0, 0)
@@ -1395,6 +1404,31 @@ text = "Funky Train:
 Jumbo Quest for Mumbo Friends"
 label_settings = SubResource("LabelSettings_4kkmd")
 horizontal_alignment = 1
+
+[node name="WhistleUI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WhistleString" type="TextureRect" parent="CanvasLayer/WhistleUI"]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 29.787
+anchor_top = 2.975
+anchor_right = 29.787
+anchor_bottom = 2.975
+offset_left = -52.48
+offset_right = 52.52
+offset_bottom = 296.0
+grow_horizontal = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+texture = ExtResource("32_ajnxc")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("33_3xitk")
 
 [node name="AudioStreamPlayer" parent="." instance=ExtResource("31_sxppv")]
 unique_name_in_owner = true
