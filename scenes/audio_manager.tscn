@@ -70,5 +70,7 @@ stream = SubResource("AudioStreamSynchronized_2e2fo")
 bus = &"Music"
 script = ExtResource("3_aoitu")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="TrainWhislePlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
 stream = SubResource("AudioStreamInteractive_cuol6")
+volume_db = -10.214
