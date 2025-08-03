@@ -155,10 +155,12 @@ func _on_area_loop_area_exited(area: Area3D) -> void:
 		%CameraShaker.target_node = camera_follow_pos
 
 func character_attached(new_character: CharacterInfo):
+	%AudioStreamPlayerAttachDetach.play()
 	if new_character.track_id != -1:
 		%AudioStreamPlayer.setInstrument(new_character.track_id, true)
 
 func character_detached(char: CharacterInfo):
+	%AudioStreamPlayerAttachDetach.play()
 	if char.track_id != -1:
 		%AudioStreamPlayer.setInstrument(char.track_id, false)
 

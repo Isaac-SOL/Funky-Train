@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b27ky1rmtucd2"]
+[gd_scene load_steps=17 format=3 uid="uid://b27ky1rmtucd2"]
 
 [ext_resource type="AudioStream" uid="uid://m8etl8huntdv" path="res://resources/train_synchronized.tres" id="1_3asnw"]
 [ext_resource type="AudioStream" uid="uid://bahxc3n7001dg" path="res://resources/guitar_radio_synchronized.tres" id="2_m6ggh"]
@@ -11,6 +11,9 @@
 [ext_resource type="AudioStream" uid="uid://crq53ecn26ka1" path="res://resources/triangle_synchronized.tres" id="8_oucy0"]
 [ext_resource type="AudioStream" uid="uid://g516ojb8ig65" path="res://resources/trumpet_synchronized.tres" id="9_cuol6"]
 [ext_resource type="AudioStream" uid="uid://drgk1cvrrof6t" path="res://resources/vocoder_synchronized.tres" id="10_m1k83"]
+[ext_resource type="AudioStream" uid="uid://emh463k3vqai" path="res://assets/sounds/train_whistle_start.ogg" id="12_2y2jw"]
+[ext_resource type="AudioStream" uid="uid://cfcv5i8wvc7y3" path="res://assets/sounds/train_whistle_sustain.ogg" id="13_2y5yn"]
+[ext_resource type="AudioStream" uid="uid://dtnejfhy6igr2" path="res://assets/sounds/train_whistle_end.ogg" id="14_oucy0"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_2e2fo"]
 stream_count = 10
@@ -35,7 +38,39 @@ stream_8/volume = 0.0
 stream_9/stream = ExtResource("10_m1k83")
 stream_9/volume = 0.0
 
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_cuol6"]
+clip_count = 3
+clip_0/name = &"Train Whistle Start"
+clip_0/stream = ExtResource("12_2y2jw")
+clip_0/auto_advance = 1
+clip_0/next_clip = 1
+clip_1/name = &"Train Whistle Sustain"
+clip_1/stream = ExtResource("13_2y5yn")
+clip_1/auto_advance = 0
+clip_2/name = &"Train Whistle End"
+clip_2/stream = ExtResource("14_oucy0")
+clip_2/auto_advance = 0
+_transitions = {
+Vector2i(-1, 2): {
+"fade_beats": 1.0,
+"fade_mode": 4,
+"from_time": 0,
+"to_time": 1
+},
+Vector2i(0, 1): {
+"fade_beats": 1.0,
+"fade_mode": 4,
+"from_time": 3,
+"to_time": 1
+}
+}
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 stream = SubResource("AudioStreamSynchronized_2e2fo")
 bus = &"Music"
 script = ExtResource("3_aoitu")
+
+[node name="TrainWhislePlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamInteractive_cuol6")
+volume_db = -10.214
