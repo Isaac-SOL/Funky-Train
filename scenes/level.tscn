@@ -1,7 +1,7 @@
-[gd_scene load_steps=33 format=3 uid="uid://capa820ir3vho"]
+[gd_scene load_steps=38 format=3 uid="uid://capa820ir3vho"]
 
 [ext_resource type="Script" uid="uid://d3y48j1b2i22e" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ppgk2"]
-[ext_resource type="Resource" path="res://assets/HTerrain/data.hterrain" id="2_2r41h"]
+[ext_resource type="Resource" uid="uid://c3axel685jlwo" path="res://assets/HTerrain/data.hterrain" id="2_2r41h"]
 [ext_resource type="Script" uid="uid://dw84e0nu3ialr" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_klq6b"]
 [ext_resource type="Texture2D" uid="uid://cpf6nn2yurgni" path="res://assets/textures/grass/light_grass_2.png" id="4_wu01b"]
 [ext_resource type="Script" uid="uid://cpdd44k8ek70j" path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" id="5_8gofh"]
@@ -31,6 +31,11 @@
 [ext_resource type="PackedScene" uid="uid://dqg5esvawldvs" path="res://objects/signal_rocket.tscn" id="29_w3o6u"]
 [ext_resource type="PackedScene" uid="uid://mdaovb10eqyu" path="res://objects/signal_tunnel.tscn" id="30_2e2fo"]
 [ext_resource type="PackedScene" uid="uid://cm6kmaxavyvgd" path="res://objects/signal_pente.tscn" id="31_gur6y"]
+[ext_resource type="Texture2D" uid="uid://bo8w4ow5tlun2" path="res://assets/textures/gamjam2025_sun.png" id="32_2e2fo"]
+[ext_resource type="Script" uid="uid://wrgu8dfp4pw3" path="res://leeklib/shaker_3d.gd" id="33_2jdvr"]
+[ext_resource type="Texture2D" uid="uid://348kbeug2g8s" path="res://assets/textures/gamjam2025_nuage1.png" id="33_gur6y"]
+[ext_resource type="Texture2D" uid="uid://ddrm5trq6f4wd" path="res://assets/textures/gamjam2025_nuage2.png" id="34_asl66"]
+[ext_resource type="Texture2D" uid="uid://cfk6v7prtt1ps" path="res://assets/textures/gamjam2025_nuage3.png" id="35_2jdvr"]
 
 [sub_resource type="Resource" id="Resource_1tp2x"]
 script = ExtResource("3_klq6b")
@@ -254,6 +259,8 @@ billboard = 0
 
 [node name="rock_6" parent="rock_env" instance=ExtResource("28_556r4")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 73.6881, 5.77042, -5.97444)
+cast_shadow = 0
+billboard = 0
 
 [node name="Signals" type="Node3D" parent="."]
 
@@ -271,3 +278,49 @@ transform = Transform3D(-0.796667, 0, 0.604418, 0, 1, 0, -0.604418, 0, -0.796667
 
 [node name="SignalPente" parent="Signals" instance=ExtResource("31_gur6y")]
 transform = Transform3D(0.366252, 0.155458, 0.917438, -0.134501, 0.984436, -0.113117, -0.920744, -0.0819671, 0.381461, 3.18168, 0.0659692, -44.9564)
+
+[node name="Sky" type="Node3D" parent="."]
+
+[node name="Node3DClouds" type="Node3D" parent="Sky" node_paths=PackedStringArray("target_node")]
+unique_name_in_owner = true
+script = ExtResource("33_2jdvr")
+target_node = NodePath("../../main_map/Rails/RailS5/Locomotive")
+follow_global_coordinates = true
+move_speed = 30.0
+rotation_speed = 30.0
+metadata/_custom_type_script = "uid://wrgu8dfp4pw3"
+
+[node name="Node3D" type="Node3D" parent="Sky/Node3DClouds"]
+transform = Transform3D(0.788902, 0.593608, -0.158946, 3.72529e-09, 0.25865, 0.965971, 0.614519, -0.762056, 0.20405, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D"]
+transform = Transform3D(-40, 3.49691e-06, -1.35525e-20, 1.52855e-13, 1.74846e-06, -40, -3.49691e-06, -40, -1.74846e-06, 0, 250, 0)
+texture = ExtResource("32_2e2fo")
+
+[node name="Node3D2" type="Node3D" parent="Sky/Node3DClouds"]
+transform = Transform3D(0.252306, 0.948484, -0.191627, 1.49012e-08, 0.198034, 0.980195, 0.967648, -0.247309, 0.049965, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D2"]
+transform = Transform3D(40, 0, 0, 0, -1.74846e-06, -40, 0, 40, -1.74846e-06, 0, 220, 0)
+texture = ExtResource("33_gur6y")
+
+[node name="Node3D3" type="Node3D" parent="Sky/Node3DClouds"]
+transform = Transform3D(-0.92274, -0.366789, 0.118392, 8.3819e-09, 0.307174, 0.951653, -0.385423, 0.878129, -0.283442, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D3"]
+transform = Transform3D(40, 0, 0, 0, -1.74846e-06, -40, 0, 40, -1.74846e-06, 0, 220, 0)
+texture = ExtResource("33_gur6y")
+
+[node name="Node3D4" type="Node3D" parent="Sky/Node3DClouds"]
+transform = Transform3D(0.675487, -0.708736, 0.203495, 0, 0.275973, 0.961165, -0.737372, -0.649255, 0.186416, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D4"]
+transform = Transform3D(40, 0, 0, 0, -1.74846e-06, -40, 0, 40, -1.74846e-06, 0, 220, 0)
+texture = ExtResource("34_asl66")
+
+[node name="Node3D5" type="Node3D" parent="Sky/Node3DClouds"]
+transform = Transform3D(0.974193, 0.211757, -0.0781465, 3.72529e-09, 0.346215, 0.938155, 0.225716, -0.913944, 0.33728, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D5"]
+transform = Transform3D(40, 0, 0, 0, -1.74846e-06, -40, 0, 40, -1.74846e-06, 0, 220, 0)
+texture = ExtResource("35_2jdvr")

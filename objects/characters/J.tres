@@ -12,4 +12,5 @@ sprite = ExtResource("3_6fdos")
 sprite_cadre = ExtResource("4_6fdos")
 color = Color(0.894118, 0.670588, 0.184314, 1)
 carriage = ExtResource("1_2jdqh")
+track_id = 8
 metadata/_custom_type_script = "uid://rkfd1kwn018t"

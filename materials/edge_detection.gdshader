@@ -56,12 +56,17 @@ void fragment() {
 	float norm_depth = (lin_depth - depth_gradient_start) / (depth_gradient_end - depth_gradient_start);
 	norm_depth = clamp(norm_depth, 0.0, 1.0);
 	norm_depth *= depth_gradient_strength;
+	if (lin_depth > 200.0) {
+		norm_depth = 0.0;
+	}
 
 	// === IMAGE COMPOSITION ===
 
 	float norm_depth_sobel = (lin_depth - sobel_max_depth) / (sobel_min_depth - sobel_max_depth);
 	norm_depth_sobel = clamp(norm_depth_sobel, 0.0, 1.0);
-	sobel_scalar *= mix(sobel_max, sobel_min, norm_depth_sobel);
+	if (lin_depth <= 200.0) {
+		sobel_scalar *= mix(sobel_max, sobel_min, norm_depth_sobel);
+	}
 	sobel_scalar = 1.0 - sobel_scalar;
 	sobel_scalar = clamp(sobel_scalar, 0.0, 1.0);
 

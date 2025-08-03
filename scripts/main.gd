@@ -22,6 +22,8 @@ func _ready() -> void:
 	#Preload Diologic timeline by starting a blanc timeline
 	Dialogic.start("timeline_blanc")
 	await get_tree().process_frame
+	#%Map.texture = ViewportTexture.new()
+	#%Map.texture.viewport_path = %Map.get_path_to(%SubViewport)
 
 func stop_at_station(station: Station):
 	active_station = station
@@ -78,8 +80,9 @@ func set_signals(reqs_left: Array[String], reqs_right: Array[String]):
 	set_single_signal(reqs_right, %SignalisationRight)
 	signals_up = true
 
-func set_direction_valid(valid: bool):
-	%LeverDirection.modulate = Color.WHITE if valid else Color.RED
+func set_direction_valid(valid_left: bool, valid_right: bool):
+	%CroixLeft.visible = not valid_left
+	%CroixRight.visible = not valid_right
 
 func reset_signals():
 	for child in %SignalisationLeft.get_children():
@@ -105,7 +108,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if dragging_camera:
 			camera_pivot_y.rotate_y(-event.relative.x * camera_sensitivity.y)
 			camera_pivot_x.rotate_x(-event.relative.y * camera_sensitivity.x)
-			camera_pivot_x.rotation_degrees.x = clampf(camera_pivot_x.rotation_degrees.x, -45.0, 20.0)
+			camera_pivot_x.rotation_degrees.x = clampf(camera_pivot_x.rotation_degrees.x, -45.0, 10.0)
 
 func _on_button_prendre_pressed() -> void:
 	close_add_character()
@@ -144,6 +147,13 @@ func _on_area_loop_area_entered(area: Area3D) -> void:
 func _on_area_loop_area_exited(area: Area3D) -> void:
 	%CameraShaker.target_node = camera_follow_pos
 
+func character_attached(new_character: CharacterInfo):
+	if new_character.track_id != -1:
+		%AudioStreamPlayer.setInstrument(new_character.track_id, true)
 
-func _on_skip_button_toggled(toggled_on: bool) -> void:
-	Locomotive.instance.stop_at_stations = not toggled_on
+func character_detached(char: CharacterInfo):
+	if char.track_id != -1:
+		%AudioStreamPlayer.setInstrument(char.track_id, false)
+
+func _on_h_slider_volume_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_linear(0, value)
