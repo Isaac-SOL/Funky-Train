@@ -339,7 +339,7 @@ out_requirements_1 = Array[String](["F"])
 mesh = SubResource("ImmediateMesh_k43kg")
 
 [node name="Station4" parent="Rails/RailS4" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.000827101, 0, -0.999979, 0, 1, 0, 0.999979, 0, -0.000827101, 16.1874, 0, -0.000769002)
+transform = Transform3D(-0.0008271, 0, -0.999979, 0, 1, 0, 0.999979, 0, -0.0008271, 16.1874, 0, -0.000769002)
 progress = 16.1862
 waiting_character = ExtResource("9_jikhd")
 

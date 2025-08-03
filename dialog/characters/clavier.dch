@@ -13,7 +13,7 @@
 "pitch_variance": 0.3,
 "skip_characters": 4.0,
 "sound_path": "res://assets/sounds/sfx/voices/han.ogg",
-"volume_base": -10.0,
+"volume_base": -8.0,
 "volume_variance": 0.0
 }
 },
