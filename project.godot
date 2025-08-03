@@ -24,8 +24,8 @@ config/icon="res://icon.svg"
 
 Global="*res://scripts/global/Global.gd"
 NodeAudio="*res://scenes/global/node_audio.tscn"
-ImGuiRoot="*res://addons/imgui-godot/data/ImGuiRoot.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+ImGuiRoot="*res://addons/imgui-godot/data/ImGuiRoot.tscn"
 
 [dialogic]
 
