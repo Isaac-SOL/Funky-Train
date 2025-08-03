@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx0g0ek5tyvp5"]
+
+[ext_resource type="Script" uid="uid://dqclrpibg0m2f" path="res://scripts/wagon/wagon.gd" id="1_67ta6"]
+[ext_resource type="Script" uid="uid://eoyxaxq2q24" path="res://scripts/personnage/personnage.gd" id="2_o81tg"]
+[ext_resource type="Texture2D" uid="uid://dk716yitvwxrk" path="res://assets/modele/2D/personnages/personnages_saxophone_c.png" id="3_38fn6"]
+[ext_resource type="PackedScene" uid="uid://ced60onwnlqgy" path="res://assets/modele/3D/wagon/wagons_saxo.tscn" id="4_m0kbv"]
+
+[node name="wagon_saxo" type="Node3D" node_paths=PackedStringArray("wheel_1", "wheel_2", "wheel_3", "wheel_4", "wheel_5", "wheel_6", "wheel_7", "wheel_8")]
+script = ExtResource("1_67ta6")
+wheel_1 = NodePath("wagons_saxo/roue_028")
+wheel_2 = NodePath("wagons_saxo/roue_029")
+wheel_3 = NodePath("wagons_saxo/roue_030")
+wheel_4 = NodePath("wagons_saxo/roue_031")
+wheel_5 = NodePath("wagons_saxo/roue_032")
+wheel_6 = NodePath("wagons_saxo/roue_033")
+wheel_7 = NodePath("wagons_saxo/roue_034")
+wheel_8 = NodePath("wagons_saxo/roue_035")
+metadata/_custom_type_script = "uid://dqclrpibg0m2f"
+
+[node name="personnage_trompette" type="Node3D" parent="." node_paths=PackedStringArray("sprite_3d")]
+transform = Transform3D(6.56, 0, 0, 0, 6.56, 0, 0, 0, 6.56, 4.84378, -24.9951, 0)
+script = ExtResource("2_o81tg")
+sprite_3d = NodePath("Sprite3D")
+metadata/_custom_type_script = "uid://eoyxaxq2q24"
+
+[node name="Sprite3D" type="Sprite3D" parent="personnage_trompette"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 4.85151, 0)
+billboard = 2
+texture = ExtResource("3_38fn6")
+
+[node name="wagons_saxo" parent="." instance=ExtResource("4_m0kbv")]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, 0)
+
+[node name="wagon_saxo" parent="wagons_saxo" index="0"]
+layers = 3
+
+[node name="roue_028" parent="wagons_saxo" index="1"]
+layers = 3
+
+[node name="roue_029" parent="wagons_saxo" index="2"]
+layers = 3
+
+[node name="roue_030" parent="wagons_saxo" index="3"]
+layers = 3
+
+[node name="roue_031" parent="wagons_saxo" index="4"]
+layers = 3
+
+[node name="roue_032" parent="wagons_saxo" index="5"]
+layers = 3
+
+[node name="roue_033" parent="wagons_saxo" index="6"]
+layers = 3
+
+[node name="roue_034" parent="wagons_saxo" index="7"]
+layers = 3
+
+[node name="roue_035" parent="wagons_saxo" index="8"]
+layers = 3
+
+[editable path="wagons_saxo"]

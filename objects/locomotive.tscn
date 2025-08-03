@@ -17,11 +17,12 @@ beats_per_minute = 90.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 unique_name_in_owner = true
+layers = 3
 
 [node name="chef_locomotive2" parent="MeshInstance3D" instance=ExtResource("3_ue4hp")]
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, 0, 0)
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." groups=["group_locomotive"]]
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]

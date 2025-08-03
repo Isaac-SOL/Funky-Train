@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhagvhexhfxfk"]
+
+[ext_resource type="PackedScene" uid="uid://cassm70jeh3h1" path="res://assets/modele/3D/wagon/wagons_basse.glb" id="1_cdigh"]
+
+[node name="wagons_basse_mesh" instance=ExtResource("1_cdigh")]

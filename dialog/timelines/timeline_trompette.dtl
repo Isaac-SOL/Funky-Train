@@ -1,4 +1,5 @@
 if {first_time.first_trompette} == true:
-	trompette: Hi there ! My name is Pytha, I love math and I play the triangle.
+	trompette: Hello dear, we won't slow you down but im afraid me and my fedora are a bit large.
+	set {first_time.first_trompette} = false
 else:
-	trompette: Miss me ?
+	trompette: Greetings the crazy band !

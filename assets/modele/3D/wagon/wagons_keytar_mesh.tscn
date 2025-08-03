@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://5m314dl17tjr"]
+
+[ext_resource type="PackedScene" uid="uid://1u11fxmxt1iu" path="res://assets/modele/3D/wagon/wagons_keytar.glb" id="1_8opq7"]
+
+[node name="wagons_keytar_mesh" instance=ExtResource("1_8opq7")]
+
+[node name="wagon_keytar" parent="." index="0"]
+layers = 3
+
+[node name="roue_012" parent="." index="1"]
+layers = 3
+
+[node name="roue_013" parent="." index="2"]
+layers = 3
+
+[node name="roue_014" parent="." index="3"]
+layers = 3
+
+[node name="roue_015" parent="." index="4"]
+layers = 3
+
+[node name="roue_016" parent="." index="5"]
+layers = 3
+
+[node name="roue_017" parent="." index="6"]
+layers = 3
+
+[node name="roue_018" parent="." index="7"]
+layers = 3
+
+[node name="roue_019" parent="." index="8"]
+layers = 3

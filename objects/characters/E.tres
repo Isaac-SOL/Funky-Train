@@ -1,14 +1,17 @@
-[gd_resource type="Resource" script_class="CharacterInfo" load_steps=4 format=3 uid="uid://cf34n44v4encj"]
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=5 format=3 uid="uid://cf34n44v4encj"]
 
-[ext_resource type="PackedScene" uid="uid://3p8k6p7egiba" path="res://objects/carriage_guitare.tscn" id="1_ydwtm"]
+[ext_resource type="PackedScene" uid="uid://d0wov6n4cqb15" path="res://objects/carriage_saxo.tscn" id="1_ddn65"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_ddn65"]
-[ext_resource type="Texture2D" uid="uid://b46sxytdo5hra" path="res://assets/textures/E.png" id="3_ydwtm"]
+[ext_resource type="Texture2D" uid="uid://cp3dr4p4yn3bg" path="res://assets/modele/2D/personnages/personnages_saxophone.png" id="3_7gj46"]
+[ext_resource type="Texture2D" uid="uid://dk716yitvwxrk" path="res://assets/modele/2D/personnages/personnages_saxophone_c.png" id="4_5j1y4"]
 
 [resource]
 script = ExtResource("2_ddn65")
 name = "E"
-sprite = ExtResource("3_ydwtm")
-sprite_cadre = ExtResource("3_ydwtm")
-color = Color(0.792157, 0.737255, 0.0745098, 1)
-carriage = ExtResource("1_ydwtm")
+sprite = ExtResource("3_7gj46")
+sprite_cadre = ExtResource("4_5j1y4")
+color = Color(0.556863, 0.898039, 0.854902, 1)
+carriage = ExtResource("1_ddn65")
+track_id = 6
+instrument = "saxo"
 metadata/_custom_type_script = "uid://rkfd1kwn018t"

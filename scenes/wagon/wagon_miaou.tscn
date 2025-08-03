@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxg1qr61a3smb"]
+
+[ext_resource type="Script" uid="uid://cxyk327cl7avl" path="res://scripts/wagon/wagon_miaou.gd" id="1_tn8f6"]
+[ext_resource type="PackedScene" uid="uid://5bmlg2p3x0yq" path="res://assets/modele/3D/wagon/wagons_miaou_mesh.tscn" id="2_tn8f6"]
+[ext_resource type="Script" uid="uid://eoyxaxq2q24" path="res://scripts/personnage/personnage.gd" id="3_psdn2"]
+[ext_resource type="Texture2D" uid="uid://bnrvkih5esb63" path="res://assets/modele/2D/personnages/personnages_miaou_c.png" id="4_8sk03"]
+
+[node name="wagon_miaou" type="Node3D"]
+script = ExtResource("1_tn8f6")
+metadata/_custom_type_script = "uid://dqclrpibg0m2f"
+
+[node name="wagons_miaou_mesh" parent="." instance=ExtResource("2_tn8f6")]
+transform = Transform3D(0.255, 0, 0, 0, 0.255, 0, 0, 0, 0.255, 0, 0, 0)
+
+[node name="personnage_miaou" type="Node3D" parent="." node_paths=PackedStringArray("sprite_3d")]
+transform = Transform3D(9.555, 0, 0, 0, 9.555, 0, 0, 0, 9.555, 6.77557, -2.46757, 0)
+script = ExtResource("3_psdn2")
+sprite_3d = NodePath("Sprite3D")
+metadata/_custom_type_script = "uid://eoyxaxq2q24"
+
+[node name="Sprite3D" type="Sprite3D" parent="personnage_miaou"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -0.515146, 0.788334, 0)
+billboard = 2
+texture = ExtResource("4_8sk03")

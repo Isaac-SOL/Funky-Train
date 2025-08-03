@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c12k3jpftqlr2"]
+
+[ext_resource type="Script" uid="uid://dqclrpibg0m2f" path="res://scripts/wagon/wagon.gd" id="1_racby"]
+[ext_resource type="PackedScene" path="res://assets/modele/3D/wagon/wagons_vocoder_mesh.tscn" id="2_184a3"]
+
+[node name="wagon_trompette" type="Node3D" node_paths=PackedStringArray("wheel_1", "wheel_2", "wheel_3", "wheel_4", "wheel_5", "wheel_6", "wheel_7", "wheel_8")]
+script = ExtResource("1_racby")
+wheel_1 = NodePath("wagons_vocoder_mesh/roue_022")
+wheel_2 = NodePath("wagons_vocoder_mesh/roue_023")
+wheel_3 = NodePath("wagons_vocoder_mesh/roue_024")
+wheel_4 = NodePath("wagons_vocoder_mesh/roue_025")
+wheel_5 = NodePath("wagons_vocoder_mesh/roue_020")
+wheel_6 = NodePath("wagons_vocoder_mesh/roue_021")
+wheel_7 = NodePath("wagons_vocoder_mesh/roue_026")
+wheel_8 = NodePath("wagons_vocoder_mesh/roue_027")
+metadata/_custom_type_script = "uid://dqclrpibg0m2f"
+
+[node name="wagons_vocoder_mesh" parent="." instance=ExtResource("2_184a3")]
+transform = Transform3D(0.335, 0, 0, 0, 0.335, 0, 0, 0, 0.335, 0, 0, 0)
+
+[editable path="wagons_vocoder_mesh"]

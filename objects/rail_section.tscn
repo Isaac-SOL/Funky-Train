@@ -19,6 +19,7 @@ script = ExtResource("1_x140k")
 
 [node name="BakedRailsMesh" type="MeshInstance3D" parent="." node_paths=PackedStringArray("path")]
 unique_name_in_owner = true
+layers = 3
 cast_shadow = 0
 mesh = SubResource("ImmediateMesh_e7jeh")
 skeleton = NodePath("../..")

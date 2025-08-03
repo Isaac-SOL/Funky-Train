@@ -71,10 +71,10 @@ _data = {
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rr1dn"]
 angle_min = 1.07288e-05
 angle_max = 1.07288e-05
-direction = Vector3(5, -5, 0)
+direction = Vector3(2, -5, 0)
 spread = 5.0
-initial_velocity_min = -0.5
-initial_velocity_max = -0.5
+initial_velocity_min = -3.5
+initial_velocity_max = -3.0
 angular_velocity_min = -50.0
 angular_velocity_max = 50.0
 gravity = Vector3(0, 0, 0)
@@ -84,6 +84,8 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 albedo_texture = ExtResource("3_3uj84")
+emission_enabled = true
+emission = Color(0.772549, 0.772549, 0.772549, 1)
 billboard_mode = 2
 
 [sub_resource type="QuadMesh" id="QuadMesh_4rl22"]
@@ -95,6 +97,8 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 albedo_texture = ExtResource("4_rxwfc")
+emission_enabled = true
+emission = Color(0.772549, 0.772549, 0.772549, 1)
 billboard_mode = 2
 
 [sub_resource type="QuadMesh" id="QuadMesh_0dcp3"]
@@ -106,6 +110,8 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 albedo_texture = ExtResource("5_4rl22")
+emission_enabled = true
+emission = Color(0.772247, 0.772247, 0.772247, 1)
 billboard_mode = 2
 
 [sub_resource type="QuadMesh" id="QuadMesh_b8qg4"]
@@ -126,8 +132,84 @@ metadata/_custom_type_script = "uid://dqclrpibg0m2f"
 
 [node name="chef_locomotive_mesh" parent="." instance=ExtResource("1_0lnh4")]
 
+[node name="hat_top" parent="chef_locomotive_mesh" index="0"]
+layers = 3
+
+[node name="hat_base" parent="chef_locomotive_mesh" index="1"]
+layers = 3
+
+[node name="medium_wheel_2" parent="chef_locomotive_mesh" index="2"]
+layers = 3
+
+[node name="big_wheel_2" parent="chef_locomotive_mesh" index="3"]
+layers = 3
+
+[node name="front" parent="chef_locomotive_mesh" index="4"]
+layers = 3
+
+[node name="corp_2" parent="chef_locomotive_mesh" index="5"]
+layers = 3
+
+[node name="head" parent="chef_locomotive_mesh" index="6"]
+layers = 3
+
+[node name="corp_1" parent="chef_locomotive_mesh" index="7"]
+layers = 3
+
+[node name="base_1" parent="chef_locomotive_mesh" index="8"]
+layers = 3
+
+[node name="base_2" parent="chef_locomotive_mesh" index="9"]
+layers = 3
+
+[node name="small_wheel_2_1" parent="chef_locomotive_mesh" index="10"]
+layers = 3
+
+[node name="chimney_1" parent="chef_locomotive_mesh" index="11"]
+layers = 3
+
+[node name="chimney_2" parent="chef_locomotive_mesh" index="12"]
+layers = 3
+
+[node name="hat_light" parent="chef_locomotive_mesh" index="13"]
+layers = 3
+
+[node name="small_wheel_2_2" parent="chef_locomotive_mesh" index="14"]
+layers = 3
+
+[node name="medium_wheel_1" parent="chef_locomotive_mesh" index="15"]
+layers = 3
+
+[node name="big_wheel_1" parent="chef_locomotive_mesh" index="16"]
+layers = 3
+
+[node name="small_wheel_1_1" parent="chef_locomotive_mesh" index="17"]
+layers = 3
+
+[node name="small_wheel_1_2" parent="chef_locomotive_mesh" index="18"]
+layers = 3
+
+[node name="bow_tie" parent="chef_locomotive_mesh" index="19"]
+layers = 3
+
+[node name="mustache" parent="chef_locomotive_mesh" index="20"]
+layers = 3
+
+[node name="metronome_base_1" parent="chef_locomotive_mesh" index="21"]
+layers = 3
+
+[node name="metronome_1" parent="chef_locomotive_mesh" index="22"]
+layers = 3
+
+[node name="metronome_base_2" parent="chef_locomotive_mesh" index="23"]
+layers = 3
+
 [node name="metronome_2" parent="chef_locomotive_mesh" index="24"]
 transform = Transform3D(0.424169, 0, 0, 0, 0.396976, -0.307748, 0, 0.229194, 0.533035, -12.3986, 42.7822, 0)
+layers = 3
+
+[node name="back_attach" parent="chef_locomotive_mesh" index="25"]
+layers = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
@@ -144,30 +226,33 @@ spot_range = 14.827
 spot_angle = 23.52
 
 [node name="GPUParticles3D_note1" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 2.7, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 2.7, 0)
 amount = 30
-lifetime = 7.0
+lifetime = 5.0
 preprocess = 1.0
+randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_rr1dn")
 draw_passes = 2
 draw_pass_1 = SubResource("QuadMesh_4rl22")
 draw_pass_2 = null
 
 [node name="GPUParticles3D_note2" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 2.7, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 2.7, 0)
 amount = 30
-lifetime = 7.0
+lifetime = 5.0
 preprocess = 2.0
+randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_rr1dn")
 draw_passes = 2
 draw_pass_1 = SubResource("QuadMesh_0dcp3")
 draw_pass_2 = null
 
 [node name="GPUParticles3D_note3" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 2.7, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 2.7, 0)
 amount = 30
-lifetime = 7.0
+lifetime = 5.0
 preprocess = 3.0
+randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_rr1dn")
 draw_passes = 2
 draw_pass_1 = SubResource("QuadMesh_b8qg4")

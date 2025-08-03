@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://rq5vkwqw23o0"]
+
+[ext_resource type="Script" uid="uid://dqclrpibg0m2f" path="res://scripts/wagon/wagon.gd" id="1_wjyt8"]
+[ext_resource type="PackedScene" path="res://assets/modele/3D/wagon/wagons_keytar_mesh.tscn" id="2_b84o6"]
+[ext_resource type="Script" uid="uid://eoyxaxq2q24" path="res://scripts/personnage/personnage.gd" id="3_g41ay"]
+[ext_resource type="Texture2D" uid="uid://bkbigk77efsar" path="res://assets/modele/2D/personnages/personnages_synthé_c.png" id="4_60mbi"]
+
+[node name="wagon_trompette" type="Node3D" node_paths=PackedStringArray("wheel_1", "wheel_2", "wheel_3", "wheel_4", "wheel_5", "wheel_6", "wheel_7", "wheel_8")]
+script = ExtResource("1_wjyt8")
+wheel_1 = NodePath("wagons_keytar_mesh/roue_012")
+wheel_2 = NodePath("wagons_keytar_mesh/roue_013")
+wheel_3 = NodePath("wagons_keytar_mesh/roue_014")
+wheel_4 = NodePath("wagons_keytar_mesh/roue_015")
+wheel_5 = NodePath("wagons_keytar_mesh/roue_016")
+wheel_6 = NodePath("wagons_keytar_mesh/roue_017")
+wheel_7 = NodePath("wagons_keytar_mesh/roue_018")
+wheel_8 = NodePath("wagons_keytar_mesh/roue_019")
+metadata/_custom_type_script = "uid://dqclrpibg0m2f"
+
+[node name="wagons_keytar_mesh" parent="." instance=ExtResource("2_b84o6")]
+transform = Transform3D(0.47, 0, 0, 0, 0.47, 0, 0, 0, 0.47, 0, 0, 0)
+
+[node name="personnage_trompette" type="Node3D" parent="." node_paths=PackedStringArray("sprite_3d")]
+transform = Transform3D(9.555, 0, 0, 0, 9.555, 0, 0, 0, 9.555, 6.77557, -2.46757, 0)
+script = ExtResource("3_g41ay")
+sprite_3d = NodePath("Sprite3D")
+metadata/_custom_type_script = "uid://eoyxaxq2q24"
+
+[node name="Sprite3D" type="Sprite3D" parent="personnage_trompette"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 1.30857, 0)
+billboard = 2
+texture = ExtResource("4_60mbi")
+
+[editable path="wagons_keytar_mesh"]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://xotg7cc6685q"]
+
+[ext_resource type="PackedScene" uid="uid://bvlp4g2b1r1uw" path="res://objects/carriage.tscn" id="1_nmhck"]
+[ext_resource type="PackedScene" uid="uid://rq5vkwqw23o0" path="res://scenes/wagon/wagon_keytar.tscn" id="2_cn1gw"]
+
+[node name="CarriageKeytar" instance=ExtResource("1_nmhck")]
+length = 2.0
+kick = 1.2
+
+[node name="MeshInstance3D" parent="." index="0"]
+visible = false
+
+[node name="wagon_trompette" parent="ChildRender" index="0" instance=ExtResource("2_cn1gw")]
+transform = Transform3D(-3.93403e-09, 0, -0.09, 0, 0.09, 0, 0.09, 0, -3.93403e-09, 0, 0, 0)

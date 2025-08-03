@@ -12,4 +12,6 @@ sprite = ExtResource("3_l6bfh")
 sprite_cadre = ExtResource("4_l6bfh")
 color = Color(0.796078, 0.737255, 0.0745098, 1)
 carriage = ExtResource("1_u2vis")
+track_id = -1
+instrument = "guitar"
 metadata/_custom_type_script = "uid://rkfd1kwn018t"
