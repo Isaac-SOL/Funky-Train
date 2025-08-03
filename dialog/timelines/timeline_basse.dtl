@@ -1,3 +1,4 @@
+[style name="default_portrait_style"]
 if {first_time.first_basse} == true:
 	basse: Hello, everyone ! Is there any space for me ?
 	set {first_time.first_basse} = false

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3o252k3b06o0"]
+[gd_scene load_steps=5 format=3 uid="uid://b3o252k3b06o0"]
 
 [ext_resource type="Script" uid="uid://dqclrpibg0m2f" path="res://scripts/wagon/wagon.gd" id="1_dj4fc"]
 [ext_resource type="PackedScene" uid="uid://51kvji61lwpi" path="res://assets/modele/3D/wagon/wagon_guitare/wagons_guitare_mesh.tscn" id="2_twyui"]
-[ext_resource type="PackedScene" uid="uid://b3unlf21vunh0" path="res://scenes/personnages/personnage_guitare.tscn" id="3_twyui"]
+[ext_resource type="Script" uid="uid://eoyxaxq2q24" path="res://scripts/personnage/personnage.gd" id="3_akbq0"]
+[ext_resource type="Texture2D" uid="uid://cfilbi7llmsxj" path="res://assets/modele/2D/personnages/gamjam2025_personnages_wagonbar.png" id="4_cyj1p"]
 
 [node name="wagon_guitare" type="Node3D" node_paths=PackedStringArray("wheel_1", "wheel_2", "wheel_3", "wheel_4", "wheel_5", "wheel_6", "wheel_7", "wheel_8")]
 script = ExtResource("1_dj4fc")
@@ -18,7 +19,18 @@ metadata/_custom_type_script = "uid://dqclrpibg0m2f"
 
 [node name="wagons_guitare_mesh" parent="." instance=ExtResource("2_twyui")]
 
-[node name="personnage_guitare" parent="." instance=ExtResource("3_twyui")]
+[node name="volets" parent="wagons_guitare_mesh" index="9"]
+visible = false
+
+[node name="personnage_guitare" type="Node3D" parent="." node_paths=PackedStringArray("sprite_3d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.569895, 0.860602, 0)
+script = ExtResource("3_akbq0")
+sprite_3d = NodePath("Sprite3D")
+metadata/_custom_type_script = "uid://eoyxaxq2q24"
+
+[node name="Sprite3D" type="Sprite3D" parent="personnage_guitare"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+billboard = 2
+texture = ExtResource("4_cyj1p")
 
 [editable path="wagons_guitare_mesh"]

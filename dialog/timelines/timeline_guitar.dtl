@@ -1,3 +1,4 @@
+[style name="default_portrait_style"]
 if {first_time.first_guitar} == true:
 	guitar: Let's go for the party ! Let's gather everyone to play together at the beach.
 	set {first_time.first_guitar} = false

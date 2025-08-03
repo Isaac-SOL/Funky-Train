@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj3gds7lk50n6"]
+
+[ext_resource type="Script" uid="uid://exj4ennw3b52" path="res://scripts/dialogic_trigger.gd" id="1_8adxn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_052cr"]
+size = Vector3(2.775, 3.005, 2.605)
+
+[node name="DialogicTrigger" type="Area3D"]
+collision_layer = 2
+script = ExtResource("1_8adxn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_052cr")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

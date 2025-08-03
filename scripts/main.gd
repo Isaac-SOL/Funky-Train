@@ -8,6 +8,7 @@ static var instance: Main
 @export var character_signalisation_scene: PackedScene
 @export var camera_sensitivity: Vector2 = Vector2.ONE
 @export var zoom_sensitivity: float = 1.0
+@export var quick_dialogue_scene: PackedScene
 
 var active_station: Station
 var signals_up: bool = false
@@ -15,7 +16,10 @@ var signals_up: bool = false
 @onready var camera_pivot_x: Node3D = %CameraPivotX
 @onready var camera_pivot_y: Node3D = %CameraPivotY
 @onready var camera_loop_pos: Node3D = %CameraLoopPos
+@onready var camera_end_pos: Node3D = %EndPos
 var dragging_camera: bool = false
+var ended: bool = false
+var on_end_screen: bool = false
 
 func _ready() -> void:
 	instance = self
@@ -93,7 +97,7 @@ func reset_signals():
 
 func talk(npc_name: String):
 	if Dialogic.current_timeline == null:
-		Dialogic.timeline_ended.connect(_on_timeline_ended)
+		#Dialogic.timeline_ended.connect(_on_timeline_ended)
 		Dialogic.start("timeline_"+npc_name)
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -133,6 +137,17 @@ func close_character_leave():
 	for child in %VBoxContainerLeaveButtons.get_children():
 		%VBoxContainerLeaveButtons.remove_child(child)
 
+func spawn_dialogue(info: DialogueInfo):
+	if ended:
+		return
+	for child in %VBoxContainerDialogue.get_children():
+		if child is QuickDialogue and child.my_info == info:
+			return
+	var new_dialogue: QuickDialogue = quick_dialogue_scene.instantiate()
+	%VBoxContainerDialogue.add_child(new_dialogue)
+	new_dialogue.spawn(info)
+	%AudioStreamPop.play()
+
 func _on_button_no_one_pressed() -> void:
 	close_character_leave()
 	leave_station()
@@ -146,25 +161,124 @@ func _on_character_leave_pressed(carriage: Carriage):
 
 
 func _on_area_loop_area_entered(area: Area3D) -> void:
-	if area.is_in_group("group_locomotive"):
+	if area.is_in_group("group_locomotive") and not on_end_screen:
 		%CameraShaker.target_node = camera_loop_pos
 
 
 func _on_area_loop_area_exited(area: Area3D) -> void:
-	if area.is_in_group("group_locomotive"):
+	if area.is_in_group("group_locomotive") and not on_end_screen:
 		%CameraShaker.target_node = camera_follow_pos
 
 func character_attached(new_character: CharacterInfo):
 	if new_character.track_id != -1:
 		%AudioStreamPlayer.setInstrument(new_character.track_id, true)
+	Dialogic.VAR.set_variable("has.has_" + new_character.instrument, true)
+	
+	if Locomotive.instance.carriages.size() >= 9 and not ended:
+		start_end_screen()
 
 func character_detached(char: CharacterInfo):
 	if char.track_id != -1:
 		%AudioStreamPlayer.setInstrument(char.track_id, false)
+	Dialogic.VAR.set_variable("has.has_" + char.instrument, false)
 
 func _on_h_slider_volume_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_linear(0, value)
-	
 
-func _on_timeline_ended():
-	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
+#func _on_timeline_ended():
+	#Dialogic.timeline_ended.disconnect(_on_timeline_ended)
+
+
+func _on_button_start_pressed() -> void:
+	%ControlStart.visible = false
+	%GameUI.visible = true
+	%CameraShaker.target_node = camera_follow_pos
+
+func start_end_screen():
+	ended = true
+	on_end_screen = true
+	await get_tree().process_frame
+	await get_tree().process_frame
+	Locomotive.instance.set_speed_mode(Locomotive.SpeedMode.FAST)
+	Locomotive.instance.bypass = true
+	%CameraShaker.target_node = camera_end_pos
+	%GameUI.visible = false
+	%ControlEnd.visible = true
+	
+	await get_tree().create_timer(2.0).timeout
+	%LabelCredits.visible = true
+	
+	await get_tree().create_timer(3.0).timeout
+	%LabelCredits.visible = false
+	await get_tree().create_timer(1.0).timeout
+	%LabelCredits.text = "A Loopy Game made by 6 friends\nin 96 hours"
+	%LabelCredits.visible = true
+	
+	await get_tree().create_timer(5.0).timeout
+	%LabelCredits.visible = false
+	await get_tree().create_timer(1.0).timeout
+	%LabelCredits.text = "Level Design:\nCryptal"
+	%LabelCredits.visible = true
+	
+	await get_tree().create_timer(3.0).timeout
+	%LabelCredits.visible = false
+	await get_tree().create_timer(1.0).timeout
+	%LabelCredits.text = "Programming:\nSaltyIsaac"
+	%LabelCredits.visible = true
+	
+	await get_tree().create_timer(3.0).timeout
+	%LabelCredits.visible = false
+	await get_tree().create_timer(1.0).timeout
+	%LabelCredits.text = "Music & SFX:\nJananass"
+	%LabelCredits.visible = true
+	
+	await get_tree().create_timer(3.0).timeout
+	%LabelCredits.visible = false
+	await get_tree().create_timer(1.0).timeout
+	%LabelCredits.text = "2D Art:\nPopouleto\nAshrell"
+	%LabelCredits.visible = true
+	
+	await get_tree().create_timer(3.0).timeout
+	%LabelCredits.visible = false
+	await get_tree().create_timer(1.0).timeout
+	%LabelCredits.text = "3D Models:\nPopouleto\nArkatein"
+	%LabelCredits.visible = true
+	
+	await get_tree().create_timer(3.0).timeout
+	%LabelCredits.visible = false
+	await get_tree().create_timer(1.0).timeout
+	%LabelCredits.text = "Environments:\nArkatein"
+	%LabelCredits.visible = true
+	
+	await get_tree().create_timer(3.0).timeout
+	%LabelCredits.visible = false
+	await get_tree().create_timer(1.0).timeout
+	%LabelCredits.text = "Engine integration:\nSaltyIsaac\nArkatein\nJananass"
+	%LabelCredits.visible = true
+	
+	await get_tree().create_timer(3.0).timeout
+	%LabelCredits.visible = false
+	await get_tree().create_timer(1.0).timeout
+	%LabelCredits.text = "Playtesting:\nTakahiruma"
+	%LabelCredits.visible = true
+	
+	await get_tree().create_timer(3.0).timeout
+	%LabelCredits.visible = false
+	await get_tree().create_timer(1.0).timeout
+	%LabelCredits.text = "Cat:\nJin"
+	%LabelCredits.visible = true
+	
+	await get_tree().create_timer(3.0).timeout
+	%LabelCredits.visible = false
+	await get_tree().create_timer(1.0).timeout
+	%LabelCredits.text = "Thanks for playing!"
+	%LabelCredits.visible = true
+	%AudioStreamFin.play()
+	
+	await get_tree().create_timer(5.0).timeout
+	%LabelCredits.visible = false
+	%CameraShaker.target_node = camera_follow_pos
+	%GameUI.visible = true
+	%ControlEnd.visible = false
+	on_end_screen = false
+	

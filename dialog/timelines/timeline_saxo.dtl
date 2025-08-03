@@ -1,3 +1,4 @@
+[style name="default_portrait_style"]
 if {first_time.first_saxo} == true:
 	saxo: I would enjoy a little ride but I'm a bit sensitive I need a car that matches my standing, don't bother me too much.
 	set {first_time.first_saxo} = false

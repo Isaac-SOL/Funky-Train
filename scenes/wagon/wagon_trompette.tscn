@@ -15,6 +15,6 @@ metadata/_custom_type_script = "uid://dqclrpibg0m2f"
 [node name="wagons_trompette_mesh" parent="." instance=ExtResource("2_wt4o2")]
 
 [node name="personnage_trompette" parent="." instance=ExtResource("3_wt4o2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0980184, 0.60069, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0980184, 0.99335, 0)
 
 [editable path="wagons_trompette_mesh"]

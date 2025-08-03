@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://capa820ir3vho"]
+[gd_scene load_steps=48 format=3 uid="uid://capa820ir3vho"]
 
 [ext_resource type="Script" uid="uid://m2gs6g88kh3b" path="res://scripts/level.gd" id="1_7agi7"]
 [ext_resource type="Script" uid="uid://d3y48j1b2i22e" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ppgk2"]
@@ -35,8 +35,11 @@
 [ext_resource type="Texture2D" uid="uid://bo8w4ow5tlun2" path="res://assets/textures/gamjam2025_sun.png" id="32_2e2fo"]
 [ext_resource type="Script" uid="uid://wrgu8dfp4pw3" path="res://leeklib/shaker_3d.gd" id="33_2jdvr"]
 [ext_resource type="Texture2D" uid="uid://348kbeug2g8s" path="res://assets/textures/gamjam2025_nuage1.png" id="33_gur6y"]
+[ext_resource type="PackedScene" uid="uid://b0ilit7chrmss" path="res://objects/signal_moumoute.tscn" id="33_svjb4"]
+[ext_resource type="PackedScene" uid="uid://chopft87fs8u4" path="res://objects/signal_rocks.tscn" id="34_535f6"]
 [ext_resource type="Texture2D" uid="uid://ddrm5trq6f4wd" path="res://assets/textures/gamjam2025_nuage2.png" id="34_asl66"]
 [ext_resource type="Texture2D" uid="uid://cfk6v7prtt1ps" path="res://assets/textures/gamjam2025_nuage3.png" id="35_2jdvr"]
+[ext_resource type="ArrayMesh" uid="uid://bmnssca7oh6cg" path="res://meshes/new_array_mesh.tres" id="39_c1pbi"]
 
 [sub_resource type="Resource" id="Resource_1tp2x"]
 script = ExtResource("3_klq6b")
@@ -282,6 +285,21 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 73.6881, 5.77042, -5.97
 cast_shadow = 0
 billboard = 0
 
+[node name="rock_10" parent="rock_env" instance=ExtResource("27_cmcjb")]
+transform = Transform3D(0.289058, 0, 0.0973179, 0, 0.305, 0, -0.0973179, 0, 0.289058, 58.3479, 0.975053, -32.5262)
+cast_shadow = 0
+billboard = 0
+
+[node name="rock_11" parent="rock_env" instance=ExtResource("27_cmcjb")]
+transform = Transform3D(-0.273853, 0.0925131, -0.0973179, 0.0976155, 0.288957, 2.79397e-09, 0.0921991, -0.0311467, -0.289058, 60.9916, -0.203777, -27.1554)
+cast_shadow = 0
+billboard = 0
+
+[node name="rock_12" parent="rock_env" instance=ExtResource("28_556r4")]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, 64.637, 0.307716, -24.0378)
+cast_shadow = 0
+billboard = 0
+
 [node name="Signals" type="Node3D" parent="."]
 
 [node name="SignalQuicksand" parent="Signals" instance=ExtResource("26_556r4")]
@@ -298,6 +316,12 @@ transform = Transform3D(-0.796667, 0, 0.604418, 0, 1, 0, -0.604418, 0, -0.796667
 
 [node name="SignalPente" parent="Signals" instance=ExtResource("31_gur6y")]
 transform = Transform3D(0.366252, 0.155458, 0.917438, -0.134501, 0.984436, -0.113117, -0.920744, -0.0819671, 0.381461, 3.18168, 0.0659692, -44.9564)
+
+[node name="SignalMoumoute" parent="Signals" instance=ExtResource("33_svjb4")]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 1.65374, -1.90735e-06, -15.0228)
+
+[node name="SignalRocks" parent="Signals" instance=ExtResource("34_535f6")]
+transform = Transform3D(-0.874738, 0, -0.484596, 0, 1, 0, 0.484596, 0, -0.874738, 53.1562, 4.76837e-07, -39.2575)
 
 [node name="Sky" type="Node3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
@@ -379,6 +403,9 @@ shape = SubResource("BoxShape3D_gur6y")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D_desert"]
 transform = Transform3D(0.0338355, 0, 0.999427, 0, 1, 0, -0.999427, 0, 0.0338355, 23.5093, 1.69164, 7.45666)
 shape = SubResource("BoxShape3D_v3why")
+
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("39_c1pbi")
 
 [connection signal="area_entered" from="Area3D_plane" to="." method="_on_area_3d_plane_area_entered"]
 [connection signal="area_entered" from="Area3D_beach" to="." method="_on_area_3d_beach_area_entered"]

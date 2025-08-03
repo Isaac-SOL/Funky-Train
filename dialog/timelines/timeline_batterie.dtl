@@ -1,3 +1,4 @@
+[style name="default_portrait_style"]
 if {first_time.first_batterie} == true:
 	batterie: Heyyy lets go on a ride, my name's Ruddyyy. I like drummy and I'm curious about spiders. But theyyy seems afraid of me and my hair.
 	set {first_time.first_batterie} = false

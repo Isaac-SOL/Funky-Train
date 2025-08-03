@@ -1,0 +1,12 @@
+[style name="quick_dialogue"]
+if {has.has_clavier} == true && {has.has_basse} == true:
+	clavier: The two of us should be able to clear that path on the right!
+	[wait time="2.0"]
+	basse: Sure!
+	[clear time="3.0" step="false"]
+elif {has.has_clavier} == true:
+	clavier: I could clear that right path with Kim if we found him!
+	[clear time="3.0" step="false"]
+elif {has.has_basse} == true:
+	basse: I could clear the rightmost path, but I'm gonna need Stevie's help for that.
+	[clear time="3.0" step="false"]

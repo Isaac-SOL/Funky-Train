@@ -1,0 +1,4 @@
+[style name="quick_dialogue"]
+if {first_time.first_triangle} == false:
+	batterie: We should go meet Pyyytha! Take a ryyyght!
+	[clear time="3.0"]

@@ -1,0 +1,12 @@
+[style name="quick_dialogue"]
+if {has.has_basse} == true && {has.has_trompette} == true:
+	basse: That tunnel on the right is way too small for me.
+	[wait time="2.0"]
+	trompette: Same, my carriage is way too big for that!
+	[clear time="3.0"]
+elif {has.has_basse} == true:
+	basse: That tunnel on the right is way too small for me.
+	[clear time="3.0"]
+elif {has.has_trompette} == true:
+	trompette: My carriage is way too big for that tunnel on the right!
+	[clear time="3.0"]

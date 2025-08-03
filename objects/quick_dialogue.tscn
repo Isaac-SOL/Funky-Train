@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqhfgqs02fntc"]
+
+[ext_resource type="Script" uid="uid://bo2qyvglugsij" path="res://scripts/quick_dialogue.gd" id="1_803ok"]
+[ext_resource type="Texture2D" uid="uid://cfilbi7llmsxj" path="res://assets/modele/2D/personnages/gamjam2025_personnages_wagonbar.png" id="1_o41h1"]
+[ext_resource type="FontFile" uid="uid://drhhe5f5p7qgn" path="res://assets/Super Frosting.ttf" id="3_y4tpo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3xitk"]
+font = ExtResource("3_y4tpo")
+font_size = 24
+
+[node name="QuickDialogue" type="MarginContainer"]
+offset_right = 512.0
+offset_bottom = 151.0
+mouse_filter = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+script = ExtResource("1_803ok")
+
+[node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("1_o41h1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Test text blablabla azeazea azeaze aze"
+label_settings = SubResource("LabelSettings_3xitk")
+autowrap_mode = 3

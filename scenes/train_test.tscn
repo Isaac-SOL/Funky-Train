@@ -57,7 +57,7 @@ transform = Transform3D(-0.000833163, -9.95202e-05, -0.999962, 7.27566e-12, 0.99
 progress = 2.34874
 
 [node name="CarriageBasse" parent="Path3D" instance=ExtResource("9_4n7l7")]
-transform = Transform3D(-0.000833169, -9.95211e-05, -0.999971, -7.27571e-12, 0.999962, -9.9522e-05, 0.999966, -8.29134e-08, -0.000833173, 0.514287, 0.00288967, -0.00137548)
+transform = Transform3D(-0.000833169, -9.95211e-05, -0.999971, -3.63786e-12, 0.999962, -9.9522e-05, 0.999966, -8.29171e-08, -0.000833173, 0.514287, 0.00288967, -0.00137548)
 progress = 0.516676
 
 [node name="CarriageMiaou" parent="Path3D" instance=ExtResource("10_lt5oa")]

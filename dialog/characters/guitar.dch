@@ -19,13 +19,31 @@
 },
 "style": "default_portrait_style"
 },
-&"default_portrait": "guitare_c",
+&"default_portrait": "gamjam2025_personnages_wagonbar",
 &"description": "",
 &"display_name": "Jimmy",
 &"mirror": false,
 &"nicknames": ["guitar"],
 &"offset": Vector2(0, 0),
 &"portraits": {
+"basse-export": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/basse-export.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"basse-export2": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/basse-export2.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
 "batterie": {
 "export_overrides": {
 "image": "\"res://assets/modele/2D/personnages/personnages_batterie.png\""
@@ -38,6 +56,24 @@
 "batterie_c": {
 "export_overrides": {
 "image": "\"res://assets/modele/2D/personnages/personnages_batterie_c.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"gamjam2025_personnages_wagonbar": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/gamjam2025_personnages_wagonbar.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"gamjam2025_personnages_wagonbar2": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/gamjam2025_personnages_wagonbar2.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -74,6 +110,150 @@
 "miaou_c": {
 "export_overrides": {
 "image": "\"res://assets/modele/2D/personnages/personnages_miaou_c.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"personnages_batterie": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_batterie.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"personnages_batterie_c": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_batterie_c.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"personnages_guitare": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_guitare.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"personnages_guitare_c": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_guitare_c.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"personnages_miaou": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_miaou.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"personnages_miaou_c": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_miaou_c.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"personnages_saxophone": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_saxophone.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"personnages_saxophone_c": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_saxophone_c.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"personnages_synthé": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_synthé.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"personnages_synthé_c": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_synthé_c.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"personnages_triangle": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_triangle.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"personnages_triangle_c": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_triangle_c.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"personnages_trompette": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_trompette.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"personnages_trompette_c": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_trompette_c.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"personnages_vocoder": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_vocoder.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"personnages_vocoder_c": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/personnages_vocoder_c.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

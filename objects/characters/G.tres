@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://3p8k6p7egiba" path="res://objects/carriage_guitare.tscn" id="1_u2vis"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_l6bfh"]
-[ext_resource type="Texture2D" uid="uid://bmjyxg5g0e5yp" path="res://assets/modele/2D/personnages/personnages_guitare.png" id="3_l6bfh"]
-[ext_resource type="Texture2D" uid="uid://dweogwf8fgjdf" path="res://assets/modele/2D/personnages/personnages_guitare_c.png" id="4_l6bfh"]
+[ext_resource type="Texture2D" uid="uid://dcwrchko5pk0y" path="res://assets/modele/2D/personnages/gamjam2025_personnages_wagonbar2.png" id="3_l6bfh"]
+[ext_resource type="Texture2D" uid="uid://cfilbi7llmsxj" path="res://assets/modele/2D/personnages/gamjam2025_personnages_wagonbar.png" id="4_6n4f1"]
 
 [resource]
 script = ExtResource("2_l6bfh")
 name = "G"
 sprite = ExtResource("3_l6bfh")
-sprite_cadre = ExtResource("4_l6bfh")
+sprite_cadre = ExtResource("4_6n4f1")
 color = Color(0.796078, 0.737255, 0.0745098, 1)
 carriage = ExtResource("1_u2vis")
 track_id = -1

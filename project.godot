@@ -14,17 +14,18 @@ imgui/config="uid://w3qgqtnxvopv"
 
 [application]
 
-config/name="Funky TRain"
+config/name="Funky Train"
 run/main_scene="uid://capa820ir3vho"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/image="uid://bnq3r1df1n5b6"
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://scripts/global/Global.gd"
+NodeAudio="*res://scenes/global/node_audio.tscn"
 ImGuiRoot="*res://addons/imgui-godot/data/ImGuiRoot.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
-NodeAudio="*res://scenes/global/node_audio.tscn"
 
 [dialogic]
 
@@ -43,14 +44,21 @@ directories/dch_directory={
 directories/dtl_directory={
 "timeline_basse": "res://dialog/timelines/timeline_basse.dtl",
 "timeline_batterie": "res://dialog/timelines/timeline_batterie.dtl",
+"timeline_batterie_cleared": "res://dialog/timelines/timeline_batterie_cleared.dtl",
 "timeline_blanc": "res://dialog/timelines/timeline_blanc.dtl",
 "timeline_cat": "res://dialog/timelines/timeline_cat.dtl",
 "timeline_clavier": "res://dialog/timelines/timeline_clavier.dtl",
 "timeline_guitar": "res://dialog/timelines/timeline_guitar.dtl",
+"timeline_guitarre_blocked": "res://dialog/timelines/timeline_guitarre_blocked.dtl",
+"timeline_rocket": "res://dialog/timelines/timeline_rocket.dtl",
 "timeline_saxo": "res://dialog/timelines/timeline_saxo.dtl",
+"timeline_saxo_blocked": "res://dialog/timelines/timeline_saxo_blocked.dtl",
+"timeline_team": "res://dialog/timelines/timeline_team.dtl",
 "timeline_triangle": "res://dialog/timelines/timeline_triangle.dtl",
 "timeline_trompette": "res://dialog/timelines/timeline_trompette.dtl",
-"timeline_vocoder": "res://dialog/timelines/timeline_vocoder.dtl"
+"timeline_tunnel_blocked": "res://dialog/timelines/timeline_tunnel_blocked.dtl",
+"timeline_vocoder": "res://dialog/timelines/timeline_vocoder.dtl",
+"timeline_vocoder_blocked": "res://dialog/timelines/timeline_vocoder_blocked.dtl"
 }
 variables={
 "first_time": {
@@ -63,6 +71,17 @@ variables={
 "first_triangle": true,
 "first_trompette": true,
 "first_vocoder": true
+},
+"has": {
+"has_basse": false,
+"has_batterie": false,
+"has_cat": false,
+"has_clavier": false,
+"has_guitar": false,
+"has_saxo": false,
+"has_triangle": false,
+"has_trompette": false,
+"has_vocoder": false
 }
 }
 extensions_folder="res://addons/dialogic_additions"
@@ -85,7 +104,7 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
-layout/style_list=["res://dialog/style/default_portrait_style.tres"]
+layout/style_list=["res://dialog/style/default_portrait_style.tres", "res://dialog/style/quick_dialogue.tres"]
 layout/default_style=""
 glossary/default_case_sensitive=true
 portraits/position_suggestion_names="leftmost"

@@ -1,3 +1,4 @@
+[style name="default_portrait_style"]
 if {first_time.first_cat} == true:
 	cat: Meow...
 	set {first_time.first_cat} = false
