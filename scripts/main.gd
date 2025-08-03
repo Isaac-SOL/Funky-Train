@@ -22,10 +22,10 @@ func _ready() -> void:
 	#Preload Diologic timeline by starting a blanc timeline
 	Dialogic.start("timeline_blanc")
 	await get_tree().process_frame
-	
 
 func stop_at_station(station: Station):
 	active_station = station
+	station.reveal()
 	%CameraShaker.target_node = active_station.get_camera_pos()
 	var character_info := station.waiting_character
 	if character_info:
@@ -44,15 +44,13 @@ func stop_at_station(station: Station):
 
 func update_characters_ui():
 	for child in %HBoxContainerCharacters.get_children():
-		if child != %TextureLocomotive:
-			child.queue_free()
+		child.queue_free()
 	for carriage: Carriage in Locomotive.instance.carriages:
 		var new_texture: TextureRect = character_icon_scene.instantiate()
 		new_texture.texture = carriage.character.sprite_cadre
 		%HBoxContainerCharacters.add_child(new_texture)
 		%HBoxContainerCharacters.move_child(new_texture, 0)
 	await get_tree().process_frame
-	%MarginContainerCharacters.size = Vector2.ZERO
 
 func leave_station():
 	Locomotive.instance.restart()
@@ -82,8 +80,9 @@ func set_signals(reqs_left: Array[String], reqs_right: Array[String]):
 	set_single_signal(reqs_right, %SignalisationRight)
 	signals_up = true
 
-func set_direction_valid(valid: bool):
-	%LeverDirection.modulate = Color.WHITE if valid else Color.RED
+func set_direction_valid(valid_left: bool, valid_right: bool):
+	%CroixLeft.visible = not valid_left
+	%CroixRight.visible = not valid_right
 
 func reset_signals():
 	for child in %SignalisationLeft.get_children():
@@ -114,7 +113,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if dragging_camera:
 			camera_pivot_y.rotate_y(-event.relative.x * camera_sensitivity.y)
 			camera_pivot_x.rotate_x(-event.relative.y * camera_sensitivity.x)
-			camera_pivot_x.rotation_degrees.x = clampf(camera_pivot_x.rotation_degrees.x, -45.0, 20.0)
+			camera_pivot_x.rotation_degrees.x = clampf(camera_pivot_x.rotation_degrees.x, -45.0, 10.0)
 
 func _on_button_prendre_pressed() -> void:
 	close_add_character()
@@ -146,10 +145,6 @@ func _on_character_leave_pressed(carriage: Carriage):
 	leave_station()
 
 
-func _on_check_box_toggled(toggled_on: bool) -> void:
-	Locomotive.instance.stop_at_stations = toggled_on
-
-
 func _on_area_loop_area_entered(area: Area3D) -> void:
 	if area.is_in_group("group_locomotive"):
 		%CameraShaker.target_node = camera_loop_pos
@@ -158,6 +153,17 @@ func _on_area_loop_area_entered(area: Area3D) -> void:
 func _on_area_loop_area_exited(area: Area3D) -> void:
 	if area.is_in_group("group_locomotive"):
 		%CameraShaker.target_node = camera_follow_pos
+
+func character_attached(new_character: CharacterInfo):
+	if new_character.track_id != -1:
+		%AudioStreamPlayer.setInstrument(new_character.track_id, true)
+
+func character_detached(char: CharacterInfo):
+	if char.track_id != -1:
+		%AudioStreamPlayer.setInstrument(char.track_id, false)
+
+func _on_h_slider_volume_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_linear(0, value)
 	
 
 func _on_timeline_ended():

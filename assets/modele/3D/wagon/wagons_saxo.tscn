@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ced60onwnlqgy"]
+
+[ext_resource type="PackedScene" uid="uid://motea4uoost4" path="res://assets/modele/3D/wagon/wagons_saxo.glb" id="1_84hsm"]
+
+[node name="wagons_saxo" instance=ExtResource("1_84hsm")]

@@ -4,4 +4,5 @@ extends Wagon
 
 
 func _process(delta: float) -> void:
+	super._process(delta)
 	animation_player.speed_scale = Global.metronome_speed

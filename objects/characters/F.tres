@@ -12,5 +12,6 @@ sprite = ExtResource("3_lm5v0")
 sprite_cadre = ExtResource("4_lm5v0")
 color = Color(0.968627, 0.282353, 0.0862745, 1)
 carriage = ExtResource("1_bq8b3")
+track_id = 7
 instrument = "triangle"
 metadata/_custom_type_script = "uid://rkfd1kwn018t"

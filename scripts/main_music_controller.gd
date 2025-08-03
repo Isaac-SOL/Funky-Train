@@ -30,7 +30,9 @@ var currentTween
 func _ready() -> void:
 	changeCarSpeed(0)
 	#setInstrument(Track.SAX, true)
-	
+	await get_tree().process_frame
+	Locomotive.instance.speed_mode_changed.connect(changeCarSpeed)
+
 func self_fade_music_in(track: Track) -> void:
 	fade_music_in(self.stream, currentTween, track)
 
@@ -55,28 +57,28 @@ func setInstrument(track: Track, enabled: bool):
 		tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
 		fade_music_out(trackStream, tween, 0)
 	
-func changeCarSpeed(speed: SpeedLever.SpeedMode):
+func changeCarSpeed(speed: Locomotive.SpeedMode):
 	var filter = AudioServer.get_bus_effect(1,0)
 	if currentTween:
 		currentTween.kill()
 	currentTween = create_tween()
 	print(get_tree().get_processed_tweens())
 	match speed:
-		SpeedLever.SpeedMode.STOP:
+		Locomotive.SpeedMode.STOP:
 			currentTween.set_parallel().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
 			var trainTrack = self.stream.get_sync_stream(Track.TRAIN)
 			fade_music_out(trainTrack, currentTween, TrainTrack.FAST)
 			fade_music_out(trainTrack, currentTween, TrainTrack.SLOW)
 			currentTween.set_parallel().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
 			currentTween.tween_property(filter, "cutoff_hz", filter_value, fade_time)
-		SpeedLever.SpeedMode.NORMAL:
+		Locomotive.SpeedMode.NORMAL:
 			currentTween.set_parallel().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
 			var trainTrack = self.stream.get_sync_stream(Track.TRAIN)
 			fade_music_in(trainTrack, currentTween, TrainTrack.SLOW)
 			currentTween.set_parallel().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
 			fade_music_out(trainTrack, currentTween, TrainTrack.FAST)
 			currentTween.tween_property(filter, "cutoff_hz", no_filter, fade_time)
-		SpeedLever.SpeedMode.DOUBLE:
+		Locomotive.SpeedMode.FAST:
 			currentTween.set_parallel().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
 			var trainTrack = self.stream.get_sync_stream(Track.TRAIN)
 			fade_music_in(trainTrack, currentTween, TrainTrack.FAST)

@@ -1,8 +1,20 @@
 class_name Locomotive extends PathFollow3D
 
+enum SpeedMode {
+	STOP,
+	NORMAL,
+	FAST
+}
+
+signal speed_mode_changed(new_speed: SpeedMode)
+signal character_attached(new_character: CharacterInfo)
+signal character_detached(new_character: CharacterInfo)
+
 static var instance: Locomotive
 
+@export var speed_mode: SpeedMode = SpeedMode.STOP
 @export var normal_speed: float = 3.0
+@export var fast_speed: float = 8.0
 @export var startup_time: float = 1.5
 @export var stop_time: float = 3.0
 @export var length: float = 2
@@ -23,7 +35,6 @@ var direction: bool = false
 var bpm_timer: float = 1.0
 var bpm_counter: int = 0
 var locked: bool = false
-var stop_at_stations: bool = true
 
 func _ready() -> void:
 	instance = self
@@ -33,6 +44,7 @@ func _ready() -> void:
 	restart()
 	await get_tree().process_frame
 	update_characters()
+	bpm_timer = 0.0
 
 func _process(delta: float) -> void:
 	# Acceleration / Deceleration
@@ -52,7 +64,7 @@ func _process(delta: float) -> void:
 	
 	var next_station = get_section().get_next_station(progress)
 	var temp_progress := progress + delta * speed
-	if stop_at_stations and next_station and next_station.progress < temp_progress:
+	if speed_mode != SpeedMode.FAST and next_station and next_station.progress < temp_progress:
 		progress = next_station.progress
 		speed = 0.0
 		locked = true
@@ -71,7 +83,7 @@ func _process(delta: float) -> void:
 	
 	if not Main.instance.signals_up and get_distance_to_section_end() < show_signals_at_distance:
 		Main.instance.set_signals(get_section().out_requirements_1, get_section().out_requirements_2)
-		Main.instance.set_direction_valid(check_direction_valid())
+		set_main_directions_valid()
 	
 	# Animation
 	
@@ -83,11 +95,24 @@ func _process(delta: float) -> void:
 			bpm_counter -= beats_per_measure
 			kick_up()
 		for i in range(carriages.size()):
-			# TODO bug here ?
-			if i % beats_per_measure == bpm_counter - 1:
+			if (i + 1) % beats_per_measure == bpm_counter:
 				carriages[i].kick_up()
+	Global.wheel_speed = floori(180 * speed)
 	
 	#imgui()
+
+func set_speed_mode(new_speed: SpeedMode):
+	speed_mode = new_speed
+	if speed_mode == SpeedMode.STOP:
+		target_speed = 0.0
+	elif speed_mode == SpeedMode.NORMAL:
+		target_speed = normal_speed
+	elif speed_mode == SpeedMode.FAST:
+		if "F" in get_properties():
+			target_speed = 12
+		else:
+			target_speed = fast_speed
+	speed_mode_changed.emit(speed_mode)
 
 func check_requirements(req_list: Array[String]) -> bool:
 	if bypass:
@@ -108,6 +133,12 @@ func check_direction_valid() -> bool:
 		return check_requirements(get_section().out_requirements_2)
 	else:
 		return check_requirements(get_section().out_requirements_1)
+
+func set_main_directions_valid():
+	Main.instance.set_direction_valid(
+		check_requirements(get_section().out_requirements_1),
+		check_requirements(get_section().out_requirements_2)
+	)
 
 func next_section() -> RailSection:
 	var out_sections := get_section().out_sections
@@ -131,7 +162,7 @@ func change_section(new_section: RailSection):
 	new_section.add_child(self)
 	curr_section_length = get_parent().curve.get_baked_length()
 	Main.instance.reset_signals()
-	Main.instance.set_direction_valid(true)
+	Main.instance.set_direction_valid(true, true)
 
 func add_character(new_character: CharacterInfo):
 	var new_carriage: Carriage = new_character.carriage.instantiate()
@@ -139,17 +170,19 @@ func add_character(new_character: CharacterInfo):
 	carriages.append(new_carriage)
 	get_section().add_child(new_carriage)
 	update_characters()
+	Main.instance.character_attached(new_character)
 
 func remove_carriage(carriage: Carriage):
 	carriages.remove_at(carriages.find(carriage))
 	carriage.queue_free()
 	update_characters()
+	Main.instance.character_detached(carriage.character)
 
 func update_characters():
 	Main.instance.update_characters_ui()
 	set_rails_gradient(get_gradient())
 	if get_distance_to_section_end() < show_signals_at_distance:
-		Main.instance.set_direction_valid(check_direction_valid())
+		set_main_directions_valid()
 
 func restart():
 	locked = false

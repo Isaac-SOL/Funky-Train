@@ -27,10 +27,11 @@ func _on_gui_input(event: InputEvent) -> void:
 			if offset > distance_to_switch:
 				change_direction(not is_right)
 				if Locomotive.instance.get_distance_to_section_end() <= Locomotive.instance.show_signals_at_distance:
-					Main.instance.set_direction_valid(Locomotive.instance.check_direction_valid())
+					Locomotive.instance.set_main_directions_valid()
 				drag_pos = Vector2.ZERO
 
 func change_direction(right: bool):
 	is_right = right
-	rotation_degrees = 35 if right else -35
+	rotation_degrees = 10 if right else -10
 	Locomotive.instance.direction = right
+	%AudioStreamLever.play()

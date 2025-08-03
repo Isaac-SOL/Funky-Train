@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx4jqw5nm562v"]
+
+[ext_resource type="PackedScene" uid="uid://bvlp4g2b1r1uw" path="res://objects/carriage.tscn" id="1_8jnie"]
+[ext_resource type="PackedScene" uid="uid://bvqpraiusw45h" path="res://scenes/wagon/wagon_basse.tscn" id="2_memmp"]
+
+[node name="CarriageBasse" instance=ExtResource("1_8jnie")]
+length = 1.7
+kick = 1.2
+
+[node name="MeshInstance3D" parent="." index="0"]
+visible = false
+
+[node name="wagon_basse" parent="ChildRender" index="0" instance=ExtResource("2_memmp")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcpxd04n7oj0i"]
+[gd_scene load_steps=7 format=3 uid="uid://dcpxd04n7oj0i"]
 
 [ext_resource type="Script" uid="uid://d2yldh1vs7co5" path="res://scripts/station.gd" id="1_x4hb3"]
-[ext_resource type="PackedScene" uid="uid://csllfy35me8pa" path="res://assets/modele/3D/gamjam2025_gare.glb" id="2_a8vm7"]
+[ext_resource type="PackedScene" uid="uid://27kfdujhj7rp" path="res://objects/gamjam_2025_gare.tscn" id="2_a8vm7"]
 [ext_resource type="Texture2D" uid="uid://qii11fokxfim" path="res://assets/modele/2D/personnages/personnages_batterie.png" id="3_a8vm7"]
+[ext_resource type="Texture2D" uid="uid://cxdlvparc2ap2" path="res://assets/modele/2D/personnages/personnages_triangle_c.png" id="4_tded5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7uw5n"]
 albedo_color = Color(0.588235, 1, 0, 1)
@@ -19,8 +20,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8028, 0.290532, 0)
 visible = false
 mesh = SubResource("BoxMesh_1x2nj")
 
-[node name="gamjam2025_gare" parent="." instance=ExtResource("2_a8vm7")]
+[node name="gamjam2025_gare2" parent="." instance=ExtResource("2_a8vm7")]
 transform = Transform3D(-8.74228e-10, 0, 0.02, 0, 0.02, 0, -0.02, 0, -8.74228e-10, 2.43655, -0.133456, -1.06505e-07)
+
+[node name="gare_aiguille" parent="gamjam2025_gare2" index="1"]
+layers = 1
+
+[node name="gare_aiguille_001" parent="gamjam2025_gare2" index="2"]
+layers = 1
 
 [node name="CharacterSprite" type="Sprite3D" parent="."]
 unique_name_in_owner = true
@@ -31,3 +38,11 @@ texture = ExtResource("3_a8vm7")
 [node name="CameraPos" type="Marker3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(0.995539, 0.0179142, -0.0926353, 0, 0.98181, 0.189867, 0.0943516, -0.18902, 0.97743, 0.68805, 0.755459, 1.63165)
+
+[node name="SpriteMinimap" type="Sprite3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, 3, 0, -3, -1.31134e-07, 2.42132, 4.02721, -1.76035e-07)
+layers = 2
+texture = ExtResource("4_tded5")
+
+[editable path="gamjam2025_gare2"]

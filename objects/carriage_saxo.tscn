@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0wov6n4cqb15"]
+
+[ext_resource type="PackedScene" uid="uid://bvlp4g2b1r1uw" path="res://objects/carriage.tscn" id="1_51r36"]
+[ext_resource type="PackedScene" uid="uid://dx0g0ek5tyvp5" path="res://scenes/wagon/wagon_saxo.tscn" id="2_j0mts"]
+
+[node name="Carriage" instance=ExtResource("1_51r36")]
+length = 4.0
+kick = 1.2
+
+[node name="MeshInstance3D" parent="." index="0"]
+visible = false
+
+[node name="wagon_saxo" parent="ChildRender" index="0" instance=ExtResource("2_j0mts")]
+transform = Transform3D(-4.80825e-09, 0, -0.11, 0, 0.11, 0, 0.11, 0, -4.80825e-09, 0, 0, 0)
