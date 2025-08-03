@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3uaualtn3f12"]
+
+[ext_resource type="PackedScene" uid="uid://bvlp4g2b1r1uw" path="res://objects/carriage.tscn" id="1_1o3cl"]
+[ext_resource type="PackedScene" uid="uid://dxg1qr61a3smb" path="res://scenes/wagon/wagon_miaou.tscn" id="2_hxj0n"]
+
+[node name="CarriageMiaou" instance=ExtResource("1_1o3cl")]
+transform = Transform3D(-4.37099e-08, 0, -0.999971, 0, 0.999962, 0, 0.999966, 0, -4.37101e-08, 0, 0, 0)
+length = 1.6
+kick = 1.2
+
+[node name="MeshInstance3D" parent="." index="0"]
+visible = false
+
+[node name="wagon_miaou" parent="ChildRender" index="0" instance=ExtResource("2_hxj0n")]
+transform = Transform3D(-5.68248e-09, 0, 0.13, 0, 0.13, 0, -0.13, 0, -5.68248e-09, 0, 0, 0)

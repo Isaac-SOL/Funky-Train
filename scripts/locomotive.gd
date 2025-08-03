@@ -95,8 +95,7 @@ func _process(delta: float) -> void:
 			bpm_counter -= beats_per_measure
 			kick_up()
 		for i in range(carriages.size()):
-			# TODO bug here ?
-			if (i % beats_per_measure) + 1 == bpm_counter:
+			if (i + 1) % beats_per_measure == bpm_counter:
 				carriages[i].kick_up()
 	Global.wheel_speed = floori(180 * speed)
 	

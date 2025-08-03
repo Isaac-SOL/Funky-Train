@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="CharacterInfo" load_steps=4 format=3 uid="uid://cmu0o1vkd5een"]
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=5 format=3 uid="uid://cmu0o1vkd5een"]
 
-[ext_resource type="PackedScene" uid="uid://bvlp4g2b1r1uw" path="res://objects/carriage.tscn" id="1_e1gjo"]
+[ext_resource type="PackedScene" uid="uid://bx4jqw5nm562v" path="res://objects/carriage_basse.tscn" id="1_e1gjo"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_827ek"]
-[ext_resource type="Texture2D" uid="uid://cplihw3gqieso" path="res://assets/textures/C.png" id="3_e1gjo"]
+[ext_resource type="Texture2D" uid="uid://bmjyxg5g0e5yp" path="res://assets/modele/2D/personnages/personnages_guitare.png" id="3_827ek"]
+[ext_resource type="Texture2D" uid="uid://dweogwf8fgjdf" path="res://assets/modele/2D/personnages/personnages_guitare_c.png" id="4_kqpm5"]
 
 [resource]
 script = ExtResource("2_827ek")
 name = "C"
-sprite = ExtResource("3_e1gjo")
-sprite_cadre = ExtResource("3_e1gjo")
-color = Color(0.894118, 0.670588, 0.184314, 1)
+sprite = ExtResource("3_827ek")
+sprite_cadre = ExtResource("4_kqpm5")
+color = Color(0.152941, 0.34902, 0.180392, 1)
 carriage = ExtResource("1_e1gjo")
 track_id = 2
 instrument = "basse"

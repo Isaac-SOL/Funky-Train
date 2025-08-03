@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://capa820ir3vho"]
+[gd_scene load_steps=45 format=3 uid="uid://capa820ir3vho"]
 
 [ext_resource type="Script" uid="uid://m2gs6g88kh3b" path="res://scripts/level.gd" id="1_7agi7"]
 [ext_resource type="Script" uid="uid://d3y48j1b2i22e" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ppgk2"]
@@ -300,6 +300,7 @@ transform = Transform3D(-0.796667, 0, 0.604418, 0, 1, 0, -0.604418, 0, -0.796667
 transform = Transform3D(0.366252, 0.155458, 0.917438, -0.134501, 0.984436, -0.113117, -0.920744, -0.0819671, 0.381461, 3.18168, 0.0659692, -44.9564)
 
 [node name="Sky" type="Node3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
 [node name="Node3DClouds" type="Node3D" parent="Sky" node_paths=PackedStringArray("target_node")]
 unique_name_in_owner = true
@@ -311,7 +312,7 @@ rotation_speed = 30.0
 metadata/_custom_type_script = "uid://wrgu8dfp4pw3"
 
 [node name="Node3D" type="Node3D" parent="Sky/Node3DClouds"]
-transform = Transform3D(0.788902, 0.593608, -0.158946, 3.72529e-09, 0.25865, 0.965971, 0.614519, -0.762056, 0.20405, 0, 0, 0)
+transform = Transform3D(-0.432684, -0.870867, 0.233186, 6.32298e-09, 0.25865, 0.965971, -0.901546, 0.41796, -0.111914, 0, 0, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D"]
 transform = Transform3D(-40, 3.49691e-06, -1.35525e-20, 1.52855e-13, 1.74846e-06, -40, -3.49691e-06, -40, -1.74846e-06, 0, 250, 0)
@@ -322,6 +323,7 @@ transform = Transform3D(0.252306, 0.948484, -0.191627, 1.49012e-08, 0.198034, 0.
 
 [node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D2"]
 transform = Transform3D(40, 0, 0, 0, -1.74846e-06, -40, 0, 40, -1.74846e-06, 0, 220, 0)
+alpha_cut = 1
 texture = ExtResource("33_gur6y")
 
 [node name="Node3D3" type="Node3D" parent="Sky/Node3DClouds"]
@@ -329,6 +331,7 @@ transform = Transform3D(-0.92274, -0.366789, 0.118392, 8.3819e-09, 0.307174, 0.9
 
 [node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D3"]
 transform = Transform3D(40, 0, 0, 0, -1.74846e-06, -40, 0, 40, -1.74846e-06, 0, 220, 0)
+alpha_cut = 1
 texture = ExtResource("33_gur6y")
 
 [node name="Node3D4" type="Node3D" parent="Sky/Node3DClouds"]
@@ -336,6 +339,7 @@ transform = Transform3D(0.675487, -0.708736, 0.203495, 0, 0.275973, 0.961165, -0
 
 [node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D4"]
 transform = Transform3D(40, 0, 0, 0, -1.74846e-06, -40, 0, 40, -1.74846e-06, 0, 220, 0)
+alpha_cut = 1
 texture = ExtResource("34_asl66")
 
 [node name="Node3D5" type="Node3D" parent="Sky/Node3DClouds"]
@@ -343,6 +347,7 @@ transform = Transform3D(0.974193, 0.211757, -0.0781465, 3.72529e-09, 0.346215, 0
 
 [node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D5"]
 transform = Transform3D(40, 0, 0, 0, -1.74846e-06, -40, 0, 40, -1.74846e-06, 0, 220, 0)
+alpha_cut = 1
 texture = ExtResource("35_2jdvr")
 
 [node name="Area3D_plane" type="Area3D" parent="."]

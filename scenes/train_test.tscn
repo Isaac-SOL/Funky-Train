@@ -1,13 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://3n6jqwbsvfqh"]
+[gd_scene load_steps=12 format=3 uid="uid://3n6jqwbsvfqh"]
 
 [ext_resource type="PackedScene" uid="uid://b2gtvjpbbcs2j" path="res://objects/locomotive.tscn" id="1_bp3yc"]
 [ext_resource type="PackedScene" uid="uid://d0wov6n4cqb15" path="res://objects/carriage_saxo.tscn" id="2_c4vld"]
-[ext_resource type="PackedScene" path="res://objects/carriage_keytar.tscn" id="3_4n7l7"]
+[ext_resource type="PackedScene" uid="uid://xotg7cc6685q" path="res://objects/carriage_keytar.tscn" id="3_4n7l7"]
 [ext_resource type="PackedScene" path="res://objects/carriage_vocoder.tscn" id="4_lt5oa"]
 [ext_resource type="PackedScene" uid="uid://bpwff1f4x5ej" path="res://objects/carriage_batterie.tscn" id="5_fc1qg"]
 [ext_resource type="PackedScene" uid="uid://3p8k6p7egiba" path="res://objects/carriage_guitare.tscn" id="6_1k5gc"]
 [ext_resource type="PackedScene" uid="uid://ckvk1vpxrrfee" path="res://objects/carriage_triangle.tscn" id="7_7u431"]
 [ext_resource type="PackedScene" uid="uid://chccempimbf63" path="res://objects/carriage_trompette.tscn" id="8_mktsg"]
+[ext_resource type="PackedScene" uid="uid://bx4jqw5nm562v" path="res://objects/carriage_basse.tscn" id="9_4n7l7"]
+[ext_resource type="PackedScene" uid="uid://b3uaualtn3f12" path="res://objects/carriage_miaou.tscn" id="10_lt5oa"]
 
 [sub_resource type="Curve3D" id="Curve3D_mjs1d"]
 _data = {
@@ -53,3 +55,11 @@ progress = 4.43609
 [node name="CarriageTrompette" parent="Path3D" instance=ExtResource("8_mktsg")]
 transform = Transform3D(-0.000833163, -9.95202e-05, -0.999962, 7.27566e-12, 0.999953, -9.95211e-05, 0.999958, -8.29272e-08, -0.000833166, 2.34837, 0.0030722, 0.000152704)
 progress = 2.34874
+
+[node name="CarriageBasse" parent="Path3D" instance=ExtResource("9_4n7l7")]
+transform = Transform3D(-0.000833169, -9.95211e-05, -0.999971, -7.27571e-12, 0.999962, -9.9522e-05, 0.999966, -8.29134e-08, -0.000833173, 0.514287, 0.00288967, -0.00137548)
+progress = 0.516676
+
+[node name="CarriageMiaou" parent="Path3D" instance=ExtResource("10_lt5oa")]
+transform = Transform3D(-0.000833169, -9.95211e-05, -0.999971, 7.27571e-12, 0.999962, -9.9522e-05, 0.999966, -8.2928e-08, -0.000833173, 6.76066e-05, 0.00283849, -0.00180393)
+loop = false

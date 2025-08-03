@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvqpraiusw45h"]
+
+[ext_resource type="Script" uid="uid://dqclrpibg0m2f" path="res://scripts/wagon/wagon.gd" id="1_5ctgp"]
+[ext_resource type="PackedScene" uid="uid://bhagvhexhfxfk" path="res://assets/modele/3D/wagon/wagons_basse_mesh.tscn" id="2_yvuhh"]
+[ext_resource type="Script" uid="uid://eoyxaxq2q24" path="res://scripts/personnage/personnage.gd" id="3_ipilb"]
+[ext_resource type="Texture2D" uid="uid://dweogwf8fgjdf" path="res://assets/modele/2D/personnages/personnages_guitare_c.png" id="4_hskhm"]
+
+[node name="wagon_basse" type="Node3D" node_paths=PackedStringArray("wheel_1", "wheel_2", "wheel_3", "wheel_4")]
+script = ExtResource("1_5ctgp")
+wheel_1 = NodePath("")
+wheel_2 = NodePath("")
+wheel_3 = NodePath("")
+wheel_4 = NodePath("")
+metadata/_custom_type_script = "uid://dqclrpibg0m2f"
+
+[node name="wagons_basse_mesh" parent="." instance=ExtResource("2_yvuhh")]
+transform = Transform3D(0.055, 0, 0, 0, 0.055, 0, 0, 0, 0.055, 0, 0, 0)
+
+[node name="personnage_trompette" type="Node3D" parent="." node_paths=PackedStringArray("sprite_3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0980184, 1.56726, 0)
+script = ExtResource("3_ipilb")
+sprite_3d = NodePath("Sprite3D")
+metadata/_custom_type_script = "uid://eoyxaxq2q24"
+
+[node name="Sprite3D" type="Sprite3D" parent="personnage_trompette"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -0.373494, 0)
+billboard = 2
+texture = ExtResource("4_hskhm")
