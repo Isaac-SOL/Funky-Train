@@ -37,6 +37,5 @@ stream_9/volume = 0.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 stream = SubResource("AudioStreamSynchronized_2e2fo")
-autoplay = true
 bus = &"Music"
 script = ExtResource("3_aoitu")
