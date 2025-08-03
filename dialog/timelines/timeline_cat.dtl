@@ -1,4 +1,5 @@
 if {first_time.first_cat} == true:
-	cat: Hi there ! My name is Pytha, I love math and I play the triangle.
+	cat: Meow...
+	set {first_time.first_cat} = false
 else:
-	cat: Miss me ?
+	cat: Frrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr

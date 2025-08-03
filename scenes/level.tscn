@@ -1,5 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://capa820ir3vho"]
 
+[ext_resource type="Script" uid="uid://m2gs6g88kh3b" path="res://scripts/level.gd" id="1_7agi7"]
 [ext_resource type="Script" uid="uid://d3y48j1b2i22e" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ppgk2"]
 [ext_resource type="Resource" uid="uid://c3axel685jlwo" path="res://assets/HTerrain/data.hterrain" id="2_2r41h"]
 [ext_resource type="Script" uid="uid://dw84e0nu3ialr" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_klq6b"]
@@ -42,7 +43,26 @@ script = ExtResource("3_klq6b")
 mode = 0
 textures = [[ExtResource("4_wu01b"), ExtResource("5_556r4"), ExtResource("6_wu01b"), ExtResource("7_556r4")], [null, null, null, null]]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_7agi7"]
+size = Vector3(44.7369, 13.1348, 94.0441)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kih21"]
+size = Vector3(36.4395, 13.1348, 54.6269)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w3o6u"]
+size = Vector3(39.2105, 13.1348, 92.7217)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2e2fo"]
+size = Vector3(36.4395, 13.1348, 136.206)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gur6y"]
+size = Vector3(58.7916, 13.1348, 56.9167)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v3why"]
+size = Vector3(36.6874, 13.1348, 126.746)
+
 [node name="level" type="Node3D"]
+script = ExtResource("1_7agi7")
 
 [node name="HTerrain" type="Node3D" parent="."]
 script = ExtResource("1_ppgk2")
@@ -324,3 +344,37 @@ transform = Transform3D(0.974193, 0.211757, -0.0781465, 3.72529e-09, 0.346215, 0
 [node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D5"]
 transform = Transform3D(40, 0, 0, 0, -1.74846e-06, -40, 0, 40, -1.74846e-06, 0, 220, 0)
 texture = ExtResource("35_2jdvr")
+
+[node name="Area3D_plane" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_plane"]
+transform = Transform3D(-0.0250778, 0, 0.999686, 0, 1, 0, -0.999686, 0, -0.0250778, -20.9055, 1.69164, -36.3162)
+shape = SubResource("BoxShape3D_7agi7")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D_plane"]
+transform = Transform3D(-0.0354402, 0, 0.999372, 0, 1, 0, -0.999372, 0, -0.0354402, 51.3215, 1.69164, -51.041)
+shape = SubResource("BoxShape3D_kih21")
+
+[node name="Area3D_beach" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_beach"]
+transform = Transform3D(0.895557, 0, 0.444948, 0, 1, 0, -0.444948, 0, 0.895557, -65.9857, 1.69164, 21.1888)
+shape = SubResource("BoxShape3D_w3o6u")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D_beach"]
+transform = Transform3D(0.0338355, 0, 0.999427, 0, 1, 0, -0.999427, 0, 0.0338355, 10.5549, 1.69164, 46.06)
+shape = SubResource("BoxShape3D_2e2fo")
+
+[node name="Area3D_desert" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_desert"]
+transform = Transform3D(0.995624, 0, 0.093448, 0, 1, 0, -0.093448, 0, 0.995624, 58.0884, 1.69164, -4.28688)
+shape = SubResource("BoxShape3D_gur6y")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D_desert"]
+transform = Transform3D(0.0338355, 0, 0.999427, 0, 1, 0, -0.999427, 0, 0.0338355, 23.5093, 1.69164, 7.45666)
+shape = SubResource("BoxShape3D_v3why")
+
+[connection signal="area_entered" from="Area3D_plane" to="." method="_on_area_3d_plane_area_entered"]
+[connection signal="area_entered" from="Area3D_beach" to="." method="_on_area_3d_beach_area_entered"]
+[connection signal="area_entered" from="Area3D_desert" to="." method="_on_area_3d_desert_area_entered"]

@@ -1,4 +1,5 @@
 if {first_time.first_basse} == true:
-	basse: Hi there ! My name is Pytha, I love math and I play the triangle.
+	basse: Hello, everyone ! Is there any space for me ?
+	set {first_time.first_basse} = false
 else:
-	basse: Miss me ?
+	basse: To be honest, I was little borred without your company.

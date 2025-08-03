@@ -13,4 +13,5 @@ sprite_cadre = ExtResource("4_5j1y4")
 color = Color(0.556863, 0.898039, 0.854902, 1)
 carriage = ExtResource("1_ddn65")
 track_id = 6
+instrument = "saxo"
 metadata/_custom_type_script = "uid://rkfd1kwn018t"

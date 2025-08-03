@@ -22,8 +22,6 @@ func _ready() -> void:
 	#Preload Diologic timeline by starting a blanc timeline
 	Dialogic.start("timeline_blanc")
 	await get_tree().process_frame
-	#%Map.texture = ViewportTexture.new()
-	#%Map.texture.viewport_path = %Map.get_path_to(%SubViewport)
 
 func stop_at_station(station: Station):
 	active_station = station
@@ -32,6 +30,8 @@ func stop_at_station(station: Station):
 	var character_info := station.waiting_character
 	if character_info:
 		%LabelTitre.text = character_info.name
+		talk(character_info.instrument)
+		await Dialogic.timeline_ended
 		%MarginContainerStationGrab.visible = true
 	else:
 		for carriage in Locomotive.instance.carriages:
@@ -91,6 +91,11 @@ func reset_signals():
 		child.queue_free()
 	signals_up = false
 
+func talk(npc_name: String):
+	if Dialogic.current_timeline == null:
+		Dialogic.timeline_ended.connect(_on_timeline_ended)
+		Dialogic.start("timeline_"+npc_name)
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -141,11 +146,13 @@ func _on_character_leave_pressed(carriage: Carriage):
 
 
 func _on_area_loop_area_entered(area: Area3D) -> void:
-	%CameraShaker.target_node = camera_loop_pos
+	if area.is_in_group("group_locomotive"):
+		%CameraShaker.target_node = camera_loop_pos
 
 
 func _on_area_loop_area_exited(area: Area3D) -> void:
-	%CameraShaker.target_node = camera_follow_pos
+	if area.is_in_group("group_locomotive"):
+		%CameraShaker.target_node = camera_follow_pos
 
 func character_attached(new_character: CharacterInfo):
 	if new_character.track_id != -1:
@@ -157,3 +164,7 @@ func character_detached(char: CharacterInfo):
 
 func _on_h_slider_volume_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_linear(0, value)
+	
+
+func _on_timeline_ended():
+	Dialogic.timeline_ended.disconnect(_on_timeline_ended)

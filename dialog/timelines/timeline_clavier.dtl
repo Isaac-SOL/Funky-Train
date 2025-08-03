@@ -1,4 +1,5 @@
 if {first_time.first_clavier} == true:
-	clavier: Hi there ! My name is Pytha, I love math and I play the triangle.
+	clavier: Welcome ! I'm Steve but everybody calls me Stevie. We should go see Pytha too ! I'm sure he would love to join \:)
+	set {first_time.first_clavier} = false
 else:
-	clavier: Miss me ?
+	clavier: You're back !
