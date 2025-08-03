@@ -1,8 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqhfgqs02fntc"]
+[gd_scene load_steps=7 format=3 uid="uid://bqhfgqs02fntc"]
 
 [ext_resource type="Script" uid="uid://bo2qyvglugsij" path="res://scripts/quick_dialogue.gd" id="1_803ok"]
 [ext_resource type="Texture2D" uid="uid://cfilbi7llmsxj" path="res://assets/modele/2D/personnages/gamjam2025_personnages_wagonbar.png" id="1_o41h1"]
 [ext_resource type="FontFile" uid="uid://drhhe5f5p7qgn" path="res://assets/Super Frosting.ttf" id="3_y4tpo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4tpo"]
+bg_color = Color(0, 0, 0, 0.784314)
+
+[sub_resource type="Theme" id="Theme_22d7r"]
+Panel/styles/panel = SubResource("StyleBoxFlat_y4tpo")
 
 [sub_resource type="LabelSettings" id="LabelSettings_3xitk"]
 font = ExtResource("3_y4tpo")
@@ -22,6 +28,7 @@ script = ExtResource("1_803ok")
 show_behind_parent = true
 layout_mode = 2
 mouse_filter = 2
+theme = SubResource("Theme_22d7r")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2

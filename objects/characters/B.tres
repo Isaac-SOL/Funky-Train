@@ -14,4 +14,5 @@ color = Color(0.988235, 0.184314, 0.223529, 1)
 carriage = ExtResource("1_4qakc")
 track_id = 9
 instrument = "vocoder"
+true_name = "TB-303"
 metadata/_custom_type_script = "uid://rkfd1kwn018t"

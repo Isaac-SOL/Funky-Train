@@ -14,4 +14,5 @@ color = Color(0.956863, 0.380392, 0.054902, 1)
 carriage = ExtResource("1_uxrmn")
 track_id = 3
 instrument = "cat"
+true_name = "Jojo"
 metadata/_custom_type_script = "uid://rkfd1kwn018t"

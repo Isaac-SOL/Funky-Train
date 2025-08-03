@@ -11,4 +11,6 @@ sprite = ExtResource("3_smgdn")
 color = Color(1, 0.566667, 0, 1)
 carriage = ExtResource("1_smgdn")
 track_id = -1
+instrument = ""
+true_name = ""
 metadata/_custom_type_script = "uid://rkfd1kwn018t"

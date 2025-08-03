@@ -14,4 +14,5 @@ color = Color(0.796078, 0.737255, 0.0745098, 1)
 carriage = ExtResource("1_u2vis")
 track_id = -1
 instrument = "guitar"
+true_name = "Jimmy"
 metadata/_custom_type_script = "uid://rkfd1kwn018t"

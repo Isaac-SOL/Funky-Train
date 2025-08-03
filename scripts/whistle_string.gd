@@ -1,6 +1,6 @@
 class_name WhistleString extends TextureRect
 
-@export var distance_to_toot: float = 25.0
+@export var distance_to_toot: float = 125.0
 
 var is_dragging: bool = false
 var drag_pos: Vector2 = Vector2.ZERO

@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://cudo6djqnmi2b"]
+
+[ext_resource type="Texture2D" uid="uid://se850k4655va" path="res://assets/textures/gamjam2025_UI_choice1.png" id="1_f0ffp"]
+
+[resource]
+texture = ExtResource("1_f0ffp")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0

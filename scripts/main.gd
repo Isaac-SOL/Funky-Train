@@ -33,14 +33,14 @@ func stop_at_station(station: Station):
 	%CameraShaker.target_node = active_station.get_camera_pos()
 	var character_info := station.waiting_character
 	if character_info:
-		%LabelTitre.text = character_info.name
+		%LabelTitre.text = character_info.true_name
 		talk(character_info.instrument)
 		await Dialogic.timeline_ended
 		%MarginContainerStationGrab.visible = true
 	else:
 		for carriage in Locomotive.instance.carriages:
 			var new_button: Button = character_leave_button_scene.instantiate()
-			new_button.text = carriage.character.name
+			new_button.text = carriage.character.true_name
 			new_button.icon = carriage.character.sprite_cadre
 			new_button.pressed.connect(_on_character_leave_pressed.bind(carriage))
 			%VBoxContainerLeaveButtons.add_child(new_button)

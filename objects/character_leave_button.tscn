@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://lp0v4qbqartt"]
+[gd_scene load_steps=5 format=3 uid="uid://lp0v4qbqartt"]
 
-[ext_resource type="Texture2D" uid="uid://c52bcth5d22s5" path="res://icon.svg" id="1_ufa4e"]
+[ext_resource type="FontFile" uid="uid://drhhe5f5p7qgn" path="res://assets/Super Frosting.ttf" id="1_36hm7"]
+[ext_resource type="StyleBox" uid="uid://0ucxhj7lfimq" path="res://assets/style_button_orange.tres" id="1_aeynu"]
+[ext_resource type="Texture2D" uid="uid://b00s35701sv10" path="res://icon.svg" id="1_ufa4e"]
+[ext_resource type="StyleBox" uid="uid://cudo6djqnmi2b" path="res://assets/style_button_orange_normal.tres" id="2_36hm7"]
 
 [node name="CharacterLeaveButton" type="Button"]
+theme_override_fonts/font = ExtResource("1_36hm7")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = ExtResource("1_aeynu")
+theme_override_styles/normal = ExtResource("2_36hm7")
 text = "Lui là"
 icon = ExtResource("1_ufa4e")
 expand_icon = true

@@ -14,4 +14,5 @@ color = Color(0.894118, 0.670588, 0.184314, 1)
 carriage = ExtResource("1_2jdqh")
 track_id = 8
 instrument = "trompette"
+true_name = "Louis"
 metadata/_custom_type_script = "uid://rkfd1kwn018t"
