@@ -109,7 +109,7 @@ point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_q32ya"]
 _data = {
-"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 2.89839, 0, 0.0491591, 0, 0, 0, -3.22351, 0, -0.0617786, 3.22351, 0, 0.0617786, 16.9347, 0, 0),
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 2.91532, 0, 0.00383526, 0, 0, 0, -2.89839, 0, -0.0491591, 2.89839, 0, 0.0491591, 16.9347, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -125,7 +125,7 @@ metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Curve3D" id="Curve3D_4vm3s"]
 _data = {
-"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 3.22351, 0, 0.0617786, 0, 0, 0, -0.0453262, 0, 9.60894, 0.0453262, 0, -9.60894, 17.3541, 0, -9.39877),
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 2.89839, 0, 0.0491591, 0, 0, 0, -3.22351, 0, -0.0617786, 3.22351, 0, 0.0617786, 16.9347, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -205,7 +205,7 @@ _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 7.05278, 0, 0.287865, 0, 0, 0, -10.4926, 0, -0.23365, 10.4926, 0, 0.23365, 20.4978, -8.10623e-06, -0.422661, -5.82934, 0, -5.32556, 5.82934, 0, 5.32556, 42.4056, 0, 7.20153),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
-point_count = 3
+point_count = 2
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_sqwgn"]
 
@@ -253,18 +253,18 @@ _data = {
 }
 point_count = 3
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_45vgs"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_uv8yl"]
 
-[sub_resource type="Curve3D" id="Curve3D_rw4g1"]
+[sub_resource type="Curve3D" id="Curve3D_b2ayy"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 0, 0, 7.63702, 0, 0, 0, 8.12558, 0, 5.46145, -8.12558, 0, -5.46145, -18.4275, 0, 7.55735, 0.863609, 0, 12.1624, 0, 0, 7.63702, -25.0196, 0, -28.0712),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_uv8yl"]
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_l71x2"]
 
-[sub_resource type="Curve3D" id="Curve3D_b2ayy"]
+[sub_resource type="Curve3D" id="Curve3D_7iam4"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 0, 0, 7.63702, 0, 0, 0, 1.3057, 0, -18.7149, 3.06374, 0, 17.1836, 19.6012, 0, 36.3183),
 "tilts": PackedFloat32Array(0, 0)
