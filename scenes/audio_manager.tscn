@@ -55,7 +55,7 @@ Vector2i(-1, 2): {
 "fade_beats": 1.0,
 "fade_mode": 4,
 "from_time": 0,
-"to_time": 1
+"to_time": 0
 },
 Vector2i(0, 1): {
 "fade_beats": 1.0,
@@ -73,4 +73,4 @@ script = ExtResource("3_aoitu")
 [node name="TrainWhislePlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamInteractive_cuol6")
-volume_db = -10.214
+volume_db = -7.428
