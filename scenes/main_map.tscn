@@ -1092,7 +1092,6 @@ size = 100.0
 
 [node name="GameUI" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1122,7 +1121,7 @@ offset_top = -164.0
 offset_right = -1107.48
 offset_bottom = 159.0
 pivot_offset = Vector2(56, 0)
-mouse_default_cursor_shape = 2
+mouse_default_cursor_shape = 6
 texture = ExtResource("25_yqb2n")
 expand_mode = 1
 
@@ -1592,6 +1591,7 @@ metadata/_custom_type_script = "uid://bgvijcrqwruss"
 [node name="AudioStreamPlayerAttachDetach" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_ajnxc")
+volume_db = 5.0
 max_polyphony = 2
 bus = &"SFX"
 

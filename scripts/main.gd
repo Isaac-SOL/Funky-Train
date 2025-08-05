@@ -31,6 +31,7 @@ var signals_up: bool = false
 var dragging_camera: bool = false
 var ended: bool = false
 var on_end_screen: bool = false
+var cursor_start_drag_pos: Vector2
 
 func _ready() -> void:
 	instance = self
@@ -118,10 +119,13 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			dragging_camera = true
+			cursor_start_drag_pos = event.position
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		elif event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
 			dragging_camera = false
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			await get_tree().process_frame
+			Input.warp_mouse(cursor_start_drag_pos)
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			camera_follow_pos.position.z += zoom_sensitivity
 		elif event.button_index == MOUSE_BUTTON_WHEEL_UP:

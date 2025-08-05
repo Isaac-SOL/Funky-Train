@@ -12,6 +12,7 @@ func mouse_down(_event: InputEventMouseButton):
 	is_dragging = true
 	drag_pos = Vector2(0,BASE_STRING_LENGTH)
 	update_string()
+	$TextureRect.mouse_default_cursor_shape = Input.CURSOR_POINTING_HAND
 
 func mouse_up():
 	is_dragging = false
@@ -19,6 +20,7 @@ func mouse_up():
 	%AudioStreamPlayer.turn_whistle_on(false)
 	drag_pos = Vector2.ZERO
 	update_string()
+	$TextureRect.mouse_default_cursor_shape = Input.CURSOR_DRAG
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
