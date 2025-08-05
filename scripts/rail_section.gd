@@ -11,25 +11,27 @@ static var ID_COUNT: int = 0
 @export_tool_button("Rebake") var rebake_button = rebake
 @export_tool_button("Align to in") var align_in_button = align_to_in_sections
 @export_tool_button("Align to out") var align_out_button = align_to_out_sections
+@export_tool_button("Make resources unique") var unique_button = make_unique
 
 var id: int
 var stations: Array[Station] = []
+var clear_outline_scheduled: bool = false
+
+func make_unique():
+	if curve:
+		curve = curve.duplicate()
+	in_sections = in_sections.duplicate()
+	out_sections = out_sections.duplicate()
+	out_requirements_1 = out_requirements_1.duplicate()
+	out_requirements_2 = out_requirements_2.duplicate()
 
 func _ready() -> void:
-	if Engine.is_editor_hint():
-		get_parent().set_editable_instance(self, true)
-		if curve:
-			curve = curve.duplicate()
-		in_sections = in_sections.duplicate()
-		out_sections = out_sections.duplicate()
-		out_requirements_1 = out_requirements_1.duplicate()
-		out_requirements_2 = out_requirements_2.duplicate()
-	else:
-		id = ID_COUNT
-		ID_COUNT += 1
-		assert(in_sections.size() > 0)
-		assert(out_sections.size() > 0)
-		assert(out_sections.size() <= 2)
+	get_parent().set_editable_instance(self, true)
+	id = ID_COUNT
+	ID_COUNT += 1
+	assert(in_sections.size() > 0)
+	assert(out_sections.size() > 0)
+	assert(out_sections.size() <= 2)
 
 func add_station(station: Station):
 	stations.append(station)
@@ -42,6 +44,27 @@ func get_next_station(prog: float) -> Station:
 		if station.progress > prog and (not res or station.progress < res.progress):
 			res = station
 	return res
+
+func clear_outline_await():
+	clear_outline_scheduled = true
+	await get_tree().create_timer(2.0).timeout
+	if clear_outline_scheduled:
+		clear_outline_scheduled = false
+		%OutlineMesh.visible = false
+		%BakedRailsMesh.position.y = 0.0
+		%OutlineMesh.position.y = -0.005
+
+func set_outline(vis: bool):
+	%OutlineMesh.visible = vis
+	if vis:
+		%BakedRailsMesh.position.y = 0.01
+		%OutlineMesh.position.y = 0.005
+	else:
+		%BakedRailsMesh.position.y = 0.0
+		%OutlineMesh.position.y = -0.005
+	clear_outline_scheduled = false
+	if out_sections.size() == 1:
+		out_sections[0].set_outline(vis)
 
 func rebake():
 	%BakedRailsMesh.rebake()

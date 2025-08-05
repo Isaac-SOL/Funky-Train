@@ -1,5 +1,9 @@
 class_name Main extends Node3D
 
+signal game_started
+signal game_ended
+signal credits_ended
+
 static var instance: Main
 
 @export var character_list: Array[CharacterInfo]
@@ -9,6 +13,8 @@ static var instance: Main
 @export var camera_sensitivity: Vector2 = Vector2.ONE
 @export var zoom_sensitivity: float = 1.0
 @export var quick_dialogue_scene: PackedScene
+@export var rhythm_sync: RhythmNotifier
+@export var rails_outline_material: ShaderMaterial
 
 var active_station: Station
 var signals_up: bool = false
@@ -176,6 +182,7 @@ func character_attached(new_character: CharacterInfo):
 	Dialogic.VAR.set_variable("has.has_" + new_character.instrument, true)
 	
 	if Locomotive.instance.carriages.size() >= 9 and not ended:
+		game_ended.emit()
 		start_end_screen()
 
 func character_detached(char: CharacterInfo):
@@ -195,6 +202,7 @@ func _on_button_start_pressed() -> void:
 	%ControlStart.visible = false
 	%GameUI.visible = true
 	%CameraShaker.target_node = camera_follow_pos
+	game_started.emit()
 
 func start_end_screen():
 	ended = true
@@ -283,4 +291,15 @@ func start_end_screen():
 	%GameUI.visible = true
 	%ControlEnd.visible = false
 	on_end_screen = false
+	credits_ended.emit()
 	
+
+func rail_outline_beat(extent: float):
+	rails_outline_material.set_shader_parameter("extent", extent)
+
+func _on_rhythm_notifier_beat(current_beat: int) -> void:
+	var tween := create_tween()
+	tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
+	tween.tween_method(rail_outline_beat, 0.23, 0.15, 0.66)
+	#tween.tween_method(rail_outline_beat, 0.15, 0.27, 0.03)
+	#tween.tween_method(rail_outline_beat, 0.27, 0.0, 0.53).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUAD)

@@ -13,8 +13,5 @@ visible = false
 [node name="wagon_guitare" parent="ChildRender" index="0" instance=ExtResource("2_5ab18")]
 transform = Transform3D(-2.66639e-08, 0, -0.61, 0, 0.61, 0, 0.61, 0, -2.66639e-08, 0, 0, 0)
 
-[node name="volets" parent="ChildRender/wagon_guitare/wagons_guitare_mesh" index="9"]
-visible = false
-
 [editable path="ChildRender/wagon_guitare"]
 [editable path="ChildRender/wagon_guitare/wagons_guitare_mesh"]

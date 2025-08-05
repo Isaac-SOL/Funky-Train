@@ -1,0 +1,27 @@
+[gd_resource type="AnimationLibrary" load_steps=3 format=3 uid="uid://pc62qlqwabuu"]
+
+[sub_resource type="Animation" id="Animation_f2o0d"]
+resource_name = "woobwoob"
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.166667, 1, 1.1, 0.9, 1.1, 0.333333, 1, 1.2, 1, 1.2, 0.4, 1, 1.1, 1.05, 1.1, 0.466667, 1, 1, 1.1, 1, 0.766667, 1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_3wkrv"]
+length = 0.001
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1)
+
+[resource]
+_data = {
+&"RESET": SubResource("Animation_3wkrv"),
+&"woobwoob": SubResource("Animation_f2o0d")
+}

@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c7w0nu4e7nymo"]
+
+[ext_resource type="Shader" uid="uid://dss2ujj8nl740" path="res://materials/rail_section_outline.gdshader" id="1_dis0u"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_dis0u")
+shader_parameter/extent = 0.2
