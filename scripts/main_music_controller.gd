@@ -52,7 +52,9 @@ func turn_whistle_on(enabled):
 	else:
 		if $TrainWhislePlayer.playing:
 			var playback = $TrainWhislePlayer.get_stream_playback()
-			playback.switch_to_clip_by_name("Train Whistle End")
+			var currentClipName = $TrainWhislePlayer.stream.get_clip_name(playback.get_current_clip_index())
+			if currentClipName != "Train Whistle End" :
+				playback.switch_to_clip_by_name("Train Whistle End")
 
 func self_fade_music_in(track: Track) -> void:
 	fade_music_in(self.stream, currentTween, track)

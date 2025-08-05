@@ -1101,21 +1101,30 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Control" type="Control" parent="CanvasLayer/GameUI"]
+[node name="WhistleControl" type="Control" parent="CanvasLayer/GameUI"]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 1151.0
+offset_top = 193.0
+offset_right = 1191.0
+offset_bottom = 233.0
+pivot_offset = Vector2(58, 15)
+script = ExtResource("26_1n0wa")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/Control"]
-layout_mode = 0
-offset_left = 1164.0
-offset_top = 11.0
-offset_right = 1277.0
-offset_bottom = 334.0
-mouse_filter = 0
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/WhistleControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 30.512
+anchor_top = 0.275
+anchor_right = 30.512
+anchor_bottom = 0.275
+offset_left = -1220.48
+offset_top = -164.0
+offset_right = -1107.48
+offset_bottom = 159.0
+pivot_offset = Vector2(56, 0)
+mouse_default_cursor_shape = 2
 texture = ExtResource("25_yqb2n")
 expand_mode = 1
-script = ExtResource("26_1n0wa")
 
 [node name="TextureRectTop" type="TextureRect" parent="CanvasLayer/GameUI"]
 layout_mode = 1
