@@ -303,7 +303,7 @@ billboard = 0
 [node name="Signals" type="Node3D" parent="."]
 
 [node name="SignalQuicksand" parent="Signals" instance=ExtResource("26_556r4")]
-transform = Transform3D(0.948629, -0.108401, 0.297242, 0.113533, 0.993534, 8.93168e-08, -0.295321, 0.0337467, 0.954802, -89.1879, -0.398549, 12.3478)
+transform = Transform3D(0.948628, -0.108401, 0.297243, 0.113533, 0.993534, -1.76042e-08, -0.295321, 0.0337468, 0.954802, -89.1879, -0.398549, 12.3478)
 
 [node name="SignalVirage" parent="Signals" instance=ExtResource("27_556r4")]
 transform = Transform3D(0.878626, 0, -0.477511, 0, 1, 0, 0.477511, 0, 0.878626, 16.249, -4.76837e-07, -29.5776)

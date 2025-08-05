@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CharacterInfo" load_steps=5 format=3 uid="uid://d0g3t66itnkbt"]
 
-[ext_resource type="PackedScene" path="res://objects/carriage_vocoder.tscn" id="1_4qakc"]
+[ext_resource type="PackedScene" uid="uid://dcjwdedwvpfhp" path="res://objects/carriage_vocoder.tscn" id="1_4qakc"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_4qakc"]
 [ext_resource type="Texture2D" uid="uid://bwffunfc82fgx" path="res://assets/modele/2D/personnages/personnages_vocoder.png" id="3_3t8ib"]
 [ext_resource type="Texture2D" uid="uid://b7q6mkaraska6" path="res://assets/modele/2D/personnages/personnages_vocoder_c.png" id="4_3jb8o"]

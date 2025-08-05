@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcpxd04n7oj0i"]
+[gd_scene load_steps=8 format=3 uid="uid://dcpxd04n7oj0i"]
 
 [ext_resource type="Script" uid="uid://d2yldh1vs7co5" path="res://scripts/station.gd" id="1_x4hb3"]
 [ext_resource type="PackedScene" uid="uid://27kfdujhj7rp" path="res://objects/gamjam_2025_gare.tscn" id="2_a8vm7"]
+[ext_resource type="Script" uid="uid://bkjd1l8ao2cge" path="res://scripts/vibing_node.gd" id="3_110lq"]
 [ext_resource type="Texture2D" uid="uid://qii11fokxfim" path="res://assets/modele/2D/personnages/personnages_batterie.png" id="3_a8vm7"]
 [ext_resource type="Texture2D" uid="uid://cxdlvparc2ap2" path="res://assets/modele/2D/personnages/personnages_triangle_c.png" id="4_tded5"]
 
@@ -29,9 +30,13 @@ layers = 1
 [node name="gare_aiguille_001" parent="gamjam2025_gare2" index="2"]
 layers = 1
 
-[node name="CharacterSprite" type="Sprite3D" parent="."]
+[node name="VibingNode" type="Node3D" parent="."]
+transform = Transform3D(0.991576, 0, -0.129523, 0, 1, 0, 0.129523, 0, 0.991576, 0.916999, 0.0848985, 0.0502111)
+script = ExtResource("3_110lq")
+
+[node name="CharacterSprite" type="Sprite3D" parent="VibingNode"]
 unique_name_in_owner = true
-transform = Transform3D(0.16361, 0, -0.0213712, 0, 0.165, 0, 0.0213712, 0, 0.16361, 0.916999, 0.916386, 0.0502111)
+transform = Transform3D(0.165, 0, 0, 0, 0.165, 0, 0, 0, 0.165, 0, 0.832408, 0)
 alpha_cut = 1
 texture = ExtResource("3_a8vm7")
 
