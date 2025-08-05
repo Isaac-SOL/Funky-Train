@@ -15,6 +15,11 @@ static var instance: Main
 @export var quick_dialogue_scene: PackedScene
 @export var rhythm_sync: RhythmNotifier
 @export var rails_outline_material: ShaderMaterial
+@export_group("Cursor")
+@export var direction_cursor: Texture
+@export var speed_cursor: Texture
+@export var can_grab_cursor: Texture
+@export var grabbing_cursor: Texture
 
 var active_station: Station
 var signals_up: bool = false
@@ -29,9 +34,12 @@ var on_end_screen: bool = false
 
 func _ready() -> void:
 	instance = self
+	Input.set_custom_mouse_cursor(direction_cursor, Input.CURSOR_HSIZE, Vector2(32, 32))
+	Input.set_custom_mouse_cursor(speed_cursor, Input.CURSOR_BDIAGSIZE, Vector2(32, 32))
+	Input.set_custom_mouse_cursor(can_grab_cursor, Input.CURSOR_DRAG, Vector2(32, 32))
+	Input.set_custom_mouse_cursor(grabbing_cursor, Input.CURSOR_POINTING_HAND, Vector2(32, 32))
 	#Preload Diologic timeline by starting a blanc timeline
 	Dialogic.start("timeline_blanc")
-	await get_tree().process_frame
 
 func stop_at_station(station: Station):
 	active_station = station

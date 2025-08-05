@@ -7,12 +7,13 @@ class_name BakedRailsMesh extends MeshInstance3D
 @export var width : float = 1.0
 @export var rebake_on_ready : bool = false
 @export var rebake_with_tilt: bool = false
+@export var minimap: bool = false
 @export_tool_button("Rebake") var rebake_button = rebake
 
 func _ready() -> void:
 	if rebake_on_ready:
 		rebake()
-	if not Engine.is_editor_hint():
+	if not Engine.is_editor_hint() and not minimap:
 		%OutlineMesh.mesh = mesh
 
 func rebake():
@@ -46,7 +47,10 @@ func rebake():
 	mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLE_STRIP, arrays)
 	mesh.surface_set_material(0, material)
 	
-	var res_name := "res://meshes/rails/" + get_parent().name + ".tres"
+	var res_name := "res://meshes/rails/" + get_parent().name
+	if minimap:
+		res_name += "_minimap"
+	res_name += ".tres"
 	var save := ResourceSaver.save(mesh, res_name, ResourceSaver.FLAG_CHANGE_PATH)
 	mesh = load(res_name)
 	if save != OK:

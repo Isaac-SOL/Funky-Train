@@ -116,6 +116,8 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="ignore"
+mouse_cursor/custom_image="uid://icmc0wne3uwb"
+mouse_cursor/custom_image_hotspot=Vector2(8, 8)
 
 [editor]
 
@@ -157,6 +159,8 @@ dialogic_default_action={
 
 [layer_names]
 
+3d_render/layer_1="Ingame"
+3d_render/layer_2="Minimap"
 3d_physics/layer_1="Locomotive"
 3d_physics/layer_2="loop"
 

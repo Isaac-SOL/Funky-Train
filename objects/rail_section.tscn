@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://c7adtd3m5hihf"]
+[gd_scene load_steps=10 format=4 uid="uid://c7adtd3m5hihf"]
 
 [ext_resource type="Script" uid="uid://mwi487qkqwy3" path="res://scripts/rail_section.gd" id="1_x140k"]
 [ext_resource type="Script" uid="uid://b4mxonouwg3a3" path="res://scripts/baked_rails_mesh.gd" id="2_e7jeh"]
+[ext_resource type="ArrayMesh" uid="uid://bqd8rawdm78km" path="res://meshes/rails/Rail.tres" id="2_ottr3"]
 [ext_resource type="Material" uid="uid://2j8oioxr23sf" path="res://materials/rails_standard_mat.tres" id="3_jpovr"]
 [ext_resource type="Material" uid="uid://c7w0nu4e7nymo" path="res://materials/rail_section_outline.tres" id="4_e7jeh"]
+[ext_resource type="ArrayMesh" uid="uid://bw2e5m7gg03hk" path="res://meshes/rails/Rail_minimap.tres" id="6_yfycn"]
 
 [sub_resource type="Curve3D" id="Curve3D_x140k"]
 _data = {
@@ -24,6 +26,10 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAAAAAAAAAAAAAA/AAAAAAAAAAAAAAC/pR5RPgAAAAAAAAA/pR5RPgAAAAAAAAC/GnDSPgAAAAAAAAA/GnDSPgAAAAAAAAC/BZMdPwAAAAAAAAA/BZMdPwAAAAAAAAC/SNxRPwAAAAAAAAA/SNxRPwAAAAAAAAC/bjCDPwAAAAAAAAA/bjCDPwAAAAAAAAC/NX6dPwAAAAAAAAA/NX6dPwAAAAAAAAC/hLm3PwAAAAAAAAA/hLm3PwAAAAAAAAC/pfrRPwAAAAAAAAA/pfrRPwAAAAAAAAC/x0rsPwAAAAAAAAA/x0rsPwAAAAAAAAC/IUMDQAAAAAAAAAA/IUMDQAAAAAAAAAC/EGIQQAAAAAAAAAA/EGIQQAAAAAAAAAC/zIMdQAAAAAAAAAA/zIMdQAAAAAAAAAC/waYqQAAAAAAAAAA/waYqQAAAAAAAAAC/+ck3QAAAAAAAAAA/+ck3QAAAAAAAAAC/x+tEQAAAAAAAAAA/x+tEQAAAAAAAAAC/pAtSQAAAAAAAAAA/pAtSQAAAAAAAAAC/YCxfQAAAAAAAAAA/YCxfQAAAAAAAAAC/o01sQAAAAAAAAAA/o01sQAAAAAAAAAC/L295QAAAAAAAAAA/L295QAAAAAAAAAC/aUiDQAAAAAAAAAA/aUiDQAAAAAAAAAC/L9mJQAAAAAAAAAA/L9mJQAAAAAAAAAC/0GmQQAAAAAAAAAA/0GmQQAAAAAAAAAC/L/qWQAAAAAAAAAA/L/qWQAAAAAAAAAC/HYqdQAAAAAAAAAA/HYqdQAAAAAAAAAC/BBukQAAAAAAAAAA/BBukQAAAAAAAAAC/oKyqQAAAAAAAAAA/oKyqQAAAAAAAAAC/Gj6xQAAAAAAAAAA/Gj6xQAAAAAAAAAC/+c63QAAAAAAAAAA/+c63QAAAAAAAAAC/cF6+QAAAAAAAAAA/cF6+QAAAAAAAAAC/Tu3EQAAAAAAAAAA/Tu3EQAAAAAAAAAC/V4HLQAAAAAAAAAA/V4HLQAAAAAAAAAC/nxHSQAAAAAAAAAA/nxHSQAAAAAAAAAC/c6DYQAAAAAAAAAA/c6DYQAAAAAAAAAC/5TPfQAAAAAAAAAA/5TPfQAAAAAAAAAC/dsTlQAAAAAAAAAA/dsTlQAAAAAAAAAC/oE3sQAAAAAAAAAA/oE3sQAAAAAAAAAC//9jyQAAAAAAAAAA//9jyQAAAAAAAAAC/Cnf5QAAAAAAAAAA/Cnf5QAAAAAAAAAC/AAAAQQAAAAAAAAA/AAAAQQAAAAAAAAC//3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgA==")
 }]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e7jeh"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
 [node name="Rail" type="Path3D"]
 curve = SubResource("Curve3D_x140k")
 script = ExtResource("1_x140k")
@@ -32,7 +38,7 @@ script = ExtResource("1_x140k")
 unique_name_in_owner = true
 layers = 3
 cast_shadow = 0
-mesh = SubResource("ArrayMesh_x140k")
+mesh = ExtResource("2_ottr3")
 skeleton = NodePath("../..")
 script = ExtResource("2_e7jeh")
 path = NodePath("..")
@@ -47,3 +53,17 @@ material_override = ExtResource("4_e7jeh")
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_x140k")
 skeleton = NodePath("../..")
+
+[node name="BakedRailsMeshMinimap" type="MeshInstance3D" parent="." node_paths=PackedStringArray("path")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+layers = 2
+cast_shadow = 0
+mesh = ExtResource("6_yfycn")
+skeleton = NodePath("../..")
+script = ExtResource("2_e7jeh")
+path = NodePath("..")
+material = SubResource("StandardMaterial3D_e7jeh")
+vertex_per_meter = 2.0
+width = 3.0
+minimap = true

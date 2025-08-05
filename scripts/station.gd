@@ -5,12 +5,9 @@ class_name Station extends PathFollow3D
 
 
 func _ready() -> void:
-	if waiting_character:
-		%SpriteMinimap.texture = waiting_character.sprite_cadre
 	get_section().add_station(self)
 	load_character()
 	%SpriteMinimap.global_rotation = Vector3(-PI / 2.0, 0, PI)
-	%SpriteMinimap.visible = false
 
 func get_section() -> RailSection:
 	return get_parent()
@@ -21,7 +18,7 @@ func get_camera_pos() -> Node3D:
 func reveal():
 	revealed = true
 	if waiting_character:
-		%SpriteMinimap.visible = true
+		%SpriteMinimap.texture = waiting_character.sprite_cadre
 
 func remove_character():
 	waiting_character = null
@@ -34,14 +31,12 @@ func set_character(new_character: CharacterInfo):
 
 func load_character():
 	if waiting_character:
-		# TODO remove this line
-		%CharacterSprite.modulate = lerp(waiting_character.color, Color.WHITE, 0.5)
 		%CharacterSprite.texture = waiting_character.sprite
 		%CharacterSprite.visible = true
-		%SpriteMinimap.texture = waiting_character.sprite_cadre
 		if revealed:
-			%SpriteMinimap.visible = true
+			%SpriteMinimap.texture = waiting_character.sprite_cadre
+		%SpriteMinimap.visible = true
 		print(name + ": " + waiting_character.name)
 	else:
 		%CharacterSprite.visible = false
-	print(%CharacterSprite.visible)
+		%SpriteMinimap.visible = false

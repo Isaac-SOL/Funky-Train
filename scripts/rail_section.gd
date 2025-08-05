@@ -27,11 +27,12 @@ func make_unique():
 
 func _ready() -> void:
 	get_parent().set_editable_instance(self, true)
-	id = ID_COUNT
-	ID_COUNT += 1
-	assert(in_sections.size() > 0)
-	assert(out_sections.size() > 0)
-	assert(out_sections.size() <= 2)
+	if not Engine.is_editor_hint():
+		id = ID_COUNT
+		ID_COUNT += 1
+		assert(in_sections.size() > 0)
+		assert(out_sections.size() > 0)
+		assert(out_sections.size() <= 2)
 
 func add_station(station: Station):
 	stations.append(station)
@@ -68,6 +69,7 @@ func set_outline(vis: bool):
 
 func rebake():
 	%BakedRailsMesh.rebake()
+	%BakedRailsMeshMinimap.rebake()
 
 func align_to_in_sections():
 	if in_sections and in_sections.size() > 0:
