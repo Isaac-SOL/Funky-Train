@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cm6kmaxavyvgd"]
+[gd_scene load_steps=6 format=3 uid="uid://cm6kmaxavyvgd"]
 
-[ext_resource type="Texture2D" uid="uid://dvhifaen3soxs" path="res://assets/textures/pente.png" id="1_v0phj"]
+[ext_resource type="Script" uid="uid://bpjbelulpuuap" path="res://scripts/traffic_signal.gd" id="1_pgb58"]
+[ext_resource type="Texture2D" uid="uid://bcv6k68tpyreg" path="res://assets/textures/pente.png" id="1_v0phj"]
+[ext_resource type="AnimationLibrary" uid="uid://pc62qlqwabuu" path="res://resources/signal_virage_anim_lib.tres" id="3_tco4y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grjvt"]
 albedo_color = Color(0.537011, 0.537011, 0.537011, 1)
@@ -13,11 +15,18 @@ bottom_radius = 0.035
 height = 1.5
 
 [node name="SignalVirage" type="Node3D"]
+script = ExtResource("1_pgb58")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.105, 0, 0, 0, 0.105, 0, 0, 0, 0.105, 0, 2.03818, 0)
+transform = Transform3D(0.482, 0, 0, 0, 0.482, 0, 0, 0, 0.482, 0, 2.03818, 0)
 texture = ExtResource("1_v0phj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 mesh = SubResource("CylinderMesh_81qnm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": ExtResource("3_tco4y")
+}

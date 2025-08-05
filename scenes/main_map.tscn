@@ -1,4 +1,4 @@
-[gd_scene load_steps=133 format=3 uid="uid://ddei87jmflwu2"]
+[gd_scene load_steps=135 format=3 uid="uid://ddei87jmflwu2"]
 
 [ext_resource type="Script" uid="uid://rytmmqnltko8" path="res://scripts/main.gd" id="1_rk4p5"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_7tq10"]
@@ -20,38 +20,64 @@
 [ext_resource type="Script" uid="uid://b2pnmy42f765x" path="res://scripts/lever_direction.gd" id="13_b6lr4"]
 [ext_resource type="Script" uid="uid://cgr64t0pp5eet" path="res://scripts/lever_speed.gd" id="14_ha36p"]
 [ext_resource type="PackedScene" uid="uid://b74sqcme40821" path="res://objects/character_signalisation.tscn" id="15_j8ata"]
+[ext_resource type="Material" uid="uid://c7w0nu4e7nymo" path="res://materials/rail_section_outline.tres" id="16_hwpaj"]
+[ext_resource type="ArrayMesh" uid="uid://dttkbhw8gyv1k" path="res://meshes/rails/RailS4.tres" id="17_fork7"]
 [ext_resource type="PackedScene" uid="uid://dj3gds7lk50n6" path="res://objects/dialogic_trigger.tscn" id="17_k43kg"]
 [ext_resource type="Script" uid="uid://di4q8eju5txb1" path="res://scripts/dialogue_info.gd" id="18_ajnxc"]
 [ext_resource type="ArrayMesh" uid="uid://clexao5yymery" path="res://meshes/bridgeRail5.tres" id="18_on5gu"]
 [ext_resource type="Material" uid="uid://cindjmdleanrp" path="res://materials/main_screenspace.tres" id="20_ha36p"]
 [ext_resource type="ArrayMesh" uid="uid://cbbm5vkgt284" path="res://scenes/bridgeRailBig.tres" id="20_xi2te"]
 [ext_resource type="Texture2D" uid="uid://c0r5sho06r18h" path="res://assets/textures/UI/gamjam2025_UI_menu_top2.png" id="21_jikhd"]
+[ext_resource type="ArrayMesh" uid="uid://dtmtdn42vqe4q" path="res://meshes/rails/RailS4_S6_bridge.tres" id="21_kdplm"]
+[ext_resource type="ArrayMesh" uid="uid://bun4jork04afr" path="res://meshes/rails/RailS4_S11.tres" id="22_hwpaj"]
 [ext_resource type="Texture2D" uid="uid://bklu4tqbj4mfu" path="res://assets/textures/UI/gamjam2025_UI_menu_top_map.png" id="22_qvxoj"]
+[ext_resource type="ArrayMesh" uid="uid://y6ogfx0j4pht" path="res://meshes/rails/RailS11.tres" id="23_45vgs"]
 [ext_resource type="Texture2D" uid="uid://3rla17unn8bn" path="res://assets/textures/UI/gamjam2025_UI_manette_levier.png" id="24_jikhd"]
+[ext_resource type="ArrayMesh" uid="uid://djlr6nlcd88n4" path="res://meshes/rails/RailS11_fork.tres" id="24_rw4g1"]
+[ext_resource type="ArrayMesh" uid="uid://dhrt5siko0x8r" path="res://meshes/rails/RailS11_fork2.tres" id="25_uv8yl"]
 [ext_resource type="Texture2D" uid="uid://dr8o5lu8sg20r" path="res://assets/textures/UI/gamjam2025_UI_corde_siflet.png" id="25_yqb2n"]
 [ext_resource type="Script" uid="uid://d3muv4ahkxuu2" path="res://scripts/whistle_string.gd" id="26_1n0wa"]
+[ext_resource type="ArrayMesh" uid="uid://cg1ssd7b7j7yv" path="res://meshes/rails/RailS11_fork3.tres" id="26_b2ayy"]
 [ext_resource type="Texture2D" uid="uid://6t2sp4e6kkqa" path="res://assets/textures/UI/gamjam2025_UI_manette.png" id="26_jikhd"]
 [ext_resource type="Texture2D" uid="uid://b7xc8h6iwcjel" path="res://assets/textures/UI/gamjam2025_UI_croix.png" id="26_qvxoj"]
 [ext_resource type="Texture2D" uid="uid://br1oyjrf86rmq" path="res://assets/textures/UI/gamjam2025_UI_speed_slide.png" id="27_jikhd"]
+[ext_resource type="ArrayMesh" uid="uid://dq61qvyxjy86w" path="res://meshes/rails/RailS7.tres" id="27_l71x2"]
+[ext_resource type="ArrayMesh" uid="uid://ckuatuwr6fr0d" path="res://meshes/rails/Rail_pre_S5.tres" id="28_7iam4"]
 [ext_resource type="Texture2D" uid="uid://qtslwf6xkqxj" path="res://assets/textures/UI/gamjam2025_UI_speed_sliderr.png" id="28_qvxoj"]
+[ext_resource type="ArrayMesh" uid="uid://h7bs1hk6gf4u" path="res://meshes/rails/RailS5.tres" id="29_kgts7"]
 [ext_resource type="Texture2D" uid="uid://cw300hiyse80y" path="res://assets/textures/UI/gamjam2025_UI_manette_empty.png" id="30_sxppv"]
 [ext_resource type="PackedScene" uid="uid://b27ky1rmtucd2" path="res://scenes/audio_manager.tscn" id="31_sxppv"]
+[ext_resource type="ArrayMesh" uid="uid://ch4hctl3iw0je" path="res://meshes/rails/Rail_pre_S6.tres" id="32_7a7fc"]
 [ext_resource type="PackedScene" uid="uid://bqhfgqs02fntc" path="res://objects/quick_dialogue.tscn" id="33_ajnxc"]
+[ext_resource type="ArrayMesh" uid="uid://b3x5nc0ewx3en" path="res://meshes/rails/RailS6.tres" id="33_iplb2"]
 [ext_resource type="AudioStream" uid="uid://be0h2esq2uneg" path="res://assets/sfx/clap_1.ogg" id="33_psaan"]
 [ext_resource type="AudioStream" uid="uid://boj2lurrcpx4j" path="res://assets/sfx/clap_2.ogg" id="34_alxc0"]
+[ext_resource type="ArrayMesh" uid="uid://byhf8g38yukw1" path="res://meshes/rails/Rail_skip_S8.tres" id="34_vtcgm"]
+[ext_resource type="ArrayMesh" uid="uid://bnryxoi4h1inq" path="res://meshes/rails/RailS8.tres" id="35_1xr1q"]
 [ext_resource type="AudioStream" uid="uid://c7jpca7m84wdr" path="res://assets/sfx/clap_3.ogg" id="35_k8pig"]
 [ext_resource type="Texture2D" uid="uid://1axiy2djvugt" path="res://assets/textures/logo.png" id="35_uvcog"]
 [ext_resource type="FontFile" uid="uid://drhhe5f5p7qgn" path="res://assets/Super Frosting.ttf" id="36_4kkmd"]
 [ext_resource type="AudioStream" uid="uid://1lwcny4jq723" path="res://assets/sfx/clap_4.ogg" id="36_k43kg"]
 [ext_resource type="Texture2D" uid="uid://cc0d11r365wp1" path="res://assets/textures/gamjam2025_UI_choice.png" id="36_pi7hh"]
+[ext_resource type="ArrayMesh" uid="uid://bciph5m563166" path="res://meshes/rails/RailS8_S7.tres" id="36_v6bnv"]
+[ext_resource type="ArrayMesh" uid="uid://capoxp4y78kl5" path="res://meshes/rails/RailS8_S1.tres" id="37_8ai2q"]
 [ext_resource type="AudioStream" uid="uid://yw7dwm7bpti0" path="res://assets/sfx/lever_4.ogg" id="37_alxc0"]
 [ext_resource type="Texture2D" uid="uid://bmgficsknuo7v" path="res://assets/textures/bg_game_final.png" id="37_lin8e"]
 [ext_resource type="Texture2D" uid="uid://bwvw24wq73u0x" path="res://assets/textures/Sans titre.png" id="38_1n0wa"]
+[ext_resource type="ArrayMesh" uid="uid://caiwxq4l8gvsb" path="res://meshes/rails/Rail_pre_S1.tres" id="38_5t7e2"]
 [ext_resource type="AudioStream" uid="uid://go73nlj4bcwu" path="res://assets/sfx/lever_3.ogg" id="38_k8pig"]
 [ext_resource type="StyleBox" uid="uid://0ucxhj7lfimq" path="res://assets/style_button_orange.tres" id="38_pi7hh"]
 [ext_resource type="StyleBox" uid="uid://cudo6djqnmi2b" path="res://assets/style_button_orange_normal.tres" id="39_c5b55"]
+[ext_resource type="ArrayMesh" uid="uid://drd10vtlowukc" path="res://meshes/rails/RailS1.tres" id="39_fj0cs"]
+[ext_resource type="ArrayMesh" uid="uid://cgn4k24jf3mnn" path="res://meshes/rails/RailS9.tres" id="40_scbdf"]
+[ext_resource type="ArrayMesh" uid="uid://br7r1jn87f6cd" path="res://meshes/rails/RailS9_S2.tres" id="41_687r6"]
 [ext_resource type="AudioStream" uid="uid://bowmmerxjt5f6" path="res://assets/sfx/pop.ogg" id="42_6c0ht"]
+[ext_resource type="ArrayMesh" uid="uid://cl4k04f8rppj0" path="res://meshes/rails/RailS2S3.tres" id="42_l467f"]
+[ext_resource type="ArrayMesh" uid="uid://corqumdyp36c" path="res://meshes/rails/RailS3_S4.tres" id="43_mhrry"]
+[ext_resource type="ArrayMesh" uid="uid://blbo6460ra8bp" path="res://meshes/rails/RailS3_S1.tres" id="44_ag8s5"]
 [ext_resource type="AudioStream" uid="uid://ck2dveafiotn7" path="res://assets/sounds/fin.ogg" id="45_m75v2"]
+[ext_resource type="ArrayMesh" uid="uid://dyilve3dabwk" path="res://meshes/rails/RailS10.tres" id="46_6kmqa"]
+[ext_resource type="Script" uid="uid://bgvijcrqwruss" path="res://addons/rhythm_notifier/rhythm_notifier.gd" id="69_kdplm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gd5r5"]
 sky_top_color = Color(1, 0.866667, 0, 1)
@@ -70,14 +96,12 @@ tonemap_mode = 2
 fog_light_color = Color(0.941782, 0.947839, 0.957362, 1)
 fog_light_energy = 0.15
 
-[sub_resource type="Curve3D" id="Curve3D_pi7hh"]
+[sub_resource type="Curve3D" id="Curve3D_0em68"]
 _data = {
 "points": PackedVector3Array(-3.18665, 0, 0.00383526, 3.18665, 0, -0.00383526, 0, 0, 0, -2.91532, 0, -0.00383526, 2.91532, 0, 0.00383526, 16.9347, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
-
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_c5b55"]
 
 [sub_resource type="Resource" id="Resource_uvcog"]
 script = ExtResource("18_ajnxc")
@@ -86,35 +110,29 @@ text = "Take a left! We're going for a ride!"
 time = 5.0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
-[sub_resource type="Curve3D" id="Curve3D_0em68"]
+[sub_resource type="Curve3D" id="Curve3D_58e0p"]
 _data = {
 "points": PackedVector3Array(-3.18665, 0, 0.00383526, 2.91532, 0, 0.00383526, 0, 0, 0, -0.0616646, 0, 4.56317, 0.0616646, 0, -4.56317, 8.97926, 0, -5.43315, 2.47955e-05, 0.015183, 2.61061, -2.47955e-05, -0.015183, -2.61061, 8.83071, 0.0262146, -15.1324, -0.0166016, -1.38426, 0.468864, 0.0166016, 1.38426, -0.468864, 8.7854, 1.19943, -22.7052, 0, 0, -2.12105, 0, 0, 2.12105, 9.14294, 4.86103, -19.6911, -0.00012207, 1.56288, 0.357229, 0.00012207, -1.56288, -0.357229, 9.92422, 1.42272, -17.0042, -0.698635, -0.00817871, 2.58191, 0.698635, 0.00817871, -2.58191, 10.8439, -0.0371175, -26.8532, -2.94642, 0, 2.00478, 2.94642, 0, -2.00478, 14.4889, -8.10623e-06, -33.5662, -3.26869, 8.10623e-06, 0.233494, 3.26869, -8.10623e-06, -0.233494, 24.7862, -8.10623e-06, -35.814, -7.05278, 0, -0.287865, 0, 0, 0, 43.824, 0, -35.8946),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0.465552, 0.448871, 0.427589, 0.445439)
 }
 point_count = 10
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_32gdk"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_on5gu"]
 size = Vector3(9.7594, 9.43994, 9.14769)
 
-[sub_resource type="Curve3D" id="Curve3D_58e0p"]
+[sub_resource type="Curve3D" id="Curve3D_q32ya"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 2.91532, 0, 0.00383526, 0, 0, 0, -2.89839, 0, -0.0491591, 2.89839, 0, 0.0491591, 16.9347, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_n0na2"]
-
-[sub_resource type="Curve3D" id="Curve3D_q32ya"]
+[sub_resource type="Curve3D" id="Curve3D_4vm3s"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 2.89839, 0, 0.0491591, 0, 0, 0, -3.22351, 0, -0.0617786, 3.22351, 0, 0.0617786, 16.9347, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
-
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_0akn5"]
 
 [sub_resource type="Resource" id="Resource_ajnxc"]
 script = ExtResource("18_ajnxc")
@@ -123,14 +141,12 @@ text = "We should go meet Stevyyye! Take a ryyyght!"
 time = 5.0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
-[sub_resource type="Curve3D" id="Curve3D_4vm3s"]
+[sub_resource type="Curve3D" id="Curve3D_h5p03"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 3.22351, 0, 0.0617786, 0, 0, 0, -0.0453262, 0, 9.60894, 0.0453262, 0, -9.60894, 17.3541, 0, -9.39877),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
-
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_b036x"]
 
 [sub_resource type="Resource" id="Resource_3xitk"]
 script = ExtResource("18_ajnxc")
@@ -139,32 +155,26 @@ text = "Don't follow that twisty path please! My long carriage can't handle that
 time = 5.0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
-[sub_resource type="Curve3D" id="Curve3D_h5p03"]
+[sub_resource type="Curve3D" id="Curve3D_5hpoa"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 0.0453262, 0, -9.60894, 0, 0, 0, 3.58069, 0, 0, -3.58069, 0, 0, -8.25165, 0, -10.7408, 3.58069, 0, 0, 0, 0, 0, -28.2235, 0, -10.6012),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_8pqvy"]
-
-[sub_resource type="Curve3D" id="Curve3D_5hpoa"]
+[sub_resource type="Curve3D" id="Curve3D_50cgf"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 0.0453262, 0, -9.60894, 0, 0, 0, -3.27033, 0, -3.45457, 3.27033, 0, 3.45457, 7.3864, -8.10623e-06, -6.96068, -2.76366, 0, -2.48729, 2.76366, 0, 2.48729, 18.1186, -8.10623e-06, 3.31091, 0.863609, 0, 12.1624, -0.863609, 0, -12.1624, 24.638, 0, -6.27773),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_f2hcf"]
-
-[sub_resource type="Curve3D" id="Curve3D_50cgf"]
+[sub_resource type="Curve3D" id="Curve3D_5xo5t"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -0.863609, 0, -12.1624, 0, 0, 0, 5.75579, 0, -0.947386, -5.75579, 0, 0.947386, -15.1462, -8.10623e-06, -8.30569, 3.58069, 0, 0, -14.6813, 0, 4.17409, -32.3298, -8.10623e-06, -7.831),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
-
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_j2ebv"]
 
 [sub_resource type="Resource" id="Resource_6c0ht"]
 script = ExtResource("18_ajnxc")
@@ -173,41 +183,33 @@ text = "N0 way 1'm climbing that h1ll 0n the r1ght"
 time = 5.0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
-[sub_resource type="Curve3D" id="Curve3D_5xo5t"]
+[sub_resource type="Curve3D" id="Curve3D_la7dy"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -3.58069, 0, 0, 0, 0, 0, 3.07452, -3.8147e-06, -1.19551, -3.07452, 3.8147e-06, 1.19551, -10.5882, 3.8147e-06, 1.81453, 3.58069, 0, 0, -3.58069, 0, 0, -20.5317, 8.10623e-06, 3.5075),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_8t3do"]
-
-[sub_resource type="Curve3D" id="Curve3D_la7dy"]
+[sub_resource type="Curve3D" id="Curve3D_kkyah"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -3.58069, 0, 0, 0, 0, 0, 3.58069, 0, 0, -3.58069, 0, 0, -14.236, 2.00218, 0.139595, 5.61147, 0, -0.0616627, -5.61147, 0, 0.0616627, -34.4689, 0, 0.102537, 0.67831, 0, -10.113, -0.67831, 0, 10.113, -50.1317, 0, 8.85889, -3.18665, 0, 0.00383526, 0, 0, 0, -39.9347, 0, 20),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_78d7u"]
-
-[sub_resource type="Curve3D" id="Curve3D_kkyah"]
+[sub_resource type="Curve3D" id="Curve3D_vafob"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -3.58069, 0, 0, 0, 0, 0, 0.122089, 0, 3.7441, -0.122089, 0, -3.7441, -7.5083, 1.79081, -5.80505, -7.05278, 0, -0.287865, 7.05278, 0, 0.287865, 0.292305, 8.10623e-06, -12.3871),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_w3ksl"]
-
-[sub_resource type="Curve3D" id="Curve3D_vafob"]
+[sub_resource type="Curve3D" id="Curve3D_fork7"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 7.05278, 0, 0.287865, 0, 0, 0, -10.4926, 0, -0.23365, 10.4926, 0, 0.23365, 20.4978, -8.10623e-06, -0.422661, -5.82934, 0, -5.32556, 5.82934, 0, 5.32556, 42.4056, 0, 7.20153),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
-
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_sqwgn"]
 
 [sub_resource type="Resource" id="Resource_4kkmd"]
 script = ExtResource("18_ajnxc")
@@ -237,68 +239,54 @@ text = "I could clear the rightmost path, but I'm gonna need Stevie's help for t
 time = 5.0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
-[sub_resource type="Curve3D" id="Curve3D_fork7"]
+[sub_resource type="Curve3D" id="Curve3D_hwpaj"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 5.82934, 0, 5.32556, 0, 0, 0, -8.83099, 0, -13.8062, 8.83099, 0, 13.8062, 28.8668, 0, 26.3689, 1.3057, 0, -18.7149, -0.266418, 0, 11.8554, 34.2527, 0, 77.406),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_kdplm"]
-
-[sub_resource type="Curve3D" id="Curve3D_hwpaj"]
+[sub_resource type="Curve3D" id="Curve3D_rw4g1"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 5.82934, 0, 5.32556, 0, 0, 0, -2.50691, 0, -7.05847, 2.50691, 0, 7.05847, 11.7142, 0, 15.8268, 0, 0, -7.63702, 0, 0, 7.63702, 14.6515, 0, 41.0877),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_45vgs"]
-
-[sub_resource type="Curve3D" id="Curve3D_rw4g1"]
+[sub_resource type="Curve3D" id="Curve3D_b2ayy"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 0, 0, 7.63702, 0, 0, 0, 8.12558, 0, 5.46145, -8.12558, 0, -5.46145, -18.4275, 0, 7.55735, 0.863609, 0, 12.1624, 0, 0, 7.63702, -25.0196, 0, -28.0712),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_uv8yl"]
-
-[sub_resource type="Curve3D" id="Curve3D_b2ayy"]
+[sub_resource type="Curve3D" id="Curve3D_7iam4"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 0, 0, 7.63702, 0, 0, 0, 1.3057, 0, -18.7149, 3.06374, 0, 17.1836, 19.6012, 0, 36.3183),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_l71x2"]
-
-[sub_resource type="Curve3D" id="Curve3D_7iam4"]
+[sub_resource type="Curve3D" id="Curve3D_7a7fc"]
 _data = {
 "points": PackedVector3Array(1.3057, 0, -18.7149, -1.3057, 0, 18.7149, 0, 0, 0, 21.1382, 0, -0.211388, -21.1382, 0, 0.211388, -36.3609, 0, 18.7189),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_kgts7"]
-
-[sub_resource type="Curve3D" id="Curve3D_7a7fc"]
+[sub_resource type="Curve3D" id="Curve3D_vtcgm"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -21.1382, 0, 0.211388, 0, 0, 0, 21.1382, 0, -0.211388, -21.1382, 0, 0.211388, -61.1214, 0, 1.56815),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_iplb2"]
-
-[sub_resource type="Curve3D" id="Curve3D_vtcgm"]
+[sub_resource type="Curve3D" id="Curve3D_v6bnv"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 3.22351, 0, 0.0617786, 0, 0, 0, -0.0719643, 0, -9.06785, 0.0719643, 0, 9.06785, 13.9527, 0, 10.2656, 0.143936, 0, -6.7649, -0.143936, 0, 6.7649, 14.0247, 0, 25.9544),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
-
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_1xr1q"]
 
 [sub_resource type="Resource" id="Resource_1n0wa"]
 script = ExtResource("18_ajnxc")
@@ -328,23 +316,19 @@ text = "My carriage is way too big for that tunnel on the right!"
 time = 5.0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
-[sub_resource type="Curve3D" id="Curve3D_v6bnv"]
+[sub_resource type="Curve3D" id="Curve3D_5t7e2"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -0.143936, 0, 6.7649, 0, 0, 0, -0.0719643, 0, -9.06785, 0.0719643, 0, 9.06785, -0.324795, 0, 26.244, 21.1382, 0, -0.211388, -9.59085, 0, 0, -24.8941, 0, 43.0456),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_8ai2q"]
-
-[sub_resource type="Curve3D" id="Curve3D_5t7e2"]
+[sub_resource type="Curve3D" id="Curve3D_scbdf"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -21.1382, 0, 0.211388, 0, 0, 0, 5.06184, 0, 23.1779, -5.06184, 0, -23.1779, -70.0364, 0, -31.5873),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
-
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_fj0cs"]
 
 [sub_resource type="Resource" id="Resource_pi7hh"]
 script = ExtResource("18_ajnxc")
@@ -353,32 +337,26 @@ text = "We are NOT going to the left. That sand is gonna get everywhere."
 time = 5.0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
-[sub_resource type="Curve3D" id="Curve3D_scbdf"]
+[sub_resource type="Curve3D" id="Curve3D_l467f"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -5.06184, 0, -23.1779, 0, 0, 0, -6.35085, 0, 3.81939, 6.35085, 0, -3.81939, 7.52259, -8.10623e-06, -33.6012, -3.18665, 0, 0.00383526, -5.06184, 0, -23.1779, 30.1017, 0, -37.4127),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_687r6"]
-
-[sub_resource type="Curve3D" id="Curve3D_l467f"]
+[sub_resource type="Curve3D" id="Curve3D_ag8s5"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -5.06184, 0, -23.1779, 0, 0, 0, -4.6018, 0, -11.8472, 4.6018, 0, 11.8472, 32.0639, 0, 0.0735931, -9.49733, 0, -0.783279, 9.49733, 0, 0.783279, 57.2947, 0, 14.8104, -7.2085, -0.0572095, 0.0174561, 7.2085, 0.0572095, -0.0174561, 91.0341, 4.10227, 14.3555, -14.0455, 1.39763, 0.783306, 14.0455, -1.39763, -0.783306, 112.889, 1.12733, 13.2477, -5.28717, 0, -5.28717, 5.28717, 0, 5.28717, 145.797, 0, 13.9331, 21.1382, 0, -0.211388, -5.06184, 0, -23.1779, 131.158, 0, 30.0192),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 7
 
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_mhrry"]
-
-[sub_resource type="Curve3D" id="Curve3D_ag8s5"]
+[sub_resource type="Curve3D" id="Curve3D_taw17"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -0.143936, 0, 6.7649, 0, 0, 0, 7.48457, 0, -1.07951, -7.48457, 0, 1.07951, -10.0685, 0, 11.8558, 8.34818, 0, 5.39754, -8.34818, 0, -5.39754, -46.429, 0, 10.4732, -0.2159, 0, 8.85195, 0.2159, 0, -8.85195, -42.7285, 0, -15.0778, -2.89839, 0, -0.0491591, -0.143936, 0, 6.7649, -30.9594, 0, -25.9544),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
-
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_6kmqa"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajlhj"]
 albedo_color = Color(0.197831, 0.537274, 0, 1)
@@ -417,19 +395,13 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="GDScript" id="GDScript_5t7e2"]
 script/source = "extends TextureRect
 
-var beat: float = 1.0
-
 func _ready() -> void:
 	await get_tree().process_frame
-	beat = 0.0
-
-func _process(delta: float) -> void:
-	beat -= delta * 90.0 / 60
-	if beat <= 0:
-		beat += 1.0
-		scale = Vector2(1.02, 1.02);
+	Main.instance.rhythm_sync.beat.connect(func(_b):
+		scale = Vector2(1.02, 1.02)
 		var tween := create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
 		tween.tween_property(self, \"scale\", Vector2.ONE, 0.65)
+	)
 "
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m75v2"]
@@ -456,7 +428,7 @@ stream_1/stream = ExtResource("34_alxc0")
 stream_2/stream = ExtResource("35_k8pig")
 stream_3/stream = ExtResource("36_k43kg")
 
-[node name="PathTestScene" type="Node3D"]
+[node name="PathTestScene" type="Node3D" node_paths=PackedStringArray("rhythm_sync")]
 script = ExtResource("1_rk4p5")
 character_list = Array[ExtResource("2_7tq10")]([ExtResource("3_8yhmk"), ExtResource("4_j8ata"), ExtResource("5_7eykx"), ExtResource("6_36g7h"), ExtResource("7_b6lr4"), ExtResource("8_ha36p"), ExtResource("9_jikhd"), ExtResource("11_sxppv"), ExtResource("12_on5gu")])
 character_leave_button_scene = ExtResource("5_ol44e")
@@ -464,6 +436,8 @@ character_icon_scene = ExtResource("6_5ubli")
 character_signalisation_scene = ExtResource("15_j8ata")
 camera_sensitivity = Vector2(0.003, 0.003)
 quick_dialogue_scene = ExtResource("33_ajnxc")
+rhythm_sync = NodePath("AudioStreamPlayer/RhythmNotifier")
+rails_outline_material = ExtResource("16_hwpaj")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bmein")
@@ -481,16 +455,16 @@ directional_shadow_pancake_size = 25.0
 
 [node name="RailS4" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9347, 0, 0)
-curve = SubResource("Curve3D_pi7hh")
+curve = SubResource("Curve3D_0em68")
 in_sections = [NodePath("../RailS5"), NodePath("../RailS3_S4")]
 out_sections = [NodePath("../RailS4_S6_bridge"), NodePath("../RailS4_S11")]
 out_requirements_1 = Array[String](["F"])
 
 [node name="BakedRailsMesh" parent="Rails/RailS4" index="0"]
-mesh = SubResource("ImmediateMesh_c5b55")
+mesh = ExtResource("17_fork7")
 
 [node name="Station4" parent="Rails/RailS4" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.000827094, 0, -0.999971, 0, 1, 0, 0.999971, 0, -0.000827094, 16.1874, 0, -0.000769002)
+transform = Transform3D(-0.000827092, 0, -0.999969, 0, 1, 0, 0.999969, 0, -0.000827092, 16.1874, 0, -0.000769002)
 progress = 16.1862
 waiting_character = ExtResource("5_7eykx")
 
@@ -501,12 +475,12 @@ dialogues = Array[ExtResource("18_ajnxc")]([SubResource("Resource_uvcog")])
 
 [node name="RailS4_S6_bridge" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
-curve = SubResource("Curve3D_0em68")
+curve = SubResource("Curve3D_58e0p")
 in_sections = [NodePath("../RailS4")]
 out_sections = [NodePath("../RailS6")]
 
 [node name="BakedRailsMesh" parent="Rails/RailS4_S6_bridge" index="0"]
-mesh = SubResource("ImmediateMesh_32gdk")
+mesh = ExtResource("21_kdplm")
 rebake_with_tilt = true
 
 [node name="AreaLoop" type="Area3D" parent="Rails/RailS4_S6_bridge"]
@@ -518,22 +492,22 @@ shape = SubResource("BoxShape3D_on5gu")
 
 [node name="RailS4_S11" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
-curve = SubResource("Curve3D_58e0p")
+curve = SubResource("Curve3D_q32ya")
 in_sections = [NodePath("../RailS4")]
 out_sections = [NodePath("../RailS11")]
 
 [node name="BakedRailsMesh" parent="Rails/RailS4_S11" index="0"]
-mesh = SubResource("ImmediateMesh_n0na2")
+mesh = ExtResource("22_hwpaj")
 
 [node name="RailS11" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9347, 0, 0)
-curve = SubResource("Curve3D_q32ya")
+curve = SubResource("Curve3D_4vm3s")
 in_sections = [NodePath("../RailS4_S11"), NodePath("../RailS10")]
 out_sections = [NodePath("../RailS11_fork"), NodePath("../RailS9")]
 out_requirements_2 = Array[String](["I"])
 
 [node name="BakedRailsMesh" parent="Rails/RailS11" index="0"]
-mesh = SubResource("ImmediateMesh_0akn5")
+mesh = ExtResource("23_45vgs")
 
 [node name="Station11" parent="Rails/RailS11" instance=ExtResource("8_cly8o")]
 transform = Transform3D(-0.00646113, 0, -0.999978, 0, 1, 0, 0.999978, 0, -0.00646113, 15.719, 0, -0.0139241)
@@ -547,13 +521,13 @@ dialogues = Array[ExtResource("18_ajnxc")]([SubResource("Resource_ajnxc")])
 
 [node name="RailS11_fork" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8694, 0, 0)
-curve = SubResource("Curve3D_4vm3s")
+curve = SubResource("Curve3D_h5p03")
 in_sections = [NodePath("../RailS11")]
 out_sections = [NodePath("../RailS11_fork2"), NodePath("../RailS11_fork3")]
 out_requirements_2 = Array[String](["-E"])
 
 [node name="BakedRailsMesh" parent="Rails/RailS11_fork" index="0"]
-mesh = SubResource("ImmediateMesh_b036x")
+mesh = ExtResource("24_rw4g1")
 
 [node name="DialogicTrigger" parent="Rails/RailS11_fork" instance=ExtResource("17_k43kg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5615, 0.417897, -2.16089)
@@ -562,31 +536,31 @@ dialogues = Array[ExtResource("18_ajnxc")]([SubResource("Resource_3xitk")])
 
 [node name="RailS11_fork2" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.2235, 0, -9.39877)
-curve = SubResource("Curve3D_h5p03")
+curve = SubResource("Curve3D_5hpoa")
 in_sections = [NodePath("../RailS11_fork")]
 out_sections = [NodePath("../RailS5")]
 
 [node name="BakedRailsMesh" parent="Rails/RailS11_fork2" index="0"]
-mesh = SubResource("ImmediateMesh_8pqvy")
+mesh = ExtResource("25_uv8yl")
 
 [node name="RailS11_fork3" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.2235, 0, -9.39877)
-curve = SubResource("Curve3D_5hpoa")
+curve = SubResource("Curve3D_50cgf")
 in_sections = [NodePath("../RailS11_fork")]
 out_sections = [NodePath("../RailS7")]
 
 [node name="BakedRailsMesh" parent="Rails/RailS11_fork3" index="0"]
-mesh = SubResource("ImmediateMesh_f2hcf")
+mesh = ExtResource("26_b2ayy")
 
 [node name="RailS7" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.8615, 0, -15.6765)
-curve = SubResource("Curve3D_50cgf")
+curve = SubResource("Curve3D_5xo5t")
 in_sections = [NodePath("../RailS11_fork3"), NodePath("../RailS8_S7")]
 out_sections = [NodePath("../Rail_pre_S5"), NodePath("../Rail_pre_S6")]
 out_requirements_2 = Array[String](["-B"])
 
 [node name="BakedRailsMesh" parent="Rails/RailS7" index="0"]
-mesh = SubResource("ImmediateMesh_j2ebv")
+mesh = ExtResource("27_l71x2")
 
 [node name="Station7" parent="Rails/RailS7" instance=ExtResource("8_cly8o")]
 transform = Transform3D(-0.0138704, -1.10298e-08, 0.999899, -7.952e-07, 1, -2.30925e-14, -0.999899, -7.95128e-07, -0.0138704, -23.0306, -8.10623e-06, -7.72331)
@@ -600,21 +574,21 @@ dialogues = Array[ExtResource("18_ajnxc")]([SubResource("Resource_6c0ht")])
 
 [node name="Rail_pre_S5" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5317, -8.10623e-06, -23.5075)
-curve = SubResource("Curve3D_5xo5t")
+curve = SubResource("Curve3D_la7dy")
 in_sections = [NodePath("../RailS7")]
 out_sections = [NodePath("../RailS5")]
 
 [node name="BakedRailsMesh" parent="Rails/Rail_pre_S5" index="0"]
-mesh = SubResource("ImmediateMesh_8t3do")
+mesh = ExtResource("28_7iam4")
 
 [node name="RailS5" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -20)
-curve = SubResource("Curve3D_la7dy")
+curve = SubResource("Curve3D_kkyah")
 in_sections = [NodePath("../Rail_pre_S5"), NodePath("../RailS11_fork2")]
 out_sections = [NodePath("../RailS4")]
 
 [node name="BakedRailsMesh" parent="Rails/RailS5" index="0"]
-mesh = SubResource("ImmediateMesh_78d7u")
+mesh = ExtResource("29_kgts7")
 
 [node name="Station5" parent="Rails/RailS5" instance=ExtResource("8_cly8o")]
 transform = Transform3D(-0.0694312, -5.93477e-05, 0.997574, -0.000854749, 0.999999, -4.81766e-11, -0.997574, -0.000852697, -0.0694312, -40.6859, 0, 0.139051)
@@ -674,22 +648,22 @@ mesh = ExtResource("18_on5gu")
 
 [node name="Rail_pre_S6" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5317, -8.10623e-06, -23.5075)
-curve = SubResource("Curve3D_kkyah")
+curve = SubResource("Curve3D_vafob")
 in_sections = [NodePath("../RailS7")]
 out_sections = [NodePath("../RailS6")]
 
 [node name="BakedRailsMesh" parent="Rails/Rail_pre_S6" index="0"]
-mesh = SubResource("ImmediateMesh_w3ksl")
+mesh = ExtResource("32_7a7fc")
 
 [node name="RailS6" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.824, 0, -35.8946)
-curve = SubResource("Curve3D_vafob")
+curve = SubResource("Curve3D_fork7")
 in_sections = [NodePath("../Rail_pre_S6"), NodePath("../RailS4_S6_bridge")]
 out_sections = [NodePath("../Rail_skip_S8"), NodePath("../RailS8")]
 out_requirements_2 = Array[String](["A", "C"])
 
 [node name="BakedRailsMesh" parent="Rails/RailS6" index="0"]
-mesh = SubResource("ImmediateMesh_sqwgn")
+mesh = ExtResource("33_iplb2")
 
 [node name="Station6" parent="Rails/RailS6" instance=ExtResource("8_cly8o")]
 transform = Transform3D(-0.26215, -5.22939e-07, -0.965013, -8.78835e-08, 1, -5.1801e-07, 0.965013, -5.09888e-08, -0.26215, 31.3427, -5.1043e-06, 0.902595)
@@ -712,21 +686,21 @@ dialogues = Array[ExtResource("18_ajnxc")]([SubResource("Resource_yqb2n")])
 
 [node name="Rail_skip_S8" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.2296, 0, -28.6931)
-curve = SubResource("Curve3D_fork7")
+curve = SubResource("Curve3D_hwpaj")
 in_sections = [NodePath("../RailS6")]
 out_sections = [NodePath("../Rail_pre_S1")]
 
 [node name="BakedRailsMesh" parent="Rails/Rail_skip_S8" index="0"]
-mesh = SubResource("ImmediateMesh_kdplm")
+mesh = ExtResource("34_vtcgm")
 
 [node name="RailS8" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.2296, 0, -28.6931)
-curve = SubResource("Curve3D_hwpaj")
+curve = SubResource("Curve3D_rw4g1")
 in_sections = [NodePath("../RailS6")]
 out_sections = [NodePath("../RailS8_S1"), NodePath("../RailS8_S7")]
 
 [node name="BakedRailsMesh" parent="Rails/RailS8" index="0"]
-mesh = SubResource("ImmediateMesh_45vgs")
+mesh = ExtResource("35_1xr1q")
 
 [node name="Station8" parent="Rails/RailS8" instance=ExtResource("8_cly8o")]
 transform = Transform3D(-0.998857, 0, -0.0472375, 0, 1, 0, 0.0472375, 0, -0.998857, 14.4835, 0, 33.4404)
@@ -735,54 +709,54 @@ waiting_character = ExtResource("8_ha36p")
 
 [node name="RailS8_S7" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.8812, 0, 12.3947)
-curve = SubResource("Curve3D_rw4g1")
+curve = SubResource("Curve3D_b2ayy")
 in_sections = [NodePath("../RailS8")]
 out_sections = [NodePath("../RailS7")]
 
 [node name="BakedRailsMesh" parent="Rails/RailS8_S7" index="0"]
-mesh = SubResource("ImmediateMesh_uv8yl")
+mesh = ExtResource("36_v6bnv")
 
 [node name="RailS8_S1" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.8812, 0, 12.3947)
-curve = SubResource("Curve3D_b2ayy")
+curve = SubResource("Curve3D_7iam4")
 in_sections = [NodePath("../RailS8")]
 out_sections = [NodePath("../Rail_pre_S1")]
 
 [node name="BakedRailsMesh" parent="Rails/RailS8_S1" index="0"]
-mesh = SubResource("ImmediateMesh_l71x2")
+mesh = ExtResource("37_8ai2q")
 
 [node name="Rail_pre_S1" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.482, 0, 48.713)
-curve = SubResource("Curve3D_7iam4")
+curve = SubResource("Curve3D_7a7fc")
 in_sections = [NodePath("../RailS8_S1"), NodePath("../Rail_skip_S8")]
 out_sections = [NodePath("../RailS1")]
 
 [node name="BakedRailsMesh" parent="Rails/Rail_pre_S1" index="0"]
-mesh = SubResource("ImmediateMesh_kgts7")
+mesh = ExtResource("38_5t7e2")
 
 [node name="RailS1" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.1214, 0, 67.4319)
-curve = SubResource("Curve3D_7a7fc")
+curve = SubResource("Curve3D_vtcgm")
 in_sections = [NodePath("../Rail_pre_S1"), NodePath("../RailS3_S1")]
 out_sections = [NodePath("../RailS2S3")]
 
 [node name="BakedRailsMesh" parent="Rails/RailS1" index="0"]
-mesh = SubResource("ImmediateMesh_iplb2")
+mesh = ExtResource("39_fj0cs")
 
 [node name="Station1" parent="Rails/RailS1" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.033706, 0, 0.999401, 0, 1, 0, -0.999401, 0, -0.033706, -33.2739, 0, 0.875955)
+transform = Transform3D(-0.0337059, 0, 0.999399, 0, 1, 0, -0.999399, 0, -0.0337059, -33.2739, 0, 0.875955)
 progress = 33.2863
 waiting_character = ExtResource("12_on5gu")
 
 [node name="RailS9" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8694, 0, 0)
-curve = SubResource("Curve3D_vtcgm")
+curve = SubResource("Curve3D_v6bnv")
 in_sections = [NodePath("../RailS11")]
 out_sections = [NodePath("../RailS9_S2"), NodePath("../RailS10")]
 out_requirements_2 = Array[String](["-C", "-J"])
 
 [node name="BakedRailsMesh" parent="Rails/RailS9" index="0"]
-mesh = SubResource("ImmediateMesh_1xr1q")
+mesh = ExtResource("40_scbdf")
 
 [node name="Station9" parent="Rails/RailS9" instance=ExtResource("8_cly8o")]
 transform = Transform3D(-0.999948, 0, 0.0098526, 0, 1, 0, -0.0098526, 0, -0.999948, 14.0784, 0, 22.6972)
@@ -806,22 +780,22 @@ dialogues = Array[ExtResource("18_ajnxc")]([SubResource("Resource_lin8e")])
 
 [node name="RailS9_S2" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.8941, 0, 25.9544)
-curve = SubResource("Curve3D_v6bnv")
+curve = SubResource("Curve3D_5t7e2")
 in_sections = [NodePath("../RailS9")]
 out_sections = [NodePath("../RailS2S3")]
 
 [node name="BakedRailsMesh" parent="Rails/RailS9_S2" index="0"]
-mesh = SubResource("ImmediateMesh_8ai2q")
+mesh = ExtResource("41_687r6")
 
 [node name="RailS2S3" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 69)
-curve = SubResource("Curve3D_5t7e2")
+curve = SubResource("Curve3D_scbdf")
 in_sections = [NodePath("../RailS1"), NodePath("../RailS9_S2")]
 out_sections = [NodePath("../RailS3_S4"), NodePath("../RailS3_S1")]
 out_requirements_1 = Array[String](["-G"])
 
 [node name="BakedRailsMesh" parent="Rails/RailS2S3" index="0"]
-mesh = SubResource("ImmediateMesh_fj0cs")
+mesh = ExtResource("42_l467f")
 
 [node name="Station2" parent="Rails/RailS2S3" instance=ExtResource("8_cly8o")]
 transform = Transform3D(0.185863, 0, 0.982574, 0, 1, 0, -0.982574, 0, 0.185863, -23.1544, 0, -2.28451)
@@ -839,21 +813,21 @@ dialogues = Array[ExtResource("18_ajnxc")]([SubResource("Resource_pi7hh")])
 
 [node name="RailS3_S4" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.0364, 0, 37.4127)
-curve = SubResource("Curve3D_scbdf")
+curve = SubResource("Curve3D_l467f")
 in_sections = [NodePath("../RailS2S3")]
 out_sections = [NodePath("../RailS4")]
 
 [node name="BakedRailsMesh" parent="Rails/RailS3_S4" index="0"]
-mesh = SubResource("ImmediateMesh_687r6")
+mesh = ExtResource("43_mhrry")
 
 [node name="RailS3_S1" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.0364, 0, 37.4127)
-curve = SubResource("Curve3D_l467f")
+curve = SubResource("Curve3D_ag8s5")
 in_sections = [NodePath("../RailS2S3")]
 out_sections = [NodePath("../RailS1")]
 
 [node name="BakedRailsMesh" parent="Rails/RailS3_S1" index="0"]
-mesh = SubResource("ImmediateMesh_mhrry")
+mesh = ExtResource("44_ag8s5")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="Rails/RailS3_S1"]
 process_mode = 4
@@ -909,12 +883,12 @@ mesh = ExtResource("20_xi2te")
 
 [node name="RailS10" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.8941, 0, 25.9544)
-curve = SubResource("Curve3D_ag8s5")
+curve = SubResource("Curve3D_taw17")
 in_sections = [NodePath("../RailS9")]
 out_sections = [NodePath("../RailS11")]
 
 [node name="BakedRailsMesh" parent="Rails/RailS10" index="0"]
-mesh = SubResource("ImmediateMesh_6kmqa")
+mesh = ExtResource("46_6kmqa")
 
 [node name="Station10" parent="Rails/RailS10" instance=ExtResource("8_cly8o")]
 transform = Transform3D(0.109115, 0, 0.994026, 0, 1, 0, -0.994026, 0, 0.109115, -36.8345, 0, 13.3015)
@@ -1456,6 +1430,13 @@ horizontal_alignment = 1
 [node name="AudioStreamPlayer" parent="." instance=ExtResource("31_sxppv")]
 unique_name_in_owner = true
 
+[node name="RhythmNotifier" type="Node" parent="AudioStreamPlayer" node_paths=PackedStringArray("audio_stream_player")]
+script = ExtResource("69_kdplm")
+bpm = 90.0
+beat_length = 0.666667
+audio_stream_player = NodePath("..")
+metadata/_custom_type_script = "uid://bgvijcrqwruss"
+
 [node name="AudioStreamPlayerAttachDetach" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_ajnxc")
@@ -1499,6 +1480,7 @@ bus = &"SFX"
 [connection signal="pressed" from="CanvasLayer/GameUI/PanelStationPut/MarginContainer/VBoxContainerPutChar/ButtonNoOne" to="." method="_on_button_no_one_pressed"]
 [connection signal="value_changed" from="CanvasLayer/VolumeUI/HSliderVolume" to="." method="_on_h_slider_volume_value_changed"]
 [connection signal="pressed" from="CanvasLayer/ControlStart/ButtonStart" to="." method="_on_button_start_pressed"]
+[connection signal="beat" from="AudioStreamPlayer/RhythmNotifier" to="." method="_on_rhythm_notifier_beat"]
 
 [editable path="Rails/RailS4"]
 [editable path="Rails/RailS4_S6_bridge"]

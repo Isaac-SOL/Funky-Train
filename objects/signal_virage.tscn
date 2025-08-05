@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdt8uc23ggjdc"]
+[gd_scene load_steps=6 format=3 uid="uid://cdt8uc23ggjdc"]
 
+[ext_resource type="Script" uid="uid://bpjbelulpuuap" path="res://scripts/traffic_signal.gd" id="1_3wkrv"]
 [ext_resource type="Texture2D" uid="uid://dntmm25ljyc7c" path="res://assets/textures/virage.png" id="1_f2o0d"]
+[ext_resource type="AnimationLibrary" uid="uid://pc62qlqwabuu" path="res://resources/signal_virage_anim_lib.tres" id="3_868hw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grjvt"]
 albedo_color = Color(0.537011, 0.537011, 0.537011, 1)
@@ -13,6 +15,7 @@ bottom_radius = 0.035
 height = 1.5
 
 [node name="SignalVirage" type="Node3D"]
+script = ExtResource("1_3wkrv")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 2.03818, 0)
@@ -21,3 +24,9 @@ texture = ExtResource("1_f2o0d")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 mesh = SubResource("CylinderMesh_81qnm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": ExtResource("3_868hw")
+}

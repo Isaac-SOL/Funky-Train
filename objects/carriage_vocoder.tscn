@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://l3fxtkqtoise"]
+[gd_scene load_steps=3 format=3 uid="uid://dcjwdedwvpfhp"]
 
 [ext_resource type="PackedScene" uid="uid://bvlp4g2b1r1uw" path="res://objects/carriage.tscn" id="1_kcqss"]
 [ext_resource type="PackedScene" uid="uid://c12k3jpftqlr2" path="res://scenes/wagon/wagon_vocoder.tscn" id="2_b1p2m"]
 
 [node name="CarriageVocoder" instance=ExtResource("1_kcqss")]
-kick = 1.2
+kick = 1.35
 
 [node name="MeshInstance3D" parent="." index="0"]
 visible = false

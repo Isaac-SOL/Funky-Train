@@ -303,10 +303,10 @@ billboard = 0
 [node name="Signals" type="Node3D" parent="."]
 
 [node name="SignalQuicksand" parent="Signals" instance=ExtResource("26_556r4")]
-transform = Transform3D(1.42294, -0.162602, 0.445862, 0.170299, 1.4903, 0, -0.44298, 0.05062, 1.4322, -89.1879, -0.398549, 12.3478)
+transform = Transform3D(0.948629, -0.108401, 0.297242, 0.113533, 0.993534, 8.93168e-08, -0.295321, 0.0337467, 0.954802, -89.1879, -0.398549, 12.3478)
 
 [node name="SignalVirage" parent="Signals" instance=ExtResource("27_556r4")]
-transform = Transform3D(1.31794, 0, -0.716267, 0, 1.5, 0, 0.716267, 0, 1.31794, 16.249, -4.76837e-07, -29.5776)
+transform = Transform3D(0.878626, 0, -0.477511, 0, 1, 0, 0.477511, 0, 0.878626, 16.249, -4.76837e-07, -29.5776)
 
 [node name="SignalRocket" parent="Signals" instance=ExtResource("29_w3o6u")]
 transform = Transform3D(0.625855, 0, -0.779939, 0, 1, 0, 0.779939, 0, 0.625855, -32.8791, -8.34465e-07, -22.5298)
@@ -315,7 +315,7 @@ transform = Transform3D(0.625855, 0, -0.779939, 0, 1, 0, 0.779939, 0, 0.625855, 
 transform = Transform3D(-0.796667, 0, 0.604418, 0, 1, 0, -0.604418, 0, -0.796667, 6.96278, 0, 12.2569)
 
 [node name="SignalPente" parent="Signals" instance=ExtResource("31_gur6y")]
-transform = Transform3D(0.366252, 0.155458, 0.917438, -0.134501, 0.984436, -0.113117, -0.920744, -0.0819671, 0.381461, 3.18168, 0.0659692, -44.9564)
+transform = Transform3D(0.366252, 0.155458, 0.917438, -0.134501, 0.984436, -0.113116, -0.920744, -0.0819672, 0.381461, 3.18168, 0.0659692, -44.9564)
 
 [node name="SignalMoumoute" parent="Signals" instance=ExtResource("33_svjb4")]
 transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 1.65374, -1.90735e-06, -15.0228)

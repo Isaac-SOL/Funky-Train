@@ -24,7 +24,7 @@ static var instance: Locomotive
 @export var bypass: bool = false
 @export var show_signals_at_distance: float = 30.0
 @export_group("Music Sync")
-@export var beats_per_minute: float = 120.0
+#@export var beats_per_minute: float = 120.0
 @export var beats_per_measure: int = 4
 @export var kick_up_effect: float = 1.3
 
@@ -32,8 +32,6 @@ var speed: float = 0.0
 var target_speed: float = 0.0
 var curr_section_length: float = 0.0
 var direction: bool = false
-var bpm_timer: float = 1.0
-var bpm_counter: int = 0
 var locked: bool = false
 
 func _ready() -> void:
@@ -44,7 +42,10 @@ func _ready() -> void:
 	restart()
 	await get_tree().process_frame
 	update_characters()
-	bpm_timer = 0.0
+	Main.instance.rhythm_sync.beat.connect(_on_beat)
+	
+	await Main.instance.game_started
+	update_rail_outlines()
 
 func _process(delta: float) -> void:
 	# Acceleration / Deceleration
@@ -86,20 +87,17 @@ func _process(delta: float) -> void:
 		set_main_directions_valid()
 	
 	# Animation
-	
-	bpm_timer -= delta * beats_per_minute / 60
-	if bpm_timer <= 0:
-		bpm_timer += 1.0
-		bpm_counter += 1
-		if bpm_counter >= beats_per_measure:
-			bpm_counter -= beats_per_measure
-			kick_up()
-		for i in range(carriages.size()):
-			if (i + 1) % beats_per_measure == bpm_counter:
-				carriages[i].kick_up()
 	Global.wheel_speed = floori(180 * speed)
 	
 	#imgui()
+
+func _on_beat(counter: int):
+	counter %= 4
+	if counter == 0:
+		kick_up()
+	for i in range(carriages.size()):
+		if (i + 1) % beats_per_measure == counter:
+			carriages[i].kick_up()
 
 func set_speed_mode(new_speed: SpeedMode):
 	speed_mode = new_speed
@@ -157,12 +155,18 @@ func next_section() -> RailSection:
 func get_section() -> RailSection:
 	return get_parent()
 
+func change_direction(new_direction: bool):
+	direction = new_direction
+	update_rail_outlines()
+
 func change_section(new_section: RailSection):
+	get_section().clear_outline_await()
 	get_parent().remove_child(self)
 	new_section.add_child(self)
 	curr_section_length = get_parent().curve.get_baked_length()
 	Main.instance.reset_signals()
 	Main.instance.set_direction_valid(true, true)
+	update_rail_outlines()
 
 func add_character(new_character: CharacterInfo):
 	var new_carriage: Carriage = new_character.carriage.instantiate()
@@ -170,12 +174,14 @@ func add_character(new_character: CharacterInfo):
 	carriages.append(new_carriage)
 	get_section().add_child(new_carriage)
 	update_characters()
+	update_rail_outlines()
 	Main.instance.character_attached(new_character)
 
 func remove_carriage(carriage: Carriage):
 	carriages.remove_at(carriages.find(carriage))
 	carriage.queue_free()
 	update_characters()
+	update_rail_outlines()
 	Main.instance.character_detached(carriage.character)
 
 func update_characters():
@@ -254,6 +260,12 @@ func set_rails_gradient(colors: Array[Color]):
 	gradient.set_color(0, colors[0])
 	for i in range(1, colors.size()):
 		gradient.add_point(float(i) / colors.size(), colors[i])
+
+func update_rail_outlines():
+	var next := next_section()
+	for section in get_section().out_sections:
+		section.set_outline(section == next)
+	get_section().set_outline(true)
 
 #func imgui():
 	#ImGui.Begin("Locomotive")

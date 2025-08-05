@@ -1,49 +1,15 @@
-[gd_scene load_steps=7 format=4 uid="uid://c7adtd3m5hihf"]
+[gd_resource type="ArrayMesh" load_steps=2 format=4 uid="uid://bqd8rawdm78km"]
 
-[ext_resource type="Script" uid="uid://mwi487qkqwy3" path="res://scripts/rail_section.gd" id="1_x140k"]
-[ext_resource type="Script" uid="uid://b4mxonouwg3a3" path="res://scripts/baked_rails_mesh.gd" id="2_e7jeh"]
-[ext_resource type="Material" uid="uid://2j8oioxr23sf" path="res://materials/rails_standard_mat.tres" id="3_jpovr"]
-[ext_resource type="Material" uid="uid://c7w0nu4e7nymo" path="res://materials/rail_section_outline.tres" id="4_e7jeh"]
+[ext_resource type="Material" uid="uid://2j8oioxr23sf" path="res://materials/rails_standard_mat.tres" id="1_4rfxn"]
 
-[sub_resource type="Curve3D" id="Curve3D_x140k"]
-_data = {
-"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.37323, 0, -3.00137, 8, 0, 0),
-"tilts": PackedFloat32Array(0, 0)
-}
-point_count = 2
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_x140k"]
+[resource]
 _surfaces = [{
 "aabb": AABB(0, 0, -0.5, 8, 1e-05, 1),
 "attribute_data": PackedByteArray("AAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAA=="),
 "format": 34359738391,
-"material": ExtResource("3_jpovr"),
+"material": ExtResource("1_4rfxn"),
 "primitive": 4,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 80,
 "vertex_data": PackedByteArray("AAAAAAAAAAAAAAA/AAAAAAAAAAAAAAC/pR5RPgAAAAAAAAA/pR5RPgAAAAAAAAC/GnDSPgAAAAAAAAA/GnDSPgAAAAAAAAC/BZMdPwAAAAAAAAA/BZMdPwAAAAAAAAC/SNxRPwAAAAAAAAA/SNxRPwAAAAAAAAC/bjCDPwAAAAAAAAA/bjCDPwAAAAAAAAC/NX6dPwAAAAAAAAA/NX6dPwAAAAAAAAC/hLm3PwAAAAAAAAA/hLm3PwAAAAAAAAC/pfrRPwAAAAAAAAA/pfrRPwAAAAAAAAC/x0rsPwAAAAAAAAA/x0rsPwAAAAAAAAC/IUMDQAAAAAAAAAA/IUMDQAAAAAAAAAC/EGIQQAAAAAAAAAA/EGIQQAAAAAAAAAC/zIMdQAAAAAAAAAA/zIMdQAAAAAAAAAC/waYqQAAAAAAAAAA/waYqQAAAAAAAAAC/+ck3QAAAAAAAAAA/+ck3QAAAAAAAAAC/x+tEQAAAAAAAAAA/x+tEQAAAAAAAAAC/pAtSQAAAAAAAAAA/pAtSQAAAAAAAAAC/YCxfQAAAAAAAAAA/YCxfQAAAAAAAAAC/o01sQAAAAAAAAAA/o01sQAAAAAAAAAC/L295QAAAAAAAAAA/L295QAAAAAAAAAC/aUiDQAAAAAAAAAA/aUiDQAAAAAAAAAC/L9mJQAAAAAAAAAA/L9mJQAAAAAAAAAC/0GmQQAAAAAAAAAA/0GmQQAAAAAAAAAC/L/qWQAAAAAAAAAA/L/qWQAAAAAAAAAC/HYqdQAAAAAAAAAA/HYqdQAAAAAAAAAC/BBukQAAAAAAAAAA/BBukQAAAAAAAAAC/oKyqQAAAAAAAAAA/oKyqQAAAAAAAAAC/Gj6xQAAAAAAAAAA/Gj6xQAAAAAAAAAC/+c63QAAAAAAAAAA/+c63QAAAAAAAAAC/cF6+QAAAAAAAAAA/cF6+QAAAAAAAAAC/Tu3EQAAAAAAAAAA/Tu3EQAAAAAAAAAC/V4HLQAAAAAAAAAA/V4HLQAAAAAAAAAC/nxHSQAAAAAAAAAA/nxHSQAAAAAAAAAC/c6DYQAAAAAAAAAA/c6DYQAAAAAAAAAC/5TPfQAAAAAAAAAA/5TPfQAAAAAAAAAC/dsTlQAAAAAAAAAA/dsTlQAAAAAAAAAC/oE3sQAAAAAAAAAA/oE3sQAAAAAAAAAC//9jyQAAAAAAAAAA//9jyQAAAAAAAAAC/Cnf5QAAAAAAAAAA/Cnf5QAAAAAAAAAC/AAAAQQAAAAAAAAA/AAAAQQAAAAAAAAC//3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgA==")
 }]
-
-[node name="Rail" type="Path3D"]
-curve = SubResource("Curve3D_x140k")
-script = ExtResource("1_x140k")
-
-[node name="BakedRailsMesh" type="MeshInstance3D" parent="." node_paths=PackedStringArray("path")]
-unique_name_in_owner = true
-layers = 3
-cast_shadow = 0
-mesh = SubResource("ArrayMesh_x140k")
-skeleton = NodePath("../..")
-script = ExtResource("2_e7jeh")
-path = NodePath("..")
-material = ExtResource("3_jpovr")
-
-[node name="OutlineMesh" type="MeshInstance3D" parent="."]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00487702, 0)
-visible = false
-layers = 3
-material_override = ExtResource("4_e7jeh")
-cast_shadow = 0
-mesh = SubResource("ArrayMesh_x140k")
-skeleton = NodePath("../..")
