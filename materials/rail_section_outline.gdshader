@@ -2,6 +2,7 @@ shader_type spatial;
 render_mode unshaded;
 
 uniform float extent = 1.0;
+uniform vec3 color: source_color = vec3(1.0, 1.0, 1.0);
 
 void vertex() {
 	VERTEX = VERTEX + NORMAL * extent;
@@ -10,7 +11,7 @@ void vertex() {
 }
 
 void fragment() {
-	// Called for every pixel the material is visible on.
+	ALBEDO = color;
 }
 
 //void light() {

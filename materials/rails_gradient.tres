@@ -2,7 +2,7 @@
 
 [sub_resource type="Gradient" id="Gradient_pg3h8"]
 interpolation_mode = 1
-offsets = PackedFloat32Array(0, 0.183908, 0.402299, 0.62069, 0.831418)
+offsets = PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8)
 colors = PackedColorArray(0, 0, 0, 1, 0.20871, 0.20871, 0.20871, 1, 1, 1, 1, 1, 0.252028, 0.252028, 0.252028, 1, 0, 0, 0, 1)
 
 [resource]

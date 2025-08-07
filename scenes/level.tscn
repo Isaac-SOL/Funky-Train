@@ -1,9 +1,10 @@
-[gd_scene load_steps=48 format=3 uid="uid://capa820ir3vho"]
+[gd_scene load_steps=54 format=3 uid="uid://capa820ir3vho"]
 
 [ext_resource type="Script" uid="uid://m2gs6g88kh3b" path="res://scripts/level.gd" id="1_7agi7"]
 [ext_resource type="Script" uid="uid://d3y48j1b2i22e" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ppgk2"]
 [ext_resource type="Resource" uid="uid://c3axel685jlwo" path="res://assets/HTerrain/data.hterrain" id="2_2r41h"]
 [ext_resource type="Script" uid="uid://dw84e0nu3ialr" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_klq6b"]
+[ext_resource type="Shader" uid="uid://bcbdyldfu5hyy" path="res://materials/custom_terrain_shader.gdshader" id="4_0fmhk"]
 [ext_resource type="Texture2D" uid="uid://cpf6nn2yurgni" path="res://assets/textures/grass/light_grass_2.png" id="4_wu01b"]
 [ext_resource type="Script" uid="uid://cpdd44k8ek70j" path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" id="5_8gofh"]
 [ext_resource type="Texture2D" uid="uid://cm5mcoa2q2adj" path="res://assets/textures/sand/sand_32x32.png" id="5_556r4"]
@@ -13,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://6jmdwj3vn6m0" path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" id="7_pqd0y"]
 [ext_resource type="Texture2D" uid="uid://dq3s1b4b7x2rj" path="res://assets/modele/2D/environment/nature/buisson3.png" id="8_pqd0y"]
 [ext_resource type="Texture2D" uid="uid://buupwh88wg1u1" path="res://assets/modele/2D/environment/nature/buisson4.png" id="9_pqd0y"]
+[ext_resource type="Shader" uid="uid://jsv6e38q2x14" path="res://materials/custom_detail_shader.gdshader" id="11_50fbu"]
 [ext_resource type="Texture2D" uid="uid://ciweow80fcdx6" path="res://assets/modele/2D/environment/nature/arbre1.png" id="13_cmcjb"]
 [ext_resource type="Texture2D" uid="uid://bcpte5e0figdd" path="res://assets/modele/2D/environment/nature/buisson1.png" id="13_xy2fk"]
 [ext_resource type="Texture2D" uid="uid://jmvacbmjp7wt" path="res://assets/modele/2D/environment/nature/buisson2.png" id="14_cmcjb"]
@@ -64,6 +66,32 @@ size = Vector3(58.7916, 13.1348, 56.9167)
 [sub_resource type="BoxShape3D" id="BoxShape3D_v3why"]
 size = Vector3(36.6874, 13.1348, 126.746)
 
+[sub_resource type="Gradient" id="Gradient_535f6"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.864341, 0.972868)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_50fbu"]
+gradient = SubResource("Gradient_535f6")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_0fmhk"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0fmhk"]
+gradient = SubResource("Gradient_0fmhk")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0.5)
+
 [node name="level" type="Node3D"]
 script = ExtResource("1_7agi7")
 
@@ -76,14 +104,14 @@ chunk_size = 32
 collision_enabled = true
 collision_layer = 1
 collision_mask = 1
-shader_type = "Classic4Lite"
-custom_shader = null
+shader_type = "Custom"
+custom_shader = ExtResource("4_0fmhk")
 custom_globalmap_shader = null
 texture_set = SubResource("Resource_1tp2x")
 render_layers = 3
 cast_shadow = 1
 shader_params/u_ground_uv_scale = 2.0
-shader_params/u_depth_blending = true
+shader_params/u_depth_blending = false
 shader_params/u_triplanar = false
 shader_params/u_tile_reduction = Vector4(1, 1, 1, 1)
 metadata/_custom_type_script = "uid://d3y48j1b2i22e"
@@ -92,6 +120,7 @@ metadata/_custom_type_script = "uid://d3y48j1b2i22e"
 transform = Transform3D(3.015, 0, 0, 0, 3.015, 0, 0, 0, 3.015, 0, 0, 0)
 script = ExtResource("5_8gofh")
 texture = ExtResource("6_8gofh")
+custom_shader = ExtResource("11_50fbu")
 density = 0.57
 shader_params/u_globalmap_tint_bottom = null
 shader_params/u_globalmap_tint_top = null
@@ -104,6 +133,7 @@ metadata/_editor_icon = ExtResource("7_pqd0y")
 script = ExtResource("5_8gofh")
 layer_index = 1
 texture = ExtResource("8_pqd0y")
+custom_shader = ExtResource("11_50fbu")
 density = 0.3
 shader_params/u_globalmap_tint_bottom = null
 shader_params/u_globalmap_tint_top = null
@@ -116,6 +146,7 @@ metadata/_editor_icon = ExtResource("7_pqd0y")
 script = ExtResource("5_8gofh")
 layer_index = 2
 texture = ExtResource("9_pqd0y")
+custom_shader = ExtResource("11_50fbu")
 density = 0.3
 shader_params/u_globalmap_tint_bottom = null
 shader_params/u_globalmap_tint_top = null
@@ -128,6 +159,7 @@ metadata/_editor_icon = ExtResource("7_pqd0y")
 script = ExtResource("5_8gofh")
 layer_index = 3
 texture = ExtResource("13_cmcjb")
+custom_shader = ExtResource("11_50fbu")
 density = 0.2
 shader_params/u_globalmap_tint_bottom = 0.0
 shader_params/u_globalmap_tint_top = 0.0
@@ -140,6 +172,7 @@ metadata/_editor_icon = ExtResource("7_pqd0y")
 script = ExtResource("5_8gofh")
 layer_index = 4
 texture = ExtResource("13_xy2fk")
+custom_shader = ExtResource("11_50fbu")
 density = 0.1
 shader_params/u_globalmap_tint_bottom = null
 shader_params/u_globalmap_tint_top = null
@@ -152,6 +185,7 @@ metadata/_editor_icon = ExtResource("7_pqd0y")
 script = ExtResource("5_8gofh")
 layer_index = 5
 texture = ExtResource("14_cmcjb")
+custom_shader = ExtResource("11_50fbu")
 density = 0.1
 shader_params/u_globalmap_tint_bottom = null
 shader_params/u_globalmap_tint_top = null
@@ -164,6 +198,7 @@ metadata/_editor_icon = ExtResource("7_pqd0y")
 script = ExtResource("5_8gofh")
 layer_index = 6
 texture = ExtResource("15_7agi7")
+custom_shader = ExtResource("11_50fbu")
 density = 0.03
 shader_params/u_globalmap_tint_bottom = 0.9
 shader_params/u_globalmap_tint_top = 0.6
@@ -176,6 +211,7 @@ metadata/_editor_icon = ExtResource("7_pqd0y")
 script = ExtResource("5_8gofh")
 layer_index = 7
 texture = ExtResource("16_kih21")
+custom_shader = ExtResource("11_50fbu")
 density = 0.03
 shader_params/u_globalmap_tint_bottom = 0.9
 shader_params/u_globalmap_tint_top = 0.6
@@ -188,6 +224,7 @@ metadata/_editor_icon = ExtResource("7_pqd0y")
 script = ExtResource("5_8gofh")
 layer_index = 8
 texture = ExtResource("17_kih21")
+custom_shader = ExtResource("11_50fbu")
 density = 0.3
 shader_params/u_globalmap_tint_bottom = 0.0
 shader_params/u_globalmap_tint_top = 0.0
@@ -200,6 +237,7 @@ metadata/_editor_icon = ExtResource("7_pqd0y")
 script = ExtResource("5_8gofh")
 layer_index = 9
 texture = ExtResource("18_w3o6u")
+custom_shader = ExtResource("11_50fbu")
 density = 0.5
 shader_params/u_globalmap_tint_bottom = null
 shader_params/u_globalmap_tint_top = null
@@ -212,6 +250,7 @@ metadata/_editor_icon = ExtResource("7_pqd0y")
 script = ExtResource("5_8gofh")
 layer_index = 10
 texture = ExtResource("19_2e2fo")
+custom_shader = ExtResource("11_50fbu")
 density = 0.5
 shader_params/u_globalmap_tint_bottom = 0.0
 shader_params/u_globalmap_tint_top = 0.0
@@ -224,6 +263,7 @@ metadata/_editor_icon = ExtResource("7_pqd0y")
 script = ExtResource("5_8gofh")
 layer_index = 11
 texture = ExtResource("20_3ies3")
+custom_shader = ExtResource("11_50fbu")
 density = 0.5
 shader_params/u_globalmap_tint_bottom = null
 shader_params/u_globalmap_tint_top = null
@@ -237,6 +277,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.586, 0.0779428, -18.5415)
 
 [node name="water_shader" parent="." instance=ExtResource("29_7agi7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -359.311, -2.5, 0)
+layers = 3
 
 [node name="rock_env" type="Node3D" parent="."]
 
@@ -303,7 +344,7 @@ billboard = 0
 [node name="Signals" type="Node3D" parent="."]
 
 [node name="SignalQuicksand" parent="Signals" instance=ExtResource("26_556r4")]
-transform = Transform3D(0.948628, -0.108402, 0.297243, 0.113533, 0.993534, 1.22724e-07, -0.295321, 0.0337468, 0.954802, -89.1879, -0.398549, 12.3478)
+transform = Transform3D(0.948628, -0.108402, 0.297243, 0.113533, 0.993534, 3.08102e-07, -0.295321, 0.0337466, 0.954802, -89.1879, -0.398549, 12.3478)
 
 [node name="SignalVirage" parent="Signals" instance=ExtResource("27_556r4")]
 transform = Transform3D(0.878626, 0, -0.477511, 0, 1, 0, 0.477511, 0, 0.878626, 16.249, -4.76837e-07, -29.5776)
@@ -406,6 +447,42 @@ shape = SubResource("BoxShape3D_v3why")
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("39_c1pbi")
+
+[node name="Vignette" type="Sprite3D" parent="."]
+transform = Transform3D(210, 0, 0, 0, -9.17939e-06, 210, 0, -210, -9.17939e-06, 0, 39.8765, 2.29179e-07)
+layers = 2
+double_sided = false
+render_priority = 100
+texture = SubResource("GradientTexture2D_50fbu")
+
+[node name="Cadre1" type="Sprite3D" parent="."]
+transform = Transform3D(484, 0, 0, 0, -9.17939e-06, 210, 0, -210, -9.17939e-06, 0, 39.876, -267.97)
+layers = 2
+transparent = false
+double_sided = false
+render_priority = 100
+texture = SubResource("GradientTexture2D_0fmhk")
+
+[node name="Cadre2" type="Sprite3D" parent="."]
+transform = Transform3D(484, 0, 0, 0, -9.17939e-06, 210, 0, -210, -9.17939e-06, 0, 39.876, 267.97)
+layers = 2
+double_sided = false
+render_priority = 100
+texture = SubResource("GradientTexture2D_0fmhk")
+
+[node name="Cadre3" type="Sprite3D" parent="."]
+transform = Transform3D(128.15, 0, 0, 0, -9.17939e-06, 210, 0, -210, -9.17939e-06, -215.808, 39.876, 0)
+layers = 2
+double_sided = false
+render_priority = 100
+texture = SubResource("GradientTexture2D_0fmhk")
+
+[node name="Cadre4" type="Sprite3D" parent="."]
+transform = Transform3D(128.15, 0, 0, 0, -9.17939e-06, 210, 0, -210, -9.17939e-06, 215.808, 39.876, 0)
+layers = 2
+double_sided = false
+render_priority = 100
+texture = SubResource("GradientTexture2D_0fmhk")
 
 [connection signal="area_entered" from="Area3D_plane" to="." method="_on_area_3d_plane_area_entered"]
 [connection signal="area_entered" from="Area3D_beach" to="." method="_on_area_3d_beach_area_entered"]

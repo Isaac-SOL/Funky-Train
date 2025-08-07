@@ -6,3 +6,4 @@
 render_priority = 0
 shader = ExtResource("1_dis0u")
 shader_parameter/extent = 0.2
+shader_parameter/color = Color(1, 1, 1, 1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://c7adtd3m5hihf"]
+[gd_scene load_steps=12 format=4 uid="uid://c7adtd3m5hihf"]
 
 [ext_resource type="Script" uid="uid://mwi487qkqwy3" path="res://scripts/rail_section.gd" id="1_x140k"]
 [ext_resource type="Script" uid="uid://b4mxonouwg3a3" path="res://scripts/baked_rails_mesh.gd" id="2_e7jeh"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://2j8oioxr23sf" path="res://materials/rails_standard_mat.tres" id="3_jpovr"]
 [ext_resource type="Material" uid="uid://c7w0nu4e7nymo" path="res://materials/rail_section_outline.tres" id="4_e7jeh"]
 [ext_resource type="ArrayMesh" uid="uid://bw2e5m7gg03hk" path="res://meshes/rails/Rail_minimap.tres" id="6_yfycn"]
+[ext_resource type="PackedScene" uid="uid://bq4hqqiapqltb" path="res://assets/modele/3D/cross.tscn" id="7_yfycn"]
 
 [sub_resource type="Curve3D" id="Curve3D_x140k"]
 _data = {
@@ -29,6 +30,19 @@ _surfaces = [{
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e7jeh"]
 shading_mode = 0
 albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_yfycn"]
+script/source = "extends Node3D
+
+func _ready() -> void:
+	await get_tree().process_frame
+	Main.instance.rhythm_sync.beat.connect(func(_b):
+		if visible:
+			scale = 1.2 * Vector3.ONE
+			var tween := create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
+			tween.tween_property(self, \"scale\", Vector3.ONE, 0.6)
+	)
+"
 
 [node name="Rail" type="Path3D"]
 curve = SubResource("Curve3D_x140k")
@@ -56,7 +70,7 @@ skeleton = NodePath("../..")
 
 [node name="BakedRailsMeshMinimap" type="MeshInstance3D" parent="." node_paths=PackedStringArray("path")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9, 0)
 layers = 2
 cast_shadow = 0
 mesh = ExtResource("6_yfycn")
@@ -67,3 +81,16 @@ material = SubResource("StandardMaterial3D_e7jeh")
 vertex_per_meter = 2.0
 width = 3.0
 minimap = true
+
+[node name="CrossFollow" type="PathFollow3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CrossTween" type="Node3D" parent="CrossFollow"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.977276, 0)
+
+[node name="CrossCenter" type="Node3D" parent="CrossFollow/CrossTween"]
+script = SubResource("GDScript_yfycn")
+
+[node name="Cross" parent="CrossFollow/CrossTween/CrossCenter" instance=ExtResource("7_yfycn")]
+transform = Transform3D(-8.74228e-10, 0, -0.02, 0, 0.02, 0, 0.02, 0, -8.74228e-10, 0, -0.570411, 0)

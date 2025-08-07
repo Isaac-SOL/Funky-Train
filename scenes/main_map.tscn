@@ -1,4 +1,4 @@
-[gd_scene load_steps=167 format=3 uid="uid://ddei87jmflwu2"]
+[gd_scene load_steps=174 format=3 uid="uid://ddei87jmflwu2"]
 
 [ext_resource type="Script" uid="uid://rytmmqnltko8" path="res://scripts/main.gd" id="1_rk4p5"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_7tq10"]
@@ -106,8 +106,10 @@
 [ext_resource type="Script" uid="uid://bgvijcrqwruss" path="res://addons/rhythm_notifier/rhythm_notifier.gd" id="69_kdplm"]
 [ext_resource type="ArrayMesh" uid="uid://8agafw5ws7du" path="res://meshes/rails/RailS10_minimap.tres" id="71_l8v81"]
 [ext_resource type="Texture2D" uid="uid://bhqvoqxf43frw" path="res://assets/textures/UI/gamjam2025_UI_menu_top.png" id="76_4t7rj"]
+[ext_resource type="Shader" uid="uid://byrwhib36s4tv" path="res://materials/edge_detection.gdshader" id="77_b864h"]
 [ext_resource type="Texture2D" uid="uid://2exhh6ej1csm" path="res://assets/textures/gamjam2025_UI_play.png" id="93_4t7rj"]
 [ext_resource type="Texture2D" uid="uid://bscqam2d07rp7" path="res://assets/textures/gamjam2025_UI_play_2.png" id="94_te2gl"]
+[ext_resource type="Texture2D" uid="uid://df5j0xy71xrc2" path="res://assets/textures/UI/square32.png" id="95_b864h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gd5r5"]
 sky_top_color = Color(1, 0.866667, 0, 1)
@@ -238,6 +240,13 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
+
+[sub_resource type="GDScript" id="GDScript_bun0v"]
+script/source = "extends Marker3D
+
+func _process(delta: float) -> void:
+	global_position = get_parent_node_3d().global_position + Vector3(0.0, 50.0, 0.0)
+"
 
 [sub_resource type="Curve3D" id="Curve3D_vafob"]
 _data = {
@@ -412,8 +421,26 @@ material = ExtResource("20_ha36p")
 size = Vector2(10, 10)
 
 [sub_resource type="Environment" id="Environment_45vgs"]
+background_mode = 1
 background_energy_multiplier = 16.0
+ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bun0v"]
+render_priority = -100
+shader = ExtResource("77_b864h")
+shader_parameter/sobel_max = 1.0
+shader_parameter/sobel_max_depth = 5.0
+shader_parameter/sobel_min = 1.0
+shader_parameter/sobel_min_depth = 50.0
+shader_parameter/depth_gradient_color = Color(0, 0, 0, 1)
+shader_parameter/depth_gradient_start = 0.0
+shader_parameter/depth_gradient_end = 40.0
+shader_parameter/depth_gradient_strength = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_2dsia"]
+material = SubResource("ShaderMaterial_bun0v")
+size = Vector2(200, 200)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_rw4g1"]
 viewport_path = NodePath("SubViewport")
@@ -433,6 +460,22 @@ texture_margin_bottom = 45.0
 font = ExtResource("36_4kkmd")
 font_size = 48
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_b864h"]
+color = Color(0.941176, 0.901961, 0.8, 1)
+thickness = 12
+
+[sub_resource type="GDScript" id="GDScript_b864h"]
+script/source = "extends HSlider
+
+
+func _on_drag_started() -> void:
+	mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+
+
+func _on_drag_ended(value_changed: bool) -> void:
+	mouse_default_cursor_shape = Control.CURSOR_DRAG
+"
 
 [sub_resource type="GDScript" id="GDScript_5t7e2"]
 script/source = "extends TextureRect
@@ -510,7 +553,7 @@ grabbing_cursor = ExtResource("20_2dsia")
 environment = SubResource("Environment_bmein")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.499999, 0.750002, -0.433013, 3.2725e-08, 0.499998, 0.866026, 0.866026, -0.43301, 0.249998, 0, 16.7499, 0)
+transform = Transform3D(0.499999, 0.652468, -0.569464, 2.23517e-08, 0.657557, 0.753403, 0.866026, -0.376699, 0.328778, 0, 16.7499, 0)
 light_energy = 0.5
 light_indirect_energy = 8.64
 shadow_enabled = true
@@ -534,8 +577,11 @@ mesh = ExtResource("17_fork7")
 [node name="BakedRailsMeshMinimap" parent="Rails/RailS4" index="2"]
 mesh = ExtResource("19_up1kr")
 
+[node name="CrossFollow" parent="Rails/RailS4" index="3"]
+transform = Transform3D(0.00120349, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00120349, 0, 0, 0)
+
 [node name="Station4" parent="Rails/RailS4" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.000827091, 0, -0.999968, 0, 1, 0, 0.999968, 0, -0.000827091, 16.1874, 0, -0.000769002)
+transform = Transform3D(-0.000827089, 0, -0.999965, 0, 1, 0, 0.999965, 0, -0.000827089, 16.1874, 0, -0.000769002)
 progress = 16.1862
 waiting_character = ExtResource("5_7eykx")
 
@@ -557,6 +603,10 @@ rebake_with_tilt = true
 [node name="BakedRailsMeshMinimap" parent="Rails/RailS4_S6_bridge" index="2"]
 mesh = ExtResource("24_fd1ws")
 
+[node name="CrossFollow" parent="Rails/RailS4_S6_bridge" index="3"]
+transform = Transform3D(0.470224, 0, -0.882546, 0, 1, 0, 0.882546, 0, 0.470224, 6.25571, 0, -1.33375)
+progress = 6.4547
+
 [node name="AreaLoop" type="Area3D" parent="Rails/RailS4_S6_bridge"]
 collision_layer = 2
 
@@ -576,6 +626,10 @@ mesh = ExtResource("22_hwpaj")
 [node name="BakedRailsMeshMinimap" parent="Rails/RailS4_S11" index="2"]
 mesh = ExtResource("26_4t7rj")
 
+[node name="CrossFollow" parent="Rails/RailS4_S11" index="3"]
+transform = Transform3D(0.00247557, 0, -0.999996, 0, 1, 0, 0.999996, 0, 0.00247557, 5.40219, 0, -0.0101155)
+progress = 5.4022
+
 [node name="RailS11" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9347, 0, 0)
 curve = SubResource("Curve3D_4vm3s")
@@ -588,6 +642,9 @@ mesh = ExtResource("23_45vgs")
 
 [node name="BakedRailsMeshMinimap" parent="Rails/RailS11" index="2"]
 mesh = ExtResource("28_te2gl")
+
+[node name="CrossFollow" parent="Rails/RailS11" index="3"]
+transform = Transform3D(-0.0169584, 0, -0.999853, 0, 1, 0, 0.999853, 0, -0.0169584, 0, 0, 0)
 
 [node name="Station11" parent="Rails/RailS11" instance=ExtResource("8_cly8o")]
 transform = Transform3D(-0.00646113, 0, -0.999978, 0, 1, 0, 0.999978, 0, -0.00646113, 15.719, 0, -0.0139241)
@@ -612,6 +669,10 @@ mesh = ExtResource("24_rw4g1")
 [node name="BakedRailsMeshMinimap" parent="Rails/RailS11_fork" index="2"]
 mesh = ExtResource("30_cnexl")
 
+[node name="CrossFollow" parent="Rails/RailS11_fork" index="3"]
+transform = Transform3D(0.137052, 0, -0.99056, 0, 1, 0, 0.99056, 0, 0.137052, 6.27935, 0, -0.321283)
+progress = 6.29427
+
 [node name="DialogicTrigger" parent="Rails/RailS11_fork" instance=ExtResource("17_k43kg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5615, 0.417897, -2.16089)
 requirements = Array[String](["E"])
@@ -629,6 +690,10 @@ mesh = ExtResource("25_uv8yl")
 [node name="BakedRailsMeshMinimap" parent="Rails/RailS11_fork2" index="2"]
 mesh = ExtResource("32_fiuuh")
 
+[node name="CrossFollow" parent="Rails/RailS11_fork2" index="3"]
+transform = Transform3D(0.961773, 0, 0.273842, 0, 1, 0, -0.273842, 0, 0.961773, -0.60389, 0, -5.20761)
+progress = 5.2593
+
 [node name="RailS11_fork3" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.2235, 0, -9.39877)
 curve = SubResource("Curve3D_50cgf")
@@ -640,6 +705,10 @@ mesh = ExtResource("26_b2ayy")
 
 [node name="BakedRailsMeshMinimap" parent="Rails/RailS11_fork3" index="2"]
 mesh = ExtResource("34_nyyd3")
+
+[node name="CrossFollow" parent="Rails/RailS11_fork3" index="3"]
+transform = Transform3D(0.967627, 5.61477e-08, -0.252381, 5.7827e-08, 1, 4.44179e-07, 0.252381, -4.44395e-07, 0.967627, 0.549001, -9.79738e-07, -5.05887)
+progress = 5.10111
 
 [node name="RailS7" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.8615, 0, -15.6765)
@@ -653,6 +722,9 @@ mesh = ExtResource("27_l71x2")
 
 [node name="BakedRailsMeshMinimap" parent="Rails/RailS7" index="2"]
 mesh = ExtResource("36_b864h")
+
+[node name="CrossFollow" parent="Rails/RailS7" index="3"]
+transform = Transform3D(0.997489, 0, 0.0708281, 0, 1, 0, -0.0708281, 0, 0.997489, 0, 0, 0)
 
 [node name="Station7" parent="Rails/RailS7" instance=ExtResource("8_cly8o")]
 transform = Transform3D(-0.0138704, -1.10298e-08, 0.999899, -7.952e-07, 1, -2.30925e-14, -0.999899, -7.95128e-07, -0.0138704, -23.0306, -8.10623e-06, -7.72331)
@@ -676,6 +748,10 @@ mesh = ExtResource("28_7iam4")
 [node name="BakedRailsMeshMinimap" parent="Rails/Rail_pre_S5" index="2"]
 mesh = ExtResource("38_bun0v")
 
+[node name="CrossFollow" parent="Rails/Rail_pre_S5" index="3"]
+transform = Transform3D(-0.146293, 2.02258e-07, 0.989241, 9.89302e-09, 1, -2.02994e-07, -0.989241, -1.991e-08, -0.146293, -4.86465, 3.32414e-07, 0.361304)
+progress = 4.88234
+
 [node name="RailS5" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -20)
 curve = SubResource("Curve3D_kkyah")
@@ -687,6 +763,9 @@ mesh = ExtResource("29_kgts7")
 
 [node name="BakedRailsMeshMinimap" parent="Rails/RailS5" index="2"]
 mesh = ExtResource("40_2dsia")
+
+[node name="CrossFollow" parent="Rails/RailS5" index="3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="Station5" parent="Rails/RailS5" instance=ExtResource("8_cly8o")]
 transform = Transform3D(-0.0694312, -5.93477e-05, 0.997574, -0.000854749, 0.999999, -4.81766e-11, -0.997574, -0.000852697, -0.0694312, -40.6859, 0, 0.139051)
@@ -715,7 +794,8 @@ transform = Transform3D(1, 0, 0, 0, 0.995514, 0.0946126, 0, -0.0946126, 0.995514
 
 [node name="MinimapPos" type="Marker3D" parent="Rails/RailS5/Locomotive"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.16415e-09, 11.9772, -5.23073e-07)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 50, 0)
+script = SubResource("GDScript_bun0v")
 
 [node name="EndPos" type="Marker3D" parent="Rails/RailS5/Locomotive"]
 unique_name_in_owner = true
@@ -756,6 +836,10 @@ mesh = ExtResource("32_7a7fc")
 [node name="BakedRailsMeshMinimap" parent="Rails/Rail_pre_S6" index="2"]
 mesh = ExtResource("44_n4ay8")
 
+[node name="CrossFollow" parent="Rails/Rail_pre_S6" index="3"]
+transform = Transform3D(0.353599, 0.217007, 0.909876, -0.0456339, 0.97556, -0.214939, -0.934283, 0.034481, 0.35486, -3.4128, 0.440856, -0.634051)
+progress = 3.52549
+
 [node name="RailS6" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.824, 0, -35.8946)
 curve = SubResource("Curve3D_fork7")
@@ -768,6 +852,9 @@ mesh = ExtResource("33_iplb2")
 
 [node name="BakedRailsMeshMinimap" parent="Rails/RailS6" index="2"]
 mesh = ExtResource("46_ffb6b")
+
+[node name="CrossFollow" parent="Rails/RailS6" index="3"]
+transform = Transform3D(-0.0407819, 0, -0.999168, 0, 1, 0, 0.999168, 0, -0.0407819, 0, 0, 0)
 
 [node name="Station6" parent="Rails/RailS6" instance=ExtResource("8_cly8o")]
 transform = Transform3D(-0.26215, -5.22939e-07, -0.965013, -8.78835e-08, 1, -5.1801e-07, 0.965013, -5.09888e-08, -0.26215, 31.3427, -5.1043e-06, 0.902595)
@@ -800,6 +887,10 @@ mesh = ExtResource("34_vtcgm")
 [node name="BakedRailsMeshMinimap" parent="Rails/Rail_skip_S8" index="2"]
 mesh = ExtResource("48_mbn4m")
 
+[node name="CrossFollow" parent="Rails/Rail_skip_S8" index="3"]
+transform = Transform3D(-0.582193, 0, -0.81305, 0, 1, 0, 0.81305, 0, -0.582193, 6.69008, 0, 5.11484)
+progress = 8.42591
+
 [node name="RailS8" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.2296, 0, -28.6931)
 curve = SubResource("Curve3D_rw4g1")
@@ -811,6 +902,10 @@ mesh = ExtResource("35_1xr1q")
 
 [node name="BakedRailsMeshMinimap" parent="Rails/RailS8" index="2"]
 mesh = ExtResource("50_8ue55")
+
+[node name="CrossFollow" parent="Rails/RailS8" index="3"]
+transform = Transform3D(-0.752718, 0, -0.658343, 0, 1, 0, 0.658343, 0, -0.752718, 5.95228, 0, 5.87606)
+progress = 8.36843
 
 [node name="Station8" parent="Rails/RailS8" instance=ExtResource("8_cly8o")]
 transform = Transform3D(-0.998857, 0, -0.0472375, 0, 1, 0, 0.0472375, 0, -0.998857, 14.4835, 0, 33.4404)
@@ -829,6 +924,10 @@ mesh = ExtResource("36_v6bnv")
 [node name="BakedRailsMeshMinimap" parent="Rails/RailS8_S7" index="2"]
 mesh = ExtResource("52_tlql3")
 
+[node name="CrossFollow" parent="Rails/RailS8_S7" index="3"]
+transform = Transform3D(-0.937129, 0, 0.348983, 0, 1, 0, -0.348983, 0, -0.937129, -0.534477, 0, 2.95372)
+progress = 3.01768
+
 [node name="RailS8_S1" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.8812, 0, 12.3947)
 curve = SubResource("Curve3D_7iam4")
@@ -840,6 +939,10 @@ mesh = ExtResource("37_8ai2q")
 
 [node name="BakedRailsMeshMinimap" parent="Rails/RailS8_S1" index="2"]
 mesh = ExtResource("54_f0qmg")
+
+[node name="CrossFollow" parent="Rails/RailS8_S1" index="3"]
+transform = Transform3D(-0.889568, 0, -0.456803, 0, 1, 0, 0.456803, 0, -0.889568, 0.765001, 0, 2.73909)
+progress = 2.87083
 
 [node name="Rail_pre_S1" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.482, 0, 48.713)
@@ -853,6 +956,9 @@ mesh = ExtResource("38_5t7e2")
 [node name="BakedRailsMeshMinimap" parent="Rails/Rail_pre_S1" index="2"]
 mesh = ExtResource("56_ogfav")
 
+[node name="CrossFollow" parent="Rails/Rail_pre_S1" index="3"]
+transform = Transform3D(-0.997575, 0, 0.0695988, 0, 1, 0, -0.0695988, 0, -0.997575, 0, 0, 0)
+
 [node name="RailS1" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.1214, 0, 67.4319)
 curve = SubResource("Curve3D_vtcgm")
@@ -865,8 +971,11 @@ mesh = ExtResource("39_fj0cs")
 [node name="BakedRailsMeshMinimap" parent="Rails/RailS1" index="2"]
 mesh = ExtResource("58_0hk2f")
 
+[node name="CrossFollow" parent="Rails/RailS1" index="3"]
+transform = Transform3D(-0.00999987, 0, 0.99995, 0, 1, 0, -0.99995, 0, -0.00999987, 0, 0, 0)
+
 [node name="Station1" parent="Rails/RailS1" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.0337059, 0, 0.999399, 0, 1, 0, -0.999399, 0, -0.0337059, -33.2739, 0, 0.875955)
+transform = Transform3D(-0.0337058, 0, 0.999396, 0, 1, 0, -0.999396, 0, -0.0337058, -33.2739, 0, 0.875955)
 progress = 33.2863
 waiting_character = ExtResource("12_on5gu")
 
@@ -882,6 +991,10 @@ mesh = ExtResource("40_scbdf")
 
 [node name="BakedRailsMeshMinimap" parent="Rails/RailS9" index="2"]
 mesh = ExtResource("60_bfeyk")
+
+[node name="CrossFollow" parent="Rails/RailS9" index="3"]
+transform = Transform3D(-0.275954, 0, -0.96117, 0, 1, 0, 0.96117, 0, -0.275954, 5.72108, 0, 0.857876)
+progress = 5.80035
 
 [node name="Station9" parent="Rails/RailS9" instance=ExtResource("8_cly8o")]
 transform = Transform3D(-0.999948, 0, 0.0098526, 0, 1, 0, -0.0098526, 0, -0.999948, 14.0784, 0, 22.6972)
@@ -915,6 +1028,10 @@ mesh = ExtResource("41_687r6")
 [node name="BakedRailsMeshMinimap" parent="Rails/RailS9_S2" index="2"]
 mesh = ExtResource("62_451ut")
 
+[node name="CrossFollow" parent="Rails/RailS9_S2" index="3"]
+transform = Transform3D(-0.999797, 0, 0.0201702, 0, 1, 0, -0.0201702, 0, -0.999797, -0.141872, 0, 6.67145)
+progress = 6.67299
+
 [node name="RailS2S3" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 69)
 curve = SubResource("Curve3D_scbdf")
@@ -927,6 +1044,9 @@ mesh = ExtResource("42_l467f")
 
 [node name="BakedRailsMeshMinimap" parent="Rails/RailS2S3" index="2"]
 mesh = ExtResource("64_24yu0")
+
+[node name="CrossFollow" parent="Rails/RailS2S3" index="3"]
+transform = Transform3D(-0.00999987, 0, 0.99995, 0, 1, 0, -0.99995, 0, -0.00999987, 0, 0, 0)
 
 [node name="Station2" parent="Rails/RailS2S3" instance=ExtResource("8_cly8o")]
 transform = Transform3D(0.185863, 0, 0.982574, 0, 1, 0, -0.982574, 0, 0.185863, -23.1544, 0, -2.28451)
@@ -954,6 +1074,10 @@ mesh = ExtResource("43_mhrry")
 [node name="BakedRailsMeshMinimap" parent="Rails/RailS3_S4" index="2"]
 mesh = ExtResource("66_sxp67")
 
+[node name="CrossFollow" parent="Rails/RailS3_S4" index="3"]
+transform = Transform3D(0.991694, -1.5037e-08, 0.128619, 3.83663e-09, 1, 8.73295e-08, -0.128619, -8.61108e-08, 0.991694, -1.35171, -3.2088e-07, -7.63719)
+progress = 7.75823
+
 [node name="RailS3_S1" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.0364, 0, 37.4127)
 curve = SubResource("Curve3D_ag8s5")
@@ -965,6 +1089,10 @@ mesh = ExtResource("44_ag8s5")
 
 [node name="BakedRailsMeshMinimap" parent="Rails/RailS3_S1" index="2"]
 mesh = ExtResource("68_36yku")
+
+[node name="CrossFollow" parent="Rails/RailS3_S1" index="3"]
+transform = Transform3D(0.974409, 0, -0.224781, 0, 1, 0, 0.224781, 0, 0.974409, -0.241439, 0, -7.23888)
+progress = 7.30016
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="Rails/RailS3_S1"]
 process_mode = 4
@@ -1030,6 +1158,10 @@ mesh = ExtResource("46_6kmqa")
 [node name="BakedRailsMeshMinimap" parent="Rails/RailS10" index="2"]
 mesh = ExtResource("71_l8v81")
 
+[node name="CrossFollow" parent="Rails/RailS10" index="3"]
+transform = Transform3D(-0.921096, 0, 0.389337, 0, 1, 0, -0.389337, 0, -0.921096, -1.07616, 0, 5.99805)
+progress = 6.1299
+
 [node name="Station10" parent="Rails/RailS10" instance=ExtResource("8_cly8o")]
 transform = Transform3D(0.109115, 0, 0.994026, 0, 1, 0, -0.994026, 0, 0.109115, -36.8345, 0, 13.3015)
 progress = 44.2793
@@ -1073,7 +1205,7 @@ size = Vector2i(512, 400)
 
 [node name="CameraShakerMap" type="Node3D" parent="SubViewport/Node3D" node_paths=PackedStringArray("target_node")]
 unique_name_in_owner = true
-transform = Transform3D(-1, -8.74228e-08, 0, -3.82137e-15, 4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, -28.2673, 12.2295, -17.3649)
+transform = Transform3D(-1, -8.74228e-08, 0, -3.82137e-15, 4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, -28.267, 50, -17.365)
 script = ExtResource("10_j8ata")
 target_node = NodePath("../../../Rails/RailS5/Locomotive/MinimapPos")
 follow_global_coordinates = true
@@ -1088,10 +1220,17 @@ projection = 1
 current = true
 size = 100.0
 
+[node name="ScreenEffect" type="MeshInstance3D" parent="SubViewport/Node3D/CameraShakerMap/Camera3D"]
+transform = Transform3D(0.999966, 0, 0, 0, 0.999962, 0, 0, 0, 0.999971, 0, 0, -0.06)
+layers = 2
+cast_shadow = 0
+mesh = SubResource("QuadMesh_2dsia")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GameUI" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1498,12 +1637,17 @@ stretch_mode = 4
 [node name="HSliderVolume" type="HSlider" parent="CanvasLayer/VolumeUI"]
 layout_mode = 0
 offset_left = 58.0
-offset_top = 6.0
-offset_right = 219.0
-offset_bottom = 22.0
-max_value = 1.0
+offset_top = -2.0
+offset_right = 234.0
+offset_bottom = 30.0
+mouse_default_cursor_shape = 6
+theme_override_icons/grabber = ExtResource("95_b864h")
+theme_override_icons/grabber_highlight = ExtResource("95_b864h")
+theme_override_styles/slider = SubResource("StyleBoxLine_b864h")
+max_value = 0.7
 step = 0.0
 value = 0.5
+script = SubResource("GDScript_b864h")
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/VolumeUI"]
 layout_mode = 0
@@ -1630,6 +1774,8 @@ bus = &"SFX"
 [connection signal="pressed" from="CanvasLayer/GameUI/MarginContainerStationGrab/HBoxContainer/ButtonPrendre" to="." method="_on_button_prendre_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameUI/MarginContainerStationGrab/HBoxContainer/ButtonLaisser" to="." method="_on_button_laisser_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameUI/PanelStationPut/MarginContainer/VBoxContainerPutChar/ButtonNoOne" to="." method="_on_button_no_one_pressed"]
+[connection signal="drag_ended" from="CanvasLayer/VolumeUI/HSliderVolume" to="CanvasLayer/VolumeUI/HSliderVolume" method="_on_drag_ended"]
+[connection signal="drag_started" from="CanvasLayer/VolumeUI/HSliderVolume" to="CanvasLayer/VolumeUI/HSliderVolume" method="_on_drag_started"]
 [connection signal="value_changed" from="CanvasLayer/VolumeUI/HSliderVolume" to="." method="_on_h_slider_volume_value_changed"]
 [connection signal="mouse_entered" from="CanvasLayer/ControlStart/ButtonStart" to="CanvasLayer/ControlStart/ButtonStart" method="_on_hover" binds= [true]]
 [connection signal="mouse_exited" from="CanvasLayer/ControlStart/ButtonStart" to="CanvasLayer/ControlStart/ButtonStart" method="_on_hover" binds= [false]]

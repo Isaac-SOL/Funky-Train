@@ -16,6 +16,7 @@ static var ID_COUNT: int = 0
 var id: int
 var stations: Array[Station] = []
 var clear_outline_scheduled: bool = false
+var cross_tween: Tween
 
 func make_unique():
 	if curve:
@@ -26,10 +27,13 @@ func make_unique():
 	out_requirements_2 = out_requirements_2.duplicate()
 
 func _ready() -> void:
-	get_parent().set_editable_instance(self, true)
-	if not Engine.is_editor_hint():
+	if Engine.is_editor_hint():
+		get_parent().set_editable_instance(self, true)
+	else:
 		id = ID_COUNT
 		ID_COUNT += 1
+		%CrossTween.visible = false
+		%CrossTween.scale = Vector3.ZERO
 		assert(in_sections.size() > 0)
 		assert(out_sections.size() > 0)
 		assert(out_sections.size() <= 2)
@@ -66,6 +70,18 @@ func set_outline(vis: bool):
 	clear_outline_scheduled = false
 	if out_sections.size() == 1:
 		out_sections[0].set_outline(vis)
+
+func set_cross(vis: bool):
+	if not vis and not %CrossTween.visible:
+		return
+	if cross_tween:
+		cross_tween.kill()
+	%CrossTween.visible = true
+	cross_tween = create_tween()
+	cross_tween.set_ease(Tween.EASE_OUT if vis else Tween.EASE_IN)
+	cross_tween.set_trans(Tween.TRANS_QUAD)
+	cross_tween.tween_property(%CrossTween, "scale", Vector3.ONE if vis else Vector3.ZERO, 0.3)
+	cross_tween.tween_callback(func(): %CrossTween.visible = vis)
 
 func rebake():
 	%BakedRailsMesh.rebake()

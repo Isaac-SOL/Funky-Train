@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode unshaded;
+render_mode unshaded, depth_draw_never;
 
 // Based on https://www.youtube.com/watch?v=bCGq1_gnnIk
 
