@@ -26,6 +26,7 @@ Global="*res://scripts/global/Global.gd"
 NodeAudio="*res://scenes/global/node_audio.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 ImGuiRoot="*res://addons/imgui-godot/data/ImGuiRoot.tscn"
+RailsColorManager="*res://scripts/global/rails_color_manager.gd"
 
 [dialogic]
 

@@ -312,6 +312,6 @@ func rail_outline_beat(extent: float):
 func _on_rhythm_notifier_beat(current_beat: int) -> void:
 	var tween := create_tween()
 	tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
-	tween.tween_method(rail_outline_beat, 0.23, 0.15, 0.66)
+	tween.tween_method(rail_outline_beat, 0.27, 0.2, 0.66)
 	#tween.tween_method(rail_outline_beat, 0.15, 0.27, 0.03)
 	#tween.tween_method(rail_outline_beat, 0.27, 0.0, 0.53).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUAD)

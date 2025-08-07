@@ -20,7 +20,6 @@ static var instance: Locomotive
 @export var length: float = 2
 @export var spacing: float = 0.2
 @export var carriages: Array[Carriage] = []
-@export var rails_gradient: GradientTexture1D
 @export var bypass: bool = false
 @export var show_signals_at_distance: float = 30.0
 @export_group("Music Sync")
@@ -33,6 +32,7 @@ var target_speed: float = 0.0
 var curr_section_length: float = 0.0
 var direction: bool = false
 var locked: bool = false
+var last_section: RailSection
 
 func _ready() -> void:
 	instance = self
@@ -158,23 +158,38 @@ func get_section() -> RailSection:
 func change_direction(new_direction: bool):
 	direction = new_direction
 	update_rail_outlines()
+	update_crosses()
 
 func change_section(new_section: RailSection):
+	# Leave current section
 	get_section().clear_outline_await()
+	get_section().set_cross(false)
+	for section: RailSection in get_section().out_sections:
+		section.set_cross(false)
+	last_section = get_section()
+	
+	# Change section
 	get_parent().remove_child(self)
 	new_section.add_child(self)
 	curr_section_length = get_parent().curve.get_baked_length()
 	Main.instance.reset_signals()
 	Main.instance.set_direction_valid(true, true)
 	update_rail_outlines()
+	update_crosses()
 
 func add_character(new_character: CharacterInfo):
 	var new_carriage: Carriage = new_character.carriage.instantiate()
 	new_carriage.character = new_character
 	carriages.append(new_carriage)
-	get_section().add_child(new_carriage)
+	var last_carriage := carriages[carriages.size() - 1]
+	if last_carriage.get_section() != get_section() \
+			or last_carriage.progress - (last_carriage.length / 2) - (new_carriage.length / 2) < 0.0:
+		last_section.add_child(new_carriage)
+	else:
+		get_section().add_child(new_carriage)
 	update_characters()
 	update_rail_outlines()
+	update_crosses()
 	Main.instance.character_attached(new_character)
 
 func remove_carriage(carriage: Carriage):
@@ -182,11 +197,12 @@ func remove_carriage(carriage: Carriage):
 	carriage.queue_free()
 	update_characters()
 	update_rail_outlines()
+	update_crosses()
 	Main.instance.character_detached(carriage.character)
 
 func update_characters():
 	Main.instance.update_characters_ui()
-	set_rails_gradient(get_gradient())
+	RailsColorManager.update_gradient()
 	if get_distance_to_section_end() < show_signals_at_distance:
 		set_main_directions_valid()
 
@@ -207,65 +223,23 @@ func kick_up():
 	var tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
 	tween.tween_property(%MeshInstance3D, "scale", Vector3.ONE, 0.5)
 
-func lerp_hsv(col1: Color, col2: Color, t: float):
-	var v1 := Vector3(col1.h, col1.s, col1.v)
-	var v2 := Vector3(col2.h, col2.s, col2.v)
-	var vt: Vector3 = lerp(v1, v2, t)
-	return Color.from_hsv(vt.x, vt.y, vt.z)
-
-func get_gradient() -> Array[Color]:
-	var res: Array[Color] = []
-	if carriages.size() == 0:
-		var col := Color.from_hsv(1.0, 0.0, 0.75)
-		for i in range(5):
-			res.append(col)
-			col.v -= 0.1
-	elif carriages.size() == 1:
-		var col := carriages[0].character.color
-		for i in range(5):
-			res.append(col)
-			col.v -= 0.1
-	elif carriages.size() == 2:
-		var col1 := carriages[0].character.color
-		var col2 := carriages[1].character.color
-		for i in range(5):
-			res.append(lerp_hsv(col1, col2, i / 4.0))
-	elif carriages.size() == 3:
-		var col1 := carriages[0].character.color
-		var col2 := carriages[1].character.color
-		var col3 := carriages[2].character.color
-		var col12 = lerp_hsv(col1, col2, 0.5)
-		var col23 = lerp_hsv(col2, col3, 0.5)
-		res.append_array([col1, col12, col2, col23, col3])
-	elif carriages.size() == 4:
-		var lead2 := carriages[0].character.color
-		lead2.v -= 0.3
-		res.append_array([
-			carriages[0].character.color,
-			lead2,
-			carriages[1].character.color,
-			carriages[2].character.color,
-			carriages[3].character.color,
-		])
-	else:
-		for carriage: Carriage in carriages:
-			res.append(carriage.character.color)
-	return res
-
-func set_rails_gradient(colors: Array[Color]):
-	var gradient := rails_gradient.gradient
-	while(gradient.get_point_count() > 1):
-		gradient.remove_point(0)
-	gradient.set_offset(0, 0.0)
-	gradient.set_color(0, colors[0])
-	for i in range(1, colors.size()):
-		gradient.add_point(float(i) / colors.size(), colors[i])
-
 func update_rail_outlines():
 	var next := next_section()
 	for section in get_section().out_sections:
 		section.set_outline(section == next)
 	get_section().set_outline(true)
+
+func update_crosses():
+	get_section().set_cross(false)
+	if get_section().out_sections.size() == 1:
+		get_section().out_sections[0].set_cross(false)
+	else:
+		if direction:
+			get_section().out_sections[0].set_cross(false)
+			get_section().out_sections[1].set_cross(not check_direction_valid())
+		else:
+			get_section().out_sections[1].set_cross(false)
+			get_section().out_sections[0].set_cross(not check_direction_valid())
 
 #func imgui():
 	#ImGui.Begin("Locomotive")

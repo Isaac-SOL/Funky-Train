@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq4hqqiapqltb"]
+
+[ext_resource type="PackedScene" uid="uid://qoi2gjwuw1jj" path="res://assets/modele/3D/gamjam2025_croix.glb" id="1_2rr8c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2rr8c"]
+albedo_color = Color(1, 0, 0, 1)
+disable_receive_shadows = true
+
+[node name="Cross" instance=ExtResource("1_2rr8c")]
+
+[node name="croix" parent="." index="0"]
+cast_shadow = 0
+surface_material_override/0 = SubResource("StandardMaterial3D_2rr8c")
