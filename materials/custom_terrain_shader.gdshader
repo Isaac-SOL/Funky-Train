@@ -236,8 +236,9 @@ void fragment() {
 	if (u_depth_blending) {
 		w = get_depth_blended_weights(v_splat, vec4(ab0.a, ab1.a, ab2.a, ab3.a));
 	} else {
-		w = int_to_cardinal(vec4_argmax(v_splat.rgba));
+		w  = v_splat.rgba;
 	}
+	w = int_to_cardinal(vec4_argmax(w.rgba));
 	
 	float w_sum = (w.r + w.g + w.b + w.a);
 	

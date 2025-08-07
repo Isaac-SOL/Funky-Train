@@ -506,7 +506,8 @@ script/source = "@tool
 class_name ScaleOnHover extends Control
 
 @export var scale_factor: Vector2 = Vector2(1.1, 1.1)
-@export var scale_duration: float = 1.0
+@export var scale_duration_in: float = 1.0
+@export var scale_duration_out: float = 1.0
 @export_tool_button(\"Center Pivot\") var center_pivot_button = center_pivot
 
 var scale_tween: Tween
@@ -514,8 +515,12 @@ var scale_tween: Tween
 func _on_hover(hovering: bool):
 	if scale_tween:
 		scale_tween.kill()
-	scale_tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
-	scale_tween.tween_property(self, \"scale\", scale_factor if hovering else Vector2.ONE, scale_duration)
+	if hovering:
+		scale_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+		scale_tween.tween_property(self, \"scale\", scale_factor, scale_duration_in)
+	else:
+		scale_tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
+		scale_tween.tween_property(self, \"scale\", Vector2.ONE, scale_duration_out)
 
 func center_pivot():
 	pivot_offset = size / 2.0
@@ -691,7 +696,7 @@ mesh = ExtResource("25_uv8yl")
 mesh = ExtResource("32_fiuuh")
 
 [node name="CrossFollow" parent="Rails/RailS11_fork2" index="3"]
-transform = Transform3D(0.961773, 0, 0.273842, 0, 1, 0, -0.273842, 0, 0.961773, -0.60389, 0, -5.20761)
+transform = Transform3D(0.961773, 0, 0.273843, 0, 1, 0, -0.273843, 0, 0.961773, -0.603891, 0, -5.20761)
 progress = 5.2593
 
 [node name="RailS11_fork3" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
@@ -707,7 +712,7 @@ mesh = ExtResource("26_b2ayy")
 mesh = ExtResource("34_nyyd3")
 
 [node name="CrossFollow" parent="Rails/RailS11_fork3" index="3"]
-transform = Transform3D(0.967627, 5.61477e-08, -0.252381, 5.7827e-08, 1, 4.44179e-07, 0.252381, -4.44395e-07, 0.967627, 0.549001, -9.79738e-07, -5.05887)
+transform = Transform3D(0.967627, 5.61476e-08, -0.252381, 5.78269e-08, 1, 4.44179e-07, 0.252381, -4.44395e-07, 0.967627, 0.549, -9.79736e-07, -5.05887)
 progress = 5.10111
 
 [node name="RailS7" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
@@ -724,7 +729,7 @@ mesh = ExtResource("27_l71x2")
 mesh = ExtResource("36_b864h")
 
 [node name="CrossFollow" parent="Rails/RailS7" index="3"]
-transform = Transform3D(0.997489, 0, 0.0708281, 0, 1, 0, -0.0708281, 0, 0.997489, 0, 0, 0)
+transform = Transform3D(0.997489, 0, 0.0708282, 0, 1, 0, -0.0708282, 0, 0.997489, 0, 0, 0)
 
 [node name="Station7" parent="Rails/RailS7" instance=ExtResource("8_cly8o")]
 transform = Transform3D(-0.0138704, -1.10298e-08, 0.999899, -7.952e-07, 1, -2.30925e-14, -0.999899, -7.95128e-07, -0.0138704, -23.0306, -8.10623e-06, -7.72331)
@@ -749,7 +754,7 @@ mesh = ExtResource("28_7iam4")
 mesh = ExtResource("38_bun0v")
 
 [node name="CrossFollow" parent="Rails/Rail_pre_S5" index="3"]
-transform = Transform3D(-0.146293, 2.02258e-07, 0.989241, 9.89302e-09, 1, -2.02994e-07, -0.989241, -1.991e-08, -0.146293, -4.86465, 3.32414e-07, 0.361304)
+transform = Transform3D(-0.146293, 2.02258e-07, 0.989241, 9.89303e-09, 1, -2.02994e-07, -0.989241, -1.991e-08, -0.146293, -4.86465, 3.32414e-07, 0.361304)
 progress = 4.88234
 
 [node name="RailS5" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
@@ -837,7 +842,7 @@ mesh = ExtResource("32_7a7fc")
 mesh = ExtResource("44_n4ay8")
 
 [node name="CrossFollow" parent="Rails/Rail_pre_S6" index="3"]
-transform = Transform3D(0.353599, 0.217007, 0.909876, -0.0456339, 0.97556, -0.214939, -0.934283, 0.034481, 0.35486, -3.4128, 0.440856, -0.634051)
+transform = Transform3D(0.353599, 0.217007, 0.909876, -0.0456339, 0.97556, -0.214939, -0.934283, 0.0344809, 0.35486, -3.4128, 0.440856, -0.63405)
 progress = 3.52549
 
 [node name="RailS6" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
@@ -888,7 +893,7 @@ mesh = ExtResource("34_vtcgm")
 mesh = ExtResource("48_mbn4m")
 
 [node name="CrossFollow" parent="Rails/Rail_skip_S8" index="3"]
-transform = Transform3D(-0.582193, 0, -0.81305, 0, 1, 0, 0.81305, 0, -0.582193, 6.69008, 0, 5.11484)
+transform = Transform3D(-0.582193, 0, -0.81305, 0, 1, 0, 0.81305, 0, -0.582193, 6.69007, 0, 5.11484)
 progress = 8.42591
 
 [node name="RailS8" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
@@ -904,7 +909,7 @@ mesh = ExtResource("35_1xr1q")
 mesh = ExtResource("50_8ue55")
 
 [node name="CrossFollow" parent="Rails/RailS8" index="3"]
-transform = Transform3D(-0.752718, 0, -0.658343, 0, 1, 0, 0.658343, 0, -0.752718, 5.95228, 0, 5.87606)
+transform = Transform3D(-0.752717, 0, -0.658344, 0, 1, 0, 0.658344, 0, -0.752717, 5.95228, 0, 5.87606)
 progress = 8.36843
 
 [node name="Station8" parent="Rails/RailS8" instance=ExtResource("8_cly8o")]
@@ -925,7 +930,7 @@ mesh = ExtResource("36_v6bnv")
 mesh = ExtResource("52_tlql3")
 
 [node name="CrossFollow" parent="Rails/RailS8_S7" index="3"]
-transform = Transform3D(-0.937129, 0, 0.348983, 0, 1, 0, -0.348983, 0, -0.937129, -0.534477, 0, 2.95372)
+transform = Transform3D(-0.937129, 0, 0.348982, 0, 1, 0, -0.348982, 0, -0.937129, -0.534476, 0, 2.95372)
 progress = 3.01768
 
 [node name="RailS8_S1" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
@@ -941,7 +946,7 @@ mesh = ExtResource("37_8ai2q")
 mesh = ExtResource("54_f0qmg")
 
 [node name="CrossFollow" parent="Rails/RailS8_S1" index="3"]
-transform = Transform3D(-0.889568, 0, -0.456803, 0, 1, 0, 0.456803, 0, -0.889568, 0.765001, 0, 2.73909)
+transform = Transform3D(-0.889568, 0, -0.456803, 0, 1, 0, 0.456803, 0, -0.889568, 0.765, 0, 2.73909)
 progress = 2.87083
 
 [node name="Rail_pre_S1" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
@@ -993,7 +998,7 @@ mesh = ExtResource("40_scbdf")
 mesh = ExtResource("60_bfeyk")
 
 [node name="CrossFollow" parent="Rails/RailS9" index="3"]
-transform = Transform3D(-0.275954, 0, -0.96117, 0, 1, 0, 0.96117, 0, -0.275954, 5.72108, 0, 0.857876)
+transform = Transform3D(-0.275954, 0, -0.96117, 0, 1, 0, 0.96117, 0, -0.275954, 5.72108, 0, 0.857875)
 progress = 5.80035
 
 [node name="Station9" parent="Rails/RailS9" instance=ExtResource("8_cly8o")]
@@ -1029,7 +1034,7 @@ mesh = ExtResource("41_687r6")
 mesh = ExtResource("62_451ut")
 
 [node name="CrossFollow" parent="Rails/RailS9_S2" index="3"]
-transform = Transform3D(-0.999797, 0, 0.0201702, 0, 1, 0, -0.0201702, 0, -0.999797, -0.141872, 0, 6.67145)
+transform = Transform3D(-0.999797, 0, 0.0201702, 0, 1, 0, -0.0201702, 0, -0.999797, -0.141872, 0, 6.67146)
 progress = 6.67299
 
 [node name="RailS2S3" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
@@ -1075,7 +1080,7 @@ mesh = ExtResource("43_mhrry")
 mesh = ExtResource("66_sxp67")
 
 [node name="CrossFollow" parent="Rails/RailS3_S4" index="3"]
-transform = Transform3D(0.991694, -1.5037e-08, 0.128619, 3.83663e-09, 1, 8.73295e-08, -0.128619, -8.61108e-08, 0.991694, -1.35171, -3.2088e-07, -7.63719)
+transform = Transform3D(0.991694, -1.5037e-08, 0.128619, 3.83663e-09, 1, 8.73296e-08, -0.128619, -8.61108e-08, 0.991694, -1.35171, -3.2088e-07, -7.63719)
 progress = 7.75823
 
 [node name="RailS3_S1" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
@@ -1696,7 +1701,8 @@ ignore_texture_size = true
 stretch_mode = 0
 script = SubResource("GDScript_cnexl")
 scale_factor = Vector2(1.2, 1.2)
-scale_duration = 0.8
+scale_duration_in = 0.2
+scale_duration_out = 0.6
 
 [node name="ControlEnd" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true

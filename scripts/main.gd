@@ -245,7 +245,7 @@ func start_end_screen():
 	await get_tree().create_timer(3.0).timeout
 	%LabelCredits.visible = false
 	await get_tree().create_timer(1.0).timeout
-	%LabelCredits.text = "Programming:\nSaltyIsaac"
+	%LabelCredits.text = "Programming & Shaders:\nSaltyIsaac"
 	%LabelCredits.visible = true
 	
 	await get_tree().create_timer(3.0).timeout
@@ -281,7 +281,7 @@ func start_end_screen():
 	await get_tree().create_timer(3.0).timeout
 	%LabelCredits.visible = false
 	await get_tree().create_timer(1.0).timeout
-	%LabelCredits.text = "Playtesting:\nTakahiruma"
+	%LabelCredits.text = "Playtesting:\nTakahiruma\nMalisa\nDironiil"
 	%LabelCredits.visible = true
 	
 	await get_tree().create_timer(3.0).timeout
