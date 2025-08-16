@@ -1,16 +1,17 @@
-@icon("res://leeklib/icons/Shaker2D.svg")
+@icon("res://leeklib/icons/ShakerControl.svg")
 @tool
-## [b]Node2D[/b] that can [member shake]. [br]
-## Can also optionally follow a target [b]Node2D[/b] using framerate-independent lerp smoothing.
-class_name Shaker2D extends Node2D
+## [b]Control[/b] that can [member shake]. [br]
+## Can also optionally follow a target [b]Control[/b] using framerate-independent lerp smoothing.
+class_name ShakerControl extends Control
 
-## [b]Node2D[/b] to follow. (optional)
-@export var target_node: Node2D
+## [b]Control[/b] to follow. (optional)
+@export var target_node: Control
 ## Whether this node follows the position of the [member target_node].
 @export var follow_position: bool = true
-## Whether this node follows the rotation of the [member target_node].
+## Whether this node follows the local rotation of the [member target_node].
 @export var follow_rotation: bool = false
-## Whether the position and rotation are followed using global space, if there is a [member target_node].
+## Whether the position is followed using global space, if there is a [member target_node]. [br]
+## For controls, the rotation is always followed in local space.
 @export var follow_global_coordinates: bool = false
 ## Interval, in seconds, between each impulse when shaking.
 @export var shake_interval: float = 0.035
@@ -41,10 +42,9 @@ func _process(delta):
 	if target_node:
 		if follow_global_coordinates:
 			base_pos = (get_parent() as Node2D).to_local(target_node.global_position)
-			base_rot = target_node.global_rotation - global_rotation
 		else:
 			base_pos = target_node.position
-			base_rot = target_node.rotation
+	base_rot = target_node.rotation
 	
 	# Apply impulsions
 	next_shake -= delta
@@ -73,10 +73,9 @@ func move_to_target():
 	if target_node:
 		if follow_global_coordinates:
 			base_pos = (get_parent() as Node2D).to_local(target_node.global_position)
-			base_rot = target_node.global_rotation - global_rotation
 		else:
 			base_pos = target_node.position
-			base_rot = target_node.rotation
+		base_rot = target_node.rotation
 		if follow_position:
 			position = target_position
 		if follow_rotation:

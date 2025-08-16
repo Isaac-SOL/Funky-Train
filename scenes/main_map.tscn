@@ -1,4 +1,4 @@
-[gd_scene load_steps=174 format=3 uid="uid://ddei87jmflwu2"]
+[gd_scene load_steps=175 format=3 uid="uid://ddei87jmflwu2"]
 
 [ext_resource type="Script" uid="uid://rytmmqnltko8" path="res://scripts/main.gd" id="1_rk4p5"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_7tq10"]
@@ -44,7 +44,6 @@
 [ext_resource type="Script" uid="uid://d3muv4ahkxuu2" path="res://scripts/whistle_string.gd" id="26_1n0wa"]
 [ext_resource type="ArrayMesh" uid="uid://d1rcw5w3h8ugi" path="res://meshes/rails/RailS4_S11_minimap.tres" id="26_4t7rj"]
 [ext_resource type="ArrayMesh" uid="uid://cg1ssd7b7j7yv" path="res://meshes/rails/RailS11_fork3.tres" id="26_b2ayy"]
-[ext_resource type="Texture2D" uid="uid://6t2sp4e6kkqa" path="res://assets/textures/UI/gamjam2025_UI_manette.png" id="26_jikhd"]
 [ext_resource type="Texture2D" uid="uid://b7xc8h6iwcjel" path="res://assets/textures/UI/gamjam2025_UI_croix.png" id="26_qvxoj"]
 [ext_resource type="Texture2D" uid="uid://br1oyjrf86rmq" path="res://assets/textures/UI/gamjam2025_UI_speed_slide.png" id="27_jikhd"]
 [ext_resource type="ArrayMesh" uid="uid://dq61qvyxjy86w" path="res://meshes/rails/RailS7.tres" id="27_l71x2"]
@@ -107,6 +106,8 @@
 [ext_resource type="ArrayMesh" uid="uid://8agafw5ws7du" path="res://meshes/rails/RailS10_minimap.tres" id="71_l8v81"]
 [ext_resource type="Texture2D" uid="uid://bhqvoqxf43frw" path="res://assets/textures/UI/gamjam2025_UI_menu_top.png" id="76_4t7rj"]
 [ext_resource type="Shader" uid="uid://byrwhib36s4tv" path="res://materials/edge_detection.gdshader" id="77_b864h"]
+[ext_resource type="Texture2D" uid="uid://bxjhn0820cjg8" path="res://assets/textures/UI/gamjam2025_UI_manette_left.png" id="86_2dsia"]
+[ext_resource type="Texture2D" uid="uid://gbd6lyi0oyp0" path="res://assets/textures/UI/gamjam2025_UI_manette_right.png" id="87_n4ay8"]
 [ext_resource type="Texture2D" uid="uid://2exhh6ej1csm" path="res://assets/textures/gamjam2025_UI_play.png" id="93_4t7rj"]
 [ext_resource type="Texture2D" uid="uid://bscqam2d07rp7" path="res://assets/textures/gamjam2025_UI_play_2.png" id="94_te2gl"]
 [ext_resource type="Texture2D" uid="uid://df5j0xy71xrc2" path="res://assets/textures/UI/square32.png" id="95_b864h"]
@@ -586,7 +587,7 @@ mesh = ExtResource("19_up1kr")
 transform = Transform3D(0.00120349, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00120349, 0, 0, 0)
 
 [node name="Station4" parent="Rails/RailS4" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.000827089, 0, -0.999965, 0, 1, 0, 0.999965, 0, -0.000827089, 16.1874, 0, -0.000769002)
+transform = Transform3D(-0.000827088, 0, -0.999964, 0, 1, 0, 0.999964, 0, -0.000827088, 16.1874, 0, -0.000769002)
 progress = 16.1862
 waiting_character = ExtResource("5_7eykx")
 
@@ -649,7 +650,7 @@ mesh = ExtResource("23_45vgs")
 mesh = ExtResource("28_te2gl")
 
 [node name="CrossFollow" parent="Rails/RailS11" index="3"]
-transform = Transform3D(-0.0169584, 0, -0.999853, 0, 1, 0, 0.999853, 0, -0.0169584, 0, 0, 0)
+transform = Transform3D(-0.0169584, 0, -0.999852, 0, 1, 0, 0.999852, 0, -0.0169584, 0, 0, 0)
 
 [node name="Station11" parent="Rails/RailS11" instance=ExtResource("8_cly8o")]
 transform = Transform3D(-0.00646113, 0, -0.999978, 0, 1, 0, 0.999978, 0, -0.00646113, 15.719, 0, -0.0139241)
@@ -827,6 +828,7 @@ sides = 32
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Rails/RailS5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0531931, 0)
+layers = 3
 mesh = ExtResource("18_on5gu")
 
 [node name="Rail_pre_S6" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
@@ -980,7 +982,7 @@ mesh = ExtResource("58_0hk2f")
 transform = Transform3D(-0.00999987, 0, 0.99995, 0, 1, 0, -0.99995, 0, -0.00999987, 0, 0, 0)
 
 [node name="Station1" parent="Rails/RailS1" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.0337058, 0, 0.999396, 0, 1, 0, -0.999396, 0, -0.0337058, -33.2739, 0, 0.875955)
+transform = Transform3D(-0.0337058, 0, 0.999395, 0, 1, 0, -0.999395, 0, -0.0337058, -33.2739, 0, 0.875955)
 progress = 33.2863
 waiting_character = ExtResource("12_on5gu")
 
@@ -1149,6 +1151,7 @@ sides = 16
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Rails/RailS3_S1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.075, 0)
+layers = 3
 mesh = ExtResource("20_xi2te")
 
 [node name="RailS10" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
@@ -1180,7 +1183,7 @@ mesh = SubResource("PlaneMesh_5ne2v")
 
 [node name="CameraShaker" type="Node3D" parent="." node_paths=PackedStringArray("target_node")]
 unique_name_in_owner = true
-transform = Transform3D(-0.645364, 0, 0.763875, 0, 1, 0, -0.763875, 0, -0.645365, -25.4216, 1.11152, -18.4486)
+transform = Transform3D(-0.645364, 0, 0.763876, 0, 1, 0, -0.763875, 0, -0.645365, -25.4216, 1.11152, -18.4486)
 script = ExtResource("10_j8ata")
 target_node = NodePath("../StartCamera")
 follow_rotation = true
@@ -1245,6 +1248,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="WhistleControl" type="Control" parent="CanvasLayer/GameUI"]
+unique_name_in_owner = true
 anchors_preset = 0
 offset_left = 1151.0
 offset_top = 193.0
@@ -1307,13 +1311,17 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_top = 41.0001
-offset_bottom = 41.0001
+offset_top = 120.0
+offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(1.26, 1.26)
 
-[node name="LeverDirection" type="TextureRect" parent="CanvasLayer/GameUI/DirectionUI"]
+[node name="LeverPivot" type="Control" parent="CanvasLayer/GameUI/DirectionUI"]
+anchors_preset = 0
+rotation = -0.261799
+
+[node name="LeverDirection" type="TextureRect" parent="CanvasLayer/GameUI/DirectionUI/LeverPivot"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 7
@@ -1321,18 +1329,17 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -101.0
-offset_top = -432.0
-offset_right = 99.0
-offset_bottom = -227.0
+offset_left = -61.0
+offset_top = -225.0
+offset_right = 139.0
+offset_bottom = 84.0
 grow_horizontal = 2
 grow_vertical = 0
-rotation = -0.174533
 scale = Vector2(0.615, 0.615)
-pivot_offset = Vector2(100, 600)
 mouse_filter = 0
 mouse_default_cursor_shape = 10
 texture = ExtResource("24_jikhd")
+stretch_mode = 2
 script = ExtResource("13_b6lr4")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/DirectionUI"]
@@ -1342,16 +1349,34 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -328.0
-offset_top = -242.0
-offset_right = 328.0
-offset_bottom = -32.0
+offset_left = -327.778
+offset_top = -275.397
+offset_right = 328.222
+offset_bottom = -65.3969
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.455, 0.455)
 pivot_offset = Vector2(328, 210)
 mouse_filter = 2
-texture = ExtResource("26_jikhd")
+texture = ExtResource("30_sxppv")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/DirectionUI/TextureRect"]
+layout_mode = 0
+offset_left = 100.754
+offset_top = 34.5247
+offset_right = 295.754
+offset_bottom = 176.525
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("86_2dsia")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/GameUI/DirectionUI/TextureRect"]
+layout_mode = 0
+offset_left = 419.959
+offset_top = 34.5247
+offset_right = 614.959
+offset_bottom = 176.525
+scale = Vector2(0.765, 0.765)
+texture = ExtResource("87_n4ay8")
 
 [node name="SignalisationLeft" type="VBoxContainer" parent="CanvasLayer/GameUI/DirectionUI"]
 unique_name_in_owner = true
@@ -1390,12 +1415,12 @@ alignment = 2
 [node name="CroixLeft" type="TextureRect" parent="CanvasLayer/GameUI/DirectionUI"]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(35, 35)
+custom_minimum_size = Vector2(25, 25)
 layout_mode = 0
-offset_left = -56.3492
-offset_top = -84.9207
-offset_right = -21.3492
-offset_bottom = -49.9207
+offset_left = -68.254
+offset_top = -131.746
+offset_right = -43.254
+offset_bottom = -106.746
 texture = ExtResource("26_qvxoj")
 expand_mode = 1
 stretch_mode = 4
@@ -1403,12 +1428,12 @@ stretch_mode = 4
 [node name="CroixRight" type="TextureRect" parent="CanvasLayer/GameUI/DirectionUI"]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(35, 35)
+custom_minimum_size = Vector2(25, 25)
 layout_mode = 0
-offset_left = 26.1905
-offset_top = -85.7144
-offset_right = 61.1905
-offset_bottom = -50.7144
+offset_left = 50.0
+offset_top = -131.746
+offset_right = 75.0
+offset_bottom = -106.746
 texture = ExtResource("26_qvxoj")
 expand_mode = 1
 stretch_mode = 4
@@ -1440,6 +1465,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="LeverSpeed" type="TextureRect" parent="CanvasLayer/GameUI/SpeedUI"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -1775,7 +1801,9 @@ bus = &"SFX"
 
 [connection signal="area_entered" from="Rails/RailS4_S6_bridge/AreaLoop" to="." method="_on_area_loop_area_entered"]
 [connection signal="area_exited" from="Rails/RailS4_S6_bridge/AreaLoop" to="." method="_on_area_loop_area_exited"]
-[connection signal="gui_input" from="CanvasLayer/GameUI/DirectionUI/LeverDirection" to="CanvasLayer/GameUI/DirectionUI/LeverDirection" method="_on_gui_input"]
+[connection signal="gui_input" from="CanvasLayer/GameUI/DirectionUI/LeverPivot/LeverDirection" to="CanvasLayer/GameUI/DirectionUI/LeverPivot/LeverDirection" method="_on_gui_input"]
+[connection signal="mouse_entered" from="CanvasLayer/GameUI/DirectionUI/LeverPivot/LeverDirection" to="CanvasLayer/GameUI/DirectionUI/LeverPivot/LeverDirection" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/GameUI/DirectionUI/LeverPivot/LeverDirection" to="CanvasLayer/GameUI/DirectionUI/LeverPivot/LeverDirection" method="_on_mouse_exited"]
 [connection signal="gui_input" from="CanvasLayer/GameUI/SpeedUI/LeverSpeed" to="CanvasLayer/GameUI/SpeedUI/LeverSpeed" method="_on_gui_input"]
 [connection signal="pressed" from="CanvasLayer/GameUI/MarginContainerStationGrab/HBoxContainer/ButtonPrendre" to="." method="_on_button_prendre_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameUI/MarginContainerStationGrab/HBoxContainer/ButtonLaisser" to="." method="_on_button_laisser_pressed"]

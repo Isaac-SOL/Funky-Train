@@ -269,7 +269,7 @@ func start_end_screen():
 	await get_tree().create_timer(3.0).timeout
 	%LabelCredits.visible = false
 	await get_tree().create_timer(1.0).timeout
-	%LabelCredits.text = "Environments:\nArkatein"
+	%LabelCredits.text = "Terrain & Environments:\nArkatein"
 	%LabelCredits.visible = true
 	
 	await get_tree().create_timer(3.0).timeout

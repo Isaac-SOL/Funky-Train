@@ -344,7 +344,7 @@ billboard = 0
 [node name="Signals" type="Node3D" parent="."]
 
 [node name="SignalQuicksand" parent="Signals" instance=ExtResource("26_556r4")]
-transform = Transform3D(0.948628, -0.108402, 0.297243, 0.113533, 0.993534, 4.15437e-07, -0.295321, 0.0337465, 0.954802, -89.1879, -0.398549, 12.3478)
+transform = Transform3D(0.948628, -0.108402, 0.297243, 0.113533, 0.993534, 4.94115e-07, -0.295321, 0.0337464, 0.954802, -89.1879, -0.398549, 12.3478)
 
 [node name="SignalVirage" parent="Signals" instance=ExtResource("27_556r4")]
 transform = Transform3D(0.878626, 0, -0.477511, 0, 1, 0, 0.477511, 0, 0.878626, 16.249, -4.76837e-07, -29.5776)
@@ -367,11 +367,10 @@ transform = Transform3D(-0.874738, 0, -0.484596, 0, 1, 0, 0.484596, 0, -0.874738
 [node name="Sky" type="Node3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
-[node name="Node3DClouds" type="Node3D" parent="Sky" node_paths=PackedStringArray("target_node")]
+[node name="Node3DClouds" type="Node3D" parent="Sky"]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.9073, 0, -25.9171)
 script = ExtResource("33_2jdvr")
-target_node = NodePath("../../main_map/Rails/RailS5/Locomotive")
-follow_global_coordinates = true
 move_speed = 30.0
 rotation_speed = 30.0
 metadata/_custom_type_script = "uid://wrgu8dfp4pw3"
@@ -446,6 +445,7 @@ transform = Transform3D(0.0338355, 0, 0.999427, 0, 1, 0, -0.999427, 0, 0.0338355
 shape = SubResource("BoxShape3D_v3why")
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 3
 mesh = ExtResource("39_c1pbi")
 
 [node name="Vignette" type="Sprite3D" parent="."]
