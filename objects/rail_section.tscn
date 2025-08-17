@@ -10,7 +10,7 @@
 
 [sub_resource type="Curve3D" id="Curve3D_x140k"]
 _data = {
-"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.37323, 0, -3.00137, 8, 0, 0),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -71,6 +71,7 @@ skeleton = NodePath("../..")
 [node name="BakedRailsMeshMinimap" type="MeshInstance3D" parent="." node_paths=PackedStringArray("path")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9, 0)
+visible = false
 layers = 2
 cast_shadow = 0
 mesh = ExtResource("6_yfycn")

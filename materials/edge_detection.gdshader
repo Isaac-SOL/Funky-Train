@@ -1,6 +1,8 @@
 shader_type spatial;
 render_mode unshaded, depth_draw_never;
 
+#include "res://leeklib/shader_util.gdshaderinc"
+
 // Based on https://www.youtube.com/watch?v=bCGq1_gnnIk
 
 uniform sampler2D SCREEN_TEXTURE: hint_screen_texture, repeat_disable, filter_nearest;
@@ -14,21 +16,12 @@ uniform float depth_gradient_start;
 uniform float depth_gradient_end;
 uniform float depth_gradient_strength: hint_range(0.0, 1.0);
 
-float get_linear_depth(float base_depth, vec2 screen_uv, mat4 inv_proj_matrix) {
-	vec3 ndc = vec3(screen_uv * 2.0 - 1.0, (base_depth - 0.5) * 2.0);  // Screen space to NDC (OpenGL)
-	vec4 view = inv_proj_matrix * vec4(ndc, 1.0);  // NDC to view space
-	return -view.z / view.w;
-}
-
 void fragment() {
 	vec2 pixel_size = 1.0 / VIEWPORT_SIZE;
 
 	// ==== COLOR SOBEL =====
 
 	vec3 pixels[9];
-	// [0, 1, 2]
-	// [3, 4, 5]
-	// [6, 7, 8]
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
 			vec2 uv = SCREEN_UV + vec2(float(j - 1), float(i - 1)) * pixel_size;
@@ -37,6 +30,9 @@ void fragment() {
 	}
 
 	// Sobel
+	// [0, 1, 2]
+	// [3, 4, 5]
+	// [6, 7, 8]
 	vec3 gx = (
 		-pixels[0] + -2.0 * pixels[3] - pixels[6]
 		+ pixels[2] + 2.0 * pixels[5] + pixels[8]

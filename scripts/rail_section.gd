@@ -37,6 +37,8 @@ func _ready() -> void:
 		assert(in_sections.size() > 0)
 		assert(out_sections.size() > 0)
 		assert(out_sections.size() <= 2)
+		await get_tree().process_frame
+		%BakedRailsMeshMinimap.visible = true
 
 func add_station(station: Station):
 	stations.append(station)
