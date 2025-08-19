@@ -23,6 +23,7 @@ static var instance: Main
 
 var active_station: Station
 var signals_up: bool = false
+@onready var camera: Camera3D = %MainCamera
 @onready var camera_follow_pos: Node3D = %CameraFollowPos
 @onready var camera_pivot_x: Node3D = %CameraPivotX
 @onready var camera_pivot_y: Node3D = %CameraPivotY
@@ -32,6 +33,7 @@ var dragging_camera: bool = false
 var ended: bool = false
 var on_end_screen: bool = false
 var cursor_start_drag_pos: Vector2
+var camera_speed_tween: Tween
 
 func _ready() -> void:
 	instance = self
@@ -49,6 +51,7 @@ func stop_at_station(station: Station):
 	var character_info := station.waiting_character
 	if character_info:
 		%LabelTitre.text = character_info.true_name
+		%LabelTitre.label_settings.font_color = character_info.color
 		talk(character_info.instrument)
 		await Dialogic.timeline_ended
 		%MarginContainerStationGrab.visible = true
@@ -58,18 +61,31 @@ func stop_at_station(station: Station):
 			new_button.text = carriage.character.true_name
 			new_button.icon = carriage.character.sprite_cadre
 			new_button.pressed.connect(_on_character_leave_pressed.bind(carriage))
+			new_button.add_theme_color_override("font_color", carriage.character.color)
+			new_button.add_theme_color_override("font_focus_color", carriage.character.color)
+			new_button.add_theme_color_override("font_pressed_color", carriage.character.color)
+			new_button.add_theme_color_override("font_hover_color", carriage.character.color)
+			new_button.add_theme_color_override("font_hover_pressed_color", carriage.character.color)
+			new_button.add_theme_color_override("font_disabled_color", carriage.character.color)
 			%VBoxContainerLeaveButtons.add_child(new_button)
 		%PanelStationPut.visible = true
 
 func update_characters_ui():
-	for child in %HBoxContainerCharacters.get_children():
-		child.queue_free()
-	for carriage: Carriage in Locomotive.instance.carriages:
-		var new_texture: TextureRect = character_icon_scene.instantiate()
-		new_texture.texture = carriage.character.sprite_cadre
-		%HBoxContainerCharacters.add_child(new_texture)
-		%HBoxContainerCharacters.move_child(new_texture, 0)
-	await get_tree().process_frame
+	var carriages := Locomotive.instance.carriages
+	for i: int in range(%HBoxContainerCharacters2.get_child_count()):
+		if i < carriages.size():
+			%HBoxContainerCharacters2.get_child(i).load_character(carriages[i].character)
+		else:
+			%HBoxContainerCharacters2.get_child(i).reset_character()
+	
+	#for child in %HBoxContainerCharacters.get_children():
+		#child.queue_free()
+	#for carriage: Carriage in Locomotive.instance.carriages:
+		#var new_texture: TextureRect = character_icon_scene.instantiate()
+		#new_texture.texture = carriage.character.sprite_cadre
+		#%HBoxContainerCharacters.add_child(new_texture)
+		#%HBoxContainerCharacters.move_child(new_texture, 0)
+	#await get_tree().process_frame
 
 func leave_station():
 	Locomotive.instance.restart()
@@ -156,15 +172,16 @@ func close_character_leave():
 		%VBoxContainerLeaveButtons.remove_child(child)
 
 func spawn_dialogue(info: DialogueInfo):
-	if ended:
-		return
-	for child in %VBoxContainerDialogue.get_children():
-		if child is QuickDialogue and child.my_info == info:
-			return
-	var new_dialogue: QuickDialogue = quick_dialogue_scene.instantiate()
-	%VBoxContainerDialogue.add_child(new_dialogue)
-	new_dialogue.spawn(info)
-	%AudioStreamPop.play()
+	%CharacterMessages.spawn_dialogue(info)
+	#if ended:
+		#return
+	#for child in %VBoxContainerDialogue.get_children():
+		#if child is QuickDialogue and child.my_info == info:
+			#return
+	#var new_dialogue: QuickDialogue = quick_dialogue_scene.instantiate()
+	#%VBoxContainerDialogue.add_child(new_dialogue)
+	#new_dialogue.spawn(info)
+	#%AudioStreamPop.play()
 
 func _on_button_no_one_pressed() -> void:
 	close_character_leave()
@@ -181,10 +198,17 @@ func _on_character_leave_pressed(carriage: Carriage):
 func _on_area_loop_area_entered(area: Area3D) -> void:
 	if area.is_in_group("group_locomotive") and not on_end_screen:
 		%CameraShaker.target_node = camera_loop_pos
+		if camera_speed_tween:
+			camera_speed_tween.kill()
+		camera_speed_tween = create_tween().set_parallel()
+		camera_speed_tween.tween_property(%CameraShaker, "move_speed", 30.0, 0.5)
+		camera_speed_tween.tween_property(%CameraShaker, "rotation_speed", 30.0, 0.5)
 
 
 func _on_area_loop_area_exited(area: Area3D) -> void:
 	if area.is_in_group("group_locomotive") and not on_end_screen:
+		%CameraShaker.move_speed = 8.0
+		%CameraShaker.rotation_speed = 8.0
 		%CameraShaker.target_node = camera_follow_pos
 
 func character_attached(new_character: CharacterInfo):
@@ -245,7 +269,7 @@ func start_end_screen():
 	await get_tree().create_timer(3.0).timeout
 	%LabelCredits.visible = false
 	await get_tree().create_timer(1.0).timeout
-	%LabelCredits.text = "Programming:\nSaltyIsaac"
+	%LabelCredits.text = "Programming & Shaders:\nSaltyIsaac"
 	%LabelCredits.visible = true
 	
 	await get_tree().create_timer(3.0).timeout
@@ -269,7 +293,7 @@ func start_end_screen():
 	await get_tree().create_timer(3.0).timeout
 	%LabelCredits.visible = false
 	await get_tree().create_timer(1.0).timeout
-	%LabelCredits.text = "Environments:\nArkatein"
+	%LabelCredits.text = "Terrain & Environments:\nArkatein"
 	%LabelCredits.visible = true
 	
 	await get_tree().create_timer(3.0).timeout
@@ -281,7 +305,7 @@ func start_end_screen():
 	await get_tree().create_timer(3.0).timeout
 	%LabelCredits.visible = false
 	await get_tree().create_timer(1.0).timeout
-	%LabelCredits.text = "Playtesting:\nTakahiruma"
+	%LabelCredits.text = "Playtesting:\nTakahiruma\nMalisa\nDironiil"
 	%LabelCredits.visible = true
 	
 	await get_tree().create_timer(3.0).timeout

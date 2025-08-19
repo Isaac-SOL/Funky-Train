@@ -227,6 +227,7 @@ spot_angle = 23.52
 
 [node name="GPUParticles3D_note1" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 2.7, 0)
+cast_shadow = 0
 amount = 30
 lifetime = 5.0
 preprocess = 1.0
@@ -238,6 +239,7 @@ draw_pass_2 = null
 
 [node name="GPUParticles3D_note2" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 2.7, 0)
+cast_shadow = 0
 amount = 30
 lifetime = 5.0
 preprocess = 2.0
@@ -249,6 +251,7 @@ draw_pass_2 = null
 
 [node name="GPUParticles3D_note3" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 2.7, 0)
+cast_shadow = 0
 amount = 30
 lifetime = 5.0
 preprocess = 3.0

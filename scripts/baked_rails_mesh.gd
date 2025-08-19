@@ -53,5 +53,6 @@ func rebake():
 	res_name += ".tres"
 	var save := ResourceSaver.save(mesh, res_name, ResourceSaver.FLAG_CHANGE_PATH)
 	mesh = load(res_name)
+	print("test")
 	if save != OK:
 		printerr(save)

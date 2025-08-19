@@ -10,4 +10,7 @@ name = "Godot 2"
 sprite = ExtResource("3_78dfa")
 color = Color(0.85098, 0, 0, 1)
 carriage = ExtResource("1_78dfa")
+track_id = -1
+instrument = ""
+true_name = ""
 metadata/_custom_type_script = "uid://rkfd1kwn018t"

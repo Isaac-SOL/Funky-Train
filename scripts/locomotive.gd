@@ -241,6 +241,12 @@ func update_crosses():
 			get_section().out_sections[1].set_cross(false)
 			get_section().out_sections[0].set_cross(not check_direction_valid())
 
+func get_visible_center() -> Vector3:
+	return %VisibleCenter.global_position
+
+func get_visible_extent() -> Vector3:
+	return %VisibleExtent.global_position
+
 #func imgui():
 	#ImGui.Begin("Locomotive")
 	#if get_parent():

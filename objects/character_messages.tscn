@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsyhlyf0jijo4"]
+
+[ext_resource type="Script" uid="uid://fxgjfsh2adwa" path="res://scripts/character_messages.gd" id="1_uclg6"]
+[ext_resource type="PackedScene" uid="uid://bqhfgqs02fntc" path="res://objects/quick_dialogue.tscn" id="1_uikco"]
+[ext_resource type="AudioStream" uid="uid://bowmmerxjt5f6" path="res://assets/sfx/pop.ogg" id="3_gtcos"]
+
+[node name="CharacterMessages" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -980.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_uclg6")
+quick_dialogue_scene = ExtResource("1_uikco")
+
+[node name="AudioStreamPop" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_gtcos")
+volume_db = 15.0
+max_polyphony = 8
+bus = &"SFX"

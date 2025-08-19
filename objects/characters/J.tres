@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://chccempimbf63" path="res://objects/carriage_trompette.tscn" id="1_2jdqh"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_6fdos"]
-[ext_resource type="Texture2D" uid="uid://cmwu0ft1mn30n" path="res://assets/modele/2D/personnages/personnages_trompette.png" id="3_6fdos"]
-[ext_resource type="Texture2D" uid="uid://dn378rqtyb4so" path="res://assets/modele/2D/personnages/personnages_trompette_c.png" id="4_6fdos"]
+[ext_resource type="Texture2D" uid="uid://cjbp0kdkj24n6" path="res://assets/modele/2D/personnages/personnages_trompette_contour.png" id="3_6fdos"]
+[ext_resource type="Texture2D" uid="uid://q4c8n5jbgmkc" path="res://assets/modele/2D/personnages/personnages_trompette_c_contour.png" id="4_b7l4o"]
 
 [resource]
 script = ExtResource("2_6fdos")
 name = "J"
 sprite = ExtResource("3_6fdos")
-sprite_cadre = ExtResource("4_6fdos")
+sprite_cadre = ExtResource("4_b7l4o")
 color = Color(0.89, 0.762433, 0.1246, 1)
 carriage = ExtResource("1_2jdqh")
 track_id = 8

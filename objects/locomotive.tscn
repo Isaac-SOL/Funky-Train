@@ -20,6 +20,14 @@ layers = 3
 [node name="chef_locomotive2" parent="MeshInstance3D" instance=ExtResource("3_ue4hp")]
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, 0, 0)
 
+[node name="VisibleCenter" type="Marker3D" parent="MeshInstance3D"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, 0, 0, 1, 0, 0.6422, 0)
+
+[node name="VisibleExtent" type="Marker3D" parent="MeshInstance3D"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, 0, 0, 1, 0, 2.53304, 0)
+
 [node name="Area3D" type="Area3D" parent="." groups=["group_locomotive"]]
 collision_mask = 2
 

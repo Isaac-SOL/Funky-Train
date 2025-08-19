@@ -85,7 +85,7 @@ func get_gradient() -> Array[Color]:
 		rails_outline_material.set_shader_parameter("color", carriages[0].character.color)
 		carriages.remove_at(0)
 	else:
-		rails_outline_material.set_shader_parameter("color", Color.WHITE)
+		rails_outline_material.set_shader_parameter("color", Color.from_hsv(0.0, 0.0, 0.1))
 	if carriages.size() > 3:
 		# Avoid color repetition
 		var prev_picked: Array[Carriage] = []

@@ -1,7 +1,8 @@
 shader_type spatial;
 render_mode cull_disabled, shadows_disabled;
 
-#include "../addons/zylann.hterrain/shaders/include/heightmap.gdshaderinc"
+#include "res://addons/zylann.hterrain/shaders/include/heightmap.gdshaderinc"
+#include "res://leeklib/shader_util.gdshaderinc"
 
 uniform sampler2D u_terrain_heightmap;
 uniform sampler2D u_terrain_detailmap;
@@ -18,6 +19,9 @@ uniform float u_bottom_ao : hint_range(0.0, 1.0);
 uniform vec2 u_ambient_wind; // x: amplitude, y: time
 uniform vec3 u_instance_scale = vec3(1.0, 1.0, 1.0);
 uniform float u_roughness = 0.9;
+
+// Custom stuff
+uniform vec4 locomotive_data_screenspace = vec4(0.0, 0.0, 0.0, 0.0);
 
 varying vec3 v_normal;
 varying vec2 v_map_uv;
@@ -89,6 +93,13 @@ void vertex() {
 }
 
 void fragment() {
+	if (length(FRAGCOORD.xy - locomotive_data_screenspace.xy) < locomotive_data_screenspace.z) {
+		float depth = get_linear_depth(FRAGCOORD.z, SCREEN_UV, INV_PROJECTION_MATRIX);
+		if (depth < locomotive_data_screenspace.w) {
+			discard;
+		}
+	}
+	
 	NORMAL = (VIEW_MATRIX * (MODEL_MATRIX * vec4(v_normal, 0.0))).xyz;
 	ALPHA_SCISSOR_THRESHOLD = 0.5;
 	ROUGHNESS = u_roughness;
