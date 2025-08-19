@@ -10,6 +10,10 @@ func _ready() -> void:
 func load_character(character: CharacterInfo):
 	%CharacterSprite.texture = character.sprite
 	%CharacterSprite.visible = true
+	if character.true_name == "Jojo":
+		%CharacterSprite.position.y = -54.0
+	else:
+		%CharacterSprite.position.y = -33.0
 
 func reset_character():
 	%CharacterSprite.visible = false

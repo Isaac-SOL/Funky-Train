@@ -17,6 +17,7 @@ font_size = 24
 [node name="QuickDialogue" type="MarginContainer"]
 offset_right = 512.0
 offset_bottom = 151.0
+size_flags_vertical = 0
 mouse_filter = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3

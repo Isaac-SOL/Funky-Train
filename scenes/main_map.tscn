@@ -1,4 +1,4 @@
-[gd_scene load_steps=213 format=3 uid="uid://ddei87jmflwu2"]
+[gd_scene load_steps=214 format=3 uid="uid://ddei87jmflwu2"]
 
 [ext_resource type="Script" uid="uid://rytmmqnltko8" path="res://scripts/main.gd" id="1_rk4p5"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_7tq10"]
@@ -72,7 +72,6 @@
 [ext_resource type="ArrayMesh" uid="uid://bciph5m563166" path="res://meshes/rails/RailS8_S7.tres" id="36_v6bnv"]
 [ext_resource type="ArrayMesh" uid="uid://capoxp4y78kl5" path="res://meshes/rails/RailS8_S1.tres" id="37_8ai2q"]
 [ext_resource type="AudioStream" uid="uid://yw7dwm7bpti0" path="res://assets/sfx/lever_4.ogg" id="37_alxc0"]
-[ext_resource type="Texture2D" uid="uid://bmgficsknuo7v" path="res://assets/textures/bg_game_final.png" id="37_lin8e"]
 [ext_resource type="Texture2D" uid="uid://bwvw24wq73u0x" path="res://assets/textures/Sans titre.png" id="38_1n0wa"]
 [ext_resource type="ArrayMesh" uid="uid://caiwxq4l8gvsb" path="res://meshes/rails/Rail_pre_S1.tres" id="38_5t7e2"]
 [ext_resource type="ArrayMesh" uid="uid://doedwc3hmi3vy" path="res://meshes/rails/Rail_pre_S5_minimap.tres" id="38_bun0v"]
@@ -137,6 +136,8 @@
 [ext_resource type="ArrayMesh" uid="uid://de3scv7in4dmb" path="res://meshes/rails/RailTutoChoiceLR_minimap.tres" id="95_iyqf5"]
 [ext_resource type="ArrayMesh" uid="uid://cjfo32uo0gx4g" path="res://meshes/rails/RailExit.tres" id="98_gck0h"]
 [ext_resource type="ArrayMesh" uid="uid://clg8jgf70yn20" path="res://meshes/rails/RailExit_minimap.tres" id="99_1h62p"]
+[ext_resource type="PackedScene" uid="uid://dsyhlyf0jijo4" path="res://objects/character_messages.tscn" id="118_bqn3m"]
+[ext_resource type="Texture2D" uid="uid://gnp4fiy2poxi" path="res://assets/textures/bg_game_final_contour.png" id="122_xfe2o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gd5r5"]
 sky_top_color = Color(1, 0.866667, 0, 1)
@@ -179,6 +180,7 @@ script = ExtResource("18_ajnxc")
 character = ExtResource("8_ha36p")
 text = "Take a left! We're going for a ride!"
 time = 5.0
+indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Curve3D" id="Curve3D_58e0p"]
@@ -210,6 +212,7 @@ script = ExtResource("18_ajnxc")
 character = ExtResource("11_sxppv")
 text = "We should go meet Stevyyye! Take a ryyyght!"
 time = 5.0
+indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Curve3D" id="Curve3D_h5p03"]
@@ -224,6 +227,7 @@ script = ExtResource("18_ajnxc")
 character = ExtResource("7_b6lr4")
 text = "Don't follow that twisty path please! My long carriage can't handle that."
 time = 5.0
+indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Curve3D" id="Curve3D_5hpoa"]
@@ -252,6 +256,7 @@ script = ExtResource("18_ajnxc")
 character = ExtResource("4_j8ata")
 text = "N0 way 1'm climbing that h1ll 0n the r1ght"
 time = 5.0
+indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Curve3D" id="Curve3D_la7dy"]
@@ -293,7 +298,8 @@ point_count = 3
 script = ExtResource("18_ajnxc")
 character = ExtResource("3_8yhmk")
 text = "The two of us should be able to clear that path on the right!"
-time = 5.0
+time = 6.0
+indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Resource" id="Resource_m75v2"]
@@ -301,6 +307,7 @@ script = ExtResource("18_ajnxc")
 character = ExtResource("5_7eykx")
 text = "Sure!"
 time = 5.0
+indentation = 1
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Resource" id="Resource_xnq8m"]
@@ -308,6 +315,7 @@ script = ExtResource("18_ajnxc")
 character = ExtResource("3_8yhmk")
 text = "I could clear that right path with Kim if we found him!"
 time = 5.0
+indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Resource" id="Resource_yqb2n"]
@@ -315,6 +323,7 @@ script = ExtResource("18_ajnxc")
 character = ExtResource("5_7eykx")
 text = "I could clear the rightmost path, but I'm gonna need Stevie's help for that."
 time = 5.0
+indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Curve3D" id="Curve3D_hwpaj"]
@@ -370,14 +379,16 @@ point_count = 3
 script = ExtResource("18_ajnxc")
 character = ExtResource("5_7eykx")
 text = "That tunnel on the right is way too small for me."
-time = 5.0
+time = 7.0
+indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Resource" id="Resource_1u5kr"]
 script = ExtResource("18_ajnxc")
 character = ExtResource("12_on5gu")
 text = "Same, my carriage is way too big for that!"
-time = 5.0
+time = 6.0
+indentation = 1
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Resource" id="Resource_x6ept"]
@@ -385,6 +396,7 @@ script = ExtResource("18_ajnxc")
 character = ExtResource("5_7eykx")
 text = "That tunnel on the right is way too small for me."
 time = 5.0
+indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Resource" id="Resource_lin8e"]
@@ -392,6 +404,7 @@ script = ExtResource("18_ajnxc")
 character = ExtResource("12_on5gu")
 text = "My carriage is way too big for that tunnel on the right!"
 time = 5.0
+indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Curve3D" id="Curve3D_5t7e2"]
@@ -413,6 +426,7 @@ script = ExtResource("18_ajnxc")
 character = ExtResource("9_jikhd")
 text = "We are NOT going to the left. That sand is gonna get everywhere."
 time = 5.0
+indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Curve3D" id="Curve3D_l467f"]
@@ -559,18 +573,22 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="LabelSettings" id="LabelSettings_qdokm"]
 font = ExtResource("36_4kkmd")
 font_size = 48
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_up1kr"]
-texture = ExtResource("37_lin8e")
-texture_margin_left = 45.0
-texture_margin_top = 45.0
-texture_margin_right = 45.0
-texture_margin_bottom = 45.0
+texture = ExtResource("122_xfe2o")
+texture_margin_left = 57.0
+texture_margin_top = 57.0
+texture_margin_right = 57.0
+texture_margin_bottom = 57.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_ajlx6"]
 font = ExtResource("36_4kkmd")
-font_size = 48
-font_color = Color(0, 0, 0, 1)
+font_size = 42
+font_color = Color(0.941176, 0.305882, 0.168627, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_b864h"]
 color = Color(0.941176, 0.901961, 0.8, 1)
@@ -697,7 +715,7 @@ mesh = ExtResource("19_up1kr")
 transform = Transform3D(0.00120349, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00120349, 0, 0, 0)
 
 [node name="Station4" parent="Rails/RailS4" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.000827086, 0, -0.999962, 0, 1, 0, 0.999962, 0, -0.000827086, 16.1874, 0, -0.000769002)
+transform = Transform3D(-0.000827085, 0, -0.99996, 0, 1, 0, 0.99996, 0, -0.000827085, 16.1874, 0, -0.000769002)
 progress = 16.1862
 waiting_character = ExtResource("5_7eykx")
 
@@ -760,7 +778,7 @@ mesh = ExtResource("23_45vgs")
 mesh = ExtResource("28_te2gl")
 
 [node name="CrossFollow" parent="Rails/RailS11" index="3"]
-transform = Transform3D(-0.0169583, 0, -0.99985, 0, 1, 0, 0.99985, 0, -0.0169583, 0, 0, 0)
+transform = Transform3D(-0.0169583, 0, -0.999848, 0, 1, 0, 0.999848, 0, -0.0169583, 0, 0, 0)
 
 [node name="Station11" parent="Rails/RailS11" instance=ExtResource("8_cly8o")]
 transform = Transform3D(-0.00646113, 0, -0.999978, 0, 1, 0, 0.999978, 0, -0.00646113, 15.719, 0, -0.0139241)
@@ -924,7 +942,7 @@ mesh = ExtResource("47_xfe2o")
 mesh = ExtResource("48_bqn3m")
 
 [node name="CrossFollow" parent="Rails/RailS5_Plus" index="3"]
-transform = Transform3D(-0.997757, 0, 0.0669225, 0, 1, 0, -0.0669225, 0, -0.997757, 0, 0, 0)
+transform = Transform3D(-0.997756, 0, 0.0669224, 0, 1, 0, -0.0669224, 0, -0.997756, 0, 0, 0)
 
 [node name="Rail_pre_S6" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5317, -8.10623e-06, -23.5075)
@@ -1077,7 +1095,7 @@ mesh = ExtResource("58_0hk2f")
 transform = Transform3D(-0.00999987, 0, 0.99995, 0, 1, 0, -0.99995, 0, -0.00999987, 0, 0, 0)
 
 [node name="Station1" parent="Rails/RailS1" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.0337057, 0, 0.999393, 0, 1, 0, -0.999393, 0, -0.0337057, -33.2739, 0, 0.875955)
+transform = Transform3D(-0.0337056, 0, 0.999391, 0, 1, 0, -0.999391, 0, -0.0337056, -33.2739, 0, 0.875955)
 progress = 33.2863
 waiting_character = ExtResource("12_on5gu")
 
@@ -1285,12 +1303,12 @@ mesh = ExtResource("76_451ut")
 mesh = ExtResource("77_24yu0")
 
 [node name="CrossFollow" parent="Rails/Tutorial/RailStart" index="3"]
-transform = Transform3D(-0.0796757, 0.000131124, 0.996811, -0.000174702, 0.999986, -0.000145506, -0.996812, -0.000185739, -0.0796757, -5.91114, -0.00176273, -0.322128)
+transform = Transform3D(-0.0796754, 0.000131122, 0.996811, -0.000174702, 0.999986, -0.000145505, -0.996812, -0.000185739, -0.0796753, -5.91114, -0.00176273, -0.322129)
 progress = 5.94844
 
 [node name="Locomotive" parent="Rails/Tutorial/RailStart" instance=ExtResource("9_8yhmk")]
 unique_name_in_owner = true
-transform = Transform3D(-0.19572, 0.000336692, 0.98062, -0.000143057, 0.999957, -0.000371887, -0.980619, -0.000213078, -0.19572, -9.90729, -0.0006637, 0.239139)
+transform = Transform3D(-0.195719, 0.000336692, 0.98062, -0.000143057, 0.999957, -0.000371886, -0.980619, -0.000213078, -0.195719, -9.90729, -0.000663705, 0.239138)
 progress = 9.98606
 
 [node name="CameraPivotY" type="Marker3D" parent="Rails/Tutorial/RailStart/Locomotive"]
@@ -1331,7 +1349,7 @@ mesh = ExtResource("78_sxp67")
 mesh = ExtResource("79_36yku")
 
 [node name="CrossFollow" parent="Rails/Tutorial/RailStartIntR" index="3"]
-transform = Transform3D(-0.998577, -1.19597e-05, -0.0531347, 1.39839e-05, 0.999986, -0.000487885, 0.0531348, -0.000487937, -0.998576, 0.0775252, 0.000794953, 5.28053)
+transform = Transform3D(-0.998577, -1.19597e-05, -0.0531348, 1.39839e-05, 0.999986, -0.000487881, 0.053135, -0.000487935, -0.998574, 0.0775257, 0.000794947, 5.28053)
 progress = 5.28178
 
 [node name="RailStartIntL" parent="Rails/Tutorial" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
@@ -1347,7 +1365,7 @@ mesh = ExtResource("80_l8v81")
 mesh = ExtResource("81_iwots")
 
 [node name="CrossFollow" parent="Rails/Tutorial/RailStartIntL" index="3"]
-transform = Transform3D(-0.836664, -0.000136703, -0.5477, 5.86866e-05, 0.999986, -0.000339243, 0.547701, -0.000315976, -0.836663, 1.24728, 0.000347338, 5.0087)
+transform = Transform3D(-0.836664, -0.000136703, -0.547699, 5.86865e-05, 0.999986, -0.000339242, 0.5477, -0.000315976, -0.836663, 1.24728, 0.000347337, 5.0087)
 progress = 5.2385
 
 [node name="RailToOut" parent="Rails/Tutorial" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
@@ -1364,7 +1382,7 @@ mesh = ExtResource("82_erdpy")
 mesh = ExtResource("83_rdxbw")
 
 [node name="CrossFollow" parent="Rails/Tutorial/RailToOut" index="3"]
-transform = Transform3D(-0.159358, 0.00110489, -0.987208, -5.82072e-11, 0.999967, 0.00111921, 0.987212, 0.000178353, -0.159357, 0, 0, 0)
+transform = Transform3D(-0.159358, 0.00110489, -0.987208, -5.82071e-11, 0.999965, 0.00111921, 0.987212, 0.000178353, -0.159357, 0, 0, 0)
 
 [node name="RailPostOutL" parent="Rails/Tutorial" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0727, 0.0203323, -40.4475)
@@ -1379,7 +1397,7 @@ mesh = ExtResource("84_3ably")
 mesh = ExtResource("85_xjswv")
 
 [node name="CrossFollow" parent="Rails/Tutorial/RailPostOutL" index="3"]
-transform = Transform3D(0.193844, 0.000238326, -0.981009, -0.000199917, 0.999968, 0.000203434, 0.981012, 0.000156687, 0.193843, 3.45199, -0.00304344, -0.345288)
+transform = Transform3D(0.193845, 0.000238323, -0.981009, -0.000199917, 0.999968, 0.000203431, 0.981011, 0.000156688, 0.193845, 3.45199, -0.00304344, -0.34529)
 progress = 3.47554
 
 [node name="RailPostOutL2" parent="Rails/Tutorial" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
@@ -1395,7 +1413,7 @@ mesh = ExtResource("86_crf1e")
 mesh = ExtResource("87_j8fyy")
 
 [node name="CrossFollow" parent="Rails/Tutorial/RailPostOutL2" index="3"]
-transform = Transform3D(0.652001, 0.00172431, -0.758189, 1.16413e-10, 0.999966, 0.00227421, 0.758194, -0.0014828, 0.651998, 0, 0, 0)
+transform = Transform3D(0.652001, 0.00172431, -0.75819, 2.32826e-10, 0.999966, 0.00227422, 0.758194, -0.00148281, 0.651997, 0, 0, 0)
 
 [node name="RailTutoChoice" parent="Rails/Tutorial" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.201548, -0.00267792, -62.456)
@@ -1410,7 +1428,7 @@ mesh = ExtResource("88_xfe2o")
 mesh = ExtResource("89_bqn3m")
 
 [node name="CrossFollow" parent="Rails/Tutorial/RailTutoChoice" index="3"]
-transform = Transform3D(0.988141, -0.000286154, 0.15343, 5.82066e-11, 0.999967, 0.00186503, -0.15343, -0.00184293, 0.988136, 0, 0, 0)
+transform = Transform3D(0.988141, -0.000286154, 0.15343, -1.45517e-11, 0.999967, 0.00186502, -0.15343, -0.00184292, 0.988136, 0, 0, 0)
 
 [node name="RailTutoChoiceL" parent="Rails/Tutorial" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.9171, 0, -74.3307)
@@ -1425,7 +1443,7 @@ mesh = ExtResource("90_gck0h")
 mesh = ExtResource("91_1h62p")
 
 [node name="CrossFollow" parent="Rails/Tutorial/RailTutoChoiceL" index="3"]
-transform = Transform3D(-0.436596, 0.00130985, 0.899632, 0.000155026, 0.999967, -0.00138073, -0.899637, -0.000463361, -0.436594, -5.80167, 0.00213663, 0.724875)
+transform = Transform3D(-0.436594, 0.00130986, 0.899633, 0.000155026, 0.999967, -0.00138073, -0.899638, -0.000463358, -0.436592, -5.80167, 0.00213663, 0.724863)
 progress = 5.97532
 
 [node name="RailTutoChoiceLL" parent="Rails/Tutorial" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
@@ -1441,7 +1459,7 @@ mesh = ExtResource("92_782co")
 mesh = ExtResource("93_5p64l")
 
 [node name="CrossFollow" parent="Rails/Tutorial/RailTutoChoiceLL" index="3"]
-transform = Transform3D(-0.479605, 0.000119357, -0.87746, -4.68043e-05, 0.999968, 0.000161606, 0.877464, 0.000118577, -0.479602, 7.61463, -0.00115822, 6.75951)
+transform = Transform3D(-0.479604, 0.000119358, -0.87746, -4.68047e-05, 0.999968, 0.000161607, 0.877465, 0.000118577, -0.479601, 7.61465, -0.00115823, 6.75952)
 progress = 10.2425
 
 [node name="RailTutoChoiceLR" parent="Rails/Tutorial" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
@@ -1457,11 +1475,11 @@ mesh = ExtResource("94_hix4h")
 mesh = ExtResource("95_iyqf5")
 
 [node name="CrossFollow" parent="Rails/Tutorial/RailTutoChoiceLR" index="3"]
-transform = Transform3D(-0.723834, -1.60908e-05, -0.689945, -1.36132e-06, 0.999968, -2.18934e-05, 0.689947, -1.49081e-05, -0.723831, 6.71789, -0.000319878, 7.69631)
+transform = Transform3D(-0.723836, -1.60897e-05, -0.689942, -1.36127e-06, 0.999968, -2.1892e-05, 0.689945, -1.49071e-05, -0.723834, 6.71784, -0.00031988, 7.69629)
 progress = 10.2176
 
 [node name="Station" parent="Rails/Tutorial/RailTutoChoiceLR" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.546003, -0.000289335, -0.837782, 4.3277e-05, 1, -0.000373563, 0.837783, -0.000240223, -0.546003, 13.5322, 0.00121106, 13.5341)
+transform = Transform3D(-0.546004, -0.000289333, -0.837781, 4.32773e-05, 1, -0.000373561, 0.837782, -0.000240223, -0.546004, 13.5322, 0.00121104, 13.5341)
 progress = 19.212
 waiting_character = ExtResource("7_b6lr4")
 
@@ -1478,7 +1496,7 @@ mesh = ExtResource("98_gck0h")
 mesh = ExtResource("99_1h62p")
 
 [node name="CrossFollow" parent="Rails/Tutorial/RailExit" index="3"]
-transform = Transform3D(-0.526558, 0.00259528, -0.850078, 0.00115669, 0.999965, 0.00233631, 0.850084, 0.000246943, -0.526558, 3.16632, -0.00712708, 0.905021)
+transform = Transform3D(-0.526559, 0.00259529, -0.850078, 0.00115669, 0.999965, 0.00233631, 0.850083, 0.000246944, -0.526559, 3.16632, -0.0071271, 0.905023)
 progress = 3.33338
 
 [node name="Ground" type="MeshInstance3D" parent="."]
@@ -1500,7 +1518,6 @@ metadata/_custom_type_script = "uid://wrgu8dfp4pw3"
 
 [node name="MainCamera" type="Camera3D" parent="CameraShaker"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 cull_mask = 1048573
 current = true
 
@@ -1809,6 +1826,7 @@ expand_mode = 1
 
 [node name="MarginContainerCharacters" type="MarginContainer" parent="CanvasLayer/GameUI"]
 unique_name_in_owner = true
+process_mode = 4
 visible = false
 layout_mode = 0
 offset_right = 340.0
@@ -1870,7 +1888,17 @@ layout_mode = 2
 [node name="CharacterPortrait9" parent="CanvasLayer/GameUI/MarginContainerCharacters2/HBoxContainerCharacters2" instance=ExtResource("93_mbn4m")]
 layout_mode = 2
 
+[node name="CharacterMessages" parent="CanvasLayer/GameUI" instance=ExtResource("118_bqn3m")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 10.0
+offset_top = 250.0
+offset_right = -1270.0
+offset_bottom = -470.0
+
 [node name="MarginContainerDialogue" type="MarginContainer" parent="CanvasLayer/GameUI"]
+process_mode = 4
+visible = false
 layout_mode = 0
 offset_top = 220.0
 offset_right = 293.0
@@ -1944,6 +1972,7 @@ theme_override_constants/separation = 10
 [node name="ButtonPrendre" type="Button" parent="CanvasLayer/GameUI/MarginContainerStationGrab/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("36_4kkmd")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/hover = ExtResource("38_pi7hh")
@@ -1953,6 +1982,7 @@ text = "Take them"
 [node name="ButtonLaisser" type="Button" parent="CanvasLayer/GameUI/MarginContainerStationGrab/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("36_4kkmd")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/hover = ExtResource("38_pi7hh")
@@ -1981,10 +2011,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 45
-theme_override_constants/margin_top = 45
-theme_override_constants/margin_right = 45
-theme_override_constants/margin_bottom = 45
+theme_override_constants/margin_left = 57
+theme_override_constants/margin_top = 57
+theme_override_constants/margin_right = 57
+theme_override_constants/margin_bottom = 57
 
 [node name="VBoxContainerPutChar" type="VBoxContainer" parent="CanvasLayer/GameUI/PanelStationPut/MarginContainer"]
 unique_name_in_owner = true
@@ -1992,7 +2022,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/GameUI/PanelStationPut/MarginContainer/VBoxContainerPutChar"]
 layout_mode = 2
-text = "Who do we leave there ?"
+text = "Who do we leave here ?"
 label_settings = SubResource("LabelSettings_ajlx6")
 horizontal_alignment = 1
 
@@ -2010,6 +2040,7 @@ alignment = 1
 [node name="ButtonNoOne" type="Button" parent="CanvasLayer/GameUI/PanelStationPut/MarginContainer/VBoxContainerPutChar"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("36_4kkmd")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/hover = ExtResource("38_pi7hh")

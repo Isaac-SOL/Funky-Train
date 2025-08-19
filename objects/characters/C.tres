@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bx4jqw5nm562v" path="res://objects/carriage_basse.tscn" id="1_e1gjo"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_827ek"]
-[ext_resource type="Texture2D" uid="uid://drwlc64twriia" path="res://assets/modele/2D/personnages/basse-export2.png" id="3_827ek"]
-[ext_resource type="Texture2D" uid="uid://drpbgjbwdnthb" path="res://assets/modele/2D/personnages/basse-export.png" id="4_kqpm5"]
+[ext_resource type="Texture2D" uid="uid://c4gmtk05f01rb" path="res://assets/modele/2D/personnages/basse-export2_contour.png" id="3_827ek"]
+[ext_resource type="Texture2D" uid="uid://dbx48ygyt2k4h" path="res://assets/modele/2D/personnages/basse-export_contour.png" id="4_kqpm5"]
 
 [resource]
 script = ExtResource("2_827ek")

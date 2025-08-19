@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://dcjwdedwvpfhp" path="res://objects/carriage_vocoder.tscn" id="1_4qakc"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_4qakc"]
-[ext_resource type="Texture2D" uid="uid://bwffunfc82fgx" path="res://assets/modele/2D/personnages/personnages_vocoder.png" id="3_3t8ib"]
-[ext_resource type="Texture2D" uid="uid://b7q6mkaraska6" path="res://assets/modele/2D/personnages/personnages_vocoder_c.png" id="4_3jb8o"]
+[ext_resource type="Texture2D" uid="uid://bclxvufcu7xbg" path="res://assets/modele/2D/personnages/personnages_vocoder_contour.png" id="3_4qakc"]
+[ext_resource type="Texture2D" uid="uid://cnda1egoacli4" path="res://assets/modele/2D/personnages/personnages_vocoder_c_contour.png" id="4_3t8ib"]
 
 [resource]
 script = ExtResource("2_4qakc")
 name = "B"
-sprite = ExtResource("3_3t8ib")
-sprite_cadre = ExtResource("4_3jb8o")
+sprite = ExtResource("3_4qakc")
+sprite_cadre = ExtResource("4_3t8ib")
 color = Color(0.988235, 0.0980392, 0.258824, 1)
 carriage = ExtResource("1_4qakc")
 track_id = 9

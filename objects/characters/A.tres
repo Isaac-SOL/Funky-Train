@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://xotg7cc6685q" path="res://objects/carriage_keytar.tscn" id="1_8di57"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_8di57"]
-[ext_resource type="Texture2D" uid="uid://dtqd0tyo7jrmk" path="res://assets/modele/2D/personnages/personnages_synthé.png" id="3_wplcc"]
-[ext_resource type="Texture2D" uid="uid://bkbigk77efsar" path="res://assets/modele/2D/personnages/personnages_synthé_c.png" id="4_xa1si"]
+[ext_resource type="Texture2D" uid="uid://tgllu36r8u26" path="res://assets/modele/2D/personnages/personnages_synthé_contour.png" id="3_8di57"]
+[ext_resource type="Texture2D" uid="uid://cfcsugehhcprd" path="res://assets/modele/2D/personnages/personnages_synthé_c_contour.png" id="4_wplcc"]
 
 [resource]
 script = ExtResource("2_8di57")
 name = "A"
-sprite = ExtResource("3_wplcc")
-sprite_cadre = ExtResource("4_xa1si")
+sprite = ExtResource("3_8di57")
+sprite_cadre = ExtResource("4_wplcc")
 color = Color(0.913725, 0.282353, 0.698039, 1)
 carriage = ExtResource("1_8di57")
 track_id = 4

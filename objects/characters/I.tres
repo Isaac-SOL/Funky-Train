@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://bpwff1f4x5ej" path="res://objects/carriage_batterie.tscn" id="1_wlmus"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_fkq7v"]
-[ext_resource type="Texture2D" uid="uid://qii11fokxfim" path="res://assets/modele/2D/personnages/personnages_batterie.png" id="3_fkq7v"]
-[ext_resource type="Texture2D" uid="uid://baarby58wq5oc" path="res://assets/modele/2D/personnages/personnages_batterie_c.png" id="4_fkq7v"]
+[ext_resource type="Texture2D" uid="uid://bju6janjpgefh" path="res://assets/modele/2D/personnages/personnages_batterie_contour.png" id="3_fkq7v"]
+[ext_resource type="Texture2D" uid="uid://cbu3t7hsx778u" path="res://assets/modele/2D/personnages/personnages_batterie_c_contour.png" id="4_jrwmj"]
 
 [resource]
 script = ExtResource("2_fkq7v")
 name = "I"
 sprite = ExtResource("3_fkq7v")
-sprite_cadre = ExtResource("4_fkq7v")
+sprite_cadre = ExtResource("4_jrwmj")
 color = Color(0.176471, 0.521569, 0.74902, 1)
 carriage = ExtResource("1_wlmus")
 track_id = 5

@@ -51,6 +51,7 @@ func stop_at_station(station: Station):
 	var character_info := station.waiting_character
 	if character_info:
 		%LabelTitre.text = character_info.true_name
+		%LabelTitre.label_settings.font_color = character_info.color
 		talk(character_info.instrument)
 		await Dialogic.timeline_ended
 		%MarginContainerStationGrab.visible = true
@@ -60,6 +61,12 @@ func stop_at_station(station: Station):
 			new_button.text = carriage.character.true_name
 			new_button.icon = carriage.character.sprite_cadre
 			new_button.pressed.connect(_on_character_leave_pressed.bind(carriage))
+			new_button.add_theme_color_override("font_color", carriage.character.color)
+			new_button.add_theme_color_override("font_focus_color", carriage.character.color)
+			new_button.add_theme_color_override("font_pressed_color", carriage.character.color)
+			new_button.add_theme_color_override("font_hover_color", carriage.character.color)
+			new_button.add_theme_color_override("font_hover_pressed_color", carriage.character.color)
+			new_button.add_theme_color_override("font_disabled_color", carriage.character.color)
 			%VBoxContainerLeaveButtons.add_child(new_button)
 		%PanelStationPut.visible = true
 
@@ -165,15 +172,16 @@ func close_character_leave():
 		%VBoxContainerLeaveButtons.remove_child(child)
 
 func spawn_dialogue(info: DialogueInfo):
-	if ended:
-		return
-	for child in %VBoxContainerDialogue.get_children():
-		if child is QuickDialogue and child.my_info == info:
-			return
-	var new_dialogue: QuickDialogue = quick_dialogue_scene.instantiate()
-	%VBoxContainerDialogue.add_child(new_dialogue)
-	new_dialogue.spawn(info)
-	%AudioStreamPop.play()
+	%CharacterMessages.spawn_dialogue(info)
+	#if ended:
+		#return
+	#for child in %VBoxContainerDialogue.get_children():
+		#if child is QuickDialogue and child.my_info == info:
+			#return
+	#var new_dialogue: QuickDialogue = quick_dialogue_scene.instantiate()
+	#%VBoxContainerDialogue.add_child(new_dialogue)
+	#new_dialogue.spawn(info)
+	#%AudioStreamPop.play()
 
 func _on_button_no_one_pressed() -> void:
 	close_character_leave()
