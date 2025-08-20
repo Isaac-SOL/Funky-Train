@@ -45,21 +45,15 @@ directories/dch_directory={
 directories/dtl_directory={
 "timeline_basse": "res://dialog/timelines/timeline_basse.dtl",
 "timeline_batterie": "res://dialog/timelines/timeline_batterie.dtl",
-"timeline_batterie_cleared": "res://dialog/timelines/timeline_batterie_cleared.dtl",
 "timeline_blanc": "res://dialog/timelines/timeline_blanc.dtl",
 "timeline_cat": "res://dialog/timelines/timeline_cat.dtl",
 "timeline_clavier": "res://dialog/timelines/timeline_clavier.dtl",
 "timeline_guitar": "res://dialog/timelines/timeline_guitar.dtl",
-"timeline_guitarre_blocked": "res://dialog/timelines/timeline_guitarre_blocked.dtl",
 "timeline_rocket": "res://dialog/timelines/timeline_rocket.dtl",
 "timeline_saxo": "res://dialog/timelines/timeline_saxo.dtl",
-"timeline_saxo_blocked": "res://dialog/timelines/timeline_saxo_blocked.dtl",
-"timeline_team": "res://dialog/timelines/timeline_team.dtl",
 "timeline_triangle": "res://dialog/timelines/timeline_triangle.dtl",
 "timeline_trompette": "res://dialog/timelines/timeline_trompette.dtl",
-"timeline_tunnel_blocked": "res://dialog/timelines/timeline_tunnel_blocked.dtl",
-"timeline_vocoder": "res://dialog/timelines/timeline_vocoder.dtl",
-"timeline_vocoder_blocked": "res://dialog/timelines/timeline_vocoder_blocked.dtl"
+"timeline_vocoder": "res://dialog/timelines/timeline_vocoder.dtl"
 }
 variables={
 "first_time": {

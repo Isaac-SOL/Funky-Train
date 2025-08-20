@@ -19,13 +19,22 @@
 },
 "style": "default_portrait_style"
 },
-&"default_portrait": "basse-export",
+&"default_portrait": "New portrait",
 &"description": "",
 &"display_name": "Kim",
 &"mirror": false,
 &"nicknames": ["basse"],
 &"offset": Vector2(0, 0),
 &"portraits": {
+"New portrait": {
+"export_overrides": {
+"image": "\"res://assets/modele/2D/personnages/basse-export_contour.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
 "basse-export": {
 "export_overrides": {
 "image": "\"res://assets/modele/2D/personnages/basse-export.png\""

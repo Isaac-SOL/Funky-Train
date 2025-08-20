@@ -1,6 +1,6 @@
 [style name="default_portrait_style"]
 if {first_time.first_clavier} == true:
-	clavier: Welcome ! I'm Steve but everybody calls me Stevie. We should go see Pytha too ! I'm sure he would love to join \:)
+	clavier: Hey guys! I'm Steve but everybody calls me [color=#e948b2]Stevie[/color]. We should go see [color=#a53f24]Pytha[/color] too ! I'm sure he would love to join \:)
 	set {first_time.first_clavier} = false
 else:
 	clavier: You're back !

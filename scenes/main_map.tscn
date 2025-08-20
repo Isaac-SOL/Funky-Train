@@ -1,4 +1,4 @@
-[gd_scene load_steps=214 format=3 uid="uid://ddei87jmflwu2"]
+[gd_scene load_steps=219 format=3 uid="uid://ddei87jmflwu2"]
 
 [ext_resource type="Script" uid="uid://rytmmqnltko8" path="res://scripts/main.gd" id="1_rk4p5"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_7tq10"]
@@ -193,6 +193,30 @@ point_count = 10
 [sub_resource type="BoxShape3D" id="BoxShape3D_on5gu"]
 size = Vector3(9.7594, 9.43994, 9.14769)
 
+[sub_resource type="Resource" id="Resource_gck0h"]
+script = ExtResource("18_ajnxc")
+character = ExtResource("3_8yhmk")
+text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Resource" id="Resource_782co"]
+script = ExtResource("18_ajnxc")
+character = ExtResource("3_8yhmk")
+text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+time = 6.75
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Resource" id="Resource_1h62p"]
+script = ExtResource("18_ajnxc")
+character = ExtResource("4_j8ata")
+text = "LMA0000000000000000000000"
+time = 5.0
+indentation = 1
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
 [sub_resource type="Curve3D" id="Curve3D_q32ya"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 2.91532, 0, 0.00383526, 0, 0, 0, -2.89839, 0, -0.0491591, 2.89839, 0, 0.0491591, 16.9347, 0, 0),
@@ -210,7 +234,7 @@ point_count = 2
 [sub_resource type="Resource" id="Resource_ajnxc"]
 script = ExtResource("18_ajnxc")
 character = ExtResource("11_sxppv")
-text = "We should go meet Stevyyye! Take a ryyyght!"
+text = "We should go meet [color=#e948b2]Stevyyye![color=white] Take a ryyyght!"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -259,6 +283,14 @@ time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
+[sub_resource type="Resource" id="Resource_bqn3m"]
+script = ExtResource("18_ajnxc")
+character = ExtResource("3_8yhmk")
+text = "Come on dude, really?"
+time = 5.0
+indentation = 1
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
 [sub_resource type="Curve3D" id="Curve3D_la7dy"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -3.58069, 0, 0, 0, 0, 0, 3.07452, -3.8147e-06, -1.19551, -3.07452, 3.8147e-06, 1.19551, -10.5882, 3.8147e-06, 1.81453, 3.58069, 0, 0, -3.58069, 0, 0, -20.5317, 8.10623e-06, 3.5075),
@@ -297,7 +329,7 @@ point_count = 3
 [sub_resource type="Resource" id="Resource_4kkmd"]
 script = ExtResource("18_ajnxc")
 character = ExtResource("3_8yhmk")
-text = "The two of us should be able to clear that path on the right!"
+text = "Hey [color=#27592e]Kim[/color], we could clear that path on the right!"
 time = 6.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -313,7 +345,7 @@ metadata/_custom_type_script = "uid://di4q8eju5txb1"
 [sub_resource type="Resource" id="Resource_xnq8m"]
 script = ExtResource("18_ajnxc")
 character = ExtResource("3_8yhmk")
-text = "I could clear that right path with Kim if we found him!"
+text = "I could clear that right path with [color=#27592e]Kim[/color] if we found him!"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -321,7 +353,7 @@ metadata/_custom_type_script = "uid://di4q8eju5txb1"
 [sub_resource type="Resource" id="Resource_yqb2n"]
 script = ExtResource("18_ajnxc")
 character = ExtResource("5_7eykx")
-text = "I could clear the rightmost path, but I'm gonna need Stevie's help for that."
+text = "I could clear the rightmost path, but I'm gonna need [color=#e948b2]Stevie's[/color] help for that."
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -570,6 +602,17 @@ size = Vector2(200, 200)
 [sub_resource type="ViewportTexture" id="ViewportTexture_rw4g1"]
 viewport_path = NodePath("SubViewport")
 
+[sub_resource type="GDScript" id="GDScript_bqn3m"]
+script/source = "extends RichTextLabel
+
+func _process(delta: float) -> void:
+	if not Locomotive.instance:
+		return
+	var speed_kmh := Locomotive.instance.speed * 3.6
+	var speed_kmh_text := str(int(speed_kmh * 10.0))
+	text = speed_kmh_text + \" [font_size=12]km/h\"
+"
+
 [sub_resource type="LabelSettings" id="LabelSettings_qdokm"]
 font = ExtResource("36_4kkmd")
 font_size = 48
@@ -715,7 +758,7 @@ mesh = ExtResource("19_up1kr")
 transform = Transform3D(0.00120349, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00120349, 0, 0, 0)
 
 [node name="Station4" parent="Rails/RailS4" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.000827085, 0, -0.99996, 0, 1, 0, 0.99996, 0, -0.000827085, 16.1874, 0, -0.000769002)
+transform = Transform3D(-0.000827084, 0, -0.999959, 0, 1, 0, 0.999959, 0, -0.000827084, 16.1874, 0, -0.000769002)
 progress = 16.1862
 waiting_character = ExtResource("5_7eykx")
 
@@ -748,6 +791,16 @@ collision_layer = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.19816, 3.38745, -19.4398)
 shape = SubResource("BoxShape3D_on5gu")
 
+[node name="DialogicTrigger" parent="Rails/RailS4_S6_bridge" instance=ExtResource("17_k43kg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.63272, -1.84858, -16.6607)
+requirements = Array[String](["A", "-B"])
+dialogues = Array[ExtResource("18_ajnxc")]([SubResource("Resource_gck0h")])
+
+[node name="DialogicTrigger2" parent="Rails/RailS4_S6_bridge" instance=ExtResource("17_k43kg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.63272, -1.84858, -16.6607)
+requirements = Array[String](["A", "B"])
+dialogues = Array[ExtResource("18_ajnxc")]([SubResource("Resource_782co"), SubResource("Resource_1h62p")])
+
 [node name="RailS4_S11" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
 curve = SubResource("Curve3D_q32ya")
@@ -778,7 +831,7 @@ mesh = ExtResource("23_45vgs")
 mesh = ExtResource("28_te2gl")
 
 [node name="CrossFollow" parent="Rails/RailS11" index="3"]
-transform = Transform3D(-0.0169583, 0, -0.999848, 0, 1, 0, 0.999848, 0, -0.0169583, 0, 0, 0)
+transform = Transform3D(-0.0169583, 0, -0.999847, 0, 1, 0, 0.999847, 0, -0.0169583, 0, 0, 0)
 
 [node name="Station11" parent="Rails/RailS11" instance=ExtResource("8_cly8o")]
 transform = Transform3D(-0.00646113, 0, -0.999978, 0, 1, 0, 0.999978, 0, -0.00646113, 15.719, 0, -0.0139241)
@@ -786,7 +839,7 @@ progress = 15.719
 
 [node name="DialogicTrigger" parent="Rails/RailS11" instance=ExtResource("17_k43kg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1689, 0.417895, -0.0018971)
-requirements = Array[String](["I"])
+requirements = Array[String](["I", "-A"])
 dialogues = Array[ExtResource("18_ajnxc")]([SubResource("Resource_ajnxc")])
 
 [node name="RailS11_fork" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
@@ -866,8 +919,13 @@ waiting_character = ExtResource("11_sxppv")
 
 [node name="DialogicTrigger" parent="Rails/RailS7" instance=ExtResource("17_k43kg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7025, 0.417897, -8.24557)
-requirements = Array[String](["B"])
+requirements = Array[String](["B", "-A"])
 dialogues = Array[ExtResource("18_ajnxc")]([SubResource("Resource_6c0ht")])
+
+[node name="DialogicTrigger2" parent="Rails/RailS7" instance=ExtResource("17_k43kg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7025, 0.417897, -8.24557)
+requirements = Array[String](["B", "A"])
+dialogues = Array[ExtResource("18_ajnxc")]([SubResource("Resource_6c0ht"), SubResource("Resource_bqn3m")])
 
 [node name="Rail_pre_S5" parent="Rails" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5317, -8.10623e-06, -23.5075)
@@ -1095,7 +1153,7 @@ mesh = ExtResource("58_0hk2f")
 transform = Transform3D(-0.00999987, 0, 0.99995, 0, 1, 0, -0.99995, 0, -0.00999987, 0, 0, 0)
 
 [node name="Station1" parent="Rails/RailS1" instance=ExtResource("8_cly8o")]
-transform = Transform3D(-0.0337056, 0, 0.999391, 0, 1, 0, -0.999391, 0, -0.0337056, -33.2739, 0, 0.875955)
+transform = Transform3D(-0.0337056, 0, 0.99939, 0, 1, 0, -0.99939, 0, -0.0337056, -33.2739, 0, 0.875955)
 progress = 33.2863
 waiting_character = ExtResource("12_on5gu")
 
@@ -1349,7 +1407,7 @@ mesh = ExtResource("78_sxp67")
 mesh = ExtResource("79_36yku")
 
 [node name="CrossFollow" parent="Rails/Tutorial/RailStartIntR" index="3"]
-transform = Transform3D(-0.998577, -1.19597e-05, -0.0531348, 1.39839e-05, 0.999986, -0.000487881, 0.053135, -0.000487935, -0.998574, 0.0775257, 0.000794947, 5.28053)
+transform = Transform3D(-0.998577, -1.19597e-05, -0.0531348, 1.39839e-05, 0.999986, -0.000487881, 0.053135, -0.000487935, -0.998573, 0.0775257, 0.000794947, 5.28053)
 progress = 5.28178
 
 [node name="RailStartIntL" parent="Rails/Tutorial" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
@@ -1365,7 +1423,7 @@ mesh = ExtResource("80_l8v81")
 mesh = ExtResource("81_iwots")
 
 [node name="CrossFollow" parent="Rails/Tutorial/RailStartIntL" index="3"]
-transform = Transform3D(-0.836664, -0.000136703, -0.547699, 5.86865e-05, 0.999986, -0.000339242, 0.5477, -0.000315976, -0.836663, 1.24728, 0.000347337, 5.0087)
+transform = Transform3D(-0.836664, -0.000136703, -0.547699, 5.86864e-05, 0.999986, -0.000339242, 0.5477, -0.000315976, -0.836663, 1.24728, 0.000347337, 5.0087)
 progress = 5.2385
 
 [node name="RailToOut" parent="Rails/Tutorial" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
@@ -1382,7 +1440,7 @@ mesh = ExtResource("82_erdpy")
 mesh = ExtResource("83_rdxbw")
 
 [node name="CrossFollow" parent="Rails/Tutorial/RailToOut" index="3"]
-transform = Transform3D(-0.159358, 0.00110489, -0.987208, -5.82071e-11, 0.999965, 0.00111921, 0.987212, 0.000178353, -0.159357, 0, 0, 0)
+transform = Transform3D(-0.159358, 0.00110488, -0.987208, -5.82071e-11, 0.999964, 0.00111921, 0.987212, 0.000178352, -0.159357, 0, 0, 0)
 
 [node name="RailPostOutL" parent="Rails/Tutorial" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("7_2wvi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0727, 0.0203323, -40.4475)
@@ -1768,6 +1826,29 @@ mouse_filter = 2
 texture = ExtResource("26_qvxoj")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="Label" type="RichTextLabel" parent="CanvasLayer/GameUI/DirectionUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -87.3016
+offset_top = -129.365
+offset_right = 87.6984
+offset_bottom = -103.365
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/normal_font = ExtResource("36_4kkmd")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "10.0 [font_size=12]km/h"
+horizontal_alignment = 1
+vertical_alignment = 2
+script = SubResource("GDScript_bqn3m")
 
 [node name="SpeedUI" type="Control" parent="CanvasLayer/GameUI"]
 layout_mode = 1

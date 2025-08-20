@@ -1,6 +1,6 @@
 [style name="default_portrait_style"]
 if {first_time.first_guitar} == true:
-	guitar: Let's go for the party ! Let's gather everyone to play together at the beach.
+	guitar: Let's start the party! Let's gather everyone so we can all play together!
 	set {first_time.first_guitar} = false
 else:
-	guitar: Do you have everyone for the jam ?
+	guitar: Do you have everyone for the jam?

@@ -4,7 +4,6 @@ class_name DialogicTrigger extends Area3D
 @export var dialogues: Array[DialogueInfo]
 
 func _on_area_entered(area: Area3D) -> void:
-	print("test")
 	if area.get_parent() and area.get_parent() == Locomotive.instance:
 		if Locomotive.instance.check_requirements(requirements):
 			for d: DialogueInfo in dialogues:

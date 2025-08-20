@@ -1,6 +1,6 @@
 [style name="default_portrait_style"]
 if {first_time.first_basse} == true:
-	basse: Hello, everyone ! Is there any space for me ?
+	basse: Hello, everyone! Is there any space for me?
 	set {first_time.first_basse} = false
 else:
-	basse: To be honest, I was little borred without your company.
+	basse: To be honest, I was little bored without your company.

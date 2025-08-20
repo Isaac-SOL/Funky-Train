@@ -1,5 +1,5 @@
 if {first_time.first_triangle} == true:
-	triangle: Hi there ! My name is Pytha, I love rockets and all geometric shape with 3 edges.
+	triangle: Hi there! My name is [color=#a53f24]Pytha[/color]. My rocket triangle car can make us go super fast!
 	set {first_time.first_triangle} = false
 else:
-	triangle: Miss me ?
+	triangle: Care to try the lightspeed ride again?

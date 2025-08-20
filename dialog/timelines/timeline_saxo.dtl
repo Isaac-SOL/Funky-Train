@@ -1,6 +1,6 @@
 [style name="default_portrait_style"]
 if {first_time.first_saxo} == true:
-	saxo: I would enjoy a little ride but I'm a bit sensitive I need a car that matches my standing, don't bother me too much.
+	saxo: The name's [color=#8ee5da]Parker[/color]. I'll go for a ride, but my car matches my standing, I'm not taking dangerous paths.
 	set {first_time.first_saxo} = false
 else:
-	saxo: Have you seen my friend Louis ?
+	saxo: Have you seen my friend [color=#e3c220]Louis[/color]?
