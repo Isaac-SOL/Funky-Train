@@ -1,0 +1,990 @@
+[gd_scene load_steps=84 format=3 uid="uid://ddei87jmflwu2"]
+
+[ext_resource type="Script" uid="uid://rytmmqnltko8" path="res://scripts/main.gd" id="1_rk4p5"]
+[ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_7tq10"]
+[ext_resource type="Resource" uid="uid://kjtlh674xflv" path="res://objects/characters/A.tres" id="3_8yhmk"]
+[ext_resource type="Resource" uid="uid://d0g3t66itnkbt" path="res://objects/characters/B.tres" id="4_j8ata"]
+[ext_resource type="Resource" uid="uid://cmu0o1vkd5een" path="res://objects/characters/C.tres" id="5_7eykx"]
+[ext_resource type="PackedScene" uid="uid://lp0v4qbqartt" path="res://objects/character_leave_button.tscn" id="5_ol44e"]
+[ext_resource type="PackedScene" uid="uid://c5pt7sikhf8db" path="res://objects/texture_character_ui.tscn" id="6_5ubli"]
+[ext_resource type="Resource" uid="uid://vx3hx6wjuujk" path="res://objects/characters/D.tres" id="6_36g7h"]
+[ext_resource type="Resource" uid="uid://cf34n44v4encj" path="res://objects/characters/E.tres" id="7_b6lr4"]
+[ext_resource type="Resource" uid="uid://bbwah2dbir55v" path="res://objects/characters/F.tres" id="8_ha36p"]
+[ext_resource type="Resource" uid="uid://cyjyqmljaf6nv" path="res://objects/characters/G.tres" id="9_jikhd"]
+[ext_resource type="Script" uid="uid://wrgu8dfp4pw3" path="res://leeklib/shaker_3d.gd" id="10_j8ata"]
+[ext_resource type="Resource" uid="uid://b0t7w0yywn1hj" path="res://objects/characters/I.tres" id="11_sxppv"]
+[ext_resource type="Resource" uid="uid://deyja52yjw00e" path="res://objects/characters/J.tres" id="12_on5gu"]
+[ext_resource type="Script" uid="uid://b2pnmy42f765x" path="res://scripts/lever_direction.gd" id="13_b6lr4"]
+[ext_resource type="Script" uid="uid://cgr64t0pp5eet" path="res://scripts/lever_speed.gd" id="14_ha36p"]
+[ext_resource type="PackedScene" uid="uid://b74sqcme40821" path="res://objects/character_signalisation.tscn" id="15_j8ata"]
+[ext_resource type="Material" uid="uid://c7w0nu4e7nymo" path="res://materials/rail_section_outline.tres" id="16_hwpaj"]
+[ext_resource type="Texture2D" uid="uid://ybqlctc10pcv" path="res://assets/textures/gamjam2025_UI_menu_curseur_horizon.png" id="17_nyyd3"]
+[ext_resource type="Texture2D" uid="uid://ba3bqlnsvsf0b" path="res://assets/textures/gamjam2025_UI_menu_curseur_diag.png" id="18_b864h"]
+[ext_resource type="Texture2D" uid="uid://8bpdjlm6ipfd" path="res://assets/textures/gamjam2025_UI_menu_curseur_main.png" id="19_bun0v"]
+[ext_resource type="Texture2D" uid="uid://dbihsdt0amhn1" path="res://assets/textures/gamjam2025_UI_menu_curseur_grab.png" id="20_2dsia"]
+[ext_resource type="Material" uid="uid://cindjmdleanrp" path="res://materials/main_screenspace.tres" id="20_ha36p"]
+[ext_resource type="Texture2D" uid="uid://bklu4tqbj4mfu" path="res://assets/textures/UI/gamjam2025_UI_menu_top_map.png" id="22_qvxoj"]
+[ext_resource type="Texture2D" uid="uid://3rla17unn8bn" path="res://assets/textures/UI/gamjam2025_UI_manette_levier.png" id="24_jikhd"]
+[ext_resource type="Texture2D" uid="uid://dr8o5lu8sg20r" path="res://assets/textures/UI/gamjam2025_UI_corde_siflet.png" id="25_yqb2n"]
+[ext_resource type="Script" uid="uid://d3muv4ahkxuu2" path="res://scripts/whistle_string.gd" id="26_1n0wa"]
+[ext_resource type="Texture2D" uid="uid://b7xc8h6iwcjel" path="res://assets/textures/UI/gamjam2025_UI_croix.png" id="26_qvxoj"]
+[ext_resource type="Texture2D" uid="uid://br1oyjrf86rmq" path="res://assets/textures/UI/gamjam2025_UI_speed_slide.png" id="27_jikhd"]
+[ext_resource type="Texture2D" uid="uid://qtslwf6xkqxj" path="res://assets/textures/UI/gamjam2025_UI_speed_sliderr.png" id="28_qvxoj"]
+[ext_resource type="Texture2D" uid="uid://cw300hiyse80y" path="res://assets/textures/UI/gamjam2025_UI_manette_empty.png" id="30_sxppv"]
+[ext_resource type="PackedScene" uid="uid://b27ky1rmtucd2" path="res://scenes/audio_manager.tscn" id="31_sxppv"]
+[ext_resource type="PackedScene" uid="uid://bqhfgqs02fntc" path="res://objects/quick_dialogue.tscn" id="33_ajnxc"]
+[ext_resource type="AudioStream" uid="uid://be0h2esq2uneg" path="res://assets/sfx/clap_1.ogg" id="33_psaan"]
+[ext_resource type="AudioStream" uid="uid://boj2lurrcpx4j" path="res://assets/sfx/clap_2.ogg" id="34_alxc0"]
+[ext_resource type="AudioStream" uid="uid://c7jpca7m84wdr" path="res://assets/sfx/clap_3.ogg" id="35_k8pig"]
+[ext_resource type="Texture2D" uid="uid://1axiy2djvugt" path="res://assets/textures/logo.png" id="35_uvcog"]
+[ext_resource type="FontFile" uid="uid://drhhe5f5p7qgn" path="res://assets/Super Frosting.ttf" id="36_4kkmd"]
+[ext_resource type="AudioStream" uid="uid://1lwcny4jq723" path="res://assets/sfx/clap_4.ogg" id="36_k43kg"]
+[ext_resource type="Texture2D" uid="uid://cc0d11r365wp1" path="res://assets/textures/gamjam2025_UI_choice.png" id="36_pi7hh"]
+[ext_resource type="AudioStream" uid="uid://yw7dwm7bpti0" path="res://assets/sfx/lever_4.ogg" id="37_alxc0"]
+[ext_resource type="Texture2D" uid="uid://bwvw24wq73u0x" path="res://assets/textures/Sans titre.png" id="38_1n0wa"]
+[ext_resource type="AudioStream" uid="uid://go73nlj4bcwu" path="res://assets/sfx/lever_3.ogg" id="38_k8pig"]
+[ext_resource type="StyleBox" uid="uid://0ucxhj7lfimq" path="res://assets/style_button_orange.tres" id="38_pi7hh"]
+[ext_resource type="StyleBox" uid="uid://cudo6djqnmi2b" path="res://assets/style_button_orange_normal.tres" id="39_c5b55"]
+[ext_resource type="AudioStream" uid="uid://bowmmerxjt5f6" path="res://assets/sfx/pop.ogg" id="42_6c0ht"]
+[ext_resource type="AudioStream" uid="uid://ck2dveafiotn7" path="res://assets/sounds/fin.ogg" id="45_m75v2"]
+[ext_resource type="Script" uid="uid://bgvijcrqwruss" path="res://addons/rhythm_notifier/rhythm_notifier.gd" id="69_kdplm"]
+[ext_resource type="Texture2D" uid="uid://bhqvoqxf43frw" path="res://assets/textures/UI/gamjam2025_UI_menu_top.png" id="76_4t7rj"]
+[ext_resource type="Shader" uid="uid://byrwhib36s4tv" path="res://materials/edge_detection.gdshader" id="77_b864h"]
+[ext_resource type="Texture2D" uid="uid://bxjhn0820cjg8" path="res://assets/textures/UI/gamjam2025_UI_manette_left.png" id="86_2dsia"]
+[ext_resource type="Texture2D" uid="uid://gbd6lyi0oyp0" path="res://assets/textures/UI/gamjam2025_UI_manette_right.png" id="87_n4ay8"]
+[ext_resource type="Texture2D" uid="uid://cd4842m4wixks" path="res://assets/textures/UI/gamjam2025_UI_menu_top_chara_icons.png" id="92_ffb6b"]
+[ext_resource type="Texture2D" uid="uid://2exhh6ej1csm" path="res://assets/textures/gamjam2025_UI_play.png" id="93_4t7rj"]
+[ext_resource type="PackedScene" uid="uid://c58shd7jer7d1" path="res://objects/character_portrait.tscn" id="93_mbn4m"]
+[ext_resource type="Texture2D" uid="uid://bscqam2d07rp7" path="res://assets/textures/gamjam2025_UI_play_2.png" id="94_te2gl"]
+[ext_resource type="Texture2D" uid="uid://df5j0xy71xrc2" path="res://assets/textures/UI/square32.png" id="95_b864h"]
+[ext_resource type="PackedScene" uid="uid://dsyhlyf0jijo4" path="res://objects/character_messages.tscn" id="118_bqn3m"]
+[ext_resource type="Texture2D" uid="uid://gnp4fiy2poxi" path="res://assets/textures/bg_game_final_contour.png" id="122_xfe2o"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gd5r5"]
+sky_top_color = Color(1, 0.866667, 0, 1)
+sky_horizon_color = Color(0.98, 0, 0.212333, 1)
+ground_horizon_color = Color(0.98, 0, 0.212333, 1)
+
+[sub_resource type="Sky" id="Sky_r5u47"]
+sky_material = SubResource("ProceduralSkyMaterial_gd5r5")
+
+[sub_resource type="Environment" id="Environment_bmein"]
+background_mode = 2
+sky = SubResource("Sky_r5u47")
+ambient_light_color = Color(0.385, 0.454, 0.55, 1)
+ambient_light_sky_contribution = 0.0
+tonemap_mode = 2
+fog_light_color = Color(0.941782, 0.947839, 0.957362, 1)
+fog_light_energy = 0.15
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajlhj"]
+albedo_color = Color(0.197831, 0.537274, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5ne2v"]
+material = SubResource("StandardMaterial3D_ajlhj")
+size = Vector2(50, 50)
+
+[sub_resource type="QuadMesh" id="QuadMesh_vdho3"]
+material = ExtResource("20_ha36p")
+size = Vector2(10, 10)
+
+[sub_resource type="Environment" id="Environment_45vgs"]
+background_mode = 1
+background_energy_multiplier = 16.0
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bun0v"]
+render_priority = -100
+shader = ExtResource("77_b864h")
+shader_parameter/sobel_max = 1.0
+shader_parameter/sobel_max_depth = 5.0
+shader_parameter/sobel_min = 1.0
+shader_parameter/sobel_min_depth = 50.0
+shader_parameter/sobel_threshold = 0.0
+shader_parameter/depth_gradient_color = Color(0, 0, 0, 1)
+shader_parameter/depth_gradient_start = 0.0
+shader_parameter/depth_gradient_end = 40.0
+shader_parameter/depth_gradient_strength = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_2dsia"]
+material = SubResource("ShaderMaterial_bun0v")
+size = Vector2(200, 200)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_rw4g1"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="GDScript" id="GDScript_bqn3m"]
+script/source = "extends RichTextLabel
+
+func _process(delta: float) -> void:
+	if not Locomotive.instance:
+		return
+	var speed_kmh := Locomotive.instance.speed * 3.6
+	var speed_kmh_text := str(int(speed_kmh * 10.0))
+	text = speed_kmh_text + \" [font_size=12]km/h\"
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_qdokm"]
+font = ExtResource("36_4kkmd")
+font_size = 48
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_up1kr"]
+texture = ExtResource("122_xfe2o")
+texture_margin_left = 57.0
+texture_margin_top = 57.0
+texture_margin_right = 57.0
+texture_margin_bottom = 57.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ajlx6"]
+font = ExtResource("36_4kkmd")
+font_size = 42
+font_color = Color(0.941176, 0.305882, 0.168627, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_b864h"]
+color = Color(0.941176, 0.901961, 0.8, 1)
+thickness = 12
+
+[sub_resource type="GDScript" id="GDScript_b864h"]
+script/source = "extends HSlider
+
+
+func _on_drag_started() -> void:
+	mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+
+
+func _on_drag_ended(value_changed: bool) -> void:
+	mouse_default_cursor_shape = Control.CURSOR_DRAG
+"
+
+[sub_resource type="GDScript" id="GDScript_5t7e2"]
+script/source = "extends TextureRect
+
+func _ready() -> void:
+	await get_tree().process_frame
+	Main.instance.rhythm_sync.beat.connect(func(_b):
+		scale = Vector2(1.02, 1.02)
+		var tween := create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
+		tween.tween_property(self, \"scale\", Vector2.ONE, 0.65)
+	)
+"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m75v2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xnq8m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yqb2n"]
+
+[sub_resource type="Theme" id="Theme_1n0wa"]
+Button/styles/hover = SubResource("StyleBoxEmpty_m75v2")
+Button/styles/normal = SubResource("StyleBoxEmpty_xnq8m")
+Button/styles/pressed = SubResource("StyleBoxEmpty_yqb2n")
+
+[sub_resource type="GDScript" id="GDScript_cnexl"]
+resource_name = "scale_on_hover"
+script/source = "@tool
+class_name ScaleOnHover extends Control
+
+@export var scale_factor: Vector2 = Vector2(1.1, 1.1)
+@export var scale_duration_in: float = 1.0
+@export var scale_duration_out: float = 1.0
+@export_tool_button(\"Center Pivot\") var center_pivot_button = center_pivot
+
+var scale_tween: Tween
+
+func _on_hover(hovering: bool):
+	if scale_tween:
+		scale_tween.kill()
+	if hovering:
+		scale_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+		scale_tween.tween_property(self, \"scale\", scale_factor, scale_duration_in)
+	else:
+		scale_tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
+		scale_tween.tween_property(self, \"scale\", Vector2.ONE, scale_duration_out)
+
+func center_pivot():
+	pivot_offset = size / 2.0
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_4kkmd"]
+font = ExtResource("36_4kkmd")
+font_size = 48
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ajnxc"]
+streams_count = 4
+stream_0/stream = ExtResource("33_psaan")
+stream_1/stream = ExtResource("34_alxc0")
+stream_2/stream = ExtResource("35_k8pig")
+stream_3/stream = ExtResource("36_k43kg")
+
+[node name="PathBaseScene" type="Node3D" node_paths=PackedStringArray("rhythm_sync")]
+script = ExtResource("1_rk4p5")
+character_list = Array[ExtResource("2_7tq10")]([ExtResource("3_8yhmk"), ExtResource("4_j8ata"), ExtResource("5_7eykx"), ExtResource("6_36g7h"), ExtResource("7_b6lr4"), ExtResource("8_ha36p"), ExtResource("9_jikhd"), ExtResource("11_sxppv"), ExtResource("12_on5gu")])
+character_leave_button_scene = ExtResource("5_ol44e")
+character_icon_scene = ExtResource("6_5ubli")
+character_signalisation_scene = ExtResource("15_j8ata")
+camera_sensitivity = Vector2(0.003, 0.003)
+quick_dialogue_scene = ExtResource("33_ajnxc")
+rhythm_sync = NodePath("AudioStreamPlayer/RhythmNotifier")
+rails_outline_material = ExtResource("16_hwpaj")
+direction_cursor = ExtResource("17_nyyd3")
+speed_cursor = ExtResource("18_b864h")
+can_grab_cursor = ExtResource("19_bun0v")
+grabbing_cursor = ExtResource("20_2dsia")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bmein")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.499999, 0.652468, -0.569464, 2.23517e-08, 0.657557, 0.753403, 0.866026, -0.376699, 0.328778, 0, 16.7499, 0)
+light_energy = 0.5
+light_indirect_energy = 8.64
+shadow_enabled = true
+directional_shadow_split_1 = 0.2
+directional_shadow_split_2 = 0.3
+directional_shadow_pancake_size = 25.0
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.94145, 0, 0, 0, 1, 0, 0, 0, 2.66728, 31.181, -0.744017, 16.9719)
+visible = false
+layers = 3
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_5ne2v")
+
+[node name="CameraShaker" type="Node3D" parent="." node_paths=PackedStringArray("target_node")]
+unique_name_in_owner = true
+transform = Transform3D(-0.501842, 0, 0.864959, 0, 1, 0, -0.864959, 0, -0.501843, -34.8821, 1.11152, -73.7172)
+script = ExtResource("10_j8ata")
+target_node = NodePath("../StartCamera")
+follow_rotation = true
+follow_global_coordinates = true
+move_speed = 8.0
+rotation_speed = 8.0
+metadata/_custom_type_script = "uid://wrgu8dfp4pw3"
+
+[node name="MainCamera" type="Camera3D" parent="CameraShaker"]
+unique_name_in_owner = true
+cull_mask = 1048573
+current = true
+
+[node name="ScreenEffect" type="MeshInstance3D" parent="CameraShaker/MainCamera"]
+transform = Transform3D(0.999966, 0, 0, 0, 0.999962, 0, 0, 0, 0.999971, 0, 0, -0.06)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_vdho3")
+skeleton = NodePath("")
+
+[node name="StartCamera" type="Marker3D" parent="."]
+transform = Transform3D(-0.501843, 0, 0.864959, 0, 1, 0, -0.864959, 0, -0.501843, -34.8821, 1.11152, -73.7172)
+
+[node name="SubViewport" type="SubViewport" parent="."]
+unique_name_in_owner = true
+size = Vector2i(512, 400)
+
+[node name="Node3D" type="Node3D" parent="SubViewport"]
+
+[node name="CameraShakerMap" type="Node3D" parent="SubViewport/Node3D"]
+unique_name_in_owner = true
+transform = Transform3D(-1, -8.74228e-08, 0, -3.82137e-15, 4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, -28.267, 50, -17.365)
+script = ExtResource("10_j8ata")
+follow_global_coordinates = true
+move_speed = 8.0
+rotation_speed = 8.0
+metadata/_custom_type_script = "uid://wrgu8dfp4pw3"
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport/Node3D/CameraShakerMap"]
+cull_mask = 1048574
+environment = SubResource("Environment_45vgs")
+projection = 1
+current = true
+size = 100.0
+
+[node name="ScreenEffect" type="MeshInstance3D" parent="SubViewport/Node3D/CameraShakerMap/Camera3D"]
+transform = Transform3D(0.999966, 0, 0, 0, 0.999962, 0, 0, 0, 0.999971, 0, 0, -0.06)
+layers = 2
+cast_shadow = 0
+mesh = SubResource("QuadMesh_2dsia")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameUI" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="WhistleControl" type="Control" parent="CanvasLayer/GameUI"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 1151.0
+offset_top = 193.0
+offset_right = 1191.0
+offset_bottom = 233.0
+pivot_offset = Vector2(58, 15)
+script = ExtResource("26_1n0wa")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/WhistleControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 30.512
+anchor_top = 0.275
+anchor_right = 30.512
+anchor_bottom = 0.275
+offset_left = -1220.48
+offset_top = -164.0
+offset_right = -1107.48
+offset_bottom = 159.0
+pivot_offset = Vector2(56, 0)
+mouse_default_cursor_shape = 6
+texture = ExtResource("25_yqb2n")
+expand_mode = 1
+
+[node name="TextureRectTop" type="TextureRect" parent="CanvasLayer/GameUI"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 272.0
+grow_horizontal = 2
+mouse_filter = 2
+texture = ExtResource("76_4t7rj")
+expand_mode = 1
+
+[node name="MinimapUI" type="Control" parent="CanvasLayer/GameUI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+
+[node name="MinimapParent" type="Node2D" parent="CanvasLayer/GameUI/MinimapUI"]
+
+[node name="Mask" type="Sprite2D" parent="CanvasLayer/GameUI/MinimapUI/MinimapParent"]
+clip_children = 1
+position = Vector2(-136, 94.25)
+scale = Vector2(0.53125, 0.505333)
+texture = ExtResource("22_qvxoj")
+
+[node name="Map" type="Sprite2D" parent="CanvasLayer/GameUI/MinimapUI/MinimapParent/Mask"]
+unique_name_in_owner = true
+position = Vector2(4.74067, -11.439)
+scale = Vector2(0.951964, 1.00247)
+texture = SubResource("ViewportTexture_rw4g1")
+
+[node name="DirectionUI" type="Control" parent="CanvasLayer/GameUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 120.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.26, 1.26)
+
+[node name="LeverPivot" type="Control" parent="CanvasLayer/GameUI/DirectionUI"]
+anchors_preset = 0
+rotation = -0.261799
+
+[node name="LeverDirection" type="TextureRect" parent="CanvasLayer/GameUI/DirectionUI/LeverPivot"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -61.0
+offset_top = -225.0
+offset_right = 139.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.615, 0.615)
+mouse_filter = 0
+mouse_default_cursor_shape = 10
+texture = ExtResource("24_jikhd")
+stretch_mode = 2
+script = ExtResource("13_b6lr4")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/DirectionUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -327.778
+offset_top = -275.397
+offset_right = 328.222
+offset_bottom = -65.3969
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.455, 0.455)
+pivot_offset = Vector2(328, 210)
+mouse_filter = 2
+texture = ExtResource("30_sxppv")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/DirectionUI/TextureRect"]
+layout_mode = 0
+offset_left = 100.754
+offset_top = 34.5247
+offset_right = 295.754
+offset_bottom = 176.525
+scale = Vector2(0.765, 0.765)
+mouse_filter = 2
+texture = ExtResource("86_2dsia")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/GameUI/DirectionUI/TextureRect"]
+layout_mode = 0
+offset_left = 419.959
+offset_top = 34.5247
+offset_right = 614.959
+offset_bottom = 176.525
+scale = Vector2(0.765, 0.765)
+mouse_filter = 2
+texture = ExtResource("87_n4ay8")
+
+[node name="SignalisationLeft" type="VBoxContainer" parent="CanvasLayer/GameUI/DirectionUI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -218.0
+offset_top = -74.0
+offset_right = -178.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+alignment = 2
+
+[node name="SignalisationRight" type="VBoxContainer" parent="CanvasLayer/GameUI/DirectionUI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 160.0
+offset_top = -166.0
+offset_right = 224.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+alignment = 2
+
+[node name="CroixLeft" type="TextureRect" parent="CanvasLayer/GameUI/DirectionUI"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 0
+offset_left = -68.254
+offset_top = -131.746
+offset_right = -43.254
+offset_bottom = -106.746
+mouse_filter = 2
+texture = ExtResource("26_qvxoj")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CroixRight" type="TextureRect" parent="CanvasLayer/GameUI/DirectionUI"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 0
+offset_left = 50.0
+offset_top = -131.746
+offset_right = 75.0
+offset_bottom = -106.746
+mouse_filter = 2
+texture = ExtResource("26_qvxoj")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="RichTextLabel" parent="CanvasLayer/GameUI/DirectionUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -87.3016
+offset_top = -129.365
+offset_right = 87.6984
+offset_bottom = -103.365
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/normal_font = ExtResource("36_4kkmd")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "10.0 [font_size=12]km/h"
+horizontal_alignment = 1
+vertical_alignment = 2
+script = SubResource("GDScript_bqn3m")
+
+[node name="SpeedUI" type="Control" parent="CanvasLayer/GameUI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/SpeedUI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -172.0
+offset_top = -172.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("27_jikhd")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="LeverSpeed" type="TextureRect" parent="CanvasLayer/GameUI/SpeedUI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -200.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = -0.558505
+pivot_offset = Vector2(195, 195)
+mouse_filter = 0
+mouse_default_cursor_shape = 11
+texture = ExtResource("28_qvxoj")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("14_ha36p")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI"]
+visible = false
+layout_mode = 0
+offset_right = 285.0
+offset_bottom = 189.0
+texture = ExtResource("92_ffb6b")
+expand_mode = 1
+
+[node name="MarginContainerCharacters" type="MarginContainer" parent="CanvasLayer/GameUI"]
+unique_name_in_owner = true
+process_mode = 4
+visible = false
+layout_mode = 0
+offset_right = 340.0
+offset_bottom = 151.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainerCharacters" type="HFlowContainer" parent="CanvasLayer/GameUI/MarginContainerCharacters"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 10
+
+[node name="MarginContainerCharacters2" type="MarginContainer" parent="CanvasLayer/GameUI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -966.0
+offset_bottom = -547.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainerCharacters2" type="HFlowContainer" parent="CanvasLayer/GameUI/MarginContainerCharacters2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 10
+
+[node name="CharacterPortrait" parent="CanvasLayer/GameUI/MarginContainerCharacters2/HBoxContainerCharacters2" instance=ExtResource("93_mbn4m")]
+layout_mode = 2
+
+[node name="CharacterPortrait2" parent="CanvasLayer/GameUI/MarginContainerCharacters2/HBoxContainerCharacters2" instance=ExtResource("93_mbn4m")]
+layout_mode = 2
+
+[node name="CharacterPortrait3" parent="CanvasLayer/GameUI/MarginContainerCharacters2/HBoxContainerCharacters2" instance=ExtResource("93_mbn4m")]
+layout_mode = 2
+
+[node name="CharacterPortrait4" parent="CanvasLayer/GameUI/MarginContainerCharacters2/HBoxContainerCharacters2" instance=ExtResource("93_mbn4m")]
+layout_mode = 2
+
+[node name="CharacterPortrait5" parent="CanvasLayer/GameUI/MarginContainerCharacters2/HBoxContainerCharacters2" instance=ExtResource("93_mbn4m")]
+layout_mode = 2
+
+[node name="CharacterPortrait6" parent="CanvasLayer/GameUI/MarginContainerCharacters2/HBoxContainerCharacters2" instance=ExtResource("93_mbn4m")]
+layout_mode = 2
+
+[node name="CharacterPortrait7" parent="CanvasLayer/GameUI/MarginContainerCharacters2/HBoxContainerCharacters2" instance=ExtResource("93_mbn4m")]
+layout_mode = 2
+
+[node name="CharacterPortrait8" parent="CanvasLayer/GameUI/MarginContainerCharacters2/HBoxContainerCharacters2" instance=ExtResource("93_mbn4m")]
+layout_mode = 2
+
+[node name="CharacterPortrait9" parent="CanvasLayer/GameUI/MarginContainerCharacters2/HBoxContainerCharacters2" instance=ExtResource("93_mbn4m")]
+layout_mode = 2
+
+[node name="CharacterMessages" parent="CanvasLayer/GameUI" instance=ExtResource("118_bqn3m")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 10.0
+offset_top = 250.0
+offset_right = -1270.0
+offset_bottom = -470.0
+
+[node name="MarginContainerDialogue" type="MarginContainer" parent="CanvasLayer/GameUI"]
+process_mode = 4
+visible = false
+layout_mode = 0
+offset_top = 220.0
+offset_right = 293.0
+offset_bottom = 645.0
+
+[node name="VBoxContainerDialogue" type="VBoxContainer" parent="CanvasLayer/GameUI/MarginContainerDialogue"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="QuickDialogue" parent="CanvasLayer/GameUI/MarginContainerDialogue/VBoxContainerDialogue" instance=ExtResource("33_ajnxc")]
+visible = false
+layout_mode = 2
+
+[node name="QuickDialogue2" parent="CanvasLayer/GameUI/MarginContainerDialogue/VBoxContainerDialogue" instance=ExtResource("33_ajnxc")]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainerStationGrab" type="Control" parent="CanvasLayer/GameUI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -359.0
+offset_top = -371.0
+offset_right = 337.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI/MarginContainerStationGrab"]
+layout_mode = 2
+offset_right = 696.0
+offset_bottom = 296.0
+mouse_filter = 2
+texture = ExtResource("36_pi7hh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LabelTitre" type="Label" parent="CanvasLayer/GameUI/MarginContainerStationGrab"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 12.0
+offset_top = 64.0
+offset_right = 708.0
+offset_bottom = 179.0
+text = "Un nouveau perso !"
+label_settings = SubResource("LabelSettings_qdokm")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GameUI/MarginContainerStationGrab"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 174.0
+offset_top = 6.0
+offset_right = -117.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="ButtonPrendre" type="Button" parent="CanvasLayer/GameUI/MarginContainerStationGrab/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("36_4kkmd")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = ExtResource("38_pi7hh")
+theme_override_styles/normal = ExtResource("39_c5b55")
+text = "Take them"
+
+[node name="ButtonLaisser" type="Button" parent="CanvasLayer/GameUI/MarginContainerStationGrab/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("36_4kkmd")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = ExtResource("38_pi7hh")
+theme_override_styles/normal = ExtResource("39_c5b55")
+text = "Leave them"
+
+[node name="PanelStationPut" type="Panel" parent="CanvasLayer/GameUI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 321.0
+offset_top = 34.0
+offset_right = -312.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_up1kr")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/GameUI/PanelStationPut"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 57
+theme_override_constants/margin_top = 57
+theme_override_constants/margin_right = 57
+theme_override_constants/margin_bottom = 57
+
+[node name="VBoxContainerPutChar" type="VBoxContainer" parent="CanvasLayer/GameUI/PanelStationPut/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/GameUI/PanelStationPut/MarginContainer/VBoxContainerPutChar"]
+layout_mode = 2
+text = "Who do we leave here ?"
+label_settings = SubResource("LabelSettings_ajlx6")
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/GameUI/PanelStationPut/MarginContainer/VBoxContainerPutChar"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainerLeaveButtons" type="VBoxContainer" parent="CanvasLayer/GameUI/PanelStationPut/MarginContainer/VBoxContainerPutChar/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ButtonNoOne" type="Button" parent="CanvasLayer/GameUI/PanelStationPut/MarginContainer/VBoxContainerPutChar"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("36_4kkmd")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/hover = ExtResource("38_pi7hh")
+theme_override_styles/normal = ExtResource("39_c5b55")
+text = "No one"
+
+[node name="VolumeUI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VolumeUI"]
+layout_mode = 0
+offset_left = -90.0
+offset_top = -31.0
+offset_right = 307.0
+offset_bottom = 96.0
+texture = ExtResource("30_sxppv")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="HSliderVolume" type="HSlider" parent="CanvasLayer/VolumeUI"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = -2.0
+offset_right = 234.0
+offset_bottom = 30.0
+mouse_default_cursor_shape = 6
+theme_override_icons/grabber = ExtResource("95_b864h")
+theme_override_icons/grabber_highlight = ExtResource("95_b864h")
+theme_override_styles/slider = SubResource("StyleBoxLine_b864h")
+max_value = 0.7
+step = 0.0
+value = 0.5
+script = SubResource("GDScript_b864h")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/VolumeUI"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -6.0
+offset_right = 48.0
+offset_bottom = 34.0
+texture = ExtResource("38_1n0wa")
+expand_mode = 1
+
+[node name="ControlStart" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ControlStart"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 64.0
+offset_right = 647.0
+offset_bottom = 258.0
+rotation = -0.260054
+pivot_offset = Vector2(300, 100)
+texture = ExtResource("35_uvcog")
+expand_mode = 1
+stretch_mode = 4
+script = SubResource("GDScript_5t7e2")
+
+[node name="ButtonStart" type="TextureButton" parent="CanvasLayer/ControlStart"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 214.0
+offset_top = 400.0
+offset_right = 505.0
+offset_bottom = 532.0
+pivot_offset = Vector2(145.5, 66)
+theme = SubResource("Theme_1n0wa")
+texture_normal = ExtResource("93_4t7rj")
+texture_hover = ExtResource("94_te2gl")
+ignore_texture_size = true
+stretch_mode = 0
+script = SubResource("GDScript_cnexl")
+scale_factor = Vector2(1.2, 1.2)
+scale_duration_in = 0.2
+scale_duration_out = 0.6
+
+[node name="ControlEnd" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="LabelCredits" type="Label" parent="CanvasLayer/ControlEnd"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 50.0
+offset_top = 103.0
+offset_right = 802.0
+offset_bottom = 218.0
+text = "Funky Train:
+Jumbo Quest for Mumbo Friends"
+label_settings = SubResource("LabelSettings_4kkmd")
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("31_sxppv")]
+unique_name_in_owner = true
+
+[node name="RhythmNotifier" type="Node" parent="AudioStreamPlayer" node_paths=PackedStringArray("audio_stream_player")]
+script = ExtResource("69_kdplm")
+bpm = 90.0
+beat_length = 0.666667
+audio_stream_player = NodePath("..")
+metadata/_custom_type_script = "uid://bgvijcrqwruss"
+
+[node name="AudioStreamPlayerAttachDetach" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_ajnxc")
+volume_db = 5.0
+max_polyphony = 2
+bus = &"SFX"
+
+[node name="AudioStreamLever" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("37_alxc0")
+volume_db = -5.0
+max_polyphony = 4
+bus = &"SFX"
+
+[node name="AudioStreamLeverSpeed" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("38_k8pig")
+volume_db = -5.0
+max_polyphony = 8
+bus = &"SFX"
+
+[node name="AudioStreamPop" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("42_6c0ht")
+volume_db = 15.0
+max_polyphony = 8
+bus = &"SFX"
+
+[node name="AudioStreamFin" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("45_m75v2")
+volume_db = 7.0
+max_polyphony = 8
+bus = &"SFX"
+
+[connection signal="gui_input" from="CanvasLayer/GameUI/DirectionUI/LeverPivot/LeverDirection" to="CanvasLayer/GameUI/DirectionUI/LeverPivot/LeverDirection" method="_on_gui_input"]
+[connection signal="mouse_entered" from="CanvasLayer/GameUI/DirectionUI/LeverPivot/LeverDirection" to="CanvasLayer/GameUI/DirectionUI/LeverPivot/LeverDirection" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/GameUI/DirectionUI/LeverPivot/LeverDirection" to="CanvasLayer/GameUI/DirectionUI/LeverPivot/LeverDirection" method="_on_mouse_exited"]
+[connection signal="gui_input" from="CanvasLayer/GameUI/SpeedUI/LeverSpeed" to="CanvasLayer/GameUI/SpeedUI/LeverSpeed" method="_on_gui_input"]
+[connection signal="pressed" from="CanvasLayer/GameUI/MarginContainerStationGrab/HBoxContainer/ButtonPrendre" to="." method="_on_button_prendre_pressed"]
+[connection signal="pressed" from="CanvasLayer/GameUI/MarginContainerStationGrab/HBoxContainer/ButtonLaisser" to="." method="_on_button_laisser_pressed"]
+[connection signal="pressed" from="CanvasLayer/GameUI/PanelStationPut/MarginContainer/VBoxContainerPutChar/ButtonNoOne" to="." method="_on_button_no_one_pressed"]
+[connection signal="drag_ended" from="CanvasLayer/VolumeUI/HSliderVolume" to="CanvasLayer/VolumeUI/HSliderVolume" method="_on_drag_ended"]
+[connection signal="drag_started" from="CanvasLayer/VolumeUI/HSliderVolume" to="CanvasLayer/VolumeUI/HSliderVolume" method="_on_drag_started"]
+[connection signal="value_changed" from="CanvasLayer/VolumeUI/HSliderVolume" to="." method="_on_h_slider_volume_value_changed"]
+[connection signal="mouse_entered" from="CanvasLayer/ControlStart/ButtonStart" to="CanvasLayer/ControlStart/ButtonStart" method="_on_hover" binds= [true]]
+[connection signal="mouse_exited" from="CanvasLayer/ControlStart/ButtonStart" to="CanvasLayer/ControlStart/ButtonStart" method="_on_hover" binds= [false]]
+[connection signal="pressed" from="CanvasLayer/ControlStart/ButtonStart" to="." method="_on_button_start_pressed"]
+[connection signal="beat" from="AudioStreamPlayer/RhythmNotifier" to="." method="_on_rhythm_notifier_beat"]

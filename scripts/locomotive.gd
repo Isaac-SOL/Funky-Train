@@ -61,16 +61,24 @@ func _process(delta: float) -> void:
 			if speed < target_speed:
 				speed = target_speed
 	
-	# Stop at stations
+	# Moving code
 	
 	var next_station = get_section().get_next_station(progress)
+	var next_interruptor = get_section().get_next_interruptor(progress)
 	var temp_progress := progress + delta * speed
 	if speed_mode != SpeedMode.FAST and next_station and next_station.progress < temp_progress:
+		# Stop at stations
 		progress = next_station.progress
 		speed = 0.0
 		locked = true
 		Main.instance.stop_at_station(next_station)
 	else:
+		# Press interruptors
+		if next_interruptor and next_interruptor.progress < temp_progress:
+			next_interruptor.press()
+			update_crosses()
+			update_rail_outlines()
+		# Move forward
 		if temp_progress > curr_section_length:
 			temp_progress -= curr_section_length
 			change_section(next_section())
@@ -127,21 +135,32 @@ func check_requirements(req_list: Array[String]) -> bool:
 	return true
 
 func check_direction_valid() -> bool:
-	if direction:
-		return check_requirements(get_section().out_requirements_2)
+	if get_section().is_toggled:
+		return direction == get_section().current_direction_right
 	else:
-		return check_requirements(get_section().out_requirements_1)
+		if direction:
+			return check_requirements(get_section().out_requirements_2)
+		else:
+			return check_requirements(get_section().out_requirements_1)
 
 func set_main_directions_valid():
-	Main.instance.set_direction_valid(
-		check_requirements(get_section().out_requirements_1),
-		check_requirements(get_section().out_requirements_2)
-	)
+	if get_section().is_toggled:
+		Main.instance.set_direction_valid(
+			not get_section().current_direction_right,
+			get_section().current_direction_right
+		)
+	else:
+		Main.instance.set_direction_valid(
+			check_requirements(get_section().out_requirements_1),
+			check_requirements(get_section().out_requirements_2)
+		)
 
 func next_section() -> RailSection:
 	var out_sections := get_section().out_sections
 	if out_sections.size() == 1:
 		return out_sections[0]
+	if get_section().is_toggled:
+		return out_sections[1 if get_section().current_direction_right else 0]
 	var eff_out_sections: Array[RailSection] = []
 	if check_requirements(get_section().out_requirements_1):
 		eff_out_sections.append(out_sections[0])
@@ -246,6 +265,24 @@ func get_visible_center() -> Vector3:
 
 func get_visible_extent() -> Vector3:
 	return %VisibleExtent.global_position
+
+func get_camera_pivot_x() -> Node3D:
+	return %CameraPivotX
+
+func get_camera_pivot_y() -> Node3D:
+	return %CameraPivotY
+
+func get_camera_follow_pos() -> Node3D:
+	return %CameraFollowPos
+
+func get_camera_loop_pos() -> Node3D:
+	return %CameraLoopPos
+
+func get_minimap_pos() -> Node3D:
+	return %MinimapPos
+
+func get_end_pos() -> Node3D:
+	return %EndPos
 
 #func imgui():
 	#ImGui.Begin("Locomotive")

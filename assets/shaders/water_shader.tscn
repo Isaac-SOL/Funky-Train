@@ -1,12 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddhc7hdytvuvf"]
+[gd_scene load_steps=6 format=3 uid="uid://ddhc7hdytvuvf"]
 
-[ext_resource type="Material" uid="uid://c11mim0c33c8c" path="res://assets/shaders/water_mat.tres" id="1_55vog"]
+[ext_resource type="Texture2D" uid="uid://b4035n88f7ylr" path="res://assets/textures/water/water_1_uni.bmp" id="1_55vog"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_55vog"]
+shading_mode = 0
+albedo_texture = ExtResource("1_55vog")
+uv1_scale = Vector3(20, 20, 20)
 
 [sub_resource type="QuadMesh" id="QuadMesh_xs01w"]
-material = ExtResource("1_55vog")
+material = SubResource("StandardMaterial3D_55vog")
+size = Vector2(1000, 1000)
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hr7d7"]
+transparency = 4
+shading_mode = 0
+albedo_texture = ExtResource("1_55vog")
+uv1_scale = Vector3(20, 20, 20)
+
+[sub_resource type="QuadMesh" id="QuadMesh_5fhv7"]
+material = SubResource("StandardMaterial3D_hr7d7")
 size = Vector2(1000, 1000)
 orientation = 1
 
 [node name="water_shader" type="MeshInstance3D"]
+layers = 3
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_xs01w")
+
+[node name="water_shader" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+layers = 3
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_5fhv7")

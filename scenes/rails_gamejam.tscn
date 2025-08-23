@@ -1,0 +1,1312 @@
+[gd_scene load_steps=144 format=3 uid="uid://cq76mgiooqjlk"]
+
+[ext_resource type="Script" uid="uid://hcgv0grqqm7y" path="res://scripts/rails_master.tres.gd" id="1_8wolm"]
+[ext_resource type="PackedScene" uid="uid://c7adtd3m5hihf" path="res://objects/rail_section.tscn" id="1_of01x"]
+[ext_resource type="ArrayMesh" uid="uid://dttkbhw8gyv1k" path="res://meshes/rails/RailS4.tres" id="2_8wolm"]
+[ext_resource type="ArrayMesh" uid="uid://mkw1e417poma" path="res://meshes/rails/RailS4_minimap.tres" id="3_8s57r"]
+[ext_resource type="PackedScene" uid="uid://dcpxd04n7oj0i" path="res://objects/station.tscn" id="4_xgdko"]
+[ext_resource type="Resource" uid="uid://cmu0o1vkd5een" path="res://objects/characters/C.tres" id="5_p31lq"]
+[ext_resource type="PackedScene" uid="uid://dj3gds7lk50n6" path="res://objects/dialogic_trigger.tscn" id="6_dhfuy"]
+[ext_resource type="Script" uid="uid://di4q8eju5txb1" path="res://scripts/dialogue_info.gd" id="7_165mx"]
+[ext_resource type="Resource" uid="uid://bbwah2dbir55v" path="res://objects/characters/F.tres" id="8_phdhv"]
+[ext_resource type="ArrayMesh" uid="uid://dtmtdn42vqe4q" path="res://meshes/rails/RailS4_S6_bridge.tres" id="9_o0t5c"]
+[ext_resource type="ArrayMesh" uid="uid://c6fhbqyyloy2a" path="res://meshes/rails/RailS4_S6_bridge_minimap.tres" id="10_ca3jj"]
+[ext_resource type="Resource" uid="uid://kjtlh674xflv" path="res://objects/characters/A.tres" id="11_iln4g"]
+[ext_resource type="Resource" uid="uid://d0g3t66itnkbt" path="res://objects/characters/B.tres" id="12_pvikb"]
+[ext_resource type="ArrayMesh" uid="uid://bun4jork04afr" path="res://meshes/rails/RailS4_S11.tres" id="13_b2ljr"]
+[ext_resource type="ArrayMesh" uid="uid://d1rcw5w3h8ugi" path="res://meshes/rails/RailS4_S11_minimap.tres" id="14_d6v6k"]
+[ext_resource type="ArrayMesh" uid="uid://y6ogfx0j4pht" path="res://meshes/rails/RailS11.tres" id="15_ofv2g"]
+[ext_resource type="ArrayMesh" uid="uid://dcg4pmtvltl0f" path="res://meshes/rails/RailS11_minimap.tres" id="16_umo86"]
+[ext_resource type="Resource" uid="uid://b0t7w0yywn1hj" path="res://objects/characters/I.tres" id="17_wop8t"]
+[ext_resource type="ArrayMesh" uid="uid://djlr6nlcd88n4" path="res://meshes/rails/RailS11_fork.tres" id="18_jqkcp"]
+[ext_resource type="ArrayMesh" uid="uid://bx2k00fas45ro" path="res://meshes/rails/RailS11_fork_minimap.tres" id="19_opi20"]
+[ext_resource type="Resource" uid="uid://cf34n44v4encj" path="res://objects/characters/E.tres" id="20_c4c48"]
+[ext_resource type="ArrayMesh" uid="uid://dhrt5siko0x8r" path="res://meshes/rails/RailS11_fork2.tres" id="21_xq5hs"]
+[ext_resource type="ArrayMesh" uid="uid://cf153dbucqt5h" path="res://meshes/rails/RailS11_fork2_minimap.tres" id="22_v0qyo"]
+[ext_resource type="ArrayMesh" uid="uid://cg1ssd7b7j7yv" path="res://meshes/rails/RailS11_fork3.tres" id="23_osjgq"]
+[ext_resource type="ArrayMesh" uid="uid://0nw3i40e0twc" path="res://meshes/rails/RailS11_fork3_minimap.tres" id="24_xx8t1"]
+[ext_resource type="ArrayMesh" uid="uid://dq61qvyxjy86w" path="res://meshes/rails/RailS7.tres" id="25_tyf0x"]
+[ext_resource type="ArrayMesh" uid="uid://ycmw58b461p1" path="res://meshes/rails/RailS7_minimap.tres" id="26_yeyp4"]
+[ext_resource type="ArrayMesh" uid="uid://ckuatuwr6fr0d" path="res://meshes/rails/Rail_pre_S5.tres" id="27_ddbfv"]
+[ext_resource type="ArrayMesh" uid="uid://doedwc3hmi3vy" path="res://meshes/rails/Rail_pre_S5_minimap.tres" id="28_i43bb"]
+[ext_resource type="ArrayMesh" uid="uid://h7bs1hk6gf4u" path="res://meshes/rails/RailS5.tres" id="29_fm7m7"]
+[ext_resource type="ArrayMesh" uid="uid://cdyadlcpn3wn4" path="res://meshes/rails/RailS5_minimap.tres" id="30_rn2mi"]
+[ext_resource type="Resource" uid="uid://cyjyqmljaf6nv" path="res://objects/characters/G.tres" id="31_8nvo7"]
+[ext_resource type="ArrayMesh" uid="uid://clexao5yymery" path="res://meshes/bridgeRail5.tres" id="32_gdtuo"]
+[ext_resource type="ArrayMesh" uid="uid://baxkww6g3dt86" path="res://meshes/rails/RailS5_Plus.tres" id="33_0tonv"]
+[ext_resource type="ArrayMesh" uid="uid://brqa3h77todge" path="res://meshes/rails/RailS5_Plus_minimap.tres" id="34_kl014"]
+[ext_resource type="ArrayMesh" uid="uid://ch4hctl3iw0je" path="res://meshes/rails/Rail_pre_S6.tres" id="35_4nvre"]
+[ext_resource type="ArrayMesh" uid="uid://clmxgsodwyjva" path="res://meshes/rails/Rail_pre_S6_minimap.tres" id="36_i7j54"]
+[ext_resource type="ArrayMesh" uid="uid://b3x5nc0ewx3en" path="res://meshes/rails/RailS6.tres" id="37_2fj36"]
+[ext_resource type="ArrayMesh" uid="uid://b7tvq3xp1wen7" path="res://meshes/rails/RailS6_minimap.tres" id="38_n66yj"]
+[ext_resource type="ArrayMesh" uid="uid://byhf8g38yukw1" path="res://meshes/rails/Rail_skip_S8.tres" id="39_6x7ix"]
+[ext_resource type="ArrayMesh" uid="uid://b7crlxdm04hxx" path="res://meshes/rails/Rail_skip_S8_minimap.tres" id="40_e8yu7"]
+[ext_resource type="ArrayMesh" uid="uid://bnryxoi4h1inq" path="res://meshes/rails/RailS8.tres" id="41_wncx7"]
+[ext_resource type="ArrayMesh" uid="uid://bljw0eyl6q5iv" path="res://meshes/rails/RailS8_minimap.tres" id="42_0s2gl"]
+[ext_resource type="ArrayMesh" uid="uid://bciph5m563166" path="res://meshes/rails/RailS8_S7.tres" id="43_n506l"]
+[ext_resource type="ArrayMesh" uid="uid://bswxaf2qk24rh" path="res://meshes/rails/RailS8_S7_minimap.tres" id="44_5om47"]
+[ext_resource type="ArrayMesh" uid="uid://capoxp4y78kl5" path="res://meshes/rails/RailS8_S1.tres" id="45_yvx2b"]
+[ext_resource type="ArrayMesh" uid="uid://b3ht1jwvhbhdl" path="res://meshes/rails/RailS8_S1_minimap.tres" id="46_whlru"]
+[ext_resource type="ArrayMesh" uid="uid://caiwxq4l8gvsb" path="res://meshes/rails/Rail_pre_S1.tres" id="47_mgxt2"]
+[ext_resource type="ArrayMesh" uid="uid://dbpjidyvkbbuh" path="res://meshes/rails/Rail_pre_S1_minimap.tres" id="48_i40dq"]
+[ext_resource type="ArrayMesh" uid="uid://drd10vtlowukc" path="res://meshes/rails/RailS1.tres" id="49_6bdow"]
+[ext_resource type="ArrayMesh" uid="uid://cmg3n2goccgum" path="res://meshes/rails/RailS1_minimap.tres" id="50_5lpjm"]
+[ext_resource type="Resource" uid="uid://deyja52yjw00e" path="res://objects/characters/J.tres" id="51_cphn7"]
+[ext_resource type="ArrayMesh" uid="uid://cgn4k24jf3mnn" path="res://meshes/rails/RailS9.tres" id="52_euhsu"]
+[ext_resource type="ArrayMesh" uid="uid://objpr4w2pr8j" path="res://meshes/rails/RailS9_minimap.tres" id="53_oalad"]
+[ext_resource type="ArrayMesh" uid="uid://br7r1jn87f6cd" path="res://meshes/rails/RailS9_S2.tres" id="54_xcmgw"]
+[ext_resource type="ArrayMesh" uid="uid://dyh43q4l2xxie" path="res://meshes/rails/RailS9_S2_minimap.tres" id="55_0krjq"]
+[ext_resource type="ArrayMesh" uid="uid://cl4k04f8rppj0" path="res://meshes/rails/RailS2S3.tres" id="56_x1b61"]
+[ext_resource type="ArrayMesh" uid="uid://vf6buh3amha2" path="res://meshes/rails/RailS2S3_minimap.tres" id="57_u5xkk"]
+[ext_resource type="ArrayMesh" uid="uid://corqumdyp36c" path="res://meshes/rails/RailS3_S4.tres" id="58_c7pk6"]
+[ext_resource type="ArrayMesh" uid="uid://dtuk8ukqopnak" path="res://meshes/rails/RailS3_S4_minimap.tres" id="59_yj3y8"]
+[ext_resource type="ArrayMesh" uid="uid://blbo6460ra8bp" path="res://meshes/rails/RailS3_S1.tres" id="60_tdup3"]
+[ext_resource type="ArrayMesh" uid="uid://cg3gtk3slt244" path="res://meshes/rails/RailS3_S1_minimap.tres" id="61_tw6k7"]
+[ext_resource type="ArrayMesh" uid="uid://cbbm5vkgt284" path="res://scenes/bridgeRailBig.tres" id="62_udqb1"]
+[ext_resource type="ArrayMesh" uid="uid://dyilve3dabwk" path="res://meshes/rails/RailS10.tres" id="63_nbyei"]
+[ext_resource type="ArrayMesh" uid="uid://8agafw5ws7du" path="res://meshes/rails/RailS10_minimap.tres" id="64_0uecg"]
+[ext_resource type="Resource" uid="uid://vx3hx6wjuujk" path="res://objects/characters/D.tres" id="65_g80f5"]
+[ext_resource type="ArrayMesh" uid="uid://xmsd7vcna1ms" path="res://meshes/rails/RailStart.tres" id="66_pvcad"]
+[ext_resource type="ArrayMesh" uid="uid://bs0ycb4i1ryfh" path="res://meshes/rails/RailStart_minimap.tres" id="67_toogn"]
+[ext_resource type="PackedScene" uid="uid://b2gtvjpbbcs2j" path="res://objects/locomotive.tscn" id="68_7lbqu"]
+[ext_resource type="ArrayMesh" uid="uid://vh7qtkqh5jr0" path="res://meshes/rails/RailStartIntR.tres" id="69_ab3d6"]
+[ext_resource type="ArrayMesh" uid="uid://dfarn2wa0jpeh" path="res://meshes/rails/RailStartIntR_minimap.tres" id="70_j6y44"]
+[ext_resource type="ArrayMesh" uid="uid://dtfsspkrepk83" path="res://meshes/rails/RailStartIntL.tres" id="71_24v6h"]
+[ext_resource type="ArrayMesh" uid="uid://b7cue8xd2smgo" path="res://meshes/rails/RailStartIntL_minimap.tres" id="72_6dpas"]
+[ext_resource type="ArrayMesh" uid="uid://c0tuxberaql36" path="res://meshes/rails/RailToOut.tres" id="73_hqupx"]
+[ext_resource type="ArrayMesh" uid="uid://h1h8bm048l06" path="res://meshes/rails/RailToOut_minimap.tres" id="74_rk1ld"]
+[ext_resource type="ArrayMesh" uid="uid://b103ck73ihk53" path="res://meshes/rails/RailPostOutL.tres" id="75_ip34t"]
+[ext_resource type="ArrayMesh" uid="uid://3h3shn7c840p" path="res://meshes/rails/RailPostOutL_minimap.tres" id="76_r2bbi"]
+[ext_resource type="ArrayMesh" uid="uid://fbt78qn7pq0u" path="res://meshes/rails/RailPostOutL2.tres" id="77_m8bwm"]
+[ext_resource type="ArrayMesh" uid="uid://b2uq5vxejqlvf" path="res://meshes/rails/RailPostOutL2_minimap.tres" id="78_fjeo5"]
+[ext_resource type="ArrayMesh" uid="uid://bcjp4mvqw0gti" path="res://meshes/rails/RailTutoChoice.tres" id="79_5s6yi"]
+[ext_resource type="ArrayMesh" uid="uid://ejrdpqjsfn81" path="res://meshes/rails/RailTutoChoice_minimap.tres" id="80_oeha3"]
+[ext_resource type="ArrayMesh" uid="uid://crxh2pysafn8y" path="res://meshes/rails/RailTutoChoiceL.tres" id="81_4ru5f"]
+[ext_resource type="ArrayMesh" uid="uid://mss7x1krrbf2" path="res://meshes/rails/RailTutoChoiceL_minimap.tres" id="82_q8ct8"]
+[ext_resource type="ArrayMesh" uid="uid://bx2rtajph2xcb" path="res://meshes/rails/RailTutoChoiceLL.tres" id="83_eimau"]
+[ext_resource type="ArrayMesh" uid="uid://c33cg7paui3rq" path="res://meshes/rails/RailTutoChoiceLL_minimap.tres" id="84_sggws"]
+[ext_resource type="ArrayMesh" uid="uid://b6d70mll40xmu" path="res://meshes/rails/RailTutoChoiceLR.tres" id="85_ogv2p"]
+[ext_resource type="ArrayMesh" uid="uid://de3scv7in4dmb" path="res://meshes/rails/RailTutoChoiceLR_minimap.tres" id="86_rhmbt"]
+[ext_resource type="ArrayMesh" uid="uid://cjfo32uo0gx4g" path="res://meshes/rails/RailExit.tres" id="87_0hglx"]
+[ext_resource type="ArrayMesh" uid="uid://clg8jgf70yn20" path="res://meshes/rails/RailExit_minimap.tres" id="88_j0dlk"]
+
+[sub_resource type="Curve3D" id="Curve3D_0em68"]
+_data = {
+"points": PackedVector3Array(-3.18665, 0, 0.00383526, 3.18665, 0, -0.00383526, 0, 0, 0, -2.91532, 0, -0.00383526, 2.91532, 0, 0.00383526, 16.9347, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Resource" id="Resource_uvcog"]
+script = ExtResource("7_165mx")
+character = ExtResource("8_phdhv")
+text = "Take a left! We're going for a ride!"
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Curve3D" id="Curve3D_58e0p"]
+_data = {
+"points": PackedVector3Array(-3.18665, 0, 0.00383526, 2.91532, 0, 0.00383526, 0, 0, 0, -0.0616646, 0, 4.56317, 0.0616646, 0, -4.56317, 8.97926, 0, -5.43315, 2.47955e-05, 0.015183, 2.61061, -2.47955e-05, -0.015183, -2.61061, 8.83071, 0.0262146, -15.1324, -0.0166016, -1.38426, 0.468864, 0.0166016, 1.38426, -0.468864, 8.7854, 1.19943, -22.7052, 0, 0, -2.12105, 0, 0, 2.12105, 9.14294, 4.86103, -19.6911, -0.00012207, 1.56288, 0.357229, 0.00012207, -1.56288, -0.357229, 9.92422, 1.42272, -17.0042, -0.698635, -0.00817871, 2.58191, 0.698635, 0.00817871, -2.58191, 10.8439, -0.0371175, -26.8532, -2.94642, 0, 2.00478, 2.94642, 0, -2.00478, 14.4889, -8.10623e-06, -33.5662, -3.26869, 8.10623e-06, 0.233494, 3.26869, -8.10623e-06, -0.233494, 24.7862, -8.10623e-06, -35.814, -7.05278, 0, -0.287865, 0, 0, 0, 43.824, 0, -35.8946),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0.465552, 0.448871, 0.427589, 0.445439)
+}
+point_count = 10
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_on5gu"]
+size = Vector3(9.7594, 9.43994, 9.14769)
+
+[sub_resource type="Resource" id="Resource_gck0h"]
+script = ExtResource("7_165mx")
+character = ExtResource("11_iln4g")
+text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Resource" id="Resource_782co"]
+script = ExtResource("7_165mx")
+character = ExtResource("11_iln4g")
+text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+time = 6.75
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Resource" id="Resource_1h62p"]
+script = ExtResource("7_165mx")
+character = ExtResource("12_pvikb")
+text = "LMA0000000000000000000000"
+time = 5.0
+indentation = 1
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Curve3D" id="Curve3D_q32ya"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 2.91532, 0, 0.00383526, 0, 0, 0, -2.89839, 0, -0.0491591, 2.89839, 0, 0.0491591, 16.9347, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_4vm3s"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 2.89839, 0, 0.0491591, 0, 0, 0, -3.22351, 0, -0.0617786, 3.22351, 0, 0.0617786, 16.9347, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Resource" id="Resource_ajnxc"]
+script = ExtResource("7_165mx")
+character = ExtResource("17_wop8t")
+text = "We should go meet [color=#e948b2]Stevyyye![color=white] Take a ryyyght!"
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Curve3D" id="Curve3D_h5p03"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 3.22351, 0, 0.0617786, 0, 0, 0, -0.0453262, 0, 9.60894, 0.0453262, 0, -9.60894, 17.3541, 0, -9.39877),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Resource" id="Resource_3xitk"]
+script = ExtResource("7_165mx")
+character = ExtResource("20_c4c48")
+text = "Don't follow that twisty path please! My long carriage can't handle that."
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Curve3D" id="Curve3D_5hpoa"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 0.0453262, 0, -9.60894, 0, 0, 0, 3.58069, 0, 0, -3.58069, 0, 0, -8.25165, 0, -10.7408, 3.58069, 0, 0, 0, 0, 0, -28.2235, 0, -10.6012),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_50cgf"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 0.0453262, 0, -9.60894, 0, 0, 0, -3.27033, 0, -3.45457, 3.27033, 0, 3.45457, 7.3864, -8.10623e-06, -6.96068, -2.76366, 0, -2.48729, 2.76366, 0, 2.48729, 18.1186, -8.10623e-06, 3.31091, 0.863609, 0, 12.1624, -0.863609, 0, -12.1624, 24.638, 0, -6.27773),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Curve3D" id="Curve3D_5xo5t"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -0.863609, 0, -12.1624, 0, 0, 0, 5.75579, 0, -0.947386, -5.75579, 0, 0.947386, -15.1462, -8.10623e-06, -8.30569, 3.58069, 0, 0, -14.6813, 0, 4.17409, -32.3298, -8.10623e-06, -7.831),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Resource" id="Resource_6c0ht"]
+script = ExtResource("7_165mx")
+character = ExtResource("12_pvikb")
+text = "N0 way 1'm climbing that h1ll 0n the r1ght"
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Resource" id="Resource_bqn3m"]
+script = ExtResource("7_165mx")
+character = ExtResource("11_iln4g")
+text = "Come on dude, really?"
+time = 5.0
+indentation = 1
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Curve3D" id="Curve3D_la7dy"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -3.58069, 0, 0, 0, 0, 0, 3.07452, -3.8147e-06, -1.19551, -3.07452, 3.8147e-06, 1.19551, -10.5882, 3.8147e-06, 1.81453, 3.58069, 0, 0, -3.58069, 0, 0, -20.5317, 8.10623e-06, 3.5075),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_kkyah"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -3.58069, 0, 0, 0, 0, 0, 3.58069, 0, 0, -3.58069, 0, 0, -14.236, 2.00218, 0.139595, 5.61147, 0, -0.0616627, -5.61147, 0, 0.0616627, -34.4689, 0, 0.102537, 0.67831, 0, -10.113, -0.67831, 0, 10.113, -50.1317, 0, 8.85889),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Curve3D" id="Curve3D_782co"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -0.67831, 0, 10.113, 0, 0, 0, -3.18665, 0, 0.00383526, -3.58069, 0, 0, 10.197, 0, 11.1411),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_vafob"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -3.58069, 0, 0, 0, 0, 0, 0.122089, 0, 3.7441, -0.122089, 0, -3.7441, -7.5083, 1.79081, -5.80505, -7.05278, 0, -0.287865, 7.05278, 0, 0.287865, 0.292305, 8.10623e-06, -12.3871),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_fork7"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 7.05278, 0, 0.287865, 0, 0, 0, -10.4926, 0, -0.23365, 10.4926, 0, 0.23365, 20.4978, -8.10623e-06, -0.422661, -5.82934, 0, -5.32556, 5.82934, 0, 5.32556, 42.4056, 0, 7.20153),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Resource" id="Resource_4kkmd"]
+script = ExtResource("7_165mx")
+character = ExtResource("11_iln4g")
+text = "Hey [color=#27592e]Kim[/color], we could clear that path on the right!"
+time = 6.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Resource" id="Resource_m75v2"]
+script = ExtResource("7_165mx")
+character = ExtResource("5_p31lq")
+text = "Sure!"
+time = 5.0
+indentation = 1
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Resource" id="Resource_xnq8m"]
+script = ExtResource("7_165mx")
+character = ExtResource("11_iln4g")
+text = "I could clear that right path with [color=#27592e]Kim[/color] if we found him!"
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Resource" id="Resource_yqb2n"]
+script = ExtResource("7_165mx")
+character = ExtResource("5_p31lq")
+text = "I could clear the rightmost path, but I'm gonna need [color=#e948b2]Stevie's[/color] help for that."
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Curve3D" id="Curve3D_hwpaj"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 5.82934, 0, 5.32556, 0, 0, 0, -8.83099, 0, -13.8062, 8.83099, 0, 13.8062, 28.8668, 0, 26.3689, 1.3057, 0, -18.7149, -0.266418, 0, 11.8554, 34.2527, 0, 77.406),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_rw4g1"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 5.82934, 0, 5.32556, 0, 0, 0, -2.50691, 0, -7.05847, 2.50691, 0, 7.05847, 11.7142, 0, 15.8268, 0, 0, -7.63702, 0, 0, 7.63702, 14.6515, 0, 41.0877),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_b2ayy"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 0, 0, 7.63702, 0, 0, 0, 8.12558, 0, 5.46145, -8.12558, 0, -5.46145, -18.4275, 0, 7.55735, 0.863609, 0, 12.1624, 0, 0, 7.63702, -25.0196, 0, -28.0712),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_7iam4"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 0, 0, 7.63702, 0, 0, 0, 1.3057, 0, -18.7149, 3.06374, 0, 17.1836, 19.6012, 0, 36.3183),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_7a7fc"]
+_data = {
+"points": PackedVector3Array(1.3057, 0, -18.7149, -1.3057, 0, 18.7149, 0, 0, 0, 21.1382, 0, -0.211388, -21.1382, 0, 0.211388, -36.3609, 0, 18.7189),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_vtcgm"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -21.1382, 0, 0.211388, 0, 0, 0, 21.1382, 0, -0.211388, -21.1382, 0, 0.211388, -61.1214, 0, 1.56815),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_v6bnv"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 3.22351, 0, 0.0617786, 0, 0, 0, -0.0719643, 0, -9.06785, 0.0719643, 0, 9.06785, 13.9527, 0, 10.2656, 0.143936, 0, -6.7649, -0.143936, 0, 6.7649, 14.0247, 0, 25.9544),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Resource" id="Resource_1n0wa"]
+script = ExtResource("7_165mx")
+character = ExtResource("5_p31lq")
+text = "That tunnel on the right is way too small for me."
+time = 7.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Resource" id="Resource_1u5kr"]
+script = ExtResource("7_165mx")
+character = ExtResource("51_cphn7")
+text = "Same, my carriage is way too big for that!"
+time = 6.0
+indentation = 1
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Resource" id="Resource_x6ept"]
+script = ExtResource("7_165mx")
+character = ExtResource("5_p31lq")
+text = "That tunnel on the right is way too small for me."
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Resource" id="Resource_lin8e"]
+script = ExtResource("7_165mx")
+character = ExtResource("51_cphn7")
+text = "My carriage is way too big for that tunnel on the right!"
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Curve3D" id="Curve3D_5t7e2"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -0.143936, 0, 6.7649, 0, 0, 0, -0.0719643, 0, -9.06785, 0.0719643, 0, 9.06785, -0.324795, 0, 26.244, 21.1382, 0, -0.211388, -9.59085, 0, 0, -24.8941, 0, 43.0456),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_scbdf"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -21.1382, 0, 0.211388, 0, 0, 0, 5.06184, 0, 23.1779, -5.06184, 0, -23.1779, -70.0364, 0, -31.5873),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Resource" id="Resource_pi7hh"]
+script = ExtResource("7_165mx")
+character = ExtResource("31_8nvo7")
+text = "We are NOT going to the left. That sand is gonna get everywhere."
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Curve3D" id="Curve3D_l467f"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -5.06184, 0, -23.1779, 0, 0, 0, -6.35085, 0, 3.81939, 6.35085, 0, -3.81939, 7.52259, -8.10623e-06, -33.6012, -3.18665, 0, 0.00383526, -5.06184, 0, -23.1779, 30.1017, 0, -37.4127),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_ag8s5"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -5.06184, 0, -23.1779, 0, 0, 0, -4.6018, 0, -11.8472, 4.6018, 0, 11.8472, 32.0639, 0, 0.0735931, -9.49733, 0, -0.783279, 9.49733, 0, 0.783279, 57.2947, 0, 14.8104, -7.2085, -0.0572095, 0.0174561, 7.2085, 0.0572095, -0.0174561, 91.0341, 4.10227, 14.3555, -14.0455, 1.39763, 0.783306, 14.0455, -1.39763, -0.783306, 112.889, 1.12733, 13.2477, -5.28717, 0, -5.28717, 5.28717, 0, 5.28717, 145.797, 0, 13.9331, 21.1382, 0, -0.211388, -5.06184, 0, -23.1779, 131.158, 0, 30.0192),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
+[sub_resource type="Curve3D" id="Curve3D_taw17"]
+_data = {
+"points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -0.143936, 0, 6.7649, 0, 0, 0, 7.48457, 0, -1.07951, -7.48457, 0, 1.07951, -10.0685, 0, 11.8558, 8.34818, 0, 5.39754, -8.34818, 0, -5.39754, -46.429, 0, 10.4732, -0.2159, 0, 8.85195, 0.2159, 0, -8.85195, -42.7285, 0, -15.0778, -2.89839, 0, -0.0491591, -0.143936, 0, 6.7649, -30.9594, 0, -25.9544),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Curve3D" id="Curve3D_kjt7h"]
+_data = {
+"points": PackedVector3Array(5.4619, 0.00684357, 1.60833, -5.4619, -0.00684357, -1.60833, 0, 0, 0, 0.0777588, 0.00116539, -8.37398, -0.0777588, -0.00116539, 8.37398, -22.9305, 0.00611496, 9.7997),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_fpbln"]
+_data = {
+"points": PackedVector3Array(5.4619, 0.00684357, 1.60833, -0.0777588, -0.00116539, 8.37398, 0, 0, 0, -2.99193, -0.00327492, -4.17363, 2.99193, 0.00327492, 4.17363, 3.43176, 0.0114822, 15.5484, -6.52935, 0.00740242, -1.05398, 6.52935, -0.00740242, 1.05398, 16.2657, 0.0158615, 22.8557),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_h04uv"]
+_data = {
+"points": PackedVector3Array(5.4619, 0.00684357, 1.60833, -0.0777588, -0.00116539, 8.37398, 0, 0, 0, -2.72519, -0.00303078, -3.8757, 2.72519, 0.00303078, 3.8757, 9.7105, 0.00752831, 11.4395, -6.52935, 0.00740242, -1.05398, 7.38804, -0.00547981, 3.32479, 16.2657, 0.0158615, 22.8557),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_iolha"]
+_data = {
+"points": PackedVector3Array(5.4619, 0.00684357, 1.60833, 6.52935, -0.00740242, 1.05398, 0, 0, 0, -4.51012, 0.00827599, -0.0680046, 4.51012, -0.00827599, 0.0680046, 12.5092, -0.00164413, 1.22779),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_3ably"]
+_data = {
+"points": PackedVector3Array(5.4619, 0.00684357, 1.60833, 4.51012, -0.00827599, 0.0680046, 0, 0, 0, -3.57175, 0.0107136, 3.07149, 3.57175, -0.0107136, -3.07149, 14.2566, -0.0069828, -5.38532),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_n02ea"]
+_data = {
+"points": PackedVector3Array(5.4619, 0.00684357, 1.60833, 3.57175, -0.0107136, -3.07149, 0, 0, 0, 1.18154, 0.0143623, 7.6095, -1.18154, -0.0143623, -7.6095, 7.61446, -0.0160275, -16.6232),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_oi8u0"]
+_data = {
+"points": PackedVector3Array(5.4619, 0.00684357, 1.60833, -1.18154, -0.0143623, -7.6095, 0, 0, 0, 4.75966, 0.000265121, 0.246178, -4.75966, -0.000265121, -0.246178, -14.851, -0.00211906, -8.92076, 5.4619, 0.00684357, 1.60833, -10.7692, -0.00899124, -1.47488, -27.7155, 0.00267792, -11.8747),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_w386a"]
+_data = {
+"points": PackedVector3Array(5.4619, 0.00684357, 1.60833, -5.4619, -0.00684357, -1.60833, 0, 0, 0, -6.3352, 0.000549316, -7.61929, 6.3352, -0.000549316, 7.61929, -8.43458, 0.0208397, 12.5091),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_xhne8"]
+_data = {
+"points": PackedVector3Array(5.4619, 0.00684357, 1.60833, 6.3352, -0.000549316, 7.61929, 0, 0, 0, -8.17898, 0.000108719, 0.152538, 8.17898, -0.000108719, -0.152538, 19.2024, -0.00245667, 8.96306, 1.18154, 0.0143623, 7.6095, 6.84175, -0.0115948, -6.28008, 36.1501, -0.0235176, -0.634476),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_xhxyx"]
+_data = {
+"points": PackedVector3Array(5.4619, 0.00684357, 1.60833, 6.3352, -0.000549316, 7.61929, 0, 0, 0, -4.31638, -0.00203705, -2.71726, 4.31638, 0.00203705, 2.71726, 13.9646, 0.00140953, 13.8111, -3.57175, 0.0107136, 3.07149, 6.84175, -0.0115948, -6.28008, 28.5357, -0.00749016, 15.9887),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_jnlc3"]
+_data = {
+"points": PackedVector3Array(5.4619, 0.00684357, 1.60833, 4.51012, -0.00827599, 0.0680046, 0, 0, 0, 3.0166, -0.00211906, -3.32003, -3.0166, 0.00211906, 3.32003, 4.35528, -0.0185986, 7.98895, 3.56766, -0.00251389, -4.01048, -3.56766, 0.00251389, 4.01048, -6.96062, -0.0202961, 13.1403, 0.67831, 0, -10.113, 4.51012, -0.00827599, 0.0680046, -10.059, -0.0203323, 29.3064),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[node name="Rails" type="Node3D"]
+script = ExtResource("1_8wolm")
+
+[node name="RailS4" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9347, 0, 0)
+curve = SubResource("Curve3D_0em68")
+in_sections = [NodePath("../RailS3_S4"), NodePath("../RailS5_Plus")]
+out_sections = [NodePath("../RailS4_S6_bridge"), NodePath("../RailS4_S11")]
+out_requirements_1 = Array[String](["F"])
+
+[node name="BakedRailsMesh" parent="RailS4" index="0"]
+mesh = ExtResource("2_8wolm")
+
+[node name="BakedRailsMeshMinimap" parent="RailS4" index="2"]
+mesh = ExtResource("3_8s57r")
+
+[node name="CrossFollow" parent="RailS4" index="3"]
+transform = Transform3D(0.00120349, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00120349, 0, 0, 0)
+
+[node name="Station4" parent="RailS4" instance=ExtResource("4_xgdko")]
+transform = Transform3D(-0.000827082, 0, -0.999957, 0, 1, 0, 0.999957, 0, -0.000827082, 16.1874, 0, -0.000769002)
+progress = 16.1862
+waiting_character = ExtResource("5_p31lq")
+
+[node name="DialogicTrigger" parent="RailS4" instance=ExtResource("6_dhfuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.33774, 0.417897, 0.0392704)
+requirements = Array[String](["F"])
+dialogues = Array[ExtResource("7_165mx")]([SubResource("Resource_uvcog")])
+
+[node name="RailS4_S6_bridge" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+curve = SubResource("Curve3D_58e0p")
+in_sections = [NodePath("../RailS4")]
+out_sections = [NodePath("../RailS6")]
+
+[node name="BakedRailsMesh" parent="RailS4_S6_bridge" index="0"]
+mesh = ExtResource("9_o0t5c")
+rebake_with_tilt = true
+
+[node name="BakedRailsMeshMinimap" parent="RailS4_S6_bridge" index="2"]
+mesh = ExtResource("10_ca3jj")
+
+[node name="CrossFollow" parent="RailS4_S6_bridge" index="3"]
+transform = Transform3D(0.470224, 0, -0.882546, 0, 1, 0, 0.882546, 0, 0.470224, 6.25571, 0, -1.33375)
+progress = 6.4547
+
+[node name="AreaLoop" type="Area3D" parent="RailS4_S6_bridge"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RailS4_S6_bridge/AreaLoop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.19816, 3.38745, -19.4398)
+shape = SubResource("BoxShape3D_on5gu")
+
+[node name="DialogicTrigger" parent="RailS4_S6_bridge" instance=ExtResource("6_dhfuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.63272, -1.84858, -16.6607)
+requirements = Array[String](["A", "-B"])
+dialogues = Array[ExtResource("7_165mx")]([SubResource("Resource_gck0h")])
+
+[node name="DialogicTrigger2" parent="RailS4_S6_bridge" instance=ExtResource("6_dhfuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.63272, -1.84858, -16.6607)
+requirements = Array[String](["A", "B"])
+dialogues = Array[ExtResource("7_165mx")]([SubResource("Resource_782co"), SubResource("Resource_1h62p")])
+
+[node name="RailS4_S11" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+curve = SubResource("Curve3D_q32ya")
+in_sections = [NodePath("../RailS4")]
+out_sections = [NodePath("../RailS11")]
+
+[node name="BakedRailsMesh" parent="RailS4_S11" index="0"]
+mesh = ExtResource("13_b2ljr")
+
+[node name="BakedRailsMeshMinimap" parent="RailS4_S11" index="2"]
+mesh = ExtResource("14_d6v6k")
+
+[node name="CrossFollow" parent="RailS4_S11" index="3"]
+transform = Transform3D(0.00247557, 0, -0.999996, 0, 1, 0, 0.999996, 0, 0.00247557, 5.40219, 0, -0.0101155)
+progress = 5.4022
+
+[node name="RailS11" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9347, 0, 0)
+curve = SubResource("Curve3D_4vm3s")
+in_sections = [NodePath("../RailS4_S11"), NodePath("../RailS10")]
+out_sections = [NodePath("../RailS11_fork"), NodePath("../RailS9")]
+out_requirements_2 = Array[String](["I"])
+
+[node name="BakedRailsMesh" parent="RailS11" index="0"]
+mesh = ExtResource("15_ofv2g")
+
+[node name="BakedRailsMeshMinimap" parent="RailS11" index="2"]
+mesh = ExtResource("16_umo86")
+
+[node name="CrossFollow" parent="RailS11" index="3"]
+transform = Transform3D(-0.0169582, 0, -0.999845, 0, 1, 0, 0.999845, 0, -0.0169582, 0, 0, 0)
+
+[node name="Station11" parent="RailS11" instance=ExtResource("4_xgdko")]
+transform = Transform3D(-0.00646113, 0, -0.999978, 0, 1, 0, 0.999978, 0, -0.00646113, 15.719, 0, -0.0139241)
+progress = 15.719
+
+[node name="DialogicTrigger" parent="RailS11" instance=ExtResource("6_dhfuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1689, 0.417895, -0.0018971)
+requirements = Array[String](["I", "-A"])
+dialogues = Array[ExtResource("7_165mx")]([SubResource("Resource_ajnxc")])
+
+[node name="RailS11_fork" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8694, 0, 0)
+curve = SubResource("Curve3D_h5p03")
+in_sections = [NodePath("../RailS11")]
+out_sections = [NodePath("../RailS11_fork2"), NodePath("../RailS11_fork3")]
+out_requirements_2 = Array[String](["-E"])
+
+[node name="BakedRailsMesh" parent="RailS11_fork" index="0"]
+mesh = ExtResource("18_jqkcp")
+
+[node name="BakedRailsMeshMinimap" parent="RailS11_fork" index="2"]
+mesh = ExtResource("19_opi20")
+
+[node name="CrossFollow" parent="RailS11_fork" index="3"]
+transform = Transform3D(0.137052, 0, -0.99056, 0, 1, 0, 0.99056, 0, 0.137052, 6.27935, 0, -0.321283)
+progress = 6.29427
+
+[node name="DialogicTrigger" parent="RailS11_fork" instance=ExtResource("6_dhfuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5615, 0.417897, -2.16089)
+requirements = Array[String](["E"])
+dialogues = Array[ExtResource("7_165mx")]([SubResource("Resource_3xitk")])
+
+[node name="RailS11_fork2" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.2235, 0, -9.39877)
+curve = SubResource("Curve3D_5hpoa")
+in_sections = [NodePath("../RailS11_fork")]
+out_sections = [NodePath("../RailS5")]
+
+[node name="BakedRailsMesh" parent="RailS11_fork2" index="0"]
+mesh = ExtResource("21_xq5hs")
+
+[node name="BakedRailsMeshMinimap" parent="RailS11_fork2" index="2"]
+mesh = ExtResource("22_v0qyo")
+
+[node name="CrossFollow" parent="RailS11_fork2" index="3"]
+transform = Transform3D(0.961773, 0, 0.273843, 0, 1, 0, -0.273843, 0, 0.961773, -0.603891, 0, -5.20761)
+progress = 5.2593
+
+[node name="RailS11_fork3" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.2235, 0, -9.39877)
+curve = SubResource("Curve3D_50cgf")
+in_sections = [NodePath("../RailS11_fork")]
+out_sections = [NodePath("../RailS7")]
+
+[node name="BakedRailsMesh" parent="RailS11_fork3" index="0"]
+mesh = ExtResource("23_osjgq")
+
+[node name="BakedRailsMeshMinimap" parent="RailS11_fork3" index="2"]
+mesh = ExtResource("24_xx8t1")
+
+[node name="CrossFollow" parent="RailS11_fork3" index="3"]
+transform = Transform3D(0.967627, 5.61476e-08, -0.252381, 5.78269e-08, 1, 4.44179e-07, 0.252381, -4.44395e-07, 0.967627, 0.549, -9.79736e-07, -5.05887)
+progress = 5.10111
+
+[node name="RailS7" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.8615, 0, -15.6765)
+curve = SubResource("Curve3D_5xo5t")
+in_sections = [NodePath("../RailS11_fork3"), NodePath("../RailS8_S7")]
+out_sections = [NodePath("../Rail_pre_S5"), NodePath("../Rail_pre_S6")]
+out_requirements_2 = Array[String](["-B"])
+
+[node name="BakedRailsMesh" parent="RailS7" index="0"]
+mesh = ExtResource("25_tyf0x")
+
+[node name="BakedRailsMeshMinimap" parent="RailS7" index="2"]
+mesh = ExtResource("26_yeyp4")
+
+[node name="CrossFollow" parent="RailS7" index="3"]
+transform = Transform3D(0.997489, 0, 0.0708282, 0, 1, 0, -0.0708282, 0, 0.997489, 0, 0, 0)
+
+[node name="Station7" parent="RailS7" instance=ExtResource("4_xgdko")]
+transform = Transform3D(-0.0138704, -1.10298e-08, 0.999899, -7.952e-07, 1, -2.30925e-14, -0.999899, -7.95128e-07, -0.0138704, -23.0306, -8.10623e-06, -7.72331)
+progress = 29.0127
+waiting_character = ExtResource("17_wop8t")
+
+[node name="DialogicTrigger" parent="RailS7" instance=ExtResource("6_dhfuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7025, 0.417897, -8.24557)
+requirements = Array[String](["B", "-A"])
+dialogues = Array[ExtResource("7_165mx")]([SubResource("Resource_6c0ht")])
+
+[node name="DialogicTrigger2" parent="RailS7" instance=ExtResource("6_dhfuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7025, 0.417897, -8.24557)
+requirements = Array[String](["B", "A"])
+dialogues = Array[ExtResource("7_165mx")]([SubResource("Resource_6c0ht"), SubResource("Resource_bqn3m")])
+
+[node name="Rail_pre_S5" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5317, -8.10623e-06, -23.5075)
+curve = SubResource("Curve3D_la7dy")
+in_sections = [NodePath("../RailS7")]
+out_sections = [NodePath("../RailS5")]
+
+[node name="BakedRailsMesh" parent="Rail_pre_S5" index="0"]
+mesh = ExtResource("27_ddbfv")
+
+[node name="BakedRailsMeshMinimap" parent="Rail_pre_S5" index="2"]
+mesh = ExtResource("28_i43bb")
+
+[node name="CrossFollow" parent="Rail_pre_S5" index="3"]
+transform = Transform3D(-0.146293, 2.02258e-07, 0.989241, 9.89303e-09, 1, -2.02994e-07, -0.989241, -1.991e-08, -0.146293, -4.86465, 3.32414e-07, 0.361304)
+progress = 4.88234
+
+[node name="RailS5" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -20)
+curve = SubResource("Curve3D_kkyah")
+in_sections = [NodePath("../Rail_pre_S5"), NodePath("../RailS11_fork2")]
+out_sections = [NodePath("../RailS5_Plus")]
+
+[node name="BakedRailsMesh" parent="RailS5" index="0"]
+mesh = ExtResource("29_fm7m7")
+
+[node name="BakedRailsMeshMinimap" parent="RailS5" index="2"]
+mesh = ExtResource("30_rn2mi")
+
+[node name="CrossFollow" parent="RailS5" index="3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Station5" parent="RailS5" instance=ExtResource("4_xgdko")]
+transform = Transform3D(-0.0694312, -5.93477e-05, 0.997574, -0.000854749, 0.999999, -4.81766e-11, -0.997574, -0.000852697, -0.0694312, -40.6859, 0, 0.139051)
+progress = 40.9557
+waiting_character = ExtResource("31_8nvo7")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="RailS5"]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0531931, 0)
+visible = false
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="RailS5/CSGCombiner3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="RailS5/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.0902, -0.675781, 9.22866)
+operation = 2
+size = Vector3(22.3883, 14.6113, 36.6229)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="RailS5/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -14.3132, -13.187, -0.780639)
+operation = 2
+radius = 15.0864
+height = 6.59155
+sides = 32
+
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="RailS5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0531931, 0)
+layers = 3
+mesh = ExtResource("32_gdtuo")
+
+[node name="RailS5_Plus" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.1317, 0, -11.1411)
+curve = SubResource("Curve3D_782co")
+in_sections = [NodePath("../RailS5"), NodePath("../Tutorial/RailExit")]
+out_sections = [NodePath("../RailS4")]
+
+[node name="BakedRailsMesh" parent="RailS5_Plus" index="0"]
+mesh = ExtResource("33_0tonv")
+
+[node name="BakedRailsMeshMinimap" parent="RailS5_Plus" index="2"]
+mesh = ExtResource("34_kl014")
+
+[node name="CrossFollow" parent="RailS5_Plus" index="3"]
+transform = Transform3D(-0.997756, 0, 0.0669224, 0, 1, 0, -0.0669224, 0, -0.997756, 0, 0, 0)
+
+[node name="Rail_pre_S6" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5317, -8.10623e-06, -23.5075)
+curve = SubResource("Curve3D_vafob")
+in_sections = [NodePath("../RailS7")]
+out_sections = [NodePath("../RailS6")]
+
+[node name="BakedRailsMesh" parent="Rail_pre_S6" index="0"]
+mesh = ExtResource("35_4nvre")
+
+[node name="BakedRailsMeshMinimap" parent="Rail_pre_S6" index="2"]
+mesh = ExtResource("36_i7j54")
+
+[node name="CrossFollow" parent="Rail_pre_S6" index="3"]
+transform = Transform3D(0.353599, 0.217007, 0.909876, -0.0456339, 0.97556, -0.214939, -0.934283, 0.034481, 0.35486, -3.4128, 0.440856, -0.63405)
+progress = 3.52549
+
+[node name="RailS6" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.824, 0, -35.8946)
+curve = SubResource("Curve3D_fork7")
+in_sections = [NodePath("../Rail_pre_S6"), NodePath("../RailS4_S6_bridge")]
+out_sections = [NodePath("../Rail_skip_S8"), NodePath("../RailS8")]
+out_requirements_2 = Array[String](["A", "C"])
+
+[node name="BakedRailsMesh" parent="RailS6" index="0"]
+mesh = ExtResource("37_2fj36")
+
+[node name="BakedRailsMeshMinimap" parent="RailS6" index="2"]
+mesh = ExtResource("38_n66yj")
+
+[node name="CrossFollow" parent="RailS6" index="3"]
+transform = Transform3D(-0.0407819, 0, -0.999168, 0, 1, 0, 0.999168, 0, -0.0407819, 0, 0, 0)
+
+[node name="Station6" parent="RailS6" instance=ExtResource("4_xgdko")]
+transform = Transform3D(-0.26215, -5.22939e-07, -0.965013, -8.78835e-08, 1, -5.1801e-07, 0.965013, -5.09888e-08, -0.26215, 31.3427, -5.1043e-06, 0.902595)
+progress = 31.4626
+
+[node name="DialogicTrigger" parent="RailS6" instance=ExtResource("6_dhfuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.2604, 0.417895, 3.49381)
+requirements = Array[String](["A", "C"])
+dialogues = Array[ExtResource("7_165mx")]([SubResource("Resource_4kkmd"), SubResource("Resource_m75v2")])
+
+[node name="DialogicTrigger2" parent="RailS6" instance=ExtResource("6_dhfuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.2604, 0.417895, 3.49381)
+requirements = Array[String](["A", "-C"])
+dialogues = Array[ExtResource("7_165mx")]([SubResource("Resource_xnq8m")])
+
+[node name="DialogicTrigger3" parent="RailS6" instance=ExtResource("6_dhfuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.2604, 0.417895, 3.49381)
+requirements = Array[String](["C", "-A"])
+dialogues = Array[ExtResource("7_165mx")]([SubResource("Resource_yqb2n")])
+
+[node name="Rail_skip_S8" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.2296, 0, -28.6931)
+curve = SubResource("Curve3D_hwpaj")
+in_sections = [NodePath("../RailS6")]
+out_sections = [NodePath("../Rail_pre_S1")]
+
+[node name="BakedRailsMesh" parent="Rail_skip_S8" index="0"]
+mesh = ExtResource("39_6x7ix")
+
+[node name="BakedRailsMeshMinimap" parent="Rail_skip_S8" index="2"]
+mesh = ExtResource("40_e8yu7")
+
+[node name="CrossFollow" parent="Rail_skip_S8" index="3"]
+transform = Transform3D(-0.582193, 0, -0.81305, 0, 1, 0, 0.81305, 0, -0.582193, 6.69007, 0, 5.11484)
+progress = 8.42591
+
+[node name="RailS8" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.2296, 0, -28.6931)
+curve = SubResource("Curve3D_rw4g1")
+in_sections = [NodePath("../RailS6")]
+out_sections = [NodePath("../RailS8_S1"), NodePath("../RailS8_S7")]
+
+[node name="BakedRailsMesh" parent="RailS8" index="0"]
+mesh = ExtResource("41_wncx7")
+
+[node name="BakedRailsMeshMinimap" parent="RailS8" index="2"]
+mesh = ExtResource("42_0s2gl")
+
+[node name="CrossFollow" parent="RailS8" index="3"]
+transform = Transform3D(-0.752717, 0, -0.658344, 0, 1, 0, 0.658344, 0, -0.752717, 5.95228, 0, 5.87606)
+progress = 8.36843
+
+[node name="Station8" parent="RailS8" instance=ExtResource("4_xgdko")]
+transform = Transform3D(-0.998857, 0, -0.0472375, 0, 1, 0, 0.0472375, 0, -0.998857, 14.4835, 0, 33.4404)
+progress = 37.8308
+waiting_character = ExtResource("8_phdhv")
+
+[node name="RailS8_S7" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.8812, 0, 12.3947)
+curve = SubResource("Curve3D_b2ayy")
+in_sections = [NodePath("../RailS8")]
+out_sections = [NodePath("../RailS7")]
+
+[node name="BakedRailsMesh" parent="RailS8_S7" index="0"]
+mesh = ExtResource("43_n506l")
+
+[node name="BakedRailsMeshMinimap" parent="RailS8_S7" index="2"]
+mesh = ExtResource("44_5om47")
+
+[node name="CrossFollow" parent="RailS8_S7" index="3"]
+transform = Transform3D(-0.937129, 0, 0.348982, 0, 1, 0, -0.348982, 0, -0.937129, -0.534476, 0, 2.95372)
+progress = 3.01768
+
+[node name="RailS8_S1" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.8812, 0, 12.3947)
+curve = SubResource("Curve3D_7iam4")
+in_sections = [NodePath("../RailS8")]
+out_sections = [NodePath("../Rail_pre_S1")]
+
+[node name="BakedRailsMesh" parent="RailS8_S1" index="0"]
+mesh = ExtResource("45_yvx2b")
+
+[node name="BakedRailsMeshMinimap" parent="RailS8_S1" index="2"]
+mesh = ExtResource("46_whlru")
+
+[node name="CrossFollow" parent="RailS8_S1" index="3"]
+transform = Transform3D(-0.889568, 0, -0.456803, 0, 1, 0, 0.456803, 0, -0.889568, 0.765, 0, 2.73909)
+progress = 2.87083
+
+[node name="Rail_pre_S1" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.482, 0, 48.713)
+curve = SubResource("Curve3D_7a7fc")
+in_sections = [NodePath("../RailS8_S1"), NodePath("../Rail_skip_S8")]
+out_sections = [NodePath("../RailS1")]
+
+[node name="BakedRailsMesh" parent="Rail_pre_S1" index="0"]
+mesh = ExtResource("47_mgxt2")
+
+[node name="BakedRailsMeshMinimap" parent="Rail_pre_S1" index="2"]
+mesh = ExtResource("48_i40dq")
+
+[node name="CrossFollow" parent="Rail_pre_S1" index="3"]
+transform = Transform3D(-0.997575, 0, 0.0695988, 0, 1, 0, -0.0695988, 0, -0.997575, 0, 0, 0)
+
+[node name="RailS1" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.1214, 0, 67.4319)
+curve = SubResource("Curve3D_vtcgm")
+in_sections = [NodePath("../Rail_pre_S1"), NodePath("../RailS3_S1")]
+out_sections = [NodePath("../RailS2S3")]
+
+[node name="BakedRailsMesh" parent="RailS1" index="0"]
+mesh = ExtResource("49_6bdow")
+
+[node name="BakedRailsMeshMinimap" parent="RailS1" index="2"]
+mesh = ExtResource("50_5lpjm")
+
+[node name="CrossFollow" parent="RailS1" index="3"]
+transform = Transform3D(-0.00999987, 0, 0.99995, 0, 1, 0, -0.99995, 0, -0.00999987, 0, 0, 0)
+
+[node name="Station1" parent="RailS1" instance=ExtResource("4_xgdko")]
+transform = Transform3D(-0.0337055, 0, 0.999388, 0, 1, 0, -0.999388, 0, -0.0337055, -33.2739, 0, 0.875955)
+progress = 33.2863
+waiting_character = ExtResource("51_cphn7")
+
+[node name="RailS9" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8694, 0, 0)
+curve = SubResource("Curve3D_v6bnv")
+in_sections = [NodePath("../RailS11")]
+out_sections = [NodePath("../RailS9_S2"), NodePath("../RailS10")]
+out_requirements_2 = Array[String](["-C", "-J"])
+
+[node name="BakedRailsMesh" parent="RailS9" index="0"]
+mesh = ExtResource("52_euhsu")
+
+[node name="BakedRailsMeshMinimap" parent="RailS9" index="2"]
+mesh = ExtResource("53_oalad")
+
+[node name="CrossFollow" parent="RailS9" index="3"]
+transform = Transform3D(-0.275954, 0, -0.96117, 0, 1, 0, 0.96117, 0, -0.275954, 5.72108, 0, 0.857875)
+progress = 5.80035
+
+[node name="Station9" parent="RailS9" instance=ExtResource("4_xgdko")]
+transform = Transform3D(-0.999948, 0, 0.0098526, 0, 1, 0, -0.0098526, 0, -0.999948, 14.0784, 0, 22.6972)
+progress = 31.7688
+waiting_character = ExtResource("11_iln4g")
+
+[node name="DialogicTrigger" parent="RailS9" instance=ExtResource("6_dhfuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1159, 0.417895, 8.5817)
+requirements = Array[String](["C", "J"])
+dialogues = Array[ExtResource("7_165mx")]([SubResource("Resource_1n0wa"), SubResource("Resource_1u5kr")])
+
+[node name="DialogicTrigger2" parent="RailS9" instance=ExtResource("6_dhfuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1159, 0.417895, 8.5817)
+requirements = Array[String](["C", "-J"])
+dialogues = Array[ExtResource("7_165mx")]([SubResource("Resource_x6ept")])
+
+[node name="DialogicTrigger3" parent="RailS9" instance=ExtResource("6_dhfuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1159, 0.417895, 8.5817)
+requirements = Array[String](["J", "-C"])
+dialogues = Array[ExtResource("7_165mx")]([SubResource("Resource_lin8e")])
+
+[node name="RailS9_S2" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.8941, 0, 25.9544)
+curve = SubResource("Curve3D_5t7e2")
+in_sections = [NodePath("../RailS9")]
+out_sections = [NodePath("../RailS2S3")]
+
+[node name="BakedRailsMesh" parent="RailS9_S2" index="0"]
+mesh = ExtResource("54_xcmgw")
+
+[node name="BakedRailsMeshMinimap" parent="RailS9_S2" index="2"]
+mesh = ExtResource("55_0krjq")
+
+[node name="CrossFollow" parent="RailS9_S2" index="3"]
+transform = Transform3D(-0.999797, 0, 0.0201702, 0, 1, 0, -0.0201702, 0, -0.999797, -0.141872, 0, 6.67146)
+progress = 6.67299
+
+[node name="RailS2S3" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 69)
+curve = SubResource("Curve3D_scbdf")
+in_sections = [NodePath("../RailS1"), NodePath("../RailS9_S2")]
+out_sections = [NodePath("../RailS3_S4"), NodePath("../RailS3_S1")]
+out_requirements_1 = Array[String](["-G"])
+
+[node name="BakedRailsMesh" parent="RailS2S3" index="0"]
+mesh = ExtResource("56_x1b61")
+
+[node name="BakedRailsMeshMinimap" parent="RailS2S3" index="2"]
+mesh = ExtResource("57_u5xkk")
+
+[node name="CrossFollow" parent="RailS2S3" index="3"]
+transform = Transform3D(-0.00999987, 0, 0.99995, 0, 1, 0, -0.99995, 0, -0.00999987, 0, 0, 0)
+
+[node name="Station2" parent="RailS2S3" instance=ExtResource("4_xgdko")]
+transform = Transform3D(0.185863, 0, 0.982574, 0, 1, 0, -0.982574, 0, 0.185863, -23.1544, 0, -2.28451)
+progress = 23.3018
+
+[node name="Station3" parent="RailS2S3" instance=ExtResource("4_xgdko")]
+transform = Transform3D(0.661536, 0, 0.749911, 0, 1, 0, -0.749911, 0, 0.661536, -61.5911, 0, -18.2283)
+progress = 65.3689
+waiting_character = ExtResource("12_pvikb")
+
+[node name="DialogicTrigger" parent="RailS2S3" instance=ExtResource("6_dhfuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.838, 0.417895, -12.7411)
+requirements = Array[String](["G"])
+dialogues = Array[ExtResource("7_165mx")]([SubResource("Resource_pi7hh")])
+
+[node name="RailS3_S4" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.0364, 0, 37.4127)
+curve = SubResource("Curve3D_l467f")
+in_sections = [NodePath("../RailS2S3")]
+out_sections = [NodePath("../RailS4")]
+
+[node name="BakedRailsMesh" parent="RailS3_S4" index="0"]
+mesh = ExtResource("58_c7pk6")
+
+[node name="BakedRailsMeshMinimap" parent="RailS3_S4" index="2"]
+mesh = ExtResource("59_yj3y8")
+
+[node name="CrossFollow" parent="RailS3_S4" index="3"]
+transform = Transform3D(0.991694, -1.5037e-08, 0.128619, 3.83663e-09, 1, 8.73296e-08, -0.128619, -8.61108e-08, 0.991694, -1.35171, -3.2088e-07, -7.63719)
+progress = 7.75823
+
+[node name="RailS3_S1" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.0364, 0, 37.4127)
+curve = SubResource("Curve3D_ag8s5")
+in_sections = [NodePath("../RailS2S3")]
+out_sections = [NodePath("../RailS1")]
+
+[node name="BakedRailsMesh" parent="RailS3_S1" index="0"]
+mesh = ExtResource("60_tdup3")
+
+[node name="BakedRailsMeshMinimap" parent="RailS3_S1" index="2"]
+mesh = ExtResource("61_tw6k7")
+
+[node name="CrossFollow" parent="RailS3_S1" index="3"]
+transform = Transform3D(0.974409, 0, -0.224781, 0, 1, 0, 0.224781, 0, 0.974409, -0.241439, 0, -7.23888)
+progress = 7.30016
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="RailS3_S1"]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.075, 0)
+visible = false
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="RailS3_S1/CSGCombiner3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="RailS3_S1/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8357, -3.10684, -0.123322)
+operation = 2
+size = Vector3(60.1479, 19.6465, 49.1674)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="RailS3_S1/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160.141, -3.10684, 13.3564)
+operation = 2
+size = Vector3(49.9332, 19.6465, 49.1674)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="RailS3_S1/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 136.859, -3.10684, 25.316)
+operation = 2
+size = Vector3(19.6281, 19.6465, 15.0818)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="RailS3_S1/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 94.634, -2.23517e-08, 14.1295)
+operation = 2
+radius = 3.60986
+height = 3.05957
+sides = 16
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="RailS3_S1/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 85.9587, -0.892648, 14.6593)
+operation = 2
+radius = 3.60986
+sides = 16
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="RailS3_S1/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 77.7711, -2.38997, 14.6593)
+operation = 2
+radius = 3.60986
+sides = 16
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="RailS3_S1/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 102.929, -1.93278, 13.9073)
+operation = 2
+radius = 3.60986
+height = 3.50391
+sides = 16
+
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="RailS3_S1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.075, 0)
+layers = 3
+mesh = ExtResource("62_udqb1")
+
+[node name="RailS10" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.8941, 0, 25.9544)
+curve = SubResource("Curve3D_taw17")
+in_sections = [NodePath("../RailS9")]
+out_sections = [NodePath("../RailS11")]
+
+[node name="BakedRailsMesh" parent="RailS10" index="0"]
+mesh = ExtResource("63_nbyei")
+
+[node name="BakedRailsMeshMinimap" parent="RailS10" index="2"]
+mesh = ExtResource("64_0uecg")
+
+[node name="CrossFollow" parent="RailS10" index="3"]
+transform = Transform3D(-0.921096, 0, 0.389337, 0, 1, 0, -0.389337, 0, -0.921096, -1.07616, 0, 5.99805)
+progress = 6.1299
+
+[node name="Station10" parent="RailS10" instance=ExtResource("4_xgdko")]
+transform = Transform3D(0.109115, 0, 0.994026, 0, 1, 0, -0.994026, 0, 0.109115, -36.8345, 0, 13.3015)
+progress = 44.2793
+waiting_character = ExtResource("65_g80f5")
+
+[node name="Tutorial" type="Node3D" parent="."]
+
+[node name="RailStart" parent="Tutorial" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.9171, 0, -74.3307)
+curve = SubResource("Curve3D_kjt7h")
+in_sections = [NodePath("../RailTutoChoice")]
+out_sections = [NodePath("../RailStartIntL"), NodePath("../RailStartIntR")]
+
+[node name="BakedRailsMesh" parent="Tutorial/RailStart" index="0"]
+mesh = ExtResource("66_pvcad")
+
+[node name="BakedRailsMeshMinimap" parent="Tutorial/RailStart" index="2"]
+mesh = ExtResource("67_toogn")
+
+[node name="CrossFollow" parent="Tutorial/RailStart" index="3"]
+transform = Transform3D(-0.0796754, 0.000131122, 0.996811, -0.000174702, 0.999986, -0.000145505, -0.996812, -0.000185739, -0.0796753, -5.91114, -0.00176273, -0.322129)
+progress = 5.94844
+
+[node name="Locomotive" parent="Tutorial/RailStart" instance=ExtResource("68_7lbqu")]
+transform = Transform3D(-0.195719, 0.000336692, 0.98062, -0.000143057, 0.999957, -0.000371886, -0.980619, -0.000213078, -0.195719, -9.90729, -0.000663705, 0.239138)
+progress = 9.98606
+
+[node name="RailStartIntR" parent="Tutorial" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.8475, 0.00611496, -64.531)
+curve = SubResource("Curve3D_fpbln")
+in_sections = [NodePath("../RailStart")]
+out_sections = [NodePath("../RailToOut")]
+
+[node name="BakedRailsMesh" parent="Tutorial/RailStartIntR" index="0"]
+mesh = ExtResource("69_ab3d6")
+
+[node name="BakedRailsMeshMinimap" parent="Tutorial/RailStartIntR" index="2"]
+mesh = ExtResource("70_j6y44")
+
+[node name="CrossFollow" parent="Tutorial/RailStartIntR" index="3"]
+transform = Transform3D(-0.998577, -1.19597e-05, -0.0531346, 1.39839e-05, 0.999986, -0.000487879, 0.053135, -0.000487935, -0.99857, 0.0775257, 0.000794947, 5.28053)
+progress = 5.28178
+
+[node name="RailStartIntL" parent="Tutorial" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.8475, 0.00611496, -64.531)
+curve = SubResource("Curve3D_h04uv")
+in_sections = [NodePath("../RailStart")]
+out_sections = [NodePath("../RailToOut")]
+
+[node name="BakedRailsMesh" parent="Tutorial/RailStartIntL" index="0"]
+mesh = ExtResource("71_24v6h")
+
+[node name="BakedRailsMeshMinimap" parent="Tutorial/RailStartIntL" index="2"]
+mesh = ExtResource("72_6dpas")
+
+[node name="CrossFollow" parent="Tutorial/RailStartIntL" index="3"]
+transform = Transform3D(-0.836664, -0.000136703, -0.547699, 5.86864e-05, 0.999986, -0.000339242, 0.5477, -0.000315976, -0.836663, 1.24728, 0.000347337, 5.0087)
+progress = 5.2385
+
+[node name="RailToOut" parent="Tutorial" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.5819, 0.0219765, -41.6753)
+curve = SubResource("Curve3D_iolha")
+in_sections = [NodePath("../RailStartIntR"), NodePath("../RailStartIntL")]
+out_sections = [NodePath("../RailPostOutL"), NodePath("../RailExit")]
+out_requirements_2 = Array[String](["E"])
+
+[node name="BakedRailsMesh" parent="Tutorial/RailToOut" index="0"]
+mesh = ExtResource("73_hqupx")
+
+[node name="BakedRailsMeshMinimap" parent="Tutorial/RailToOut" index="2"]
+mesh = ExtResource("74_rk1ld")
+
+[node name="CrossFollow" parent="Tutorial/RailToOut" index="3"]
+transform = Transform3D(-0.159358, 0.00110488, -0.987208, -5.82071e-11, 0.999962, 0.00111921, 0.987212, 0.000178352, -0.159357, 0, 0, 0)
+
+[node name="RailPostOutL" parent="Tutorial" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0727, 0.0203323, -40.4475)
+curve = SubResource("Curve3D_3ably")
+in_sections = [NodePath("../RailToOut")]
+out_sections = [NodePath("../RailPostOutL2")]
+
+[node name="BakedRailsMesh" parent="Tutorial/RailPostOutL" index="0"]
+mesh = ExtResource("75_ip34t")
+
+[node name="BakedRailsMeshMinimap" parent="Tutorial/RailPostOutL" index="2"]
+mesh = ExtResource("76_r2bbi")
+
+[node name="CrossFollow" parent="Tutorial/RailPostOutL" index="3"]
+transform = Transform3D(0.193845, 0.000238323, -0.981009, -0.000199917, 0.999968, 0.000203431, 0.981011, 0.000156688, 0.193845, 3.45199, -0.00304344, -0.34529)
+progress = 3.47554
+
+[node name="RailPostOutL2" parent="Tutorial" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.81601, 0.0133495, -45.8328)
+curve = SubResource("Curve3D_n02ea")
+in_sections = [NodePath("../RailPostOutL"), NodePath("../RailTutoChoiceLR")]
+out_sections = [NodePath("../RailTutoChoice")]
+
+[node name="BakedRailsMesh" parent="Tutorial/RailPostOutL2" index="0"]
+mesh = ExtResource("77_m8bwm")
+
+[node name="BakedRailsMeshMinimap" parent="Tutorial/RailPostOutL2" index="2"]
+mesh = ExtResource("78_fjeo5")
+
+[node name="CrossFollow" parent="Tutorial/RailPostOutL2" index="3"]
+transform = Transform3D(0.652001, 0.00172431, -0.75819, 2.32826e-10, 0.999966, 0.00227422, 0.758194, -0.00148281, 0.651997, 0, 0, 0)
+
+[node name="RailTutoChoice" parent="Tutorial" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.201548, -0.00267792, -62.456)
+curve = SubResource("Curve3D_oi8u0")
+in_sections = [NodePath("../RailPostOutL2"), NodePath("../RailTutoChoiceLL")]
+out_sections = [NodePath("../RailTutoChoiceL"), NodePath("../RailStart")]
+
+[node name="BakedRailsMesh" parent="Tutorial/RailTutoChoice" index="0"]
+mesh = ExtResource("79_5s6yi")
+
+[node name="BakedRailsMeshMinimap" parent="Tutorial/RailTutoChoice" index="2"]
+mesh = ExtResource("80_oeha3")
+
+[node name="CrossFollow" parent="Tutorial/RailTutoChoice" index="3"]
+transform = Transform3D(0.988141, -0.000286154, 0.15343, -1.45517e-11, 0.999967, 0.00186502, -0.15343, -0.00184292, 0.988136, 0, 0, 0)
+
+[node name="RailTutoChoiceL" parent="Tutorial" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.9171, 0, -74.3307)
+curve = SubResource("Curve3D_w386a")
+in_sections = [NodePath("../RailTutoChoice")]
+out_sections = [NodePath("../RailTutoChoiceLL"), NodePath("../RailTutoChoiceLR")]
+
+[node name="BakedRailsMesh" parent="Tutorial/RailTutoChoiceL" index="0"]
+mesh = ExtResource("81_4ru5f")
+
+[node name="BakedRailsMeshMinimap" parent="Tutorial/RailTutoChoiceL" index="2"]
+mesh = ExtResource("82_q8ct8")
+
+[node name="CrossFollow" parent="Tutorial/RailTutoChoiceL" index="3"]
+transform = Transform3D(-0.436594, 0.00130986, 0.899633, 0.000155026, 0.999967, -0.00138073, -0.899638, -0.000463358, -0.436592, -5.80167, 0.00213663, 0.724863)
+progress = 5.97532
+
+[node name="RailTutoChoiceLL" parent="Tutorial" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.3517, 0.0208397, -61.8215)
+curve = SubResource("Curve3D_xhne8")
+in_sections = [NodePath("../RailTutoChoiceL")]
+out_sections = [NodePath("../RailTutoChoice")]
+
+[node name="BakedRailsMesh" parent="Tutorial/RailTutoChoiceLL" index="0"]
+mesh = ExtResource("83_eimau")
+
+[node name="BakedRailsMeshMinimap" parent="Tutorial/RailTutoChoiceLL" index="2"]
+mesh = ExtResource("84_sggws")
+
+[node name="CrossFollow" parent="Tutorial/RailTutoChoiceLL" index="3"]
+transform = Transform3D(-0.479604, 0.000119358, -0.87746, -4.68047e-05, 0.999968, 0.000161607, 0.877465, 0.000118577, -0.479601, 7.61465, -0.00115823, 6.75952)
+progress = 10.2425
+
+[node name="RailTutoChoiceLR" parent="Tutorial" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.3517, 0.0208397, -61.8215)
+curve = SubResource("Curve3D_xhxyx")
+in_sections = [NodePath("../RailTutoChoiceL")]
+out_sections = [NodePath("../RailPostOutL2")]
+
+[node name="BakedRailsMesh" parent="Tutorial/RailTutoChoiceLR" index="0"]
+mesh = ExtResource("85_ogv2p")
+
+[node name="BakedRailsMeshMinimap" parent="Tutorial/RailTutoChoiceLR" index="2"]
+mesh = ExtResource("86_rhmbt")
+
+[node name="CrossFollow" parent="Tutorial/RailTutoChoiceLR" index="3"]
+transform = Transform3D(-0.723836, -1.60897e-05, -0.689942, -1.36127e-06, 0.999968, -2.1892e-05, 0.689945, -1.49071e-05, -0.723834, 6.71784, -0.00031988, 7.69629)
+progress = 10.2176
+
+[node name="Station" parent="Tutorial/RailTutoChoiceLR" instance=ExtResource("4_xgdko")]
+transform = Transform3D(-0.546004, -0.000289333, -0.837781, 4.32773e-05, 1, -0.000373561, 0.837782, -0.000240223, -0.546004, 13.5322, 0.00121104, 13.5341)
+progress = 19.212
+waiting_character = ExtResource("20_c4c48")
+
+[node name="RailExit" parent="Tutorial" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0727, 0.0203323, -40.4475)
+curve = SubResource("Curve3D_jnlc3")
+in_sections = [NodePath("../RailToOut")]
+out_sections = [NodePath("../../RailS5_Plus")]
+
+[node name="BakedRailsMesh" parent="Tutorial/RailExit" index="0"]
+mesh = ExtResource("87_0hglx")
+
+[node name="BakedRailsMeshMinimap" parent="Tutorial/RailExit" index="2"]
+mesh = ExtResource("88_j0dlk")
+
+[node name="CrossFollow" parent="Tutorial/RailExit" index="3"]
+transform = Transform3D(-0.526559, 0.00259529, -0.850078, 0.00115669, 0.999965, 0.00233631, 0.850083, 0.000246944, -0.526559, 3.16632, -0.0071271, 0.905023)
+progress = 3.33338
+
+[editable path="RailS4"]
+[editable path="RailS4_S6_bridge"]
+[editable path="RailS4_S11"]
+[editable path="RailS11"]
+[editable path="RailS11_fork"]
+[editable path="RailS11_fork2"]
+[editable path="RailS11_fork3"]
+[editable path="RailS7"]
+[editable path="Rail_pre_S5"]
+[editable path="RailS5"]
+[editable path="RailS5_Plus"]
+[editable path="Rail_pre_S6"]
+[editable path="RailS6"]
+[editable path="Rail_skip_S8"]
+[editable path="RailS8"]
+[editable path="RailS8_S7"]
+[editable path="RailS8_S1"]
+[editable path="Rail_pre_S1"]
+[editable path="RailS1"]
+[editable path="RailS9"]
+[editable path="RailS9_S2"]
+[editable path="RailS2S3"]
+[editable path="RailS3_S4"]
+[editable path="RailS3_S1"]
+[editable path="RailS10"]
+[editable path="Tutorial/RailStart"]
+[editable path="Tutorial/RailStartIntR"]
+[editable path="Tutorial/RailStartIntL"]
+[editable path="Tutorial/RailToOut"]
+[editable path="Tutorial/RailPostOutL"]
+[editable path="Tutorial/RailPostOutL2"]
+[editable path="Tutorial/RailTutoChoice"]
+[editable path="Tutorial/RailTutoChoiceL"]
+[editable path="Tutorial/RailTutoChoiceLL"]
+[editable path="Tutorial/RailTutoChoiceLR"]
+[editable path="Tutorial/RailExit"]

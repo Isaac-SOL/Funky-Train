@@ -24,11 +24,6 @@ static var instance: Main
 var active_station: Station
 var signals_up: bool = false
 @onready var camera: Camera3D = %MainCamera
-@onready var camera_follow_pos: Node3D = %CameraFollowPos
-@onready var camera_pivot_x: Node3D = %CameraPivotX
-@onready var camera_pivot_y: Node3D = %CameraPivotY
-@onready var camera_loop_pos: Node3D = %CameraLoopPos
-@onready var camera_end_pos: Node3D = %EndPos
 var dragging_camera: bool = false
 var ended: bool = false
 var on_end_screen: bool = false
@@ -43,6 +38,8 @@ func _ready() -> void:
 	Input.set_custom_mouse_cursor(grabbing_cursor, Input.CURSOR_POINTING_HAND, Vector2(32, 32))
 	#Preload Diologic timeline by starting a blanc timeline
 	Dialogic.start("timeline_blanc")
+	await get_tree().process_frame
+	%CameraShakerMap.target_node = Locomotive.instance.get_minimap_pos()
 
 func stop_at_station(station: Station):
 	active_station = station
@@ -90,7 +87,7 @@ func update_characters_ui():
 func leave_station():
 	Locomotive.instance.restart()
 	active_station = null
-	%CameraShaker.target_node = camera_follow_pos
+	%CameraShaker.target_node = Locomotive.instance.get_camera_follow_pos()
 
 func get_character(character_name: String) -> CharacterInfo:
 	for char: CharacterInfo in character_list:
@@ -132,6 +129,9 @@ func talk(npc_name: String):
 		Dialogic.start("timeline_"+npc_name)
 
 func _unhandled_input(event: InputEvent) -> void:
+	var follow_pos := Locomotive.instance.get_camera_follow_pos()
+	var pivot_x := Locomotive.instance.get_camera_pivot_x()
+	var pivot_y := Locomotive.instance.get_camera_pivot_y()
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			dragging_camera = true
@@ -143,15 +143,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			await get_tree().process_frame
 			Input.warp_mouse(cursor_start_drag_pos)
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			camera_follow_pos.position.z += zoom_sensitivity
+			follow_pos.position.z += zoom_sensitivity
 		elif event.button_index == MOUSE_BUTTON_WHEEL_UP:
-			camera_follow_pos.position.z -= zoom_sensitivity
-		camera_follow_pos.position.z = clampf(camera_follow_pos.position.z, 2.5, 10.0)
+			follow_pos.position.z -= zoom_sensitivity
+		follow_pos.position.z = clampf(follow_pos.position.z, 2.5, 10.0)
 	elif event is InputEventMouseMotion:
 		if dragging_camera:
-			camera_pivot_y.rotate_y(-event.relative.x * camera_sensitivity.y)
-			camera_pivot_x.rotate_x(-event.relative.y * camera_sensitivity.x)
-			camera_pivot_x.rotation_degrees.x = clampf(camera_pivot_x.rotation_degrees.x, -45.0, 10.0)
+			pivot_y.rotate_y(-event.relative.x * camera_sensitivity.y)
+			pivot_x.rotate_x(-event.relative.y * camera_sensitivity.x)
+			pivot_x.rotation_degrees.x = clampf(Locomotive.instance.get_camera_pivot_x().rotation_degrees.x, -45.0, 10.0)
 
 func _on_button_prendre_pressed() -> void:
 	close_add_character()
@@ -197,7 +197,7 @@ func _on_character_leave_pressed(carriage: Carriage):
 
 func _on_area_loop_area_entered(area: Area3D) -> void:
 	if area.is_in_group("group_locomotive") and not on_end_screen:
-		%CameraShaker.target_node = camera_loop_pos
+		%CameraShaker.target_node = Locomotive.instance.get_camera_loop_pos()
 		if camera_speed_tween:
 			camera_speed_tween.kill()
 		camera_speed_tween = create_tween().set_parallel()
@@ -209,7 +209,7 @@ func _on_area_loop_area_exited(area: Area3D) -> void:
 	if area.is_in_group("group_locomotive") and not on_end_screen:
 		%CameraShaker.move_speed = 8.0
 		%CameraShaker.rotation_speed = 8.0
-		%CameraShaker.target_node = camera_follow_pos
+		%CameraShaker.target_node = Locomotive.instance.get_camera_follow_pos()
 
 func character_attached(new_character: CharacterInfo):
 	%AudioStreamPlayerAttachDetach.play()
@@ -237,7 +237,7 @@ func _on_h_slider_volume_value_changed(value: float) -> void:
 func _on_button_start_pressed() -> void:
 	%ControlStart.visible = false
 	%GameUI.visible = true
-	%CameraShaker.target_node = camera_follow_pos
+	%CameraShaker.target_node = Locomotive.instance.get_camera_follow_pos()
 	game_started.emit()
 
 func start_end_screen():
@@ -247,7 +247,7 @@ func start_end_screen():
 	await get_tree().process_frame
 	Locomotive.instance.set_speed_mode(Locomotive.SpeedMode.FAST)
 	Locomotive.instance.bypass = true
-	%CameraShaker.target_node = camera_end_pos
+	%CameraShaker.target_node = Locomotive.instance.get_end_pos()
 	%GameUI.visible = false
 	%ControlEnd.visible = true
 	
@@ -323,7 +323,7 @@ func start_end_screen():
 	
 	await get_tree().create_timer(5.0).timeout
 	%LabelCredits.visible = false
-	%CameraShaker.target_node = camera_follow_pos
+	%CameraShaker.target_node = Locomotive.instance.get_camera_follow_pos()
 	%GameUI.visible = true
 	%ControlEnd.visible = false
 	on_end_screen = false

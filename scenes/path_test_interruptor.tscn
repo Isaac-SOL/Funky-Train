@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://xyh7yb866trl"]
+
+[ext_resource type="PackedScene" uid="uid://ddei87jmflwu2" path="res://scenes/main_scene_base.tscn" id="1_ibv6s"]
+[ext_resource type="PackedScene" uid="uid://dqosekjtq8ius" path="res://scenes/rails_test_interruptor.tscn" id="2_m8utl"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_x0fm1"]
+viewport_path = NodePath("SubViewport")
+
+[node name="PathTestInterruptor" instance=ExtResource("1_ibv6s")]
+
+[node name="RailsTestInterruptor" parent="." index="2" instance=ExtResource("2_m8utl")]
+
+[node name="Ground" parent="." index="3"]
+transform = Transform3D(3.94145, 0, 0, 0, 1, 0, 0, 0, 2.66728, 31.181, -0.019, 16.972)
+visible = true
+
+[node name="Map" parent="CanvasLayer/GameUI/MinimapUI/MinimapParent/Mask" index="0"]
+texture = SubResource("ViewportTexture_x0fm1")

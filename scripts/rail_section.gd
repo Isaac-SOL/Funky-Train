@@ -8,6 +8,11 @@ static var ID_COUNT: int = 0
 @export var out_sections: Array[RailSection] = []
 @export var out_requirements_1: Array[String]
 @export var out_requirements_2: Array[String]
+@export_group("Toggle mode")
+@export var is_toggled: bool = false
+@export var current_direction_right: bool = false
+@export var toggle_barrier: InterruptorBarrier
+@export_category("Editor actions")
 @export_tool_button("Rebake") var rebake_button = rebake
 @export_tool_button("Align to in") var align_in_button = align_to_in_sections
 @export_tool_button("Align to out") var align_out_button = align_to_out_sections
@@ -15,6 +20,7 @@ static var ID_COUNT: int = 0
 
 var id: int
 var stations: Array[Station] = []
+var interruptors: Array[Interruptor] = []
 var clear_outline_scheduled: bool = false
 var cross_tween: Tween
 
@@ -39,9 +45,14 @@ func _ready() -> void:
 		assert(out_sections.size() <= 2)
 		await get_tree().process_frame
 		%BakedRailsMeshMinimap.visible = true
+		if is_toggled and toggle_barrier:
+			toggle_barrier.switch(current_direction_right)
 
 func add_station(station: Station):
 	stations.append(station)
+
+func add_interruptor(interruptor: Interruptor):
+	interruptors.append(interruptor)
 
 func get_next_station(prog: float) -> Station:
 	if stations.is_empty():
@@ -50,6 +61,15 @@ func get_next_station(prog: float) -> Station:
 	for station: Station in stations:
 		if station.progress > prog and (not res or station.progress < res.progress):
 			res = station
+	return res
+
+func get_next_interruptor(prog: float) -> Interruptor:
+	if interruptors.is_empty():
+		return null
+	var res: Interruptor = null
+	for interruptor: Interruptor in interruptors:
+		if interruptor.progress > prog and (not res or interruptor.progress < res.progress):
+			res = interruptor
 	return res
 
 func clear_outline_await():
@@ -62,6 +82,8 @@ func clear_outline_await():
 		%OutlineMesh.position.y = -0.005
 
 func set_outline(vis: bool):
+	if %OutlineMesh.visible == vis:
+		return
 	%OutlineMesh.visible = vis
 	if vis:
 		%BakedRailsMesh.position.y = 0.01
@@ -108,3 +130,9 @@ func align_to_out_sections():
 	for out_rail in out_sections:
 		if self not in out_rail.in_sections:
 			out_rail.in_sections.append(self)
+
+func toggle():
+	if is_toggled:
+		current_direction_right = not current_direction_right
+		if toggle_barrier:
+			toggle_barrier.switch(current_direction_right)

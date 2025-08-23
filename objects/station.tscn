@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dcpxd04n7oj0i"]
+[gd_scene load_steps=11 format=4 uid="uid://dcpxd04n7oj0i"]
 
 [ext_resource type="Script" uid="uid://d2yldh1vs7co5" path="res://scripts/station.gd" id="1_x4hb3"]
 [ext_resource type="PackedScene" uid="uid://27kfdujhj7rp" path="res://objects/gamjam_2025_gare.tscn" id="2_a8vm7"]
@@ -30,6 +30,10 @@ _surfaces = [{
 shading_mode = 0
 albedo_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ttfy"]
+transparency = 4
+albedo_color = Color(0.625023, 0.10416, 0.151708, 1)
+
 [node name="Station" type="PathFollow3D"]
 script = ExtResource("1_x4hb3")
 
@@ -48,9 +52,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_7x54m")
 
 [node name="gare_aiguille" parent="gamjam2025_gare2" index="1"]
 layers = 1
+surface_material_override/0 = SubResource("StandardMaterial3D_7ttfy")
 
 [node name="gare_aiguille_001" parent="gamjam2025_gare2" index="2"]
 layers = 1
+surface_material_override/0 = SubResource("StandardMaterial3D_7ttfy")
 
 [node name="VibingNode" type="Node3D" parent="."]
 transform = Transform3D(0.991576, 0, -0.129523, 0, 1, 0, 0.129523, 0, 0.991576, 0.916999, 0.0848985, 0.0502111)

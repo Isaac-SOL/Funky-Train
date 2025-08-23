@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://0au8m8bi55xs"]
+
+[ext_resource type="Script" uid="uid://dyix0yj6xyujk" path="res://scripts/interruptor_barrier.gd" id="1_b88lx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_o5q84"]
+radius = 0.3
+height = 3.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_b88lx"]
+flip_faces = true
+radius = 0.45
+height = 3.35
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpyeh"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_o5q84"]
+size = Vector3(0.2, 0.5, 2.05)
+
+[sub_resource type="BoxMesh" id="BoxMesh_b88lx"]
+flip_faces = true
+size = Vector3(0.4, 0.7, 2.25)
+
+[node name="InterruptorBarrier" type="Node3D"]
+script = ExtResource("1_b88lx")
+
+[node name="Pole" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.999619, 0)
+mesh = SubResource("CapsuleMesh_o5q84")
+
+[node name="PoleOutline" type="MeshInstance3D" parent="Pole"]
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_b88lx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mpyeh")
+
+[node name="BarrierPivot" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.935144, 0)
+
+[node name="Barrier" type="MeshInstance3D" parent="BarrierPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.16021)
+mesh = SubResource("BoxMesh_o5q84")
+
+[node name="BarrierOutline" type="MeshInstance3D" parent="BarrierPivot/Barrier"]
+cast_shadow = 0
+mesh = SubResource("BoxMesh_b88lx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mpyeh")

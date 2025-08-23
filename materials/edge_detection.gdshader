@@ -11,6 +11,7 @@ uniform float sobel_max: hint_range(0.0, 1.0);
 uniform float sobel_max_depth;
 uniform float sobel_min: hint_range(0.0, 1.0);
 uniform float sobel_min_depth;
+uniform float sobel_threshold: hint_range(0.0, 10.0);
 uniform vec3 depth_gradient_color: source_color;
 uniform float depth_gradient_start;
 uniform float depth_gradient_end;
@@ -45,6 +46,7 @@ void fragment() {
 
 	// Shift to black & white
 	float sobel_scalar = sobel.r + sobel.g + sobel.b;
+	if (sobel_scalar < sobel_threshold) sobel_scalar = 0.0;
 
 	// === DEPTH GRADIENT ===
 
@@ -52,7 +54,8 @@ void fragment() {
 	float norm_depth = (lin_depth - depth_gradient_start) / (depth_gradient_end - depth_gradient_start);
 	norm_depth = clamp(norm_depth, 0.0, 1.0);
 	norm_depth *= depth_gradient_strength;
-	if (lin_depth > 200.0) {
+	bool pure_black = pixels[0].r == 0.0 && pixels[0].g == 0.0 && pixels[0].b == 0.0;
+	if (lin_depth > 200.0 || pure_black) {
 		norm_depth = 0.0;
 	}
 

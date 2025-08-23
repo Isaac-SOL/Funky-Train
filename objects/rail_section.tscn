@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bq4hqqiapqltb" path="res://assets/modele/3D/cross.tscn" id="7_yfycn"]
 
 [sub_resource type="Curve3D" id="Curve3D_x140k"]
+resource_local_to_scene = true
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
