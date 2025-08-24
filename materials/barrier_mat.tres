@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bbxx4if5w4vsf"]
+
+[ext_resource type="Shader" uid="uid://csftcefqyy1vx" path="res://materials/interruptor_barrier.gdshader" id="1_fb8v0"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_fb8v0")
+shader_parameter/frequency = 1.0

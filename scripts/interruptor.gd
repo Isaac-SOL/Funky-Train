@@ -15,4 +15,14 @@ func get_section() -> RailSection:
 func press():
 	rail_to_toggle.toggle()
 	%AudioPressed.play()
+	
+	%PressSprite.scale = Vector3(1.0, 1.0, 1.0)
+	%PressSprite.modulate = Color.WHITE
+	%PressSprite.visible = true
+	var tween := create_tween().set_parallel()
+	tween.tween_property(%PressSprite, "modulate", Color.TRANSPARENT, 1.0)
+	var scale_tweener := tween.tween_property(%PressSprite, "scale", Vector3(3.0, 3.0, 3.0), 1.0)
+	scale_tweener.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
+	tween.chain().tween_callback(func(): %PressSprite.visible = false)
+	
 	pressed.emit()

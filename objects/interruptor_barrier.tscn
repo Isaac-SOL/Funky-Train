@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://0au8m8bi55xs"]
+[gd_scene load_steps=10 format=3 uid="uid://0au8m8bi55xs"]
 
 [ext_resource type="Script" uid="uid://dyix0yj6xyujk" path="res://scripts/interruptor_barrier.gd" id="1_b88lx"]
+[ext_resource type="Material" uid="uid://bbxx4if5w4vsf" path="res://materials/barrier_mat.tres" id="2_mpyeh"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_o5q84"]
 radius = 0.3
@@ -22,6 +23,14 @@ size = Vector3(0.2, 0.5, 2.05)
 flip_faces = true
 size = Vector3(0.4, 0.7, 2.25)
 
+[sub_resource type="QuadMesh" id="QuadMesh_mpyeh"]
+size = Vector2(2.5, 6)
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_td8sy"]
+shading_mode = 0
+albedo_color = Color(1, 0.721569, 0, 1)
+
 [node name="InterruptorBarrier" type="Node3D"]
 script = ExtResource("1_b88lx")
 
@@ -42,9 +51,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.935144, 0)
 [node name="Barrier" type="MeshInstance3D" parent="BarrierPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.16021)
 mesh = SubResource("BoxMesh_o5q84")
+surface_material_override/0 = ExtResource("2_mpyeh")
 
 [node name="BarrierOutline" type="MeshInstance3D" parent="BarrierPivot/Barrier"]
 cast_shadow = 0
 mesh = SubResource("BoxMesh_b88lx")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mpyeh")
+
+[node name="MinimapMesh" type="MeshInstance3D" parent="BarrierPivot/Barrier"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.36662, 0)
+layers = 2
+cast_shadow = 0
+mesh = SubResource("QuadMesh_mpyeh")
+surface_material_override/0 = SubResource("StandardMaterial3D_td8sy")
