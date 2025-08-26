@@ -47,11 +47,14 @@ func rebake():
 	mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLE_STRIP, arrays)
 	mesh.surface_set_material(0, material)
 	
+	var detached_mesh := mesh
+	mesh = null
+	
 	var res_name := "res://meshes/rails/" + get_parent().name
 	if minimap:
 		res_name += "_minimap"
 	res_name += ".tres"
-	var save := ResourceSaver.save(mesh, res_name, ResourceSaver.FLAG_CHANGE_PATH)
+	var save := ResourceSaver.save(detached_mesh, res_name, ResourceSaver.FLAG_CHANGE_PATH)
 	mesh = load(res_name)
 	print("test")
 	if save != OK:

@@ -17,6 +17,7 @@ static var ID_COUNT: int = 0
 @export_tool_button("Align to in") var align_in_button = align_to_in_sections
 @export_tool_button("Align to out") var align_out_button = align_to_out_sections
 @export_tool_button("Make resources unique") var unique_button = make_unique
+@export_tool_button("Flatten to Y=0") var flatten_button = flatten_to_zero
 
 var id: int
 var stations: Array[Station] = []
@@ -130,6 +131,16 @@ func align_to_out_sections():
 	for out_rail in out_sections:
 		if self not in out_rail.in_sections:
 			out_rail.in_sections.append(self)
+
+func flatten_to_zero():
+	position.y = 0
+	var flattener := Vector3(1.0, 0.0, 1.0)
+	for p: int in curve.point_count:
+		curve.set_point_position(p, curve.get_point_position(p) * flattener)
+		if p > 0:
+			curve.set_point_in(p, curve.get_point_in(p) * flattener)
+		if p < curve.point_count - 1:
+			curve.set_point_out(p, curve.get_point_out(p) * flattener)
 
 func toggle():
 	if is_toggled:

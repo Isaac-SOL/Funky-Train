@@ -8,6 +8,8 @@ func _ready() -> void:
 	get_section().add_interruptor(self)
 	await get_tree().process_frame
 	assert(rail_to_toggle.is_toggled)
+	if rail_to_toggle.toggle_barrier:
+		%DirectionIndicator.look_at(rail_to_toggle.toggle_barrier.global_position)
 
 func get_section() -> RailSection:
 	return get_parent()
@@ -16,7 +18,7 @@ func press():
 	rail_to_toggle.toggle()
 	%AudioPressed.play()
 	
-	%PressSprite.scale = Vector3(1.0, 1.0, 1.0)
+	%PressSprite.scale = Vector3(2.0, 2.0, 2.0)
 	%PressSprite.modulate = Color.WHITE
 	%PressSprite.visible = true
 	var tween := create_tween().set_parallel()

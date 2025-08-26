@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://mqww6jfk1d0n"]
+[gd_scene load_steps=11 format=4 uid="uid://mqww6jfk1d0n"]
 
 [ext_resource type="Script" uid="uid://cvrmikr6pnu5u" path="res://scripts/interruptor.gd" id="1_vfl8x"]
 [ext_resource type="Material" uid="uid://bbxx4if5w4vsf" path="res://materials/barrier_mat.tres" id="2_fhu76"]
 [ext_resource type="Texture2D" uid="uid://d2eo2w76jfcma" path="res://assets/textures/press.png" id="3_vanaa"]
-[ext_resource type="AudioStream" uid="uid://da67tqof2bf6r" path="res://assets/sfx/lever_2.ogg" id="4_mslwb"]
+[ext_resource type="AudioStream" uid="uid://cxy3m7v28w1yw" path="res://assets/sfx/snap.ogg" id="4_vanaa"]
+[ext_resource type="Texture2D" uid="uid://bk36dud3k78py" path="res://assets/textures/black_arrow.png" id="5_mslwb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_yfycn"]
 size = Vector3(1.5, 0.3, 1.5)
@@ -56,7 +57,8 @@ texture = ExtResource("3_vanaa")
 
 [node name="AudioPressed" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("4_mslwb")
+stream = ExtResource("4_vanaa")
+volume_db = 15.0
 
 [node name="MinimapMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 7.16373, 0)
@@ -64,3 +66,13 @@ layers = 2
 cast_shadow = 0
 mesh = SubResource("QuadMesh_vanaa")
 surface_material_override/0 = SubResource("StandardMaterial3D_mslwb")
+
+[node name="DirectionIndicator" type="Marker3D" parent="."]
+unique_name_in_owner = true
+
+[node name="Sprite3D" type="Sprite3D" parent="DirectionIndicator"]
+transform = Transform3D(1.725, 0, -3.01609e-07, 0, 1.725, 0, 3.01609e-07, 0, 1.725, -1.35719e-08, 0, -1.59249)
+cast_shadow = 0
+axis = 1
+alpha_cut = 1
+texture = ExtResource("5_mslwb")

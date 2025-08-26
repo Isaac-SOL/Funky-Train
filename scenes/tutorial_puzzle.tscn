@@ -1,0 +1,399 @@
+[gd_scene load_steps=50 format=3 uid="uid://chw6govmellqw"]
+
+[ext_resource type="Script" uid="uid://hcgv0grqqm7y" path="res://scripts/rails_master.tres.gd" id="1_umu38"]
+[ext_resource type="PackedScene" uid="uid://c7adtd3m5hihf" path="res://objects/rail_section.tscn" id="2_ghncn"]
+[ext_resource type="ArrayMesh" uid="uid://b6kkyxebc8r7x" path="res://meshes/rails/TutoPuzzle_Start.tres" id="3_3ge75"]
+[ext_resource type="ArrayMesh" uid="uid://do1m4qgp4e8k7" path="res://meshes/rails/TutoPuzzle_Start_minimap.tres" id="4_15ul3"]
+[ext_resource type="PackedScene" uid="uid://b2gtvjpbbcs2j" path="res://objects/locomotive.tscn" id="5_pfbge"]
+[ext_resource type="ArrayMesh" uid="uid://biudfmiq8e5v5" path="res://meshes/rails/TutoPuzzle_StartR.tres" id="6_gdr3k"]
+[ext_resource type="ArrayMesh" uid="uid://bnpy3ed222rci" path="res://meshes/rails/TutoPuzzle_StartR_minimap.tres" id="7_eh742"]
+[ext_resource type="ArrayMesh" uid="uid://dxjdidor25tys" path="res://meshes/rails/TutoPuzzle_StartL.tres" id="8_nggai"]
+[ext_resource type="ArrayMesh" uid="uid://berv8haab58c" path="res://meshes/rails/TutoPuzzle_StartL_minimap.tres" id="9_j2oxv"]
+[ext_resource type="ArrayMesh" uid="uid://bqovkg5pcfwmt" path="res://meshes/rails/TutoPuzzle_BeforeExit.tres" id="10_0k3da"]
+[ext_resource type="ArrayMesh" uid="uid://dfyxmvqy8g1fh" path="res://meshes/rails/TutoPuzzle_StartL2.tres" id="10_pfbge"]
+[ext_resource type="ArrayMesh" uid="uid://ccy23a0h5dqd2" path="res://meshes/rails/TutoPuzzle_StartL2_minimap.tres" id="11_gdr3k"]
+[ext_resource type="ArrayMesh" uid="uid://b8l7tdp2c54qp" path="res://meshes/rails/TutoPuzzle_BeforeExit_minimap.tres" id="11_lvkbr"]
+[ext_resource type="ArrayMesh" uid="uid://dlknmryk6ra8g" path="res://meshes/rails/TutoPuzzle_AfterExit.tres" id="12_hwhfg"]
+[ext_resource type="ArrayMesh" uid="uid://biwhihhb282jo" path="res://meshes/rails/TutoPuzzle_AfterExit_minimap.tres" id="13_7wco1"]
+[ext_resource type="ArrayMesh" uid="uid://bdkhinlaycf54" path="res://meshes/rails/TutoPuzzle_AfterStation.tres" id="14_01l5c"]
+[ext_resource type="ArrayMesh" uid="uid://16twg10f8kv0" path="res://meshes/rails/TutoPuzzle_AfterStation_minimap.tres" id="15_nqxmy"]
+[ext_resource type="ArrayMesh" uid="uid://2abtatgfuakj" path="res://meshes/rails/TutoPuzzle_ToStart.tres" id="16_kkjwl"]
+[ext_resource type="ArrayMesh" uid="uid://ccf6wufck7b3w" path="res://meshes/rails/TutoPuzzle_ToStart_minimap.tres" id="17_ngp72"]
+[ext_resource type="ArrayMesh" uid="uid://d3oi3whtea588" path="res://meshes/rails/TutoPuzzle_InnerEntrance.tres" id="18_gbq7k"]
+[ext_resource type="ArrayMesh" uid="uid://bqk2b20otojri" path="res://meshes/rails/TutoPuzzle_InnerEntrance_minimap.tres" id="19_ej5nc"]
+[ext_resource type="ArrayMesh" uid="uid://d1ofjwmhc063s" path="res://meshes/rails/TutoPuzzle_SwitchL.tres" id="20_3ge75"]
+[ext_resource type="ArrayMesh" uid="uid://bj5r41lj1kna2" path="res://meshes/rails/TutoPuzzle_InnerL.tres" id="20_e8t11"]
+[ext_resource type="ArrayMesh" uid="uid://cl4sxt53dr5h0" path="res://meshes/rails/TutoPuzzle_SwitchL_minimap.tres" id="21_15ul3"]
+[ext_resource type="ArrayMesh" uid="uid://t5bmc1sfeuhk" path="res://meshes/rails/TutoPuzzle_InnerL_minimap.tres" id="21_y38i6"]
+[ext_resource type="PackedScene" uid="uid://0au8m8bi55xs" path="res://objects/interruptor_barrier.tscn" id="22_nggai"]
+[ext_resource type="ArrayMesh" uid="uid://ct1xiuoa3ohqq" path="res://meshes/rails/TutoPuzzle_InnerR.tres" id="22_u7my3"]
+[ext_resource type="ArrayMesh" uid="uid://dosnugkgx2o64" path="res://meshes/rails/TutoPuzzle_InnerR_minimap.tres" id="23_iaf6p"]
+[ext_resource type="PackedScene" uid="uid://mqww6jfk1d0n" path="res://objects/interruptor.tscn" id="23_j2oxv"]
+[ext_resource type="PackedScene" uid="uid://dcpxd04n7oj0i" path="res://objects/station.tscn" id="24_dqbse"]
+[ext_resource type="ArrayMesh" uid="uid://hw8wnh367fdo" path="res://meshes/rails/TutoPuzzle_SwitchR.tres" id="25_j2oxv"]
+[ext_resource type="Resource" uid="uid://cf34n44v4encj" path="res://objects/characters/E.tres" id="25_sclay"]
+[ext_resource type="ArrayMesh" uid="uid://ctpli4xqaxigr" path="res://meshes/rails/TutoPuzzle_SwitchR_minimap.tres" id="26_0k3da"]
+[ext_resource type="ArrayMesh" uid="uid://do6tdhj834glg" path="res://meshes/rails/TutoPuzzle_Exit.tres" id="26_lp3ud"]
+[ext_resource type="ArrayMesh" uid="uid://bx18hhdjxe01w" path="res://meshes/rails/TutoPuzzle_Exit_minimap.tres" id="27_ttxs1"]
+
+[sub_resource type="Curve3D" id="Curve3D_3kv24"]
+_data = {
+"points": PackedVector3Array(5.4619, 0.00684357, 1.60833, -5.4619, 0, -1.60833, 0, 0, 0, 4.44525, 0, -1.4187, -4.44525, 0, 1.4187, -15.8423, 0, -2.84601, 0.0777588, 0, -8.37398, -0.0777588, -0.00116539, 8.37398, -22.9304, 0, 9.79971),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_7r4n4"]
+_data = {
+"points": PackedVector3Array(5.4619, 0.00684357, 1.60833, -0.0777588, 0, 8.37398, 0, 0, 0, -2.99193, 0, -4.17363, 2.99193, 0, 4.17363, 3.43176, 0, 15.5484, -6.52935, 0, -1.05398, 6.52935, -0.00740242, 1.05398, 16.2656, 0, 22.8557),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_c4xci"]
+_data = {
+"points": PackedVector3Array(5.4619, 0.00684357, 1.60833, -0.0777588, 0, 8.37398, 0, 0, 0, -2.72519, 0, -3.8757, 2.72519, 0.00303078, 3.8757, 9.7105, 0, 11.4395),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_eh742"]
+_data = {
+"points": PackedVector3Array(5.4619, 0.00684357, 1.60833, 2.72519, 0, 3.8757, 0, 0, 0, -6.52935, 0, -1.05398, 2.72519, 0.00303078, 3.8757, 6.5551, 0, 11.4162),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_5mr34"]
+_data = {
+"points": PackedVector3Array(5.4619, 0.00684357, 1.60833, 6.52935, 0, 1.05398, 0, 0, 0, -4.51012, 0, -0.0680046, 4.51012, -0.00827599, 0.0680046, 12.5092, 0, 1.2278),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_0bklj"]
+_data = {
+"points": PackedVector3Array(5.4619, 0.00684357, 1.60833, 4.51012, 0, 0.0680046, 0, 0, 0, -3.57175, 0, 3.07149, 3.57175, -0.0107136, -3.07149, 14.2567, 0, -5.3853),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_pfbvv"]
+_data = {
+"points": PackedVector3Array(5.4619, 0.00684357, 1.60833, 3.57175, 0, -3.07149, 0, 0, 0, 1.18154, 0, 7.6095, -1.18154, -0.0143623, -7.6095, 7.61446, 0, -16.6232),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_7x3rl"]
+_data = {
+"points": PackedVector3Array(5.4619, 0.00684357, 1.60833, -1.18154, 0, -7.6095, 0, 0, 0, 4.75966, 0, 0.246178, -4.75966, 0, -0.246178, -14.851, 0, -8.92076, 5.4619, 0, 1.60833, -10.7692, -0.00899124, -1.47488, -27.7156, 0, -11.8747),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_fjpbf"]
+_data = {
+"points": PackedVector3Array(5.4619, 0.00684357, 1.60833, -5.4619, 0, -1.60833, 0, 0, 0, 0.984631, 0, -2.52396, -0.984631, 0, 2.52396, -9.00879, 0, 3.56668, 0.343496, 0, -2.99761, -0.343496, -0.098279, 2.99761, -10.2911, 0, 9.2365),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_pfbge"]
+_data = {
+"points": PackedVector3Array(5.4619, 0.00684357, 1.60833, -0.343496, 0, 2.99761, 0, 0, 0, -3.35193, 0, -1.95112, 3.35193, -0.000610352, 1.95112, 5.303, 0, 9.2554),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_lvkbr"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, -0.343496, 0, 2.99761, 0, 0, 0, -2.72519, 0, -3.8757, 0, 0, 0, -2.9288, 0, 12.0027),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_tmtjo"]
+_data = {
+"points": PackedVector3Array(5.4619, 0.00684357, 1.60833, 3.35193, 0, 1.95112, 0, 0, 0, -8.17898, 0, 0.152538, 8.17898, 0, -0.152538, 18.7461, 0, 4.80656, 1.18154, 0, 7.6095, 6.84175, -0.0115948, -6.28008, 32.7037, 0, -6.6172),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_0j22v"]
+_data = {
+"points": PackedVector3Array(5.4619, 0.00684357, 1.60833, 3.35193, 0, 1.95112, 0, 0, 0, -4.31638, 0, -2.71726, 4.31638, 0, 2.71726, 12.8069, 0, 9.87794, -3.57175, 0, 3.07149, 6.84175, -0.0115948, -6.28008, 25.0892, 0, 10.006),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_vlggg"]
+_data = {
+"points": PackedVector3Array(5.4619, 0.00684357, 1.60833, 4.51012, 0, 0.0680046, 0, 0, 0, 3.0166, 0, -3.32003, -3.0166, 0, 3.32003, 4.35528, 0, 7.98895, 3.56766, 0, -4.01048, -3.56766, 0, 4.01048, -6.96062, 0, 13.1403, -4.51012, 0, -0.0680046, 4.51012, -0.00827599, 0.0680046, 0, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[node name="TutorialPuzzle" type="Node3D"]
+script = ExtResource("1_umu38")
+
+[node name="TutoPuzzle_Start" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_ghncn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.9171, 0, -74.3307)
+curve = SubResource("Curve3D_3kv24")
+in_sections = [NodePath("../TutoPuzzle_ToStart")]
+out_sections = [NodePath("../TutoPuzzle_StartL"), NodePath("../TutoPuzzle_StartR")]
+
+[node name="BakedRailsMesh" parent="TutoPuzzle_Start" index="0"]
+mesh = ExtResource("3_3ge75")
+
+[node name="BakedRailsMeshMinimap" parent="TutoPuzzle_Start" index="2"]
+mesh = ExtResource("4_15ul3")
+
+[node name="CrossFollow" parent="TutoPuzzle_Start" index="3"]
+transform = Transform3D(0.296938, 0, 0.954881, 0, 0.999986, 0, -0.954884, 0, 0.296937, -5.66763, 0, -1.80556)
+progress = 5.94844
+
+[node name="Locomotive" parent="TutoPuzzle_Start" instance=ExtResource("5_pfbge")]
+transform = Transform3D(0.202731, 0, 0.979184, 0, 0.999952, 0, -0.979186, 0, 0.202731, -9.56617, 0, -2.84998)
+progress = 9.98606
+
+[node name="TutoPuzzle_StartR" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_ghncn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.8475, 0, -64.531)
+curve = SubResource("Curve3D_7r4n4")
+in_sections = [NodePath("../TutoPuzzle_Start")]
+out_sections = [NodePath("../TutoPuzzle_BeforeExit")]
+
+[node name="BakedRailsMesh" parent="TutoPuzzle_StartR" index="0"]
+mesh = ExtResource("6_gdr3k")
+
+[node name="BakedRailsMeshMinimap" parent="TutoPuzzle_StartR" index="2"]
+mesh = ExtResource("7_eh742")
+
+[node name="CrossFollow" parent="TutoPuzzle_StartR" index="3"]
+transform = Transform3D(-0.998577, 0, -0.0531346, 0, 0.999986, 0, 0.053135, 0, -0.998569, 0.0775257, 0, 5.28053)
+progress = 5.28178
+
+[node name="TutoPuzzle_StartL" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_ghncn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.8475, 0, -64.531)
+curve = SubResource("Curve3D_c4xci")
+in_sections = [NodePath("../TutoPuzzle_Start")]
+out_sections = [NodePath("../TutoPuzzle_StartL2")]
+
+[node name="BakedRailsMesh" parent="TutoPuzzle_StartL" index="0"]
+mesh = ExtResource("8_nggai")
+
+[node name="BakedRailsMeshMinimap" parent="TutoPuzzle_StartL" index="2"]
+mesh = ExtResource("9_j2oxv")
+
+[node name="CrossFollow" parent="TutoPuzzle_StartL" index="3"]
+transform = Transform3D(-0.836664, 0, -0.547699, 0, 0.999986, 0, 0.5477, 0, -0.836663, 1.24728, 0, 5.0087)
+progress = 5.2385
+
+[node name="TutoPuzzle_StartL2" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_ghncn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.137, 0, -53.0915)
+curve = SubResource("Curve3D_eh742")
+in_sections = [NodePath("../TutoPuzzle_StartL"), NodePath("../TutoPuzzle_SwitchR")]
+out_sections = [NodePath("../TutoPuzzle_BeforeExit")]
+
+[node name="BakedRailsMesh" parent="TutoPuzzle_StartL2" index="0"]
+mesh = ExtResource("10_pfbge")
+
+[node name="BakedRailsMeshMinimap" parent="TutoPuzzle_StartL2" index="2"]
+mesh = ExtResource("11_gdr3k")
+
+[node name="CrossFollow" parent="TutoPuzzle_StartL2" index="3"]
+transform = Transform3D(-0.988581, 0, -0.150628, 0, 0.999986, 0, 0.150629, 0, -0.988579, 1.53765, 0, 4.95598)
+progress = 5.2385
+
+[node name="TutoPuzzle_BeforeExit" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_ghncn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.5819, 0, -41.6753)
+curve = SubResource("Curve3D_5mr34")
+in_sections = [NodePath("../TutoPuzzle_StartR"), NodePath("../TutoPuzzle_StartL2")]
+out_sections = [NodePath("../TutoPuzzle_AfterExit"), NodePath("../TutoPuzzle_Exit")]
+out_requirements_2 = Array[String](["E"])
+
+[node name="BakedRailsMesh" parent="TutoPuzzle_BeforeExit" index="0"]
+mesh = ExtResource("10_0k3da")
+
+[node name="BakedRailsMeshMinimap" parent="TutoPuzzle_BeforeExit" index="2"]
+mesh = ExtResource("11_lvkbr")
+
+[node name="CrossFollow" parent="TutoPuzzle_BeforeExit" index="3"]
+transform = Transform3D(-0.159358, 0, -0.987209, 0, 0.999962, 0, 0.987212, 0, -0.159357, 0, 0, 0)
+
+[node name="TutoPuzzle_AfterExit" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_ghncn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0727, 0, -40.4475)
+curve = SubResource("Curve3D_0bklj")
+in_sections = [NodePath("../TutoPuzzle_BeforeExit")]
+out_sections = [NodePath("../TutoPuzzle_AfterStation")]
+
+[node name="BakedRailsMesh" parent="TutoPuzzle_AfterExit" index="0"]
+mesh = ExtResource("12_hwhfg")
+
+[node name="BakedRailsMeshMinimap" parent="TutoPuzzle_AfterExit" index="2"]
+mesh = ExtResource("13_7wco1")
+
+[node name="CrossFollow" parent="TutoPuzzle_AfterExit" index="3"]
+transform = Transform3D(0.193842, 0, -0.981009, 0, 0.999968, 0, 0.981012, 0, 0.193841, 3.45199, 0, -0.345285)
+progress = 3.47554
+
+[node name="TutoPuzzle_AfterStation" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_ghncn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.81601, 0, -45.8328)
+curve = SubResource("Curve3D_pfbvv")
+in_sections = [NodePath("../TutoPuzzle_AfterExit"), NodePath("../TutoPuzzle_InnerR")]
+out_sections = [NodePath("../TutoPuzzle_ToStart")]
+
+[node name="BakedRailsMesh" parent="TutoPuzzle_AfterStation" index="0"]
+mesh = ExtResource("14_01l5c")
+
+[node name="BakedRailsMeshMinimap" parent="TutoPuzzle_AfterStation" index="2"]
+mesh = ExtResource("15_nqxmy")
+
+[node name="CrossFollow" parent="TutoPuzzle_AfterStation" index="3"]
+transform = Transform3D(0.652001, 0, -0.758192, 0, 0.999969, 0, 0.758194, 0, 0.651999, 0, 0, 0)
+
+[node name="TutoPuzzle_ToStart" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_ghncn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.201548, 0, -62.456)
+curve = SubResource("Curve3D_7x3rl")
+in_sections = [NodePath("../TutoPuzzle_AfterStation"), NodePath("../TutoPuzzle_InnerL")]
+out_sections = [NodePath("../TutoPuzzle_InnerEntrance"), NodePath("../TutoPuzzle_Start")]
+
+[node name="BakedRailsMesh" parent="TutoPuzzle_ToStart" index="0"]
+mesh = ExtResource("16_kkjwl")
+
+[node name="BakedRailsMeshMinimap" parent="TutoPuzzle_ToStart" index="2"]
+mesh = ExtResource("17_ngp72")
+
+[node name="CrossFollow" parent="TutoPuzzle_ToStart" index="3"]
+transform = Transform3D(0.988141, 0, 0.15343, 0, 0.999969, 0, -0.15343, 0, 0.988138, 0, 0, 0)
+
+[node name="TutoPuzzle_InnerEntrance" parent="." node_paths=PackedStringArray("in_sections", "out_sections", "toggle_barrier") instance=ExtResource("2_ghncn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.9171, 0, -74.3307)
+curve = SubResource("Curve3D_fjpbf")
+in_sections = [NodePath("../TutoPuzzle_ToStart")]
+out_sections = [NodePath("../TutoPuzzle_SwitchL"), NodePath("../TutoPuzzle_SwitchR")]
+is_toggled = true
+toggle_barrier = NodePath("InterruptorBarrier")
+
+[node name="BakedRailsMesh" parent="TutoPuzzle_InnerEntrance" index="0"]
+mesh = ExtResource("18_gbq7k")
+
+[node name="BakedRailsMeshMinimap" parent="TutoPuzzle_InnerEntrance" index="2"]
+mesh = ExtResource("19_ej5nc")
+
+[node name="CrossFollow" parent="TutoPuzzle_InnerEntrance" index="3"]
+transform = Transform3D(-0.414133, 0, 0.91019, 0, 0.999961, 0, -0.910188, 0, -0.414134, -5.84865, 0, 0.067909)
+progress = 5.97532
+
+[node name="InterruptorBarrier" parent="TutoPuzzle_InnerEntrance" instance=ExtResource("22_nggai")]
+transform = Transform3D(-0.995219, 0, 0.0976697, 0, 1, 0, -0.0976697, 0, -0.995219, -10.7338, 0, 13.0904)
+degrees_left = -61.714
+degrees_right = 68.571
+
+[node name="Interruptor" parent="TutoPuzzle_InnerEntrance" node_paths=PackedStringArray("rail_to_toggle") instance=ExtResource("23_j2oxv")]
+transform = Transform3D(-0.932891, 0, 0.360159, 0, 0.999998, 0, -0.36016, 0, -0.932889, -9.12334, 0, 3.86171)
+progress = 11.1278
+rail_to_toggle = NodePath("..")
+
+[node name="TutoPuzzle_SwitchL" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_ghncn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.2082, 0, -65.0942)
+curve = SubResource("Curve3D_pfbge")
+in_sections = [NodePath("../TutoPuzzle_InnerEntrance")]
+out_sections = [NodePath("../TutoPuzzle_InnerL"), NodePath("../TutoPuzzle_InnerR")]
+
+[node name="BakedRailsMesh" parent="TutoPuzzle_SwitchL" index="0"]
+mesh = ExtResource("20_3ge75")
+
+[node name="BakedRailsMeshMinimap" parent="TutoPuzzle_SwitchL" index="2"]
+mesh = ExtResource("21_15ul3")
+
+[node name="CrossFollow" parent="TutoPuzzle_SwitchL" index="3"]
+transform = Transform3D(-0.84229, 0, -0.538969, 0, 0.999956, 0, 0.538966, 0, -0.842295, 1.63503, 0, 5.63621)
+visible = false
+progress = 5.97532
+
+[node name="TutoPuzzle_SwitchR" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_ghncn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.2082, 0, -65.0942)
+curve = SubResource("Curve3D_lvkbr")
+in_sections = [NodePath("../TutoPuzzle_InnerEntrance")]
+out_sections = [NodePath("../TutoPuzzle_StartL2")]
+
+[node name="BakedRailsMesh" parent="TutoPuzzle_SwitchR" index="0"]
+mesh = ExtResource("25_j2oxv")
+
+[node name="BakedRailsMeshMinimap" parent="TutoPuzzle_SwitchR" index="2"]
+mesh = ExtResource("26_0k3da")
+
+[node name="CrossFollow" parent="TutoPuzzle_SwitchR" index="3"]
+transform = Transform3D(-0.895547, 0, 0.444892, 0, 0.999951, 0, -0.44489, 0, -0.89555, -2.48464, 0, 5.40519)
+visible = false
+progress = 5.97532
+
+[node name="TutoPuzzle_InnerL" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_ghncn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.9052, 0, -55.8388)
+curve = SubResource("Curve3D_tmtjo")
+in_sections = [NodePath("../TutoPuzzle_SwitchL")]
+out_sections = [NodePath("../TutoPuzzle_ToStart")]
+
+[node name="BakedRailsMesh" parent="TutoPuzzle_InnerL" index="0"]
+mesh = ExtResource("20_e8t11")
+
+[node name="BakedRailsMeshMinimap" parent="TutoPuzzle_InnerL" index="2"]
+mesh = ExtResource("21_y38i6")
+
+[node name="CrossFollow" parent="TutoPuzzle_InnerL" index="3"]
+transform = Transform3D(-0.23976, 0, -0.970807, 0, 0.999968, 0, 0.970813, 0, -0.239758, 9.50699, 0, 3.72463)
+progress = 10.2425
+
+[node name="TutoPuzzle_InnerR" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_ghncn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.9052, 0, -55.8388)
+curve = SubResource("Curve3D_0j22v")
+in_sections = [NodePath("../TutoPuzzle_SwitchL")]
+out_sections = [NodePath("../TutoPuzzle_AfterStation")]
+
+[node name="BakedRailsMesh" parent="TutoPuzzle_InnerR" index="0"]
+mesh = ExtResource("22_u7my3")
+
+[node name="BakedRailsMeshMinimap" parent="TutoPuzzle_InnerR" index="2"]
+mesh = ExtResource("23_iaf6p")
+
+[node name="CrossFollow" parent="TutoPuzzle_InnerR" index="3"]
+transform = Transform3D(-0.635347, 0, -0.772199, 0, 0.999968, 0, 0.772202, 0, -0.635345, 8.02612, 0, 6.30754)
+progress = 10.2176
+
+[node name="Station" parent="TutoPuzzle_InnerR" instance=ExtResource("24_dqbse")]
+transform = Transform3D(-0.628249, 0, -0.778008, 0, 1, 0, 0.778011, 0, -0.628247, 8.7776, 0, 6.92041)
+progress = 11.1873
+waiting_character = ExtResource("25_sclay")
+
+[node name="TutoPuzzle_Exit" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_ghncn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0727, 0, -40.4475)
+curve = SubResource("Curve3D_vlggg")
+in_sections = [NodePath("../TutoPuzzle_BeforeExit"), NodePath(".")]
+out_sections = [NodePath(".")]
+
+[node name="BakedRailsMesh" parent="TutoPuzzle_Exit" index="0"]
+mesh = ExtResource("26_lp3ud")
+
+[node name="BakedRailsMeshMinimap" parent="TutoPuzzle_Exit" index="2"]
+mesh = ExtResource("27_ttxs1")
+
+[node name="CrossFollow" parent="TutoPuzzle_Exit" index="3"]
+transform = Transform3D(-0.526563, 0, -0.85008, 0, 0.999968, 0, 0.850081, 0, -0.526562, 3.16632, 0, 0.905027)
+progress = 3.33338
+
+[editable path="TutoPuzzle_Start"]
+[editable path="TutoPuzzle_StartR"]
+[editable path="TutoPuzzle_StartL"]
+[editable path="TutoPuzzle_StartL2"]
+[editable path="TutoPuzzle_BeforeExit"]
+[editable path="TutoPuzzle_AfterExit"]
+[editable path="TutoPuzzle_AfterStation"]
+[editable path="TutoPuzzle_ToStart"]
+[editable path="TutoPuzzle_InnerEntrance"]
+[editable path="TutoPuzzle_SwitchL"]
+[editable path="TutoPuzzle_SwitchR"]
+[editable path="TutoPuzzle_InnerL"]
+[editable path="TutoPuzzle_InnerR"]
+[editable path="TutoPuzzle_Exit"]
