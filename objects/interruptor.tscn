@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://mqww6jfk1d0n"]
+[gd_scene load_steps=13 format=4 uid="uid://mqww6jfk1d0n"]
 
 [ext_resource type="Script" uid="uid://cvrmikr6pnu5u" path="res://scripts/interruptor.gd" id="1_vfl8x"]
 [ext_resource type="Material" uid="uid://bbxx4if5w4vsf" path="res://materials/barrier_mat.tres" id="2_fhu76"]
@@ -33,6 +33,11 @@ orientation = 1
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mslwb"]
 shading_mode = 0
 albedo_color = Color(1, 0.721569, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_mslwb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xxek4"]
+shading_mode = 0
 
 [node name="Interruptor" type="PathFollow3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
@@ -71,8 +76,14 @@ surface_material_override/0 = SubResource("StandardMaterial3D_mslwb")
 unique_name_in_owner = true
 
 [node name="Sprite3D" type="Sprite3D" parent="DirectionIndicator"]
-transform = Transform3D(1.725, 0, -3.01609e-07, 0, 1.725, 0, 3.01609e-07, 0, 1.725, -1.35719e-08, 0, -1.59249)
+transform = Transform3D(1.725, 0, -3.01609e-07, 0, 1.725, 0, 3.01609e-07, 0, 1.725, 0, -0.01, -1.592)
 cast_shadow = 0
 axis = 1
 alpha_cut = 1
 texture = ExtResource("5_mslwb")
+
+[node name="Signal" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+visible = false
+mesh = SubResource("SphereMesh_mslwb")
+surface_material_override/0 = SubResource("StandardMaterial3D_xxek4")

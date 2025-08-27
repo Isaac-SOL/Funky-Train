@@ -45,7 +45,7 @@ func _ready() -> void:
 	)
 "
 
-[node name="Rail" type="Path3D"]
+[node name="Rail" type="Path3D" groups=["Rails"]]
 curve = SubResource("Curve3D_x140k")
 script = ExtResource("1_x140k")
 

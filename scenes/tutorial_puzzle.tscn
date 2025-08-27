@@ -292,8 +292,8 @@ degrees_left = -61.714
 degrees_right = 68.571
 
 [node name="Interruptor" parent="TutoPuzzle_InnerEntrance" node_paths=PackedStringArray("rail_to_toggle") instance=ExtResource("23_j2oxv")]
-transform = Transform3D(-0.932891, 0, 0.360159, 0, 0.999998, 0, -0.36016, 0, -0.932889, -9.12334, 0, 3.86171)
-progress = 11.1278
+transform = Transform3D(-0.617884, 0, 0.786267, 0, 0.999998, 0, -0.786268, 0, -0.617883, -6.99454, 0, 0.764858)
+progress = 7.31978
 rail_to_toggle = NodePath("..")
 
 [node name="TutoPuzzle_SwitchL" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_ghncn")]

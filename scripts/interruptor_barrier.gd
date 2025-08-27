@@ -10,6 +10,9 @@ enum BarrierPreviewMode { NONE, LEFT, RIGHT }
 
 var current_y: float
 var y_tween: Tween
+var top: Vector3:
+	get():
+		return %Top.global_position
 
 func _ready() -> void:
 	%BarrierPivot.rotation_degrees.y = degrees_left
@@ -32,3 +35,9 @@ func switch(right: bool):
 		y_tween.kill()
 	y_tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
 	y_tween.tween_property(self, "current_y", y_target, 0.5)
+	
+	var circle_tween := create_tween()
+	for i: int in range(4):
+		for b: bool in [true, false]:
+			circle_tween.tween_callback(func(): %MinimapCircle.visible = b)
+			circle_tween.tween_interval(0.3)

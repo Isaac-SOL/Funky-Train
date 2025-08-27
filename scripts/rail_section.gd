@@ -82,9 +82,11 @@ func clear_outline_await():
 		%BakedRailsMesh.position.y = 0.0
 		%OutlineMesh.position.y = -0.005
 
-func set_outline(vis: bool):
+func set_outline(vis: bool, recurse: bool = true):
+	print(name + " call set_outline " + str(vis))
 	if %OutlineMesh.visible == vis:
 		return
+	print(name + " do set_outline " + str(vis))
 	%OutlineMesh.visible = vis
 	if vis:
 		%BakedRailsMesh.position.y = 0.01
@@ -93,7 +95,8 @@ func set_outline(vis: bool):
 		%BakedRailsMesh.position.y = 0.0
 		%OutlineMesh.position.y = -0.005
 	clear_outline_scheduled = false
-	if out_sections.size() == 1:
+	if recurse and out_sections.size() == 1:
+		print(name + " recurse to " + out_sections[0].name)
 		out_sections[0].set_outline(vis)
 
 func set_cross(vis: bool):

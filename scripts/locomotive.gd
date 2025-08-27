@@ -181,13 +181,16 @@ func change_direction(new_direction: bool):
 
 func change_section(new_section: RailSection):
 	# Leave current section
-	get_section().clear_outline_await()
+	print("--- Change Section (leaving " + get_section().name + ") ---")
+	if last_section:
+		last_section.set_outline(false, false)
 	get_section().set_cross(false)
 	for section: RailSection in get_section().out_sections:
 		section.set_cross(false)
 	last_section = get_section()
 	
 	# Change section
+	print("--- Change Section (changing to " + new_section.name + ") ---")
 	get_parent().remove_child(self)
 	new_section.add_child(self)
 	curr_section_length = get_parent().curve.get_baked_length()
@@ -243,6 +246,7 @@ func kick_up():
 	tween.tween_property(%MeshInstance3D, "scale", Vector3.ONE, 0.5)
 
 func update_rail_outlines():
+	print("=> Calling update_rail_outlines")
 	var next := next_section()
 	for section in get_section().out_sections:
 		section.set_outline(section == next)

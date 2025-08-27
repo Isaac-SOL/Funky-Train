@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://0au8m8bi55xs"]
+[gd_scene load_steps=16 format=3 uid="uid://0au8m8bi55xs"]
 
 [ext_resource type="Script" uid="uid://dyix0yj6xyujk" path="res://scripts/interruptor_barrier.gd" id="1_b88lx"]
 [ext_resource type="Material" uid="uid://bbxx4if5w4vsf" path="res://materials/barrier_mat.tres" id="2_mpyeh"]
@@ -24,12 +24,45 @@ flip_faces = true
 size = Vector3(0.4, 0.7, 2.25)
 
 [sub_resource type="QuadMesh" id="QuadMesh_mpyeh"]
-size = Vector2(2.5, 5)
+size = Vector2(2, 5)
 orientation = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_td8sy"]
 shading_mode = 0
 albedo_color = Color(1, 0.721569, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpahp"]
+shading_mode = 0
+albedo_color = Color(1, 0.721569, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_b1mhq"]
+material = SubResource("StandardMaterial3D_mpahp")
+radius = 1.34
+height = 0.001
+radial_segments = 16
+rings = 1
+is_hemisphere = true
+
+[sub_resource type="TorusMesh" id="TorusMesh_mpyeh"]
+inner_radius = 5.611
+outer_radius = 9.12
+rings = 24
+ring_segments = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1mhq"]
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_mpyeh"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.684659, 0.943182)
+colors = PackedColorArray(1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_td8sy"]
+gradient = SubResource("Gradient_mpyeh")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
 
 [node name="InterruptorBarrier" type="Node3D"]
 script = ExtResource("1_b88lx")
@@ -65,3 +98,28 @@ layers = 2
 cast_shadow = 0
 mesh = SubResource("QuadMesh_mpyeh")
 surface_material_override/0 = SubResource("StandardMaterial3D_td8sy")
+
+[node name="MinimapMeshCenter" type="MeshInstance3D" parent="BarrierPivot/Barrier"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.37529, -1.16021)
+layers = 2
+mesh = SubResource("SphereMesh_b1mhq")
+skeleton = NodePath("../../..")
+
+[node name="Top" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.24835, 0)
+
+[node name="MinimapCircle" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.5603, 0)
+visible = false
+layers = 2
+mesh = SubResource("TorusMesh_mpyeh")
+surface_material_override/0 = SubResource("StandardMaterial3D_b1mhq")
+
+[node name="Sprite3D" type="Sprite3D" parent="MinimapCircle"]
+transform = Transform3D(0.255, 0, 0, 0, 0.255, 0, 0, 0, 0.255, 0, -11.3904, 0)
+billboard = 1
+fixed_size = true
+alpha_cut = 1
+texture = SubResource("GradientTexture2D_td8sy")

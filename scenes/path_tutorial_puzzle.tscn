@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dipomsfqttmax"]
+[gd_scene load_steps=5 format=3 uid="uid://dipomsfqttmax"]
 
 [ext_resource type="PackedScene" uid="uid://ddei87jmflwu2" path="res://scenes/main_scene_base.tscn" id="1_kegnm"]
 [ext_resource type="PackedScene" uid="uid://chw6govmellqw" path="res://scenes/tutorial_puzzle.tscn" id="2_y8xou"]
+[ext_resource type="PackedScene" uid="uid://svkary7u15pl" path="res://objects/signals/signal_1plus.tscn" id="3_y8xou"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_2xdqh"]
 viewport_path = NodePath("SubViewport")
@@ -17,3 +18,6 @@ visible = true
 
 [node name="Map" parent="CanvasLayer/GameUI/MinimapUI/MinimapParent/Mask" index="0"]
 texture = SubResource("ViewportTexture_2xdqh")
+
+[node name="Signal1Plus" parent="." index="14" instance=ExtResource("3_y8xou")]
+transform = Transform3D(-0.3875, 0, -0.92187, 0, 1, 0, 0.92187, 0, -0.3875, 3.53916, 1.43051e-06, 20.1128)

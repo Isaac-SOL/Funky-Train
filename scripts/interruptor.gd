@@ -26,5 +26,18 @@ func press():
 	var scale_tweener := tween.tween_property(%PressSprite, "scale", Vector3(3.0, 3.0, 3.0), 1.0)
 	scale_tweener.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
 	tween.chain().tween_callback(func(): %PressSprite.visible = false)
+	signal_animation()
 	
 	pressed.emit()
+
+func signal_animation():
+	if not rail_to_toggle.toggle_barrier:
+		return
+	%Signal.position = Vector3.ZERO
+	%Signal.visible = true
+	var tween_pos := create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tween_pos.tween_property(%Signal, "global_position", rail_to_toggle.toggle_barrier.global_position, 1.0)
+	tween_pos.tween_callback(func(): %Signal.visible = false)
+	var tween_height := create_tween().set_trans(Tween.TRANS_QUAD)
+	tween_height.tween_property(%Signal, "global_position:y", global_position.y + 5.0, 0.5).set_ease(Tween.EASE_IN_OUT)
+	tween_height.tween_property(%Signal, "global_position:y", rail_to_toggle.toggle_barrier.top.y, 0.5).set_ease(Tween.EASE_IN)

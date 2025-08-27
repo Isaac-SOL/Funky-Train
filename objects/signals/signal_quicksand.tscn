@@ -19,6 +19,7 @@ script = ExtResource("1_81qnm")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 2.06019, 0)
+alpha_cut = 2
 texture = ExtResource("1_wdjhl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

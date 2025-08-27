@@ -15,7 +15,7 @@ imgui/config="uid://w3qgqtnxvopv"
 [application]
 
 config/name="Funky Train"
-run/main_scene="uid://capa820ir3vho"
+run/main_scene="uid://beebjq314o3af"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/image="uid://bnq3r1df1n5b6"
 config/icon="res://icon.svg"
@@ -25,8 +25,8 @@ config/icon="res://icon.svg"
 Global="*res://scripts/global/Global.gd"
 NodeAudio="*res://scenes/global/node_audio.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
-ImGuiRoot="*res://addons/imgui-godot/data/ImGuiRoot.tscn"
 RailsColorManager="*res://scripts/global/rails_color_manager.gd"
+ImGuiRoot="*res://addons/imgui-godot/data/ImGuiRoot.tscn"
 
 [dialogic]
 
@@ -139,6 +139,7 @@ folder_colors={
 [global_group]
 
 group_locomotive=""
+Rails=""
 
 [input]
 
