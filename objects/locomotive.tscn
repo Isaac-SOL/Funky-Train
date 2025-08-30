@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2gtvjpbbcs2j"]
+[gd_scene load_steps=7 format=3 uid="uid://b2gtvjpbbcs2j"]
 
 [ext_resource type="Script" uid="uid://dlylwsenxbljj" path="res://scripts/locomotive.gd" id="1_2c63q"]
 [ext_resource type="PackedScene" uid="uid://bo2gdx8joos8y" path="res://scenes/wagon/chef_locomotive.tscn" id="3_ue4hp"]
+[ext_resource type="AudioStream" uid="uid://bowmmerxjt5f6" path="res://assets/sfx/pop.ogg" id="4_mkonq"]
 [ext_resource type="Texture2D" uid="uid://bpw4fqw84ny1n" path="res://assets/textures/minimap_arrow.png" id="4_pcaac"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ue4hp"]
@@ -72,3 +73,8 @@ script = SubResource("GDScript_ue4hp")
 [node name="EndPos" type="Marker3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(-0.989779, 0, 0.142612, 0, 1, 0, -0.142612, 0, -0.989779, 2.22986, 3.07829, -7.26573)
+
+[node name="AudioAcceleration" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_mkonq")
+volume_db = 15.0

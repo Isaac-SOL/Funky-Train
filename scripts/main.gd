@@ -15,6 +15,7 @@ static var instance: Main
 @export var quick_dialogue_scene: PackedScene
 @export var rhythm_sync: RhythmNotifier
 @export var rails_outline_material: ShaderMaterial
+@export var two_options: bool = true
 @export_group("Cursor")
 @export var direction_cursor: Texture
 @export var speed_cursor: Texture
@@ -40,6 +41,8 @@ func _ready() -> void:
 	Dialogic.start("timeline_blanc")
 	await get_tree().process_frame
 	%CameraShakerMap.target_node = Locomotive.instance.get_minimap_pos()
+	%VBoxContainerTwoOptions.visible = two_options
+	%ButtonStart.visible = not two_options
 
 func stop_at_station(station: Station):
 	active_station = station
@@ -339,3 +342,24 @@ func _on_rhythm_notifier_beat(current_beat: int) -> void:
 	tween.tween_method(rail_outline_beat, 0.27, 0.2, 0.66)
 	#tween.tween_method(rail_outline_beat, 0.15, 0.27, 0.03)
 	#tween.tween_method(rail_outline_beat, 0.27, 0.0, 0.53).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUAD)
+
+
+func _on_start_button_puzzle_click_open() -> void:
+	%StartButtonPuzzle.open()
+	if %StartButtonJam.opened:
+		%StartButtonJam.close()
+
+
+func _on_start_button_puzzle_click_confirm() -> void:
+	# Open other scene
+	pass
+
+
+func _on_start_button_jam_click_open() -> void:
+	%StartButtonJam.open()
+	if %StartButtonPuzzle.opened:
+		%StartButtonPuzzle.close()
+
+
+func _on_start_button_jam_click_confirm() -> void:
+	_on_button_start_pressed()

@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhre1ajv8oogw"]
+
+[ext_resource type="Material" uid="uid://2j8oioxr23sf" path="res://materials/rails_standard_mat.tres" id="1_pacfi"]
+[ext_resource type="Script" uid="uid://nqnrsdjj38n6" path="res://scripts/accelerator.gd" id="1_vvfyi"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_vvfyi"]
+
+[node name="Accelerator" type="PathFollow3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_vvfyi")
+
+[node name="MeshRoot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.011, 0)
+
+[node name="MeshScale" type="Node3D" parent="MeshRoot"]
+transform = Transform3D(0.665, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="RightRoot" type="Node3D" parent="MeshRoot/MeshScale"]
+transform = Transform3D(0.895292, 0, 0.445479, 0, 1, 0, -0.445479, 0, 0.895292, 0.626, 0, 0)
+
+[node name="Right" type="Node3D" parent="MeshRoot/MeshScale/RightRoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshRoot/MeshScale/RightRoot/Right"]
+transform = Transform3D(0.707107, -0.707107, -3.09086e-08, 4.2885e-15, -4.37114e-08, 1, -0.707107, -0.707107, -3.09086e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_vvfyi")
+skeleton = NodePath("../../../../..")
+surface_material_override/0 = ExtResource("1_pacfi")
+
+[node name="LeftRoot" type="Node3D" parent="MeshRoot/MeshScale"]
+transform = Transform3D(-0.894934, 0, -0.446198, 0, 1, 0, -0.446198, 0, 0.894934, -0.625946, 0, 0)
+
+[node name="Left" type="Node3D" parent="MeshRoot/MeshScale/LeftRoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshRoot/MeshScale/LeftRoot/Left"]
+transform = Transform3D(0.707107, -0.707107, -3.09086e-08, 4.2885e-15, -4.37114e-08, 1, -0.707107, -0.707107, -3.09086e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_vvfyi")
+skeleton = NodePath("../../../../..")
+surface_material_override/0 = ExtResource("1_pacfi")

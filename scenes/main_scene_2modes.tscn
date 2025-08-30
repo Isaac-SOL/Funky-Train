@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwhdbioxldiln"]
+
+[ext_resource type="PackedScene" uid="uid://ddei87jmflwu2" path="res://scenes/main_scene_base.tscn" id="1_m3ng8"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_gpice"]
+viewport_path = NodePath("SubViewport")
+
+[node name="PathBaseScene" instance=ExtResource("1_m3ng8")]
+
+[node name="Map" parent="CanvasLayer/GameUI/MinimapUI/MinimapParent/Mask" index="0"]
+texture = SubResource("ViewportTexture_gpice")
+
+[node name="TextureRect" parent="CanvasLayer/ControlStart" index="0"]
+mouse_filter = 0

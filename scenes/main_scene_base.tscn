@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://ddei87jmflwu2"]
+[gd_scene load_steps=85 format=3 uid="uid://ddei87jmflwu2"]
 
 [ext_resource type="Script" uid="uid://rytmmqnltko8" path="res://scripts/main.gd" id="1_rk4p5"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_7tq10"]
@@ -47,6 +47,7 @@
 [ext_resource type="StyleBox" uid="uid://cudo6djqnmi2b" path="res://assets/style_button_orange_normal.tres" id="39_c5b55"]
 [ext_resource type="AudioStream" uid="uid://bowmmerxjt5f6" path="res://assets/sfx/pop.ogg" id="42_6c0ht"]
 [ext_resource type="AudioStream" uid="uid://ck2dveafiotn7" path="res://assets/sounds/fin.ogg" id="45_m75v2"]
+[ext_resource type="PackedScene" uid="uid://c0ju0joxekhcn" path="res://objects/start_button.tscn" id="50_dwaao"]
 [ext_resource type="Script" uid="uid://bgvijcrqwruss" path="res://addons/rhythm_notifier/rhythm_notifier.gd" id="69_kdplm"]
 [ext_resource type="Texture2D" uid="uid://bhqvoqxf43frw" path="res://assets/textures/UI/gamjam2025_UI_menu_top.png" id="76_4t7rj"]
 [ext_resource type="Shader" uid="uid://byrwhib36s4tv" path="res://materials/edge_detection.gdshader" id="77_b864h"]
@@ -164,13 +165,30 @@ func _on_drag_ended(value_changed: bool) -> void:
 [sub_resource type="GDScript" id="GDScript_5t7e2"]
 script/source = "extends TextureRect
 
+var running_tween: Tween
+
+var boing: bool = false
+
 func _ready() -> void:
 	await get_tree().process_frame
 	Main.instance.rhythm_sync.beat.connect(func(_b):
+		if boing:
+			return
 		scale = Vector2(1.02, 1.02)
-		var tween := create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
-		tween.tween_property(self, \"scale\", Vector2.ONE, 0.65)
+		running_tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
+		running_tween.tween_property(self, \"scale\", Vector2.ONE, 0.65)
 	)
+
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		if running_tween:
+			running_tween.kill()
+		boing = true
+		scale = scale * 0.92
+		running_tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
+		running_tween.tween_property(self, \"scale\", Vector2.ONE, 0.85)
+		running_tween.tween_callback(func(): boing = false)
+		%AudioStreamBoing.play()
 "
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m75v2"]
@@ -874,7 +892,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ControlStart"]
+[node name="TextureTitle" type="TextureRect" parent="CanvasLayer/ControlStart"]
 layout_mode = 0
 offset_left = 48.0
 offset_top = 64.0
@@ -889,6 +907,7 @@ script = SubResource("GDScript_5t7e2")
 
 [node name="ButtonStart" type="TextureButton" parent="CanvasLayer/ControlStart"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 214.0
 offset_top = 400.0
@@ -904,6 +923,54 @@ script = SubResource("GDScript_cnexl")
 scale_factor = Vector2(1.2, 1.2)
 scale_duration_in = 0.2
 scale_duration_out = 0.6
+
+[node name="VBoxContainerTwoOptions" type="VBoxContainer" parent="CanvasLayer/ControlStart"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -10.0
+offset_top = 369.0
+offset_right = 740.0
+offset_bottom = 696.0
+
+[node name="StartButtonPuzzle" parent="CanvasLayer/ControlStart/VBoxContainerTwoOptions" instance=ExtResource("50_dwaao")]
+unique_name_in_owner = true
+layout_mode = 2
+small_size = Vector2(440, 110)
+desc_size = Vector2(634.235, 110)
+metadata/_edit_pinned_properties_ = [&"small_size", &"desc_size"]
+
+[node name="TopContainer" parent="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonPuzzle" index="0"]
+custom_minimum_size = Vector2(440, 110)
+metadata/_edit_pinned_properties_ = [&"custom_minimum_size"]
+
+[node name="LabelTitle" parent="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonPuzzle/TopContainer/MarginContainer" index="0"]
+text = "Puzzle Quest"
+metadata/_edit_pinned_properties_ = [&"text"]
+
+[node name="LabelDesc" parent="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonPuzzle/TopContainer/MarginContainer" index="1"]
+text = "A more difficult map made for the Post-Jam Jam.
+Has more mechanics and is more puzzle-centric."
+metadata/_edit_pinned_properties_ = [&"text"]
+
+[node name="StartButtonJam" parent="CanvasLayer/ControlStart/VBoxContainerTwoOptions" instance=ExtResource("50_dwaao")]
+unique_name_in_owner = true
+layout_mode = 2
+small_size = Vector2(360, 110)
+desc_size = Vector2(656.81, 110)
+metadata/_edit_pinned_properties_ = [&"small_size", &"desc_size"]
+
+[node name="TopContainer" parent="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonJam" index="0"]
+custom_minimum_size = Vector2(360, 110)
+metadata/_edit_pinned_properties_ = [&"custom_minimum_size"]
+
+[node name="LabelTitle" parent="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonJam/TopContainer/MarginContainer" index="0"]
+text = "Jam Quest"
+metadata/_edit_pinned_properties_ = [&"text"]
+
+[node name="LabelDesc" parent="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonJam/TopContainer/MarginContainer" index="1"]
+text = "An easier map initially made for the GMTK Game Jam.
+More of a chill, short adventure."
+metadata/_edit_pinned_properties_ = [&"text"]
 
 [node name="ControlEnd" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -974,6 +1041,13 @@ volume_db = 7.0
 max_polyphony = 8
 bus = &"SFX"
 
+[node name="AudioStreamBoing" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("42_6c0ht")
+volume_db = 7.0
+max_polyphony = 8
+bus = &"SFX"
+
 [connection signal="gui_input" from="CanvasLayer/GameUI/DirectionUI/LeverPivot/LeverDirection" to="CanvasLayer/GameUI/DirectionUI/LeverPivot/LeverDirection" method="_on_gui_input"]
 [connection signal="mouse_entered" from="CanvasLayer/GameUI/DirectionUI/LeverPivot/LeverDirection" to="CanvasLayer/GameUI/DirectionUI/LeverPivot/LeverDirection" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/GameUI/DirectionUI/LeverPivot/LeverDirection" to="CanvasLayer/GameUI/DirectionUI/LeverPivot/LeverDirection" method="_on_mouse_exited"]
@@ -987,4 +1061,11 @@ bus = &"SFX"
 [connection signal="mouse_entered" from="CanvasLayer/ControlStart/ButtonStart" to="CanvasLayer/ControlStart/ButtonStart" method="_on_hover" binds= [true]]
 [connection signal="mouse_exited" from="CanvasLayer/ControlStart/ButtonStart" to="CanvasLayer/ControlStart/ButtonStart" method="_on_hover" binds= [false]]
 [connection signal="pressed" from="CanvasLayer/ControlStart/ButtonStart" to="." method="_on_button_start_pressed"]
+[connection signal="click_confirm" from="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonPuzzle" to="." method="_on_start_button_puzzle_click_confirm"]
+[connection signal="click_open" from="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonPuzzle" to="." method="_on_start_button_puzzle_click_open"]
+[connection signal="click_confirm" from="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonJam" to="." method="_on_start_button_jam_click_confirm"]
+[connection signal="click_open" from="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonJam" to="." method="_on_start_button_jam_click_open"]
 [connection signal="beat" from="AudioStreamPlayer/RhythmNotifier" to="." method="_on_rhythm_notifier_beat"]
+
+[editable path="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonPuzzle"]
+[editable path="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonJam"]

@@ -63,21 +63,24 @@ func _process(delta: float) -> void:
 	
 	# Moving code
 	
-	var next_station = get_section().get_next_station(progress)
-	var next_interruptor = get_section().get_next_interruptor(progress)
+	var next_interactible = get_section().get_next_interactible(progress)
 	var temp_progress := progress + delta * speed
-	if speed_mode != SpeedMode.FAST and next_station and next_station.progress < temp_progress:
+	if speed_mode != SpeedMode.FAST and next_interactible is Station and next_interactible.progress < temp_progress:
 		# Stop at stations
-		progress = next_station.progress
+		progress = next_interactible.progress
 		speed = 0.0
 		locked = true
-		Main.instance.stop_at_station(next_station)
+		Main.instance.stop_at_station(next_interactible)
 	else:
 		# Press interruptors
-		if next_interruptor and next_interruptor.progress < temp_progress:
-			next_interruptor.press()
+		if next_interactible is Interruptor and next_interactible.progress < temp_progress:
+			next_interactible.press()
 			update_crosses()
 			update_rail_outlines()
+		# Take accelerators
+		if next_interactible is Accelerator and next_interactible.progress < temp_progress:
+			speed = next_interactible.instant_speed
+			%AudioAcceleration.play()
 		# Move forward
 		if temp_progress > curr_section_length:
 			temp_progress -= curr_section_length

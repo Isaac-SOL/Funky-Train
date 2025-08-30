@@ -5,7 +5,7 @@ class_name Station extends PathFollow3D
 
 
 func _ready() -> void:
-	get_section().add_station(self)
+	get_section().add_interactible(self)
 	load_character()
 	%SpriteMinimap.global_rotation = Vector3(-PI / 2.0, 0, PI)
 

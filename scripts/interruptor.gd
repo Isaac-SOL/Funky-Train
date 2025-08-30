@@ -5,7 +5,7 @@ signal pressed
 @export var rail_to_toggle: RailSection
 
 func _ready() -> void:
-	get_section().add_interruptor(self)
+	get_section().add_interactible(self)
 	await get_tree().process_frame
 	assert(rail_to_toggle.is_toggled)
 	if rail_to_toggle.toggle_barrier:

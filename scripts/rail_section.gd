@@ -20,8 +20,7 @@ static var ID_COUNT: int = 0
 @export_tool_button("Flatten to Y=0") var flatten_button = flatten_to_zero
 
 var id: int
-var stations: Array[Station] = []
-var interruptors: Array[Interruptor] = []
+var interactibles: Array[PathFollow3D] = []
 var clear_outline_scheduled: bool = false
 var cross_tween: Tween
 
@@ -49,28 +48,16 @@ func _ready() -> void:
 		if is_toggled and toggle_barrier:
 			toggle_barrier.switch(current_direction_right)
 
-func add_station(station: Station):
-	stations.append(station)
+func add_interactible(interactible: PathFollow3D):
+	interactibles.append(interactible)
 
-func add_interruptor(interruptor: Interruptor):
-	interruptors.append(interruptor)
-
-func get_next_station(prog: float) -> Station:
-	if stations.is_empty():
+func get_next_interactible(prog: float) -> PathFollow3D:
+	if interactibles.is_empty():
 		return null
-	var res: Station = null
-	for station: Station in stations:
-		if station.progress > prog and (not res or station.progress < res.progress):
-			res = station
-	return res
-
-func get_next_interruptor(prog: float) -> Interruptor:
-	if interruptors.is_empty():
-		return null
-	var res: Interruptor = null
-	for interruptor: Interruptor in interruptors:
-		if interruptor.progress > prog and (not res or interruptor.progress < res.progress):
-			res = interruptor
+	var res: PathFollow3D = null
+	for interactible: PathFollow3D in interactibles:
+		if interactible.progress > prog and (not res or interactible.progress < res.progress):
+			res = interactible
 	return res
 
 func clear_outline_await():

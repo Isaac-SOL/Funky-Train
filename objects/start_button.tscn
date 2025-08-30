@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0ju0joxekhcn"]
+
+[ext_resource type="Script" uid="uid://0e12x8u6hljg" path="res://scripts/start_button.gd" id="1_58pfe"]
+[ext_resource type="StyleBox" uid="uid://duwjmwkx3ewy7" path="res://assets/style_box_play_highlighted.tres" id="1_uhdvs"]
+[ext_resource type="StyleBox" uid="uid://cfcw2825h4s6g" path="res://assets/style_box_play_normal.tres" id="2_58pfe"]
+[ext_resource type="FontFile" uid="uid://drhhe5f5p7qgn" path="res://assets/Super Frosting.ttf" id="3_iva05"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_abulv"]
+font = ExtResource("3_iva05")
+font_size = 64
+font_color = Color(0.956863, 0.643137, 0.164706, 1)
+shadow_size = 0
+shadow_color = Color(0.901961, 0.462745, 0.164706, 1)
+shadow_offset = Vector2(5, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_iojr1"]
+font = ExtResource("3_iva05")
+font_size = 24
+font_color = Color(0.901961, 0.462745, 0.164706, 1)
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[node name="StartButton" type="CenterContainer"]
+script = ExtResource("1_58pfe")
+small_size = Vector2(440, 110)
+desc_size = Vector2(634.235, 110)
+
+[node name="TopContainer" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(440, 110)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="TopContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_58pfe")
+theme_override_styles/disabled = ExtResource("2_58pfe")
+theme_override_styles/hover_pressed = ExtResource("1_uhdvs")
+theme_override_styles/hover = ExtResource("1_uhdvs")
+theme_override_styles/pressed = ExtResource("1_uhdvs")
+theme_override_styles/normal = ExtResource("2_58pfe")
+
+[node name="MarginContainer" type="MarginContainer" parent="TopContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 23
+
+[node name="LabelTitle" type="Label" parent="TopContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+text = "Puzzle Quest"
+label_settings = SubResource("LabelSettings_abulv")
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 1
+visible_characters_behavior = 1
+
+[node name="LabelDesc" type="Label" parent="TopContainer/MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 1
+text = "A more difficult map made for the Post-Jam Jam.
+Has more mechanics and is more puzzle-centric."
+label_settings = SubResource("LabelSettings_iojr1")
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 1
+visible_characters_behavior = 1
+
+[connection signal="pressed" from="TopContainer/Button" to="." method="_on_button_pressed"]
