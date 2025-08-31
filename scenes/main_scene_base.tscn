@@ -261,9 +261,11 @@ environment = SubResource("Environment_bmein")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.499999, 0.652468, -0.569464, 2.23517e-08, 0.657557, 0.753403, 0.866026, -0.376699, 0.328778, 0, 16.7499, 0)
+layers = 3
 light_energy = 0.5
 light_indirect_energy = 8.64
 shadow_enabled = true
+shadow_opacity = 0.7
 directional_shadow_split_1 = 0.2
 directional_shadow_split_2 = 0.3
 directional_shadow_pancake_size = 25.0
@@ -320,7 +322,7 @@ cull_mask = 1048574
 environment = SubResource("Environment_45vgs")
 projection = 1
 current = true
-size = 100.0
+size = 150.0
 
 [node name="ScreenEffect" type="MeshInstance3D" parent="SubViewport/Node3D/CameraShakerMap/Camera3D"]
 transform = Transform3D(0.999966, 0, 0, 0, 0.999962, 0, 0, 0, 0.999971, 0, 0, -0.06)
@@ -936,7 +938,7 @@ offset_bottom = 696.0
 unique_name_in_owner = true
 layout_mode = 2
 small_size = Vector2(440, 110)
-desc_size = Vector2(634.235, 110)
+desc_size = Vector2(660.09, 110)
 metadata/_edit_pinned_properties_ = [&"small_size", &"desc_size"]
 
 [node name="TopContainer" parent="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonPuzzle" index="0"]
@@ -948,7 +950,7 @@ text = "Puzzle Quest"
 metadata/_edit_pinned_properties_ = [&"text"]
 
 [node name="LabelDesc" parent="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonPuzzle/TopContainer/MarginContainer" index="1"]
-text = "A more difficult map made for the Post-Jam Jam.
+text = "A large, challenging map made for the Post-Jam Jam.
 Has more mechanics and is more puzzle-centric."
 metadata/_edit_pinned_properties_ = [&"text"]
 

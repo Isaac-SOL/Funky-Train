@@ -1,4 +1,4 @@
-[gd_scene load_steps=144 format=3 uid="uid://cq76mgiooqjlk"]
+[gd_scene load_steps=145 format=3 uid="uid://cq76mgiooqjlk"]
 
 [ext_resource type="Script" uid="uid://hcgv0grqqm7y" path="res://scripts/rails_master.tres.gd" id="1_8wolm"]
 [ext_resource type="PackedScene" uid="uid://c7adtd3m5hihf" path="res://objects/rail_section.tscn" id="1_of01x"]
@@ -14,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://kjtlh674xflv" path="res://objects/characters/A.tres" id="11_iln4g"]
 [ext_resource type="Resource" uid="uid://d0g3t66itnkbt" path="res://objects/characters/B.tres" id="12_pvikb"]
 [ext_resource type="ArrayMesh" uid="uid://bun4jork04afr" path="res://meshes/rails/RailS4_S11.tres" id="13_b2ljr"]
+[ext_resource type="PackedScene" uid="uid://dhre1ajv8oogw" path="res://objects/accelerator.tscn" id="14_8s57r"]
 [ext_resource type="ArrayMesh" uid="uid://d1rcw5w3h8ugi" path="res://meshes/rails/RailS4_S11_minimap.tres" id="14_d6v6k"]
 [ext_resource type="ArrayMesh" uid="uid://y6ogfx0j4pht" path="res://meshes/rails/RailS11.tres" id="15_ofv2g"]
 [ext_resource type="ArrayMesh" uid="uid://dcg4pmtvltl0f" path="res://meshes/rails/RailS11_minimap.tres" id="16_umo86"]
@@ -543,6 +544,11 @@ dialogues = Array[ExtResource("7_165mx")]([SubResource("Resource_gck0h")])
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.63272, -1.84858, -16.6607)
 requirements = Array[String](["A", "B"])
 dialogues = Array[ExtResource("7_165mx")]([SubResource("Resource_782co"), SubResource("Resource_1h62p")])
+
+[node name="Accelerator" parent="RailS4_S6_bridge" instance=ExtResource("14_8s57r")]
+transform = Transform3D(0.999992, -1.38717e-05, -0.00188708, 7.65033e-06, 0.999999, -0.000759599, 0.00393143, 0.00158246, 0.479996, 8.98965, 0.000935475, -6.61728)
+progress = 12.8305
+instant_speed = 12.0
 
 [node name="RailS4_S11" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)

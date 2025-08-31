@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://capa820ir3vho"]
+[gd_scene load_steps=55 format=3 uid="uid://capa820ir3vho"]
 
 [ext_resource type="Script" uid="uid://m2gs6g88kh3b" path="res://scripts/level.gd" id="1_7agi7"]
 [ext_resource type="Script" uid="uid://d3y48j1b2i22e" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ppgk2"]
@@ -41,6 +41,7 @@
 [ext_resource type="PackedScene" uid="uid://chopft87fs8u4" path="res://objects/signals/signal_rocks.tscn" id="34_535f6"]
 [ext_resource type="Texture2D" uid="uid://ddrm5trq6f4wd" path="res://assets/textures/gamjam2025_nuage2.png" id="34_asl66"]
 [ext_resource type="Texture2D" uid="uid://cfk6v7prtt1ps" path="res://assets/textures/gamjam2025_nuage3.png" id="35_2jdvr"]
+[ext_resource type="PackedScene" uid="uid://svkary7u15pl" path="res://objects/signals/signal_1plus.tscn" id="37_iafhg"]
 [ext_resource type="ArrayMesh" uid="uid://bmnssca7oh6cg" path="res://meshes/new_array_mesh.tres" id="39_c1pbi"]
 
 [sub_resource type="Resource" id="Resource_1tp2x"]
@@ -358,7 +359,7 @@ billboard = 0
 [node name="Signals" type="Node3D" parent="."]
 
 [node name="SignalQuicksand" parent="Signals" instance=ExtResource("26_556r4")]
-transform = Transform3D(0.948628, -0.108402, 0.297243, 0.113533, 0.993534, 8.93002e-07, -0.295321, 0.0337461, 0.954802, -89.1879, -0.398549, 12.3478)
+transform = Transform3D(0.948628, -0.108402, 0.297243, 0.113533, 0.993534, 8.9332e-07, -0.295321, 0.0337461, 0.954802, -89.1879, -0.398549, 12.3478)
 
 [node name="SignalVirage" parent="Signals" instance=ExtResource("27_556r4")]
 transform = Transform3D(0.878626, 0, -0.477511, 0, 1, 0, 0.477511, 0, 0.878626, 16.249, -4.76837e-07, -29.5776)
@@ -377,6 +378,9 @@ transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 1.65374, -
 
 [node name="SignalRocks" parent="Signals" instance=ExtResource("34_535f6")]
 transform = Transform3D(-0.874738, 0, -0.484596, 0, 1, 0, 0.484596, 0, -0.874738, 53.1562, 4.76837e-07, -39.2575)
+
+[node name="Signal1Plus" parent="Signals" instance=ExtResource("37_iafhg")]
+transform = Transform3D(-0.489596, 0, -0.87195, 0, 1, 0, 0.87195, 0, -0.489596, -53.8947, 0, -57.0405)
 
 [node name="Sky" type="Node3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)

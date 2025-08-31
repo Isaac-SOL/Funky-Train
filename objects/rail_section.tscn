@@ -11,7 +11,7 @@
 [sub_resource type="Curve3D" id="Curve3D_x140k"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0),
+"points": PackedVector3Array(-0.975713, 0, 0.0207178, 1, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 8, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -48,6 +48,7 @@ func _ready() -> void:
 [node name="Rail" type="Path3D" groups=["Rails"]]
 curve = SubResource("Curve3D_x140k")
 script = ExtResource("1_x140k")
+cut_point_index = null
 
 [node name="BakedRailsMesh" type="MeshInstance3D" parent="." node_paths=PackedStringArray("path")]
 unique_name_in_owner = true
@@ -85,7 +86,7 @@ width = 3.0
 minimap = true
 
 [node name="CrossFollow" type="PathFollow3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(-4.37113e-08, 0, -0.999998, 0, 1, 0, 0.999998, 0, -4.37113e-08, 0, 0, 0)
 
 [node name="CrossTween" type="Node3D" parent="CrossFollow"]
 unique_name_in_owner = true

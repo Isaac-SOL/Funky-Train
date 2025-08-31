@@ -28,5 +28,5 @@ transform = Transform3D(-0.0285321, 0, 0.999593, 0, 1, 0, -0.999593, 0, -0.02853
 [node name="SignalDoubleStevie" parent="." index="16" instance=ExtResource("4_lu4ag")]
 transform = Transform3D(-0.199949, 0, -0.979806, 0, 1, 0, 0.979806, 0, -0.199949, 84.1566, -4.76837e-07, 16.6058)
 
-[editable path="CanvasLayer/ControlStart/VBoxContainer/StartButtonPuzzle"]
-[editable path="CanvasLayer/ControlStart/VBoxContainer/StartButtonJam"]
+[editable path="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonPuzzle"]
+[editable path="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonJam"]
