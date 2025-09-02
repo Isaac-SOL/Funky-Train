@@ -41,7 +41,10 @@ func _ready() -> void:
 		AudioServer.set_bus_effect_enabled(1,0,true)
 	changeCarSpeed(0)
 	play()
-	
+
+func remove_filter():
+	AudioServer.remove_bus_effect(1, 0)
+
 func turn_whistle_on(enabled):
 	if enabled:
 		if $TrainWhislePlayer.playing:

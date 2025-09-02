@@ -12,3 +12,6 @@ viewport_path = NodePath("SubViewport")
 
 [node name="Map" parent="CanvasLayer/GameUI/MinimapUI/MinimapParent/Mask" index="0"]
 texture = SubResource("ViewportTexture_i4xgy")
+
+[editable path="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonPuzzle"]
+[editable path="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonJam"]

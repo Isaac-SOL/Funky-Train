@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://daxgp458jhker"]
+
+[ext_resource type="PackedScene" uid="uid://cd0rdpybshylf" path="res://objects/signals/signal_stevie.tscn" id="1_t3h8h"]
+[ext_resource type="Texture2D" uid="uid://diqux58tnv4ww" path="res://assets/textures/test_ruddy_only.png" id="2_l2ww3"]
+
+[node name="SignalRuddy" instance=ExtResource("1_t3h8h")]
+
+[node name="Sprite3D" parent="." index="0"]
+texture = ExtResource("2_l2ww3")

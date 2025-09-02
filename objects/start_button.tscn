@@ -23,11 +23,11 @@ outline_color = Color(0, 0, 0, 1)
 [node name="StartButton" type="CenterContainer"]
 script = ExtResource("1_58pfe")
 small_size = Vector2(440, 110)
-desc_size = Vector2(634.235, 110)
+desc_size = Vector2(690, 110)
 
 [node name="TopContainer" type="MarginContainer" parent="."]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(440, 110)
+custom_minimum_size = Vector2(690, 110)
 layout_mode = 2
 
 [node name="Button" type="Button" parent="TopContainer"]
@@ -64,12 +64,15 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_vertical = 1
-text = "A more difficult map made for the Post-Jam Jam.
+text = "Gather up all 9 of your friends to play music together !
+A more difficult map made for the Post-Jam Jam.
 Has more mechanics and is more puzzle-centric."
 label_settings = SubResource("LabelSettings_iojr1")
 horizontal_alignment = 1
 vertical_alignment = 1
 text_overrun_behavior = 1
+visible_characters = 93
 visible_characters_behavior = 1
+visible_ratio = 0.616
 
 [connection signal="pressed" from="TopContainer/Button" to="." method="_on_button_pressed"]

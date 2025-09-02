@@ -3,6 +3,10 @@ extends Node3D
 @export var custom_detail_shader: Shader
 @export var see_through_layers: PackedInt32Array
 
+@export var plains_info: BiomeColor
+@export var desert_info: BiomeColor
+@export var beach_info: BiomeColor
+
 @onready var area_3d_plane: Area3D = $Area3D_plane
 @onready var area_3d_desert: Area3D = $Area3D_desert
 @onready var area_3d_beach: Area3D = $Area3D_beach
@@ -36,6 +40,7 @@ func _on_area_3d_plane_area_entered(area: Area3D) -> void:
 			print("is in plains")
 			previous_area = area_3d_plane
 			NodeAudio.playAudio_stream1(&"Ambiant plane")
+			%PathScene.switch_biome_color(plains_info)
 
 
 func _on_area_3d_desert_area_entered(area: Area3D) -> void:
@@ -44,6 +49,7 @@ func _on_area_3d_desert_area_entered(area: Area3D) -> void:
 			print("is in desert")
 			previous_area = area_3d_desert
 			NodeAudio.playAudio_stream1(&"Ambiant desert")
+			%PathScene.switch_biome_color(desert_info)
 
 
 func _on_area_3d_beach_area_entered(area: Area3D) -> void:
@@ -52,3 +58,4 @@ func _on_area_3d_beach_area_entered(area: Area3D) -> void:
 			print("is in beach")
 			previous_area = area_3d_beach
 			NodeAudio.playAudio_stream1(&"Ambiant beach")
+			%PathScene.switch_biome_color(beach_info)

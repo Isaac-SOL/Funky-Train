@@ -6,6 +6,10 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4tpo"]
 bg_color = Color(0, 0, 0, 0.784314)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="Theme" id="Theme_22d7r"]
 Panel/styles/panel = SubResource("StyleBoxFlat_y4tpo")

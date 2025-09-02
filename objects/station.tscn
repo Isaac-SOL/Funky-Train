@@ -38,12 +38,12 @@ albedo_color = Color(0.625023, 0.10416, 0.151708, 1)
 script = ExtResource("1_x4hb3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8028, 0.290532, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24874, 0.290532, 0)
 visible = false
 mesh = SubResource("BoxMesh_1x2nj")
 
 [node name="gamjam2025_gare2" parent="." instance=ExtResource("2_a8vm7")]
-transform = Transform3D(-8.74228e-10, 0, 0.02, 0, 0.02, 0, -0.02, 0, -8.74228e-10, 2.43655, -0.133456, -1.06505e-07)
+transform = Transform3D(-8.74228e-10, 0, 0.02, 0, 0.02, 0, -0.02, 0, -8.74228e-10, 2.88249, -0.133456, -1.06505e-07)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="gamjam2025_gare2/gare" index="0"]
 cast_shadow = 0
@@ -59,7 +59,7 @@ layers = 1
 surface_material_override/0 = SubResource("StandardMaterial3D_7ttfy")
 
 [node name="VibingNode" type="Node3D" parent="."]
-transform = Transform3D(0.991576, 0, -0.129523, 0, 1, 0, 0.129523, 0, 0.991576, 0.916999, 0.0848985, 0.0502111)
+transform = Transform3D(0.991576, 0, -0.129523, 0, 1, 0, 0.129523, 0, 0.991576, 1.36294, 0.0848985, 0.0502111)
 script = ExtResource("3_110lq")
 
 [node name="CharacterSprite" type="Sprite3D" parent="VibingNode"]
@@ -69,11 +69,11 @@ texture = ExtResource("3_a8vm7")
 
 [node name="CameraPos" type="Marker3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.995539, 0.0179142, -0.0926353, 0, 0.98181, 0.189867, 0.0943516, -0.18902, 0.97743, 0.68805, 0.755459, 1.63165)
+transform = Transform3D(0.995539, 0.0179142, -0.0926353, 0, 0.98181, 0.189867, 0.0943516, -0.18902, 0.97743, 1.13399, 0.755459, 1.63165)
 
 [node name="SpriteMinimap" type="Sprite3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(3, 0, 0, 0, -1.31134e-07, 3, 0, -3, -1.31134e-07, 2.42132, 4.02721, -1.76035e-07)
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, 3, 0, -3, -1.31134e-07, 2.86726, 4.02721, -1.76035e-07)
 visible = false
 layers = 2
 texture = ExtResource("5_110lq")

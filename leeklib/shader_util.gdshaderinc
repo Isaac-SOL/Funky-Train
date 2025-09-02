@@ -1,8 +1,20 @@
 
+vec3 get_clip_space(float base_depth, vec2 screen_uv) {
+	// Screen space to NDC (OpenGL)
+	return vec3(screen_uv * 2.0 - 1.0, (base_depth - 0.5) * 2.0);
+}
+
 float get_linear_depth(float base_depth, vec2 screen_uv, mat4 inv_proj_matrix) {
-	vec3 ndc = vec3(screen_uv * 2.0 - 1.0, (base_depth - 0.5) * 2.0);  // Screen space to NDC (OpenGL)
+	vec3 ndc = get_clip_space(base_depth, screen_uv);
 	vec4 view = inv_proj_matrix * vec4(ndc, 1.0);  // NDC to view space
 	return -view.z / view.w;
+}
+
+vec3 get_world_pos(float base_depth, vec2 screen_uv, mat4 inv_proj_matrix, mat4 inv_view_matrix) {
+	vec3 ndc = get_clip_space(base_depth, screen_uv);
+	mat4 ndc_to_world = inv_view_matrix * inv_proj_matrix;
+	vec4 world = ndc_to_world * vec4(ndc, 1.0);
+	return world.xyz / world.w;
 }
 
 float inv_mix(float a, float b, float value) {

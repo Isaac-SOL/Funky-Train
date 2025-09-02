@@ -53,6 +53,7 @@ func _ready() -> void:
 		assert(out_sections.size() > 0)
 		assert(out_sections.size() <= 2)
 		await get_tree().process_frame
+		%BakedRailsMesh.position.y = randf_range(-0.002, 0.002)
 		%BakedRailsMeshMinimap.visible = true
 		if is_toggled and toggle_barrier:
 			toggle_barrier.switch(current_direction_right)
@@ -94,7 +95,7 @@ func set_outline(vis: bool, recurse: bool = true):
 		%BakedRailsMesh.position.y = 0.01
 		%OutlineMesh.position.y = 0.005
 	else:
-		%BakedRailsMesh.position.y = 0.0
+		%BakedRailsMesh.position.y = randf_range(-0.002, 0.002)
 		%OutlineMesh.position.y = -0.005
 	clear_outline_scheduled = false
 	if recurse and out_sections.size() == 1:

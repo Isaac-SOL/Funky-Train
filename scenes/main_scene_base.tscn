@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://ddei87jmflwu2"]
+[gd_scene load_steps=86 format=3 uid="uid://ddei87jmflwu2"]
 
 [ext_resource type="Script" uid="uid://rytmmqnltko8" path="res://scripts/main.gd" id="1_rk4p5"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_7tq10"]
@@ -48,6 +48,7 @@
 [ext_resource type="AudioStream" uid="uid://bowmmerxjt5f6" path="res://assets/sfx/pop.ogg" id="42_6c0ht"]
 [ext_resource type="AudioStream" uid="uid://ck2dveafiotn7" path="res://assets/sounds/fin.ogg" id="45_m75v2"]
 [ext_resource type="PackedScene" uid="uid://c0ju0joxekhcn" path="res://objects/start_button.tscn" id="50_dwaao"]
+[ext_resource type="AudioStream" uid="uid://cpn4i18btxv06" path="res://assets/sfx/squeaky.ogg" id="61_iojr1"]
 [ext_resource type="Script" uid="uid://bgvijcrqwruss" path="res://addons/rhythm_notifier/rhythm_notifier.gd" id="69_kdplm"]
 [ext_resource type="Texture2D" uid="uid://bhqvoqxf43frw" path="res://assets/textures/UI/gamjam2025_UI_menu_top.png" id="76_4t7rj"]
 [ext_resource type="Shader" uid="uid://byrwhib36s4tv" path="res://materials/edge_detection.gdshader" id="77_b864h"]
@@ -66,12 +67,12 @@ sky_top_color = Color(1, 0.866667, 0, 1)
 sky_horizon_color = Color(0.98, 0, 0.212333, 1)
 ground_horizon_color = Color(0.98, 0, 0.212333, 1)
 
-[sub_resource type="Sky" id="Sky_r5u47"]
+[sub_resource type="Sky" id="Sky_dwaao"]
 sky_material = SubResource("ProceduralSkyMaterial_gd5r5")
 
 [sub_resource type="Environment" id="Environment_bmein"]
 background_mode = 2
-sky = SubResource("Sky_r5u47")
+sky = SubResource("Sky_dwaao")
 ambient_light_color = Color(0.385, 0.454, 0.55, 1)
 ambient_light_sky_contribution = 0.0
 tonemap_mode = 2
@@ -107,6 +108,7 @@ shader_parameter/depth_gradient_color = Color(0, 0, 0, 1)
 shader_parameter/depth_gradient_start = 0.0
 shader_parameter/depth_gradient_end = 40.0
 shader_parameter/depth_gradient_strength = 0.0
+shader_parameter/stick_to_camera = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_2dsia"]
 material = SubResource("ShaderMaterial_bun0v")
@@ -259,7 +261,8 @@ grabbing_cursor = ExtResource("20_2dsia")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bmein")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="Sun" type="DirectionalLight3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(0.499999, 0.652468, -0.569464, 2.23517e-08, 0.657557, 0.753403, 0.866026, -0.376699, 0.328778, 0, 16.7499, 0)
 layers = 3
 light_energy = 0.5
@@ -294,6 +297,7 @@ cull_mask = 1048573
 current = true
 
 [node name="ScreenEffect" type="MeshInstance3D" parent="CameraShaker/MainCamera"]
+unique_name_in_owner = true
 transform = Transform3D(0.999966, 0, 0, 0, 0.999962, 0, 0, 0, 0.999971, 0, 0, -0.06)
 cast_shadow = 0
 mesh = SubResource("QuadMesh_vdho3")
@@ -938,7 +942,7 @@ offset_bottom = 696.0
 unique_name_in_owner = true
 layout_mode = 2
 small_size = Vector2(440, 110)
-desc_size = Vector2(660.09, 110)
+desc_size = Vector2(690, 110)
 metadata/_edit_pinned_properties_ = [&"small_size", &"desc_size"]
 
 [node name="TopContainer" parent="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonPuzzle" index="0"]
@@ -950,15 +954,17 @@ text = "Puzzle Quest"
 metadata/_edit_pinned_properties_ = [&"text"]
 
 [node name="LabelDesc" parent="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonPuzzle/TopContainer/MarginContainer" index="1"]
-text = "A large, challenging map made for the Post-Jam Jam.
+text = "Gather up all 9 of your friends to play music together !
+A large, challenging map made for the Post-Jam Jam.
 Has more mechanics and is more puzzle-centric."
+visible_characters = 95
 metadata/_edit_pinned_properties_ = [&"text"]
 
 [node name="StartButtonJam" parent="CanvasLayer/ControlStart/VBoxContainerTwoOptions" instance=ExtResource("50_dwaao")]
 unique_name_in_owner = true
 layout_mode = 2
 small_size = Vector2(360, 110)
-desc_size = Vector2(656.81, 110)
+desc_size = Vector2(690, 110)
 metadata/_edit_pinned_properties_ = [&"small_size", &"desc_size"]
 
 [node name="TopContainer" parent="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonJam" index="0"]
@@ -970,8 +976,10 @@ text = "Jam Quest"
 metadata/_edit_pinned_properties_ = [&"text"]
 
 [node name="LabelDesc" parent="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonJam/TopContainer/MarginContainer" index="1"]
-text = "An easier map initially made for the GMTK Game Jam.
+text = "Gather up all 9 of your friends to play music together !
+An easier map initially made for the GMTK Game Jam.
 More of a chill, short adventure."
+visible_characters = 87
 metadata/_edit_pinned_properties_ = [&"text"]
 
 [node name="ControlEnd" type="Control" parent="CanvasLayer"]
@@ -1045,8 +1053,8 @@ bus = &"SFX"
 
 [node name="AudioStreamBoing" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("42_6c0ht")
-volume_db = 7.0
+stream = ExtResource("61_iojr1")
+volume_db = -5.0
 max_polyphony = 8
 bus = &"SFX"
 

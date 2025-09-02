@@ -1,0 +1,228 @@
+[gd_scene load_steps=37 format=3 uid="uid://dxfmlf33ndxjm"]
+
+[ext_resource type="Script" uid="uid://m2gs6g88kh3b" path="res://scripts/level.gd" id="1_34uqr"]
+[ext_resource type="Script" uid="uid://d3y48j1b2i22e" path="res://addons/zylann.hterrain/hterrain.gd" id="1_p00hf"]
+[ext_resource type="Shader" uid="uid://jsv6e38q2x14" path="res://materials/custom_detail_shader.gdshader" id="2_f3pt5"]
+[ext_resource type="Resource" uid="uid://bygc00rkd1vcn" path="res://assets/HTerrain_Puzzle/data.hterrain" id="2_woq1o"]
+[ext_resource type="Script" uid="uid://dw84e0nu3ialr" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_dylkt"]
+[ext_resource type="Script" uid="uid://c8wiyte6m05gp" path="res://scripts/biome_color.gd" id="3_f3pt5"]
+[ext_resource type="PackedScene" uid="uid://bmpco2y4bk6ux" path="res://scenes/puzzle_map_path.tscn" id="4_34uqr"]
+[ext_resource type="Shader" uid="uid://bcbdyldfu5hyy" path="res://materials/custom_terrain_shader.gdshader" id="5_0yji4"]
+[ext_resource type="Texture2D" uid="uid://cpf6nn2yurgni" path="res://assets/textures/grass/light_grass_2.png" id="8_fjt3i"]
+[ext_resource type="Texture2D" uid="uid://cm5mcoa2q2adj" path="res://assets/textures/sand/sand_32x32.png" id="9_7qtsq"]
+[ext_resource type="Texture2D" uid="uid://dqikv1day20xu" path="res://assets/textures/sand/dark_sand.png" id="10_rg1t3"]
+[ext_resource type="Texture2D" uid="uid://t3asoaucgwli" path="res://assets/textures/rock/red_rock_32x32_bump.png" id="11_84wuk"]
+[ext_resource type="PackedScene" uid="uid://ddhc7hdytvuvf" path="res://assets/shaders/water_shader.tscn" id="14_7qtsq"]
+[ext_resource type="PackedScene" uid="uid://c5reoqr8wys2w" path="res://objects/signals/signal_no_stevie.tscn" id="15_7v6ld"]
+[ext_resource type="PackedScene" uid="uid://d1kmxrqref527" path="res://objects/signals/signal_double_stevie.tscn" id="16_nphjl"]
+[ext_resource type="PackedScene" uid="uid://svkary7u15pl" path="res://objects/signals/signal_1plus.tscn" id="17_0m0u7"]
+[ext_resource type="PackedScene" uid="uid://cd0rdpybshylf" path="res://objects/signals/signal_stevie.tscn" id="18_hakj6"]
+[ext_resource type="PackedScene" uid="uid://hch02k6a5rob" path="res://objects/signals/signal_no_ruddy.tscn" id="18_nphjl"]
+[ext_resource type="PackedScene" uid="uid://b4pno5ixlito6" path="res://objects/signals/signal_no_parker.tscn" id="19_0u806"]
+[ext_resource type="PackedScene" uid="uid://daxgp458jhker" path="res://objects/signals/signal_ruddy.tscn" id="20_jh6f5"]
+[ext_resource type="PackedScene" uid="uid://ccjcib11h17yt" path="res://objects/signals/signal_periph.tscn" id="21_jh2by"]
+[ext_resource type="PackedScene" uid="uid://q4548cq0ow5n" path="res://objects/signals/signal_no_kim.tscn" id="22_yye0t"]
+[ext_resource type="PackedScene" uid="uid://ds07ffeeedmhe" path="res://objects/signals/signal_parker.tscn" id="23_mfxbm"]
+[ext_resource type="PackedScene" uid="uid://cr3udff6s6tbr" path="res://objects/signals/signal_tb.tscn" id="24_mv16x"]
+[ext_resource type="PackedScene" uid="uid://bl5toi54db6s1" path="res://objects/signals/signal_jimmy.tscn" id="25_yo56m"]
+[ext_resource type="PackedScene" uid="uid://1odjtcrgduyp" path="res://objects/signals/signal_kim.tscn" id="26_82xxw"]
+[ext_resource type="PackedScene" uid="uid://bx081u0fhvkog" path="res://objects/signals/signal_slowdown.tscn" id="27_nphjl"]
+
+[sub_resource type="Resource" id="Resource_0yji4"]
+script = ExtResource("3_f3pt5")
+sun_color = Color(1, 1, 1, 1)
+sun_energy = 0.5
+depth_gradient_color = Color(1, 0.835294, 0, 1)
+depth_gradient_strength = 0.65
+metadata/_custom_type_script = "uid://c8wiyte6m05gp"
+
+[sub_resource type="Resource" id="Resource_g808e"]
+script = ExtResource("3_f3pt5")
+sun_color = Color(1, 1, 1, 1)
+sun_energy = 0.4
+depth_gradient_color = Color(0.67451, 0.309804, 0.129412, 1)
+depth_gradient_strength = 0.7
+metadata/_custom_type_script = "uid://c8wiyte6m05gp"
+
+[sub_resource type="Resource" id="Resource_0pgkx"]
+script = ExtResource("3_f3pt5")
+sun_color = Color(1, 0.72549, 0.25098, 1)
+sun_energy = 0.3
+depth_gradient_color = Color(0.72, 0, 0.156, 1)
+depth_gradient_strength = 0.55
+metadata/_custom_type_script = "uid://c8wiyte6m05gp"
+
+[sub_resource type="Resource" id="Resource_f3pt5"]
+script = ExtResource("3_dylkt")
+mode = 0
+textures = [[ExtResource("8_fjt3i"), ExtResource("9_7qtsq"), ExtResource("10_rg1t3"), ExtResource("11_84wuk")], [null, null, null, null]]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7qtsq"]
+size = Vector3(167.663, 13.1348, 329.738)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rg1t3"]
+size = Vector3(126.435, 13.1348, 60.3128)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_84wuk"]
+size = Vector3(125.87, 13.1348, 119.361)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lt32k"]
+size = Vector3(224.575, 13.1348, 105.11)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wubuv"]
+size = Vector3(46.092, 13.1348, 36.6178)
+
+[node name="LevelPuzzle" type="Node3D"]
+script = ExtResource("1_34uqr")
+custom_detail_shader = ExtResource("2_f3pt5")
+plains_info = SubResource("Resource_0yji4")
+desert_info = SubResource("Resource_g808e")
+beach_info = SubResource("Resource_0pgkx")
+
+[node name="HTerrain" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -182.26, -0.1, -158.02)
+script = ExtResource("1_p00hf")
+ambient_wind = 0.1
+_terrain_data = ExtResource("2_woq1o")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Custom"
+custom_shader = ExtResource("5_0yji4")
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_f3pt5")
+render_layers = 3
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 2.0
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+metadata/_custom_type_script = "uid://d3y48j1b2i22e"
+
+[node name="PathScene" parent="." instance=ExtResource("4_34uqr")]
+unique_name_in_owner = true
+
+[node name="water_shader" parent="." instance=ExtResource("14_7qtsq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -178.884, -1.95037, 332.979)
+
+[node name="Signals" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.129, 0)
+
+[node name="SignalNoStevie" parent="Signals" instance=ExtResource("15_7v6ld")]
+transform = Transform3D(0.413247, 0, -0.910619, 0, 1, 0, 0.910619, 0, 0.413247, 77.7268, -1.90735e-06, 27.3631)
+
+[node name="SignalNoStevie2" parent="Signals" instance=ExtResource("15_7v6ld")]
+transform = Transform3D(-0.0285321, 0, 0.999593, 0, 1, 0, -0.999593, 0, -0.0285321, 97.8872, -2.38419e-06, 15.9417)
+
+[node name="SignalDoubleStevie" parent="Signals" instance=ExtResource("16_nphjl")]
+transform = Transform3D(-0.199949, 0, -0.979806, 0, 1, 0, 0.979806, 0, -0.199949, 112.231, -4.76837e-07, 46.1223)
+
+[node name="Signal1Plus" parent="Signals" instance=ExtResource("17_0m0u7")]
+transform = Transform3D(-0.363137, 0, -0.931736, 0, 1, 0, 0.931736, 0, -0.363137, -19.7236, 4.76837e-07, -38.98)
+
+[node name="SignalNoStevie3" parent="Signals" instance=ExtResource("15_7v6ld")]
+transform = Transform3D(0.413247, 0, -0.910619, 0, 1, 0, 0.910619, 0, 0.413247, 14.2622, -1.90735e-06, 45.628)
+
+[node name="SignalNoStevie4" parent="Signals" instance=ExtResource("15_7v6ld")]
+transform = Transform3D(-0.514664, 0, 0.857392, 0, 1, 0, -0.857392, 0, -0.514664, 121.722, -1.90735e-06, 103.669)
+
+[node name="SignalNoRuddy" parent="Signals" instance=ExtResource("18_nphjl")]
+transform = Transform3D(0.999892, 0, -0.0147306, 0, 1, 0, 0.0147306, 0, 0.999892, 17.6039, -2.38419e-06, 129.54)
+
+[node name="SignalStevie" parent="Signals" instance=ExtResource("18_hakj6")]
+transform = Transform3D(-0.0251127, 0, 0.999685, 0, 1, 0, -0.999685, 0, -0.0251127, -15.8249, 0, 107.441)
+
+[node name="SignalStevie2" parent="Signals" instance=ExtResource("18_hakj6")]
+transform = Transform3D(0.988641, 0, 0.150295, 0, 1, 0, -0.150295, 0, 0.988641, -113.863, -1.90735e-06, 77.378)
+
+[node name="SignalNoStevie6" parent="Signals" instance=ExtResource("15_7v6ld")]
+transform = Transform3D(0.46444, 0, -0.885605, 0, 1, 0, 0.885605, 0, 0.46444, -117.662, -2.38419e-06, 109.828)
+
+[node name="SignalNoParker" parent="Signals" instance=ExtResource("19_0u806")]
+transform = Transform3D(-0.653077, 0, -0.757291, 0, 1, 0, 0.757291, 0, -0.653077, -5.23227, -4.76837e-07, -5.46618)
+
+[node name="SignalRuddy" parent="Signals" instance=ExtResource("20_jh6f5")]
+transform = Transform3D(0.597709, 0, -0.801713, 0, 1, 0, 0.801713, 0, 0.597709, -34.0876, 0, -17.7678)
+
+[node name="SignalPeriph" parent="Signals" instance=ExtResource("21_jh2by")]
+transform = Transform3D(0.8238, 0, -0.566881, 0, 1, 0, 0.566881, 0, 0.8238, -63.1422, -2.38419e-07, 41.316)
+
+[node name="SignalPeriph2" parent="Signals" instance=ExtResource("21_jh2by")]
+transform = Transform3D(0.8238, 0, -0.566881, 0, 1, 0, 0.566881, 0, 0.8238, -107.856, -7.15256e-07, 55.3926)
+
+[node name="SignalPeriph3" parent="Signals" instance=ExtResource("21_jh2by")]
+transform = Transform3D(0.640257, 0, 0.768161, 0, 1, 0, -0.768161, 0, 0.640257, -105.501, -7.15256e-07, 64.4131)
+
+[node name="SignalPeriph4" parent="Signals" instance=ExtResource("21_jh2by")]
+transform = Transform3D(0.731199, 0, 0.682164, 0, 1, 0, -0.682164, 0, 0.731199, -47.9247, -7.15256e-07, 97.2347)
+
+[node name="SignalRuddy4" parent="Signals" instance=ExtResource("20_jh6f5")]
+transform = Transform3D(0.731199, 0, 0.682164, 0, 1, 0, -0.682164, 0, 0.731199, -47.8853, -1.19277, 97.2768)
+
+[node name="SignalRuddy2" parent="Signals" instance=ExtResource("20_jh6f5")]
+transform = Transform3D(0.895673, 0, -0.444713, 0, 1, 0, 0.444713, 0, 0.895673, -64.3707, 0, 29.94)
+
+[node name="SignalRuddy3" parent="Signals" instance=ExtResource("20_jh6f5")]
+transform = Transform3D(-0.166218, 0, -0.986089, 0, 1, 0, 0.986089, 0, -0.166218, -105.936, 4.76837e-07, 59.2167)
+
+[node name="SignalNoKim" parent="Signals" instance=ExtResource("22_yye0t")]
+transform = Transform3D(-0.838956, 0, -0.5442, 0, 1, 0, 0.5442, 0, -0.838956, -11.1225, 0, 64.98)
+
+[node name="SignalNoKim2" parent="Signals" instance=ExtResource("22_yye0t")]
+transform = Transform3D(-0.999964, 0, 0.00842982, 0, 1, 0, -0.00842982, 0, -0.999964, 138.98, -9.53674e-07, 54.8421)
+
+[node name="SignalNoParker2" parent="Signals" instance=ExtResource("19_0u806")]
+transform = Transform3D(-0.912791, 0, -0.408426, 0, 1, 0, 0.408426, 0, -0.912791, 52.214, 4.76837e-07, 107.652)
+
+[node name="SignalParker" parent="Signals" instance=ExtResource("23_mfxbm")]
+transform = Transform3D(-0.999165, 0, 0.0408468, 0, 1, 0, -0.0408468, 0, -0.999165, 48.4573, 0, 122.038)
+
+[node name="SignalTB" parent="Signals" instance=ExtResource("24_mv16x")]
+transform = Transform3D(0.638553, 0, -0.769578, 0, 1, 0, 0.769578, 0, 0.638553, 32.1436, 4.76837e-07, 126.967)
+
+[node name="SignalJimmy" parent="Signals" instance=ExtResource("25_yo56m")]
+transform = Transform3D(0.798152, 0, 0.602456, 0, 1, 0, -0.602456, 0, 0.798152, -19.7873, 4.76837e-07, 98.0585)
+
+[node name="SignalKim" parent="Signals" instance=ExtResource("26_82xxw")]
+transform = Transform3D(-0.351286, 0, 0.936268, 0, 1, 0, -0.936268, 0, -0.351286, -33.1033, 4.76837e-07, 108.206)
+
+[node name="SignalParker2" parent="Signals" instance=ExtResource("23_mfxbm")]
+transform = Transform3D(-0.931881, 0, -0.362763, 0, 1, 0, 0.362763, 0, -0.931881, -36.91, 4.76837e-07, 119.309)
+
+[node name="SignalJimmy2" parent="Signals" instance=ExtResource("25_yo56m")]
+transform = Transform3D(0.988457, 0, -0.151502, 0, 1, 0, 0.151502, 0, 0.988457, -143.331, 7.15256e-07, 102.71)
+
+[node name="SignalSlowdown" parent="Signals" instance=ExtResource("27_nphjl")]
+transform = Transform3D(-0.621749, 0, -0.783216, 0, 1, 0, 0.783216, 0, -0.621749, -28.1356, 0, -49.6754)
+
+[node name="Area3D_plane" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_plane"]
+transform = Transform3D(-0.0250778, 0, 0.999686, 0, 1, 0, -0.999686, 0, -0.0250778, 50.8451, 1.69164, -33.4346)
+shape = SubResource("BoxShape3D_7qtsq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D_plane"]
+transform = Transform3D(-0.0250778, 0, 0.999686, 0, 1, 0, -0.999686, 0, -0.0250778, -129.65, 1.69164, -49.5275)
+shape = SubResource("BoxShape3D_rg1t3")
+
+[node name="Area3D_beach" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_beach"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.246, 0, 113.427)
+shape = SubResource("BoxShape3D_84wuk")
+
+[node name="Area3D_desert" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_desert"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.6855, 0, 124.254)
+shape = SubResource("BoxShape3D_lt32k")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D_desert"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 152.411, 0, 62.2067)
+shape = SubResource("BoxShape3D_wubuv")
+
+[connection signal="area_entered" from="Area3D_plane" to="." method="_on_area_3d_plane_area_entered"]
+[connection signal="area_entered" from="Area3D_beach" to="." method="_on_area_3d_beach_area_entered"]
+[connection signal="area_entered" from="Area3D_desert" to="." method="_on_area_3d_desert_area_entered"]

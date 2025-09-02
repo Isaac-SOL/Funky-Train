@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://c4d348fgt0nne"]
+[gd_scene load_steps=74 format=3 uid="uid://c4d348fgt0nne"]
 
 [ext_resource type="PackedScene" uid="uid://c7adtd3m5hihf" path="res://objects/rail_section.tscn" id="1_ol5qi"]
 [ext_resource type="Script" uid="uid://hcgv0grqqm7y" path="res://scripts/rails_master.tres.gd" id="1_qhcyp"]
@@ -7,7 +7,6 @@
 [ext_resource type="ArrayMesh" uid="uid://bi3ehqtcy7mdq" path="res://meshes/rails/RailMazeEntranceLoop1.tres" id="5_har6y"]
 [ext_resource type="ArrayMesh" uid="uid://bk7r42j624kio" path="res://meshes/rails/RailMazeEntranceLoop1_minimap.tres" id="6_tri1n"]
 [ext_resource type="ArrayMesh" uid="uid://vlc12hgkunvu" path="res://meshes/rails/RailMazeEntranceLoop2.tres" id="7_ixd5k"]
-[ext_resource type="PackedScene" uid="uid://dhre1ajv8oogw" path="res://objects/accelerator.tscn" id="7_t3t4l"]
 [ext_resource type="ArrayMesh" uid="uid://duatnfhl508re" path="res://meshes/rails/RailMazeEntranceLoop2_minimap.tres" id="8_fqwfw"]
 [ext_resource type="ArrayMesh" uid="uid://bk1hp8fs1ki2r" path="res://meshes/rails/RailMazeEntranceLoop3.tres" id="9_o00fa"]
 [ext_resource type="ArrayMesh" uid="uid://cans186xj6wpm" path="res://meshes/rails/RailMazeEntranceLoop3_minimap.tres" id="10_wmtpf"]
@@ -269,10 +268,6 @@ skeleton = NodePath("../../..")
 
 [node name="CrossFollow" parent="MazeEntranceLoop/RailMazeEntranceLoop1" index="3"]
 transform = Transform3D(0.0138046, 0, -0.999893, 0, 1, 0, 0.999893, 0, 0.0138046, 0, 0, 0)
-
-[node name="Accelerator" parent="MazeEntranceLoop/RailMazeEntranceLoop1" instance=ExtResource("7_t3t4l")]
-transform = Transform3D(0.00276847, 0, -0.999995, 0, 1, 0, 0.999995, 0, 0.00276847, 2.59146, 0, -0.0150948)
-progress = 2.59163
 
 [node name="RailMazeEntranceLoop2" parent="MazeEntranceLoop" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_ol5qi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.0945, 0, -0.0183698)

@@ -1,9 +1,46 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxg1qr61a3smb"]
+[gd_scene load_steps=8 format=3 uid="uid://dxg1qr61a3smb"]
 
 [ext_resource type="Script" uid="uid://cxyk327cl7avl" path="res://scripts/wagon/wagon_miaou.gd" id="1_tn8f6"]
 [ext_resource type="PackedScene" uid="uid://5bmlg2p3x0yq" path="res://assets/modele/3D/wagon/wagons_miaou_mesh.tscn" id="2_tn8f6"]
 [ext_resource type="Script" uid="uid://eoyxaxq2q24" path="res://scripts/personnage/personnage.gd" id="3_psdn2"]
 [ext_resource type="Texture2D" uid="uid://bnrvkih5esb63" path="res://assets/modele/2D/personnages/personnages_miaou_c.png" id="4_8sk03"]
+
+[sub_resource type="Animation" id="Animation_tn8f6"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wagons_miaou_mesh/wagon_chat_tail:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(0.5, 2, 0.5, 2, 1),
+"update": 0,
+"values": [Vector3(-0.114557, -0.142266, 0.71716), Vector3(-0.631922, -0.175466, 0.805133), Vector3(-0.114557, -0.142266, 0.71716), Vector3(0.403579, -0.153767, 0.639997), Vector3(-0.114557, -0.142266, 0.71716)]
+}
+
+[sub_resource type="Animation" id="Animation_8sk03"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wagons_miaou_mesh/wagon_chat_tail:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.114557, -0.142266, 0.71716)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_psdn2"]
+_data = {
+&"RESET": SubResource("Animation_8sk03"),
+&"idle": SubResource("Animation_tn8f6")
+}
 
 [node name="wagon_miaou" type="Node3D"]
 script = ExtResource("1_tn8f6")
@@ -11,6 +48,9 @@ metadata/_custom_type_script = "uid://dqclrpibg0m2f"
 
 [node name="wagons_miaou_mesh" parent="." instance=ExtResource("2_tn8f6")]
 transform = Transform3D(0.255, 0, 0, 0, 0.255, 0, 0, 0, 0.255, 0, 0, 0)
+
+[node name="wagon_chat_tail" parent="wagons_miaou_mesh" index="1"]
+transform = Transform3D(2.17796, -1.83741, -0.405412, 1.87928, 2.155, 0.328996, 0.093518, -0.513665, 2.83044, -23.2316, 34.5208, 0)
 
 [node name="personnage_miaou" type="Node3D" parent="." node_paths=PackedStringArray("sprite_3d")]
 transform = Transform3D(9.555, 0, 0, 0, 9.555, 0, 0, 0, 9.555, 6.77557, -2.46757, 0)
@@ -22,3 +62,11 @@ metadata/_custom_type_script = "uid://eoyxaxq2q24"
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -0.515146, 0.788334, 0)
 billboard = 2
 texture = ExtResource("4_8sk03")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_psdn2")
+}
+autoplay = "idle"
+
+[editable path="wagons_miaou_mesh"]

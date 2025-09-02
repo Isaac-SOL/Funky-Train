@@ -43,6 +43,7 @@ func _ready() -> void:
 	await get_tree().process_frame
 	update_characters()
 	Main.instance.rhythm_sync.beat.connect(_on_beat)
+	RailsColorManager.reconnect()
 	
 	await Main.instance.game_started
 	update_rail_outlines()

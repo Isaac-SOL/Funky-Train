@@ -16,6 +16,12 @@ viewport_path = NodePath("SubViewport")
 transform = Transform3D(3.94145, 0, 0, 0, 1, 0, 0, 0, 2.66728, 31.181, -0.024, 16.972)
 visible = true
 
+[node name="CameraShaker" parent="." index="4"]
+transform = Transform3D(0.447119, 0, -0.894475, 0, 1, 0, 0.894474, 0, 0.447119, -12.6081, 1.11152, -7.90356)
+
+[node name="StartCamera" parent="." index="5"]
+transform = Transform3D(0.447119, 0, -0.894475, 0, 1, 0, 0.894475, 0, 0.447119, -12.6081, 1.11152, -7.90356)
+
 [node name="Map" parent="CanvasLayer/GameUI/MinimapUI/MinimapParent/Mask" index="0"]
 texture = SubResource("ViewportTexture_aycq8")
 

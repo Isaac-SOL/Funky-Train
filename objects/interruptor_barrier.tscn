@@ -102,6 +102,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_td8sy")
 [node name="MinimapMeshCenter" type="MeshInstance3D" parent="BarrierPivot/Barrier"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.37529, -1.16021)
 layers = 2
+cast_shadow = 0
 mesh = SubResource("SphereMesh_b1mhq")
 skeleton = NodePath("../../..")
 
@@ -114,6 +115,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.5603, 0)
 visible = false
 layers = 2
+cast_shadow = 0
 mesh = SubResource("TorusMesh_mpyeh")
 surface_material_override/0 = SubResource("StandardMaterial3D_b1mhq")
 

@@ -1,0 +1,32 @@
+[gd_scene load_steps=14 format=3 uid="uid://bmpco2y4bk6ux"]
+
+[ext_resource type="PackedScene" uid="uid://ddei87jmflwu2" path="res://scenes/main_scene_base.tscn" id="1_12r1c"]
+[ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_lejb3"]
+[ext_resource type="PackedScene" uid="uid://pxhdnm53147j" path="res://scenes/puzzle_map.tscn" id="2_mrouw"]
+[ext_resource type="Resource" uid="uid://upxyn0ata1ih" path="res://objects/characters/map2/cat.tres" id="3_6dm60"]
+[ext_resource type="Resource" uid="uid://dnmqq3t3k1aqk" path="res://objects/characters/map2/hub1.tres" id="4_e02kj"]
+[ext_resource type="Resource" uid="uid://bj1gx6dijuuvl" path="res://objects/characters/map2/hub2.tres" id="5_7po1x"]
+[ext_resource type="Resource" uid="uid://wxq7xtlosajt" path="res://objects/characters/map2/hub3_puzzle.tres" id="6_nuxsd"]
+[ext_resource type="Resource" uid="uid://cvf5xacsnwfig" path="res://objects/characters/map2/hub2_hard.tres" id="7_j80nl"]
+[ext_resource type="Resource" uid="uid://dv0gc2sc76vgx" path="res://objects/characters/map2/hub3.tres" id="8_hwnm8"]
+[ext_resource type="Resource" uid="uid://wxq7xtlosajt" path="res://objects/characters/map2/hub2_easy.tres" id="9_8aj63"]
+[ext_resource type="Resource" uid="uid://rvoqiqhkmm4c" path="res://objects/characters/map2/maze.tres" id="10_2w38h"]
+[ext_resource type="Resource" uid="uid://bm35c5akw4erc" path="res://objects/characters/map2/start.tres" id="11_b7jfw"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1yk45"]
+viewport_path = NodePath("SubViewport")
+
+[node name="PathBaseScene" instance=ExtResource("1_12r1c")]
+character_list = Array[ExtResource("2_lejb3")]([ExtResource("3_6dm60"), ExtResource("4_e02kj"), ExtResource("5_7po1x"), ExtResource("6_nuxsd"), ExtResource("7_j80nl"), ExtResource("8_hwnm8"), ExtResource("9_8aj63"), ExtResource("10_2w38h"), ExtResource("11_b7jfw")])
+two_options = false
+
+[node name="PuzzleMap" parent="." index="2" instance=ExtResource("2_mrouw")]
+
+[node name="Ground" parent="." index="3"]
+transform = Transform3D(6.851, 0, 0, 0, 1, 0, 0, 0, 6.057, -9.07588, -0.0472988, 36.5976)
+
+[node name="Map" parent="CanvasLayer/GameUI/MinimapUI/MinimapParent/Mask" index="0"]
+texture = SubResource("ViewportTexture_1yk45")
+
+[editable path="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonPuzzle"]
+[editable path="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonJam"]

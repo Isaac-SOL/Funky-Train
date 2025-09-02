@@ -30,6 +30,7 @@ var ended: bool = false
 var on_end_screen: bool = false
 var cursor_start_drag_pos: Vector2
 var camera_speed_tween: Tween
+var biome_color_tween: Tween
 
 func _ready() -> void:
 	instance = self
@@ -243,6 +244,18 @@ func _on_button_start_pressed() -> void:
 	%CameraShaker.target_node = Locomotive.instance.get_camera_follow_pos()
 	game_started.emit()
 
+func switch_biome_color(info: BiomeColor):
+	if biome_color_tween:
+		biome_color_tween.kill()
+	biome_color_tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+	biome_color_tween.set_parallel()
+	biome_color_tween.tween_property(%Sun, "light_color", info.sun_color, 5.0)
+	biome_color_tween.tween_property(%Sun, "light_energy", info.sun_energy, 5.0)
+	biome_color_tween.tween_property(%ScreenEffect, "mesh:material:shader_parameter/depth_gradient_color",
+									 info.depth_gradient_color, 5.0)
+	biome_color_tween.tween_property(%ScreenEffect, "mesh:material:shader_parameter/depth_gradient_strength",
+									 info.depth_gradient_strength, 5.0)
+
 func start_end_screen():
 	ended = true
 	on_end_screen = true
@@ -352,7 +365,8 @@ func _on_start_button_puzzle_click_open() -> void:
 
 func _on_start_button_puzzle_click_confirm() -> void:
 	# Open other scene
-	pass
+	%AudioStreamPlayer.remove_filter()
+	get_tree().change_scene_to_file("res://scenes/level_puzzle.tscn")
 
 
 func _on_start_button_jam_click_open() -> void:
