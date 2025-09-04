@@ -32,6 +32,10 @@ var clear_outline_scheduled: bool = false
 var cross_tween: Tween
 @onready var section_scene: PackedScene = load("res://objects/rail_section.tscn")
 
+var length: float:
+	get:
+		return curve.get_baked_length()
+
 func make_unique():
 	if curve:
 		curve = curve.duplicate()

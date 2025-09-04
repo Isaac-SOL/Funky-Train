@@ -32,7 +32,7 @@ var target_speed: float = 0.0
 var curr_section_length: float = 0.0
 var direction: bool = false
 var locked: bool = false
-var last_section: RailSection
+var section_history: Array[RailSection] = []
 
 func _ready() -> void:
 	instance = self
@@ -44,6 +44,7 @@ func _ready() -> void:
 	update_characters()
 	Main.instance.rhythm_sync.beat.connect(_on_beat)
 	RailsColorManager.reconnect()
+	section_history.append(get_section())
 	
 	await Main.instance.game_started
 	update_rail_outlines()
@@ -58,7 +59,8 @@ func _process(delta: float) -> void:
 			if speed > target_speed:
 				speed = target_speed
 		if speed > target_speed:
-			speed -= normal_speed * delta / stop_time
+			var eff_stop_time := stop_time if speed <= 12.0 else (stop_time / 2.0)
+			speed -= normal_speed * delta / eff_stop_time
 			if speed < target_speed:
 				speed = target_speed
 	
@@ -87,10 +89,9 @@ func _process(delta: float) -> void:
 			temp_progress -= curr_section_length
 			change_section(next_section())
 		progress = temp_progress
-	var next_carriage_end := progress - (length / 2.0) - spacing
-	for carriage: Carriage in carriages:
-		carriage.set_carriage_progress(next_carriage_end - (carriage.length / 2.0), get_section())
-		next_carriage_end -= carriage.length + spacing
+	var carr_pos := calc_carriage_positions()
+	for i in range(carriages.size()):
+		carriages[i].set_carriage_progress(carr_pos[i].progress, carr_pos[i].section)
 	
 	# Show signals
 	
@@ -132,7 +133,9 @@ func check_requirements(req_list: Array[String]) -> bool:
 		if req.begins_with("-"):
 			var rev_req := req.substr(1)
 			if rev_req in props:
-				return false
+				# dirty exception for the saxophone
+				if rev_req != "start" or "cat" not in props:
+					return false
 		else:
 			if req not in props:
 				return false
@@ -178,6 +181,11 @@ func next_section() -> RailSection:
 func get_section() -> RailSection:
 	return get_parent()
 
+func add_section_history(section: RailSection):
+	section_history.insert(0, section)
+	if section_history.size() > 10:
+		section_history = section_history.slice(0, 10)
+
 func change_direction(new_direction: bool):
 	direction = new_direction
 	update_rail_outlines()
@@ -186,33 +194,46 @@ func change_direction(new_direction: bool):
 func change_section(new_section: RailSection):
 	# Leave current section
 	print("--- Change Section (leaving " + get_section().name + ") ---")
-	if last_section:
-		last_section.set_outline(false, false)
+	print("Current history (recent first): " + str(section_history))
+	if section_history.size() >= 2:
+		section_history[1].set_outline(false, false)
 	get_section().set_cross(false)
 	for section: RailSection in get_section().out_sections:
 		section.set_cross(false)
-	last_section = get_section()
 	
 	# Change section
 	print("--- Change Section (changing to " + new_section.name + ") ---")
 	get_parent().remove_child(self)
 	new_section.add_child(self)
 	curr_section_length = get_parent().curve.get_baked_length()
+	add_section_history(get_section())
 	Main.instance.reset_signals()
 	Main.instance.set_direction_valid(true, true)
 	update_rail_outlines()
 	update_crosses()
 
+func calc_carriage_positions() -> Array[CarriagePosition]:
+	var res: Array[CarriagePosition] = []
+	var curr_progress = progress - (length / 2.0) - spacing
+	var curr_section_idx = 0
+	for carriage: Carriage in carriages:
+		var new_pos := CarriagePosition.new()
+		curr_progress -= carriage.length / 2.0
+		new_pos.progress = curr_progress
+		while curr_progress < 0.0:
+			curr_section_idx += 1
+			curr_progress += section_history[curr_section_idx].length
+		new_pos.section = section_history[curr_section_idx]
+		curr_progress -= (carriage.length / 2.0) + spacing
+		res.append(new_pos)
+	return res
+
 func add_character(new_character: CharacterInfo):
 	var new_carriage: Carriage = new_character.carriage.instantiate()
 	new_carriage.character = new_character
 	carriages.append(new_carriage)
-	var last_carriage := carriages[carriages.size() - 1]
-	if last_carriage.get_section() != get_section() \
-			or last_carriage.progress - (last_carriage.length / 2) - (new_carriage.length / 2) < 0.0:
-		last_section.add_child(new_carriage)
-	else:
-		get_section().add_child(new_carriage)
+	var carr_pos := calc_carriage_positions()[-1]
+	carr_pos.section.add_child(new_carriage)
 	update_characters()
 	update_rail_outlines()
 	update_crosses()

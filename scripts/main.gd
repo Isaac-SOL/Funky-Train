@@ -31,6 +31,7 @@ var on_end_screen: bool = false
 var cursor_start_drag_pos: Vector2
 var camera_speed_tween: Tween
 var biome_color_tween: Tween
+var on_menu: bool = true
 
 func _ready() -> void:
 	instance = self
@@ -139,7 +140,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			dragging_camera = true
-			cursor_start_drag_pos = event.position
+			cursor_start_drag_pos = event.position * Util.current_viewport_factor(self)
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		elif event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
 			dragging_camera = false
@@ -242,6 +243,7 @@ func _on_button_start_pressed() -> void:
 	%ControlStart.visible = false
 	%GameUI.visible = true
 	%CameraShaker.target_node = Locomotive.instance.get_camera_follow_pos()
+	on_menu = false
 	game_started.emit()
 
 func switch_biome_color(info: BiomeColor):

@@ -6,6 +6,13 @@ var is_dragging: bool = false
 var speed: Locomotive.SpeedMode = Locomotive.SpeedMode.STOP
 var drag_pos: Vector2 = Vector2.ZERO
 
+func _process(delta: float) -> void:
+	if not is_dragging and not Main.instance.on_menu:
+		if Input.is_action_just_pressed("faster") and speed < Locomotive.SpeedMode.FAST:
+			change_speed(speed + 1)
+		elif Input.is_action_just_pressed("slower") and speed > Locomotive.SpeedMode.STOP:
+			change_speed(speed - 1)
+
 func mouse_down(_event: InputEventMouseButton):
 	is_dragging = true
 	drag_pos = Vector2.ZERO

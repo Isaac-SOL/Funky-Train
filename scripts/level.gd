@@ -26,8 +26,11 @@ func _ready() -> void:
 				child._material.set_shader_parameter("locomotive_data_screenspace", Vector4(0.0, 0.0, 0.0, 100.0))
 
 func _process(delta: float) -> void:
+	var factor := Util.current_viewport_factor(self)
 	var loco_pos := Main.instance.camera.unproject_position(Locomotive.instance.get_visible_center())
+	loco_pos *= factor
 	var loco_extent_pos := Main.instance.camera.unproject_position(Locomotive.instance.get_visible_extent())
+	loco_extent_pos *= factor
 	var loco_radius := (loco_extent_pos - loco_pos).length()
 	var loco_dist := (Locomotive.instance.get_visible_center() - Main.instance.camera.global_position).length()
 	var loco_data := Vector4(loco_pos.x, loco_pos.y, loco_radius, loco_dist)

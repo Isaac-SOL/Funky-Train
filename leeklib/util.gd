@@ -116,6 +116,18 @@ static func hitstop(source: Node, secs: float, factor: float = 0.1):
 	if Engine.time_scale == factor:
 		Engine.time_scale = prev_scale
 
+## Gets the size of the viewport relative to the default settings of the project. [br]
+## A [param source] node must be provided to access the scene tree. [br]
+## Useful when the [code]stretch_mode[/code] is [code]canvas_items[/code],
+## As some values may need to be converted if the window has been resized.
+static func current_viewport_factor(source: Node) -> Vector2:
+	var viewport := source.get_viewport() as Window
+	if viewport:
+		var base_size := viewport.get_visible_rect().size
+		var curr_size := Vector2(viewport.size)
+		return curr_size / base_size
+	return Vector2.ONE
+
 ## Checks if the game is running on a mobile device, including if it is running in a mobile browser.
 static func on_mobile() -> bool:
 	return OS.has_feature("web_android") or OS.has_feature("web_ios") or OS.has_feature("android") or OS.has_feature("ios")

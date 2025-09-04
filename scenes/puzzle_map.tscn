@@ -1,4 +1,4 @@
-[gd_scene load_steps=405 format=4 uid="uid://pxhdnm53147j"]
+[gd_scene load_steps=398 format=4 uid="uid://pxhdnm53147j"]
 
 [ext_resource type="Script" uid="uid://hcgv0grqqm7y" path="res://scripts/rails_master.tres.gd" id="1_7cvav"]
 [ext_resource type="PackedScene" uid="uid://c7adtd3m5hihf" path="res://objects/rail_section.tscn" id="2_vwg2y"]
@@ -103,7 +103,9 @@
 [ext_resource type="ArrayMesh" uid="uid://ce76prrpowu6l" path="res://meshes/rails/Hub2To1_minimap.tres" id="89_7kvwc"]
 [ext_resource type="ArrayMesh" uid="uid://cogo4du11wt3s" path="res://meshes/rails/RailMazeExitTrue.tres" id="89_fmvqj"]
 [ext_resource type="ArrayMesh" uid="uid://bgy8ed466uggv" path="res://meshes/rails/RailMazeExitTrue_minimap.tres" id="90_1rqqb"]
+[ext_resource type="ArrayMesh" uid="uid://c3fwrs676rqdu" path="res://meshes/tempBridge4.tres" id="90_gjyyb"]
 [ext_resource type="ArrayMesh" uid="uid://bi53acvknegkv" path="res://meshes/rails/Hub1Inner_Bridge.tres" id="90_n0p18"]
+[ext_resource type="ArrayMesh" uid="uid://cb48p6t2ee6al" path="res://meshes/temp_bridge3.tres" id="91_2qcjd"]
 [ext_resource type="ArrayMesh" uid="uid://cm7fwqojsjrg5" path="res://meshes/rails/Hub1Inner_Bridge_minimap.tres" id="91_ajgpd"]
 [ext_resource type="ArrayMesh" uid="uid://ch0fmrn8sxcrl" path="res://meshes/rails/RailEntranceToSecond.tres" id="91_xtnfp"]
 [ext_resource type="ArrayMesh" uid="uid://bvh88tv7g4fdn" path="res://meshes/rails/RailEntranceToSecond_minimap.tres" id="92_cahs3"]
@@ -164,7 +166,9 @@
 [ext_resource type="ArrayMesh" uid="uid://hy1e3ev00p6g" path="res://meshes/rails/RailMazeFourthLoop2_minimap.tres" id="116_l2rr4"]
 [ext_resource type="Resource" uid="uid://rvoqiqhkmm4c" path="res://objects/characters/map2/maze.tres" id="117_tn0y3"]
 [ext_resource type="Resource" uid="uid://bj1gx6dijuuvl" path="res://objects/characters/map2/hub2.tres" id="150_qjdxd"]
+[ext_resource type="ArrayMesh" uid="uid://dkt3mvpuoxt0a" path="res://meshes/rails/Hub2_BigLoop_c.tres" id="154_vtavb"]
 [ext_resource type="ArrayMesh" uid="uid://bhheedqv2gasr" path="res://meshes/rails/Hub2_Extras.tres" id="155_6m5a2"]
+[ext_resource type="ArrayMesh" uid="uid://cboh0hiw8efal" path="res://meshes/rails/Hub2_BigLoop_c_minimap.tres" id="155_gjyyb"]
 [ext_resource type="ArrayMesh" uid="uid://deqxgyrufpn6e" path="res://meshes/rails/Hub2_Extras_minimap.tres" id="156_8blpd"]
 [ext_resource type="ArrayMesh" uid="uid://b1bre3fpn8q5w" path="res://meshes/rails/Hub2_Extras_s.tres" id="157_gs7x4"]
 [ext_resource type="ArrayMesh" uid="uid://c2ttsw2xni2pw" path="res://meshes/rails/Hub2_Extras_s_minimap.tres" id="158_xoyqq"]
@@ -191,23 +195,20 @@
 [ext_resource type="ArrayMesh" uid="uid://cfupke7cssgkn" path="res://meshes/rails/Hub2to3_Entrance_minimap.tres" id="178_cl3d1"]
 [ext_resource type="ArrayMesh" uid="uid://crsdr5sjghlen" path="res://meshes/rails/Hub2to3_Entrance_s.tres" id="179_1rpim"]
 [ext_resource type="ArrayMesh" uid="uid://dtdq5xrcj8j2w" path="res://meshes/rails/Hub2to3_Entrance_s_minimap.tres" id="180_cpgoc"]
-[ext_resource type="ArrayMesh" uid="uid://dp3v2x1mu3wtj" path="res://meshes/rails/Hub2to3_Entrance_s_s.tres" id="181_28heo"]
-[ext_resource type="ArrayMesh" uid="uid://cjnjlpvrltrx2" path="res://meshes/rails/Hub2to3_Entrance_s_s_minimap.tres" id="182_spj7e"]
 [ext_resource type="ArrayMesh" uid="uid://dgo0rynh3d4ns" path="res://meshes/rails/Hub2to3_Middle.tres" id="183_161g5"]
 [ext_resource type="ArrayMesh" uid="uid://bo8j8o03wajjc" path="res://meshes/rails/Hub2to3_Middle_minimap.tres" id="184_fokdw"]
 [ext_resource type="ArrayMesh" uid="uid://b4pme6m7ebqeb" path="res://meshes/rails/Hub2to3_Middle_s.tres" id="185_e1wj5"]
 [ext_resource type="ArrayMesh" uid="uid://bfe16j7l3rdm6" path="res://meshes/rails/Hub2to3_Middle_s_minimap.tres" id="186_q2gs1"]
 [ext_resource type="ArrayMesh" uid="uid://cdvbsdxmim0ui" path="res://meshes/rails/Hub2to3_Middle_s_s.tres" id="187_eruec"]
 [ext_resource type="ArrayMesh" uid="uid://rip1faxstopv" path="res://meshes/rails/Hub2to3_Middle_s_s_minimap.tres" id="188_e4lhe"]
-[ext_resource type="ArrayMesh" uid="uid://c3oqy6v107v7l" path="res://meshes/rails/Hub2to3_Entrance_toMiddle.tres" id="189_3tsnh"]
-[ext_resource type="ArrayMesh" uid="uid://c37cf0y428bt7" path="res://meshes/rails/Hub2to3_Entrance_toMiddle_minimap.tres" id="190_g15ro"]
 [ext_resource type="ArrayMesh" uid="uid://cckehww78vua0" path="res://meshes/rails/Hub2to3_Exit.tres" id="191_ujkb2"]
 [ext_resource type="ArrayMesh" uid="uid://lcaclphs5nid" path="res://meshes/rails/Hub2to3_Exit_minimap.tres" id="192_1qwx0"]
 [ext_resource type="ArrayMesh" uid="uid://uow0nsoo4mqe" path="res://meshes/rails/Hub3_BigLoop.tres" id="199_lmnx2"]
 [ext_resource type="ArrayMesh" uid="uid://c5h4ihrdfmpp8" path="res://meshes/rails/Hub3_BigLoop_minimap.tres" id="200_dchte"]
 [ext_resource type="ArrayMesh" uid="uid://i21kb5h2rlnt" path="res://meshes/rails/Hub3_BigLoop_s.tres" id="201_oc618"]
-[ext_resource type="Resource" uid="uid://wxq7xtlosajt" path="res://objects/characters/map2/hub3_puzzle.tres" id="202_qjdxd"]
+[ext_resource type="Resource" uid="uid://clny0m7dia805" path="res://objects/characters/map2/hub3_puzzle.tres" id="202_qjdxd"]
 [ext_resource type="ArrayMesh" uid="uid://dffpbscx4sp88" path="res://meshes/rails/Hub3_BigLoop_s_minimap.tres" id="202_rj1i1"]
+[ext_resource type="Resource" uid="uid://c3mahnqd7iir1" path="res://objects/characters/map2/hub2_puzzle1.tres" id="202_tn0y3"]
 [ext_resource type="ArrayMesh" uid="uid://dhh438j0cl1xk" path="res://meshes/rails/Hub2to3_toPeriph.tres" id="203_74d47"]
 [ext_resource type="ArrayMesh" uid="uid://drw117ept5e6u" path="res://meshes/rails/Hub3_BigLoop_s_s.tres" id="203_v6l8e"]
 [ext_resource type="ArrayMesh" uid="uid://v2h5elfsoxyc" path="res://meshes/rails/Hub2to3_toPeriph_minimap.tres" id="204_as4va"]
@@ -238,7 +239,6 @@
 [ext_resource type="ArrayMesh" uid="uid://c845ychsxkwyg" path="res://meshes/rails/Hub3_Inner2_c_c.tres" id="225_fcb1y"]
 [ext_resource type="ArrayMesh" uid="uid://blbx5ix0ohsgi" path="res://meshes/rails/Hub3_Inner2_c_c_minimap.tres" id="226_4au65"]
 [ext_resource type="ArrayMesh" uid="uid://dxycjd88e4xds" path="res://meshes/rails/Hub3_Inner2_c_s.tres" id="227_ob7cq"]
-[ext_resource type="Resource" uid="uid://wxq7xtlosajt" path="res://objects/characters/map2/hub2_easy.tres" id="228_ptu7g"]
 [ext_resource type="ArrayMesh" uid="uid://dqytlerbcwi15" path="res://meshes/rails/Hub3_Inner2_c_s_minimap.tres" id="228_xvjmt"]
 [ext_resource type="ArrayMesh" uid="uid://byj0jb1l6l4eb" path="res://meshes/rails/Hub3_Inner2_c_s_c.tres" id="229_vtavb"]
 [ext_resource type="ArrayMesh" uid="uid://c3lak380idjq7" path="res://meshes/rails/Hub3_Inner2_c_s_c_minimap.tres" id="230_gjyyb"]
@@ -258,21 +258,17 @@
 [ext_resource type="ArrayMesh" uid="uid://c6ny1pr5tx20q" path="res://meshes/rails/Periph2_minimap.tres" id="252_wnrwt"]
 [ext_resource type="ArrayMesh" uid="uid://dgvddj4sulkc3" path="res://meshes/rails/Periph2_s.tres" id="253_fcb1y"]
 [ext_resource type="ArrayMesh" uid="uid://c3fy7or0827th" path="res://meshes/rails/Periph2_s_minimap.tres" id="254_4au65"]
-[ext_resource type="ArrayMesh" uid="uid://c8p8rl4mob4l1" path="res://meshes/rails/Periph2_s_s.tres" id="255_ob7cq"]
-[ext_resource type="ArrayMesh" uid="uid://jqtgvrf3okak" path="res://meshes/rails/Periph2_s_s_minimap.tres" id="256_xvjmt"]
-[ext_resource type="ArrayMesh" uid="uid://c88g5j6gy7fm1" path="res://meshes/rails/Periph2_s_s_s.tres" id="257_vtavb"]
-[ext_resource type="ArrayMesh" uid="uid://d3djqihucueke" path="res://meshes/rails/Periph2_s_s_s_minimap.tres" id="258_gjyyb"]
 [ext_resource type="ArrayMesh" uid="uid://pnhrsfikrx4m" path="res://meshes/rails/Periph_toHub1.tres" id="259_vtavb"]
+[ext_resource type="ArrayMesh" uid="uid://c4hurxvo1fhad" path="res://meshes/rails/Periph2_s_c.tres" id="260_2qcjd"]
 [ext_resource type="ArrayMesh" uid="uid://1wxbuvut7urx" path="res://meshes/rails/Periph_toHub1_minimap.tres" id="260_gjyyb"]
 [ext_resource type="ArrayMesh" uid="uid://ca5s571lylo5p" path="res://meshes/rails/Periph_toHub3.tres" id="261_2qcjd"]
 [ext_resource type="Resource" uid="uid://upxyn0ata1ih" path="res://objects/characters/map2/cat.tres" id="261_58hlq"]
+[ext_resource type="ArrayMesh" uid="uid://cxrtj187gptr1" path="res://meshes/rails/Periph2_s_c_minimap.tres" id="261_lcjqk"]
+[ext_resource type="ArrayMesh" uid="uid://dpniqc5v07ht4" path="res://meshes/rails/Periph2_s_c_s.tres" id="262_gjyyb"]
 [ext_resource type="ArrayMesh" uid="uid://cglytv8an44iq" path="res://meshes/rails/Periph_toHub3_minimap.tres" id="262_lcjqk"]
-[ext_resource type="ArrayMesh" uid="uid://bbaontlvtdwti" path="res://meshes/rails/Periph_toHub2.tres" id="263_h3suw"]
-[ext_resource type="ArrayMesh" uid="uid://c00mj8focwtrq" path="res://meshes/rails/Periph_toHub2_minimap.tres" id="264_tn0y3"]
-[ext_resource type="ArrayMesh" uid="uid://cycfmm2tsy78x" path="res://meshes/rails/Periph_toHub2_s.tres" id="265_qjdxd"]
-[ext_resource type="ArrayMesh" uid="uid://q5xdpjtvsa6t" path="res://meshes/rails/Periph_toHub2_s_minimap.tres" id="266_mt8tr"]
-[ext_resource type="ArrayMesh" uid="uid://b34lygmgylnag" path="res://meshes/rails/Periph_toHub2_2.tres" id="267_ptu7g"]
-[ext_resource type="ArrayMesh" uid="uid://b0pld3537gimg" path="res://meshes/rails/Periph_toHub2_2_minimap.tres" id="268_58hlq"]
+[ext_resource type="ArrayMesh" uid="uid://butq5exnogfh5" path="res://meshes/rails/Periph2_s_c_c.tres" id="262_xvjmt"]
+[ext_resource type="ArrayMesh" uid="uid://st2qj3r7q4il" path="res://meshes/rails/Periph2_s_c_s_minimap.tres" id="263_2qcjd"]
+[ext_resource type="ArrayMesh" uid="uid://bti0ykbeet74s" path="res://meshes/rails/Periph2_s_c_c_minimap.tres" id="263_vtavb"]
 
 [sub_resource type="Curve3D" id="Curve3D_3kv24"]
 _data = {
@@ -509,8 +505,8 @@ point_count = 2
 [sub_resource type="Curve3D" id="Curve3D_m7ohq"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector3Array(-0.975713, 0, 0.0207178, 0.419899, 0, 1.99452, 0, 0, 0, -5.7581, 0, -1.818, 5.7581, 0, 1.818, 9.11733, 0, 7.00383, -3.42761, 0, 0, 3.42761, 0, 0, 25.8983, 0, 8.3606, -2.99284, 0, 0.0791092, 2.99284, 0, -0.0791092, 45.1009, 0, 8.49571),
-"tilts": PackedFloat32Array(0, 0, 0, 0)
+"points": PackedVector3Array(-0.975713, 0, 0.0207178, 0.419899, 0, 1.99452, 0, 0, 0, -5.7581, 0, -1.818, 5.7581, 0, 1.818, 9.11733, 0, 7.00383, -4.30555, 5.05447e-05, -0.0394325, 4.30555, -5.05447e-05, 0.0394325, 25.8983, 3.06768, 8.3606, -2.99284, 0, 0.0791092, 2.99284, 0, -0.0791092, 45.1009, 0, 8.4957),
+"tilts": PackedFloat32Array(0, 0, 0, 0.046901)
 }
 point_count = 4
 
@@ -605,23 +601,23 @@ point_count = 2
 [sub_resource type="Curve3D" id="Curve3D_6m5a2"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector3Array(-0.975713, 0, 0.0207178, 1.93177, 0, -1.97475, 0, 0, 0, 1.63881, 0, 3.49613, -1.63881, 0, -3.49613, 3.8769, 0, -9.13863, 0.655523, 0.00012207, 3.82389, -0.655523, -0.00012207, -3.82389, -4.69954, 0, -24.3249, -2.99284, 0, 0.0791092, 0, 0, 0, 0.52956, -0.00012207, -31.3406),
-"tilts": PackedFloat32Array(0, 0, 0, 0)
+"points": PackedVector3Array(-0.975713, 0, 0.0207178, 1.93177, 0, -1.97475, 0, 0, 0, 1.8854, -0.948623, 3.68661, -1.8854, 0.948623, -3.68661, 3.8769, 1.09469, -9.13863, 1.67382, -0.317009, 2.90297, -1.67382, 0.317009, -2.90297, 0.0661564, 2.73624, -15.4335, 1.07015, 1.09845, 3.91043, -1.07015, -1.09845, -3.91043, -5.13521, 1.11348, -24.0254, -2.99284, 0, 0.0791092, 0, 0, 0, 0.517384, -3.62396e-05, -31.298),
+"tilts": PackedFloat32Array(0, 0.158026, 0.17778, 0.271031, 0.512141)
 }
-point_count = 4
+point_count = 5
 
 [sub_resource type="Curve3D" id="Curve3D_8blpd"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector3Array(-0.975713, 0, 0.0207178, 1.54657, 0, 1.43608, 0, 0, 0, -0.600895, 0, -3.38688, 0.600895, 0, 3.38688, 2.61964, 0, 7.15857, 0.183563, -0.00012207, -3.53237, -0.183563, 0.00012207, 3.53237, 3.46549, 1.70767, 18.0307, -1.09254, -0.00012207, -1.96657, 1.09254, 0.00012207, 1.96657, 3.66482, 1.2259, 27.2194, -2.40359, -0.00012207, 0.109253, 2.40359, 0.00012207, -0.109253, 8.83273, 1.27773, 29.7626, -1.66539, 0, -0.0255165, 1.66539, 0, 0.0255165, 15.8053, 1.17848, 29.9054, -1.79984, 0, -1.47528, 1.79984, 0, 1.47528, 22.6187, 0.00012207, 31.5235),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(-0.975713, 0, 0.0207178, 1.54657, 0, 1.43608, 0, 0, 0, -0.600895, 0, -3.38688, 0.600895, 0, 3.38688, 2.61964, 0, 7.15857, -5.97297, 0, -5.80751, 5.97297, 0, 5.80751, 3.03228, 0, 30.1704, -2.82211, 0, 0, 2.82211, 0, 0, 22.3592, 0, 33.6641),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
 }
-point_count = 7
+point_count = 4
 
 [sub_resource type="Curve3D" id="Curve3D_gs7x4"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector3Array(-0.975713, 0, 0.0207178, 1.79984, 0, 1.47528, 0, 0, 0, -2.20781, 0, 0.0401382, 2.20781, 0, -0.0401382, 7.36026, 0, 1.81341, 0.497082, 0, 2.8168, 0, 0, 0, 11.1345, 0, -2.43512),
+"points": PackedVector3Array(-0.975713, 0, 0.0207178, 2.82211, 0, 0, 0, 0, 0, -2.28477, 0, 0.691448, 2.28477, 0, -0.691448, 8.26266, 0, -0.327366, 0.497082, 0, 2.8168, 0, 0, 0, 11.3939, 0.00012207, -4.57575),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
@@ -629,7 +625,7 @@ point_count = 3
 [sub_resource type="Curve3D" id="Curve3D_xoyqq"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector3Array(-0.975713, 0, 0.0207178, 1.79984, 0, 1.47528, 0, 0, 0, -1.20973, 0, -2.71452, 1.20973, 0, 2.71452, 5.35148, 0, 8.81398, -2.65171, 0, -0.047348, 0, 0, 0, 11.3548, 0, 15.3766),
+"points": PackedVector3Array(-0.975713, 0, 0.0207178, 2.82211, 0, 0, 0, 0, 0, -1.20973, 0, -2.71452, 1.20973, 0, 2.71452, 5.35148, 0, 8.81398, -2.65171, 0, -0.047348, 0, 0, 0, 11.6143, 0.00012207, 13.2361),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
@@ -826,7 +822,7 @@ _data = {
 }
 point_count = 3
 
-[sub_resource type="Curve3D" id="Curve3D_jlrhp"]
+[sub_resource type="Curve3D" id="Curve3D_6enla"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector3Array(-0.975713, 0, 0.0207178, 2.25425, 0, 3.68194, 0, 0, 0, -0.350582, 0, -4.6452, 0.350582, 0, 4.6452, 4.8109, 0.00012207, 14.7489),
@@ -834,10 +830,18 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="Curve3D" id="Curve3D_hioaw"]
+[sub_resource type="Curve3D" id="Curve3D_a818s"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector3Array(-0.975713, 0, 0.0207178, 0.350582, 0, 4.6452, 0, 0, 0, 0.52599, 0, -3.6068, -0.52599, 0, 3.6068, -0.396816, 0, 15.0227),
+"points": PackedVector3Array(-0.975713, 0, 0.0207178, 0.350582, 0, 4.6452, 0, 0, 0, -2.72364, 2.77465e-05, -4.05598, 2.72364, -2.77465e-05, 4.05598, 5.72664, 6.25732e-10, 15.3369, 23.0368, 0, -11.5184, 0, 0, 0, 15.3908, -0.00012207, 62.2272),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_fepkf"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(-0.350582, 0, -4.6452, 0.350582, 0, 4.6452, 0, 0, 0, 0.52599, 0, -3.6068, 0, 0, 0, -0.39682, 0, 15.0227),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -994,21 +998,13 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="Curve3D" id="Curve3D_oum2m"]
+[sub_resource type="Curve3D" id="Curve3D_kluvy"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector3Array(-0.975713, 0, 0.0207178, -3.68246, 0, 0.516235, 0, 0, 0, 1.42032, 0, -1.57733, -1.42032, 0, 1.57733, -7.03318, 0, 3.05489, -0.187286, 0, -3.60529, 0.187286, 0, 3.60529, -10.3107, 0, 11.2019),
-"tilts": PackedFloat32Array(0, 0, 0)
+"points": PackedVector3Array(-0.975713, 0, 0.0207178, -3.68246, 0, 0.516235, 0, 0, 0, 1.51176, 0, -1.97691, -1.51176, 0, 1.97691, -9.06899, -3.7835e-10, 5.09459, 3.60495, 0, 0.581444, -3.60495, 0, -0.581444, -14.9997, -3.7835e-10, 10.502, -0.76458, 0, 3.60447, 0.76458, 0, -3.60447, -17.226, 0, 3.51345, 0.0468254, 0, 2.62202, 0, 0, 0, -16.2889, 0, -6.3824),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
-point_count = 3
-
-[sub_resource type="Curve3D" id="Curve3D_gedng"]
-resource_local_to_scene = true
-_data = {
-"points": PackedVector3Array(-0.975713, 0, 0.0207178, 0.187286, 0, 3.60529, 0, 0, 0, -4.84125, 0, -2.35693, 4.84125, 0, 2.35693, 6.06425, 0, 9.72917, -4.95264, 0, -0.211472, 4.95264, 0, 0.211472, 51.0271, 0, 21.2831, -0.0077076, 0, 2.59528, 0, 0, 0, 58.6333, 0, 15.7648),
-"tilts": PackedFloat32Array(0, 0, 0, 0)
-}
-point_count = 4
+point_count = 5
 
 [sub_resource type="Curve3D" id="Curve3D_wnrwt"]
 resource_local_to_scene = true
@@ -1033,14 +1029,6 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
-
-[sub_resource type="Curve3D" id="Curve3D_ob7cq"]
-resource_local_to_scene = true
-_data = {
-"points": PackedVector3Array(-0.975713, 0, 0.0207178, 0.187286, 0, 3.60529, 0, 0, 0, 3.71369, 0, 3.54985, -3.71369, 0, -3.54985, -7.78908, 0, 3.88953, -0.76458, 0, 3.60447, 0.76458, 0, -3.60447, -6.91527, 0, -7.68845, 0.0468254, 0, 2.62202, 0, 0, 0, -5.9782, 0, -17.5843),
-"tilts": PackedFloat32Array(0, 0, 0, 0)
-}
-point_count = 4
 
 [sub_resource type="Curve3D" id="Curve3D_xvjmt"]
 resource_local_to_scene = true
@@ -1250,29 +1238,37 @@ _data = {
 }
 point_count = 3
 
-[sub_resource type="Curve3D" id="Curve3D_6enla"]
+[sub_resource type="Curve3D" id="Curve3D_dg4n0"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector3Array(-0.975713, 0, 0.0207178, 16.1627, 0, 11.4551, 0, 0, 0, -17.1179, 0, -15.2599, 17.1179, 0, 15.2599, 65.7458, 0, 47.933, -3.41577, 0, -28.8207, 3.41577, 0, 28.8207, 120.042, 0, 129.389),
-"tilts": PackedFloat32Array(0, 0, 0)
+"points": PackedVector3Array(-0.975713, 0, 0.0207178, 16.1627, 0, 11.4551, 0, 0, 0, -17.1179, 0, -15.2599, 17.1179, 0, 15.2599, 57.0232, 0, 47.3556, -3.41577, 0, -28.8207, 3.41577, 0, 28.8207, 108.609, 0, 118.911, 6.77524, 0, -11.6534, -6.77524, 0, 11.6534, 95.8777, 0, 184.638, 23.0368, 0, -11.5184, -23.0368, 0, 11.5184, 46.2403, 0.00012207, 232.338),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
-point_count = 3
-
-[sub_resource type="Curve3D" id="Curve3D_a818s"]
-resource_local_to_scene = true
-_data = {
-"points": PackedVector3Array(-0.975713, 0, 0.0207178, 3.41577, 0, 28.8207, 0, 0, 0, 12.5957, 0, -11.9553, -12.5957, 0, 11.9553, -14.9417, 0, 53.4512),
-"tilts": PackedFloat32Array(0, 0)
-}
-point_count = 2
+point_count = 5
 
 [sub_resource type="Curve3D" id="Curve3D_15ad7"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector3Array(-0.975713, 0, 0.0207178, -12.5957, 0, 11.9553, 0, 0, 0, 23.0368, 0, -11.5184, -23.0368, 0, 11.5184, -58.86, 0.00012207, 49.4978, 27.7797, 0, 1.35512, -27.7797, 0, -1.35512, -155.75, 0.00012207, 61.3549, 14.4604, 0, 9.21269, 0, 0, 0, -238.932, 0.000244141, 39.4973),
+"points": PackedVector3Array(23.0368, 0, -11.5184, -23.0368, 0, 11.5184, 0, 0, 0, 27.7797, 0, 1.35512, -27.7797, 0, -1.35512, -96.89, 0, 11.857),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_b5inl"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(-0.975713, 0, 0.0207178, -27.7797, 0, -1.35512, 0, 0, 0, -16.0546, 0, 4.15205, 16.0546, 0, -4.15205, -8.23601, 3.12866e-10, -29.9296, -3.50618, 0, 7.75051, 3.50618, 0, -7.75051, 40.7582, 0.000122071, -42.8472, 2.98249, 0, 0, 0, 0, 0, 36.9303, 0.000122071, -54.7984),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
+
+[sub_resource type="Curve3D" id="Curve3D_ry1mc"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(27.7797, 0, 1.35512, -27.7797, 0, -1.35512, 0, 0, 0, 14.4604, 0, 9.21269, 0, 0, 0, -83.1823, 0.000122071, -21.857),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_5im0h"]
 resource_local_to_scene = true
@@ -1285,34 +1281,10 @@ point_count = 3
 [sub_resource type="Curve3D" id="Curve3D_cq20m"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector3Array(-0.975713, 0, 0.0207178, -5.88235, 0, -13.7255, 0, 0, 0, -2.61078, 0, -0.824455, 2.61078, 0, 0.824455, 11.4787, 0, -11.6265, -0.685722, 0, -5.31438, 0, 0, 0, 17.4013, 0, -3.76306),
+"points": PackedVector3Array(-0.975713, 0, 0.0207178, -5.88235, 0, -13.7255, 0, 0, 0, -3.71666, 0, -1.05036, 3.71666, 0, 1.05036, 10.2509, -3.7835e-10, -12.544, -0.685722, 0, -5.31438, 0, 0, 0, 17.4013, 0, -3.76306),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
-
-[sub_resource type="Curve3D" id="Curve3D_fepkf"]
-resource_local_to_scene = true
-_data = {
-"points": PackedVector3Array(-0.975713, 0, 0.0207178, 3.41577, 0, 28.8207, 0, 0, 0, 14.3951, 0, 5.2468, -14.3951, 0, -5.2468, -55.0398, 0, 48.9211),
-"tilts": PackedFloat32Array(0, 0)
-}
-point_count = 2
-
-[sub_resource type="Curve3D" id="Curve3D_kluvy"]
-resource_local_to_scene = true
-_data = {
-"points": PackedVector3Array(-0.975713, 0, 0.0207178, -14.3951, 0, -5.2468, 0, 0, 0, 4.05047, 0, 1.86945, -4.05047, 0, -1.86945, -24.5167, 0.00012207, -12.3906, -0.350582, 0, -4.6452, 0, 0, 0, -34.1524, 0.000244141, -8.19925),
-"tilts": PackedFloat32Array(0, 0, 0)
-}
-point_count = 3
-
-[sub_resource type="Curve3D" id="Curve3D_dg4n0"]
-resource_local_to_scene = true
-_data = {
-"points": PackedVector3Array(-0.975713, 0, 0.0207178, -12.5957, 0, 11.9553, 0, 0, 0, 14.3951, 0, 5.2468, 0, 0, 0, -40.0981, 0, -4.53012),
-"tilts": PackedFloat32Array(0, 0)
-}
-point_count = 2
 
 [node name="PuzzleMap" type="Node3D"]
 script = ExtResource("1_7cvav")
@@ -1354,7 +1326,7 @@ mesh = ExtResource("6_rp1gj")
 mesh = ExtResource("7_iss4f")
 
 [node name="CrossFollow" parent="TutorialPuzzle/TutoPuzzle_StartR" index="3"]
-transform = Transform3D(-0.998577, 0, -0.0531345, 0, 0.999986, 0, 0.053135, 0, -0.998567, 0.0775257, 0, 5.28053)
+transform = Transform3D(-0.998577, 0, -0.0531344, 0, 0.999986, 0, 0.053135, 0, -0.998566, 0.0775257, 0, 5.28053)
 progress = 5.28178
 
 [node name="TutoPuzzle_StartL" parent="TutorialPuzzle" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
@@ -1687,7 +1659,7 @@ mesh = ExtResource("52_yqinq")
 mesh = ExtResource("53_14v6j")
 
 [node name="CrossFollow" parent="PreHub1/PreHub1_Buffer_s_s" index="3"]
-transform = Transform3D(0.0144907, 0, 0.999875, 0, 1, 0, -0.999875, 0, 0.0144907, 0, 0, 0)
+transform = Transform3D(0.0144907, 0, 0.999873, 0, 1, 0, -0.999873, 0, 0.0144907, 0, 0, 0)
 
 [node name="StationHub1_1" parent="PreHub1/PreHub1_Buffer_s_s" instance=ExtResource("32_sxdtl")]
 transform = Transform3D(-0.0103523, 0, 0.999945, 0, 1, 0, -0.999945, 0, -0.0103523, -15.1889, 0, 0.0684377)
@@ -1788,7 +1760,7 @@ mesh = ExtResource("60_pj2mh")
 mesh = ExtResource("61_cviq7")
 
 [node name="CrossFollow" parent="Hub1/Hub1_BigLoop_s_s" index="3"]
-transform = Transform3D(-0.99983, 0, 0.0177412, 0, 1, 0, -0.0177412, 0, -0.99983, 0, 0, 0)
+transform = Transform3D(-0.999828, 0, 0.0177411, 0, 1, 0, -0.0177411, 0, -0.999828, 0, 0, 0)
 
 [node name="Interruptor" parent="Hub1/Hub1_BigLoop_s_s" node_paths=PackedStringArray("rail_to_toggle") instance=ExtResource("23_tq8wk")]
 transform = Transform3D(-0.999016, 0, 0.0443436, 0, 1, 0, -0.0443436, 0, -0.999016, -0.29287, 0, 6.55738)
@@ -1827,6 +1799,7 @@ out_sections = [NodePath("../Hub1_BigLoop_s_s_s_s_s")]
 
 [node name="BakedRailsMesh" parent="Hub1/Hub1_BigLoop_s_s_s_s" index="0"]
 mesh = ExtResource("64_t6tqo")
+rebake_with_tilt = true
 
 [node name="BakedRailsMeshMinimap" parent="Hub1/Hub1_BigLoop_s_s_s_s" index="2"]
 mesh = ExtResource("65_pckws")
@@ -1932,6 +1905,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.932, 0, 7.53261)
 curve = SubResource("Curve3D_xyjd0")
 in_sections = [NodePath("../../Hub1_BigLoop")]
 out_sections = [NodePath("../Hub1Inner_s"), NodePath("../Hub1Inner_Bridge")]
+out_requirements_2 = Array[String](["-hub1"])
 
 [node name="BakedRailsMesh" parent="Hub1/Hub1To2/Hub1Inner" index="0"]
 mesh = ExtResource("76_rp1gj")
@@ -2078,7 +2052,7 @@ progress = 4.90307
 script = SubResource("GDScript_yfycn")
 
 [node name="Hub2To1" parent="Hub1/Hub1To2" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5874, 0.00012207, 79.9594)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5752, 3.62396e-05, 79.9168)
 curve = SubResource("Curve3D_6m5a2")
 in_sections = [NodePath("../../../Hub2/Hub2_BigLoop_s_s_s_s_s_s"), NodePath(".")]
 out_sections = [NodePath("../../Hub1_BigLoop_s_s_s_s_s")]
@@ -2086,6 +2060,7 @@ out_sections = [NodePath("../../Hub1_BigLoop_s_s_s_s_s")]
 [node name="BakedRailsMesh" parent="Hub1/Hub1To2/Hub2To1" index="0"]
 mesh = ExtResource("88_kyqo5")
 skeleton = NodePath("../../../../Hub2")
+rebake_with_tilt = true
 
 [node name="OutlineMesh" parent="Hub1/Hub1To2/Hub2To1" index="1"]
 mesh = SubResource("ArrayMesh_x140k")
@@ -2097,18 +2072,61 @@ skeleton = NodePath("../../../../Hub2")
 material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Hub1/Hub1To2/Hub2To1" index="3"]
-transform = Transform3D(0.811553, 0, -0.584276, 0, 1, 0, 0.584276, 0, 0.811553, 2.61837, 0, -2.98919)
+transform = Transform3D(0.795807, 0.0102878, -0.605454, -0.0568133, 0.9967, -0.0577392, 0.60287, 0.0803468, 0.793776, 2.68301, 0.106366, -2.93)
 progress = 3.97781
 
 [node name="CrossCenter" parent="Hub1/Hub1To2/Hub2To1/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Hub1/Hub1To2/Hub2To1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.5835, -3.62396e-05, -39.7937)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Hub1/Hub1To2/Hub2To1/CSGCombiner3D"]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Hub1/Hub1To2/Hub2To1/CSGCombiner3D/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03, 0)
+mesh = ExtResource("90_gjyyb")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="Hub1/Hub1To2/Hub2To1/CSGCombiner3D/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.5835, -0.0299638, 39.7937)
+mesh = ExtResource("91_2qcjd")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Hub1/Hub1To2/Hub2To1/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.7065, -2.91699, 8.4935)
+operation = 2
+radius = 3.5083
+height = 7.83398
+sides = 16
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Hub1/Hub1To2/Hub2To1/CSGCombiner3D"]
+transform = Transform3D(-3.7113e-08, -0.849045, 0.52832, 1, -4.37114e-08, 0, 2.30936e-08, 0.52832, 0.849045, 44.4072, -1.58326, 25.1399)
+operation = 2
+radius = 3.83057
+height = 7.83398
+sides = 16
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Hub1/Hub1To2/Hub2To1/CSGCombiner3D"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 27.1155, -0.973482, 8.37998)
+operation = 2
+radius = 3.83057
+height = 7.83398
+sides = 16
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Hub1/Hub1To2/Hub2To1/CSGCombiner3D"]
+transform = Transform3D(0.952539, 0, -0.304415, 0, 1, 0, 0.304415, 0, 0.952539, 1.09974, -2.70123, 4.00414)
+operation = 2
+size = Vector3(16.7501, 10.8583, 14.5663)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Hub1/Hub1To2/Hub2To1/CSGCombiner3D"]
+transform = Transform3D(0.756356, 0, -0.65416, 0, 1, 0, 0.65416, 0, 0.756356, 39.2291, -2.70123, 39.4964)
+operation = 2
+size = Vector3(16.7501, 10.8583, 14.5663)
 
 [node name="Hub1Inner_Bridge" parent="Hub1/Hub1To2" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.04, 0, 30.5343)
 curve = SubResource("Curve3D_8blpd")
 in_sections = [NodePath("../Hub1Inner")]
 out_sections = [NodePath("../Hub1Inner_Bridge_s"), NodePath("../Hub1Inner_Bridge_to2")]
-out_requirements_2 = Array[String](["-hub1"])
 
 [node name="BakedRailsMesh" parent="Hub1/Hub1To2/Hub1Inner_Bridge" index="0"]
 mesh = ExtResource("90_n0p18")
@@ -2128,7 +2146,7 @@ progress = 5.0807
 script = SubResource("GDScript_yfycn")
 
 [node name="Hub1Inner_Bridge_s" parent="Hub1/Hub1To2" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4213, 0.00012207, 62.0578)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6808, 0, 64.1984)
 curve = SubResource("Curve3D_gs7x4")
 in_sections = [NodePath("../Hub1Inner_Bridge")]
 out_sections = [NodePath("../Hub1To2_Interr_s_s")]
@@ -2144,14 +2162,14 @@ mesh = ExtResource("93_14v6j")
 material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Hub1/Hub1To2/Hub1Inner_Bridge_s" index="3"]
-transform = Transform3D(-0.270361, 0, -0.962757, 0, 1, 0, 0.962757, 0, -0.270361, 2.62472, 0, 1.25749)
+transform = Transform3D(-0.0288028, 0, -0.999582, 0, 1, 0, 0.999582, 0, -0.0288028, 2.92966, 0, 0.0699712)
 progress = 2.93061
 
 [node name="CrossCenter" parent="Hub1/Hub1To2/Hub1Inner_Bridge_s/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
 
 [node name="Hub1Inner_Bridge_to2" parent="Hub1/Hub1To2" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4213, 0.00012207, 62.0578)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6808, 0, 64.1984)
 curve = SubResource("Curve3D_xoyqq")
 in_sections = [NodePath("../Hub1Inner_Bridge")]
 out_sections = [NodePath("../../../Hub2/Hub2_BigLoop_s_s_s_s_s_s_s_s")]
@@ -2167,7 +2185,7 @@ mesh = ExtResource("95_abyon")
 material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Hub1/Hub1To2/Hub1Inner_Bridge_to2" index="3"]
-transform = Transform3D(-0.833161, 0, -0.553026, 0, 1, 0, 0.553026, 0, -0.833161, 1.84657, 0, 2.22849)
+transform = Transform3D(-0.826619, 0, -0.562758, 0, 1, 0, 0.562758, 0, -0.826619, 2.30058, 0, 1.57366)
 progress = 2.90388
 
 [node name="CrossCenter" parent="Hub1/Hub1To2/Hub1Inner_Bridge_to2/CrossFollow/CrossTween" index="0"]
@@ -2319,7 +2337,7 @@ mesh = ExtResource("79_8blpd")
 skeleton = NodePath("../../..")
 
 [node name="CrossFollow" parent="Maze/MazeEntranceLoop/RailMazeEntranceLoop1True" index="3"]
-transform = Transform3D(0.0138046, 0, -0.999891, 0, 1, 0, 0.999891, 0, 0.0138046, 0, 0, 0)
+transform = Transform3D(0.0138046, 0, -0.999889, 0, 1, 0, 0.999889, 0, 0.0138046, 0, 0, 0)
 
 [node name="RailMazeEntranceLoop3" parent="Maze/MazeEntranceLoop" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.1418, 0, -0.0275548)
@@ -2380,7 +2398,7 @@ mesh = ExtResource("85_46scn")
 skeleton = NodePath("../../..")
 
 [node name="CrossFollow" parent="Maze/MazeEntranceLoop/RailMazeEntranceLoopToExit" index="3"]
-transform = Transform3D(0.000295472, 0, 0.999985, 0, 1, 0, -0.999985, 0, 0.000295472, -3.91247, 0, -0.0219596)
+transform = Transform3D(0.000295471, 0, 0.999983, 0, 1, 0, -0.999983, 0, 0.000295471, -3.91247, 0, -0.0219596)
 progress = 3.9127
 
 [node name="RailMazeEntranceLoop5" parent="Maze/MazeEntranceLoop" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
@@ -2552,7 +2570,7 @@ mesh = ExtResource("104_28heo")
 transform = Transform3D(0.979196, 0, -0.202897, 0, 1, 0, 0.202897, 0, 0.979196, 0, 0, 0)
 
 [node name="InterruptorBarrier" parent="Maze/MazeSecondLoop/RailMazeSecondLoop4" instance=ExtResource("22_7pbsc")]
-transform = Transform3D(0.782478, 0, 0.622679, 0, 1, 0, -0.622679, 0, 0.782478, -4.36813, 4.76837e-07, -18.115)
+transform = Transform3D(0.782478, 0, 0.622679, 0, 1, 0, -0.622679, 0, 0.782478, -4.95255, 4.76837e-07, -18.5695)
 degrees_left = -66.857
 degrees_right = 73.714
 
@@ -2680,9 +2698,10 @@ metadata/_custom_type_script = "uid://hcgv0grqqm7y"
 
 [node name="Hub2_BigLoop" parent="Hub2" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.6789, 0.00012207, 75.3693)
-curve = SubResource("Curve3D_jlrhp")
+curve = SubResource("Curve3D_6enla")
 in_sections = [NodePath("../../Hub1/Hub1To2/Hub1To2_Exit1"), NodePath("../Hub2_BigLoop_s_s_s_s_s_s_s_s")]
-out_sections = [NodePath("../Hub2_BigLoop_s")]
+out_sections = [NodePath("../Hub2_BigLoop_s"), NodePath("../Hub2_BigLoop_c")]
+out_requirements_1 = Array[String](["hub2_hard"])
 
 [node name="BakedRailsMesh" parent="Hub2/Hub2_BigLoop" index="0"]
 mesh = ExtResource("96_i5jkt")
@@ -2703,38 +2722,48 @@ transform = Transform3D(-0.85285, 0, -0.522153, 0, 1, 0, 0.522153, 0, -0.85285, 
 [node name="CrossCenter" parent="Hub2/Hub2_BigLoop/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
 
+[node name="StationHub2_1" parent="Hub2/Hub2_BigLoop" instance=ExtResource("32_sxdtl")]
+transform = Transform3D(-0.97221, -4.59003e-06, -0.234104, -2.49839e-06, 1, -9.2312e-06, 0.234104, -8.38981e-06, -0.97221, 4.08114, 9.71986e-05, 10.3666)
+progress = 11.1807
+waiting_character = ExtResource("150_qjdxd")
+
 [node name="Hub2_BigLoop_s" parent="Hub2" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.4898, 0.000244141, 90.1181)
-curve = SubResource("Curve3D_hioaw")
-in_sections = [NodePath("../Hub2_BigLoop"), NodePath("../../Periph/Periph_toHub2_s")]
-out_sections = [NodePath("../Hub2_Extras/Hub2_Extras"), NodePath("../Hub2_BigLoop_s_s")]
-out_requirements_1 = Array[String](["-start"])
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.4898, 0.00024414, 90.1182)
+curve = SubResource("Curve3D_a818s")
+in_sections = [NodePath("../Hub2_BigLoop")]
+out_sections = [NodePath("../../Periph/Periph2_s_c")]
 
 [node name="BakedRailsMesh" parent="Hub2/Hub2_BigLoop_s" index="0"]
 mesh = ExtResource("98_1sfqf")
 
-[node name="OutlineMesh" parent="Hub2/Hub2_BigLoop_s" index="1"]
-mesh = SubResource("ArrayMesh_x140k")
-
 [node name="BakedRailsMeshMinimap" parent="Hub2/Hub2_BigLoop_s" index="2"]
 mesh = ExtResource("99_5dbvl")
-material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Hub2/Hub2_BigLoop_s" index="3"]
-transform = Transform3D(-0.997155, 0, -0.0752571, 0, 1, 0, 0.0752571, 0, -0.997155, 0, 0, 0)
+transform = Transform3D(-0.955902, -2.44764e-07, -0.293678, 2.38838e-07, 1, -1.61084e-06, 0.293678, -1.60996e-06, -0.955902, 1.10868, 6.5749e-06, 5.38144)
+progress = 5.50536
 
-[node name="CrossCenter" parent="Hub2/Hub2_BigLoop_s/CrossFollow/CrossTween" index="0"]
-script = SubResource("GDScript_yfycn")
+[node name="Hub2_BigLoop_c" parent="Hub2" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.4898, 0.00024414, 90.1182)
+curve = SubResource("Curve3D_fepkf")
+in_sections = [NodePath("../Hub2_BigLoop")]
+out_sections = [NodePath("../Hub2_Extras/Hub2_Extras"), NodePath("../Hub2_BigLoop_s_s")]
+out_requirements_1 = Array[String](["-start"])
 
-[node name="StationHub2_1" parent="Hub2/Hub2_BigLoop_s" instance=ExtResource("32_sxdtl")]
-transform = Transform3D(-0.997902, 0, 0.0647179, 0, 1, 0, -0.0647179, 0, -0.997902, -0.0197898, 0, 11.1728)
-progress = 11.1807
-waiting_character = ExtResource("150_qjdxd")
+[node name="BakedRailsMesh" parent="Hub2/Hub2_BigLoop_c" index="0"]
+mesh = ExtResource("154_vtavb")
+
+[node name="BakedRailsMeshMinimap" parent="Hub2/Hub2_BigLoop_c" index="2"]
+mesh = ExtResource("155_gjyyb")
+
+[node name="CrossFollow" parent="Hub2/Hub2_BigLoop_c" index="3"]
+transform = Transform3D(-0.999992, 0, 0.00322356, 0, 1, 0, -0.00322356, 0, -0.999992, 0.169334, 0, 5.44263)
+progress = 5.44661
 
 [node name="Hub2_BigLoop_s_s" parent="Hub2" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.093, 0.000244141, 105.141)
 curve = SubResource("Curve3D_rptky")
-in_sections = [NodePath("../Hub2_BigLoop_s")]
+in_sections = [NodePath("../Hub2_BigLoop_c")]
 out_sections = [NodePath("../Hub2_BigLoop_s_s_s")]
 
 [node name="BakedRailsMesh" parent="Hub2/Hub2_BigLoop_s_s" index="0"]
@@ -2779,7 +2808,7 @@ script = SubResource("GDScript_yfycn")
 [node name="Hub2_BigLoop_s_s_s_s" parent="Hub2" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.92091, 0.000244141, 109.404)
 curve = SubResource("Curve3D_3wg2y")
-in_sections = [NodePath("../Hub2_BigLoop_s_s_s"), NodePath("../Hub2_Extras/Hub2_Extras4")]
+in_sections = [NodePath("../Hub2_BigLoop_s_s_s"), NodePath("../Hub2_Extras/Hub2_Extras4"), NodePath("../../Periph/Periph2_s_c_s")]
 out_sections = [NodePath("../../Hub2to3/Hub2to3_Entrance"), NodePath("../Hub2_BigLoop_s_s_s_s_s")]
 out_requirements_1 = Array[String](["maze"])
 
@@ -2845,8 +2874,8 @@ mesh = ExtResource("109_q1flq")
 material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Hub2/Hub2_BigLoop_s_s_s_s_s_s" index="3"]
-transform = Transform3D(0.999873, -1.73155e-07, -0.0147398, 8.90404e-08, 1, -5.70699e-06, 0.0147398, 5.70516e-06, 0.999873, 0.0616098, 9.32358e-06, -2.43863)
-progress = 2.43953
+transform = Transform3D(0.999915, -1.78216e-07, -0.0115036, 1.08185e-07, 1, -6.08804e-06, 0.0115036, 6.08651e-06, 0.999915, 0.073759, 1.48913e-05, -3.37648)
+progress = 3.3775
 
 [node name="CrossCenter" parent="Hub2/Hub2_BigLoop_s_s_s_s_s_s/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
@@ -2903,7 +2932,7 @@ metadata/_custom_type_script = "uid://hcgv0grqqm7y"
 [node name="Hub2_Extras" parent="Hub2/Hub2_Extras" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.093, 0.000244141, 105.141)
 curve = SubResource("Curve3D_l2rr4")
-in_sections = [NodePath("../../Hub2_BigLoop_s")]
+in_sections = [NodePath("../../Hub2_BigLoop_c")]
 out_sections = [NodePath("../Hub2_Extras2"), NodePath("../Hub2_Extras_s")]
 out_requirements_1 = Array[String](["start"])
 
@@ -3026,7 +3055,7 @@ waiting_character = ExtResource("175_tn0y3")
 [node name="Hub2_Extras2_s_s" parent="Hub2/Hub2_Extras" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.4398, 0.000244141, 132.463)
 curve = SubResource("Curve3D_k0bsl")
-in_sections = [NodePath("../Hub2_Extras2_s"), NodePath("../../../Hub2to3/Hub2to3_Entrance_s_s")]
+in_sections = [NodePath("../Hub2_Extras2_s")]
 out_sections = [NodePath("../Hub2_Extras3"), NodePath("../Hub2_Extras2_s_s_s")]
 out_requirements_1 = Array[String](["hub3"])
 
@@ -3064,7 +3093,7 @@ mesh = ExtResource("168_xtnfp")
 material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Hub2/Hub2_Extras/Hub2_Extras2_s_s_s" index="3"]
-transform = Transform3D(-0.0626152, 0, -0.998031, 0, 1, 0, 0.998031, 0, -0.0626152, 4.43925, 0, 0.439931)
+transform = Transform3D(-0.062615, 0, -0.998029, 0, 1, 0, 0.998029, 0, -0.062615, 4.43925, 0, 0.439931)
 progress = 4.46182
 
 [node name="CrossCenter" parent="Hub2/Hub2_Extras/Hub2_Extras2_s_s_s/CrossFollow/CrossTween" index="0"]
@@ -3096,7 +3125,7 @@ script = SubResource("GDScript_yfycn")
 [node name="Hub2_Extras4" parent="Hub2/Hub2_Extras" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.4398, 0.000244141, 132.463)
 curve = SubResource("Curve3D_v60lx")
-in_sections = [NodePath("../Hub2_Extras2_s"), NodePath("../../../Hub2to3/Hub2to3_Entrance_s_s")]
+in_sections = [NodePath("../Hub2_Extras2_s")]
 out_sections = [NodePath("../../Hub2_BigLoop_s_s_s_s")]
 
 [node name="BakedRailsMesh" parent="Hub2/Hub2_Extras/Hub2_Extras4" index="0"]
@@ -3140,8 +3169,8 @@ skeleton = NodePath("../../../Hub2")
 material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Hub2to3/Hub2to3_Interr" index="3"]
-transform = Transform3D(0.85112, -1.34884e-11, 0.524909, -1.74636e-11, 1, 5.40116e-11, -0.524909, -5.51408e-11, 0.85112, -0.535806, -6.36121e-11, -2.1293)
-progress = 2.22964
+transform = Transform3D(0.692358, -2.47138e-11, 0.721509, -3.28388e-11, 1, 6.57628e-11, -0.721509, -6.92294e-11, 0.692358, -1.20391, -1.28166e-10, -2.94816)
+progress = 3.28928
 
 [node name="CrossCenter" parent="Hub2to3/Hub2to3_Interr/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
@@ -3202,10 +3231,10 @@ script = SubResource("GDScript_yfycn")
 
 [node name="Hub2to3_Entrance_s" parent="Hub2to3" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.8827, 0.000244141, 105.497)
-curve = SubResource("Curve3D_oum2m")
+curve = SubResource("Curve3D_kluvy")
 in_sections = [NodePath("../Hub2to3_Entrance")]
-out_sections = [NodePath("../Hub2to3_Entrance_s_s"), NodePath("../Hub2to3_Entrance_toMiddle")]
-out_requirements_1 = Array[String](["start"])
+out_sections = [NodePath("../Hub2to3_toPeriph"), NodePath("../Hub2to3_Middle_s")]
+out_requirements_1 = Array[String](["hub2"])
 
 [node name="BakedRailsMesh" parent="Hub2to3/Hub2to3_Entrance_s" index="0"]
 mesh = ExtResource("179_1rpim")
@@ -3218,35 +3247,16 @@ mesh = ExtResource("180_cpgoc")
 material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Hub2to3/Hub2to3_Entrance_s" index="3"]
-transform = Transform3D(-0.478511, 0, 0.878078, 0, 1, 0, -0.878078, 0, -0.478511, -4.98442, 0, 1.43588)
+transform = Transform3D(-0.485379, -4.81442e-11, 0.874299, -1.05559e-11, 1, 4.92053e-11, -0.874299, 1.46544e-11, -0.485379, -4.88751, -1.62703e-10, 1.7346)
 progress = 5.21454
 
 [node name="CrossCenter" parent="Hub2to3/Hub2to3_Entrance_s/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
 
-[node name="Hub2to3_Entrance_s_s" parent="Hub2to3" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.1935, 0.000244141, 116.699)
-curve = SubResource("Curve3D_gedng")
-in_sections = [NodePath("../Hub2to3_Entrance_s")]
-out_sections = [NodePath("../../Hub2/Hub2_Extras/Hub2_Extras4"), NodePath("../../Hub2/Hub2_Extras/Hub2_Extras2_s_s")]
-out_requirements_1 = Array[String](["-hub2"])
-
-[node name="BakedRailsMesh" parent="Hub2to3/Hub2to3_Entrance_s_s" index="0"]
-mesh = ExtResource("181_28heo")
-
-[node name="OutlineMesh" parent="Hub2to3/Hub2to3_Entrance_s_s" index="1"]
-mesh = SubResource("ArrayMesh_x140k")
-
-[node name="BakedRailsMeshMinimap" parent="Hub2to3/Hub2to3_Entrance_s_s" index="2"]
-mesh = ExtResource("182_spj7e")
-material = SubResource("StandardMaterial3D_e7jeh")
-
-[node name="CrossFollow" parent="Hub2to3/Hub2to3_Entrance_s_s" index="3"]
-transform = Transform3D(-0.965322, 0, -0.261051, 0, 1, 0, 0.261051, 0, -0.965322, 0.477753, 0, 3.247)
-progress = 3.28817
-
-[node name="CrossCenter" parent="Hub2to3/Hub2to3_Entrance_s_s/CrossFollow/CrossTween" index="0"]
-script = SubResource("GDScript_yfycn")
+[node name="StationHub2Puzzle1" parent="Hub2to3/Hub2to3_Entrance_s" instance=ExtResource("32_sxdtl")]
+transform = Transform3D(0.983038, 1.13301e-10, -0.183337, -1.15253e-10, 1, -8.67351e-19, 0.183337, 2.11306e-11, 0.983038, -17.0405, 0, 2.58166)
+progress = 28.831
+waiting_character = ExtResource("202_tn0y3")
 
 [node name="Hub2to3_Middle" parent="Hub2to3" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.8827, 0.000244141, 105.497)
@@ -3275,7 +3285,7 @@ script = SubResource("GDScript_yfycn")
 [node name="Hub2to3_Middle_s" parent="Hub2to3" node_paths=PackedStringArray("in_sections", "out_sections", "toggle_barrier") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.1716, 0.000244141, 99.1144)
 curve = SubResource("Curve3D_fcb1y")
-in_sections = [NodePath("../Hub2to3_Middle"), NodePath("../Hub2to3_Entrance_toMiddle")]
+in_sections = [NodePath("../Hub2to3_Middle"), NodePath("../Hub2to3_Entrance_s")]
 out_sections = [NodePath("../Hub2to3_Exit"), NodePath("../Hub2to3_Middle_s_s")]
 is_toggled = true
 current_direction_right = true
@@ -3326,35 +3336,6 @@ progress = 2.23503
 
 [node name="CrossCenter" parent="Hub2to3/Hub2to3_Middle_s_s/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
-
-[node name="Hub2to3_Entrance_toMiddle" parent="Hub2to3" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.1935, 0.000244141, 116.699)
-curve = SubResource("Curve3D_ob7cq")
-in_sections = [NodePath("../Hub2to3_Entrance_s")]
-out_sections = [NodePath("../Hub2to3_toPeriph"), NodePath("../Hub2to3_Middle_s")]
-out_requirements_1 = Array[String](["hub2"])
-
-[node name="BakedRailsMesh" parent="Hub2to3/Hub2to3_Entrance_toMiddle" index="0"]
-mesh = ExtResource("189_3tsnh")
-
-[node name="OutlineMesh" parent="Hub2to3/Hub2to3_Entrance_toMiddle" index="1"]
-mesh = SubResource("ArrayMesh_x140k")
-
-[node name="BakedRailsMeshMinimap" parent="Hub2to3/Hub2to3_Entrance_toMiddle" index="2"]
-mesh = ExtResource("190_g15ro")
-material = SubResource("StandardMaterial3D_e7jeh")
-
-[node name="CrossFollow" parent="Hub2to3/Hub2to3_Entrance_toMiddle" index="3"]
-transform = Transform3D(-0.85449, 0, 0.519462, 0, 1, 0, -0.519462, 0, -0.85449, -0.775505, 0, 2.90846)
-progress = 3.05465
-
-[node name="CrossCenter" parent="Hub2to3/Hub2to3_Entrance_toMiddle/CrossFollow/CrossTween" index="0"]
-script = SubResource("GDScript_yfycn")
-
-[node name="StationHub2toHub3" parent="Hub2to3/Hub2to3_Entrance_toMiddle" instance=ExtResource("32_sxdtl")]
-transform = Transform3D(0.944971, 0, -0.327137, 0, 1, 0, 0.327137, 0, 0.944971, -7.25764, 0, -6.49127)
-progress = 22.547
-waiting_character = ExtResource("228_ptu7g")
 
 [node name="Hub2to3_Exit" parent="Hub2to3" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.1891, 0.000244141, 89.397)
@@ -3546,7 +3527,7 @@ mesh = ExtResource("208_as4va")
 material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Hub3/Hub3_BigLoop_s_s_s_s" index="3"]
-transform = Transform3D(-0.00261822, 0, -0.999991, 0, 1, 0, 0.999991, 0, -0.00261822, 3.60297, 0, 0.0671739)
+transform = Transform3D(-0.00261821, 0, -0.999989, 0, 1, 0, 0.999989, 0, -0.00261821, 3.60297, 0, 0.0671739)
 progress = 3.60392
 
 [node name="CrossCenter" parent="Hub3/Hub3_BigLoop_s_s_s_s/CrossFollow/CrossTween" index="0"]
@@ -3932,7 +3913,7 @@ metadata/_custom_type_script = "uid://hcgv0grqqm7y"
 [node name="Periph" parent="Periph" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -113.192, 0.000244141, 142.345)
 curve = SubResource("Curve3D_vsdku")
-in_sections = [NodePath("../../Hub2to3/Hub2to3_toPeriph"), NodePath("../Periph2_s_s_s")]
+in_sections = [NodePath("../../Hub2to3/Hub2to3_toPeriph"), NodePath("../Periph2_s_c_c")]
 out_sections = [NodePath("../Periph_s"), NodePath("../Periph_toHub3")]
 out_requirements_2 = Array[String](["hub2_hard"])
 
@@ -3972,8 +3953,8 @@ mesh = ExtResource("250_oum2m")
 material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Periph/Periph_s" index="3"]
-transform = Transform3D(0.942001, 0, 0.335601, 0, 1, 0, -0.335601, 0, 0.942001, -2.22809, 0, -5.69643)
-progress = 6.11771
+transform = Transform3D(0.94472, 0, 0.32787, 0, 1, 0, -0.32787, 0, 0.94472, -2.51453, 0, -6.511)
+progress = 6.98117
 
 [node name="CrossCenter" parent="Periph/Periph_s/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
@@ -3981,6 +3962,10 @@ script = SubResource("GDScript_yfycn")
 [node name="Accelerator" parent="Periph/Periph_s" instance=ExtResource("106_gjyyb")]
 transform = Transform3D(0.96121, 0, 0.275816, 0, 1, 0, -0.275816, 0, 0.96121, -4.36423, 0, -12.3609)
 progress = 13.1173
+
+[node name="Accelerator2" parent="Periph/Periph_s" instance=ExtResource("106_gjyyb")]
+transform = Transform3D(0.964781, 2.5047e-07, -0.26305, 1.00153e-07, 1, 1.3195e-06, 0.26305, -1.29938e-06, 0.964781, -5.32557, -1.04101e-05, -97.8872)
+progress = 99.5001
 
 [node name="Periph2" parent="Periph" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -103.963, 0, -60.05)
@@ -4013,10 +3998,10 @@ progress = 5.86331
 
 [node name="Periph2_s" parent="Periph" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.6403, 0, -79.9926)
-curve = SubResource("Curve3D_6enla")
+curve = SubResource("Curve3D_dg4n0")
 in_sections = [NodePath("../Periph2")]
-out_sections = [NodePath("../Periph2_s_s"), NodePath("../Periph_toHub2")]
-out_requirements_2 = Array[String](["-hub1"])
+out_sections = [NodePath("../Periph2_s_c")]
+cut_point_index = 4
 
 [node name="BakedRailsMesh" parent="Periph/Periph2_s" index="0"]
 mesh = ExtResource("253_fcb1y")
@@ -4029,75 +4014,80 @@ mesh = ExtResource("254_4au65")
 material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Periph/Periph2_s" index="3"]
-transform = Transform3D(-0.570973, 0, -0.820966, 0, 1, 0, 0.820966, 0, -0.570973, 4.23647, 0, 2.97079)
+transform = Transform3D(-0.596693, 0, -0.802466, 0, 1, 0, 0.802466, 0, -0.596693, 4.18501, 0, 3.04272)
 progress = 5.17435
 
 [node name="CrossCenter" parent="Periph/Periph2_s/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
 
-[node name="StationPeriph1" parent="Periph/Periph2_s" instance=ExtResource("32_sxdtl")]
-transform = Transform3D(-0.916946, 0, -0.399011, 0, 1, 0, 0.399011, 0, -0.916946, 114.909, 0, 111.73)
-progress = 162.467
-
 [node name="Accelerator" parent="Periph/Periph2_s" instance=ExtResource("106_gjyyb")]
-transform = Transform3D(-0.566721, 0, -0.82391, 0, 1, 0, 0.82391, 0, -0.566721, 11.3224, 0, 7.865)
-progress = 13.7862
+transform = Transform3D(-0.612307, 0, -0.790621, 0, 1, 0, 0.790621, 0, -0.612307, 9.2208, 0, 6.86889)
+progress = 11.4989
 
-[node name="Periph2_s_s" parent="Periph" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.682, 0, 49.3963)
-curve = SubResource("Curve3D_a818s")
-in_sections = [NodePath("../Periph2_s")]
-out_sections = [NodePath("../Periph2_s_s_s"), NodePath("../Periph_toHub2_2")]
-out_requirements_2 = Array[String](["-maze"])
+[node name="Accelerator2" parent="Periph/Periph2_s" instance=ExtResource("106_gjyyb")]
+transform = Transform3D(-0.83967, 0, -0.543095, 0, 1, 0, 0.543095, 0, -0.83967, 97.4313, 0, 90.803)
+progress = 133.671
 
-[node name="BakedRailsMesh" parent="Periph/Periph2_s_s" index="0"]
-mesh = ExtResource("255_ob7cq")
+[node name="Accelerator3" parent="Periph/Periph2_s" instance=ExtResource("106_gjyyb")]
+transform = Transform3D(-0.92858, 0, 0.371131, 0, 1, 0, -0.371131, 0, -0.92858, 101.182, 0, 173.564)
+progress = 219.897
 
-[node name="OutlineMesh" parent="Periph/Periph2_s_s" index="1"]
-mesh = SubResource("ArrayMesh_x140k")
-
-[node name="BakedRailsMeshMinimap" parent="Periph/Periph2_s_s" index="2"]
-mesh = ExtResource("256_xvjmt")
-material = SubResource("StandardMaterial3D_e7jeh")
-
-[node name="CrossFollow" parent="Periph/Periph2_s_s" index="3"]
-transform = Transform3D(-0.996747, 0, -0.080489, 0, 1, 0, 0.080489, 0, -0.996747, 0.579688, 0, 5.77665)
-progress = 5.80596
-
-[node name="CrossCenter" parent="Periph/Periph2_s_s/CrossFollow/CrossTween" index="0"]
-script = SubResource("GDScript_yfycn")
-
-[node name="Periph2_s_s_s" parent="Periph" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.74, 0, 102.847)
+[node name="Periph2_s_c" parent="Periph" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.8806, 0.00012207, 152.345)
 curve = SubResource("Curve3D_15ad7")
-in_sections = [NodePath("../Periph2_s_s")]
-out_sections = [NodePath("../Periph")]
+in_sections = [NodePath("../Periph2_s"), NodePath("../../Hub2/Hub2_BigLoop_s")]
+out_sections = [NodePath("../Periph2_s_c_c"), NodePath("../Periph2_s_c_s")]
+out_requirements_2 = Array[String](["-hub1"])
 
-[node name="BakedRailsMesh" parent="Periph/Periph2_s_s_s" index="0"]
-mesh = ExtResource("257_vtavb")
+[node name="BakedRailsMesh" parent="Periph/Periph2_s_c" index="0"]
+mesh = ExtResource("260_2qcjd")
 
-[node name="OutlineMesh" parent="Periph/Periph2_s_s_s" index="1"]
-mesh = SubResource("ArrayMesh_x140k")
+[node name="BakedRailsMeshMinimap" parent="Periph/Periph2_s_c" index="2"]
+mesh = ExtResource("261_lcjqk")
 
-[node name="BakedRailsMeshMinimap" parent="Periph/Periph2_s_s_s" index="2"]
-mesh = ExtResource("258_gjyyb")
-material = SubResource("StandardMaterial3D_e7jeh")
+[node name="CrossFollow" parent="Periph/Periph2_s_c" index="3"]
+transform = Transform3D(-0.447213, 0, 0.894425, 0, 1, 0, -0.894425, 0, -0.447213, 0, 0, 0)
 
-[node name="CrossFollow" parent="Periph/Periph2_s_s_s" index="3"]
-transform = Transform3D(-0.702834, 6.96991e-07, 0.71135, 9.18473e-09, 1, -9.70734e-07, -0.71135, -6.75735e-07, -0.702834, -3.57334, 2.68108e-06, 3.47193)
-progress = 4.98238
-
-[node name="CrossCenter" parent="Periph/Periph2_s_s_s/CrossFollow/CrossTween" index="0"]
-script = SubResource("GDScript_yfycn")
-
-[node name="StationPeriph2" parent="Periph/Periph2_s_s_s" instance=ExtResource("32_sxdtl")]
-transform = Transform3D(-0.0569121, -2.35879e-08, 0.998377, -4.14461e-07, 1, -3.0198e-14, -0.998377, -4.1379e-07, -0.0569121, -117.497, 0.00012207, 61.1555)
-progress = 137.357
+[node name="StationPeriph" parent="Periph/Periph2_s_c" instance=ExtResource("32_sxdtl")]
+transform = Transform3D(0.0139768, 0, 0.9999, 0, 1, 0, -0.9999, 0, 0.0139768, -85.1858, 0, 12.2165)
+progress = 86.6963
 waiting_character = ExtResource("261_58hlq")
 
-[node name="Accelerator" parent="Periph/Periph2_s_s_s" instance=ExtResource("106_gjyyb")]
-transform = Transform3D(-0.706247, 1.35259e-06, 0.707966, 1.38608e-08, 1, -1.8967e-06, -0.707966, -1.32973e-06, -0.706247, -11.5343, 1.97754e-05, 11.4205)
-progress = 16.2321
+[node name="Periph2_s_c_s" parent="Periph" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.0094, 0.00012207, 164.202)
+curve = SubResource("Curve3D_b5inl")
+in_sections = [NodePath("../Periph2_s_c")]
+out_sections = [NodePath("../../Hub2/Hub2_BigLoop_s_s_s_s")]
+
+[node name="BakedRailsMesh" parent="Periph/Periph2_s_c_s" index="0"]
+mesh = ExtResource("262_gjyyb")
+
+[node name="BakedRailsMeshMinimap" parent="Periph/Periph2_s_c_s" index="2"]
+mesh = ExtResource("263_2qcjd")
+
+[node name="CrossFollow" parent="Periph/Periph2_s_c_s" index="3"]
+transform = Transform3D(0.330755, 3.53689e-12, 0.943714, -5.20365e-13, 1, -3.56544e-12, -0.943714, 6.88216e-13, 0.330755, -9.69879, 1.59845e-11, -1.74223)
+progress = 9.88783
+
+[node name="Periph2_s_c_c" parent="Periph" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.0094, 0.00012207, 164.202)
+curve = SubResource("Curve3D_ry1mc")
+in_sections = [NodePath("../Periph2_s_c")]
+out_sections = [NodePath("../Periph")]
+
+[node name="BakedRailsMesh" parent="Periph/Periph2_s_c_c" index="0"]
+mesh = ExtResource("262_xvjmt")
+
+[node name="BakedRailsMeshMinimap" parent="Periph/Periph2_s_c_c" index="2"]
+mesh = ExtResource("263_vtavb")
+
+[node name="CrossFollow" parent="Periph/Periph2_s_c_c" index="3"]
+transform = Transform3D(0.113211, 8.0153e-07, 0.993568, -2.65733e-08, 1, -8.03686e-07, -0.993568, 6.45839e-08, 0.113211, -9.86277, 4.32264e-06, -0.822423)
+progress = 9.89873
+
+[node name="Accelerator" parent="Periph/Periph2_s_c_c" instance=ExtResource("106_gjyyb")]
+transform = Transform3D(0.141415, 1.11208e-06, 0.989948, -5.39396e-08, 1, -1.11567e-06, -0.989948, 1.04375e-07, 0.141415, -15.5059, 9.82181e-06, -1.54899)
+progress = 15.5886
 
 [node name="Periph_toHub1" parent="Periph" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.6403, 0, -79.9926)
@@ -4139,78 +4129,10 @@ mesh = ExtResource("262_lcjqk")
 material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Periph/Periph_toHub3" index="3"]
-transform = Transform3D(0.999734, 0, 0.0229355, 0, 1, 0, -0.0229355, 0, 0.999734, -1.3716, 0, -5.41143)
-progress = 5.61543
+transform = Transform3D(0.998291, -2.58472e-12, -0.0583306, 3.42989e-12, 1, 1.43894e-11, 0.0583306, -1.45651e-11, 0.998291, -1.54232, -4.14034e-11, -6.8211)
+progress = 7.05327
 
 [node name="CrossCenter" parent="Periph/Periph_toHub3/CrossFollow/CrossTween" index="0"]
-script = SubResource("GDScript_yfycn")
-
-[node name="Periph_toHub2" parent="Periph" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.682, 0, 49.3963)
-curve = SubResource("Curve3D_fepkf")
-in_sections = [NodePath("../Periph2_s")]
-out_sections = [NodePath("../Periph_toHub2_s")]
-
-[node name="BakedRailsMesh" parent="Periph/Periph_toHub2" index="0"]
-mesh = ExtResource("263_h3suw")
-
-[node name="OutlineMesh" parent="Periph/Periph_toHub2" index="1"]
-mesh = SubResource("ArrayMesh_x140k")
-
-[node name="BakedRailsMeshMinimap" parent="Periph/Periph_toHub2" index="2"]
-mesh = ExtResource("264_tn0y3")
-material = SubResource("StandardMaterial3D_e7jeh")
-
-[node name="CrossFollow" parent="Periph/Periph_toHub2" index="3"]
-transform = Transform3D(-0.995467, 0, 0.0950355, 0, 1, 0, -0.0950355, 0, -0.995467, 0.0615269, 0, 5.83274)
-progress = 5.84415
-
-[node name="CrossCenter" parent="Periph/Periph_toHub2/CrossFollow/CrossTween" index="0"]
-script = SubResource("GDScript_yfycn")
-
-[node name="Periph_toHub2_s" parent="Periph" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.6422, 0, 98.3174)
-curve = SubResource("Curve3D_kluvy")
-in_sections = [NodePath("../Periph_toHub2"), NodePath("../Periph_toHub2_2")]
-out_sections = [NodePath("../../Hub2/Hub2_BigLoop_s")]
-
-[node name="BakedRailsMesh" parent="Periph/Periph_toHub2_s" index="0"]
-mesh = ExtResource("265_qjdxd")
-
-[node name="OutlineMesh" parent="Periph/Periph_toHub2_s" index="1"]
-mesh = SubResource("ArrayMesh_x140k")
-
-[node name="BakedRailsMeshMinimap" parent="Periph/Periph_toHub2_s" index="2"]
-mesh = ExtResource("266_mt8tr")
-material = SubResource("StandardMaterial3D_e7jeh")
-
-[node name="CrossFollow" parent="Periph/Periph_toHub2_s" index="3"]
-transform = Transform3D(0.342446, 0, 0.939534, 0, 1, 0, -0.939534, 0, 0.342446, 0, 0, 0)
-
-[node name="CrossCenter" parent="Periph/Periph_toHub2_s/CrossFollow/CrossTween" index="0"]
-script = SubResource("GDScript_yfycn")
-
-[node name="Periph_toHub2_2" parent="Periph" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.74, 0, 102.847)
-curve = SubResource("Curve3D_dg4n0")
-in_sections = [NodePath("../Periph2_s_s")]
-out_sections = [NodePath("../Periph_toHub2_s")]
-
-[node name="BakedRailsMesh" parent="Periph/Periph_toHub2_2" index="0"]
-mesh = ExtResource("267_ptu7g")
-
-[node name="OutlineMesh" parent="Periph/Periph_toHub2_2" index="1"]
-mesh = SubResource("ArrayMesh_x140k")
-
-[node name="BakedRailsMeshMinimap" parent="Periph/Periph_toHub2_2" index="2"]
-mesh = ExtResource("268_58hlq")
-material = SubResource("StandardMaterial3D_e7jeh")
-
-[node name="CrossFollow" parent="Periph/Periph_toHub2_2" index="3"]
-transform = Transform3D(-0.506015, 0, 0.862522, 0, 1, 0, -0.862522, 0, -0.506015, -3.93774, 0, 3.00466)
-progress = 4.96387
-
-[node name="CrossCenter" parent="Periph/Periph_toHub2_2/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
 
 [editable path="TutorialPuzzle/TutoPuzzle_Start"]
@@ -4282,6 +4204,7 @@ script = SubResource("GDScript_yfycn")
 [editable path="Maze/MazeFourthLoop/RailMazeFourthLoop2"]
 [editable path="Hub2/Hub2_BigLoop"]
 [editable path="Hub2/Hub2_BigLoop_s"]
+[editable path="Hub2/Hub2_BigLoop_c"]
 [editable path="Hub2/Hub2_BigLoop_s_s"]
 [editable path="Hub2/Hub2_BigLoop_s_s_s"]
 [editable path="Hub2/Hub2_BigLoop_s_s_s_s"]
@@ -4302,11 +4225,9 @@ script = SubResource("GDScript_yfycn")
 [editable path="Hub2to3/Hub2to3_Interr_s"]
 [editable path="Hub2to3/Hub2to3_Entrance"]
 [editable path="Hub2to3/Hub2to3_Entrance_s"]
-[editable path="Hub2to3/Hub2to3_Entrance_s_s"]
 [editable path="Hub2to3/Hub2to3_Middle"]
 [editable path="Hub2to3/Hub2to3_Middle_s"]
 [editable path="Hub2to3/Hub2to3_Middle_s_s"]
-[editable path="Hub2to3/Hub2to3_Entrance_toMiddle"]
 [editable path="Hub2to3/Hub2to3_Exit"]
 [editable path="Hub2to3/Hub2to3_toPeriph"]
 [editable path="Hub3/Hub3_BigLoop"]
@@ -4334,10 +4255,8 @@ script = SubResource("GDScript_yfycn")
 [editable path="Periph/Periph_s"]
 [editable path="Periph/Periph2"]
 [editable path="Periph/Periph2_s"]
-[editable path="Periph/Periph2_s_s"]
-[editable path="Periph/Periph2_s_s_s"]
+[editable path="Periph/Periph2_s_c"]
+[editable path="Periph/Periph2_s_c_s"]
+[editable path="Periph/Periph2_s_c_c"]
 [editable path="Periph/Periph_toHub1"]
 [editable path="Periph/Periph_toHub3"]
-[editable path="Periph/Periph_toHub2"]
-[editable path="Periph/Periph_toHub2_s"]
-[editable path="Periph/Periph_toHub2_2"]
