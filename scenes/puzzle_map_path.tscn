@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://bj1gx6dijuuvl" path="res://objects/characters/map2/hub2.tres" id="5_7po1x"]
 [ext_resource type="Resource" uid="uid://cvf5xacsnwfig" path="res://objects/characters/map2/hub2_hard.tres" id="7_j80nl"]
 [ext_resource type="Resource" uid="uid://dv0gc2sc76vgx" path="res://objects/characters/map2/hub3.tres" id="8_hwnm8"]
-[ext_resource type="Resource" uid="uid://wxq7xtlosajt" path="res://objects/characters/map2/hub3_puzzle.tres" id="9_8aj63"]
+[ext_resource type="Resource" uid="uid://clny0m7dia805" path="res://objects/characters/map2/hub3_puzzle.tres" id="9_8aj63"]
 [ext_resource type="Resource" uid="uid://rvoqiqhkmm4c" path="res://objects/characters/map2/maze.tres" id="10_2w38h"]
 [ext_resource type="Resource" uid="uid://bm35c5akw4erc" path="res://objects/characters/map2/start.tres" id="11_b7jfw"]
 

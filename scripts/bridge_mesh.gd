@@ -19,7 +19,7 @@ func rebake():
 	var normals = PackedVector3Array()
 	var indices = PackedInt32Array()
 	
-	var sample_tr := curve.sample_baked_with_rotation(0, true)
+	var sample_tr := curve.sample_baked_with_rotation(0, true, rebake_with_tilt)
 	var right_vec := sample_tr.basis.x.normalized() * width / 2.0
 	var right_pt := sample_tr.origin + right_vec
 	var left_pt := sample_tr.origin - right_vec
