@@ -7,6 +7,7 @@ class_name BakedRailsMesh extends MeshInstance3D
 @export var width : float = 1.0
 @export var rebake_on_ready : bool = false
 @export var rebake_with_tilt: bool = false
+@export var rebake_force_up: bool = false
 @export var minimap: bool = false
 @export_tool_button("Rebake") var rebake_button = rebake
 
@@ -31,6 +32,9 @@ func rebake():
 		var p := (vi / float(vertices_amount - 1)) * curve.get_baked_length()
 		var sample_tr := curve.sample_baked_with_rotation(p, true, rebake_with_tilt)
 		var right_normal := sample_tr.basis.x.normalized()
+		if rebake_force_up:
+			right_normal.y = 0.0
+			right_normal = right_normal.normalized()
 		var right_vec := right_normal * width / 2.0
 		var right_pt := sample_tr.origin + right_vec
 		var left_pt := sample_tr.origin - right_vec

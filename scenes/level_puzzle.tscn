@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dxfmlf33ndxjm"]
+[gd_scene load_steps=51 format=3 uid="uid://dxfmlf33ndxjm"]
 
 [ext_resource type="Script" uid="uid://m2gs6g88kh3b" path="res://scripts/level.gd" id="1_34uqr"]
 [ext_resource type="Script" uid="uid://d3y48j1b2i22e" path="res://addons/zylann.hterrain/hterrain.gd" id="1_p00hf"]
@@ -21,8 +21,11 @@
 [ext_resource type="PackedScene" uid="uid://d1kmxrqref527" path="res://objects/signals/signal_double_stevie.tscn" id="16_nphjl"]
 [ext_resource type="PackedScene" uid="uid://svkary7u15pl" path="res://objects/signals/signal_1plus.tscn" id="17_0m0u7"]
 [ext_resource type="PackedScene" uid="uid://cd0rdpybshylf" path="res://objects/signals/signal_stevie.tscn" id="18_hakj6"]
+[ext_resource type="PackedScene" uid="uid://balsdmns2sot8" path="res://scenes/object/nature/rocks/rock_1.tscn" id="18_mv16x"]
 [ext_resource type="PackedScene" uid="uid://hch02k6a5rob" path="res://objects/signals/signal_no_ruddy.tscn" id="18_nphjl"]
 [ext_resource type="PackedScene" uid="uid://b4pno5ixlito6" path="res://objects/signals/signal_no_parker.tscn" id="19_0u806"]
+[ext_resource type="PackedScene" uid="uid://b58auulia0ewn" path="res://scenes/object/nature/rocks/rock_2.tscn" id="19_yo56m"]
+[ext_resource type="PackedScene" uid="uid://cumpmjwkdpldv" path="res://scenes/object/nature/rocks/rock_3.tscn" id="20_82xxw"]
 [ext_resource type="PackedScene" uid="uid://daxgp458jhker" path="res://objects/signals/signal_ruddy.tscn" id="20_jh6f5"]
 [ext_resource type="PackedScene" uid="uid://ccjcib11h17yt" path="res://objects/signals/signal_periph.tscn" id="21_jh2by"]
 [ext_resource type="PackedScene" uid="uid://q4548cq0ow5n" path="res://objects/signals/signal_no_kim.tscn" id="22_yye0t"]
@@ -149,6 +152,64 @@ dialogues = Array[ExtResource("14_jh2by")]([SubResource("Resource_mv16x"), SubRe
 
 [node name="water_shader" parent="." instance=ExtResource("14_7qtsq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -178.884, -1.95037, 332.979)
+
+[node name="rock_env" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.7695, -0.1, 94.115)
+
+[node name="rock_1" parent="rock_env" instance=ExtResource("18_mv16x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.2404, 5.17717, -24.2358)
+cast_shadow = 0
+billboard = 0
+
+[node name="rock_8" parent="rock_env" instance=ExtResource("18_mv16x")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 78.7624, 4.93765, 17.9424)
+cast_shadow = 0
+billboard = 0
+
+[node name="rock_9" parent="rock_env" instance=ExtResource("18_mv16x")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -38.2422, 4.05087, -20.1308)
+cast_shadow = 0
+billboard = 0
+
+[node name="rock_13" parent="rock_env" instance=ExtResource("18_mv16x")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.93779, 4.05087, 1.60773)
+cast_shadow = 0
+billboard = 0
+
+[node name="rock_2" parent="rock_env" instance=ExtResource("18_mv16x")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 46.5919, 5.17717, 24.9193)
+cast_shadow = 0
+billboard = 0
+
+[node name="rock_3" parent="rock_env" instance=ExtResource("19_yo56m")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 12.1979, 4.53307, -36.3617)
+cast_shadow = 0
+billboard = 0
+
+[node name="rock_4" parent="rock_env" instance=ExtResource("19_yo56m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0188, 5.08684, -24.1296)
+cast_shadow = 0
+billboard = 0
+
+[node name="rock_7" parent="rock_env" instance=ExtResource("19_yo56m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.1809, 3.44388, 7.99284)
+cast_shadow = 0
+billboard = 0
+
+[node name="rock_5" parent="rock_env" instance=ExtResource("20_82xxw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.8389, 8.17501, -18.7174)
+cast_shadow = 0
+billboard = 0
+
+[node name="rock_14" parent="rock_env" instance=ExtResource("20_82xxw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4738, 8.17501, -16.1171)
+cast_shadow = 0
+billboard = 0
+
+[node name="rock_6" parent="rock_env" instance=ExtResource("20_82xxw")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 56.8978, 5.77042, -6.95013)
+cast_shadow = 0
+billboard = 0
 
 [node name="Signals" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.129, 0)

@@ -658,7 +658,7 @@ point_count = 4
 [sub_resource type="Curve3D" id="Curve3D_gjyyb"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector3Array(-0.975713, 0, 0.0207178, -7.81327, 0, -12.4779, 0, 0, 0, 0.158661, 0, 14.4376, -0.158661, 0, -14.4376, -14.2019, 0, -47.4431, -12.735, 0, 14.6777, 12.735, 0, -14.6777, 0.594398, 0, -93.5304),
+"points": PackedVector3Array(-0.975713, 0, 0.0207178, -7.81327, 0, -12.4779, 0, 0, 0, 0.158661, 0, 14.4376, -0.158661, 0, -14.4376, -14.2019, 0, -47.4431, -12.735, 0, 14.6777, 12.735, 0, -14.6777, 0.594002, 5, -93.5304),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
@@ -1240,7 +1240,7 @@ point_count = 2
 [sub_resource type="Curve3D" id="Curve3D_i27ou"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector3Array(-0.975713, 0, 0.0207178, -5.88235, 0, -13.7255, 0, 0, 0, -4.9586, 0, 42.4715, 4.9586, 0, -42.4715, -8.27441, 0, -82.6896, -12.735, 0, 14.6777, 0, 0, 0, 39.7494, -0.000244141, -167.968),
+"points": PackedVector3Array(-0.975713, 0, 0.0207178, -5.88235, 0, -13.7255, 0, 0, 0, -4.9586, 0, 42.4715, 4.9586, 0, -42.4715, -8.27441, 0, -82.6896, -12.735, 0, 14.6777, 0, 0, 0, 39.749, 4.99976, -167.968),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
@@ -1256,7 +1256,7 @@ point_count = 3
 [sub_resource type="Curve3D" id="Curve3D_dg4n0"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector3Array(-0.975713, 0, 0.0207178, 16.1627, 0, 11.4551, 0, 0, 0, -17.1179, 0, -15.2599, 17.1179, 0, 15.2599, 57.0232, 0, 47.3556, -3.41577, 0, -28.8207, 3.41577, 0, 28.8207, 108.609, 0, 118.911, 6.77524, 0, -11.6534, -6.77524, 0, 11.6534, 95.8777, 0, 184.638, 23.0368, 0, -11.5184, -23.0368, 0, 11.5184, 46.2403, 0.00012207, 232.338),
+"points": PackedVector3Array(-0.975713, 0, 0.0207178, 16.1627, 0, 11.4551, 0, 0, 0, -17.1179, 0, -15.2599, 17.1179, 0, 15.2599, 57.0232, 0, 47.3556, -3.41577, 0, -28.8207, 3.41577, 0, 28.8207, 108.609, 0, 118.911, 6.77524, 0, -11.6534, -6.77524, 0, 11.6534, 95.8777, 0, 184.638, 23.0368, 0, -11.5184, -23.0368, 0, 11.5184, 46.2406, -4.99988, 232.337),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
@@ -1300,8 +1300,8 @@ point_count = 2
 [sub_resource type="Curve3D" id="Curve3D_5im0h"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector3Array(-0.975713, 0, 0.0207178, 16.1627, 0, 11.4551, 0, 0, 0, 3.57555, 0, -9.34257, -3.57555, 0, 9.34257, -12.98, 0, 53.1226, -0.357044, 0, -4.42733, 0, 0, 0, -17.499, 0, 78.764),
-"tilts": PackedFloat32Array(0, 0, 0)
+"points": PackedVector3Array(-0.975713, 0, 0.0207178, 16.1627, 0, 11.4551, 0, 0, 0, 3.57555, 0, -9.34257, -3.57555, 0, 9.34257, -12.98, -5, 53.123, -0.357044, 0, -4.42733, 0, 0, 0, -17.4987, -5, 78.7639),
+"tilts": PackedFloat32Array(0, 0, 0.104575)
 }
 point_count = 3
 
@@ -1827,9 +1827,12 @@ out_sections = [NodePath("../Hub1_BigLoop_s_s_s_s_s")]
 [node name="BakedRailsMesh" parent="Hub1/Hub1_BigLoop_s_s_s_s" index="0"]
 mesh = ExtResource("64_t6tqo")
 rebake_with_tilt = true
+rebake_force_up = true
 
 [node name="BakedRailsMeshMinimap" parent="Hub1/Hub1_BigLoop_s_s_s_s" index="2"]
 mesh = ExtResource("65_pckws")
+rebake_with_tilt = true
+rebake_force_up = true
 
 [node name="CrossFollow" parent="Hub1/Hub1_BigLoop_s_s_s_s" index="3"]
 transform = Transform3D(-0.774426, 0, -0.63266, 0, 1, 0, 0.63266, 0, -0.774426, 1.15651, 0, 2.16121)
@@ -2088,6 +2091,7 @@ out_sections = [NodePath("../../Hub1_BigLoop_s_s_s_s_s")]
 mesh = ExtResource("88_kyqo5")
 skeleton = NodePath("../../../../Hub2")
 rebake_with_tilt = true
+rebake_force_up = true
 
 [node name="OutlineMesh" parent="Hub1/Hub1To2/Hub2To1" index="1"]
 mesh = SubResource("ArrayMesh_x140k")
@@ -2097,16 +2101,18 @@ skeleton = NodePath("../../../../Hub2")
 mesh = ExtResource("89_7kvwc")
 skeleton = NodePath("../../../../Hub2")
 material = SubResource("StandardMaterial3D_e7jeh")
+rebake_with_tilt = true
+rebake_force_up = true
 
 [node name="CrossFollow" parent="Hub1/Hub1To2/Hub2To1" index="3"]
-transform = Transform3D(0.795805, 0.0102878, -0.605454, -0.0568131, 0.9967, -0.0577392, 0.602869, 0.0803468, 0.793776, 2.68301, 0.106366, -2.93)
+transform = Transform3D(0.795803, 0.0102878, -0.605454, -0.0568131, 0.9967, -0.0577392, 0.602868, 0.0803468, 0.793776, 2.68301, 0.106366, -2.93)
 progress = 3.97781
 
 [node name="CrossCenter" parent="Hub1/Hub1To2/Hub2To1/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="Hub1/Hub1To2/Hub2To1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.5835, -3.62396e-05, -39.7937)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.583, -0.04, -39.794)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="Hub1/Hub1To2/Hub2To1/CSGCombiner3D"]
 
@@ -2308,6 +2314,7 @@ out_sections = [NodePath("../../../Periph/Periph2")]
 
 [node name="BakedRailsMesh" parent="Hub1/Hub1ToPeriph/Hub1ToPeriph_Exit_s" index="0"]
 mesh = ExtResource("104_74d47")
+rebake_force_up = true
 
 [node name="OutlineMesh" parent="Hub1/Hub1ToPeriph/Hub1ToPeriph_Exit_s" index="1"]
 mesh = SubResource("ArrayMesh_x140k")
@@ -2315,6 +2322,7 @@ mesh = SubResource("ArrayMesh_x140k")
 [node name="BakedRailsMeshMinimap" parent="Hub1/Hub1ToPeriph/Hub1ToPeriph_Exit_s" index="2"]
 mesh = ExtResource("105_as4va")
 material = SubResource("StandardMaterial3D_e7jeh")
+rebake_force_up = true
 
 [node name="CrossFollow" parent="Hub1/Hub1ToPeriph/Hub1ToPeriph_Exit_s" index="3"]
 transform = Transform3D(0.847551, 0, 0.53071, 0, 1, 0, -0.53071, 0, 0.847551, 0, 0, 0)
@@ -3171,7 +3179,7 @@ mesh = ExtResource("172_wgtot")
 material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Hub2/Hub2_Extras/Hub2_Extras4" index="3"]
-transform = Transform3D(0.959178, 0, 0.282782, 0, 1, 0, -0.282782, 0, 0.959178, -1.67795, 0, -4.31426)
+transform = Transform3D(0.959178, 0, 0.282781, 0, 1, 0, -0.282781, 0, 0.959178, -1.67795, 0, -4.31426)
 progress = 4.63391
 
 [node name="CrossCenter" parent="Hub2/Hub2_Extras/Hub2_Extras4/CrossFollow/CrossTween" index="0"]
@@ -3281,7 +3289,7 @@ mesh = ExtResource("180_cpgoc")
 material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Hub2to3/Hub2to3_Entrance_s" index="3"]
-transform = Transform3D(-0.549107, -4.08205e-11, 0.835745, -1.09552e-11, 1, 4.16449e-11, -0.835745, 1.37119e-11, -0.549107, -3.41972, -9.20399e-11, 1.29542)
+transform = Transform3D(-0.549107, -4.08205e-11, 0.835745, -1.09551e-11, 1, 4.16449e-11, -0.835745, 1.37119e-11, -0.549107, -3.41971, -9.20398e-11, 1.29542)
 progress = 3.68679
 
 [node name="CrossCenter" parent="Hub2to3/Hub2to3_Entrance_s/CrossFollow/CrossTween" index="0"]
@@ -3990,6 +3998,7 @@ out_sections = [NodePath("../Periph2")]
 
 [node name="BakedRailsMesh" parent="Periph/Periph_s" index="0"]
 mesh = ExtResource("249_71cpq")
+rebake_force_up = true
 
 [node name="OutlineMesh" parent="Periph/Periph_s" index="1"]
 mesh = SubResource("ArrayMesh_x140k")
@@ -3997,6 +4006,7 @@ mesh = SubResource("ArrayMesh_x140k")
 [node name="BakedRailsMeshMinimap" parent="Periph/Periph_s" index="2"]
 mesh = ExtResource("250_oum2m")
 material = SubResource("StandardMaterial3D_e7jeh")
+rebake_force_up = true
 
 [node name="CrossFollow" parent="Periph/Periph_s" index="3"]
 transform = Transform3D(0.94472, 0, 0.32787, 0, 1, 0, -0.32787, 0, 0.94472, -2.51453, 0, -6.511)
@@ -4009,12 +4019,8 @@ script = SubResource("GDScript_yfycn")
 transform = Transform3D(0.96121, 0, 0.275816, 0, 1, 0, -0.275816, 0, 0.96121, -4.36423, 0, -12.3609)
 progress = 13.1173
 
-[node name="Accelerator2" parent="Periph/Periph_s" instance=ExtResource("106_gjyyb")]
-transform = Transform3D(0.964781, 2.5047e-07, -0.26305, 1.00153e-07, 1, 1.3195e-06, 0.26305, -1.29938e-06, 0.964781, -5.32557, -1.04101e-05, -97.8872)
-progress = 99.5001
-
 [node name="Periph2" parent="Periph" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -103.963, 0, -60.05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -103.963, 5, -60.05)
 curve = SubResource("Curve3D_i064o")
 in_sections = [NodePath("../../Hub1/Hub1ToPeriph/Hub1ToPeriph_Exit_s"), NodePath("../Periph_s")]
 out_sections = [NodePath("../Periph2_s"), NodePath("../Periph_toHub1")]
@@ -4043,7 +4049,7 @@ transform = Transform3D(0.71462, 0, -0.699512, 0, 1, 0, 0.699512, 0, 0.71462, 3.
 progress = 5.86331
 
 [node name="Periph2_s" parent="Periph" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.6403, 0, -79.9926)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.64, 5, -79.9925)
 curve = SubResource("Curve3D_dg4n0")
 in_sections = [NodePath("../Periph2")]
 out_sections = [NodePath("../Periph2_s_c")]
@@ -4051,6 +4057,7 @@ cut_point_index = 4
 
 [node name="BakedRailsMesh" parent="Periph/Periph2_s" index="0"]
 mesh = ExtResource("253_fcb1y")
+rebake_force_up = true
 
 [node name="OutlineMesh" parent="Periph/Periph2_s" index="1"]
 mesh = SubResource("ArrayMesh_x140k")
@@ -4058,6 +4065,7 @@ mesh = SubResource("ArrayMesh_x140k")
 [node name="BakedRailsMeshMinimap" parent="Periph/Periph2_s" index="2"]
 mesh = ExtResource("254_4au65")
 material = SubResource("StandardMaterial3D_e7jeh")
+rebake_force_up = true
 
 [node name="CrossFollow" parent="Periph/Periph2_s" index="3"]
 transform = Transform3D(-0.596693, 0, -0.802466, 0, 1, 0, 0.802466, 0, -0.596693, 4.18501, 0, 3.04272)
@@ -4153,18 +4161,15 @@ mesh = ExtResource("263_vtavb")
 transform = Transform3D(0.113211, 8.0153e-07, 0.993568, -2.65733e-08, 1, -8.03686e-07, -0.993568, 6.45839e-08, 0.113211, -9.86277, 4.32264e-06, -0.822423)
 progress = 9.89873
 
-[node name="Accelerator" parent="Periph/Periph2_s_c_c" instance=ExtResource("106_gjyyb")]
-transform = Transform3D(0.141415, 1.11208e-06, 0.989947, -5.39396e-08, 1, -1.11567e-06, -0.989947, 1.04375e-07, 0.141415, -15.5059, 9.82181e-06, -1.54899)
-progress = 15.5886
-
 [node name="Periph_toHub1" parent="Periph" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.6403, 0, -79.9926)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.64, 5, -79.9925)
 curve = SubResource("Curve3D_5im0h")
 in_sections = [NodePath("../Periph2")]
 out_sections = [NodePath("../../PreHub1/PreHub1_Buffer_s")]
 
 [node name="BakedRailsMesh" parent="Periph/Periph_toHub1" index="0"]
 mesh = ExtResource("259_vtavb")
+rebake_force_up = true
 
 [node name="OutlineMesh" parent="Periph/Periph_toHub1" index="1"]
 mesh = SubResource("ArrayMesh_x140k")
@@ -4172,9 +4177,10 @@ mesh = SubResource("ArrayMesh_x140k")
 [node name="BakedRailsMeshMinimap" parent="Periph/Periph_toHub1" index="2"]
 mesh = ExtResource("260_gjyyb")
 material = SubResource("StandardMaterial3D_e7jeh")
+rebake_force_up = true
 
 [node name="CrossFollow" parent="Periph/Periph_toHub1" index="3"]
-transform = Transform3D(-0.859909, 0, -0.510443, 0, 1, 0, 0.510443, 0, -0.859909, 3.49931, 0, 3.73816)
+transform = Transform3D(-0.859517, 0.033798, -0.509985, 0.0103757, 0.998759, 0.048703, 0.510998, 0.0365698, -0.858801, 3.49829, -0.123627, 3.73644)
 progress = 5.15861
 
 [node name="CrossCenter" parent="Periph/Periph_toHub1/CrossFollow/CrossTween" index="0"]
