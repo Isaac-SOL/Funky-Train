@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbbupbekcwscw"]
+
+[ext_resource type="PackedScene" uid="uid://dy62mc0w3hu3f" path="res://assets/modele/3D/mic_short.glb" id="1_iqy7l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d07na"]
+albedo_color = Color(0.25, 0.25, 0.25, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7r5a"]
+shading_mode = 0
+albedo_color = Color(0.917647, 0.392157, 0.862745, 1)
+
+[node name="mic_short" instance=ExtResource("1_iqy7l")]
+
+[node name="mic_001" parent="RootNode" index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_d07na")
+surface_material_override/2 = SubResource("StandardMaterial3D_a7r5a")

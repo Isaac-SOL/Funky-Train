@@ -33,6 +33,7 @@ var curr_section_length: float = 0.0
 var direction: bool = false
 var locked: bool = false
 var section_history: Array[RailSection] = []
+var additional_properties: Array[String] = []
 
 func _ready() -> void:
 	instance = self
@@ -260,6 +261,7 @@ func add_character(new_character: CharacterInfo):
 	update_crosses()
 	if new_character.name == "hub2":
 		%chef_locomotive2.set_ruddy(true)
+	
 	Main.instance.character_attached(new_character)
 
 func remove_carriage(carriage: Carriage):
@@ -285,7 +287,7 @@ func get_properties() -> Array[String]:
 	var props: Array[String] = []
 	for carriage in carriages:
 		props.append(carriage.character.name)
-	return props
+	return props + additional_properties
 
 func get_distance_to_section_end() -> float:
 	return curr_section_length - progress

@@ -1,4 +1,4 @@
-[gd_scene load_steps=408 format=4 uid="uid://pxhdnm53147j"]
+[gd_scene load_steps=409 format=4 uid="uid://pxhdnm53147j"]
 
 [ext_resource type="Script" uid="uid://hcgv0grqqm7y" path="res://scripts/rails_master.tres.gd" id="1_7cvav"]
 [ext_resource type="PackedScene" uid="uid://c7adtd3m5hihf" path="res://objects/rail_section.tscn" id="2_vwg2y"]
@@ -209,6 +209,7 @@
 [ext_resource type="ArrayMesh" uid="uid://rip1faxstopv" path="res://meshes/rails/Hub2to3_Middle_s_s_minimap.tres" id="188_e4lhe"]
 [ext_resource type="ArrayMesh" uid="uid://cckehww78vua0" path="res://meshes/rails/Hub2to3_Exit.tres" id="191_ujkb2"]
 [ext_resource type="ArrayMesh" uid="uid://lcaclphs5nid" path="res://meshes/rails/Hub2to3_Exit_minimap.tres" id="192_1qwx0"]
+[ext_resource type="PackedScene" uid="uid://dij2j3hjcc5c0" path="res://objects/tb_gate.tscn" id="193_5mbcm"]
 [ext_resource type="Script" uid="uid://cqjhpjqr7iwjp" path="res://scripts/sides_mesh.gd" id="197_2qcjd"]
 [ext_resource type="ArrayMesh" uid="uid://uow0nsoo4mqe" path="res://meshes/rails/Hub3_BigLoop.tres" id="199_lmnx2"]
 [ext_resource type="ArrayMesh" uid="uid://c5h4ihrdfmpp8" path="res://meshes/rails/Hub3_BigLoop_minimap.tres" id="200_dchte"]
@@ -1701,7 +1702,7 @@ mesh = ExtResource("52_yqinq")
 mesh = ExtResource("53_14v6j")
 
 [node name="CrossFollow" parent="PreHub1/PreHub1_Buffer_s_s" index="3"]
-transform = Transform3D(0.0144906, 0, 0.999866, 0, 1, 0, -0.999866, 0, 0.0144906, 0, 0, 0)
+transform = Transform3D(0.0144906, 0, 0.999864, 0, 1, 0, -0.999864, 0, 0.0144906, 0, 0, 0)
 
 [node name="StationHub1_1" parent="PreHub1/PreHub1_Buffer_s_s" instance=ExtResource("32_sxdtl")]
 transform = Transform3D(-0.0103523, 0, 0.999945, 0, 1, 0, -0.999945, 0, -0.0103523, -15.1889, 0, 0.0684377)
@@ -2128,7 +2129,7 @@ rebake_with_tilt = true
 rebake_force_up = true
 
 [node name="CrossFollow" parent="Hub1/Hub1To2/Hub2To1" index="3"]
-transform = Transform3D(0.795795, 0.0102878, -0.605454, -0.0568124, 0.9967, -0.0577392, 0.602861, 0.0803468, 0.793776, 2.68301, 0.106366, -2.93)
+transform = Transform3D(0.795793, 0.0102878, -0.605454, -0.0568123, 0.9967, -0.0577392, 0.60286, 0.0803468, 0.793776, 2.68301, 0.106366, -2.93)
 progress = 3.97781
 
 [node name="CrossCenter" parent="Hub1/Hub1To2/Hub2To1/CrossFollow/CrossTween" index="0"]
@@ -2223,7 +2224,7 @@ mesh = ExtResource("93_14v6j")
 material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Hub1/Hub1To2/Hub1Inner_Bridge_s" index="3"]
-transform = Transform3D(-0.0288026, 0, -0.999575, 0, 1, 0, 0.999575, 0, -0.0288026, 2.92966, 0, 0.0699712)
+transform = Transform3D(-0.0288025, 0, -0.999573, 0, 1, 0, 0.999573, 0, -0.0288025, 2.92966, 0, 0.0699712)
 progress = 2.93061
 
 [node name="CrossCenter" parent="Hub1/Hub1To2/Hub1Inner_Bridge_s/CrossFollow/CrossTween" index="0"]
@@ -2404,7 +2405,7 @@ mesh = ExtResource("79_8blpd")
 skeleton = NodePath("../../..")
 
 [node name="CrossFollow" parent="Maze/MazeEntranceLoop/RailMazeEntranceLoop1True" index="3"]
-transform = Transform3D(0.0138045, 0, -0.999882, 0, 1, 0, 0.999882, 0, 0.0138045, 0, 0, 0)
+transform = Transform3D(0.0138045, 0, -0.99988, 0, 1, 0, 0.99988, 0, 0.0138045, 0, 0, 0)
 
 [node name="RailMazeEntranceLoop3" parent="Maze/MazeEntranceLoop" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.1418, 0, -0.0275548)
@@ -2469,7 +2470,7 @@ mesh = ExtResource("85_46scn")
 skeleton = NodePath("../../..")
 
 [node name="CrossFollow" parent="Maze/MazeEntranceLoop/RailMazeEntranceLoopToExit" index="3"]
-transform = Transform3D(0.000295469, 0, 0.999976, 0, 1, 0, -0.999976, 0, 0.000295469, -3.91247, 0, -0.0219596)
+transform = Transform3D(0.000295469, 0, 0.999974, 0, 1, 0, -0.999974, 0, 0.000295469, -3.91247, 0, -0.0219596)
 progress = 3.9127
 
 [node name="RailMazeEntranceLoop5" parent="Maze/MazeEntranceLoop" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
@@ -3151,7 +3152,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.6321, 0.000244141, 150.575
 curve = SubResource("Curve3D_k0bsl")
 in_sections = [NodePath("../Hub2_Extras2_s")]
 out_sections = [NodePath("../Hub2_Extras3"), NodePath("../Hub2_Extras2_s_s_s")]
-out_requirements_1 = Array[String](["hub3"])
+out_requirements_1 = Array[String](["hub3", "tb_powered"])
 
 [node name="BakedRailsMesh" parent="Hub2/Hub2_Extras/Hub2_Extras2_s_s" index="0"]
 mesh = ExtResource("165_8vkin")
@@ -3215,6 +3216,10 @@ progress = 4.34459
 
 [node name="CrossCenter" parent="Hub2/Hub2_Extras/Hub2_Extras3/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
+
+[node name="TBGate" parent="Hub2/Hub2_Extras/Hub2_Extras3" instance=ExtResource("193_5mbcm")]
+transform = Transform3D(0.745493, 0, -0.666513, 0, 1, 0, 0.666513, 0, 0.745493, 4.0704, 0, -2.02535)
+progress = 4.63914
 
 [node name="Hub2_Extras4" parent="Hub2/Hub2_Extras" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.6321, 0.000244141, 150.575)
@@ -3649,7 +3654,7 @@ mesh = ExtResource("208_as4va")
 material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Hub3/Hub3_BigLoop_s_s_s_s" index="3"]
-transform = Transform3D(-0.0026182, 0, -0.999982, 0, 1, 0, 0.999982, 0, -0.0026182, 3.60297, 0, 0.0671739)
+transform = Transform3D(-0.00261819, 0, -0.99998, 0, 1, 0, 0.99998, 0, -0.00261819, 3.60297, 0, 0.0671739)
 progress = 3.60392
 
 [node name="CrossCenter" parent="Hub3/Hub3_BigLoop_s_s_s_s/CrossFollow/CrossTween" index="0"]
@@ -4037,7 +4042,7 @@ progress = 3.23808
 script = SubResource("GDScript_yfycn")
 
 [node name="RockInteractible" parent="Hub3/Hub3_toHub2" instance=ExtResource("100_lcjqk")]
-transform = Transform3D(-0.0357947, 0, -0.999354, 0, 1, 0, 0.999354, 0, -0.0357947, 4.0108, 0, -0.311583)
+transform = Transform3D(-0.0357946, 0, -0.999352, 0, 1, 0, 0.999352, 0, -0.0357946, 4.0108, 0, -0.311583)
 progress = 4.04548
 
 [node name="Periph" type="Node3D" parent="."]
@@ -4183,7 +4188,7 @@ mesh = ExtResource("261_lcjqk")
 transform = Transform3D(-0.447213, 0, 0.894425, 0, 1, 0, -0.894425, 0, -0.447213, 0, 0, 0)
 
 [node name="StationPeriph" parent="Periph/Periph2_s_c" instance=ExtResource("32_sxdtl")]
-transform = Transform3D(0.0139767, 0, 0.999892, 0, 1, 0, -0.999892, 0, 0.0139767, -85.1858, 0, 12.2165)
+transform = Transform3D(0.0139766, 0, 0.999891, 0, 1, 0, -0.999891, 0, 0.0139766, -85.1858, 0, 12.2165)
 progress = 86.6963
 waiting_character = ExtResource("261_58hlq")
 
@@ -4288,7 +4293,7 @@ mesh = ExtResource("262_lcjqk")
 material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Periph/Periph_toHub3" index="3"]
-transform = Transform3D(0.998283, -2.58472e-12, -0.0583302, 3.42987e-12, 1, 1.43893e-11, 0.0583302, -1.45651e-11, 0.998283, -1.54232, -4.14034e-11, -6.8211)
+transform = Transform3D(0.998282, -2.58472e-12, -0.0583301, 3.42986e-12, 1, 1.43893e-11, 0.0583301, -1.45651e-11, 0.998282, -1.54232, -4.14034e-11, -6.8211)
 progress = 7.05327
 
 [node name="CrossCenter" parent="Periph/Periph_toHub3/CrossFollow/CrossTween" index="0"]

@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcjwdedwvpfhp"]
+[gd_scene load_steps=7 format=3 uid="uid://dcjwdedwvpfhp"]
 
 [ext_resource type="PackedScene" uid="uid://bvlp4g2b1r1uw" path="res://objects/carriage.tscn" id="1_kcqss"]
 [ext_resource type="PackedScene" uid="uid://c12k3jpftqlr2" path="res://scenes/wagon/wagon_vocoder.tscn" id="2_b1p2m"]
+[ext_resource type="Material" uid="uid://b5rk0ijtaea1a" path="res://materials/tb_off_mat_1.tres" id="3_4kr4r"]
+[ext_resource type="Shader" uid="uid://bshkwxxibuicx" path="res://materials/vocoder_off.gdshader" id="4_x6te8"]
+[ext_resource type="Material" uid="uid://55vfycg73ah7" path="res://materials/tb_off_mat_2.tres" id="5_c1c2y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8puix"]
+render_priority = 0
+shader = ExtResource("4_x6te8")
+shader_parameter/color_1 = Color(0, 0, 0, 1)
+shader_parameter/color_2 = Color(1, 0, 0, 1)
+shader_parameter/period = 1.333
 
 [node name="CarriageVocoder" instance=ExtResource("1_kcqss")]
 kick = 1.35
@@ -11,3 +21,40 @@ visible = false
 
 [node name="wagon_vocoder" parent="ChildRender" index="0" instance=ExtResource("2_b1p2m")]
 transform = Transform3D(7.1723e-09, 0, -0.095, 0, 0.095, 0, 0.095, 0, 7.1723e-09, 0, 0, 0)
+
+[node name="wagon_vocoder" parent="ChildRender/wagon_vocoder/wagons_vocoder_mesh" index="0"]
+surface_material_override/0 = ExtResource("3_4kr4r")
+surface_material_override/1 = ExtResource("3_4kr4r")
+
+[node name="wagon_vocoder_vitre" parent="ChildRender/wagon_vocoder/wagons_vocoder_mesh" index="1"]
+surface_material_override/0 = SubResource("ShaderMaterial_8puix")
+surface_material_override/1 = SubResource("ShaderMaterial_8puix")
+surface_material_override/2 = SubResource("ShaderMaterial_8puix")
+surface_material_override/3 = SubResource("ShaderMaterial_8puix")
+
+[node name="roue_022" parent="ChildRender/wagon_vocoder/wagons_vocoder_mesh" index="2"]
+surface_material_override/0 = ExtResource("5_c1c2y")
+
+[node name="roue_023" parent="ChildRender/wagon_vocoder/wagons_vocoder_mesh" index="3"]
+surface_material_override/0 = ExtResource("5_c1c2y")
+
+[node name="roue_024" parent="ChildRender/wagon_vocoder/wagons_vocoder_mesh" index="4"]
+surface_material_override/0 = ExtResource("5_c1c2y")
+
+[node name="roue_025" parent="ChildRender/wagon_vocoder/wagons_vocoder_mesh" index="5"]
+surface_material_override/0 = ExtResource("5_c1c2y")
+
+[node name="roue_020" parent="ChildRender/wagon_vocoder/wagons_vocoder_mesh" index="6"]
+surface_material_override/0 = ExtResource("5_c1c2y")
+
+[node name="roue_021" parent="ChildRender/wagon_vocoder/wagons_vocoder_mesh" index="7"]
+surface_material_override/0 = ExtResource("5_c1c2y")
+
+[node name="roue_026" parent="ChildRender/wagon_vocoder/wagons_vocoder_mesh" index="8"]
+surface_material_override/0 = ExtResource("5_c1c2y")
+
+[node name="roue_027" parent="ChildRender/wagon_vocoder/wagons_vocoder_mesh" index="9"]
+surface_material_override/0 = ExtResource("5_c1c2y")
+
+[editable path="ChildRender/wagon_vocoder"]
+[editable path="ChildRender/wagon_vocoder/wagons_vocoder_mesh"]

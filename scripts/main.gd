@@ -101,6 +101,7 @@ func get_character(character_name: String) -> CharacterInfo:
 	return null
 
 func set_single_signal(reqs: Array[String], parent_node: Control):
+	return
 	for r: String in reqs:
 		var char_name: String = r
 		var forbidden: bool = false
@@ -109,10 +110,13 @@ func set_single_signal(reqs: Array[String], parent_node: Control):
 			forbidden = true
 		var new_signal: CharacterSignalisation = character_signalisation_scene.instantiate()
 		parent_node.add_child(new_signal)
-		new_signal.load_character(get_character(char_name))
+		var char := get_character(char_name)
+		if char:
+			new_signal.load_character(char)
 		new_signal.set_forbidden(forbidden)
 
 func set_signals(reqs_left: Array[String], reqs_right: Array[String]):
+	return # Removed function
 	set_single_signal(reqs_left, %SignalisationLeft)
 	set_single_signal(reqs_right, %SignalisationRight)
 	signals_up = true

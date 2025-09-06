@@ -8,9 +8,22 @@ var curr_section_length: float
 var direction: bool
 var locomotive: Locomotive
 var character: CharacterInfo
+var powered: bool = false
 
 func _ready() -> void:
 	curr_section_length = get_parent().curve.get_baked_length()
+	if "tb_powered" in Locomotive.instance.get_properties():
+		power()
+
+func _process(delta: float) -> void:
+	pass
+
+func power():
+	powered = true
+	for child in $ChildRender/wagon_vocoder/wagons_vocoder_mesh.get_children():
+		if child is MeshInstance3D:
+			for i in range(child.get_surface_override_material_count()):
+				child.set_surface_override_material(i, null)
 
 func set_carriage_progress(prog_relative: float, new_section: RailSection):
 	if prog_relative < 0.0:

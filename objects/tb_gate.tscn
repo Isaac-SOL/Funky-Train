@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://dij2j3hjcc5c0"]
+
+[ext_resource type="Script" uid="uid://e73xb20f1dcp" path="res://scripts/tb_gate.gd" id="1_2qfys"]
+[ext_resource type="PackedScene" uid="uid://cbbupbekcwscw" path="res://assets/modele/3D/tb_mic.tscn" id="2_k08yo"]
+[ext_resource type="Shader" uid="uid://csftcefqyy1vx" path="res://materials/interruptor_barrier.gdshader" id="3_k08yo"]
+[ext_resource type="AudioStream" uid="uid://crfutv7u1ho0p" path="res://assets/sfx/gate.ogg" id="4_7vin2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7vin2"]
+render_priority = 0
+shader = ExtResource("3_k08yo")
+shader_parameter/frequency = 1.0
+shader_parameter/color_1 = Color(0.960784, 0.505882, 0.933333, 1)
+shader_parameter/color_2 = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ux177"]
+material = SubResource("ShaderMaterial_7vin2")
+size = Vector3(0.2, 0.5, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_k08yo"]
+flip_faces = true
+size = Vector3(0.4, 0.7, 2.25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7vin2"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="TBGate" type="PathFollow3D"]
+script = ExtResource("1_2qfys")
+
+[node name="MicPivot" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53685, 0.870726, -0.390852)
+
+[node name="mic_short" parent="MicPivot" instance=ExtResource("2_k08yo")]
+transform = Transform3D(-4.95807, 0, -0.646141, 0, 5, 0, 0.646141, 0, -4.95807, -0.00880098, -4.05623, 0.04989)
+
+[node name="BarrierPivot" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14882, 0.870726, -0.390852)
+
+[node name="Barrier" type="MeshInstance3D" parent="BarrierPivot"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.703787, -0.000579953, -2.98023e-08)
+mesh = SubResource("BoxMesh_ux177")
+skeleton = NodePath("../..")
+
+[node name="BarrierOutline" type="MeshInstance3D" parent="BarrierPivot/Barrier"]
+transform = Transform3D(0.93, 0, 0, 0, 0.93, 0, 0, 0, 0.93, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_k08yo")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_7vin2")
+
+[node name="AudioGate" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_7vin2")
+volume_db = 10.0
