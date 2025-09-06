@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://brwc61f6bdoeg"]
+
+[ext_resource type="PackedScene" uid="uid://bgbfet6f2mfxe" path="res://assets/modele/3D/raspberry_smooth.glb" id="1_xop7v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rni6t"]
+albedo_color = Color(0.298039, 0.686275, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o2myk"]
+albedo_color = Color(0.913725, 0.282353, 0.698039, 1)
+roughness = 0.5
+
+[node name="RaspberryStevie" instance=ExtResource("1_xop7v")]
+
+[node name="Icosphere_001_Icosphere_003" parent="." index="0"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 9.40202, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_rni6t")
+surface_material_override/1 = SubResource("StandardMaterial3D_o2myk")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn3q5e6cqd2y"]
+
+[ext_resource type="Script" uid="uid://cnsaupww845y2" path="res://fruit_interactible.gd" id="1_54i3d"]
+[ext_resource type="PackedScene" uid="uid://brwc61f6bdoeg" path="res://assets/modele/3D/raspberry_stevie.tscn" id="2_0n3r5"]
+[ext_resource type="AudioStream" uid="uid://dwren3wafi884" path="res://assets/sfx/crunch.ogg" id="3_0n3r5"]
+
+[node name="FruitInteractible" type="PathFollow3D"]
+script = ExtResource("1_54i3d")
+
+[node name="FruitRoot" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.80197, 0)
+
+[node name="RaspberryStevie" parent="FruitRoot" instance=ExtResource("2_0n3r5")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -1.35929, 0)
+
+[node name="AudioCroc" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_0n3r5")
+volume_db = 10.0

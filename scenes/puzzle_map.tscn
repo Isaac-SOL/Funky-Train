@@ -1,4 +1,4 @@
-[gd_scene load_steps=401 format=4 uid="uid://pxhdnm53147j"]
+[gd_scene load_steps=408 format=4 uid="uid://pxhdnm53147j"]
 
 [ext_resource type="Script" uid="uid://hcgv0grqqm7y" path="res://scripts/rails_master.tres.gd" id="1_7cvav"]
 [ext_resource type="PackedScene" uid="uid://c7adtd3m5hihf" path="res://objects/rail_section.tscn" id="2_vwg2y"]
@@ -35,6 +35,7 @@
 [ext_resource type="Resource" uid="uid://bm35c5akw4erc" path="res://objects/characters/map2/start.tres" id="33_lcjqk"]
 [ext_resource type="ArrayMesh" uid="uid://ciggsuyo3cobb" path="res://meshes/rails/PreHub1_Entrance.tres" id="34_khem0"]
 [ext_resource type="ArrayMesh" uid="uid://bnu147gec0on0" path="res://meshes/rails/PreHub1_Entrance_minimap.tres" id="35_coegf"]
+[ext_resource type="PackedScene" uid="uid://bbq7spgjrhdbx" path="res://objects/parker_gate.tscn" id="36_58hlq"]
 [ext_resource type="ArrayMesh" uid="uid://coj4285ndpyt4" path="res://meshes/rails/PreHub1_Entrance_s.tres" id="37_uc12k"]
 [ext_resource type="Material" uid="uid://2j8oioxr23sf" path="res://materials/rails_standard_mat.tres" id="39_1w4ue"]
 [ext_resource type="ArrayMesh" uid="uid://dj3g2ftnn7ktw" path="res://meshes/rails/PreHub1_Entrance_s_minimap.tres" id="41_yamx8"]
@@ -42,6 +43,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dvqmpeduwlblr" path="res://meshes/rails/PreHub1_Entrance_s_s_minimap.tres" id="43_me2m6"]
 [ext_resource type="ArrayMesh" uid="uid://covcb1jahkrq0" path="res://meshes/rails/PreHub1_Entrance_s_s_s.tres" id="44_etvcp"]
 [ext_resource type="ArrayMesh" uid="uid://db2it1i33i8v1" path="res://meshes/rails/PreHub1_Entrance_s_s_s_minimap.tres" id="45_khkcs"]
+[ext_resource type="PackedScene" uid="uid://dvhtol1rjc8i" path="res://objects/mouse_obstacle.tscn" id="46_qjdxd"]
 [ext_resource type="ArrayMesh" uid="uid://c1y1ea7jw2ka6" path="res://meshes/rails/PreHub1_Entrance_s_s_s_s.tres" id="46_wyyiv"]
 [ext_resource type="ArrayMesh" uid="uid://bdnpyeeg6v0tn" path="res://meshes/rails/PreHub1_Entrance_s_s_s_s_minimap.tres" id="47_ocn2b"]
 [ext_resource type="ArrayMesh" uid="uid://bxqj81j31uw2b" path="res://meshes/rails/PreHub1_Buffer.tres" id="48_kyqo5"]
@@ -92,6 +94,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dmhgxgxdsturi" path="res://meshes/rails/RailMazeEntranceLoop4_minimap.tres" id="83_hioaw"]
 [ext_resource type="ArrayMesh" uid="uid://cm112xs7y4bvu" path="res://meshes/rails/Hub1To2_Interr_s_minimap.tres" id="83_me2m6"]
 [ext_resource type="ArrayMesh" uid="uid://8j48isk84cyl" path="res://meshes/rails/Hub1To2_Interr_s_s.tres" id="84_etvcp"]
+[ext_resource type="PackedScene" uid="uid://bnyn4ssr8k5rn" path="res://objects/pepper.tscn" id="84_mt8tr"]
 [ext_resource type="ArrayMesh" uid="uid://daeanfv52vxv2" path="res://meshes/rails/RailMazeEntranceLoopToExit.tres" id="84_rptky"]
 [ext_resource type="ArrayMesh" uid="uid://cokpq6rhaqfye" path="res://meshes/rails/RailMazeEntranceLoopToExit_minimap.tres" id="85_46scn"]
 [ext_resource type="ArrayMesh" uid="uid://c3xsgdrfmq15o" path="res://meshes/rails/Hub1To2_Interr_s_s_minimap.tres" id="85_khkcs"]
@@ -128,6 +131,7 @@
 [ext_resource type="ArrayMesh" uid="uid://du2p8h478245" path="res://meshes/rails/RailMazeSecondLoop2.tres" id="99_y1hk4"]
 [ext_resource type="ArrayMesh" uid="uid://d1rej8aapyx81" path="res://meshes/rails/Hub1ToPeriph_Loop_s.tres" id="100_gv15s"]
 [ext_resource type="ArrayMesh" uid="uid://ctlpmxp58au5u" path="res://meshes/rails/RailMazeSecondLoop2_minimap.tres" id="100_jq27k"]
+[ext_resource type="PackedScene" uid="uid://bpm1ob1yqv6mg" path="res://objects/rock_interactible.tscn" id="100_lcjqk"]
 [ext_resource type="ArrayMesh" uid="uid://cs4cqvijypysp" path="res://meshes/rails/Hub2_BigLoop_s_s.tres" id="100_pj2mh"]
 [ext_resource type="ArrayMesh" uid="uid://dhx5h4s75ktm4" path="res://meshes/rails/Hub1ToPeriph_Loop_s_minimap.tres" id="101_btn6f"]
 [ext_resource type="ArrayMesh" uid="uid://cfohsoemdhyhx" path="res://meshes/rails/RailMazeSecondLoop3.tres" id="101_cl3d1"]
@@ -165,12 +169,14 @@
 [ext_resource type="ArrayMesh" uid="uid://cliqdwysrmdi" path="res://meshes/rails/RailMazeFourthLoop2.tres" id="115_1qwx0"]
 [ext_resource type="ArrayMesh" uid="uid://hy1e3ev00p6g" path="res://meshes/rails/RailMazeFourthLoop2_minimap.tres" id="116_l2rr4"]
 [ext_resource type="Resource" uid="uid://rvoqiqhkmm4c" path="res://objects/characters/map2/maze.tres" id="117_tn0y3"]
+[ext_resource type="PackedScene" uid="uid://bn3q5e6cqd2y" path="res://objects/fruit_interactible.tscn" id="144_tn0y3"]
 [ext_resource type="Resource" uid="uid://bj1gx6dijuuvl" path="res://objects/characters/map2/hub2.tres" id="150_qjdxd"]
 [ext_resource type="ArrayMesh" uid="uid://dkt3mvpuoxt0a" path="res://meshes/rails/Hub2_BigLoop_c.tres" id="154_vtavb"]
 [ext_resource type="ArrayMesh" uid="uid://bhheedqv2gasr" path="res://meshes/rails/Hub2_Extras.tres" id="155_6m5a2"]
 [ext_resource type="ArrayMesh" uid="uid://cboh0hiw8efal" path="res://meshes/rails/Hub2_BigLoop_c_minimap.tres" id="155_gjyyb"]
 [ext_resource type="ArrayMesh" uid="uid://deqxgyrufpn6e" path="res://meshes/rails/Hub2_Extras_minimap.tres" id="156_8blpd"]
 [ext_resource type="ArrayMesh" uid="uid://b1bre3fpn8q5w" path="res://meshes/rails/Hub2_Extras_s.tres" id="157_gs7x4"]
+[ext_resource type="PackedScene" uid="uid://bpijxr3snwai1" path="res://objects/interactible_smoke.tscn" id="158_ptu7g"]
 [ext_resource type="ArrayMesh" uid="uid://c2ttsw2xni2pw" path="res://meshes/rails/Hub2_Extras_s_minimap.tres" id="158_xoyqq"]
 [ext_resource type="ArrayMesh" uid="uid://cjyg4dyneuahi" path="res://meshes/rails/Hub2_Extras_s_s.tres" id="159_jlrhp"]
 [ext_resource type="ArrayMesh" uid="uid://cobi4g051n07c" path="res://meshes/rails/Hub2_Extras_s_s_minimap.tres" id="160_hioaw"]
@@ -218,6 +224,7 @@
 [ext_resource type="ArrayMesh" uid="uid://10ltmge4q3jw" path="res://meshes/rails/Hub3_BigLoop_s_s_s_minimap.tres" id="206_fqm4h"]
 [ext_resource type="ArrayMesh" uid="uid://chk7g8ebi70qe" path="res://meshes/rails/Hub3_BigLoop_s_s_s_s.tres" id="207_74d47"]
 [ext_resource type="ArrayMesh" uid="uid://b7is63v46hwyl" path="res://meshes/rails/Hub3_BigLoop_s_s_s_s_minimap.tres" id="208_as4va"]
+[ext_resource type="PackedScene" uid="uid://60hd431sjqbt" path="res://objects/rock_interactible2.tscn" id="209_h3suw"]
 [ext_resource type="ArrayMesh" uid="uid://borkgsnq21a0k" path="res://meshes/rails/Hub3_BigLoop_s_s_s_s_s.tres" id="209_lykmy"]
 [ext_resource type="Resource" uid="uid://dv0gc2sc76vgx" path="res://objects/characters/map2/hub3.tres" id="209_mt8tr"]
 [ext_resource type="ArrayMesh" uid="uid://bf7enhitju746" path="res://meshes/rails/Hub3_BigLoop_s_s_s_s_s_minimap.tres" id="210_utv63"]
@@ -1574,6 +1581,10 @@ skeleton = NodePath("../../../TutorialPuzzle")
 transform = Transform3D(-0.242185, 0, -0.970179, 0, 0.999968, 0, 0.970179, 0, -0.242185, 3.30209, 0, 0.400521)
 progress = 3.33338
 
+[node name="ParkerGate" parent="PreHub1/PreHub1_Entrance" instance=ExtResource("36_58hlq")]
+transform = Transform3D(-0.297354, 0, -0.954766, 0, 1, 0, 0.954766, 0, -0.297354, 3.89313, 0, 0.5658)
+progress = 3.94713
+
 [node name="PreHub1_Entrance_s" parent="PreHub1" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.1664, 0, -27.3578)
 curve = SubResource("Curve3D_kvt4b")
@@ -1658,6 +1669,10 @@ mesh = ExtResource("49_7kvwc")
 transform = Transform3D(-0.294246, 0, -0.955727, 0, 1, 0, 0.955727, 0, -0.294246, 4.10829, 0, 0.806037)
 progress = 4.19692
 
+[node name="MouseObstacle" parent="PreHub1/PreHub1_Buffer" instance=ExtResource("46_qjdxd")]
+transform = Transform3D(-0.337128, 0, -0.941458, 0, 1, 0, 0.941458, 0, -0.337128, 5.04116, 0, 1.11621)
+progress = 5.18006
+
 [node name="PreHub1_Buffer_s" parent="PreHub1" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.14128, 0, -1.22858)
 curve = SubResource("Curve3D_gv15s")
@@ -1686,7 +1701,7 @@ mesh = ExtResource("52_yqinq")
 mesh = ExtResource("53_14v6j")
 
 [node name="CrossFollow" parent="PreHub1/PreHub1_Buffer_s_s" index="3"]
-transform = Transform3D(0.0144907, 0, 0.999872, 0, 1, 0, -0.999872, 0, 0.0144907, 0, 0, 0)
+transform = Transform3D(0.0144906, 0, 0.999866, 0, 1, 0, -0.999866, 0, 0.0144906, 0, 0, 0)
 
 [node name="StationHub1_1" parent="PreHub1/PreHub1_Buffer_s_s" instance=ExtResource("32_sxdtl")]
 transform = Transform3D(-0.0103523, 0, 0.999945, 0, 1, 0, -0.999945, 0, -0.0103523, -15.1889, 0, 0.0684377)
@@ -1731,6 +1746,10 @@ progress = 3.22412
 
 [node name="CrossCenter" parent="PreHub1/PreHub1_toLoop/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
+
+[node name="RockInteractible" parent="PreHub1/PreHub1_toLoop" instance=ExtResource("209_h3suw")]
+transform = Transform3D(-0.685386, 0, 0.728179, 0, 1, 0, -0.728179, 0, -0.685386, -1.68251, 0, 3.51163)
+progress = 4.02803
 
 [node name="Hub1" type="Node3D" parent="."]
 script = ExtResource("1_7cvav")
@@ -2006,6 +2025,10 @@ transform = Transform3D(-0.16015, 0, -0.98709, 0, 1, 0, 0.98709, 0, -0.16015, 7.
 progress = 8.41494
 rail_to_toggle = NodePath("..")
 
+[node name="Pepper" parent="Hub1/Hub1To2/Hub1To2_Interr" instance=ExtResource("84_mt8tr")]
+transform = Transform3D(0.35858, 0, -0.933499, 0, 1, 0, 0.933499, 0, 0.35858, 2.44094, 0, -2.19046)
+progress = 3.36737
+
 [node name="Hub1To2_Interr_s" parent="Hub1/Hub1To2" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5633, 0, 48.214)
 curve = SubResource("Curve3D_hen5e")
@@ -2105,7 +2128,7 @@ rebake_with_tilt = true
 rebake_force_up = true
 
 [node name="CrossFollow" parent="Hub1/Hub1To2/Hub2To1" index="3"]
-transform = Transform3D(0.795803, 0.0102878, -0.605454, -0.0568131, 0.9967, -0.0577392, 0.602868, 0.0803468, 0.793776, 2.68301, 0.106366, -2.93)
+transform = Transform3D(0.795795, 0.0102878, -0.605454, -0.0568124, 0.9967, -0.0577392, 0.602861, 0.0803468, 0.793776, 2.68301, 0.106366, -2.93)
 progress = 3.97781
 
 [node name="CrossCenter" parent="Hub1/Hub1To2/Hub2To1/CrossFollow/CrossTween" index="0"]
@@ -2200,7 +2223,7 @@ mesh = ExtResource("93_14v6j")
 material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Hub1/Hub1To2/Hub1Inner_Bridge_s" index="3"]
-transform = Transform3D(-0.0288027, 0, -0.999581, 0, 1, 0, 0.999581, 0, -0.0288027, 2.92966, 0, 0.0699712)
+transform = Transform3D(-0.0288026, 0, -0.999575, 0, 1, 0, 0.999575, 0, -0.0288026, 2.92966, 0, 0.0699712)
 progress = 2.93061
 
 [node name="CrossCenter" parent="Hub1/Hub1To2/Hub1Inner_Bridge_s/CrossFollow/CrossTween" index="0"]
@@ -2256,6 +2279,10 @@ progress = 3.38159
 
 [node name="CrossCenter" parent="Hub1/Hub1ToPeriph/Hub1ToPeriph_Loop/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
+
+[node name="RockInteractible" parent="Hub1/Hub1ToPeriph/Hub1ToPeriph_Loop" instance=ExtResource("100_lcjqk")]
+transform = Transform3D(-0.776891, 0, 0.629635, 0, 1, 0, -0.629635, 0, -0.776891, -1.51488, 0, 4.0218)
+progress = 4.39749
 
 [node name="Hub1ToPeriph_Loop_s" parent="Hub1/Hub1ToPeriph" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.8519, 0, 3.50409)
@@ -2377,7 +2404,7 @@ mesh = ExtResource("79_8blpd")
 skeleton = NodePath("../../..")
 
 [node name="CrossFollow" parent="Maze/MazeEntranceLoop/RailMazeEntranceLoop1True" index="3"]
-transform = Transform3D(0.0138046, 0, -0.999888, 0, 1, 0, 0.999888, 0, 0.0138046, 0, 0, 0)
+transform = Transform3D(0.0138045, 0, -0.999882, 0, 1, 0, 0.999882, 0, 0.0138045, 0, 0, 0)
 
 [node name="RailMazeEntranceLoop3" parent="Maze/MazeEntranceLoop" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.1418, 0, -0.0275548)
@@ -2399,6 +2426,10 @@ skeleton = NodePath("../../..")
 [node name="CrossFollow" parent="Maze/MazeEntranceLoop/RailMazeEntranceLoop3" index="3"]
 transform = Transform3D(0.43277, 0, -0.901495, 0, 1, 0, 0.901495, 0, 0.43277, 2.71287, 0, -0.629186)
 progress = 2.80829
+
+[node name="Pepper" parent="Maze/MazeEntranceLoop/RailMazeEntranceLoop3" instance=ExtResource("84_mt8tr")]
+transform = Transform3D(0.473896, 0, -0.880581, 0, 1, 0, 0.880581, 0, 0.473896, 2.98137, 0, -0.765786)
+progress = 3.10956
 
 [node name="RailMazeEntranceLoop4" parent="Maze/MazeEntranceLoop" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.1144, 0, -13.9176)
@@ -2438,7 +2469,7 @@ mesh = ExtResource("85_46scn")
 skeleton = NodePath("../../..")
 
 [node name="CrossFollow" parent="Maze/MazeEntranceLoop/RailMazeEntranceLoopToExit" index="3"]
-transform = Transform3D(0.000295471, 0, 0.999982, 0, 1, 0, -0.999982, 0, 0.000295471, -3.91247, 0, -0.0219596)
+transform = Transform3D(0.000295469, 0, 0.999976, 0, 1, 0, -0.999976, 0, 0.000295469, -3.91247, 0, -0.0219596)
 progress = 3.9127
 
 [node name="RailMazeEntranceLoop5" parent="Maze/MazeEntranceLoop" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
@@ -2514,6 +2545,10 @@ mesh = ExtResource("94_lkhrr")
 [node name="CrossFollow" parent="Maze/RailSecondToEntrance" index="3"]
 transform = Transform3D(0.0558819, 0, 0.998436, 0, 1, 0, -0.998436, 0, 0.0558819, -3.83161, 0, -0.0534505)
 progress = 3.83381
+
+[node name="Pepper" parent="Maze/RailSecondToEntrance" instance=ExtResource("84_mt8tr")]
+transform = Transform3D(0.0667258, 0, 0.997769, 0, 1, 0, -0.997769, 0, 0.0667258, -4.68878, 0, -0.106259)
+progress = 4.6926
 
 [node name="RailSecondToExit" parent="Maze" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.386, 0, -3.83714)
@@ -2591,6 +2626,10 @@ progress = 2.99606
 transform = Transform3D(0.509898, 0, -0.860233, 0, 1, 0, 0.860233, 0, 0.509898, 6.85759, 0, -1.89139)
 progress = 7.1973
 rail_to_toggle = NodePath("../../../MazeThirdLoop/RailMazeThirdLoop1")
+
+[node name="Pepper" parent="Maze/MazeSecondLoop/RailMazeSecondLoop3" instance=ExtResource("84_mt8tr")]
+transform = Transform3D(0.263002, 0, -0.964795, 0, 1, 0, 0.964795, 0, 0.263002, 3.4524, 0, -0.467265)
+progress = 3.4954
 
 [node name="RailMazeSecondLoop4" parent="Maze/MazeSecondLoop" node_paths=PackedStringArray("in_sections", "out_sections", "toggle_barrier") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.5904, 0, 9.36256)
@@ -2674,6 +2713,10 @@ progress = 3.02443
 transform = Transform3D(-0.889257, 0, -0.457408, 0, 1, 0, 0.457408, 0, -0.889257, 9.75739, 0, 11.1943)
 degrees_left = -61.714
 degrees_right = 60.0
+
+[node name="FruitInteractible" parent="Maze/MazeThirdLoop/RailMazeThirdLoop1" instance=ExtResource("144_tn0y3")]
+transform = Transform3D(-0.691726, 0, -0.722159, 0, 1, 0, 0.722159, 0, -0.691726, 3.82749, 0, 1.89374)
+progress = 4.36897
 
 [node name="RailMazeThirdLoop2" parent="Maze/MazeThirdLoop" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.9851, 0, 23.9246)
@@ -2783,6 +2826,10 @@ mesh = ExtResource("99_5dbvl")
 transform = Transform3D(-0.955902, -2.44764e-07, -0.293678, 2.38838e-07, 1, -1.61084e-06, 0.293678, -1.60996e-06, -0.955902, 1.10868, 6.5749e-06, 5.38144)
 progress = 5.50536
 
+[node name="InteractibleSmoke" parent="Hub2/Hub2_BigLoop_s" instance=ExtResource("158_ptu7g")]
+transform = Transform3D(-0.950406, -2.29188e-07, -0.311012, 2.67689e-07, 1, -1.55493e-06, 0.311012, -1.56107e-06, -0.950406, 1.31626, 7.66378e-06, 6.03566)
+progress = 6.19173
+
 [node name="Hub2_BigLoop_c" parent="Hub2" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.4898, 0.00024414, 90.1182)
 curve = SubResource("Curve3D_fepkf")
@@ -2878,7 +2925,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4225, 0.000244141, 106.93
 curve = SubResource("Curve3D_0tblp")
 in_sections = [NodePath("../Hub2_BigLoop_s_s_s_s")]
 out_sections = [NodePath("../../Hub2to3/Hub2to3_Interr"), NodePath("../Hub2_BigLoop_s_s_s_s_s_s")]
-out_requirements_1 = Array[String](["hub2_hard"])
 
 [node name="BakedRailsMesh" parent="Hub2/Hub2_BigLoop_s_s_s_s_s" index="0"]
 mesh = ExtResource("106_ipfm5")
@@ -2996,6 +3042,10 @@ progress = 3.44843
 [node name="CrossCenter" parent="Hub2/Hub2_Extras/Hub2_Extras/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
 
+[node name="MouseObstacle" parent="Hub2/Hub2_Extras/Hub2_Extras" instance=ExtResource("46_qjdxd")]
+transform = Transform3D(-0.991138, -2.73708e-13, -0.132817, -3.5986e-12, 1, 2.47936e-11, 0.132817, 2.50519e-11, -0.991138, 0.184978, -7.41605e-11, 4.26635)
+progress = 4.2822
+
 [node name="Hub2_Extras_s" parent="Hub2/Hub2_Extras" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.7355, 0.000244141, 123.77)
 curve = SubResource("Curve3D_g5s28")
@@ -3063,6 +3113,10 @@ progress = 3.85512
 
 [node name="CrossCenter" parent="Hub2/Hub2_Extras/Hub2_Extras2/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
+
+[node name="ParkerGate" parent="Hub2/Hub2_Extras/Hub2_Extras2" instance=ExtResource("36_58hlq")]
+transform = Transform3D(-0.954617, 0, -0.297833, 0, 1, 0, 0.297833, 0, -0.954617, 0.757954, 0, 3.86748)
+progress = 3.94713
 
 [node name="Hub2_Extras2_s" parent="Hub2/Hub2_Extras" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.2846, 0.000244141, 144.681)
@@ -3179,7 +3233,7 @@ mesh = ExtResource("172_wgtot")
 material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Hub2/Hub2_Extras/Hub2_Extras4" index="3"]
-transform = Transform3D(0.959178, 0, 0.282781, 0, 1, 0, -0.282781, 0, 0.959178, -1.67795, 0, -4.31426)
+transform = Transform3D(0.959177, 0, 0.282781, 0, 1, 0, -0.282781, 0, 0.959177, -1.67795, 0, -4.31426)
 progress = 4.63391
 
 [node name="CrossCenter" parent="Hub2/Hub2_Extras/Hub2_Extras4/CrossFollow/CrossTween" index="0"]
@@ -3219,6 +3273,7 @@ script = SubResource("GDScript_yfycn")
 transform = Transform3D(0.933236, 9.65234e-11, 0.359255, -8.39092e-11, 1, -5.07042e-11, -0.359255, 1.71743e-11, 0.933236, -14.4586, -3.1573e-10, -8.41423)
 progress = 18.1738
 rail_to_toggle = NodePath("../../Hub2to3_Middle_s")
+broken = true
 
 [node name="Hub2to3_Interr_s" parent="Hub2to3" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.9233, 0.000244141, 84.7409)
@@ -3269,6 +3324,10 @@ progress = 2.98091
 [node name="CrossCenter" parent="Hub2to3/Hub2to3_Entrance/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
 
+[node name="FruitInteractible" parent="Hub2to3/Hub2to3_Entrance" instance=ExtResource("144_tn0y3")]
+transform = Transform3D(0.148141, 0, 0.988965, 0, 1, 0, -0.988965, 0, 0.148141, -3.84348, 0, -1.01895)
+progress = 3.99646
+
 [node name="Hub2to3_Entrance_s" parent="Hub2to3" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.8827, 0.000244141, 105.497)
 curve = SubResource("Curve3D_kluvy")
@@ -3296,7 +3355,7 @@ progress = 3.68679
 script = SubResource("GDScript_yfycn")
 
 [node name="StationHub2Puzzle1" parent="Hub2to3/Hub2to3_Entrance_s" instance=ExtResource("32_sxdtl")]
-transform = Transform3D(0.969401, 0.00235069, -0.245376, -0.00242475, 0.999996, 0, 0.245376, 0.000594995, 0.969403, -17.4967, -3.7835e-10, 4.85857)
+transform = Transform3D(0.969401, 0.00235069, -0.245376, -0.00242475, 0.999997, 0, 0.245376, 0.000594996, 0.969403, -17.4967, -3.7835e-10, 4.85857)
 progress = 95.534
 waiting_character = ExtResource("202_tn0y3")
 
@@ -3311,6 +3370,11 @@ height = 1.0
 rebake_with_tilt = true
 skip_first = 250
 skip_last = 100
+
+[node name="Accelerator" parent="Hub2to3/Hub2to3_Entrance_s" instance=ExtResource("106_gjyyb")]
+transform = Transform3D(-0.999222, -4.05219e-11, 0.0394246, -4.05534e-11, 1, -2.7105e-19, -0.0394246, -1.5988e-12, -0.999222, -7.88656, -3.7835e-10, 11.9627)
+progress = 15.7731
+instant_speed = 12.0
 
 [node name="Hub2to3_Middle" parent="Hub2to3" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.8827, 0.000244141, 105.497)
@@ -3437,6 +3501,10 @@ progress = 3.62115
 
 [node name="CrossCenter" parent="Hub2to3/Hub2to3_toPeriph/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
+
+[node name="RockInteractible" parent="Hub2to3/Hub2to3_toPeriph" instance=ExtResource("209_h3suw")]
+transform = Transform3D(0.669309, 0, 0.742984, 0, 1, 0, -0.742984, 0, 0.669309, -2.11708, 0, -4.01848)
+progress = 4.66508
 
 [node name="Hub3" type="Node3D" parent="."]
 script = ExtResource("1_7cvav")
@@ -3581,7 +3649,7 @@ mesh = ExtResource("208_as4va")
 material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Hub3/Hub3_BigLoop_s_s_s_s" index="3"]
-transform = Transform3D(-0.00261821, 0, -0.999988, 0, 1, 0, 0.999988, 0, -0.00261821, 3.60297, 0, 0.0671739)
+transform = Transform3D(-0.0026182, 0, -0.999982, 0, 1, 0, 0.999982, 0, -0.0026182, 3.60297, 0, 0.0671739)
 progress = 3.60392
 
 [node name="CrossCenter" parent="Hub3/Hub3_BigLoop_s_s_s_s/CrossFollow/CrossTween" index="0"]
@@ -3656,6 +3724,10 @@ progress = 3.51721
 [node name="CrossCenter" parent="Hub3/Hub3_Inner/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
 
+[node name="Pepper" parent="Hub3/Hub3_Inner" instance=ExtResource("84_mt8tr")]
+transform = Transform3D(0.759784, 0, -0.650174, 0, 1, 0, 0.650174, 0, 0.759784, 4.14542, 0, -1.99705)
+progress = 4.77446
+
 [node name="Hub3_Inner_c" parent="Hub3" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -112.155, 0.000244141, 96.123)
 curve = SubResource("Curve3D_h85u6")
@@ -3706,6 +3778,10 @@ script = SubResource("GDScript_yfycn")
 transform = Transform3D(0.968595, 0, 0.248639, 0, 1, 0, -0.248639, 0, 0.968595, -1.06979, 0, -8.6862)
 progress = 8.75957
 waiting_character = ExtResource("202_qjdxd")
+
+[node name="FruitInteractible" parent="Hub3/Hub3_Inner_c_c" instance=ExtResource("144_tn0y3")]
+transform = Transform3D(0.994098, 0, 0.108478, 0, 1, 0, -0.108478, 0, 0.994098, -0.484661, 0, -5.10056)
+progress = 5.12349
 
 [node name="Hub3_Inner_c_s" parent="Hub3" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -112.082, 0.000244141, 79.8823)
@@ -3960,6 +4036,10 @@ progress = 3.23808
 [node name="CrossCenter" parent="Hub3/Hub3_toHub2/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
 
+[node name="RockInteractible" parent="Hub3/Hub3_toHub2" instance=ExtResource("100_lcjqk")]
+transform = Transform3D(-0.0357947, 0, -0.999354, 0, 1, 0, 0.999354, 0, -0.0357947, 4.0108, 0, -0.311583)
+progress = 4.04548
+
 [node name="Periph" type="Node3D" parent="."]
 script = ExtResource("1_7cvav")
 metadata/_custom_type_script = "uid://hcgv0grqqm7y"
@@ -4103,7 +4183,7 @@ mesh = ExtResource("261_lcjqk")
 transform = Transform3D(-0.447213, 0, 0.894425, 0, 1, 0, -0.894425, 0, -0.447213, 0, 0, 0)
 
 [node name="StationPeriph" parent="Periph/Periph2_s_c" instance=ExtResource("32_sxdtl")]
-transform = Transform3D(0.0139767, 0, 0.999899, 0, 1, 0, -0.999899, 0, 0.0139767, -85.1858, 0, 12.2165)
+transform = Transform3D(0.0139767, 0, 0.999892, 0, 1, 0, -0.999892, 0, 0.0139767, -85.1858, 0, 12.2165)
 progress = 86.6963
 waiting_character = ExtResource("261_58hlq")
 
@@ -4161,6 +4241,11 @@ mesh = ExtResource("263_vtavb")
 transform = Transform3D(0.113211, 8.0153e-07, 0.993568, -2.65733e-08, 1, -8.03686e-07, -0.993568, 6.45839e-08, 0.113211, -9.86277, 4.32264e-06, -0.822423)
 progress = 9.89873
 
+[node name="Accelerator" parent="Periph/Periph2_s_c_c" instance=ExtResource("106_gjyyb")]
+transform = Transform3D(0.143663, 1.13542e-06, 0.989624, -5.64995e-08, 1, -1.13912e-06, -0.989624, 1.07736e-07, 0.143663, -15.9944, 1.03783e-05, -1.61935)
+progress = 16.0822
+instant_speed = 22.0
+
 [node name="Periph_toHub1" parent="Periph" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.64, 5, -79.9925)
 curve = SubResource("Curve3D_5im0h")
@@ -4203,11 +4288,15 @@ mesh = ExtResource("262_lcjqk")
 material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Periph/Periph_toHub3" index="3"]
-transform = Transform3D(0.99829, -2.58472e-12, -0.0583305, 3.42989e-12, 1, 1.43894e-11, 0.0583305, -1.45651e-11, 0.99829, -1.54232, -4.14034e-11, -6.8211)
+transform = Transform3D(0.998283, -2.58472e-12, -0.0583302, 3.42987e-12, 1, 1.43893e-11, 0.0583302, -1.45651e-11, 0.998283, -1.54232, -4.14034e-11, -6.8211)
 progress = 7.05327
 
 [node name="CrossCenter" parent="Periph/Periph_toHub3/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
+
+[node name="InteractibleSmoke" parent="Periph/Periph_toHub3" instance=ExtResource("158_ptu7g")]
+transform = Transform3D(0.973199, -1.80821e-12, -0.22996, 6.33263e-12, 1, 1.89368e-11, 0.22996, -1.98856e-11, 0.973199, -1.36351, -6.24713e-11, -8.07419)
+progress = 8.32073
 
 [editable path="TutorialPuzzle/TutoPuzzle_Start"]
 [editable path="TutorialPuzzle/TutoPuzzle_StartR"]

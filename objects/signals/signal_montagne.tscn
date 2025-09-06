@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0uojyja66o5k"]
+
+[ext_resource type="PackedScene" uid="uid://mdaovb10eqyu" path="res://objects/signals/signal_tunnel.tscn" id="1_rjo5c"]
+[ext_resource type="Texture2D" uid="uid://wnadg77ej3y3" path="res://assets/textures/montagne.png" id="2_gxv6t"]
+
+[node name="SignalMontagne" instance=ExtResource("1_rjo5c")]
+
+[node name="Sprite3D" parent="." index="0"]
+texture = ExtResource("2_gxv6t")

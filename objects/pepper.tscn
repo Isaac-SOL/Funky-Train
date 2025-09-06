@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnyn4ssr8k5rn"]
+
+[ext_resource type="PackedScene" uid="uid://p051osfi2ydb" path="res://assets/modele/3D/chili_stevie.tscn" id="1_we8ih"]
+
+[node name="Pepper" type="PathFollow3D"]
+
+[node name="ChiliStevie" parent="." instance=ExtResource("1_we8ih")]
+transform = Transform3D(3.01609e-08, 0, -0.23, 0, 0.23, 0, 0.23, 0, 3.01609e-08, 0.0112117, 2.17631, 0.525648)

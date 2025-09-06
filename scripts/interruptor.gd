@@ -1,8 +1,12 @@
 class_name Interruptor extends PathFollow3D
 
 signal pressed
+signal fixed
 
 @export var rail_to_toggle: RailSection
+@export var broken: bool = false
+@export var material_normal: Material
+@export var material_broken: Material
 
 func _ready() -> void:
 	get_section().add_interactible(self)
@@ -10,9 +14,23 @@ func _ready() -> void:
 	assert(rail_to_toggle.is_toggled)
 	if rail_to_toggle.toggle_barrier:
 		%DirectionIndicator.look_at(rail_to_toggle.toggle_barrier.global_position)
+	if broken:
+		%Button.set_surface_override_material(0, material_broken)
+		%BrokenParticles.emitting = true
+	else:
+		%BrokenParticles.queue_free()
 
 func get_section() -> RailSection:
 	return get_parent()
+
+func fix():
+	broken = false
+	%Button.set_surface_override_material(0, material_normal)
+	%BrokenParticles.emitting = false
+	%AudioBzzt.play()
+	fixed.emit()
+	await %BrokenParticles.finished
+	%BrokenParticles.queue_free()
 
 func press():
 	rail_to_toggle.toggle()

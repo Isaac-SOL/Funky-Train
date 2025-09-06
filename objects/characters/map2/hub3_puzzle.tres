@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CharacterInfo" load_steps=5 format=3 uid="uid://clny0m7dia805"]
 
-[ext_resource type="PackedScene" uid="uid://ckvk1vpxrrfee" path="res://objects/carriage_triangle.tscn" id="1_6y6vu"]
+[ext_resource type="PackedScene" uid="uid://dnelb56tgsm4n" path="res://objects/carriage_triangle_puzzle.tscn" id="1_pjhkr"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_v0lig"]
 [ext_resource type="Texture2D" uid="uid://daviv5khbke7d" path="res://assets/modele/2D/personnages/personnages_triangle_contour.png" id="3_42gm5"]
 [ext_resource type="Texture2D" uid="uid://cpqkiqxa5aqbu" path="res://assets/modele/2D/personnages/personnages_triangle_c_contour.png" id="4_bmmse"]
@@ -11,7 +11,7 @@ name = "hub3_puzzle"
 sprite = ExtResource("3_42gm5")
 sprite_cadre = ExtResource("4_bmmse")
 color = Color(0.857002, 0.368221, 0.240357, 1)
-carriage = ExtResource("1_6y6vu")
+carriage = ExtResource("1_pjhkr")
 track_id = 7
 instrument = "triangle"
 true_name = "Pytha"

@@ -27,6 +27,7 @@ unique_name_in_owner = true
 layers = 3
 
 [node name="chef_locomotive2" parent="MeshInstance3D" instance=ExtResource("3_ue4hp")]
+unique_name_in_owner = true
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, 0, 0)
 
 [node name="VisibleCenter" type="Marker3D" parent="MeshInstance3D"]

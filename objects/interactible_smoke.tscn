@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://bpijxr3snwai1"]
+
+[ext_resource type="Script" uid="uid://ctybmm5xu7fr" path="res://scripts/interactible_smoke.gd" id="1_a5658"]
+[ext_resource type="AudioStream" uid="uid://gtrunr5s65wq" path="res://assets/sfx/bzzt.ogg" id="2_bvcwb"]
+
+[sub_resource type="Gradient" id="Gradient_dstgx"]
+colors = PackedColorArray(0.0624675, 0.0577304, 0.00562208, 1, 0.37, 0.341942, 0.0333, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xxek4"]
+gradient = SubResource("Gradient_dstgx")
+
+[sub_resource type="Curve" id="Curve_a5658"]
+_data = [Vector2(0, 0), 0.0, 11.0332, 0, 0, Vector2(0.11976, 1), -1.13332, -1.13332, 0, 0, Vector2(0.362275, 0.528538), 0.0, 0.0, 0, 0, Vector2(0.892216, 0.497622), 0.0, 0.0, 0, 0, Vector2(1, 0), -5.22131, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_bvcwb"]
+curve = SubResource("Curve_a5658")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a5658"]
+emission_shape = 3
+emission_box_extents = Vector3(0.5, 0.05, 0.5)
+spread = 20.0
+initial_velocity_min = 0.5
+initial_velocity_max = 1.5
+gravity = Vector3(0, 7, 0)
+scale_min = 0.4
+scale_curve = SubResource("CurveTexture_bvcwb")
+color_initial_ramp = SubResource("GradientTexture1D_xxek4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_orf34"]
+shading_mode = 0
+vertex_color_use_as_albedo = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_q24hq"]
+material = SubResource("StandardMaterial3D_orf34")
+
+[node name="InteractibleSmoke" type="PathFollow3D"]
+script = ExtResource("1_a5658")
+
+[node name="BrokenParticles" type="GPUParticles3D" parent="."]
+unique_name_in_owner = true
+cast_shadow = 0
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_a5658")
+draw_pass_1 = SubResource("QuadMesh_q24hq")
+
+[node name="AudioBzzt" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_bvcwb")
+volume_db = 10.0

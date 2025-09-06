@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CharacterInfo" load_steps=5 format=3 uid="uid://cvf5xacsnwfig"]
 
-[ext_resource type="PackedScene" uid="uid://3p8k6p7egiba" path="res://objects/carriage_guitare.tscn" id="1_3pgpy"]
+[ext_resource type="PackedScene" uid="uid://cndlevgtqw51p" path="res://objects/carriage_guitare_puzzle.tscn" id="1_3pgpy"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_hbpcd"]
 [ext_resource type="Texture2D" uid="uid://bu3son403p8e1" path="res://assets/modele/2D/personnages/gamjam2025_personnages_wagonbar2_contour.png" id="3_exyfa"]
 [ext_resource type="Texture2D" uid="uid://bkq70woi1xbss" path="res://assets/modele/2D/personnages/gamjam2025_personnages_wagonbar_contour.png" id="4_duu7t"]

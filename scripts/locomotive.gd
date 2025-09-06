@@ -75,19 +75,28 @@ func _process(delta: float) -> void:
 		locked = true
 		Main.instance.stop_at_station(next_interactible)
 	else:
-		# Press interruptors
-		if next_interactible is Interruptor and next_interactible.progress < temp_progress:
-			next_interactible.press()
-			update_crosses()
-			update_rail_outlines()
-		# Take accelerators
-		if next_interactible is Accelerator and next_interactible.progress < temp_progress:
-			speed = next_interactible.instant_speed
-			%AudioAcceleration.play()
+		if next_interactible and next_interactible.progress < temp_progress:
+			# Press interruptors
+			if next_interactible is Interruptor:
+				if next_interactible.broken:
+					if "hub2_hard" in get_properties():
+						next_interactible.fix()
+				if not next_interactible.broken:
+					next_interactible.press()
+					update_crosses()
+					update_rail_outlines()
+			# Take accelerators
+			if next_interactible is Accelerator:
+				speed = next_interactible.instant_speed
+				%AudioAcceleration.play()
+			# Apply other interactible effects
+			if next_interactible is GenericInteractible:
+				next_interactible.interact()
 		# Move forward
 		if temp_progress > curr_section_length:
 			temp_progress -= curr_section_length
-			change_section(next_section())
+			var section_to_change := next_section()
+			change_section(section_to_change, get_section().out_sections.find(section_to_change))
 		progress = temp_progress
 	var carr_pos := calc_carriage_positions()
 	for i in range(carriages.size()):
@@ -133,9 +142,10 @@ func check_requirements(req_list: Array[String]) -> bool:
 		if req.begins_with("-"):
 			var rev_req := req.substr(1)
 			if rev_req in props:
-				# dirty exception for the saxophone
-				if rev_req != "start" or "cat" not in props:
-					return false
+				# Saxophone
+				if rev_req == "start" and "cat" in props:
+					continue
+				return false
 		else:
 			if req not in props:
 				return false
@@ -191,7 +201,18 @@ func change_direction(new_direction: bool):
 	update_rail_outlines()
 	update_crosses()
 
-func change_section(new_section: RailSection):
+func change_section(new_section: RailSection, out_idx: int):
+	assert(out_idx != -1)
+	# Remove potential effects
+	var req_ref := get_section().out_requirements_1 if out_idx == 0 else get_section().out_requirements_2
+	var props := get_properties()
+	if "-start" in req_ref and "cat" in props: # Cat eats mice
+		req_ref.remove_at(req_ref.find("-start"))
+	if "hub2_hard" in req_ref: # Fix broken rails
+		req_ref.remove_at(req_ref.find("hub2_hard"))
+	if "hub2" in req_ref: # Break rocks
+		req_ref.remove_at(req_ref.find("hub2"))
+	
 	# Leave current section
 	print("--- Change Section (leaving " + get_section().name + ") ---")
 	print("Current history (recent first): " + str(section_history))
@@ -237,6 +258,8 @@ func add_character(new_character: CharacterInfo):
 	update_characters()
 	update_rail_outlines()
 	update_crosses()
+	if new_character.name == "hub2":
+		%chef_locomotive2.set_ruddy(true)
 	Main.instance.character_attached(new_character)
 
 func remove_carriage(carriage: Carriage):
@@ -245,6 +268,8 @@ func remove_carriage(carriage: Carriage):
 	update_characters()
 	update_rail_outlines()
 	update_crosses()
+	if carriage.character.name == "hub2":
+		%chef_locomotive2.set_ruddy(false)
 	Main.instance.character_detached(carriage.character)
 
 func update_characters():

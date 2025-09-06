@@ -65,6 +65,11 @@ func _ready() -> void:
 func add_interactible(interactible: PathFollow3D):
 	interactibles.append(interactible)
 
+func remove_interactible(interactible: PathFollow3D):
+	var idx := interactibles.find(interactible)
+	if idx != -1:
+		interactibles.remove_at(idx)
+
 func get_next_interactible(prog: float) -> PathFollow3D:
 	if interactibles.is_empty():
 		return null
