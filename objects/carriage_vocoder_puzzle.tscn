@@ -1,0 +1,127 @@
+[gd_scene load_steps=12 format=3 uid="uid://cpmfmtw2hppiw"]
+
+[ext_resource type="PackedScene" uid="uid://bvlp4g2b1r1uw" path="res://objects/carriage.tscn" id="1_vqpoj"]
+[ext_resource type="PackedScene" uid="uid://c12k3jpftqlr2" path="res://scenes/wagon/wagon_vocoder.tscn" id="2_ieels"]
+[ext_resource type="Material" uid="uid://b5rk0ijtaea1a" path="res://materials/tb_off_mat_1.tres" id="3_lromx"]
+[ext_resource type="Shader" uid="uid://bshkwxxibuicx" path="res://materials/vocoder_off.gdshader" id="4_84e4v"]
+[ext_resource type="Material" uid="uid://55vfycg73ah7" path="res://materials/tb_off_mat_2.tres" id="5_ikuf7"]
+[ext_resource type="Texture2D" uid="uid://b45bdimu48rhl" path="res://assets/textures/no_power.png" id="6_ieels"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8puix"]
+render_priority = 0
+shader = ExtResource("4_84e4v")
+shader_parameter/color_1 = Color(0, 0, 0, 1)
+shader_parameter/color_2 = Color(1, 0, 0, 1)
+shader_parameter/period = 1.333
+
+[sub_resource type="Animation" id="Animation_lromx"]
+resource_name = "no_power"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_84e4v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ikuf7"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eh3mk"]
+_data = {
+&"RESET": SubResource("Animation_84e4v"),
+&"idle": SubResource("Animation_ikuf7"),
+&"no_power": SubResource("Animation_lromx")
+}
+
+[node name="CarriageVocoder" instance=ExtResource("1_vqpoj")]
+kick = 1.35
+is_tb = true
+
+[node name="MeshInstance3D" parent="." index="0"]
+visible = false
+
+[node name="wagon_vocoder" parent="ChildRender" index="0" instance=ExtResource("2_ieels")]
+transform = Transform3D(7.1723e-09, 0, -0.095, 0, 0.095, 0, 0.095, 0, 7.1723e-09, 0, 0, 0)
+
+[node name="wagon_vocoder" parent="ChildRender/wagon_vocoder/wagons_vocoder_mesh" index="0"]
+surface_material_override/0 = ExtResource("3_lromx")
+surface_material_override/1 = ExtResource("3_lromx")
+
+[node name="wagon_vocoder_vitre" parent="ChildRender/wagon_vocoder/wagons_vocoder_mesh" index="1"]
+surface_material_override/0 = SubResource("ShaderMaterial_8puix")
+surface_material_override/1 = SubResource("ShaderMaterial_8puix")
+surface_material_override/2 = SubResource("ShaderMaterial_8puix")
+surface_material_override/3 = SubResource("ShaderMaterial_8puix")
+
+[node name="roue_022" parent="ChildRender/wagon_vocoder/wagons_vocoder_mesh" index="2"]
+surface_material_override/0 = ExtResource("5_ikuf7")
+
+[node name="roue_023" parent="ChildRender/wagon_vocoder/wagons_vocoder_mesh" index="3"]
+surface_material_override/0 = ExtResource("5_ikuf7")
+
+[node name="roue_024" parent="ChildRender/wagon_vocoder/wagons_vocoder_mesh" index="4"]
+surface_material_override/0 = ExtResource("5_ikuf7")
+
+[node name="roue_025" parent="ChildRender/wagon_vocoder/wagons_vocoder_mesh" index="5"]
+surface_material_override/0 = ExtResource("5_ikuf7")
+
+[node name="roue_020" parent="ChildRender/wagon_vocoder/wagons_vocoder_mesh" index="6"]
+surface_material_override/0 = ExtResource("5_ikuf7")
+
+[node name="roue_021" parent="ChildRender/wagon_vocoder/wagons_vocoder_mesh" index="7"]
+surface_material_override/0 = ExtResource("5_ikuf7")
+
+[node name="roue_026" parent="ChildRender/wagon_vocoder/wagons_vocoder_mesh" index="8"]
+surface_material_override/0 = ExtResource("5_ikuf7")
+
+[node name="roue_027" parent="ChildRender/wagon_vocoder/wagons_vocoder_mesh" index="9"]
+surface_material_override/0 = ExtResource("5_ikuf7")
+
+[node name="NoPowerSprite" type="Sprite3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.88486, 0)
+billboard = 2
+texture = ExtResource("6_ieels")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NoPowerSprite" index="0"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_eh3mk")
+}
+autoplay = "no_power"
+
+[editable path="ChildRender/wagon_vocoder"]
+[editable path="ChildRender/wagon_vocoder/wagons_vocoder_mesh"]

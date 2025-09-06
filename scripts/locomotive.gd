@@ -9,6 +9,7 @@ enum SpeedMode {
 signal speed_mode_changed(new_speed: SpeedMode)
 signal character_attached(new_character: CharacterInfo)
 signal character_detached(new_character: CharacterInfo)
+signal tb_powered
 
 static var instance: Locomotive
 
@@ -261,7 +262,7 @@ func add_character(new_character: CharacterInfo):
 	update_crosses()
 	if new_character.name == "hub2":
 		%chef_locomotive2.set_ruddy(true)
-	
+	check_tb()
 	Main.instance.character_attached(new_character)
 
 func remove_carriage(carriage: Carriage):
@@ -272,7 +273,23 @@ func remove_carriage(carriage: Carriage):
 	update_crosses()
 	if carriage.character.name == "hub2":
 		%chef_locomotive2.set_ruddy(false)
+	check_tb()
 	Main.instance.character_detached(carriage.character)
+
+func check_tb():
+	if "tb_powered" not in additional_properties:
+		for i in range(carriages.size()):
+			for j in range(carriages.size()):
+				if carriages[i].character.name == "hub2_hard" and carriages[j].is_tb \
+						and (i == j - 1 or i == j + 1):
+					power_tb(carriages[j])
+					return
+
+func power_tb(tb_carriage: Carriage):
+	additional_properties.append("tb_powered")
+	tb_carriage.power()
+	%AudioPowerup.play()
+	tb_powered.emit()
 
 func update_characters():
 	Main.instance.update_characters_ui()

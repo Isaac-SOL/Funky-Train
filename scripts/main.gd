@@ -45,6 +45,7 @@ func _ready() -> void:
 	%CameraShakerMap.target_node = Locomotive.instance.get_minimap_pos()
 	%VBoxContainerTwoOptions.visible = two_options
 	%ButtonStart.visible = not two_options
+	Locomotive.instance.tb_powered.connect(_on_tb_powered)
 
 func stop_at_station(station: Station):
 	active_station = station
@@ -362,6 +363,10 @@ func _on_rhythm_notifier_beat(current_beat: int) -> void:
 	#tween.tween_method(rail_outline_beat, 0.15, 0.27, 0.03)
 	#tween.tween_method(rail_outline_beat, 0.27, 0.0, 0.53).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUAD)
 
+func _on_tb_powered():
+	for child in %HBoxContainerCharacters2.get_children():
+		if child is CharacterPortrait:
+			child.power_tb()
 
 func _on_start_button_puzzle_click_open() -> void:
 	%StartButtonPuzzle.open()

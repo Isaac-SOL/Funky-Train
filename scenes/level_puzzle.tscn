@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dxfmlf33ndxjm"]
+[gd_scene load_steps=45 format=3 uid="uid://dxfmlf33ndxjm"]
 
 [ext_resource type="Script" uid="uid://m2gs6g88kh3b" path="res://scripts/level.gd" id="1_34uqr"]
 [ext_resource type="Script" uid="uid://d3y48j1b2i22e" path="res://addons/zylann.hterrain/hterrain.gd" id="1_p00hf"]
@@ -22,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://b58auulia0ewn" path="res://scenes/object/nature/rocks/rock_2.tscn" id="19_yo56m"]
 [ext_resource type="PackedScene" uid="uid://cumpmjwkdpldv" path="res://scenes/object/nature/rocks/rock_3.tscn" id="20_82xxw"]
 [ext_resource type="PackedScene" uid="uid://ccjcib11h17yt" path="res://objects/signals/signal_periph.tscn" id="21_jh2by"]
-[ext_resource type="PackedScene" uid="uid://cr3udff6s6tbr" path="res://objects/signals/signal_tb.tscn" id="24_mv16x"]
 [ext_resource type="PackedScene" uid="uid://1odjtcrgduyp" path="res://objects/signals/signal_kim.tscn" id="26_82xxw"]
 [ext_resource type="PackedScene" uid="uid://bx081u0fhvkog" path="res://objects/signals/signal_slowdown.tscn" id="27_nphjl"]
 [ext_resource type="PackedScene" uid="uid://c35f85t150sg4" path="res://objects/signals/signal_tunnel_kim.tscn" id="29_hakj6"]
@@ -367,9 +366,6 @@ transform = Transform3D(0.731199, 0, 0.682164, 0, 1, 0, -0.682164, 0, 0.731199, 
 
 [node name="SignalPeriph5" parent="Signals" instance=ExtResource("21_jh2by")]
 transform = Transform3D(0.888473, 0, 0.458929, 0, 1, 0, -0.458929, 0, 0.888473, 53.7758, 0, 93.7926)
-
-[node name="SignalTB" parent="Signals" instance=ExtResource("24_mv16x")]
-transform = Transform3D(0.638553, 0, -0.769578, 0, 1, 0, 0.769578, 0, 0.638553, 38.668, 4.76837e-07, 137.042)
 
 [node name="SignalKim" parent="Signals" instance=ExtResource("26_82xxw")]
 transform = Transform3D(-0.351286, 0, 0.936268, 0, 1, 0, -0.936268, 0, -0.351286, -33.1033, 4.76837e-07, 108.206)

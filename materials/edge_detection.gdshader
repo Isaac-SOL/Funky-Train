@@ -69,7 +69,7 @@ void fragment() {
 	norm_depth = clamp(norm_depth, 0.0, 1.0);
 	norm_depth *= depth_gradient_strength;
 	bool pure_black = pixels[0].r == 0.0 && pixels[0].g == 0.0 && pixels[0].b == 0.0;
-	if (lin_depth > 250.0 || pure_black) {
+	if (lin_depth > 350.0 || pure_black) {
 		norm_depth = 0.0;
 	}
 
@@ -77,7 +77,7 @@ void fragment() {
 
 	float norm_depth_sobel = (lin_depth - sobel_max_depth) / (sobel_min_depth - sobel_max_depth);
 	norm_depth_sobel = clamp(norm_depth_sobel, 0.0, 1.0);
-	if (lin_depth <= 250.0) {
+	if (lin_depth <= 350.0) {
 		sobel_scalar *= mix(sobel_max, sobel_min, norm_depth_sobel);
 	}
 	sobel_scalar = 1.0 - sobel_scalar;
