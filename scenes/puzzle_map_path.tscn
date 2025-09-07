@@ -24,6 +24,12 @@ two_options = false
 [node name="Ground" parent="." index="3"]
 transform = Transform3D(6.851, 0, 0, 0, 1, 0, 0, 0, 6.057, -9.07588, -0.0472988, 36.5976)
 
+[node name="CameraShaker" parent="." index="4"]
+transform = Transform3D(-0.501843, 0, 0.864959, 0, 1, 0, -0.864959, 0, -0.501843, -43.6616, 1.11152, -75.4939)
+
+[node name="StartCamera" parent="." index="5"]
+transform = Transform3D(-0.501843, 0, 0.864959, 0, 1, 0, -0.864959, 0, -0.501843, -43.6616, 1.11152, -75.4939)
+
 [node name="Map" parent="CanvasLayer/GameUI/MinimapUI/MinimapParent/Mask" index="0"]
 texture = SubResource("ViewportTexture_1yk45")
 

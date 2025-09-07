@@ -1,6 +1,16 @@
 [style name="default_portrait_style"]
-if {first_time.first_saxo} == true:
-	saxo: The name's [color=#8ee5da]Parker[/color]. I'll go for a ride, but my car matches my standing, I'm not taking dangerous paths.
-	set {first_time.first_saxo} = false
+if {puzzle_mode} == true:
+	if {first_time.first_saxo} == true:
+		saxo: Let's gather up everyone! The name's [color=#8ee5da]Parker[/color]. They'll let you through these gates if they see I'm with you.
+		set {first_time.first_saxo} = false
+	else:
+		if {first_time.first_guitar} == true:
+			saxo: [color=#9e920e]Jimmy[/color] is in a pretty remote spot, but I can help you find him. Just... avoid the mice, please.
+		else:
+			saxo: No mice, okay?
 else:
-	saxo: Have you seen my friend [color=#e3c220]Louis[/color]?
+	if {first_time.first_saxo} == true:
+		saxo: The name's [color=#8ee5da]Parker[/color]. I'll go for a ride, but my car matches my standing, I'm not taking dangerous paths.
+		set {first_time.first_saxo} = false
+	else:
+		saxo: Have you seen my friend [color=#e3c220]Louis[/color]?

@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://capa820ir3vho"]
+[gd_scene load_steps=61 format=3 uid="uid://capa820ir3vho"]
 
 [ext_resource type="Script" uid="uid://m2gs6g88kh3b" path="res://scripts/level.gd" id="1_7agi7"]
 [ext_resource type="Script" uid="uid://d3y48j1b2i22e" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ppgk2"]
@@ -52,6 +52,8 @@ sun_color = Color(1, 1, 1, 1)
 sun_energy = 0.5
 depth_gradient_color = Color(1, 0.835294, 0, 1)
 depth_gradient_strength = 0.65
+sky_top_color = Color(1, 0.866667, 0, 1)
+sky_bottom_color = Color(0.98, 0, 0.212333, 1)
 metadata/_custom_type_script = "uid://c8wiyte6m05gp"
 
 [sub_resource type="Resource" id="Resource_lqb7q"]
@@ -60,6 +62,8 @@ sun_color = Color(1, 1, 1, 1)
 sun_energy = 0.4
 depth_gradient_color = Color(0.67451, 0.309804, 0.129412, 1)
 depth_gradient_strength = 0.7
+sky_top_color = Color(1, 0.866667, 0, 1)
+sky_bottom_color = Color(0.98, 0, 0.212333, 1)
 metadata/_custom_type_script = "uid://c8wiyte6m05gp"
 
 [sub_resource type="Resource" id="Resource_ok3ci"]
@@ -68,6 +72,8 @@ sun_color = Color(1, 0.72549, 0.25098, 1)
 sun_energy = 0.3
 depth_gradient_color = Color(0.72, 0, 0.156, 1)
 depth_gradient_strength = 0.55
+sky_top_color = Color(1, 0.866667, 0, 1)
+sky_bottom_color = Color(0.98, 0, 0.212333, 1)
 metadata/_custom_type_script = "uid://c8wiyte6m05gp"
 
 [sub_resource type="Resource" id="Resource_1tp2x"]
@@ -80,6 +86,8 @@ size = Vector3(44.7369, 13.1348, 94.0441)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kih21"]
 size = Vector3(36.4395, 13.1348, 54.6269)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_uhfbm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w3o6u"]
 size = Vector3(39.2105, 13.1348, 80.5752)
@@ -261,7 +269,7 @@ shader_params/u_roughness = 1.0
 shader_params/locomotive_data_screenspace = null
 metadata/_editor_icon = ExtResource("7_pqd0y")
 
-[node name="@Node3D@60762" type="Node3D" parent="HTerrain"]
+[node name="_Node3D_60762" type="Node3D" parent="HTerrain"]
 script = ExtResource("5_8gofh")
 layer_index = 8
 texture = ExtResource("17_kih21")
@@ -389,7 +397,7 @@ billboard = 0
 [node name="Signals" type="Node3D" parent="."]
 
 [node name="SignalQuicksand" parent="Signals" instance=ExtResource("26_556r4")]
-transform = Transform3D(0.948628, -0.108402, 0.297243, 0.113533, 0.993534, 9.87229e-07, -0.295321, 0.033746, 0.954802, -89.1879, -0.398549, 12.3478)
+transform = Transform3D(0.948628, -0.108402, 0.297243, 0.113533, 0.993534, 9.77396e-07, -0.295321, 0.033746, 0.954802, -89.1879, -0.398549, 12.3478)
 
 [node name="SignalVirage" parent="Signals" instance=ExtResource("27_556r4")]
 transform = Transform3D(0.878626, 0, -0.477511, 0, 1, 0, 0.477511, 0, 0.878626, 16.249, -4.76837e-07, -29.5776)
@@ -422,6 +430,7 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 unique_name_in_owner = true
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -47.0601, 0, -61.8394)
 script = ExtResource("33_2jdvr")
+follow_global_coordinates = true
 move_speed = 30.0
 rotation_speed = 30.0
 metadata/_custom_type_script = "uid://wrgu8dfp4pw3"
@@ -431,6 +440,7 @@ transform = Transform3D(-0.432684, -0.870867, 0.233186, 6.32298e-09, 0.25865, 0.
 
 [node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D"]
 transform = Transform3D(-40, 3.49691e-06, -1.35525e-20, 1.52855e-13, 1.74846e-06, -40, -3.49691e-06, -40, -1.74846e-06, 0, 250, 0)
+cast_shadow = 0
 texture = ExtResource("32_2e2fo")
 
 [node name="Node3D2" type="Node3D" parent="Sky/Node3DClouds"]
@@ -438,6 +448,7 @@ transform = Transform3D(0.252306, 0.948484, -0.191627, 1.49012e-08, 0.198034, 0.
 
 [node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D2"]
 transform = Transform3D(40, 0, 0, 0, -1.74846e-06, -40, 0, 40, -1.74846e-06, 0, 220, 0)
+cast_shadow = 0
 alpha_cut = 1
 texture = ExtResource("33_gur6y")
 
@@ -446,6 +457,7 @@ transform = Transform3D(-0.92274, -0.366789, 0.118392, 8.3819e-09, 0.307174, 0.9
 
 [node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D3"]
 transform = Transform3D(40, 0, 0, 0, -1.74846e-06, -40, 0, 40, -1.74846e-06, 0, 220, 0)
+cast_shadow = 0
 alpha_cut = 1
 texture = ExtResource("33_gur6y")
 
@@ -454,6 +466,7 @@ transform = Transform3D(0.675487, -0.708736, 0.203495, 0, 0.275973, 0.961165, -0
 
 [node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D4"]
 transform = Transform3D(40, 0, 0, 0, -1.74846e-06, -40, 0, 40, -1.74846e-06, 0, 220, 0)
+cast_shadow = 0
 alpha_cut = 1
 texture = ExtResource("34_asl66")
 
@@ -462,6 +475,7 @@ transform = Transform3D(0.974193, 0.211757, -0.0781465, 3.72529e-09, 0.346215, 0
 
 [node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D5"]
 transform = Transform3D(40, 0, 0, 0, -1.74846e-06, -40, 0, 40, -1.74846e-06, 0, 220, 0)
+cast_shadow = 0
 alpha_cut = 1
 texture = ExtResource("35_2jdvr")
 
@@ -474,6 +488,11 @@ shape = SubResource("BoxShape3D_7agi7")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D_plane"]
 transform = Transform3D(-0.0354402, 0, 0.999372, 0, 1, 0, -0.999372, 0, -0.0354402, 51.3215, 1.69164, -51.041)
 shape = SubResource("BoxShape3D_kih21")
+
+[node name="Area3D_snow" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_snow"]
+shape = SubResource("SphereShape3D_uhfbm")
 
 [node name="Area3D_beach" type="Area3D" parent="."]
 

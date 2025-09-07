@@ -1,4 +1,4 @@
-[gd_scene load_steps=409 format=4 uid="uid://pxhdnm53147j"]
+[gd_scene load_steps=440 format=4 uid="uid://pxhdnm53147j"]
 
 [ext_resource type="Script" uid="uid://hcgv0grqqm7y" path="res://scripts/rails_master.tres.gd" id="1_7cvav"]
 [ext_resource type="PackedScene" uid="uid://c7adtd3m5hihf" path="res://objects/rail_section.tscn" id="2_vwg2y"]
@@ -14,6 +14,8 @@
 [ext_resource type="ArrayMesh" uid="uid://bqovkg5pcfwmt" path="res://meshes/rails/TutoPuzzle_BeforeExit.tres" id="12_5d5x3"]
 [ext_resource type="ArrayMesh" uid="uid://b8l7tdp2c54qp" path="res://meshes/rails/TutoPuzzle_BeforeExit_minimap.tres" id="13_67sbk"]
 [ext_resource type="ArrayMesh" uid="uid://dlknmryk6ra8g" path="res://meshes/rails/TutoPuzzle_AfterExit.tres" id="14_6i355"]
+[ext_resource type="Script" uid="uid://c3ryf37qhvdje" path="res://scripts/dialog_interactible.gd" id="14_xcywb"]
+[ext_resource type="Script" uid="uid://di4q8eju5txb1" path="res://scripts/dialogue_info.gd" id="15_lwvo2"]
 [ext_resource type="ArrayMesh" uid="uid://biwhihhb282jo" path="res://meshes/rails/TutoPuzzle_AfterExit_minimap.tres" id="15_qer36"]
 [ext_resource type="ArrayMesh" uid="uid://bdkhinlaycf54" path="res://meshes/rails/TutoPuzzle_AfterStation.tres" id="16_uduki"]
 [ext_resource type="ArrayMesh" uid="uid://16twg10f8kv0" path="res://meshes/rails/TutoPuzzle_AfterStation_minimap.tres" id="17_bsrax"]
@@ -314,6 +316,14 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="Resource" id="Resource_tlgaq"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("33_lcjqk")
+text = "The gates shall open before me!"
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
 [sub_resource type="Curve3D" id="Curve3D_0bklj"]
 _data = {
 "points": PackedVector3Array(5.4619, 0.00684357, 1.60833, 4.51012, 0, 0.0680046, 0, 0, 0, -3.57175, 0, 3.07149, 3.57175, -0.0107136, -3.07149, 14.2567, 0, -5.3853),
@@ -402,6 +412,22 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="Resource" id="Resource_h85u6"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("33_lcjqk")
+text = "EW! I hate mice!!! Don't go there!"
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Resource" id="Resource_vsdku"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("261_58hlq")
+text = "Frrrrrr...."
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
 [sub_resource type="Curve3D" id="Curve3D_g05ey"]
 resource_local_to_scene = true
 _data = {
@@ -417,6 +443,14 @@ _data = {
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
+
+[sub_resource type="Resource" id="Resource_xcywb"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("261_58hlq")
+text = "Meow!!!"
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Curve3D" id="Curve3D_gv15s"]
 resource_local_to_scene = true
@@ -478,6 +512,14 @@ func _ready() -> void:
 			tween.tween_property(self, \"scale\", Vector3.ONE, 0.6)
 	)
 "
+
+[sub_resource type="Resource" id="Resource_lwvo2"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("150_qjdxd")
+text = "Haha, yeah!"
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Curve3D" id="Curve3D_dchte"]
 resource_local_to_scene = true
@@ -567,6 +609,14 @@ _data = {
 }
 point_count = 4
 
+[sub_resource type="Resource" id="Resource_a818s"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("50_h3suw")
+text = "Sorry, my rocket-car is way too tall for that tunnel."
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
 [sub_resource type="Curve3D" id="Curve3D_t336r"]
 resource_local_to_scene = true
 _data = {
@@ -590,6 +640,14 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
+
+[sub_resource type="Resource" id="Resource_uurin"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("50_h3suw")
+text = "There has to be a way for me to get through here..."
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Curve3D" id="Curve3D_22o8n"]
 resource_local_to_scene = true
@@ -647,6 +705,14 @@ _data = {
 }
 point_count = 4
 
+[sub_resource type="Resource" id="Resource_oj1si"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("150_qjdxd")
+text = "Booyah!"
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
 [sub_resource type="Curve3D" id="Curve3D_qjdxd"]
 resource_local_to_scene = true
 _data = {
@@ -686,6 +752,22 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
+
+[sub_resource type="Resource" id="Resource_1h65u"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("117_tn0y3")
+text = "I've been trying to leave this place for a while. I hope you can find the way!"
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Resource" id="Resource_crkdv"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("117_tn0y3")
+text = "Not touching that pepper, though."
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Curve3D" id="Curve3D_5l30y"]
 resource_local_to_scene = true
@@ -847,6 +929,14 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="Resource" id="Resource_fepkf"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("175_tn0y3")
+text = "Bzzzzt!"
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
 [sub_resource type="Curve3D" id="Curve3D_fepkf"]
 resource_local_to_scene = true
 _data = {
@@ -854,6 +944,22 @@ _data = {
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
+
+[sub_resource type="Resource" id="Resource_0mxho"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("33_lcjqk")
+text = "MORE MICE??? NOPE!"
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Resource" id="Resource_i27ou"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("261_58hlq")
+text = "Frrrrrrrr...."
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Curve3D" id="Curve3D_rptky"]
 resource_local_to_scene = true
@@ -895,6 +1001,22 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="Resource" id="Resource_5im0h"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("175_tn0y3")
+text = "I could fix that button over there..."
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Resource" id="Resource_cq20m"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("175_tn0y3")
+text = "I want to fix things"
+time = 5.0
+indentation = 1
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
 [sub_resource type="Curve3D" id="Curve3D_fmvqj"]
 resource_local_to_scene = true
 _data = {
@@ -911,6 +1033,14 @@ _data = {
 }
 point_count = 4
 
+[sub_resource type="Resource" id="Resource_b5inl"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("202_tn0y3")
+text = "It should be possible to get [color=#3e8548]Kim[/color] to come here, but it's pretty tricky..."
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
 [sub_resource type="Curve3D" id="Curve3D_l2rr4"]
 resource_local_to_scene = true
 _data = {
@@ -918,6 +1048,22 @@ _data = {
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
+
+[sub_resource type="Resource" id="Resource_mobv5"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("261_58hlq")
+text = "Purrrr...."
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Resource" id="Resource_isr3w"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("33_lcjqk")
+text = "Finally, we can come here."
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Curve3D" id="Curve3D_g5s28"]
 resource_local_to_scene = true
@@ -951,6 +1097,14 @@ _data = {
 }
 point_count = 4
 
+[sub_resource type="Resource" id="Resource_e46uc"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("150_qjdxd")
+text = "The sound of my drums could break that bridge! That's a bad idea!"
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
 [sub_resource type="Curve3D" id="Curve3D_k0bsl"]
 resource_local_to_scene = true
 _data = {
@@ -958,6 +1112,14 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
+
+[sub_resource type="Resource" id="Resource_o7mru"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("175_tn0y3")
+text = "I know a friend who could help us here... I think."
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Curve3D" id="Curve3D_nmdfd"]
 resource_local_to_scene = true
@@ -975,6 +1137,22 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="Resource" id="Resource_i064o"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("150_qjdxd")
+text = "Thanks! I'm free!"
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
+[sub_resource type="Resource" id="Resource_6enla"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("209_mt8tr")
+text = "0000000H YEAH!"
+time = 5.0
+indentation = 1
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
 [sub_resource type="Curve3D" id="Curve3D_v60lx"]
 resource_local_to_scene = true
 _data = {
@@ -991,6 +1169,14 @@ _data = {
 }
 point_count = 4
 
+[sub_resource type="Resource" id="Resource_kluvy"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("175_tn0y3")
+text = "All fixed, and already pressed!"
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
 [sub_resource type="Curve3D" id="Curve3D_fliub"]
 resource_local_to_scene = true
 _data = {
@@ -1006,6 +1192,14 @@ _data = {
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
+
+[sub_resource type="Resource" id="Resource_15ad7"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("50_h3suw")
+text = "We can go left if we go fast!"
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Curve3D" id="Curve3D_kluvy"]
 resource_local_to_scene = true
@@ -1028,6 +1222,14 @@ _surfaces = [{
 "vertex_count": 736,
 "vertex_data": PackedByteArray("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")
 }]
+
+[sub_resource type="Resource" id="Resource_dg4n0"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("50_h3suw")
+text = "Weeeeeeeeee!!!"
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Curve3D" id="Curve3D_wnrwt"]
 resource_local_to_scene = true
@@ -1068,6 +1270,14 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
+
+[sub_resource type="Resource" id="Resource_xd5gf"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("150_qjdxd")
+text = "Woooohoo!"
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Curve3D" id="Curve3D_mt8tr"]
 resource_local_to_scene = true
@@ -1132,6 +1342,14 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
+
+[sub_resource type="Resource" id="Resource_l0182"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("117_tn0y3")
+text = "This one looks pretty tricky."
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Curve3D" id="Curve3D_tlgaq"]
 resource_local_to_scene = true
@@ -1237,6 +1455,14 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="Resource" id="Resource_bc7tp"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("150_qjdxd")
+text = "Boom!"
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
 [sub_resource type="Curve3D" id="Curve3D_vsdku"]
 resource_local_to_scene = true
 _data = {
@@ -1321,6 +1547,14 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="Resource" id="Resource_ry1mc"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("175_tn0y3")
+text = "I can fix anything!"
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
+
 [node name="PuzzleMap" type="Node3D"]
 script = ExtResource("1_7cvav")
 metadata/_custom_type_script = "uid://hcgv0grqqm7y"
@@ -1345,8 +1579,8 @@ transform = Transform3D(0.296938, 0, 0.954881, 0, 0.999986, 0, -0.954884, 0, 0.2
 progress = 5.94844
 
 [node name="Locomotive" parent="TutorialPuzzle/TutoPuzzle_Start" instance=ExtResource("5_65ikq")]
-transform = Transform3D(0.202731, 0, 0.979184, 0, 0.999952, 0, -0.979186, 0, 0.202731, -9.56617, 0, -2.84998)
-progress = 9.98606
+transform = Transform3D(-0.547858, 0, 0.836513, 0, 0.999952, 0, -0.836514, 0, -0.547857, -18.6455, 0, -1.56258)
+progress = 19.4238
 
 [node name="TutoPuzzle_StartR" parent="TutorialPuzzle" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.8475, 0, -64.531)
@@ -1411,6 +1645,15 @@ mesh = ExtResource("13_67sbk")
 
 [node name="CrossFollow" parent="TutorialPuzzle/TutoPuzzle_BeforeExit" index="3"]
 transform = Transform3D(-0.159358, 0, -0.987209, 0, 0.999962, 0, 0.987212, 0, -0.159357, 0, 0, 0)
+
+[node name="DialogInteractible" type="PathFollow3D" parent="TutorialPuzzle/TutoPuzzle_BeforeExit"]
+transform = Transform3D(-0.154761, 0, -0.987949, 0, 1, 0, 0.987949, 0, -0.154761, 1.65703, 0, 0.263945)
+progress = 1.67773
+script = ExtResource("14_xcywb")
+trigger_once = true
+requirements = Array[String](["start"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_tlgaq")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
 
 [node name="TutoPuzzle_AfterExit" parent="TutorialPuzzle" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0727, 0, -40.4475)
@@ -1634,6 +1877,22 @@ mesh = ExtResource("45_khkcs")
 [node name="CrossFollow" parent="PreHub1/PreHub1_Entrance_s_s_s" index="3"]
 transform = Transform3D(-0.0136978, 0, -0.999904, 0, 1, 0, 0.999904, 0, -0.0136978, 0, 0, 0)
 
+[node name="DialogInteractible" type="PathFollow3D" parent="PreHub1/PreHub1_Entrance_s_s_s"]
+transform = Transform3D(-0.00412443, 0, -0.99999, 0, 1, 0, 0.99999, 0, -0.00412443, 4.49336, 0, 0.0350888)
+progress = 4.49353
+script = ExtResource("14_xcywb")
+requirements = Array[String](["start", "-cat"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_h85u6")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
+
+[node name="DialogInteractible2" type="PathFollow3D" parent="PreHub1/PreHub1_Entrance_s_s_s"]
+transform = Transform3D(-0.00267938, 0, -0.999995, 0, 1, 0, 0.999995, 0, -0.00267938, 11.8445, 0, 0.0529897)
+progress = 11.8446
+script = ExtResource("14_xcywb")
+requirements = Array[String](["cat"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_vsdku")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
+
 [node name="PreHub1_Entrance_s_s_s_s" parent="PreHub1" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97796, 0, -7.78324)
 curve = SubResource("Curve3D_g05ey")
@@ -1671,8 +1930,17 @@ transform = Transform3D(-0.294246, 0, -0.955727, 0, 1, 0, 0.955727, 0, -0.294246
 progress = 4.19692
 
 [node name="MouseObstacle" parent="PreHub1/PreHub1_Buffer" instance=ExtResource("46_qjdxd")]
-transform = Transform3D(-0.337128, 0, -0.941458, 0, 1, 0, 0.941458, 0, -0.337128, 5.04116, 0, 1.11621)
+transform = Transform3D(-0.337128, 0, -0.941458, 0, 1, 0, 0.941458, 0, -0.337128, 5.04117, 0, 1.11621)
 progress = 5.18006
+
+[node name="DialogInteractible" type="PathFollow3D" parent="PreHub1/PreHub1_Buffer"]
+transform = Transform3D(-0.4063, 0, -0.913738, 0, 1, 0, 0.913738, 0, -0.4063, 6.36822, 0, 1.6462)
+progress = 6.60932
+script = ExtResource("14_xcywb")
+trigger_once = true
+requirements = Array[String](["cat"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_xcywb")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
 
 [node name="PreHub1_Buffer_s" parent="PreHub1" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.14128, 0, -1.22858)
@@ -1702,7 +1970,7 @@ mesh = ExtResource("52_yqinq")
 mesh = ExtResource("53_14v6j")
 
 [node name="CrossFollow" parent="PreHub1/PreHub1_Buffer_s_s" index="3"]
-transform = Transform3D(0.0144905, 0, 0.999863, 0, 1, 0, -0.999863, 0, 0.0144905, 0, 0, 0)
+transform = Transform3D(0.0144905, 0, 0.999861, 0, 1, 0, -0.999861, 0, 0.0144905, 0, 0, 0)
 
 [node name="StationHub1_1" parent="PreHub1/PreHub1_Buffer_s_s" instance=ExtResource("32_sxdtl")]
 transform = Transform3D(-0.0103523, 0, 0.999945, 0, 1, 0, -0.999945, 0, -0.0103523, -15.1889, 0, 0.0684377)
@@ -1749,8 +2017,17 @@ progress = 3.22412
 script = SubResource("GDScript_yfycn")
 
 [node name="RockInteractible" parent="PreHub1/PreHub1_toLoop" instance=ExtResource("209_h3suw")]
-transform = Transform3D(-0.685386, 0, 0.728179, 0, 1, 0, -0.728179, 0, -0.685386, -1.68251, 0, 3.51163)
+transform = Transform3D(-0.685386, 0, 0.728178, 0, 1, 0, -0.728178, 0, -0.685386, -1.68251, 0, 3.51163)
 progress = 4.02803
+
+[node name="DialogInteractible" type="PathFollow3D" parent="PreHub1/PreHub1_toLoop"]
+transform = Transform3D(-0.491377, 0, 0.870947, 0, 1, 0, -0.870947, 0, -0.491377, -4.47589, 0, 5.48326)
+progress = 7.45524
+script = ExtResource("14_xcywb")
+trigger_once = true
+requirements = Array[String](["hub2"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_lwvo2")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
 
 [node name="Hub1" type="Node3D" parent="."]
 script = ExtResource("1_7cvav")
@@ -1972,6 +2249,14 @@ skeleton = NodePath("../../..")
 transform = Transform3D(-0.650899, 0, 0.759152, 0, 1, 0, -0.759152, 0, -0.650899, -3.62935, 0, 1.40281)
 progress = 3.98163
 
+[node name="DialogInteractible" type="PathFollow3D" parent="Hub1/Hub1To2/Hub1Inner"]
+transform = Transform3D(-0.660516, 0, -0.750811, 0, 1, 0, 0.750811, 0, -0.660516, -2.28339, 0, 16.6514)
+progress = 21.3788
+script = ExtResource("14_xcywb")
+requirements = Array[String](["hub1"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_a818s")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
+
 [node name="Hub1Inner_s" parent="Hub1/Hub1To2" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.04, 0, 30.5343)
 curve = SubResource("Curve3D_t336r")
@@ -2027,7 +2312,7 @@ progress = 8.41494
 rail_to_toggle = NodePath("..")
 
 [node name="Pepper" parent="Hub1/Hub1To2/Hub1To2_Interr" instance=ExtResource("84_mt8tr")]
-transform = Transform3D(0.35858, 0, -0.933499, 0, 1, 0, 0.933499, 0, 0.35858, 2.44094, 0, -2.19046)
+transform = Transform3D(0.358579, 0, -0.933499, 0, 1, 0, 0.933499, 0, 0.358579, 2.44094, 0, -2.19047)
 progress = 3.36737
 
 [node name="Hub1To2_Interr_s" parent="Hub1/Hub1To2" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
@@ -2053,6 +2338,14 @@ progress = 5.12404
 
 [node name="CrossCenter" parent="Hub1/Hub1To2/Hub1To2_Interr_s/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
+
+[node name="DialogInteractible" type="PathFollow3D" parent="Hub1/Hub1To2/Hub1To2_Interr_s"]
+transform = Transform3D(-0.957618, -9.50361e-06, 0.288039, -1.32089e-05, 1, -1.09202e-05, -0.288039, -1.4262e-05, -0.957618, 1.19934, 0.000103192, 7.36791)
+progress = 7.79371
+script = ExtResource("14_xcywb")
+requirements = Array[String](["hub1"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_uurin")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
 
 [node name="Hub1To2_Interr_s_s" parent="Hub1/Hub1To2" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.286833, 0.00012207, 59.6227)
@@ -2129,7 +2422,7 @@ rebake_with_tilt = true
 rebake_force_up = true
 
 [node name="CrossFollow" parent="Hub1/Hub1To2/Hub2To1" index="3"]
-transform = Transform3D(0.795792, 0.0102878, -0.605454, -0.0568122, 0.9967, -0.0577392, 0.602859, 0.0803468, 0.793776, 2.68301, 0.106366, -2.93)
+transform = Transform3D(0.795787, 0.0102878, -0.605454, -0.0568119, 0.9967, -0.0577392, 0.602856, 0.0803468, 0.793776, 2.68301, 0.106366, -2.93)
 progress = 3.97781
 
 [node name="CrossCenter" parent="Hub1/Hub1To2/Hub2To1/CrossFollow/CrossTween" index="0"]
@@ -2224,7 +2517,7 @@ mesh = ExtResource("93_14v6j")
 material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Hub1/Hub1To2/Hub1Inner_Bridge_s" index="3"]
-transform = Transform3D(-0.0288025, 0, -0.999572, 0, 1, 0, 0.999572, 0, -0.0288025, 2.92966, 0, 0.0699712)
+transform = Transform3D(-0.0288024, 0, -0.99957, 0, 1, 0, 0.99957, 0, -0.0288024, 2.92966, 0, 0.0699712)
 progress = 2.93061
 
 [node name="CrossCenter" parent="Hub1/Hub1To2/Hub1Inner_Bridge_s/CrossFollow/CrossTween" index="0"]
@@ -2282,8 +2575,17 @@ progress = 3.38159
 script = SubResource("GDScript_yfycn")
 
 [node name="RockInteractible" parent="Hub1/Hub1ToPeriph/Hub1ToPeriph_Loop" instance=ExtResource("100_lcjqk")]
-transform = Transform3D(-0.776891, 0, 0.629635, 0, 1, 0, -0.629635, 0, -0.776891, -1.51488, 0, 4.0218)
+transform = Transform3D(-0.776891, 0, 0.629635, 0, 1, 0, -0.629635, 0, -0.776891, -1.51488, 0, 4.02181)
 progress = 4.39749
+
+[node name="DialogInteractible" type="PathFollow3D" parent="Hub1/Hub1ToPeriph/Hub1ToPeriph_Loop"]
+transform = Transform3D(-0.367201, 0, 0.930141, 0, 1, 0, -0.930141, 0, -0.367201, -5.0297, 0, 6.58351)
+progress = 8.79497
+script = ExtResource("14_xcywb")
+trigger_once = true
+requirements = Array[String](["hub2"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_oj1si")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
 
 [node name="Hub1ToPeriph_Loop_s" parent="Hub1/Hub1ToPeriph" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.8519, 0, 3.50409)
@@ -2405,7 +2707,25 @@ mesh = ExtResource("79_8blpd")
 skeleton = NodePath("../../..")
 
 [node name="CrossFollow" parent="Maze/MazeEntranceLoop/RailMazeEntranceLoop1True" index="3"]
-transform = Transform3D(0.0138044, 0, -0.999879, 0, 1, 0, 0.999879, 0, 0.0138044, 0, 0, 0)
+transform = Transform3D(0.0138044, 0, -0.999877, 0, 1, 0, 0.999877, 0, 0.0138044, 0, 0, 0)
+
+[node name="DialogInteractible" type="PathFollow3D" parent="Maze/MazeEntranceLoop/RailMazeEntranceLoop1True"]
+transform = Transform3D(0.00259371, 0, -0.999996, 0, 1, 0, 0.999996, 0, 0.00259371, 2.75023, 0, -0.0155203)
+progress = 2.7505
+script = ExtResource("14_xcywb")
+trigger_once = true
+requirements = Array[String](["maze"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_1h65u")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
+
+[node name="DialogInteractible2" type="PathFollow3D" parent="Maze/MazeEntranceLoop/RailMazeEntranceLoop1True"]
+transform = Transform3D(0.00113721, 0, -0.999998, 0, 1, 0, 0.999998, 0, 0.00113721, 20.4794, 0, -0.00888674)
+progress = 20.4795
+script = ExtResource("14_xcywb")
+trigger_once = true
+requirements = Array[String](["maze"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_crkdv")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
 
 [node name="RailMazeEntranceLoop3" parent="Maze/MazeEntranceLoop" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.1418, 0, -0.0275548)
@@ -2429,7 +2749,7 @@ transform = Transform3D(0.43277, 0, -0.901495, 0, 1, 0, 0.901495, 0, 0.43277, 2.
 progress = 2.80829
 
 [node name="Pepper" parent="Maze/MazeEntranceLoop/RailMazeEntranceLoop3" instance=ExtResource("84_mt8tr")]
-transform = Transform3D(0.473896, 0, -0.880581, 0, 1, 0, 0.880581, 0, 0.473896, 2.98137, 0, -0.765786)
+transform = Transform3D(0.473896, 0, -0.880581, 0, 1, 0, 0.880581, 0, 0.473896, 2.98138, 0, -0.765788)
 progress = 3.10956
 
 [node name="RailMazeEntranceLoop4" parent="Maze/MazeEntranceLoop" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
@@ -2470,7 +2790,7 @@ mesh = ExtResource("85_46scn")
 skeleton = NodePath("../../..")
 
 [node name="CrossFollow" parent="Maze/MazeEntranceLoop/RailMazeEntranceLoopToExit" index="3"]
-transform = Transform3D(0.000295468, 0, 0.999973, 0, 1, 0, -0.999973, 0, 0.000295468, -3.91247, 0, -0.0219596)
+transform = Transform3D(0.000295468, 0, 0.999971, 0, 1, 0, -0.999971, 0, 0.000295468, -3.91247, 0, -0.0219596)
 progress = 3.9127
 
 [node name="RailMazeEntranceLoop5" parent="Maze/MazeEntranceLoop" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
@@ -2548,7 +2868,7 @@ transform = Transform3D(0.0558819, 0, 0.998436, 0, 1, 0, -0.998436, 0, 0.0558819
 progress = 3.83381
 
 [node name="Pepper" parent="Maze/RailSecondToEntrance" instance=ExtResource("84_mt8tr")]
-transform = Transform3D(0.0667258, 0, 0.997769, 0, 1, 0, -0.997769, 0, 0.0667258, -4.68878, 0, -0.106259)
+transform = Transform3D(0.066726, 0, 0.997769, 0, 1, 0, -0.997769, 0, 0.066726, -4.68878, 0, -0.10626)
 progress = 4.6926
 
 [node name="RailSecondToExit" parent="Maze" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
@@ -2629,7 +2949,7 @@ progress = 7.1973
 rail_to_toggle = NodePath("../../../MazeThirdLoop/RailMazeThirdLoop1")
 
 [node name="Pepper" parent="Maze/MazeSecondLoop/RailMazeSecondLoop3" instance=ExtResource("84_mt8tr")]
-transform = Transform3D(0.263002, 0, -0.964795, 0, 1, 0, 0.964795, 0, 0.263002, 3.4524, 0, -0.467265)
+transform = Transform3D(0.263002, 0, -0.964795, 0, 1, 0, 0.964795, 0, 0.263002, 3.4524, 0, -0.467266)
 progress = 3.4954
 
 [node name="RailMazeSecondLoop4" parent="Maze/MazeSecondLoop" node_paths=PackedStringArray("in_sections", "out_sections", "toggle_barrier") instance=ExtResource("2_vwg2y")]
@@ -2716,7 +3036,7 @@ degrees_left = -61.714
 degrees_right = 60.0
 
 [node name="FruitInteractible" parent="Maze/MazeThirdLoop/RailMazeThirdLoop1" instance=ExtResource("144_tn0y3")]
-transform = Transform3D(-0.691726, 0, -0.722159, 0, 1, 0, 0.722159, 0, -0.691726, 3.82749, 0, 1.89374)
+transform = Transform3D(-0.691726, 0, -0.722159, 0, 1, 0, 0.722159, 0, -0.691726, 3.82748, 0, 1.89374)
 progress = 4.36897
 
 [node name="RailMazeThirdLoop2" parent="Maze/MazeThirdLoop" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
@@ -2828,8 +3148,17 @@ transform = Transform3D(-0.955902, -2.44764e-07, -0.293678, 2.38838e-07, 1, -1.6
 progress = 5.50536
 
 [node name="InteractibleSmoke" parent="Hub2/Hub2_BigLoop_s" instance=ExtResource("158_ptu7g")]
-transform = Transform3D(-0.950406, -2.29188e-07, -0.311012, 2.67689e-07, 1, -1.55493e-06, 0.311012, -1.56107e-06, -0.950406, 1.31626, 7.66378e-06, 6.03566)
+transform = Transform3D(-0.950406, -2.29188e-07, -0.311012, 2.67689e-07, 1, -1.55493e-06, 0.311012, -1.56107e-06, -0.950406, 1.31626, 7.66379e-06, 6.03566)
 progress = 6.19173
+
+[node name="DialogInteractible" type="PathFollow3D" parent="Hub2/Hub2_BigLoop_s"]
+transform = Transform3D(-0.915443, 1.87775e-07, -0.402447, 3.75719e-07, 1, -3.8806e-07, 0.402447, -5.06455e-07, -0.915443, 2.79538, 1.21797e-05, 9.89287)
+progress = 10.3244
+script = ExtResource("14_xcywb")
+trigger_once = true
+requirements = Array[String](["hub2_hard"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_fepkf")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
 
 [node name="Hub2_BigLoop_c" parent="Hub2" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.4898, 0.00024414, 90.1182)
@@ -2847,6 +3176,23 @@ mesh = ExtResource("155_gjyyb")
 [node name="CrossFollow" parent="Hub2/Hub2_BigLoop_c" index="3"]
 transform = Transform3D(-0.999992, 0, 0.00322356, 0, 1, 0, -0.00322356, 0, -0.999992, 0.169334, 0, 5.44263)
 progress = 5.44661
+
+[node name="DialogInteractible" type="PathFollow3D" parent="Hub2/Hub2_BigLoop_c"]
+transform = Transform3D(-0.99995, 0, 0.00995563, 0, 1, 0, -0.00995563, 0, -0.99995, 0.16507, 0, 6.08827)
+progress = 6.09226
+script = ExtResource("14_xcywb")
+trigger_once = true
+requirements = Array[String](["start", "-cat"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_0mxho")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
+
+[node name="DialogInteractible2" type="PathFollow3D" parent="Hub2/Hub2_BigLoop_c"]
+transform = Transform3D(-0.998677, 0, 0.051405, 0, 1, 0, -0.051405, 0, -0.998677, 0.0441965, 0, 10.0699)
+progress = 10.076
+script = ExtResource("14_xcywb")
+requirements = Array[String](["cat"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_i27ou")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
 
 [node name="Hub2_BigLoop_s_s" parent="Hub2" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.093, 0.000244141, 105.141)
@@ -2967,6 +3313,14 @@ progress = 3.3775
 [node name="CrossCenter" parent="Hub2/Hub2_BigLoop_s_s_s_s_s_s/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
 
+[node name="DialogInteractible" type="PathFollow3D" parent="Hub2/Hub2_BigLoop_s_s_s_s_s_s"]
+transform = Transform3D(0.999954, -1.7432e-07, -0.00958817, 1.19876e-07, 1, -5.67877e-06, 0.00958817, 5.67736e-06, 0.999954, 0.094538, 2.72946e-05, -5.44156)
+progress = 5.44263
+script = ExtResource("14_xcywb")
+requirements = Array[String](["hub2_hard"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_5im0h"), SubResource("Resource_cq20m")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
+
 [node name="Hub2_BigLoop_s_s_s_s_s_s_s" parent="Hub2" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5874, 0.00012207, 79.9594)
 curve = SubResource("Curve3D_fmvqj")
@@ -3012,6 +3366,15 @@ transform = Transform3D(-0.0178527, 0, -0.999827, 0, 1, 0, 0.999827, 0, -0.01785
 [node name="CrossCenter" parent="Hub2/Hub2_BigLoop_s_s_s_s_s_s_s_s/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
 
+[node name="DialogInteractible" type="PathFollow3D" parent="Hub2/Hub2_BigLoop_s_s_s_s_s_s_s_s"]
+transform = Transform3D(0.0242364, 0, -0.999706, 0, 1, 0, 0.999706, 0, 0.0242364, 6.46153, 0, -0.0542242)
+progress = 6.46221
+script = ExtResource("14_xcywb")
+trigger_once = true
+requirements = Array[String](["hub2_puzzle1"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_b5inl")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
+
 [node name="Hub2_Extras" type="Node3D" parent="Hub2"]
 script = ExtResource("1_7cvav")
 metadata/_custom_type_script = "uid://hcgv0grqqm7y"
@@ -3044,8 +3407,26 @@ progress = 3.44843
 script = SubResource("GDScript_yfycn")
 
 [node name="MouseObstacle" parent="Hub2/Hub2_Extras/Hub2_Extras" instance=ExtResource("46_qjdxd")]
-transform = Transform3D(-0.991138, -2.73708e-13, -0.132817, -3.5986e-12, 1, 2.47936e-11, 0.132817, 2.50519e-11, -0.991138, 0.184978, -7.41605e-11, 4.26635)
+transform = Transform3D(-0.991138, -2.73712e-13, -0.132817, -3.5986e-12, 1, 2.47936e-11, 0.132817, 2.50519e-11, -0.991138, 0.184977, -7.41604e-11, 4.26635)
 progress = 4.2822
+
+[node name="DialogInteractible" type="PathFollow3D" parent="Hub2/Hub2_Extras/Hub2_Extras"]
+transform = Transform3D(-0.987518, -5.16726e-14, -0.157507, -4.23637e-12, 1, 2.62326e-11, 0.157507, 2.65724e-11, -0.987518, 0.399093, -1.1169e-10, 5.71581)
+progress = 5.74732
+script = ExtResource("14_xcywb")
+trigger_once = true
+requirements = Array[String](["cat"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_mobv5")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
+
+[node name="DialogInteractible2" type="PathFollow3D" parent="Hub2/Hub2_Extras/Hub2_Extras"]
+transform = Transform3D(-0.982132, -4.30489e-13, -0.188182, -5.06074e-12, 1, 2.41247e-11, 0.188182, 2.46461e-11, -0.982132, 1.46274, -2.6601e-10, 11.5458)
+progress = 11.6738
+script = ExtResource("14_xcywb")
+trigger_once = true
+requirements = Array[String](["start"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_isr3w")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
 
 [node name="Hub2_Extras_s" parent="Hub2/Hub2_Extras" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.7355, 0.000244141, 123.77)
@@ -3147,6 +3528,14 @@ transform = Transform3D(-0.106702, 1.0779e-05, 0.994286, -2.58002e-06, 1, -1.111
 progress = 20.3546
 waiting_character = ExtResource("175_tn0y3")
 
+[node name="DialogInteractible" type="PathFollow3D" parent="Hub2/Hub2_Extras/Hub2_Extras2_s"]
+transform = Transform3D(0.176761, -1.06344e-05, 0.984252, -2.06449e-06, 1, 1.11753e-05, -0.984252, -4.00734e-06, 0.176761, -25.0976, 9.12242e-05, 10.0944)
+progress = 29.4163
+script = ExtResource("14_xcywb")
+requirements = Array[String](["hub2"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_e46uc")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
+
 [node name="Hub2_Extras2_s_s" parent="Hub2/Hub2_Extras" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.6321, 0.000244141, 150.575)
 curve = SubResource("Curve3D_k0bsl")
@@ -3170,6 +3559,14 @@ progress = 4.36206
 
 [node name="CrossCenter" parent="Hub2/Hub2_Extras/Hub2_Extras2_s_s/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
+
+[node name="DialogInteractible" type="PathFollow3D" parent="Hub2/Hub2_Extras/Hub2_Extras2_s_s"]
+transform = Transform3D(0.468765, 0, -0.883321, 0, 1, 0, 0.883321, 0, 0.468765, 4.17258, 0, -8.91418)
+progress = 11.2076
+script = ExtResource("14_xcywb")
+requirements = Array[String](["hub2_hard", "-hub3"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_o7mru")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
 
 [node name="Hub2_Extras2_s_s_s" parent="Hub2/Hub2_Extras" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5178, 0.000244141, 139.669)
@@ -3218,8 +3615,16 @@ progress = 4.34459
 script = SubResource("GDScript_yfycn")
 
 [node name="TBGate" parent="Hub2/Hub2_Extras/Hub2_Extras3" instance=ExtResource("193_5mbcm")]
-transform = Transform3D(0.745493, 0, -0.666513, 0, 1, 0, 0.666513, 0, 0.745493, 4.0704, 0, -2.02535)
+transform = Transform3D(0.745492, 0, -0.666514, 0, 1, 0, 0.666514, 0, 0.745492, 4.0704, 0, -2.02534)
 progress = 4.63914
+
+[node name="DialogInteractible" type="PathFollow3D" parent="Hub2/Hub2_Extras/Hub2_Extras3"]
+transform = Transform3D(0.172629, 0, -0.984987, 0, 1, 0, 0.984987, 0, 0.172629, 0, 0, 0)
+script = ExtResource("14_xcywb")
+trigger_once = true
+requirements = Array[String](["hub3", "hub2"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_i064o"), SubResource("Resource_6enla")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
 
 [node name="Hub2_Extras4" parent="Hub2/Hub2_Extras" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.6321, 0.000244141, 150.575)
@@ -3280,6 +3685,15 @@ progress = 18.1738
 rail_to_toggle = NodePath("../../Hub2to3_Middle_s")
 broken = true
 
+[node name="DialogInteractible" type="PathFollow3D" parent="Hub2to3/Hub2to3_Interr"]
+transform = Transform3D(0.948789, 1.00626e-10, -0.315905, -1.25361e-10, 1, -5.79779e-11, 0.315905, 9.46112e-11, 0.948789, -14.4193, -1.15042e-10, -11.664)
+progress = 21.4878
+script = ExtResource("14_xcywb")
+trigger_once = true
+requirements = Array[String](["hub2_hard"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_kluvy")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
+
 [node name="Hub2to3_Interr_s" parent="Hub2to3" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.9233, 0.000244141, 84.7409)
 curve = SubResource("Curve3D_fliub")
@@ -3307,7 +3721,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4225, 0.000244141, 106.93
 curve = SubResource("Curve3D_71cpq")
 in_sections = [NodePath("../../Hub2/Hub2_BigLoop_s_s_s_s")]
 out_sections = [NodePath("../Hub2to3_Entrance_s"), NodePath("../Hub2to3_Middle")]
-out_requirements_1 = Array[String](["hub1"])
+out_requirements_1 = Array[String](["hub1", "superspeed"])
 
 [node name="BakedRailsMesh" parent="Hub2to3/Hub2to3_Entrance" index="0"]
 mesh = ExtResource("177_jq27k")
@@ -3332,6 +3746,14 @@ script = SubResource("GDScript_yfycn")
 [node name="FruitInteractible" parent="Hub2to3/Hub2to3_Entrance" instance=ExtResource("144_tn0y3")]
 transform = Transform3D(0.148141, 0, 0.988965, 0, 1, 0, -0.988965, 0, 0.148141, -3.84348, 0, -1.01895)
 progress = 3.99646
+
+[node name="DialogInteractible" type="PathFollow3D" parent="Hub2to3/Hub2to3_Entrance"]
+transform = Transform3D(0.116867, 0, 0.993146, 0, 1, 0, -0.993146, 0, 0.116867, -5.20069, 0, -1.19932)
+progress = 5.36564
+script = ExtResource("14_xcywb")
+requirements = Array[String](["hub1"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_15ad7")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
 
 [node name="Hub2to3_Entrance_s" parent="Hub2to3" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.8827, 0.000244141, 105.497)
@@ -3362,7 +3784,7 @@ script = SubResource("GDScript_yfycn")
 [node name="StationHub2Puzzle1" parent="Hub2to3/Hub2to3_Entrance_s" instance=ExtResource("32_sxdtl")]
 transform = Transform3D(0.969401, 0.00235069, -0.245376, -0.00242475, 0.999997, 0, 0.245376, 0.000594996, 0.969403, -17.4967, -3.7835e-10, 4.85857)
 progress = 95.534
-waiting_character = ExtResource("202_tn0y3")
+waiting_character = ExtResource("202_qjdxd")
 
 [node name="SidesMesh" type="MeshInstance3D" parent="Hub2to3/Hub2to3_Entrance_s" node_paths=PackedStringArray("path")]
 cast_shadow = 2
@@ -3377,9 +3799,17 @@ skip_first = 250
 skip_last = 100
 
 [node name="Accelerator" parent="Hub2to3/Hub2to3_Entrance_s" instance=ExtResource("106_gjyyb")]
-transform = Transform3D(-0.999222, -4.05219e-11, 0.0394246, -4.05534e-11, 1, -2.7105e-19, -0.0394246, -1.5988e-12, -0.999222, -7.88656, -3.7835e-10, 11.9627)
+transform = Transform3D(-0.999222, -4.05219e-11, 0.0394241, -4.05534e-11, 1, -1.6263e-19, -0.0394241, -1.59878e-12, -0.999222, -7.88656, -3.7835e-10, 11.9627)
 progress = 15.7731
 instant_speed = 12.0
+
+[node name="DialogInteractible" type="PathFollow3D" parent="Hub2to3/Hub2to3_Entrance_s"]
+transform = Transform3D(0.93695, 5.44158e-11, -0.34946, -7.39551e-11, 1, -4.25698e-11, 0.34946, 6.57302e-11, 0.93695, -25.1849, -1.18929e-10, 22.0796)
+progress = 53.2715
+script = ExtResource("14_xcywb")
+requirements = Array[String](["hub1"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_dg4n0")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
 
 [node name="Hub2to3_Middle" parent="Hub2to3" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.8827, 0.000244141, 105.497)
@@ -3508,8 +3938,22 @@ progress = 3.62115
 script = SubResource("GDScript_yfycn")
 
 [node name="RockInteractible" parent="Hub2to3/Hub2to3_toPeriph" instance=ExtResource("209_h3suw")]
-transform = Transform3D(0.669309, 0, 0.742984, 0, 1, 0, -0.742984, 0, 0.669309, -2.11708, 0, -4.01848)
+transform = Transform3D(0.669309, 0, 0.742984, 0, 1, 0, -0.742984, 0, 0.669309, -2.11707, 0, -4.01848)
 progress = 4.66508
+
+[node name="Accelerator" parent="Hub2to3/Hub2to3_toPeriph" instance=ExtResource("106_gjyyb")]
+transform = Transform3D(-0.998833, 0, 0.0482806, 0, 1, 0, -0.0482806, 0, -0.998833, -19.0738, 0, 16.3222)
+progress = 39.3541
+instant_speed = 20.0
+
+[node name="DialogInteractible" type="PathFollow3D" parent="Hub2to3/Hub2to3_toPeriph"]
+transform = Transform3D(0.359059, 0, 0.933314, 0, 1, 0, -0.933314, 0, 0.359059, -4.74889, 0, -5.62256)
+progress = 7.76426
+script = ExtResource("14_xcywb")
+trigger_once = true
+requirements = Array[String](["hub2"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_xd5gf")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
 
 [node name="Hub3" type="Node3D" parent="."]
 script = ExtResource("1_7cvav")
@@ -3654,7 +4098,7 @@ mesh = ExtResource("208_as4va")
 material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Hub3/Hub3_BigLoop_s_s_s_s" index="3"]
-transform = Transform3D(-0.00261819, 0, -0.999979, 0, 1, 0, 0.999979, 0, -0.00261819, 3.60297, 0, 0.0671739)
+transform = Transform3D(-0.00261818, 0, -0.999977, 0, 1, 0, 0.999977, 0, -0.00261818, 3.60297, 0, 0.0671739)
 progress = 3.60392
 
 [node name="CrossCenter" parent="Hub3/Hub3_BigLoop_s_s_s_s/CrossFollow/CrossTween" index="0"]
@@ -3704,6 +4148,15 @@ transform = Transform3D(0.0475646, 0, -0.998866, 0, 1, 0, 0.998866, 0, 0.0475646
 
 [node name="CrossCenter" parent="Hub3/Hub3_BigLoop_s_s_s_s_s_s/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
+
+[node name="DialogInteractible" type="PathFollow3D" parent="Hub3/Hub3_BigLoop_s_s_s_s_s_s"]
+transform = Transform3D(0.92984, 0, -0.367964, 0, 1, 0, 0.367964, 0, 0.92984, 10.7741, 0, -9.53575)
+progress = 15.4532
+script = ExtResource("14_xcywb")
+trigger_once = true
+requirements = Array[String](["maze"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_l0182")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
 
 [node name="Hub3_Inner" parent="Hub3" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -119.882, 0.000244141, 112.127)
@@ -3782,10 +4235,10 @@ script = SubResource("GDScript_yfycn")
 [node name="StationHub3_Inner2" parent="Hub3/Hub3_Inner_c_c" instance=ExtResource("32_sxdtl")]
 transform = Transform3D(0.968595, 0, 0.248639, 0, 1, 0, -0.248639, 0, 0.968595, -1.06979, 0, -8.6862)
 progress = 8.75957
-waiting_character = ExtResource("202_qjdxd")
+waiting_character = ExtResource("202_tn0y3")
 
 [node name="FruitInteractible" parent="Hub3/Hub3_Inner_c_c" instance=ExtResource("144_tn0y3")]
-transform = Transform3D(0.994098, 0, 0.108478, 0, 1, 0, -0.108478, 0, 0.994098, -0.484661, 0, -5.10056)
+transform = Transform3D(0.994097, 0, 0.108478, 0, 1, 0, -0.108478, 0, 0.994097, -0.484661, 0, -5.10057)
 progress = 5.12349
 
 [node name="Hub3_Inner_c_s" parent="Hub3" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
@@ -4042,8 +4495,17 @@ progress = 3.23808
 script = SubResource("GDScript_yfycn")
 
 [node name="RockInteractible" parent="Hub3/Hub3_toHub2" instance=ExtResource("100_lcjqk")]
-transform = Transform3D(-0.0357946, 0, -0.999351, 0, 1, 0, 0.999351, 0, -0.0357946, 4.0108, 0, -0.311583)
+transform = Transform3D(-0.0357945, 0, -0.999349, 0, 1, 0, 0.999349, 0, -0.0357945, 4.0108, 0, -0.311583)
 progress = 4.04548
+
+[node name="DialogInteractible" type="PathFollow3D" parent="Hub3/Hub3_toHub2"]
+transform = Transform3D(-0.0882647, 0, -0.996097, 0, 1, 0, 0.996097, 0, -0.0882647, 6.84322, 0, -0.127699)
+progress = 6.88411
+script = ExtResource("14_xcywb")
+trigger_once = true
+requirements = Array[String](["hub2"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_bc7tp")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
 
 [node name="Periph" type="Node3D" parent="."]
 script = ExtResource("1_7cvav")
@@ -4188,7 +4650,7 @@ mesh = ExtResource("261_lcjqk")
 transform = Transform3D(-0.447213, 0, 0.894425, 0, 1, 0, -0.894425, 0, -0.447213, 0, 0, 0)
 
 [node name="StationPeriph" parent="Periph/Periph2_s_c" instance=ExtResource("32_sxdtl")]
-transform = Transform3D(0.0139766, 0, 0.99989, 0, 1, 0, -0.99989, 0, 0.0139766, -85.1858, 0, 12.2165)
+transform = Transform3D(0.0139766, 0, 0.999888, 0, 1, 0, -0.999888, 0, 0.0139766, -85.1858, 0, 12.2165)
 progress = 86.6963
 waiting_character = ExtResource("261_58hlq")
 
@@ -4293,15 +4755,30 @@ mesh = ExtResource("262_lcjqk")
 material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Periph/Periph_toHub3" index="3"]
-transform = Transform3D(0.998281, -2.58472e-12, -0.05833, 3.42986e-12, 1, 1.43893e-11, 0.05833, -1.45651e-11, 0.998281, -1.54232, -4.14034e-11, -6.8211)
+transform = Transform3D(0.99828, -2.58472e-12, -0.05833, 3.42985e-12, 1, 1.43892e-11, 0.05833, -1.45651e-11, 0.99828, -1.54232, -4.14034e-11, -6.8211)
 progress = 7.05327
 
 [node name="CrossCenter" parent="Periph/Periph_toHub3/CrossFollow/CrossTween" index="0"]
 script = SubResource("GDScript_yfycn")
 
 [node name="InteractibleSmoke" parent="Periph/Periph_toHub3" instance=ExtResource("158_ptu7g")]
-transform = Transform3D(0.973199, -1.80821e-12, -0.22996, 6.33263e-12, 1, 1.89368e-11, 0.22996, -1.98856e-11, 0.973199, -1.36351, -6.24713e-11, -8.07419)
+transform = Transform3D(0.973199, -1.80821e-12, -0.22996, 6.33263e-12, 1, 1.89368e-11, 0.22996, -1.98856e-11, 0.973199, -1.36351, -6.24714e-11, -8.0742)
 progress = 8.32073
+
+[node name="DialogInteractible" type="PathFollow3D" parent="Periph/Periph_toHub3"]
+transform = Transform3D(0.53983, 1.06293e-11, -0.841773, 2.60514e-11, 1, 2.9334e-11, 0.841773, -3.77648e-11, 0.53983, 1.11854, -1.75288e-10, -11.5715)
+progress = 12.7226
+script = ExtResource("14_xcywb")
+trigger_once = true
+requirements = Array[String](["hub2_hard"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_ry1mc")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
+
+[connection signal="destroyed" from="PreHub1/PreHub1_Buffer/MouseObstacle" to="PreHub1/PreHub1_Entrance_s_s_s/DialogInteractible" method="deactivate"]
+[connection signal="destroyed" from="PreHub1/PreHub1_Buffer/MouseObstacle" to="PreHub1/PreHub1_Entrance_s_s_s/DialogInteractible2" method="deactivate"]
+[connection signal="destroyed" from="Hub2/Hub2_Extras/Hub2_Extras/MouseObstacle" to="Hub2/Hub2_BigLoop_c/DialogInteractible" method="deactivate"]
+[connection signal="destroyed" from="Hub2/Hub2_Extras/Hub2_Extras/MouseObstacle" to="Hub2/Hub2_BigLoop_c/DialogInteractible2" method="deactivate"]
+[connection signal="fixed" from="Hub2to3/Hub2to3_Interr/Interruptor" to="Hub2/Hub2_BigLoop_s_s_s_s_s_s/DialogInteractible" method="deactivate"]
 
 [editable path="TutorialPuzzle/TutoPuzzle_Start"]
 [editable path="TutorialPuzzle/TutoPuzzle_StartR"]

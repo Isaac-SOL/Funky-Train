@@ -6,16 +6,19 @@ extends Node3D
 @export var plains_info: BiomeColor
 @export var desert_info: BiomeColor
 @export var beach_info: BiomeColor
+@export var snow_info: BiomeColor
 
 @onready var area_3d_plane: Area3D = $Area3D_plane
 @onready var area_3d_desert: Area3D = $Area3D_desert
 @onready var area_3d_beach: Area3D = $Area3D_beach
+@onready var area_3d_snow: Area3D = $Area3D_snow
 
 var previous_area : Area3D
 var detail_materials: Array[ShaderMaterial] = []
 
 func _ready() -> void:
 	await get_tree().process_frame
+	%Node3DClouds.target_node = Locomotive.instance
 	for child: Node in %HTerrain.get_children():
 		var mat: Material = child.get("_material") as ShaderMaterial
 		if mat and mat.shader == custom_detail_shader:
@@ -62,3 +65,11 @@ func _on_area_3d_beach_area_entered(area: Area3D) -> void:
 			previous_area = area_3d_beach
 			NodeAudio.playAudio_stream1(&"Ambiant beach")
 			%PathScene.switch_biome_color(beach_info)
+
+
+func _on_area_3d_snow_area_entered(area: Area3D) -> void:
+	if area.is_in_group("group_locomotive"):
+		if previous_area != area_3d_snow:
+			print("is in snow")
+			previous_area = area_3d_snow
+			%PathScene.switch_biome_color(snow_info)

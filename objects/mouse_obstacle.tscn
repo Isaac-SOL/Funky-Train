@@ -97,7 +97,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.75, 1.5),
 "transitions": PackedFloat32Array(-2, -2, 1),
 "update": 0,
-"values": [Vector3(1, 0.401, 0), Vector3(-1, 0.401, 0), Vector3(1, 0.401, 0)]
+"values": [Vector3(1, 0.401, 1), Vector3(1, 0.401, -1), Vector3(1, 0.401, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -109,7 +109,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.6, 0.75, 1.36667, 1.5),
 "transitions": PackedFloat32Array(1, -2, 1, -2, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 3.14159, 0), Vector3(0, 3.14159, 0), Vector3(0, 6.28319, 0)]
+"values": [Vector3(0, -1.5708, 0), Vector3(0, -1.5708, 0), Vector3(0, 1.5708, 0), Vector3(0, 1.5708, 0), Vector3(0, 4.71239, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4j86c"]

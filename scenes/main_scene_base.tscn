@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://ddei87jmflwu2"]
+[gd_scene load_steps=87 format=3 uid="uid://ddei87jmflwu2"]
 
 [ext_resource type="Script" uid="uid://rytmmqnltko8" path="res://scripts/main.gd" id="1_rk4p5"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_7tq10"]
@@ -37,6 +37,7 @@
 [ext_resource type="AudioStream" uid="uid://boj2lurrcpx4j" path="res://assets/sfx/clap_2.ogg" id="34_alxc0"]
 [ext_resource type="AudioStream" uid="uid://c7jpca7m84wdr" path="res://assets/sfx/clap_3.ogg" id="35_k8pig"]
 [ext_resource type="Texture2D" uid="uid://1axiy2djvugt" path="res://assets/textures/logo.png" id="35_uvcog"]
+[ext_resource type="Texture2D" uid="uid://c42x1rbaa8eut" path="res://assets/textures/kim_superspeed.png" id="36_2bx5o"]
 [ext_resource type="FontFile" uid="uid://drhhe5f5p7qgn" path="res://assets/Super Frosting.ttf" id="36_4kkmd"]
 [ext_resource type="AudioStream" uid="uid://1lwcny4jq723" path="res://assets/sfx/clap_4.ogg" id="36_k43kg"]
 [ext_resource type="Texture2D" uid="uid://cc0d11r365wp1" path="res://assets/textures/gamjam2025_UI_choice.png" id="36_pi7hh"]
@@ -593,6 +594,18 @@ mouse_filter = 2
 texture = ExtResource("27_jikhd")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="TextureKimSuperspeed" type="TextureRect" parent="CanvasLayer/GameUI/SpeedUI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = -43.0
+offset_top = -126.0
+offset_right = -3.0
+offset_bottom = -86.0
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("36_2bx5o")
+expand_mode = 1
 
 [node name="LeverSpeed" type="TextureRect" parent="CanvasLayer/GameUI/SpeedUI"]
 unique_name_in_owner = true

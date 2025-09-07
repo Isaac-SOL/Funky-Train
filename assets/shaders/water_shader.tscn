@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddhc7hdytvuvf"]
+[gd_scene load_steps=7 format=3 uid="uid://ddhc7hdytvuvf"]
 
 [ext_resource type="Texture2D" uid="uid://b4035n88f7ylr" path="res://assets/textures/water/water_1_uni.bmp" id="1_55vog"]
+[ext_resource type="Shader" uid="uid://cv1txhjtxdqyn" path="res://materials/water_shader.gdshader" id="2_hr7d7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_55vog"]
-shading_mode = 0
 albedo_texture = ExtResource("1_55vog")
 uv1_scale = Vector3(20, 20, 20)
 
@@ -12,19 +12,22 @@ material = SubResource("StandardMaterial3D_55vog")
 size = Vector2(1000, 1000)
 orientation = 1
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hr7d7"]
-transparency = 4
-shading_mode = 0
-albedo_texture = ExtResource("1_55vog")
-uv1_scale = Vector3(20, 20, 20)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5fhv7"]
+render_priority = 0
+shader = ExtResource("2_hr7d7")
+shader_parameter/color = ExtResource("1_55vog")
+shader_parameter/uv_scale = Vector2(20, 20)
+shader_parameter/waves_direction = Vector2(0.5, 0.5)
+shader_parameter/time_scale = 1.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_5fhv7"]
-material = SubResource("StandardMaterial3D_hr7d7")
+material = SubResource("ShaderMaterial_5fhv7")
 size = Vector2(1000, 1000)
 orientation = 1
 
 [node name="water_shader" type="MeshInstance3D"]
 layers = 3
+cast_shadow = 0
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_xs01w")
 

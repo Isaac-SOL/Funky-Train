@@ -130,10 +130,13 @@ func set_speed_mode(new_speed: SpeedMode):
 	elif speed_mode == SpeedMode.NORMAL:
 		target_speed = normal_speed
 	elif speed_mode == SpeedMode.FAST:
-		if "F" in get_properties():
+		var props := get_properties()
+		if "F" in props or "hub1" in props:
 			target_speed = 12
 		else:
 			target_speed = fast_speed
+	update_rail_outlines()
+	update_crosses()
 	speed_mode_changed.emit(speed_mode)
 
 func check_requirements(req_list: Array[String]) -> bool:
@@ -264,6 +267,7 @@ func add_character(new_character: CharacterInfo):
 		%chef_locomotive2.set_ruddy(true)
 	check_tb()
 	Main.instance.character_attached(new_character)
+	character_attached.emit(new_character)
 
 func remove_carriage(carriage: Carriage):
 	carriages.remove_at(carriages.find(carriage))
@@ -275,6 +279,7 @@ func remove_carriage(carriage: Carriage):
 		%chef_locomotive2.set_ruddy(false)
 	check_tb()
 	Main.instance.character_detached(carriage.character)
+	character_detached.emit(carriage.character)
 
 func check_tb():
 	if "tb_powered" not in additional_properties:
@@ -289,6 +294,7 @@ func power_tb(tb_carriage: Carriage):
 	additional_properties.append("tb_powered")
 	tb_carriage.power()
 	%AudioPowerup.play()
+	Dialogic.VAR.set_variable("tb_powered", true)
 	tb_powered.emit()
 
 func update_characters():
@@ -303,6 +309,9 @@ func restart():
 func get_properties() -> Array[String]:
 	var props: Array[String] = []
 	for carriage in carriages:
+		if carriage.character.name in ["F", "hub1"]:
+			if speed_mode == SpeedMode.FAST:
+				props.append("superspeed")
 		props.append(carriage.character.name)
 	return props + additional_properties
 

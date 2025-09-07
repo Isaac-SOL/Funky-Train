@@ -32,6 +32,7 @@ var cursor_start_drag_pos: Vector2
 var camera_speed_tween: Tween
 var biome_color_tween: Tween
 var on_menu: bool = true
+var sky_mat: ProceduralSkyMaterial
 
 func _ready() -> void:
 	instance = self
@@ -39,8 +40,10 @@ func _ready() -> void:
 	Input.set_custom_mouse_cursor(speed_cursor, Input.CURSOR_BDIAGSIZE, Vector2(32, 32))
 	Input.set_custom_mouse_cursor(can_grab_cursor, Input.CURSOR_DRAG, Vector2(32, 32))
 	Input.set_custom_mouse_cursor(grabbing_cursor, Input.CURSOR_POINTING_HAND, Vector2(32, 32))
+	sky_mat = $WorldEnvironment.environment.sky.sky_material
 	#Preload Diologic timeline by starting a blanc timeline
 	Dialogic.start("timeline_blanc")
+	Dialogic.VAR.set_variable("puzzle_mode", not two_options)
 	await get_tree().process_frame
 	%CameraShakerMap.target_node = Locomotive.instance.get_minimap_pos()
 	%VBoxContainerTwoOptions.visible = two_options
@@ -262,6 +265,9 @@ func switch_biome_color(info: BiomeColor):
 									 info.depth_gradient_color, 5.0)
 	biome_color_tween.tween_property(%ScreenEffect, "mesh:material:shader_parameter/depth_gradient_strength",
 									 info.depth_gradient_strength, 5.0)
+	biome_color_tween.tween_property(self, "sky_mat:sky_top_color", info.sky_top_color, 5.0)
+	biome_color_tween.tween_property(self, "sky_mat:sky_horizon_color", info.sky_bottom_color, 5.0)
+	biome_color_tween.tween_property(self, "sky_mat:ground_horizon_color", info.sky_bottom_color, 5.0)
 
 func start_end_screen():
 	ended = true

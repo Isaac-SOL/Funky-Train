@@ -77,7 +77,10 @@ variables={
 "has_triangle": false,
 "has_trompette": false,
 "has_vocoder": false
-}
+},
+"puzzle_mode": false,
+"random_choice": 0,
+"tb_powered": false
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.02

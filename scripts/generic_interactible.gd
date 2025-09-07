@@ -1,5 +1,7 @@
 class_name GenericInteractible extends PathFollow3D
 
+signal destroyed
+
 func _ready() -> void:
 	get_section().add_interactible(self)
 
@@ -12,3 +14,4 @@ func interact():
 func destroy():
 	get_section().remove_interactible(self)
 	queue_free()
+	destroyed.emit()

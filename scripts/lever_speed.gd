@@ -6,6 +6,16 @@ var is_dragging: bool = false
 var speed: Locomotive.SpeedMode = Locomotive.SpeedMode.STOP
 var drag_pos: Vector2 = Vector2.ZERO
 
+func _ready() -> void:
+	await get_tree().process_frame
+	Main.instance.rhythm_sync.beat.connect(func(_b):
+		%TextureKimSuperspeed.scale = Vector2(1.2, 1.2)
+		var tween := create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
+		tween.tween_property(%TextureKimSuperspeed, "scale", Vector2.ONE, 0.5)
+	)
+	Locomotive.instance.character_attached.connect(locomotive_character_attached)
+	Locomotive.instance.character_detached.connect(locomotive_character_detached)
+
 func _process(delta: float) -> void:
 	if not is_dragging and not Main.instance.on_menu:
 		if Input.is_action_just_pressed("faster") and speed < Locomotive.SpeedMode.FAST:
@@ -44,3 +54,13 @@ func change_speed(new_speed: Locomotive.SpeedMode):
 	%AudioStreamLeverSpeed.pitch_scale = 0.9 + 0.1 * int(new_speed)
 	await get_tree().process_frame
 	%AudioStreamLeverSpeed.play()
+
+func locomotive_character_attached(character: CharacterInfo):
+	print(character.name + " attached")
+	if character.name == "hub1":
+		%TextureKimSuperspeed.visible = true
+
+func locomotive_character_detached(character: CharacterInfo):
+	print(character.name + " detached")
+	if character.name == "hub1":
+		%TextureKimSuperspeed.visible = false
