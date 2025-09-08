@@ -28,6 +28,8 @@ enum TrainTrack {
 
 var currentTween
 
+var vocoderState: bool = false
+
 func isWeb():
 	return false and OS.has_feature("web")
 
@@ -41,6 +43,9 @@ func _ready() -> void:
 		AudioServer.set_bus_effect_enabled(1,0,true)
 	changeCarSpeed(0)
 	play()
+	setInstrument(Track.VOCODER, true)
+	await get_tree().create_timer(8).timeout
+	setVocoderState(true)
 
 func remove_filter():
 	AudioServer.remove_bus_effect(1, 0)
@@ -76,12 +81,29 @@ func fade_music_out(selectedStream:AudioStreamSynchronized, tween: Tween, trackN
 func setInstrument(track: Track, enabled: bool):
 	var trackStream = self.stream.get_sync_stream(track)
 	var tween = create_tween()
+	var trackNumber = 0 
+	if track == Track.VOCODER:
+		if vocoderState:
+			trackNumber = 1
 	if enabled:
 		tween.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
-		fade_music_in(trackStream, tween, 0)
+		fade_music_in(trackStream, tween, trackNumber)
 	else:
 		tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
-		fade_music_out(trackStream, tween, 0)
+		fade_music_out(trackStream, tween, trackNumber)
+		
+func setVocoderState(enabled: bool):
+	if vocoderState != enabled:
+		vocoderState = enabled
+		var trackStream = self.stream.get_sync_stream(Track.VOCODER)
+		var tween = create_tween()
+		if enabled:
+			tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
+			fade_music_out(trackStream, tween, 0)
+		else:
+			tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
+			fade_music_out(trackStream, tween, 1)
+		setInstrument(Track.VOCODER, true)
 
 func soundDown():
 	currentTween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
