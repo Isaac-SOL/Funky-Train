@@ -2497,7 +2497,7 @@ rebake_with_tilt = true
 rebake_force_up = true
 
 [node name="CrossFollow" parent="Hub1/Hub1To2/Hub2To1" index="3"]
-transform = Transform3D(0.795784, 0.0102878, -0.605454, -0.0568117, 0.9967, -0.0577392, 0.602853, 0.0803468, 0.793776, 2.68301, 0.106366, -2.93)
+transform = Transform3D(0.795784, 0.0102878, -0.605454, -0.0568116, 0.9967, -0.0577392, 0.602853, 0.0803468, 0.793776, 2.68301, 0.106366, -2.93)
 progress = 3.97781
 
 [node name="CrossCenter" parent="Hub1/Hub1To2/Hub2To1/CrossFollow/CrossTween" index="0"]
@@ -3604,7 +3604,7 @@ dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_o7mru")])
 metadata/_custom_type_script = "uid://c3ryf37qhvdje"
 
 [node name="DialogInteractible2" type="PathFollow3D" parent="Hub2/Hub2_Extras/Hub2_Extras2_s_s"]
-transform = Transform3D(0.852195, 0, -0.523223, 0, 1, 0, 0.523223, 0, 0.852195, -0.042052, 0, -5.42719)
+transform = Transform3D(0.852195, 0, -0.523223, 0, 1, 0, 0.523223, 0, 0.852195, -0.04205, 0, -5.42719)
 progress = 5.67725
 script = ExtResource("14_xcywb")
 requirements = Array[String](["hub3", "-tb_powered"])
@@ -3662,7 +3662,8 @@ transform = Transform3D(0.745492, 0, -0.666514, 0, 1, 0, 0.666514, 0, 0.745492, 
 progress = 4.63914
 
 [node name="DialogInteractible" type="PathFollow3D" parent="Hub2/Hub2_Extras/Hub2_Extras3"]
-transform = Transform3D(0.172629, 0, -0.984987, 0, 1, 0, 0.984987, 0, 0.172629, 0, 0, 0)
+transform = Transform3D(0.995035, 0, -0.0995003, 0, 1, 0, 0.0995003, 0, 0.995035, 5.26407, 0, -4.66364)
+progress = 7.57514
 script = ExtResource("14_xcywb")
 trigger_once = true
 requirements = Array[String](["hub3", "hub2"])
@@ -4560,7 +4561,7 @@ progress = 3.23808
 script = SubResource("GDScript_yfycn")
 
 [node name="RockInteractible" parent="Hub3/Hub3_toHub2" instance=ExtResource("100_lcjqk")]
-transform = Transform3D(-0.0357945, 0, -0.999347, 0, 1, 0, 0.999347, 0, -0.0357945, 4.0108, 0, -0.311583)
+transform = Transform3D(-0.0357944, 0, -0.999347, 0, 1, 0, 0.999347, 0, -0.0357944, 4.0108, 0, -0.311583)
 progress = 4.04548
 
 [node name="DialogInteractible" type="PathFollow3D" parent="Hub3/Hub3_toHub2"]
@@ -4670,6 +4671,7 @@ out_sections = [NodePath("../Periph2_s_c")]
 cut_point_index = 4
 
 [node name="BakedRailsMesh" parent="Periph/Periph2_s" index="0"]
+visibility_range_end = 180.0
 mesh = ExtResource("253_fcb1y")
 rebake_force_up = true
 

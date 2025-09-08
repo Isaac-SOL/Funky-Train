@@ -50,6 +50,9 @@ func _ready() -> void:
 	%VBoxContainerTwoOptions.visible = two_options
 	%ButtonStart.visible = not two_options
 	Locomotive.instance.tb_powered.connect(_on_tb_powered)
+	if two_options:
+		%AudioStreamPlayer.setVocoderState(true)
+		await get_tree().create_timer(5.0).timeout
 
 func stop_at_station(station: Station):
 	active_station = station
@@ -340,6 +343,18 @@ func start_end_screen():
 	await get_tree().create_timer(3.0).timeout
 	%LabelCredits.visible = false
 	await get_tree().create_timer(1.0).timeout
+	%LabelCredits.text = "Additinal SFX (freesound.org):\nandersmmg\nshyguy014\ndanielpodlovics\nadr1911"
+	%LabelCredits.visible = true
+	
+	await get_tree().create_timer(3.0).timeout
+	%LabelCredits.visible = false
+	await get_tree().create_timer(1.0).timeout
+	%LabelCredits.text = "Additinal Icons (flaticon.com):\nVictoruler\nsonnycandra\nFreepik\nrsetiawan"
+	%LabelCredits.visible = true
+	
+	await get_tree().create_timer(3.0).timeout
+	%LabelCredits.visible = false
+	await get_tree().create_timer(1.0).timeout
 	%LabelCredits.text = "Playtesting:\nTakahiruma\nMalisa\nDironiil"
 	%LabelCredits.visible = true
 	
@@ -379,6 +394,8 @@ func _on_tb_powered():
 	for child in %HBoxContainerCharacters2.get_children():
 		if child is CharacterPortrait:
 			child.power_tb()
+	%AudioStreamPlayer.setVocoderState(true)
+	%AudioStreamPlayer.setInstrument(MainMusicController.Track.VOCODER, true)
 
 func _on_start_button_puzzle_click_open() -> void:
 	%StartButtonPuzzle.open()
@@ -389,7 +406,8 @@ func _on_start_button_puzzle_click_open() -> void:
 func _on_start_button_puzzle_click_confirm() -> void:
 	# Open other scene
 	%AudioStreamPlayer.remove_filter()
-	get_tree().change_scene_to_packed(other_map)
+	var err = get_tree().change_scene_to_packed(other_map)
+	print(err)
 
 
 func _on_start_button_jam_click_open() -> void:

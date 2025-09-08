@@ -1,4 +1,4 @@
-extends AudioStreamPlayer
+class_name MainMusicController extends AudioStreamPlayer
 
 const mute_db := -80.0 # To mute the audio player
 const reduced_music_db = -15.0
@@ -26,7 +26,7 @@ enum TrainTrack {
 	FAST = 0
 }
 
-var currentTween
+var currentTween: Tween
 
 var vocoderState: bool = false
 
@@ -43,9 +43,6 @@ func _ready() -> void:
 		AudioServer.set_bus_effect_enabled(1,0,true)
 	changeCarSpeed(0)
 	play()
-	setInstrument(Track.VOCODER, true)
-	await get_tree().create_timer(8).timeout
-	setVocoderState(true)
 
 func remove_filter():
 	AudioServer.remove_bus_effect(1, 0)
@@ -103,7 +100,7 @@ func setVocoderState(enabled: bool):
 		else:
 			tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
 			fade_music_out(trackStream, tween, 1)
-		setInstrument(Track.VOCODER, true)
+		#setInstrument(Track.VOCODER, true)
 
 func soundDown():
 	currentTween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
