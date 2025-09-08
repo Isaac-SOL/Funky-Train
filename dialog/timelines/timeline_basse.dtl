@@ -11,7 +11,7 @@ if {puzzle_mode} == true:
 			basse: Beware of any tunnels now!
 else:
 	if {first_time.first_basse} == true:
-		basse: Hello, everyone! Is there any space for me?
+		basse: Hello, everyone! Is there any space for me? Don't worry, my car may look like a rocket, but it isn't actually one!
 		set {first_time.first_basse} = false
 	else:
 		basse: To be honest, I was little bored without your company.

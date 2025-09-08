@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dqclrpibg0m2f" path="res://scripts/wagon/wagon.gd" id="1_67ta6"]
 [ext_resource type="Script" uid="uid://eoyxaxq2q24" path="res://scripts/personnage/personnage.gd" id="2_o81tg"]
-[ext_resource type="Texture2D" uid="uid://dk716yitvwxrk" path="res://assets/modele/2D/personnages/personnages_saxophone_c.png" id="3_38fn6"]
+[ext_resource type="Texture2D" uid="uid://cuqobu1wxxdux" path="res://assets/modele/2D/personnages/personnages_saxophone_c_contour.png" id="3_o81tg"]
 [ext_resource type="PackedScene" uid="uid://ced60onwnlqgy" path="res://assets/modele/3D/wagon/wagons_saxo.tscn" id="4_m0kbv"]
 
 [node name="wagon_saxo" type="Node3D" node_paths=PackedStringArray("wheel_1", "wheel_2", "wheel_3", "wheel_4", "wheel_5", "wheel_6", "wheel_7", "wheel_8")]
@@ -26,7 +26,7 @@ metadata/_custom_type_script = "uid://eoyxaxq2q24"
 [node name="Sprite3D" type="Sprite3D" parent="personnage_trompette"]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 4.85151, 0)
 billboard = 2
-texture = ExtResource("3_38fn6")
+texture = ExtResource("3_o81tg")
 
 [node name="wagons_saxo" parent="." instance=ExtResource("4_m0kbv")]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, 0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=145 format=3 uid="uid://cq76mgiooqjlk"]
+[gd_scene load_steps=161 format=3 uid="uid://cq76mgiooqjlk"]
 
 [ext_resource type="Script" uid="uid://hcgv0grqqm7y" path="res://scripts/rails_master.tres.gd" id="1_8wolm"]
 [ext_resource type="PackedScene" uid="uid://c7adtd3m5hihf" path="res://objects/rail_section.tscn" id="1_of01x"]
@@ -12,12 +12,16 @@
 [ext_resource type="ArrayMesh" uid="uid://dtmtdn42vqe4q" path="res://meshes/rails/RailS4_S6_bridge.tres" id="9_o0t5c"]
 [ext_resource type="ArrayMesh" uid="uid://c6fhbqyyloy2a" path="res://meshes/rails/RailS4_S6_bridge_minimap.tres" id="10_ca3jj"]
 [ext_resource type="Resource" uid="uid://kjtlh674xflv" path="res://objects/characters/A.tres" id="11_iln4g"]
+[ext_resource type="Script" uid="uid://ck63c5mhev37x" path="res://scripts/looping_area.gd" id="12_165mx"]
 [ext_resource type="Resource" uid="uid://d0g3t66itnkbt" path="res://objects/characters/B.tres" id="12_pvikb"]
 [ext_resource type="ArrayMesh" uid="uid://bun4jork04afr" path="res://meshes/rails/RailS4_S11.tres" id="13_b2ljr"]
 [ext_resource type="PackedScene" uid="uid://dhre1ajv8oogw" path="res://objects/accelerator.tscn" id="14_8s57r"]
 [ext_resource type="ArrayMesh" uid="uid://d1rcw5w3h8ugi" path="res://meshes/rails/RailS4_S11_minimap.tres" id="14_d6v6k"]
+[ext_resource type="ArrayMesh" uid="uid://bu143msbkkjuo" path="res://meshes/looping_jam.tres" id="15_dhfuy"]
 [ext_resource type="ArrayMesh" uid="uid://y6ogfx0j4pht" path="res://meshes/rails/RailS11.tres" id="15_ofv2g"]
+[ext_resource type="Script" uid="uid://cqjhpjqr7iwjp" path="res://scripts/sides_mesh.gd" id="16_165mx"]
 [ext_resource type="ArrayMesh" uid="uid://dcg4pmtvltl0f" path="res://meshes/rails/RailS11_minimap.tres" id="16_umo86"]
+[ext_resource type="Material" uid="uid://2j8oioxr23sf" path="res://materials/rails_standard_mat.tres" id="17_phdhv"]
 [ext_resource type="Resource" uid="uid://b0t7w0yywn1hj" path="res://objects/characters/I.tres" id="17_wop8t"]
 [ext_resource type="ArrayMesh" uid="uid://djlr6nlcd88n4" path="res://meshes/rails/RailS11_fork.tres" id="18_jqkcp"]
 [ext_resource type="ArrayMesh" uid="uid://bx2k00fas45ro" path="res://meshes/rails/RailS11_fork_minimap.tres" id="19_opi20"]
@@ -98,6 +102,11 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o0t5c"]
+resource_local_to_scene = true
+transparency = 4
+shading_mode = 0
+
 [sub_resource type="Resource" id="Resource_uvcog"]
 script = ExtResource("7_165mx")
 character = ExtResource("8_phdhv")
@@ -154,6 +163,11 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ca3jj"]
+resource_local_to_scene = true
+transparency = 4
+shading_mode = 0
+
 [sub_resource type="Resource" id="Resource_ajnxc"]
 script = ExtResource("7_165mx")
 character = ExtResource("17_wop8t")
@@ -198,6 +212,11 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iln4g"]
+resource_local_to_scene = true
+transparency = 4
+shading_mode = 0
+
 [sub_resource type="Resource" id="Resource_6c0ht"]
 script = ExtResource("7_165mx")
 character = ExtResource("12_pvikb")
@@ -228,6 +247,11 @@ _data = {
 }
 point_count = 4
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pvikb"]
+resource_local_to_scene = true
+transparency = 4
+shading_mode = 0
+
 [sub_resource type="Curve3D" id="Curve3D_782co"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, -0.67831, 0, 10.113, 0, 0, 0, -3.18665, 0, 0.00383526, -3.58069, 0, 0, 10.197, 0, 11.1411),
@@ -248,6 +272,11 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b2ljr"]
+resource_local_to_scene = true
+transparency = 4
+shading_mode = 0
 
 [sub_resource type="Resource" id="Resource_4kkmd"]
 script = ExtResource("7_165mx")
@@ -295,6 +324,11 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d6v6k"]
+resource_local_to_scene = true
+transparency = 4
+shading_mode = 0
+
 [sub_resource type="Curve3D" id="Curve3D_b2ayy"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 0, 0, 7.63702, 0, 0, 0, 8.12558, 0, 5.46145, -8.12558, 0, -5.46145, -18.4275, 0, 7.55735, 0.863609, 0, 12.1624, 0, 0, 7.63702, -25.0196, 0, -28.0712),
@@ -323,12 +357,22 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ofv2g"]
+resource_local_to_scene = true
+transparency = 4
+shading_mode = 0
+
 [sub_resource type="Curve3D" id="Curve3D_v6bnv"]
 _data = {
 "points": PackedVector3Array(1.36842, -0.0002985, 0.581363, 3.22351, 0, 0.0617786, 0, 0, 0, -0.0719643, 0, -9.06785, 0.0719643, 0, 9.06785, 13.9527, 0, 10.2656, 0.143936, 0, -6.7649, -0.143936, 0, 6.7649, 14.0247, 0, 25.9544),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_umo86"]
+resource_local_to_scene = true
+transparency = 4
+shading_mode = 0
 
 [sub_resource type="Resource" id="Resource_1n0wa"]
 script = ExtResource("7_165mx")
@@ -376,6 +420,16 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wop8t"]
+resource_local_to_scene = true
+transparency = 4
+shading_mode = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqkcp"]
+resource_local_to_scene = true
+transparency = 4
+shading_mode = 0
+
 [sub_resource type="Resource" id="Resource_pi7hh"]
 script = ExtResource("7_165mx")
 character = ExtResource("31_8nvo7")
@@ -404,6 +458,11 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_opi20"]
+resource_local_to_scene = true
+transparency = 4
+shading_mode = 0
 
 [sub_resource type="Curve3D" id="Curve3D_kjt7h"]
 _data = {
@@ -475,6 +534,11 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4c48"]
+resource_local_to_scene = true
+transparency = 4
+shading_mode = 0
+
 [sub_resource type="Curve3D" id="Curve3D_jnlc3"]
 _data = {
 "points": PackedVector3Array(5.4619, 0.00684357, 1.60833, 4.51012, -0.00827599, 0.0680046, 0, 0, 0, 3.0166, -0.00211906, -3.32003, -3.0166, 0.00211906, 3.32003, 4.35528, -0.0185986, 7.98895, 3.56766, -0.00251389, -4.01048, -3.56766, 0.00251389, 4.01048, -6.96062, -0.0202961, 13.1403, 0.67831, 0, -10.113, 4.51012, -0.00827599, 0.0680046, -10.059, -0.0203323, 29.3064),
@@ -505,6 +569,7 @@ transform = Transform3D(0.00120349, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.001203
 transform = Transform3D(-0.000827082, 0, -0.999957, 0, 1, 0, 0.999957, 0, -0.000827082, 16.1874, 0, -0.000769002)
 progress = 16.1862
 waiting_character = ExtResource("5_p31lq")
+mark_mat = SubResource("StandardMaterial3D_o0t5c")
 
 [node name="DialogicTrigger" parent="RailS4" instance=ExtResource("6_dhfuy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.33774, 0.417897, 0.0392704)
@@ -530,6 +595,7 @@ progress = 6.4547
 
 [node name="AreaLoop" type="Area3D" parent="RailS4_S6_bridge"]
 collision_layer = 2
+script = ExtResource("12_165mx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RailS4_S6_bridge/AreaLoop"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.19816, 3.38745, -19.4398)
@@ -546,9 +612,21 @@ requirements = Array[String](["A", "B"])
 dialogues = Array[ExtResource("7_165mx")]([SubResource("Resource_782co"), SubResource("Resource_1h62p")])
 
 [node name="Accelerator" parent="RailS4_S6_bridge" instance=ExtResource("14_8s57r")]
-transform = Transform3D(0.999992, -1.38717e-05, -0.00188708, 7.65033e-06, 0.999999, -0.000759599, 0.00393143, 0.00158246, 0.479996, 8.98965, 0.000935475, -6.61728)
+transform = Transform3D(0.999992, -1.38719e-05, -0.00188698, 7.65068e-06, 0.999999, -0.000759616, 0.00393121, 0.00158249, 0.479996, 8.98965, 0.000935519, -6.61731)
 progress = 12.8305
 instant_speed = 12.0
+
+[node name="SidesMesh" type="MeshInstance3D" parent="RailS4_S6_bridge" node_paths=PackedStringArray("path")]
+mesh = ExtResource("15_dhfuy")
+script = ExtResource("16_165mx")
+path = NodePath("..")
+material = ExtResource("17_phdhv")
+width = 1.0
+height = 1.0
+rebake_with_tilt = true
+skip_first = 100
+skip_last = 200
+metadata/_custom_type_script = "uid://cqjhpjqr7iwjp"
 
 [node name="RailS4_S11" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
@@ -585,6 +663,7 @@ transform = Transform3D(-0.0169582, 0, -0.999845, 0, 1, 0, 0.999845, 0, -0.01695
 [node name="Station11" parent="RailS11" instance=ExtResource("4_xgdko")]
 transform = Transform3D(-0.00646113, 0, -0.999978, 0, 1, 0, 0.999978, 0, -0.00646113, 15.719, 0, -0.0139241)
 progress = 15.719
+mark_mat = SubResource("StandardMaterial3D_ca3jj")
 
 [node name="DialogicTrigger" parent="RailS11" instance=ExtResource("6_dhfuy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1689, 0.417895, -0.0018971)
@@ -665,6 +744,7 @@ transform = Transform3D(0.997489, 0, 0.0708282, 0, 1, 0, -0.0708282, 0, 0.997489
 transform = Transform3D(-0.0138704, -1.10298e-08, 0.999899, -7.952e-07, 1, -2.30925e-14, -0.999899, -7.95128e-07, -0.0138704, -23.0306, -8.10623e-06, -7.72331)
 progress = 29.0127
 waiting_character = ExtResource("17_wop8t")
+mark_mat = SubResource("StandardMaterial3D_iln4g")
 
 [node name="DialogicTrigger" parent="RailS7" instance=ExtResource("6_dhfuy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7025, 0.417897, -8.24557)
@@ -711,6 +791,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 transform = Transform3D(-0.0694312, -5.93477e-05, 0.997574, -0.000854749, 0.999999, -4.81766e-11, -0.997574, -0.000852697, -0.0694312, -40.6859, 0, 0.139051)
 progress = 40.9557
 waiting_character = ExtResource("31_8nvo7")
+mark_mat = SubResource("StandardMaterial3D_pvikb")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="RailS5"]
 process_mode = 4
@@ -786,6 +867,7 @@ transform = Transform3D(-0.0407819, 0, -0.999168, 0, 1, 0, 0.999168, 0, -0.04078
 [node name="Station6" parent="RailS6" instance=ExtResource("4_xgdko")]
 transform = Transform3D(-0.26215, -5.22939e-07, -0.965013, -8.78835e-08, 1, -5.1801e-07, 0.965013, -5.09888e-08, -0.26215, 31.3427, -5.1043e-06, 0.902595)
 progress = 31.4626
+mark_mat = SubResource("StandardMaterial3D_b2ljr")
 
 [node name="DialogicTrigger" parent="RailS6" instance=ExtResource("6_dhfuy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.2604, 0.417895, 3.49381)
@@ -838,6 +920,7 @@ progress = 8.36843
 transform = Transform3D(-0.998857, 0, -0.0472375, 0, 1, 0, 0.0472375, 0, -0.998857, 14.4835, 0, 33.4404)
 progress = 37.8308
 waiting_character = ExtResource("8_phdhv")
+mark_mat = SubResource("StandardMaterial3D_d6v6k")
 
 [node name="RailS8_S7" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.8812, 0, 12.3947)
@@ -905,6 +988,7 @@ transform = Transform3D(-0.00999987, 0, 0.99995, 0, 1, 0, -0.99995, 0, -0.009999
 transform = Transform3D(-0.0337055, 0, 0.999388, 0, 1, 0, -0.999388, 0, -0.0337055, -33.2739, 0, 0.875955)
 progress = 33.2863
 waiting_character = ExtResource("51_cphn7")
+mark_mat = SubResource("StandardMaterial3D_ofv2g")
 
 [node name="RailS9" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8694, 0, 0)
@@ -927,6 +1011,7 @@ progress = 5.80035
 transform = Transform3D(-0.999948, 0, 0.0098526, 0, 1, 0, -0.0098526, 0, -0.999948, 14.0784, 0, 22.6972)
 progress = 31.7688
 waiting_character = ExtResource("11_iln4g")
+mark_mat = SubResource("StandardMaterial3D_umo86")
 
 [node name="DialogicTrigger" parent="RailS9" instance=ExtResource("6_dhfuy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1159, 0.417895, 8.5817)
@@ -978,11 +1063,13 @@ transform = Transform3D(-0.00999987, 0, 0.99995, 0, 1, 0, -0.99995, 0, -0.009999
 [node name="Station2" parent="RailS2S3" instance=ExtResource("4_xgdko")]
 transform = Transform3D(0.185863, 0, 0.982574, 0, 1, 0, -0.982574, 0, 0.185863, -23.1544, 0, -2.28451)
 progress = 23.3018
+mark_mat = SubResource("StandardMaterial3D_wop8t")
 
 [node name="Station3" parent="RailS2S3" instance=ExtResource("4_xgdko")]
 transform = Transform3D(0.661536, 0, 0.749911, 0, 1, 0, -0.749911, 0, 0.661536, -61.5911, 0, -18.2283)
 progress = 65.3689
 waiting_character = ExtResource("12_pvikb")
+mark_mat = SubResource("StandardMaterial3D_jqkcp")
 
 [node name="DialogicTrigger" parent="RailS2S3" instance=ExtResource("6_dhfuy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.838, 0.417895, -12.7411)
@@ -1094,6 +1181,7 @@ progress = 6.1299
 transform = Transform3D(0.109115, 0, 0.994026, 0, 1, 0, -0.994026, 0, 0.109115, -36.8345, 0, 13.3015)
 progress = 44.2793
 waiting_character = ExtResource("65_g80f5")
+mark_mat = SubResource("StandardMaterial3D_opi20")
 
 [node name="Tutorial" type="Node3D" parent="."]
 
@@ -1263,6 +1351,7 @@ progress = 10.2176
 transform = Transform3D(-0.546004, -0.000289333, -0.837781, 4.32773e-05, 1, -0.000373561, 0.837782, -0.000240223, -0.546004, 13.5322, 0.00121104, 13.5341)
 progress = 19.212
 waiting_character = ExtResource("20_c4c48")
+mark_mat = SubResource("StandardMaterial3D_c4c48")
 
 [node name="RailExit" parent="Tutorial" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0727, 0.0203323, -40.4475)
