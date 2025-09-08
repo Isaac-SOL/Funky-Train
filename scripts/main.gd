@@ -16,6 +16,7 @@ static var instance: Main
 @export var rhythm_sync: RhythmNotifier
 @export var rails_outline_material: ShaderMaterial
 @export var two_options: bool = true
+@export var other_map: PackedScene
 @export_group("Cursor")
 @export var direction_cursor: Texture
 @export var speed_cursor: Texture
@@ -388,7 +389,7 @@ func _on_start_button_puzzle_click_open() -> void:
 func _on_start_button_puzzle_click_confirm() -> void:
 	# Open other scene
 	%AudioStreamPlayer.remove_filter()
-	get_tree().change_scene_to_file("res://scenes/level_puzzle.tscn")
+	get_tree().change_scene_to_packed(other_map)
 
 
 func _on_start_button_jam_click_open() -> void:
