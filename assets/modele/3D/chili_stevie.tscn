@@ -8,4 +8,5 @@ albedo_color = Color(0.909804, 0.282353, 0.364706, 1)
 [node name="ChiliStevie" instance=ExtResource("1_1ucmr")]
 
 [node name="Circle_003_Circle_012" parent="." index="0"]
+visibility_range_end = 100.0
 surface_material_override/0 = SubResource("StandardMaterial3D_xfa0u")

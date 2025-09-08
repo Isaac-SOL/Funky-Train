@@ -1,14 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnyn4ssr8k5rn"]
+[gd_scene load_steps=4 format=3 uid="uid://bnyn4ssr8k5rn"]
 
 [ext_resource type="Script" uid="uid://baafuflvocjx6" path="res://scripts/pepper.gd" id="1_3kbvg"]
 [ext_resource type="PackedScene" uid="uid://p051osfi2ydb" path="res://assets/modele/3D/chili_stevie.tscn" id="1_we8ih"]
+[ext_resource type="PackedScene" uid="uid://c4w18gvibj2gb" path="res://objects/branche.tscn" id="3_hgfeu"]
 
 [node name="Pepper" type="PathFollow3D"]
 script = ExtResource("1_3kbvg")
 
-[node name="ChiliPivot" type="Marker3D" parent="."]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.705368, 3.78784, 0)
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(0.833394, 0, 0.552679, 0, 1, 0, -0.552679, 0, 0.833394, 0, 0, 0)
 
-[node name="ChiliStevie" parent="ChiliPivot" instance=ExtResource("1_we8ih")]
+[node name="ChiliPivot" type="Marker3D" parent="Node3D"]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.705, 3.788, 0)
+
+[node name="ChiliStevie" parent="Node3D/ChiliPivot" instance=ExtResource("1_we8ih")]
 transform = Transform3D(3.01609e-08, 0, -0.23, 0, 0.23, 0, 0.23, 0, 3.01609e-08, 0.716579, -1.61153, 0.525648)
+
+[node name="Branche" parent="Node3D" instance=ExtResource("3_hgfeu")]
+transform = Transform3D(-3.0598e-09, 0, -0.07, 0, 0.09, 0, 0.07, 0, -3.0598e-09, 2.22037, 0, 9.70553e-08)

@@ -13,5 +13,6 @@ roughness = 0.5
 
 [node name="Icosphere_001_Icosphere_003" parent="." index="0"]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 9.40202, 0)
+visibility_range_end = 100.0
 surface_material_override/0 = SubResource("StandardMaterial3D_rni6t")
 surface_material_override/1 = SubResource("StandardMaterial3D_o2myk")

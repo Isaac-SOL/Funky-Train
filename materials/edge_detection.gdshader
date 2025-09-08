@@ -16,6 +16,7 @@ uniform vec3 depth_gradient_color: source_color;
 uniform float depth_gradient_start;
 uniform float depth_gradient_end;
 uniform float depth_gradient_strength: hint_range(0.0, 1.0);
+uniform float cloud_gradient_strength: hint_range(0.0, 1.0);
 uniform bool stick_to_camera = false;
 
 void vertex() {
@@ -70,7 +71,10 @@ void fragment() {
 	norm_depth = clamp(norm_depth, 0.0, 1.0);
 	norm_depth *= depth_gradient_strength;
 	bool pure_black = pixels[0].r == 0.0 && pixels[0].g == 0.0 && pixels[0].b == 0.0;
-	if (lin_depth > 350.0 || pure_black) {
+	if (lin_depth > 350.0) {
+		norm_depth = cloud_gradient_strength;
+	}
+	if (lin_depth > 1000.0 || pure_black) {
 		norm_depth = 0.0;
 	}
 

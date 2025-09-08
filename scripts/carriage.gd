@@ -25,6 +25,8 @@ func power():
 		if child is MeshInstance3D:
 			for i in range(child.get_surface_override_material_count()):
 				child.set_surface_override_material(i, null)
+	var prise_mat: StandardMaterial3D = %prise_male.get_surface_override_material(0)
+	prise_mat.albedo_color = Color(0.91, 0.38, 0.85)
 	%AnimationPlayer.play("idle")
 
 func set_carriage_progress(prog_relative: float, new_section: RailSection):

@@ -6,4 +6,5 @@
 [node name="RuddyRocks" instance=ExtResource("1_tojv6")]
 
 [node name="Rock_3" parent="RootNode" index="0"]
+visibility_range_end = 100.0
 surface_material_override/0 = ExtResource("2_g63pn")

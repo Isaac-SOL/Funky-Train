@@ -109,6 +109,7 @@ shader_parameter/depth_gradient_color = Color(0, 0, 0, 1)
 shader_parameter/depth_gradient_start = 0.0
 shader_parameter/depth_gradient_end = 40.0
 shader_parameter/depth_gradient_strength = 0.0
+shader_parameter/cloud_gradient_strength = 0.0
 shader_parameter/stick_to_camera = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_2dsia"]

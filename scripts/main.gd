@@ -265,9 +265,14 @@ func switch_biome_color(info: BiomeColor):
 									 info.depth_gradient_color, 5.0)
 	biome_color_tween.tween_property(%ScreenEffect, "mesh:material:shader_parameter/depth_gradient_strength",
 									 info.depth_gradient_strength, 5.0)
+	biome_color_tween.tween_property(%ScreenEffect, "mesh:material:shader_parameter/cloud_gradient_strength",
+									 info.deep_depth_gradient_strength, 5.0)
 	biome_color_tween.tween_property(self, "sky_mat:sky_top_color", info.sky_top_color, 5.0)
 	biome_color_tween.tween_property(self, "sky_mat:sky_horizon_color", info.sky_bottom_color, 5.0)
 	biome_color_tween.tween_property(self, "sky_mat:ground_horizon_color", info.sky_bottom_color, 5.0)
+	var sun_sprite: Sprite3D = $"../Sky/Node3DClouds/Node3D/Sprite3D"
+	biome_color_tween.tween_property(sun_sprite, "modulate", info.sun_sprite_modulate, 5.0)
+	
 
 func start_end_screen():
 	ended = true
@@ -286,13 +291,13 @@ func start_end_screen():
 	await get_tree().create_timer(3.0).timeout
 	%LabelCredits.visible = false
 	await get_tree().create_timer(1.0).timeout
-	%LabelCredits.text = "A Loopy Game made by 6 friends\nin 96 hours"
+	%LabelCredits.text = "A Loopy Game made by 6 friends\n(mostly) in 96 hours"
 	%LabelCredits.visible = true
 	
 	await get_tree().create_timer(5.0).timeout
 	%LabelCredits.visible = false
 	await get_tree().create_timer(1.0).timeout
-	%LabelCredits.text = "Level Design:\nCryptal"
+	%LabelCredits.text = "Level Design:\nCryptal\nSaltyIsaac"
 	%LabelCredits.visible = true
 	
 	await get_tree().create_timer(3.0).timeout
@@ -322,7 +327,7 @@ func start_end_screen():
 	await get_tree().create_timer(3.0).timeout
 	%LabelCredits.visible = false
 	await get_tree().create_timer(1.0).timeout
-	%LabelCredits.text = "Terrain & Environments:\nArkatein"
+	%LabelCredits.text = "Terrain & Environments:\nArkatein\nSaltyIsaac"
 	%LabelCredits.visible = true
 	
 	await get_tree().create_timer(3.0).timeout

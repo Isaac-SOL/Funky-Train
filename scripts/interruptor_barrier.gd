@@ -28,13 +28,16 @@ func _process(delta: float) -> void:
 	else:
 		%BarrierPivot.rotation_degrees.y = current_y
 
-func switch(right: bool):
+func switch(right: bool, hidden: bool = false):
 	# Reversed: we go towards the blocked path
 	var y_target := degrees_left if right else degrees_right
 	if y_tween:
 		y_tween.kill()
 	y_tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
 	y_tween.tween_property(self, "current_y", y_target, 0.5)
+	
+	if hidden:
+		return
 	
 	var circle_tween := create_tween()
 	for i: int in range(4):

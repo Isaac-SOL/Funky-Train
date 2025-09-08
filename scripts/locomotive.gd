@@ -283,12 +283,10 @@ func remove_carriage(carriage: Carriage):
 
 func check_tb():
 	if "tb_powered" not in additional_properties:
-		for i in range(carriages.size()):
-			for j in range(carriages.size()):
-				if carriages[i].character.name == "hub2_hard" and carriages[j].is_tb \
-						and (i == j - 1 or i == j + 1):
-					power_tb(carriages[j])
-					return
+		for i in range(1, carriages.size()):
+			if carriages[i].character.name == "hub2_hard" and carriages[i - 1].is_tb:
+				power_tb(carriages[i - 1])
+				return
 
 func power_tb(tb_carriage: Carriage):
 	additional_properties.append("tb_powered")

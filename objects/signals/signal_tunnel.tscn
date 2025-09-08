@@ -19,11 +19,13 @@ script = ExtResource("1_8vnw6")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.245, 0, 0, 0, 0.245, 0, 0, 0, 0.245, 0, 2.03818, 0)
+visibility_range_end = 100.0
 alpha_cut = 2
 texture = ExtResource("1_31an6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+visibility_range_end = 65.0
 mesh = SubResource("CylinderMesh_81qnm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

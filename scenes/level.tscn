@@ -52,8 +52,10 @@ sun_color = Color(1, 1, 1, 1)
 sun_energy = 0.5
 depth_gradient_color = Color(1, 0.835294, 0, 1)
 depth_gradient_strength = 0.65
+deep_depth_gradient_strength = 0.0
 sky_top_color = Color(1, 0.866667, 0, 1)
 sky_bottom_color = Color(0.98, 0, 0.212333, 1)
+sun_sprite_modulate = Color(1, 1, 1, 1)
 metadata/_custom_type_script = "uid://c8wiyte6m05gp"
 
 [sub_resource type="Resource" id="Resource_lqb7q"]
@@ -62,8 +64,10 @@ sun_color = Color(1, 1, 1, 1)
 sun_energy = 0.4
 depth_gradient_color = Color(0.67451, 0.309804, 0.129412, 1)
 depth_gradient_strength = 0.7
+deep_depth_gradient_strength = 0.0
 sky_top_color = Color(1, 0.866667, 0, 1)
 sky_bottom_color = Color(0.98, 0, 0.212333, 1)
+sun_sprite_modulate = Color(1, 1, 1, 1)
 metadata/_custom_type_script = "uid://c8wiyte6m05gp"
 
 [sub_resource type="Resource" id="Resource_ok3ci"]
@@ -72,8 +76,10 @@ sun_color = Color(1, 0.72549, 0.25098, 1)
 sun_energy = 0.3
 depth_gradient_color = Color(0.72, 0, 0.156, 1)
 depth_gradient_strength = 0.55
+deep_depth_gradient_strength = 0.0
 sky_top_color = Color(1, 0.866667, 0, 1)
 sky_bottom_color = Color(0.98, 0, 0.212333, 1)
+sun_sprite_modulate = Color(1, 1, 1, 1)
 metadata/_custom_type_script = "uid://c8wiyte6m05gp"
 
 [sub_resource type="Resource" id="Resource_1tp2x"]
@@ -397,7 +403,7 @@ billboard = 0
 [node name="Signals" type="Node3D" parent="."]
 
 [node name="SignalQuicksand" parent="Signals" instance=ExtResource("26_556r4")]
-transform = Transform3D(0.948628, -0.108402, 0.297243, 0.113533, 0.993534, 9.77396e-07, -0.295321, 0.033746, 0.954802, -89.1879, -0.398549, 12.3478)
+transform = Transform3D(0.948628, -0.108402, 0.297243, 0.113533, 0.993534, 9.78349e-07, -0.295321, 0.033746, 0.954802, -89.1879, -0.398549, 12.3478)
 
 [node name="SignalVirage" parent="Signals" instance=ExtResource("27_556r4")]
 transform = Transform3D(0.878626, 0, -0.477511, 0, 1, 0, 0.477511, 0, 0.878626, 16.249, -4.76837e-07, -29.5776)

@@ -60,7 +60,7 @@ func _ready() -> void:
 		%BakedRailsMesh.position.y = randf_range(-0.002, 0.002)
 		%BakedRailsMeshMinimap.visible = true
 		if is_toggled and toggle_barrier:
-			toggle_barrier.switch(current_direction_right)
+			toggle_barrier.switch(current_direction_right, true)
 
 func add_interactible(interactible: PathFollow3D):
 	interactibles.append(interactible)
@@ -126,6 +126,15 @@ func set_cross(vis: bool):
 func rebake():
 	%BakedRailsMesh.rebake()
 	%BakedRailsMeshMinimap.rebake()
+
+func get_main_mesh() -> BakedRailsMesh:
+	return %BakedRailsMesh
+
+func get_outline_mesh() -> BakedRailsMesh:
+	return %OutlineMesh
+
+func get_minimap_mesh() -> BakedRailsMesh:
+	return %BakedRailsMeshMinimap
 
 func align_to_in_sections():
 	if in_sections and in_sections.size() > 0:

@@ -4,9 +4,10 @@ func _ready() -> void:
 	super._ready()
 	await get_tree().process_frame
 	Main.instance.rhythm_sync.beat.connect(func(_b):
-		scale = Vector3(1.2, 1.2, 1.2)
-		var tween := create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
-		tween.tween_property(self, "scale", Vector3.ONE, 0.5)
+		if (global_position - Locomotive.instance.global_position).length_squared() < 10000.0:
+			scale = Vector3(1.2, 1.2, 1.2)
+			var tween := create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
+			tween.tween_property(self, "scale", Vector3.ONE, 0.5)
 	)
 
 func interact():

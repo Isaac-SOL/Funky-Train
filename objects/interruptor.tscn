@@ -86,12 +86,14 @@ material_broken = ExtResource("3_xxek4")
 
 [node name="Button" type="MeshInstance3D" parent="."]
 unique_name_in_owner = true
+visibility_range_end = 100.0
 mesh = SubResource("BoxMesh_yfycn")
 surface_material_override/0 = ExtResource("2_fhu76")
 
 [node name="ButtonOutline" type="MeshInstance3D" parent="Button"]
 transform = Transform3D(1, 0, 0, 0, 0.425, 0, 0, 0, 1, 0, 0.123853, 0)
 cast_shadow = 0
+visibility_range_end = 100.0
 mesh = SubResource("ArrayMesh_t4exs")
 surface_material_override/0 = SubResource("StandardMaterial3D_khvox")
 
@@ -125,6 +127,7 @@ unique_name_in_owner = true
 [node name="Sprite3D" type="Sprite3D" parent="DirectionIndicator"]
 transform = Transform3D(1.725, 0, -3.01609e-07, 0, 1.725, 0, 3.01609e-07, 0, 1.725, 0, -0.01, -1.592)
 cast_shadow = 0
+visibility_range_end = 75.0
 axis = 1
 alpha_cut = 1
 texture = ExtResource("5_mslwb")
@@ -139,6 +142,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_xxek4")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.500652, 0.208163, -0.0494654)
 cast_shadow = 0
+visibility_range_end = 100.0
 emitting = false
 amount = 10
 process_material = SubResource("ParticleProcessMaterial_80ene")

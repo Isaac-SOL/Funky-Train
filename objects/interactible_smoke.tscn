@@ -45,6 +45,7 @@ script = ExtResource("1_a5658")
 [node name="BrokenParticles" type="GPUParticles3D" parent="."]
 unique_name_in_owner = true
 cast_shadow = 0
+visibility_range_end = 100.0
 amount = 10
 process_material = SubResource("ParticleProcessMaterial_a5658")
 draw_pass_1 = SubResource("QuadMesh_q24hq")
