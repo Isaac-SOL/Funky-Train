@@ -3,14 +3,31 @@ class_name Carriage extends PathFollow3D
 
 @export var length: float = 2
 @export var kick: float = 1.2
+@export var is_tb: bool = false
 
 var curr_section_length: float
 var direction: bool
 var locomotive: Locomotive
 var character: CharacterInfo
+var powered: bool = false
 
 func _ready() -> void:
 	curr_section_length = get_parent().curve.get_baked_length()
+	if is_tb and "tb_powered" in Locomotive.instance.get_properties():
+		power()
+
+func _process(delta: float) -> void:
+	pass
+
+func power():
+	powered = true
+	for child in $ChildRender/wagon_vocoder/wagons_vocoder_mesh.get_children():
+		if child is MeshInstance3D:
+			for i in range(child.get_surface_override_material_count()):
+				child.set_surface_override_material(i, null)
+	var prise_mat: StandardMaterial3D = %prise_male.get_surface_override_material(0)
+	prise_mat.albedo_color = Color(0.91, 0.38, 0.85)
+	%AnimationPlayer.play("idle")
 
 func set_carriage_progress(prog_relative: float, new_section: RailSection):
 	if prog_relative < 0.0:

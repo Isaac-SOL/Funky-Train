@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://p051osfi2ydb"]
+
+[ext_resource type="PackedScene" uid="uid://b2l40wvwm6bf0" path="res://assets/modele/3D/chili_smooth.glb" id="1_1ucmr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xfa0u"]
+albedo_color = Color(0.909804, 0.282353, 0.364706, 1)
+
+[node name="ChiliStevie" instance=ExtResource("1_1ucmr")]
+
+[node name="Circle_003_Circle_012" parent="." index="0"]
+visibility_range_end = 100.0
+surface_material_override/0 = SubResource("StandardMaterial3D_xfa0u")

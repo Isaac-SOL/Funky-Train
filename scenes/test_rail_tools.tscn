@@ -1,0 +1,287 @@
+[gd_scene load_steps=18 format=4 uid="uid://c7o5rj1em1gen"]
+
+[ext_resource type="Script" uid="uid://hcgv0grqqm7y" path="res://scripts/rails_master.tres.gd" id="1_i1mfa"]
+[ext_resource type="PackedScene" uid="uid://c7adtd3m5hihf" path="res://objects/rail_section.tscn" id="2_n2pvs"]
+[ext_resource type="Script" uid="uid://mwi487qkqwy3" path="res://scripts/rail_section.gd" id="3_hhvio"]
+[ext_resource type="ArrayMesh" uid="uid://bqd8rawdm78km" path="res://meshes/rails/Rail.tres" id="4_b7elf"]
+[ext_resource type="Script" uid="uid://b4mxonouwg3a3" path="res://scripts/baked_rails_mesh.gd" id="5_cvlow"]
+[ext_resource type="Material" uid="uid://2j8oioxr23sf" path="res://materials/rails_standard_mat.tres" id="6_o17ua"]
+[ext_resource type="Material" uid="uid://c7w0nu4e7nymo" path="res://materials/rail_section_outline.tres" id="7_scv6b"]
+[ext_resource type="ArrayMesh" uid="uid://bw2e5m7gg03hk" path="res://meshes/rails/Rail_minimap.tres" id="8_vtlrv"]
+
+[sub_resource type="Curve3D" id="Curve3D_hhvio"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(-0.975713, 0, 0.0207178, 1, 0, 0, 0, 0, 0, -1, 0, 0, 1, 0, 0, 8, 0, 0, -0.48668, 0, -2.05487, 0.48668, 0, 2.05487, 15.3224, 0, 4.7123, -2.27065, 0, 0.630737, 2.27065, 0, -0.630737, 20.4581, 0, 8.54933, 1.51377, 0, 5.02487, 0, 0, 0, 24.5789, 0, 2.30504),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Curve3D" id="Curve3D_o17ua"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(-0.975713, 0, 0.0207178, -1.51377, 0, -5.02487, 0, 0, 0, -1, 0, 0, 0, 0, 0, 8, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_b7elf"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(-0.975713, 0, 0.0207178, -1.51377, 0, -5.02487, 0, 0, 0, 4.00451, 0, 2.51712, -4.00451, 0, -2.51712, 0.297253, 0, -10.3834, 3.93687, 0, -0.934171, -3.93687, 0, 0.934171, -10.9795, 0, -5.04528, 1.03426, 0, 4.00359, 0, 0, 0, -20.9885, 0, -9.48259),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Curve3D" id="Curve3D_vtlrv"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(1.03426, 0, 4.00359, -1.03426, 0, -4.00359, 0, 0, 0, -3.2696, 0, 0.20018, 3.2696, 0, -0.20018, 8.5743, 0, -9.07481),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_x140k"]
+_surfaces = [{
+"aabb": AABB(0, 0, -0.5, 8, 1e-05, 1),
+"attribute_data": PackedByteArray("AAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAA=="),
+"format": 34359738391,
+"material": ExtResource("6_o17ua"),
+"primitive": 4,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 80,
+"vertex_data": PackedByteArray("AAAAAAAAAAAAAAA/AAAAAAAAAAAAAAC/pR5RPgAAAAAAAAA/pR5RPgAAAAAAAAC/GnDSPgAAAAAAAAA/GnDSPgAAAAAAAAC/BZMdPwAAAAAAAAA/BZMdPwAAAAAAAAC/SNxRPwAAAAAAAAA/SNxRPwAAAAAAAAC/bjCDPwAAAAAAAAA/bjCDPwAAAAAAAAC/NX6dPwAAAAAAAAA/NX6dPwAAAAAAAAC/hLm3PwAAAAAAAAA/hLm3PwAAAAAAAAC/pfrRPwAAAAAAAAA/pfrRPwAAAAAAAAC/x0rsPwAAAAAAAAA/x0rsPwAAAAAAAAC/IUMDQAAAAAAAAAA/IUMDQAAAAAAAAAC/EGIQQAAAAAAAAAA/EGIQQAAAAAAAAAC/zIMdQAAAAAAAAAA/zIMdQAAAAAAAAAC/waYqQAAAAAAAAAA/waYqQAAAAAAAAAC/+ck3QAAAAAAAAAA/+ck3QAAAAAAAAAC/x+tEQAAAAAAAAAA/x+tEQAAAAAAAAAC/pAtSQAAAAAAAAAA/pAtSQAAAAAAAAAC/YCxfQAAAAAAAAAA/YCxfQAAAAAAAAAC/o01sQAAAAAAAAAA/o01sQAAAAAAAAAC/L295QAAAAAAAAAA/L295QAAAAAAAAAC/aUiDQAAAAAAAAAA/aUiDQAAAAAAAAAC/L9mJQAAAAAAAAAA/L9mJQAAAAAAAAAC/0GmQQAAAAAAAAAA/0GmQQAAAAAAAAAC/L/qWQAAAAAAAAAA/L/qWQAAAAAAAAAC/HYqdQAAAAAAAAAA/HYqdQAAAAAAAAAC/BBukQAAAAAAAAAA/BBukQAAAAAAAAAC/oKyqQAAAAAAAAAA/oKyqQAAAAAAAAAC/Gj6xQAAAAAAAAAA/Gj6xQAAAAAAAAAC/+c63QAAAAAAAAAA/+c63QAAAAAAAAAC/cF6+QAAAAAAAAAA/cF6+QAAAAAAAAAC/Tu3EQAAAAAAAAAA/Tu3EQAAAAAAAAAC/V4HLQAAAAAAAAAA/V4HLQAAAAAAAAAC/nxHSQAAAAAAAAAA/nxHSQAAAAAAAAAC/c6DYQAAAAAAAAAA/c6DYQAAAAAAAAAC/5TPfQAAAAAAAAAA/5TPfQAAAAAAAAAC/dsTlQAAAAAAAAAA/dsTlQAAAAAAAAAC/oE3sQAAAAAAAAAA/oE3sQAAAAAAAAAC//9jyQAAAAAAAAAA//9jyQAAAAAAAAAC/Cnf5QAAAAAAAAAA/Cnf5QAAAAAAAAAC/AAAAQQAAAAAAAAA/AAAAQQAAAAAAAAC//3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgP9//3//fwCA//////9/AID/f/9//38AgP//////fwCA/3//f/9/AID//////38AgA==")
+}]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e7jeh"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_yfycn"]
+script/source = "extends Node3D
+
+func _ready() -> void:
+	await get_tree().process_frame
+	Main.instance.rhythm_sync.beat.connect(func(_b):
+		if visible:
+			scale = 1.2 * Vector3.ONE
+			var tween := create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
+			tween.tween_property(self, \"scale\", Vector3.ONE, 0.6)
+	)
+"
+
+[sub_resource type="Curve3D" id="Curve3D_57ejo"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(1.03426, 0, 4.00359, -1.03426, 0, -4.00359, 0, 0, 0, 7.62557, 0, 1.13476, -7.62557, 0, -1.13476, -9.68364, 0, -5.8605),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_kkt3m"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(-0.975713, 0, 0.0207178, -7.62557, 0, -1.13476, 0, 0, 0, -2.17387, 0, -2.05946, 2.17387, 0, 2.05946, -0.0857954, 0, 10.9524, -1, 0, 0, 0, 0, 0, 6.09324, 0, 13.038),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[node name="RailsMaster" type="Node3D"]
+script = ExtResource("1_i1mfa")
+metadata/_custom_type_script = "uid://hcgv0grqqm7y"
+
+[node name="Rail" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_n2pvs")]
+curve = SubResource("Curve3D_hhvio")
+in_sections = [NodePath("../Rail_s_s_s_d_c_c_d_s")]
+out_sections = [NodePath("../Rail_s_s_s"), NodePath("../Rail_s_s_s_d")]
+cut_point_index = 1
+
+[node name="Rail_s_s_s" parent="." node_paths=PackedStringArray("in_sections") instance=ExtResource("2_n2pvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5789, 0, 2.30504)
+curve = SubResource("Curve3D_o17ua")
+in_sections = [NodePath("../Rail")]
+cut_point_index = 1
+
+[node name="CrossFollow" parent="Rail_s_s_s" index="3"]
+transform = Transform3D(0.957493, 0, 0.28845, 0, 1, 0, -0.28845, 0, 0.957493, 0, 0, 0)
+
+[node name="Rail_s_s_s_d" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_n2pvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5789, 0, 2.30504)
+curve = SubResource("Curve3D_b7elf")
+in_sections = [NodePath("../Rail")]
+out_sections = [NodePath("../Rail_s_s_s_d_c_c"), NodePath("../Rail_s_s_s_d_c_c_d")]
+cut_point_index = 2
+
+[node name="CrossFollow" parent="Rail_s_s_s_d" index="3"]
+transform = Transform3D(0.957493, 0, 0.28845, 0, 1, 0, -0.28845, 0, 0.957493, 0, 0, 0)
+
+[node name="Rail_s_s_s_d_c_c" parent="." node_paths=PackedStringArray("in_sections") groups=["Rails"] instance=ExtResource("2_n2pvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5904, 0, -7.17755)
+curve = SubResource("Curve3D_vtlrv")
+script = ExtResource("3_hhvio")
+in_sections = [NodePath("../Rail_s_s_s_d")]
+
+[node name="BakedRailsMesh" parent="Rail_s_s_s_d_c_c" index="0" node_paths=PackedStringArray("path")]
+unique_name_in_owner = true
+layers = 3
+cast_shadow = 0
+mesh = ExtResource("4_b7elf")
+skeleton = NodePath("../..")
+script = ExtResource("5_cvlow")
+path = NodePath("..")
+material = ExtResource("6_o17ua")
+
+[node name="OutlineMesh" parent="Rail_s_s_s_d_c_c" index="1"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00487702, 0)
+visible = false
+layers = 3
+material_override = ExtResource("7_scv6b")
+cast_shadow = 0
+mesh = SubResource("ArrayMesh_x140k")
+skeleton = NodePath("../..")
+
+[node name="BakedRailsMeshMinimap" parent="Rail_s_s_s_d_c_c" index="2" node_paths=PackedStringArray("path")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9, 0)
+visible = false
+layers = 2
+cast_shadow = 0
+mesh = ExtResource("8_vtlrv")
+skeleton = NodePath("../..")
+script = ExtResource("5_cvlow")
+path = NodePath("..")
+material = SubResource("StandardMaterial3D_e7jeh")
+vertex_per_meter = 2.0
+width = 3.0
+minimap = true
+
+[node name="CrossFollow" parent="Rail_s_s_s_d_c_c" index="3"]
+transform = Transform3D(0.968212, 0, 0.250121, 0, 1, 0, -0.250121, 0, 0.968212, 0, 0, 0)
+
+[node name="CrossTween" parent="Rail_s_s_s_d_c_c/CrossFollow" index="0"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.977276, 0)
+
+[node name="CrossCenter" parent="Rail_s_s_s_d_c_c/CrossFollow/CrossTween" index="0"]
+script = SubResource("GDScript_yfycn")
+
+[node name="Cross" parent="Rail_s_s_s_d_c_c/CrossFollow/CrossTween/CrossCenter" index="0"]
+transform = Transform3D(-8.74228e-10, 0, -0.02, 0, 0.02, 0, 0.02, 0, -8.74228e-10, 0, -0.570411, 0)
+
+[node name="Rail_s_s_s_d_c_c_d" parent="." node_paths=PackedStringArray("in_sections", "out_sections") groups=["Rails"] instance=ExtResource("2_n2pvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5904, 0, -7.17755)
+curve = SubResource("Curve3D_57ejo")
+script = ExtResource("3_hhvio")
+in_sections = [NodePath("../Rail_s_s_s_d")]
+out_sections = [NodePath("../Rail_s_s_s_d_c_c_d_s")]
+
+[node name="BakedRailsMesh" parent="Rail_s_s_s_d_c_c_d" index="0" node_paths=PackedStringArray("path")]
+unique_name_in_owner = true
+layers = 3
+cast_shadow = 0
+mesh = ExtResource("4_b7elf")
+skeleton = NodePath("../..")
+script = ExtResource("5_cvlow")
+path = NodePath("..")
+material = ExtResource("6_o17ua")
+
+[node name="OutlineMesh" parent="Rail_s_s_s_d_c_c_d" index="1"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00487702, 0)
+visible = false
+layers = 3
+material_override = ExtResource("7_scv6b")
+cast_shadow = 0
+mesh = SubResource("ArrayMesh_x140k")
+skeleton = NodePath("../..")
+
+[node name="BakedRailsMeshMinimap" parent="Rail_s_s_s_d_c_c_d" index="2" node_paths=PackedStringArray("path")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9, 0)
+visible = false
+layers = 2
+cast_shadow = 0
+mesh = ExtResource("8_vtlrv")
+skeleton = NodePath("../..")
+script = ExtResource("5_cvlow")
+path = NodePath("..")
+material = SubResource("StandardMaterial3D_e7jeh")
+vertex_per_meter = 2.0
+width = 3.0
+minimap = true
+
+[node name="CrossFollow" parent="Rail_s_s_s_d_c_c_d" index="3"]
+transform = Transform3D(0.968212, 0, 0.250121, 0, 1, 0, -0.250121, 0, 0.968212, 0, 0, 0)
+
+[node name="CrossTween" parent="Rail_s_s_s_d_c_c_d/CrossFollow" index="0"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.977276, 0)
+
+[node name="CrossCenter" parent="Rail_s_s_s_d_c_c_d/CrossFollow/CrossTween" index="0"]
+script = SubResource("GDScript_yfycn")
+
+[node name="Cross" parent="Rail_s_s_s_d_c_c_d/CrossFollow/CrossTween/CrossCenter" index="0"]
+transform = Transform3D(-8.74228e-10, 0, -0.02, 0, 0.02, 0, 0.02, 0, -8.74228e-10, 0, -0.570411, 0)
+
+[node name="Rail_s_s_s_d_c_c_d_s" parent="." node_paths=PackedStringArray("in_sections", "out_sections") groups=["Rails"] instance=ExtResource("2_n2pvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.09324, 0, -13.038)
+curve = SubResource("Curve3D_kkt3m")
+script = ExtResource("3_hhvio")
+in_sections = [NodePath("../Rail_s_s_s_d_c_c_d")]
+out_sections = [NodePath("../Rail")]
+
+[node name="BakedRailsMesh" parent="Rail_s_s_s_d_c_c_d_s" index="0" node_paths=PackedStringArray("path")]
+unique_name_in_owner = true
+layers = 3
+cast_shadow = 0
+mesh = ExtResource("4_b7elf")
+skeleton = NodePath("../..")
+script = ExtResource("5_cvlow")
+path = NodePath("..")
+material = ExtResource("6_o17ua")
+
+[node name="OutlineMesh" parent="Rail_s_s_s_d_c_c_d_s" index="1"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00487702, 0)
+visible = false
+layers = 3
+material_override = ExtResource("7_scv6b")
+cast_shadow = 0
+mesh = SubResource("ArrayMesh_x140k")
+skeleton = NodePath("../..")
+
+[node name="BakedRailsMeshMinimap" parent="Rail_s_s_s_d_c_c_d_s" index="2" node_paths=PackedStringArray("path")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9, 0)
+visible = false
+layers = 2
+cast_shadow = 0
+mesh = ExtResource("8_vtlrv")
+skeleton = NodePath("../..")
+script = ExtResource("5_cvlow")
+path = NodePath("..")
+material = SubResource("StandardMaterial3D_e7jeh")
+vertex_per_meter = 2.0
+width = 3.0
+minimap = true
+
+[node name="CrossFollow" parent="Rail_s_s_s_d_c_c_d_s" index="3"]
+transform = Transform3D(0.147188, 0, 0.989106, 0, 1, 0, -0.989106, 0, 0.147188, 0, 0, 0)
+
+[node name="CrossTween" parent="Rail_s_s_s_d_c_c_d_s/CrossFollow" index="0"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.977276, 0)
+
+[node name="CrossCenter" parent="Rail_s_s_s_d_c_c_d_s/CrossFollow/CrossTween" index="0"]
+script = SubResource("GDScript_yfycn")
+
+[node name="Cross" parent="Rail_s_s_s_d_c_c_d_s/CrossFollow/CrossTween/CrossCenter" index="0"]
+transform = Transform3D(-8.74228e-10, 0, -0.02, 0, 0.02, 0, 0.02, 0, -8.74228e-10, 0, -0.570411, 0)
+
+[editable path="Rail"]
+[editable path="Rail_s_s_s"]
+[editable path="Rail_s_s_s_d"]
+[editable path="Rail_s_s_s_d_c_c"]
+[editable path="Rail_s_s_s_d_c_c_d"]
+[editable path="Rail_s_s_s_d_c_c_d_s"]

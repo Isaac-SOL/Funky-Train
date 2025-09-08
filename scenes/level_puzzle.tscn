@@ -1,0 +1,730 @@
+[gd_scene load_steps=62 format=3 uid="uid://dxfmlf33ndxjm"]
+
+[ext_resource type="Script" uid="uid://m2gs6g88kh3b" path="res://scripts/level.gd" id="1_34uqr"]
+[ext_resource type="Script" uid="uid://d3y48j1b2i22e" path="res://addons/zylann.hterrain/hterrain.gd" id="1_p00hf"]
+[ext_resource type="Shader" uid="uid://jsv6e38q2x14" path="res://materials/custom_detail_shader.gdshader" id="2_f3pt5"]
+[ext_resource type="Resource" uid="uid://bygc00rkd1vcn" path="res://assets/HTerrain_Puzzle/data.hterrain" id="2_woq1o"]
+[ext_resource type="Script" uid="uid://dw84e0nu3ialr" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_dylkt"]
+[ext_resource type="Script" uid="uid://c8wiyte6m05gp" path="res://scripts/biome_color.gd" id="3_f3pt5"]
+[ext_resource type="PackedScene" uid="uid://bmpco2y4bk6ux" path="res://scenes/puzzle_map_path.tscn" id="4_34uqr"]
+[ext_resource type="Shader" uid="uid://bcbdyldfu5hyy" path="res://materials/custom_terrain_shader.gdshader" id="5_0yji4"]
+[ext_resource type="Texture2D" uid="uid://cpf6nn2yurgni" path="res://assets/textures/grass/light_grass_2.png" id="8_fjt3i"]
+[ext_resource type="Texture2D" uid="uid://cm5mcoa2q2adj" path="res://assets/textures/sand/sand_32x32.png" id="9_7qtsq"]
+[ext_resource type="Texture2D" uid="uid://cgc6ndkx7rmxs" path="res://assets/textures/grass/snow.png" id="10_0u806"]
+[ext_resource type="Texture2D" uid="uid://t3asoaucgwli" path="res://assets/textures/rock/red_rock_32x32_bump.png" id="11_84wuk"]
+[ext_resource type="Script" uid="uid://cpdd44k8ek70j" path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" id="12_yye0t"]
+[ext_resource type="Texture2D" uid="uid://ciweow80fcdx6" path="res://assets/modele/2D/environment/nature/arbre1.png" id="13_mfxbm"]
+[ext_resource type="PackedScene" uid="uid://ddhc7hdytvuvf" path="res://assets/shaders/water_shader.tscn" id="14_7qtsq"]
+[ext_resource type="Texture2D" uid="uid://6jmdwj3vn6m0" path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" id="14_mv16x"]
+[ext_resource type="Texture2D" uid="uid://c1qnwv56e3mib" path="res://assets/modele/2D/environment/nature/arbre2.png" id="15_mfxbm"]
+[ext_resource type="Texture2D" uid="uid://cn1teuf7rjgq" path="res://assets/modele/2D/environment/nature/arbre3.png" id="16_mv16x"]
+[ext_resource type="Texture2D" uid="uid://bcpte5e0figdd" path="res://assets/modele/2D/environment/nature/buisson1.png" id="17_xovl0"]
+[ext_resource type="PackedScene" uid="uid://balsdmns2sot8" path="res://scenes/object/nature/rocks/rock_1.tscn" id="18_mv16x"]
+[ext_resource type="Texture2D" uid="uid://jmvacbmjp7wt" path="res://assets/modele/2D/environment/nature/buisson2.png" id="18_qe6gi"]
+[ext_resource type="ArrayMesh" uid="uid://bmnssca7oh6cg" path="res://meshes/new_array_mesh.tres" id="18_yo56m"]
+[ext_resource type="Texture2D" uid="uid://b2hsoinkyhe13" path="res://assets/modele/2D/environment/nature/Buisson5.png" id="19_ddmt0"]
+[ext_resource type="PackedScene" uid="uid://b58auulia0ewn" path="res://scenes/object/nature/rocks/rock_2.tscn" id="19_yo56m"]
+[ext_resource type="PackedScene" uid="uid://cumpmjwkdpldv" path="res://scenes/object/nature/rocks/rock_3.tscn" id="20_82xxw"]
+[ext_resource type="Texture2D" uid="uid://ct7b1lt7ddqah" path="res://assets/modele/2D/environment/nature/Buisson6.png" id="20_o6iew"]
+[ext_resource type="Texture2D" uid="uid://u63c44bdal82" path="res://assets/modele/2D/environment/nature/arbre4.png" id="21_3kxp6"]
+[ext_resource type="PackedScene" uid="uid://ccjcib11h17yt" path="res://objects/signals/signal_periph.tscn" id="21_jh2by"]
+[ext_resource type="Texture2D" uid="uid://bi2cycwpwku8p" path="res://assets/modele/2D/environment/nature/Buisson7.png" id="22_qe6gi"]
+[ext_resource type="Texture2D" uid="uid://dq3s1b4b7x2rj" path="res://assets/modele/2D/environment/nature/buisson3.png" id="23_lkpk0"]
+[ext_resource type="PackedScene" uid="uid://dih3qhelvqvi8" path="res://objects/signal_superspeed.tscn" id="24_hakj6"]
+[ext_resource type="Texture2D" uid="uid://buupwh88wg1u1" path="res://assets/modele/2D/environment/nature/buisson4.png" id="24_yli11"]
+[ext_resource type="Texture2D" uid="uid://bwmtysrwuoxf6" path="res://assets/modele/2D/environment/nature/fleur1.png" id="25_0satf"]
+[ext_resource type="Script" uid="uid://wrgu8dfp4pw3" path="res://leeklib/shaker_3d.gd" id="26_0u806"]
+[ext_resource type="Texture2D" uid="uid://bbqishjjqfa17" path="res://assets/modele/2D/environment/nature/fleur2.png" id="26_akq2x"]
+[ext_resource type="Texture2D" uid="uid://bo8w4ow5tlun2" path="res://assets/textures/gamjam2025_sun.png" id="27_jh6f5"]
+[ext_resource type="PackedScene" uid="uid://bx081u0fhvkog" path="res://objects/signals/signal_slowdown.tscn" id="27_nphjl"]
+[ext_resource type="Texture2D" uid="uid://l2utvst2xqpe" path="res://assets/modele/2D/environment/nature/fleur3.png" id="27_wrssk"]
+[ext_resource type="Texture2D" uid="uid://348kbeug2g8s" path="res://assets/textures/gamjam2025_nuage1.png" id="28_jh2by"]
+[ext_resource type="PackedScene" uid="uid://c35f85t150sg4" path="res://objects/signals/signal_tunnel_kim.tscn" id="29_hakj6"]
+[ext_resource type="Texture2D" uid="uid://ddrm5trq6f4wd" path="res://assets/textures/gamjam2025_nuage2.png" id="29_yye0t"]
+[ext_resource type="PackedScene" uid="uid://d0uojyja66o5k" path="res://objects/signals/signal_montagne.tscn" id="30_jh2by"]
+[ext_resource type="Texture2D" uid="uid://cfk6v7prtt1ps" path="res://assets/textures/gamjam2025_nuage3.png" id="30_mfxbm"]
+[ext_resource type="PackedScene" uid="uid://nre4d7npplu8" path="res://objects/signals/signal_plage.tscn" id="31_yye0t"]
+[ext_resource type="Texture2D" uid="uid://b2fdgh8w22v7q" path="res://assets/textures/planche.png" id="32_jh2by"]
+[ext_resource type="PackedScene" uid="uid://6q5fdpxvyv4f" path="res://objects/signals/signal_foret.tscn" id="32_mfxbm"]
+
+[sub_resource type="Resource" id="Resource_0yji4"]
+script = ExtResource("3_f3pt5")
+sun_color = Color(1, 1, 1, 1)
+sun_energy = 0.5
+depth_gradient_color = Color(1, 0.835294, 0, 1)
+depth_gradient_strength = 0.65
+deep_depth_gradient_strength = 0.0
+sky_top_color = Color(1, 0.866667, 0, 1)
+sky_bottom_color = Color(0.98, 0, 0.212333, 1)
+sun_sprite_modulate = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://c8wiyte6m05gp"
+
+[sub_resource type="Resource" id="Resource_g808e"]
+script = ExtResource("3_f3pt5")
+sun_color = Color(1, 1, 1, 1)
+sun_energy = 0.4
+depth_gradient_color = Color(0.67451, 0.309804, 0.129412, 1)
+depth_gradient_strength = 0.7
+deep_depth_gradient_strength = 0.0
+sky_top_color = Color(1, 0.866667, 0, 1)
+sky_bottom_color = Color(0.98, 0, 0.212333, 1)
+sun_sprite_modulate = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://c8wiyte6m05gp"
+
+[sub_resource type="Resource" id="Resource_0pgkx"]
+script = ExtResource("3_f3pt5")
+sun_color = Color(1, 0.72549, 0.25098, 1)
+sun_energy = 0.3
+depth_gradient_color = Color(0.72, 0, 0.156, 1)
+depth_gradient_strength = 0.55
+deep_depth_gradient_strength = 0.0
+sky_top_color = Color(1, 0.866667, 0, 1)
+sky_bottom_color = Color(0.98, 0, 0.212333, 1)
+sun_sprite_modulate = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://c8wiyte6m05gp"
+
+[sub_resource type="Resource" id="Resource_mv16x"]
+script = ExtResource("3_f3pt5")
+sun_color = Color(1, 1, 1, 1)
+sun_energy = 0.4
+depth_gradient_color = Color(0.19, 0.541, 1, 1)
+depth_gradient_strength = 0.55
+deep_depth_gradient_strength = 0.55
+sky_top_color = Color(0.4512, 0.94, 0.907413, 1)
+sky_bottom_color = Color(0.2376, 0.644453, 0.88, 1)
+sun_sprite_modulate = Color(1, 1, 1, 0.392157)
+metadata/_custom_type_script = "uid://c8wiyte6m05gp"
+
+[sub_resource type="Resource" id="Resource_f3pt5"]
+script = ExtResource("3_dylkt")
+mode = 0
+textures = [[ExtResource("8_fjt3i"), ExtResource("9_7qtsq"), ExtResource("10_0u806"), ExtResource("11_84wuk")], [null, null, null, null]]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yye0t"]
+albedo_texture = ExtResource("32_jh2by")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mfxbm"]
+material = SubResource("StandardMaterial3D_yye0t")
+size = Vector2(4, 1.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mv16x"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yo56m"]
+material = SubResource("StandardMaterial3D_mv16x")
+size = Vector2(4.3, 1.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7qtsq"]
+size = Vector3(167.663, 13.1348, 143.644)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rg1t3"]
+size = Vector3(126.435, 13.1348, 60.3128)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mv16x"]
+size = Vector3(58.1638, 13.1348, 101.499)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_84wuk"]
+size = Vector3(125.87, 13.1348, 119.361)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lt32k"]
+size = Vector3(224.575, 13.1348, 105.11)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wubuv"]
+size = Vector3(46.092, 13.1348, 36.6178)
+
+[node name="LevelPuzzle" type="Node3D"]
+script = ExtResource("1_34uqr")
+custom_detail_shader = ExtResource("2_f3pt5")
+see_through_layers = PackedInt32Array(0, 1, 2, 7)
+plains_info = SubResource("Resource_0yji4")
+desert_info = SubResource("Resource_g808e")
+beach_info = SubResource("Resource_0pgkx")
+snow_info = SubResource("Resource_mv16x")
+
+[node name="HTerrain" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -182.26, -0.1, -158.02)
+script = ExtResource("1_p00hf")
+ambient_wind = 0.1
+_terrain_data = ExtResource("2_woq1o")
+chunk_size = 32
+collision_enabled = false
+collision_layer = 1
+collision_mask = 1
+shader_type = "Custom"
+custom_shader = ExtResource("5_0yji4")
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_f3pt5")
+render_layers = 3
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 2.0
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+metadata/_custom_type_script = "uid://d3y48j1b2i22e"
+
+[node name="HTerrainDetailLayer" type="Node3D" parent="HTerrain"]
+script = ExtResource("12_yye0t")
+texture = ExtResource("13_mfxbm")
+view_distance = 125.0
+custom_shader = ExtResource("2_f3pt5")
+density = 0.2
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = Vector3(8, 8, 8)
+shader_params/u_roughness = null
+shader_params/locomotive_data_screenspace = null
+metadata/_editor_icon = ExtResource("14_mv16x")
+
+[node name="@Node3D@37685" type="Node3D" parent="HTerrain"]
+script = ExtResource("12_yye0t")
+layer_index = 1
+texture = ExtResource("15_mfxbm")
+custom_shader = ExtResource("2_f3pt5")
+density = 0.57
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = Vector3(6, 6, 6)
+shader_params/u_roughness = null
+shader_params/locomotive_data_screenspace = null
+metadata/_editor_icon = ExtResource("14_mv16x")
+
+[node name="@Node3D@47426" type="Node3D" parent="HTerrain"]
+script = ExtResource("12_yye0t")
+layer_index = 2
+texture = ExtResource("16_mv16x")
+custom_shader = ExtResource("2_f3pt5")
+density = 0.1
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = Vector3(6, 6, 6)
+shader_params/u_roughness = null
+shader_params/locomotive_data_screenspace = null
+metadata/_editor_icon = ExtResource("14_mv16x")
+
+[node name="@Node3D@89423" type="Node3D" parent="HTerrain"]
+script = ExtResource("12_yye0t")
+layer_index = 3
+texture = ExtResource("17_xovl0")
+view_distance = 65.0
+custom_shader = ExtResource("2_f3pt5")
+density = 0.1
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = Vector3(2, 2, 2)
+shader_params/u_roughness = null
+shader_params/locomotive_data_screenspace = null
+metadata/_editor_icon = ExtResource("14_mv16x")
+
+[node name="@Node3D@92814" type="Node3D" parent="HTerrain"]
+script = ExtResource("12_yye0t")
+layer_index = 4
+texture = ExtResource("18_qe6gi")
+view_distance = 65.0
+custom_shader = ExtResource("2_f3pt5")
+density = 0.1
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = Vector3(2, 2, 2)
+shader_params/u_roughness = null
+shader_params/locomotive_data_screenspace = null
+metadata/_editor_icon = ExtResource("14_mv16x")
+
+[node name="@Node3D@93977" type="Node3D" parent="HTerrain"]
+script = ExtResource("12_yye0t")
+layer_index = 5
+texture = ExtResource("19_ddmt0")
+view_distance = 45.0
+custom_shader = ExtResource("2_f3pt5")
+density = 0.1
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = Vector3(1, 1, 1)
+shader_params/u_roughness = null
+shader_params/locomotive_data_screenspace = null
+metadata/_editor_icon = ExtResource("14_mv16x")
+
+[node name="@Node3D@94662" type="Node3D" parent="HTerrain"]
+script = ExtResource("12_yye0t")
+layer_index = 6
+texture = ExtResource("20_o6iew")
+view_distance = 45.0
+custom_shader = ExtResource("2_f3pt5")
+density = 0.2
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = Vector3(1, 1, 1)
+shader_params/u_roughness = null
+shader_params/locomotive_data_screenspace = null
+metadata/_editor_icon = ExtResource("14_mv16x")
+
+[node name="@Node3D@97071" type="Node3D" parent="HTerrain"]
+script = ExtResource("12_yye0t")
+layer_index = 7
+texture = ExtResource("21_3kxp6")
+custom_shader = ExtResource("2_f3pt5")
+density = 0.2
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = Vector3(6, 6, 6)
+shader_params/u_roughness = null
+shader_params/locomotive_data_screenspace = null
+metadata/_editor_icon = ExtResource("14_mv16x")
+
+[node name="@Node3D@99321" type="Node3D" parent="HTerrain"]
+script = ExtResource("12_yye0t")
+layer_index = 8
+texture = ExtResource("22_qe6gi")
+view_distance = 65.0
+custom_shader = ExtResource("2_f3pt5")
+density = 0.1
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = Vector3(2, 2, 2)
+shader_params/u_roughness = null
+shader_params/locomotive_data_screenspace = null
+metadata/_editor_icon = ExtResource("14_mv16x")
+
+[node name="@Node3D@100295" type="Node3D" parent="HTerrain"]
+script = ExtResource("12_yye0t")
+layer_index = 9
+texture = ExtResource("23_lkpk0")
+view_distance = 65.0
+custom_shader = ExtResource("2_f3pt5")
+density = 0.1
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = Vector3(2, 2, 2)
+shader_params/u_roughness = null
+shader_params/locomotive_data_screenspace = null
+metadata/_editor_icon = ExtResource("14_mv16x")
+
+[node name="@Node3D@104922" type="Node3D" parent="HTerrain"]
+script = ExtResource("12_yye0t")
+layer_index = 10
+texture = ExtResource("24_yli11")
+view_distance = 65.0
+custom_shader = ExtResource("2_f3pt5")
+density = 0.05
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = Vector3(2, 2, 2)
+shader_params/u_roughness = null
+shader_params/locomotive_data_screenspace = null
+metadata/_editor_icon = ExtResource("14_mv16x")
+
+[node name="@Node3D@105835" type="Node3D" parent="HTerrain"]
+script = ExtResource("12_yye0t")
+layer_index = 11
+texture = ExtResource("25_0satf")
+view_distance = 65.0
+custom_shader = ExtResource("2_f3pt5")
+density = 0.05
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = Vector3(2, 2, 2)
+shader_params/u_roughness = null
+shader_params/locomotive_data_screenspace = null
+metadata/_editor_icon = ExtResource("14_mv16x")
+
+[node name="@Node3D@106666" type="Node3D" parent="HTerrain"]
+script = ExtResource("12_yye0t")
+layer_index = 12
+texture = ExtResource("26_akq2x")
+view_distance = 65.0
+custom_shader = ExtResource("2_f3pt5")
+density = 0.05
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = Vector3(2, 2, 2)
+shader_params/u_roughness = null
+shader_params/locomotive_data_screenspace = null
+metadata/_editor_icon = ExtResource("14_mv16x")
+
+[node name="@Node3D@107341" type="Node3D" parent="HTerrain"]
+script = ExtResource("12_yye0t")
+layer_index = 13
+texture = ExtResource("27_wrssk")
+view_distance = 65.0
+custom_shader = ExtResource("2_f3pt5")
+density = 0.05
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = Vector3(2, 2, 2)
+shader_params/u_roughness = null
+shader_params/locomotive_data_screenspace = null
+metadata/_editor_icon = ExtResource("14_mv16x")
+
+[node name="PathScene" parent="." instance=ExtResource("4_34uqr")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04, 0)
+
+[node name="water_shader" parent="." instance=ExtResource("14_7qtsq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -178.884, -1.95037, 332.979)
+
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.992947, 0, 0.11856, 0, 1, 0, -0.11856, 0, 0.992947, -15.592, -0.04, 109.865)
+layers = 3
+mesh = ExtResource("18_yo56m")
+skeleton = NodePath("../PathScene")
+
+[node name="rock_env" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.7695, -0.1, 94.115)
+
+[node name="rock_1" parent="rock_env" instance=ExtResource("18_mv16x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.2404, 5.17717, -24.2358)
+cast_shadow = 0
+billboard = 0
+
+[node name="rock_8" parent="rock_env" instance=ExtResource("18_mv16x")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 78.7624, 4.93765, 17.9424)
+cast_shadow = 0
+billboard = 0
+
+[node name="rock_9" parent="rock_env" instance=ExtResource("18_mv16x")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -38.2422, 4.05087, -20.1308)
+cast_shadow = 0
+billboard = 0
+
+[node name="rock_13" parent="rock_env" instance=ExtResource("18_mv16x")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2.93779, 4.05087, 1.60773)
+cast_shadow = 0
+billboard = 0
+
+[node name="rock_2" parent="rock_env" instance=ExtResource("18_mv16x")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 46.5919, 5.17717, 24.9193)
+cast_shadow = 0
+billboard = 0
+
+[node name="rock_3" parent="rock_env" instance=ExtResource("19_yo56m")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 12.1979, 4.53307, -36.3617)
+cast_shadow = 0
+billboard = 0
+
+[node name="rock_4" parent="rock_env" instance=ExtResource("19_yo56m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0188, 5.08684, -24.1296)
+cast_shadow = 0
+billboard = 0
+
+[node name="rock_10" parent="rock_env" instance=ExtResource("19_yo56m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.6571, 5.08684, 56.0352)
+cast_shadow = 0
+billboard = 0
+
+[node name="rock_7" parent="rock_env" instance=ExtResource("19_yo56m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.1809, 3.44388, 7.99284)
+cast_shadow = 0
+billboard = 0
+
+[node name="rock_5" parent="rock_env" instance=ExtResource("20_82xxw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.8389, 8.17501, -18.7174)
+cast_shadow = 0
+billboard = 0
+
+[node name="rock_14" parent="rock_env" instance=ExtResource("20_82xxw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4738, 8.17501, -16.1171)
+cast_shadow = 0
+billboard = 0
+
+[node name="rock_6" parent="rock_env" instance=ExtResource("20_82xxw")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 56.8978, 5.77042, -6.95013)
+cast_shadow = 0
+billboard = 0
+
+[node name="FrailBridge" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5211, -0.129, 135.98)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FrailBridge"]
+transform = Transform3D(0.996041, 0, 0.0888943, 0, 1, 0, -0.0888943, 0, 0.996041, 0, 0, 0)
+mesh = SubResource("PlaneMesh_mfxbm")
+skeleton = NodePath("../../Signals")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="FrailBridge/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+mesh = SubResource("PlaneMesh_yo56m")
+skeleton = NodePath("../../../Signals")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="FrailBridge"]
+transform = Transform3D(0.999138, 0, -0.0415095, 0, 1, 0, 0.0415095, 0, 0.999138, 0.106461, 0, 2.06389)
+mesh = SubResource("PlaneMesh_mfxbm")
+skeleton = NodePath("../../Signals")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="FrailBridge/MeshInstance3D12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+mesh = SubResource("PlaneMesh_yo56m")
+skeleton = NodePath("../../../Signals")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="FrailBridge"]
+transform = Transform3D(0.982333, 0, 0.187141, 0, 1, 0, -0.187141, 0, 0.982333, 0.248346, 0, 4.22838)
+mesh = SubResource("PlaneMesh_mfxbm")
+skeleton = NodePath("../../Signals")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="FrailBridge/MeshInstance3D13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+mesh = SubResource("PlaneMesh_yo56m")
+skeleton = NodePath("../../../Signals")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="FrailBridge"]
+transform = Transform3D(0.999641, 0, -0.0267876, 0, 1, 0, 0.0267876, 0, 0.999641, 0, 0, -1.81238)
+mesh = SubResource("PlaneMesh_mfxbm")
+skeleton = NodePath("../../Signals")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="FrailBridge/MeshInstance3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+mesh = SubResource("PlaneMesh_yo56m")
+skeleton = NodePath("../../../Signals")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="FrailBridge"]
+transform = Transform3D(0.993389, 0, -0.114798, 0, 1, 0, 0.114798, 0, 0.993389, 0, 0, -3.69586)
+mesh = SubResource("PlaneMesh_mfxbm")
+skeleton = NodePath("../../Signals")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="FrailBridge/MeshInstance3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+mesh = SubResource("PlaneMesh_yo56m")
+skeleton = NodePath("../../../Signals")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="FrailBridge"]
+transform = Transform3D(0.997762, 0, 0.066866, 0, 1, 0, -0.066866, 0, 0.997762, 0, 0, -5.67682)
+mesh = SubResource("PlaneMesh_mfxbm")
+skeleton = NodePath("../../Signals")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="FrailBridge/MeshInstance3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+mesh = SubResource("PlaneMesh_yo56m")
+skeleton = NodePath("../../../Signals")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="FrailBridge"]
+transform = Transform3D(0.998942, 0, -0.0459907, 0, 1, 0, 0.0459907, 0, 0.998942, -0.181606, 0, -7.62625)
+mesh = SubResource("PlaneMesh_mfxbm")
+skeleton = NodePath("../../Signals")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="FrailBridge/MeshInstance3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+mesh = SubResource("PlaneMesh_yo56m")
+skeleton = NodePath("../../../Signals")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="FrailBridge"]
+transform = Transform3D(0.996439, 0, 0.0843213, 0, 1, 0, -0.0843213, 0, 0.996439, -0.338774, 0, -9.5209)
+mesh = SubResource("PlaneMesh_mfxbm")
+skeleton = NodePath("../../Signals")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="FrailBridge/MeshInstance3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+mesh = SubResource("PlaneMesh_yo56m")
+skeleton = NodePath("../../../Signals")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="FrailBridge"]
+transform = Transform3D(0.990312, 0, 0.138862, 0, 1, 0, -0.138862, 0, 0.990312, -0.570066, 0, -11.411)
+mesh = SubResource("PlaneMesh_mfxbm")
+skeleton = NodePath("../../Signals")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="FrailBridge/MeshInstance3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+mesh = SubResource("PlaneMesh_yo56m")
+skeleton = NodePath("../../../Signals")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="FrailBridge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.889877, 0, -13.2089)
+mesh = SubResource("PlaneMesh_mfxbm")
+skeleton = NodePath("../../Signals")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="FrailBridge/MeshInstance3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+mesh = SubResource("PlaneMesh_yo56m")
+skeleton = NodePath("../../../Signals")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="FrailBridge"]
+transform = Transform3D(0.992399, 0, 0.123065, 0, 1, 0, -0.123065, 0, 0.992399, -1.3395, 0, -14.988)
+mesh = SubResource("PlaneMesh_mfxbm")
+skeleton = NodePath("../../Signals")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="FrailBridge/MeshInstance3D9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+mesh = SubResource("PlaneMesh_yo56m")
+skeleton = NodePath("../../../Signals")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="FrailBridge"]
+transform = Transform3D(0.95925, 0, 0.282559, 0, 1, 0, -0.282559, 0, 0.95925, -1.91563, 0, -16.7852)
+mesh = SubResource("PlaneMesh_mfxbm")
+skeleton = NodePath("../../Signals")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="FrailBridge/MeshInstance3D10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+mesh = SubResource("PlaneMesh_yo56m")
+skeleton = NodePath("../../../Signals")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="FrailBridge"]
+transform = Transform3D(0.946508, 0, 0.322679, 0, 1, 0, -0.322679, 0, 0.946508, -2.58362, 0, -18.5024)
+mesh = SubResource("PlaneMesh_mfxbm")
+skeleton = NodePath("../../Signals")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="FrailBridge/MeshInstance3D11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+mesh = SubResource("PlaneMesh_yo56m")
+skeleton = NodePath("../../../Signals")
+
+[node name="Signals" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.129, 0)
+
+[node name="SignalPeriph" parent="Signals" instance=ExtResource("21_jh2by")]
+transform = Transform3D(-0.8238, 0, 0.566881, 0, 1, 0, -0.566881, 0, -0.8238, -63.1422, -2.38419e-07, 41.316)
+
+[node name="SignalPeriph2" parent="Signals" instance=ExtResource("21_jh2by")]
+transform = Transform3D(0.8238, 0, -0.566881, 0, 1, 0, 0.566881, 0, 0.8238, -107.856, -7.15256e-07, 55.3926)
+
+[node name="SignalPeriph3" parent="Signals" instance=ExtResource("21_jh2by")]
+transform = Transform3D(0.640257, 0, 0.768161, 0, 1, 0, -0.768161, 0, 0.640257, -105.501, -7.15256e-07, 64.4131)
+
+[node name="SignalPeriph4" parent="Signals" instance=ExtResource("21_jh2by")]
+transform = Transform3D(0.731199, 0, 0.682164, 0, 1, 0, -0.682164, 0, 0.731199, -47.9247, -7.15256e-07, 97.2347)
+
+[node name="SignalPeriph5" parent="Signals" instance=ExtResource("21_jh2by")]
+transform = Transform3D(0.888473, 0, 0.458929, 0, 1, 0, -0.458929, 0, 0.888473, 53.7758, 0, 93.7926)
+
+[node name="SignalSuperspeed" parent="Signals" instance=ExtResource("24_hakj6")]
+transform = Transform3D(-0.351286, 0, 0.936268, 0, 1, 0, -0.936268, 0, -0.351286, -31.8358, 4.76837e-07, 108.442)
+
+[node name="SignalSlowdown" parent="Signals" instance=ExtResource("27_nphjl")]
+transform = Transform3D(-0.621749, 0, -0.783216, 0, 1, 0, 0.783216, 0, -0.621749, -28.1356, 0, -49.6754)
+
+[node name="SignalTunnelKim" parent="Signals" instance=ExtResource("29_hakj6")]
+transform = Transform3D(0.979701, 0, 0.200462, 0, 1, 0, -0.200462, 0, 0.979701, -33.5137, 3.8147e-06, 35.0849)
+
+[node name="SignalTunnelKim2" parent="Signals" instance=ExtResource("29_hakj6")]
+transform = Transform3D(-0.444182, 0, -0.895937, 0, 1, 0, 0.895937, 0, -0.444182, -38.7286, 4.05312e-06, 161.061)
+
+[node name="SignalMontagne" parent="Signals" instance=ExtResource("30_jh2by")]
+transform = Transform3D(-0.696001, 0, -0.718041, 0, 1, 0, 0.718041, 0, -0.696001, 32.6286, 1.43051e-06, 51.0205)
+
+[node name="SignalMontagne2" parent="Signals" instance=ExtResource("30_jh2by")]
+transform = Transform3D(-0.832283, 0, -0.554351, 0, 1, 0, 0.554351, 0, -0.832283, -11.0649, 3.33786e-06, 67.1167)
+
+[node name="SignalMontagne4" parent="Signals" instance=ExtResource("30_jh2by")]
+transform = Transform3D(-0.11882, 0, -0.992916, 0, 1, 0, 0.992916, 0, -0.11882, -106.348, -4.76837e-07, 59.2641)
+
+[node name="SignalMontagne3" parent="Signals" instance=ExtResource("30_jh2by")]
+transform = Transform3D(0.444182, 0, 0.895937, 0, 1, 0, -0.895937, 0, 0.444182, -38.689, -1.16916, 161.081)
+
+[node name="SignalMontagne5" parent="Signals" instance=ExtResource("30_jh2by")]
+transform = Transform3D(0.640257, 0, 0.768161, 0, 1, 0, -0.768161, 0, 0.640257, -105.464, -1.13729, 64.4442)
+
+[node name="SignalPlage" parent="Signals" instance=ExtResource("31_yye0t")]
+transform = Transform3D(0.959309, 0, -0.282358, 0, 1, 0, 0.282358, 0, 0.959309, -143.179, 0, 101.856)
+
+[node name="SignalPlage2" parent="Signals" instance=ExtResource("31_yye0t")]
+transform = Transform3D(0.937701, 0, 0.347443, 0, 1, 0, -0.347443, 0, 0.937701, -47.6871, 0, 87.3567)
+
+[node name="SignalForet" parent="Signals" instance=ExtResource("32_mfxbm")]
+transform = Transform3D(0.912449, 0, -0.409191, 0, 1, 0, 0.409191, 0, 0.912449, -14.624, 0, 76.0165)
+
+[node name="SignalForet2" parent="Signals" instance=ExtResource("32_mfxbm")]
+transform = Transform3D(-0.838184, -0.183428, -0.513616, -0.213781, 0.976882, -5.88986e-08, 0.501742, 0.109801, -0.85802, 22.6536, 4.1241, -75.6418)
+
+[node name="Area3D_plane" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_plane"]
+transform = Transform3D(-0.0250778, 0, 0.999686, 0, 1, 0, -0.999686, 0, -0.0250778, -42.1729, 1.69164, -31.1012)
+shape = SubResource("BoxShape3D_7qtsq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D_plane"]
+transform = Transform3D(-0.0250778, 0, 0.999686, 0, 1, 0, -0.999686, 0, -0.0250778, -129.65, 1.69164, -49.5275)
+shape = SubResource("BoxShape3D_rg1t3")
+
+[node name="Area3D_snow" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_snow"]
+transform = Transform3D(-0.0250778, 0, 0.999686, 0, 1, 0, -0.999686, 0, -0.0250778, 85.7179, 1.69164, 16.9024)
+shape = SubResource("BoxShape3D_mv16x")
+
+[node name="Area3D_beach" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_beach"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.246, 0, 113.427)
+shape = SubResource("BoxShape3D_84wuk")
+
+[node name="Area3D_desert" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_desert"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.6855, 0, 124.254)
+shape = SubResource("BoxShape3D_lt32k")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D_desert"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 152.411, 0, 62.2067)
+shape = SubResource("BoxShape3D_wubuv")
+
+[node name="Sky" type="Node3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="Node3DClouds" type="Node3D" parent="Sky"]
+unique_name_in_owner = true
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -47.0601, 0, -61.8394)
+script = ExtResource("26_0u806")
+follow_global_coordinates = true
+move_speed = 30.0
+rotation_speed = 30.0
+metadata/_custom_type_script = "uid://wrgu8dfp4pw3"
+
+[node name="Node3D" type="Node3D" parent="Sky/Node3DClouds"]
+transform = Transform3D(-0.432684, -0.870867, 0.233186, 6.32298e-09, 0.25865, 0.965971, -0.901546, 0.41796, -0.111914, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D"]
+transform = Transform3D(-40, 3.49691e-06, -1.35525e-20, 1.52855e-13, 1.74846e-06, -40, -3.49691e-06, -40, -1.74846e-06, 0, 250, 0)
+cast_shadow = 0
+texture = ExtResource("27_jh6f5")
+
+[node name="Node3D2" type="Node3D" parent="Sky/Node3DClouds"]
+transform = Transform3D(0.252306, 0.948484, -0.191627, 1.49012e-08, 0.198034, 0.980195, 0.967648, -0.247309, 0.049965, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D2"]
+transform = Transform3D(40, 0, 0, 0, -1.74846e-06, -40, 0, 40, -1.74846e-06, 0, 220, 0)
+cast_shadow = 0
+alpha_cut = 1
+texture = ExtResource("28_jh2by")
+
+[node name="Node3D3" type="Node3D" parent="Sky/Node3DClouds"]
+transform = Transform3D(-0.92274, -0.366789, 0.118392, 8.3819e-09, 0.307174, 0.951653, -0.385423, 0.878129, -0.283442, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D3"]
+transform = Transform3D(40, 0, 0, 0, -1.74846e-06, -40, 0, 40, -1.74846e-06, 0, 220, 0)
+cast_shadow = 0
+alpha_cut = 1
+texture = ExtResource("28_jh2by")
+
+[node name="Node3D4" type="Node3D" parent="Sky/Node3DClouds"]
+transform = Transform3D(0.675487, -0.708736, 0.203495, 0, 0.275973, 0.961165, -0.737372, -0.649255, 0.186416, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D4"]
+transform = Transform3D(40, 0, 0, 0, -1.74846e-06, -40, 0, 40, -1.74846e-06, 0, 220, 0)
+cast_shadow = 0
+alpha_cut = 1
+texture = ExtResource("29_yye0t")
+
+[node name="Node3D5" type="Node3D" parent="Sky/Node3DClouds"]
+transform = Transform3D(0.974193, 0.211757, -0.0781465, 3.72529e-09, 0.346215, 0.938155, 0.225716, -0.913944, 0.33728, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D5"]
+transform = Transform3D(40, 0, 0, 0, -1.74846e-06, -40, 0, 40, -1.74846e-06, 0, 220, 0)
+cast_shadow = 0
+alpha_cut = 1
+texture = ExtResource("30_mfxbm")
+
+[connection signal="area_entered" from="Area3D_plane" to="." method="_on_area_3d_plane_area_entered"]
+[connection signal="area_entered" from="Area3D_snow" to="." method="_on_area_3d_snow_area_entered"]
+[connection signal="area_entered" from="Area3D_beach" to="." method="_on_area_3d_beach_area_entered"]
+[connection signal="area_entered" from="Area3D_desert" to="." method="_on_area_3d_desert_area_entered"]

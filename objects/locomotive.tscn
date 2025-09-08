@@ -1,11 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2gtvjpbbcs2j"]
+[gd_scene load_steps=8 format=3 uid="uid://b2gtvjpbbcs2j"]
 
 [ext_resource type="Script" uid="uid://dlylwsenxbljj" path="res://scripts/locomotive.gd" id="1_2c63q"]
 [ext_resource type="PackedScene" uid="uid://bo2gdx8joos8y" path="res://scenes/wagon/chef_locomotive.tscn" id="3_ue4hp"]
+[ext_resource type="AudioStream" uid="uid://7q30ydbaq3nc" path="res://assets/sfx/accel2.ogg" id="4_mkonq"]
 [ext_resource type="Texture2D" uid="uid://bpw4fqw84ny1n" path="res://assets/textures/minimap_arrow.png" id="4_pcaac"]
+[ext_resource type="AudioStream" uid="uid://1cuc8ct8yrca" path="res://assets/sfx/powerup.ogg" id="5_mkonq"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ue4hp"]
 radius = 2.77916
+
+[sub_resource type="GDScript" id="GDScript_ue4hp"]
+script/source = "extends Marker3D
+
+func _process(delta: float) -> void:
+	global_position = get_parent_node_3d().global_position + Vector3(0.0, 50.0, 0.0)
+"
 
 [node name="Locomotive" type="PathFollow3D"]
 transform = Transform3D(-4.37099e-08, 0, -0.999971, 0, 0.999962, 0, 0.999966, 0, -4.37101e-08, 0, 0, 0)
@@ -18,6 +27,7 @@ unique_name_in_owner = true
 layers = 3
 
 [node name="chef_locomotive2" parent="MeshInstance3D" instance=ExtResource("3_ue4hp")]
+unique_name_in_owner = true
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, 0, 0)
 
 [node name="VisibleCenter" type="Marker3D" parent="MeshInstance3D"]
@@ -35,6 +45,42 @@ collision_mask = 2
 shape = SubResource("SphereShape3D_ue4hp")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(20, -8.74232e-07, -3.82139e-14, 0, -8.74228e-07, 20, -8.74232e-07, -20, -8.74228e-07, 0, 5, 0)
+transform = Transform3D(20, -8.74232e-07, -3.82139e-14, 0, -8.74228e-07, 20, -8.74232e-07, -20, -8.74228e-07, 0, 9.70034, 0)
 layers = 2
+cast_shadow = 0
+alpha_cut = 1
 texture = ExtResource("4_pcaac")
+
+[node name="CameraPivotY" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.917755, 0, 0.397148, 0, 1, 0, -0.397148, 0, 0.917755, 0, 2.2017, 0)
+
+[node name="CameraPivotX" type="Marker3D" parent="CameraPivotY"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871557, 0, -0.0871557, 0.996195, 0, 0, 0)
+
+[node name="CameraFollowPos" type="Marker3D" parent="CameraPivotY/CameraPivotX"]
+unique_name_in_owner = true
+transform = Transform3D(1.00003, 0, 0, 0, 1.00004, 0, 0, 0, 1.00003, -1.49017e-08, 0, 6.03638)
+
+[node name="CameraLoopPos" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.977045, 0.213031, 0, -0.213031, 0.977045, 0.43864, 1.67714, 0.634021)
+
+[node name="MinimapPos" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 50, 0)
+script = SubResource("GDScript_ue4hp")
+
+[node name="EndPos" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-0.989779, 0, 0.142612, 0, 1, 0, -0.142612, 0, -0.989779, 2.22986, 3.07829, -7.26573)
+
+[node name="AudioAcceleration" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_mkonq")
+volume_db = 10.0
+
+[node name="AudioPowerup" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_mkonq")

@@ -3,6 +3,10 @@ extends Wagon
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
-func _process(delta: float) -> void:
-	super._process(delta)
+func _ready() -> void:
+	super._ready()
+	await get_tree().process_frame
 	animation_player.speed_scale = Global.metronome_speed
+
+func set_ruddy(vis: bool):
+	%RuddyUpgrade.visible = vis

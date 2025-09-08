@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1ckxtuigxrcr"]
+
+[ext_resource type="PackedScene" uid="uid://bsfl7susbdq07" path="res://assets/modele/3D/mouse_smooth.glb" id="1_ov4rk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70d56"]
+albedo_color = Color(0.4464, 0.72, 0.68352, 1)
+
+[node name="MouseParker" instance=ExtResource("1_ov4rk")]
+
+[node name="group1226118074" parent="." index="0"]
+visibility_range_end = 100.0
+surface_material_override/0 = SubResource("StandardMaterial3D_70d56")
+
+[node name="group1244576720" parent="." index="1"]
+visibility_range_end = 100.0
+surface_material_override/0 = SubResource("StandardMaterial3D_70d56")
+
+[node name="group1190368398" parent="." index="2"]
+visibility_range_end = 100.0
+surface_material_override/1 = SubResource("StandardMaterial3D_70d56")
+
+[node name="group1415488189" parent="." index="3"]
+visibility_range_end = 100.0
+
+[node name="group501500655" parent="." index="4"]
+visibility_range_end = 100.0
+
+[node name="group1930673237" parent="." index="5"]
+visibility_range_end = 100.0
+
+[node name="group366457425" parent="." index="6"]
+visibility_range_end = 100.0

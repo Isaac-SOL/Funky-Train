@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=5 format=3 uid="uid://rvoqiqhkmm4c"]
+
+[ext_resource type="PackedScene" uid="uid://xotg7cc6685q" path="res://objects/carriage_keytar.tscn" id="1_lm221"]
+[ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_grrxt"]
+[ext_resource type="Texture2D" uid="uid://tgllu36r8u26" path="res://assets/modele/2D/personnages/personnages_synthé_contour.png" id="3_yccek"]
+[ext_resource type="Texture2D" uid="uid://cfcsugehhcprd" path="res://assets/modele/2D/personnages/personnages_synthé_c_contour.png" id="4_yqo1e"]
+
+[resource]
+script = ExtResource("2_grrxt")
+name = "maze"
+sprite = ExtResource("3_yccek")
+sprite_cadre = ExtResource("4_yqo1e")
+color = Color(0.913725, 0.282353, 0.698039, 1)
+carriage = ExtResource("1_lm221")
+track_id = 4
+instrument = "clavier"
+true_name = "Stevie"
+metadata/_custom_type_script = "uid://rkfd1kwn018t"

@@ -1,0 +1,139 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvhtol1rjc8i"]
+
+[ext_resource type="PackedScene" uid="uid://c1ckxtuigxrcr" path="res://assets/modele/3D/mouse_parker.tscn" id="1_kicpl"]
+[ext_resource type="Script" uid="uid://dxa3xirc76x5d" path="res://scripts/mouse_obstacle.gd" id="1_yuoa5"]
+[ext_resource type="AudioStream" uid="uid://lx5kkttymwf2" path="res://assets/sfx/squeak.ogg" id="3_4j86c"]
+
+[sub_resource type="Animation" id="Animation_4pmev"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MouseParker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 0.401, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MouseParker:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MouseParker:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(3.5, 3.5, 3.5)]
+}
+
+[sub_resource type="Animation" id="Animation_yuoa5"]
+resource_name = "flee"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MouseParker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.1294, 0.401, -0.947875)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MouseParker:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(3.5, 3.5, 3.5), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MouseParker:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.266667),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -2.52221, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kicpl"]
+resource_name = "idle"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MouseParker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75, 1.5),
+"transitions": PackedFloat32Array(-2, -2, 1),
+"update": 0,
+"values": [Vector3(1, 0.401, 1), Vector3(1, 0.401, -1), Vector3(1, 0.401, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MouseParker:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.75, 1.36667, 1.5),
+"transitions": PackedFloat32Array(1, -2, 1, -2, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0, -1.5708, 0), Vector3(0, 1.5708, 0), Vector3(0, 1.5708, 0), Vector3(0, 4.71239, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4j86c"]
+_data = {
+&"RESET": SubResource("Animation_4pmev"),
+&"flee": SubResource("Animation_yuoa5"),
+&"idle": SubResource("Animation_kicpl")
+}
+
+[node name="MouseObstacle" type="PathFollow3D"]
+script = ExtResource("1_yuoa5")
+
+[node name="MouseParker" parent="." instance=ExtResource("1_kicpl")]
+transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 1, 0.401, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_4j86c")
+}
+autoplay = "idle"
+blend_times = [&"idle", &"flee", 0.25]
+
+[node name="AudioSqueak" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_4j86c")
+volume_db = 15.0

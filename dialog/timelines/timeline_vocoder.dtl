@@ -1,6 +1,16 @@
 [style name="default_portrait_style"]
-if {first_time.first_vocoder} == true:
-	vocoder: Y000000, y0u're g01ng on a r1de ? I w1ll f0ll0w y0u, as l0ng as 1t's n0t t00 h1gh
-	set {first_time.first_vocoder} = false
+if {puzzle_mode} == true:
+	if {first_time.first_vocoder} == true:
+		vocoder: FEEL1NG.......L0W....NEED ENERGY.... [br]FEEL1NG......SCARED....NEED MY [color=#9e920e]J1MMY[/color]....
+		set {first_time.first_vocoder} = false
+	else:
+		if {tb_powered}:
+			vocoder: WANNA KEEP 0N S1NG1NG... G0NNA KEEP 0N ROLL1NG...
+		else:
+			vocoder: FEEL1NG.......L0W....NEED ENERGY.... [br]FEEL1NG......SCARED....NEED MY [color=#9e920e]J1MMY[/color]....
 else:
-	vocoder: I'm a perf0rmer, n0t an athlete.
+	if {first_time.first_vocoder} == true:
+		vocoder: Y000000, y0u're g01ng on a r1de ? I w1ll f0ll0w y0u, as l0ng as 1t's n0t t00 h1gh
+		set {first_time.first_vocoder} = false
+	else:
+		vocoder: I'm a perf0rmer, n0t an athlete.

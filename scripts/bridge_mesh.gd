@@ -6,6 +6,7 @@ class_name BridgeMesh extends MeshInstance3D
 @export var vertex_per_meter : float = 5.0
 @export var width : float = 1.2
 @export var height : float = 5.0
+@export var rebake_with_tilt: bool = false
 @export_tool_button("Rebake") var rebake_button = rebake
 
 func rebake():
@@ -18,7 +19,7 @@ func rebake():
 	var normals = PackedVector3Array()
 	var indices = PackedInt32Array()
 	
-	var sample_tr := curve.sample_baked_with_rotation(0, true)
+	var sample_tr := curve.sample_baked_with_rotation(0, true, rebake_with_tilt)
 	var right_vec := sample_tr.basis.x.normalized() * width / 2.0
 	var right_pt := sample_tr.origin + right_vec
 	var left_pt := sample_tr.origin - right_vec
@@ -33,7 +34,7 @@ func rebake():
 	var b: int = 0
 	for vi: int in range(1, vertices_amount):
 		var p := (vi / float(vertices_amount - 1)) * curve.get_baked_length()
-		sample_tr = curve.sample_baked_with_rotation(p, true)
+		sample_tr = curve.sample_baked_with_rotation(p, true, rebake_with_tilt)
 		right_vec = sample_tr.basis.x.normalized() * width / 2.0
 		right_pt = sample_tr.origin + right_vec
 		left_pt = sample_tr.origin - right_vec

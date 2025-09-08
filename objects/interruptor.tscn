@@ -1,0 +1,149 @@
+[gd_scene load_steps=22 format=4 uid="uid://mqww6jfk1d0n"]
+
+[ext_resource type="Script" uid="uid://cvrmikr6pnu5u" path="res://scripts/interruptor.gd" id="1_vfl8x"]
+[ext_resource type="Material" uid="uid://bbxx4if5w4vsf" path="res://materials/barrier_mat.tres" id="2_fhu76"]
+[ext_resource type="Texture2D" uid="uid://d2eo2w76jfcma" path="res://assets/textures/press.png" id="3_vanaa"]
+[ext_resource type="Material" uid="uid://njr7dml0qy1k" path="res://materials/barrier_mat_deactivated.tres" id="3_xxek4"]
+[ext_resource type="AudioStream" uid="uid://cxy3m7v28w1yw" path="res://assets/sfx/snap.ogg" id="4_vanaa"]
+[ext_resource type="Texture2D" uid="uid://bk36dud3k78py" path="res://assets/textures/black_arrow.png" id="5_mslwb"]
+[ext_resource type="AudioStream" uid="uid://gtrunr5s65wq" path="res://assets/sfx/bzzt.ogg" id="6_jeqqj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yfycn"]
+size = Vector3(1.5, 0.3, 1.5)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_t4exs"]
+_surfaces = [{
+"aabb": AABB(-0.86547, -0.26547, -0.86547, 1.73094, 0.53094, 1.73094),
+"attribute_data": PackedByteArray("AAAAAAAAAACrqio/AAAAAKuqqj4AAAAAAACAPwAAAAAAAAAAAAAAP6uqKj8AAAA/q6qqPgAAAD8AAIA/AAAAP6uqqj4AAAAAAAAAAAAAAD+rqio/AAAAAKuqqj4AAAA/q6qqPgAAAD8AAAAAAACAP6uqKj8AAAA/q6qqPgAAgD+rqqo+AAAAP6uqKj8AAAA/q6oqPwAAAD8AAIA/AAAAP6uqqj4AAIA/q6oqPwAAgD+rqio/AACAPwAAgD8AAIA/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAAEAAIAAgAEAAYAAQAFAAMAAwAFAAcACAAMAAoACgAMAA4ACQANAAsACwANAA8AEAAUABIAEgAUABYAEQAVABMAEwAVABcA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("co9dv7Hrhz5yj10/co9dP7Hrhz5yj12/co9dP7Hrhz5yj10/co9dv7Hrhz5yj12/co9dv7Hrh75yj10/co9dP7Hrh75yj12/co9dP7Hrh75yj10/co9dv7Hrh75yj12/co9dP7Hrhz5yj10/co9dv7Hrhz5yj12/co9dP7Hrhz5yj12/co9dv7Hrhz5yj10/co9dP7Hrh75yj10/co9dv7Hrh75yj12/co9dP7Hrh75yj12/co9dv7Hrh75yj10/co9dP7Hrhz5yj10/co9dv7Hrh75yj10/co9dv7Hrhz5yj10/co9dP7Hrh75yj10/co9dP7Hrhz5yj12/co9dv7Hrh75yj12/co9dv7Hrhz5yj12/co9dP7Hrh75yj12//3//f////7//////AAD/v/9//3////+//////wAA/7//f/9/////v/////8AAP+//3//f////7//////AAD/v///AID/////AAAAgP9//7///wCA/////wAAAID/f/+///8AgP////8AAACA/3//v///AID/////AAAAgP9//78AgP//AAD/vwCAAAD///+/AID//wAA/78AgAAA////vwCA//8AAP+/AIAAAP///78AgP//AAD/vwCAAAD///+/")
+}]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_khvox"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_vanaa"]
+size = Vector2(4.5, 4.5)
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mslwb"]
+shading_mode = 0
+albedo_color = Color(1, 0.721569, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_mslwb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xxek4"]
+shading_mode = 0
+
+[sub_resource type="Gradient" id="Gradient_mslwb"]
+colors = PackedColorArray(0.0624675, 0.0577304, 0.00562208, 1, 0.37, 0.341942, 0.0333, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xxek4"]
+gradient = SubResource("Gradient_mslwb")
+
+[sub_resource type="Curve" id="Curve_jeqqj"]
+_data = [Vector2(1e-05, 0), 0.0, 17.0395, 0, 0, Vector2(0.131737, 1), -1.019, -1.019, 0, 0, Vector2(0.862275, 0.497622), 0.0, 0.0, 0, 0, Vector2(1, 0), -7.29426, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_jeqqj"]
+curve = SubResource("Curve_jeqqj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_80ene"]
+emission_shape_scale = Vector3(0.375, 1, 0.05)
+emission_shape = 3
+emission_box_extents = Vector3(1, 0.11, 1)
+spread = 20.0
+initial_velocity_min = 1.0
+initial_velocity_max = 3.0
+gravity = Vector3(0, 7, 0)
+scale_min = 0.4
+scale_curve = SubResource("CurveTexture_jeqqj")
+color_initial_ramp = SubResource("GradientTexture1D_xxek4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2c8rh"]
+shading_mode = 0
+vertex_color_use_as_albedo = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_l7pg8"]
+material = SubResource("StandardMaterial3D_2c8rh")
+
+[node name="Interruptor" type="PathFollow3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_vfl8x")
+material_normal = ExtResource("2_fhu76")
+material_broken = ExtResource("3_xxek4")
+
+[node name="Button" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+visibility_range_end = 100.0
+mesh = SubResource("BoxMesh_yfycn")
+surface_material_override/0 = ExtResource("2_fhu76")
+
+[node name="ButtonOutline" type="MeshInstance3D" parent="Button"]
+transform = Transform3D(1, 0, 0, 0, 0.425, 0, 0, 0, 1, 0, 0.123853, 0)
+cast_shadow = 0
+visibility_range_end = 100.0
+mesh = SubResource("ArrayMesh_t4exs")
+surface_material_override/0 = SubResource("StandardMaterial3D_khvox")
+
+[node name="PressSprite" type="Sprite3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, -4.37114e-08, 1, -4.37114e-08, 0, 0.23943, 0)
+visible = false
+cast_shadow = 0
+texture = ExtResource("3_vanaa")
+
+[node name="AudioPressed" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_vanaa")
+volume_db = 15.0
+
+[node name="AudioBzzt" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_jeqqj")
+volume_db = 10.0
+
+[node name="MinimapMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 7.16373, 0)
+layers = 2
+cast_shadow = 0
+mesh = SubResource("QuadMesh_vanaa")
+surface_material_override/0 = SubResource("StandardMaterial3D_mslwb")
+
+[node name="DirectionIndicator" type="Marker3D" parent="."]
+unique_name_in_owner = true
+
+[node name="Sprite3D" type="Sprite3D" parent="DirectionIndicator"]
+transform = Transform3D(1.725, 0, -3.01609e-07, 0, 1.725, 0, 3.01609e-07, 0, 1.725, 0, -0.01, -1.592)
+cast_shadow = 0
+visibility_range_end = 75.0
+axis = 1
+alpha_cut = 1
+texture = ExtResource("5_mslwb")
+
+[node name="Signal" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+visible = false
+mesh = SubResource("SphereMesh_mslwb")
+surface_material_override/0 = SubResource("StandardMaterial3D_xxek4")
+
+[node name="BrokenParticles" type="GPUParticles3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.500652, 0.208163, -0.0494654)
+cast_shadow = 0
+visibility_range_end = 100.0
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_80ene")
+draw_pass_1 = SubResource("QuadMesh_l7pg8")

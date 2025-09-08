@@ -1,8 +1,9 @@
-[gd_scene load_steps=54 format=3 uid="uid://capa820ir3vho"]
+[gd_scene load_steps=61 format=3 uid="uid://capa820ir3vho"]
 
 [ext_resource type="Script" uid="uid://m2gs6g88kh3b" path="res://scripts/level.gd" id="1_7agi7"]
 [ext_resource type="Script" uid="uid://d3y48j1b2i22e" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ppgk2"]
 [ext_resource type="Resource" uid="uid://c3axel685jlwo" path="res://assets/HTerrain/data.hterrain" id="2_2r41h"]
+[ext_resource type="Script" uid="uid://c8wiyte6m05gp" path="res://scripts/biome_color.gd" id="3_cr74b"]
 [ext_resource type="Script" uid="uid://dw84e0nu3ialr" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_klq6b"]
 [ext_resource type="Shader" uid="uid://bcbdyldfu5hyy" path="res://materials/custom_terrain_shader.gdshader" id="4_0fmhk"]
 [ext_resource type="Texture2D" uid="uid://cpf6nn2yurgni" path="res://assets/textures/grass/light_grass_2.png" id="4_wu01b"]
@@ -24,24 +25,62 @@
 [ext_resource type="Texture2D" uid="uid://bwmtysrwuoxf6" path="res://assets/modele/2D/environment/nature/fleur1.png" id="18_w3o6u"]
 [ext_resource type="Texture2D" uid="uid://bbqishjjqfa17" path="res://assets/modele/2D/environment/nature/fleur2.png" id="19_2e2fo"]
 [ext_resource type="Texture2D" uid="uid://cn1teuf7rjgq" path="res://assets/modele/2D/environment/nature/arbre3.png" id="20_3ies3"]
-[ext_resource type="PackedScene" uid="uid://0e3hodujsfcb" path="res://objects/signal_quicksand.tscn" id="26_556r4"]
+[ext_resource type="PackedScene" uid="uid://bsk1xsmlmwn6o" path="res://scenes/path_game_jam_scene.tscn" id="25_0fmhk"]
+[ext_resource type="PackedScene" uid="uid://0e3hodujsfcb" path="res://objects/signals/signal_quicksand.tscn" id="26_556r4"]
 [ext_resource type="PackedScene" uid="uid://balsdmns2sot8" path="res://scenes/object/nature/rocks/rock_1.tscn" id="26_cmcjb"]
-[ext_resource type="PackedScene" uid="uid://ddei87jmflwu2" path="res://scenes/main_map.tscn" id="26_xy2fk"]
-[ext_resource type="PackedScene" uid="uid://cdt8uc23ggjdc" path="res://objects/signal_virage.tscn" id="27_556r4"]
+[ext_resource type="PackedScene" uid="uid://cdt8uc23ggjdc" path="res://objects/signals/signal_virage.tscn" id="27_556r4"]
 [ext_resource type="PackedScene" uid="uid://b58auulia0ewn" path="res://scenes/object/nature/rocks/rock_2.tscn" id="27_cmcjb"]
 [ext_resource type="PackedScene" uid="uid://cumpmjwkdpldv" path="res://scenes/object/nature/rocks/rock_3.tscn" id="28_556r4"]
 [ext_resource type="PackedScene" uid="uid://ddhc7hdytvuvf" path="res://assets/shaders/water_shader.tscn" id="29_7agi7"]
-[ext_resource type="PackedScene" uid="uid://dqg5esvawldvs" path="res://objects/signal_rocket.tscn" id="29_w3o6u"]
-[ext_resource type="PackedScene" uid="uid://mdaovb10eqyu" path="res://objects/signal_tunnel.tscn" id="30_2e2fo"]
-[ext_resource type="PackedScene" uid="uid://cm6kmaxavyvgd" path="res://objects/signal_pente.tscn" id="31_gur6y"]
+[ext_resource type="PackedScene" uid="uid://dqg5esvawldvs" path="res://objects/signals/signal_rocket.tscn" id="29_w3o6u"]
+[ext_resource type="PackedScene" uid="uid://mdaovb10eqyu" path="res://objects/signals/signal_tunnel.tscn" id="30_2e2fo"]
+[ext_resource type="PackedScene" uid="uid://cm6kmaxavyvgd" path="res://objects/signals/signal_pente.tscn" id="31_gur6y"]
 [ext_resource type="Texture2D" uid="uid://bo8w4ow5tlun2" path="res://assets/textures/gamjam2025_sun.png" id="32_2e2fo"]
 [ext_resource type="Script" uid="uid://wrgu8dfp4pw3" path="res://leeklib/shaker_3d.gd" id="33_2jdvr"]
 [ext_resource type="Texture2D" uid="uid://348kbeug2g8s" path="res://assets/textures/gamjam2025_nuage1.png" id="33_gur6y"]
-[ext_resource type="PackedScene" uid="uid://b0ilit7chrmss" path="res://objects/signal_moumoute.tscn" id="33_svjb4"]
-[ext_resource type="PackedScene" uid="uid://chopft87fs8u4" path="res://objects/signal_rocks.tscn" id="34_535f6"]
+[ext_resource type="PackedScene" uid="uid://b0ilit7chrmss" path="res://objects/signals/signal_moumoute.tscn" id="33_svjb4"]
+[ext_resource type="PackedScene" uid="uid://chopft87fs8u4" path="res://objects/signals/signal_rocks.tscn" id="34_535f6"]
 [ext_resource type="Texture2D" uid="uid://ddrm5trq6f4wd" path="res://assets/textures/gamjam2025_nuage2.png" id="34_asl66"]
 [ext_resource type="Texture2D" uid="uid://cfk6v7prtt1ps" path="res://assets/textures/gamjam2025_nuage3.png" id="35_2jdvr"]
+[ext_resource type="PackedScene" uid="uid://svkary7u15pl" path="res://objects/signals/signal_1plus.tscn" id="37_iafhg"]
 [ext_resource type="ArrayMesh" uid="uid://bmnssca7oh6cg" path="res://meshes/new_array_mesh.tres" id="39_c1pbi"]
+[ext_resource type="PackedScene" uid="uid://bx081u0fhvkog" path="res://objects/signals/signal_slowdown.tscn" id="39_uhfbm"]
+
+[sub_resource type="Resource" id="Resource_uhfbm"]
+script = ExtResource("3_cr74b")
+sun_color = Color(1, 1, 1, 1)
+sun_energy = 0.5
+depth_gradient_color = Color(1, 0.835294, 0, 1)
+depth_gradient_strength = 0.65
+deep_depth_gradient_strength = 0.0
+sky_top_color = Color(1, 0.866667, 0, 1)
+sky_bottom_color = Color(0.98, 0, 0.212333, 1)
+sun_sprite_modulate = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://c8wiyte6m05gp"
+
+[sub_resource type="Resource" id="Resource_lqb7q"]
+script = ExtResource("3_cr74b")
+sun_color = Color(1, 1, 1, 1)
+sun_energy = 0.4
+depth_gradient_color = Color(0.67451, 0.309804, 0.129412, 1)
+depth_gradient_strength = 0.7
+deep_depth_gradient_strength = 0.0
+sky_top_color = Color(1, 0.866667, 0, 1)
+sky_bottom_color = Color(0.98, 0, 0.212333, 1)
+sun_sprite_modulate = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://c8wiyte6m05gp"
+
+[sub_resource type="Resource" id="Resource_ok3ci"]
+script = ExtResource("3_cr74b")
+sun_color = Color(1, 0.72549, 0.25098, 1)
+sun_energy = 0.3
+depth_gradient_color = Color(0.72, 0, 0.156, 1)
+depth_gradient_strength = 0.55
+deep_depth_gradient_strength = 0.0
+sky_top_color = Color(1, 0.866667, 0, 1)
+sky_bottom_color = Color(0.98, 0, 0.212333, 1)
+sun_sprite_modulate = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://c8wiyte6m05gp"
 
 [sub_resource type="Resource" id="Resource_1tp2x"]
 script = ExtResource("3_klq6b")
@@ -54,8 +93,10 @@ size = Vector3(44.7369, 13.1348, 94.0441)
 [sub_resource type="BoxShape3D" id="BoxShape3D_kih21"]
 size = Vector3(36.4395, 13.1348, 54.6269)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_uhfbm"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_w3o6u"]
-size = Vector3(39.2105, 13.1348, 92.7217)
+size = Vector3(39.2105, 13.1348, 80.5752)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2e2fo"]
 size = Vector3(36.4395, 13.1348, 136.206)
@@ -96,6 +137,9 @@ fill_to = Vector2(0, 0.5)
 script = ExtResource("1_7agi7")
 custom_detail_shader = ExtResource("11_50fbu")
 see_through_layers = PackedInt32Array(0, 3, 11)
+plains_info = SubResource("Resource_uhfbm")
+desert_info = SubResource("Resource_lqb7q")
+beach_info = SubResource("Resource_ok3ci")
 
 [node name="HTerrain" type="Node3D" parent="."]
 unique_name_in_owner = true
@@ -231,7 +275,7 @@ shader_params/u_roughness = 1.0
 shader_params/locomotive_data_screenspace = null
 metadata/_editor_icon = ExtResource("7_pqd0y")
 
-[node name="@Node3D@60762" type="Node3D" parent="HTerrain"]
+[node name="_Node3D_60762" type="Node3D" parent="HTerrain"]
 script = ExtResource("5_8gofh")
 layer_index = 8
 texture = ExtResource("17_kih21")
@@ -287,12 +331,12 @@ shader_params/u_roughness = 1.0
 shader_params/locomotive_data_screenspace = null
 metadata/_editor_icon = ExtResource("7_pqd0y")
 
-[node name="main_map" parent="." instance=ExtResource("26_xy2fk")]
+[node name="PathScene" parent="." instance=ExtResource("25_0fmhk")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.586, 0.0779428, -18.5415)
 
 [node name="water_shader" parent="." instance=ExtResource("29_7agi7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -359.311, -2.5, 0)
-layers = 3
 
 [node name="rock_env" type="Node3D" parent="."]
 
@@ -359,7 +403,7 @@ billboard = 0
 [node name="Signals" type="Node3D" parent="."]
 
 [node name="SignalQuicksand" parent="Signals" instance=ExtResource("26_556r4")]
-transform = Transform3D(0.948628, -0.108402, 0.297243, 0.113533, 0.993534, 5.91299e-07, -0.295321, 0.0337464, 0.954802, -89.1879, -0.398549, 12.3478)
+transform = Transform3D(0.948628, -0.108402, 0.297243, 0.113533, 0.993534, 9.80255e-07, -0.295321, 0.033746, 0.954802, -89.1879, -0.398549, 12.3478)
 
 [node name="SignalVirage" parent="Signals" instance=ExtResource("27_556r4")]
 transform = Transform3D(0.878626, 0, -0.477511, 0, 1, 0, 0.477511, 0, 0.878626, 16.249, -4.76837e-07, -29.5776)
@@ -379,6 +423,12 @@ transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 1.65374, -
 [node name="SignalRocks" parent="Signals" instance=ExtResource("34_535f6")]
 transform = Transform3D(-0.874738, 0, -0.484596, 0, 1, 0, 0.484596, 0, -0.874738, 53.1562, 4.76837e-07, -39.2575)
 
+[node name="Signal1Plus" parent="Signals" instance=ExtResource("37_iafhg")]
+transform = Transform3D(-0.489596, 0, -0.871949, 0, 1, 0, 0.871949, 0, -0.489596, -53.8947, 0, -57.0405)
+
+[node name="SignalSlowdown" parent="Signals" instance=ExtResource("39_uhfbm")]
+transform = Transform3D(-0.757348, 0, -0.653011, 0, 1, 0, 0.653011, 0, -0.757348, -59.1375, 0, -67.6457)
+
 [node name="Sky" type="Node3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
@@ -386,6 +436,7 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 unique_name_in_owner = true
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -47.0601, 0, -61.8394)
 script = ExtResource("33_2jdvr")
+follow_global_coordinates = true
 move_speed = 30.0
 rotation_speed = 30.0
 metadata/_custom_type_script = "uid://wrgu8dfp4pw3"
@@ -395,6 +446,7 @@ transform = Transform3D(-0.432684, -0.870867, 0.233186, 6.32298e-09, 0.25865, 0.
 
 [node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D"]
 transform = Transform3D(-40, 3.49691e-06, -1.35525e-20, 1.52855e-13, 1.74846e-06, -40, -3.49691e-06, -40, -1.74846e-06, 0, 250, 0)
+cast_shadow = 0
 texture = ExtResource("32_2e2fo")
 
 [node name="Node3D2" type="Node3D" parent="Sky/Node3DClouds"]
@@ -402,6 +454,7 @@ transform = Transform3D(0.252306, 0.948484, -0.191627, 1.49012e-08, 0.198034, 0.
 
 [node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D2"]
 transform = Transform3D(40, 0, 0, 0, -1.74846e-06, -40, 0, 40, -1.74846e-06, 0, 220, 0)
+cast_shadow = 0
 alpha_cut = 1
 texture = ExtResource("33_gur6y")
 
@@ -410,6 +463,7 @@ transform = Transform3D(-0.92274, -0.366789, 0.118392, 8.3819e-09, 0.307174, 0.9
 
 [node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D3"]
 transform = Transform3D(40, 0, 0, 0, -1.74846e-06, -40, 0, 40, -1.74846e-06, 0, 220, 0)
+cast_shadow = 0
 alpha_cut = 1
 texture = ExtResource("33_gur6y")
 
@@ -418,6 +472,7 @@ transform = Transform3D(0.675487, -0.708736, 0.203495, 0, 0.275973, 0.961165, -0
 
 [node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D4"]
 transform = Transform3D(40, 0, 0, 0, -1.74846e-06, -40, 0, 40, -1.74846e-06, 0, 220, 0)
+cast_shadow = 0
 alpha_cut = 1
 texture = ExtResource("34_asl66")
 
@@ -426,6 +481,7 @@ transform = Transform3D(0.974193, 0.211757, -0.0781465, 3.72529e-09, 0.346215, 0
 
 [node name="Sprite3D" type="Sprite3D" parent="Sky/Node3DClouds/Node3D5"]
 transform = Transform3D(40, 0, 0, 0, -1.74846e-06, -40, 0, 40, -1.74846e-06, 0, 220, 0)
+cast_shadow = 0
 alpha_cut = 1
 texture = ExtResource("35_2jdvr")
 
@@ -439,10 +495,15 @@ shape = SubResource("BoxShape3D_7agi7")
 transform = Transform3D(-0.0354402, 0, 0.999372, 0, 1, 0, -0.999372, 0, -0.0354402, 51.3215, 1.69164, -51.041)
 shape = SubResource("BoxShape3D_kih21")
 
+[node name="Area3D_snow" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_snow"]
+shape = SubResource("SphereShape3D_uhfbm")
+
 [node name="Area3D_beach" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_beach"]
-transform = Transform3D(0.895557, 0, 0.444948, 0, 1, 0, -0.444948, 0, 0.895557, -65.9857, 1.69164, 21.1888)
+transform = Transform3D(0.895557, 0, 0.444948, 0, 1, 0, -0.444948, 0, 0.895557, -63.2834, 1.69164, 26.6277)
 shape = SubResource("BoxShape3D_w3o6u")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D_beach"]

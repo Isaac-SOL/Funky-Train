@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="1_3oy3k"]
 [ext_resource type="PackedScene" uid="uid://chslwspg2vntu" path="res://objects/carriage_large.tscn" id="1_r873o"]
-[ext_resource type="Texture2D" uid="uid://c52bcth5d22s5" path="res://icon.svg" id="3_31wv1"]
+[ext_resource type="Texture2D" uid="uid://b00s35701sv10" path="res://icon.svg" id="3_31wv1"]
 
 [resource]
 script = ExtResource("1_3oy3k")
@@ -10,4 +10,7 @@ name = "Godot Bro"
 sprite = ExtResource("3_31wv1")
 color = Color(0.278431, 0.54902, 0.74902, 1)
 carriage = ExtResource("1_r873o")
+track_id = -1
+instrument = ""
+true_name = ""
 metadata/_custom_type_script = "uid://rkfd1kwn018t"

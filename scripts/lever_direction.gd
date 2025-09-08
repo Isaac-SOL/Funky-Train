@@ -9,6 +9,13 @@ var hover_tween: Tween
 var move_tween: Tween
 var is_mouse_on_top: bool = false
 
+func _process(delta: float) -> void:
+	if not is_dragging and not Main.instance.on_menu:
+		if Input.is_action_just_pressed("left") and is_right:
+			change_direction(false)
+		elif Input.is_action_just_pressed("right") and not is_right:
+			change_direction(true)
+
 func mouse_down(_event: InputEventMouseButton):
 	is_dragging = true
 	drag_pos = Vector2.ZERO

@@ -2,10 +2,10 @@ class_name Station extends PathFollow3D
 
 @export var waiting_character: CharacterInfo
 @export var revealed: bool = false
-
+@export var mark_mat: StandardMaterial3D
 
 func _ready() -> void:
-	get_section().add_station(self)
+	get_section().add_interactible(self)
 	load_character()
 	%SpriteMinimap.global_rotation = Vector3(-PI / 2.0, 0, PI)
 
@@ -33,6 +33,8 @@ func load_character():
 	if waiting_character:
 		%CharacterSprite.texture = waiting_character.sprite
 		%CharacterSprite.visible = true
+		mark_mat.albedo_color = waiting_character.color
+		%Sphere.visible = true
 		if revealed:
 			%SpriteMinimap.texture = waiting_character.sprite_cadre
 		%SpriteMinimap.visible = true
@@ -40,3 +42,4 @@ func load_character():
 	else:
 		%CharacterSprite.visible = false
 		%SpriteMinimap.visible = false
+		%Sphere.visible = false

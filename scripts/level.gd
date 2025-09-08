@@ -3,15 +3,22 @@ extends Node3D
 @export var custom_detail_shader: Shader
 @export var see_through_layers: PackedInt32Array
 
+@export var plains_info: BiomeColor
+@export var desert_info: BiomeColor
+@export var beach_info: BiomeColor
+@export var snow_info: BiomeColor
+
 @onready var area_3d_plane: Area3D = $Area3D_plane
 @onready var area_3d_desert: Area3D = $Area3D_desert
 @onready var area_3d_beach: Area3D = $Area3D_beach
+@onready var area_3d_snow: Area3D = $Area3D_snow
 
 var previous_area : Area3D
 var detail_materials: Array[ShaderMaterial] = []
 
 func _ready() -> void:
 	await get_tree().process_frame
+	%Node3DClouds.target_node = Locomotive.instance
 	for child: Node in %HTerrain.get_children():
 		var mat: Material = child.get("_material") as ShaderMaterial
 		if mat and mat.shader == custom_detail_shader:
@@ -22,8 +29,11 @@ func _ready() -> void:
 				child._material.set_shader_parameter("locomotive_data_screenspace", Vector4(0.0, 0.0, 0.0, 100.0))
 
 func _process(delta: float) -> void:
+	var factor := Util.current_viewport_factor(self)
 	var loco_pos := Main.instance.camera.unproject_position(Locomotive.instance.get_visible_center())
+	loco_pos *= factor
 	var loco_extent_pos := Main.instance.camera.unproject_position(Locomotive.instance.get_visible_extent())
+	loco_extent_pos *= factor
 	var loco_radius := (loco_extent_pos - loco_pos).length()
 	var loco_dist := (Locomotive.instance.get_visible_center() - Main.instance.camera.global_position).length()
 	var loco_data := Vector4(loco_pos.x, loco_pos.y, loco_radius, loco_dist)
@@ -36,6 +46,7 @@ func _on_area_3d_plane_area_entered(area: Area3D) -> void:
 			print("is in plains")
 			previous_area = area_3d_plane
 			NodeAudio.playAudio_stream1(&"Ambiant plane")
+			%PathScene.switch_biome_color(plains_info)
 
 
 func _on_area_3d_desert_area_entered(area: Area3D) -> void:
@@ -44,6 +55,7 @@ func _on_area_3d_desert_area_entered(area: Area3D) -> void:
 			print("is in desert")
 			previous_area = area_3d_desert
 			NodeAudio.playAudio_stream1(&"Ambiant desert")
+			%PathScene.switch_biome_color(desert_info)
 
 
 func _on_area_3d_beach_area_entered(area: Area3D) -> void:
@@ -52,3 +64,12 @@ func _on_area_3d_beach_area_entered(area: Area3D) -> void:
 			print("is in beach")
 			previous_area = area_3d_beach
 			NodeAudio.playAudio_stream1(&"Ambiant beach")
+			%PathScene.switch_biome_color(beach_info)
+
+
+func _on_area_3d_snow_area_entered(area: Area3D) -> void:
+	if area.is_in_group("group_locomotive"):
+		if previous_area != area_3d_snow:
+			print("is in snow")
+			previous_area = area_3d_snow
+			%PathScene.switch_biome_color(snow_info)

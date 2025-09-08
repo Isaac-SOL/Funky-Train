@@ -1,0 +1,161 @@
+[gd_scene load_steps=19 format=3 uid="uid://0au8m8bi55xs"]
+
+[ext_resource type="Script" uid="uid://dyix0yj6xyujk" path="res://scripts/interruptor_barrier.gd" id="1_b88lx"]
+[ext_resource type="Material" uid="uid://bbxx4if5w4vsf" path="res://materials/barrier_mat.tres" id="2_mpyeh"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_o5q84"]
+radius = 0.3
+height = 3.0
+radial_segments = 16
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_b88lx"]
+flip_faces = true
+radius = 0.45
+height = 3.35
+radial_segments = 16
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpyeh"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mpyeh"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_td8sy"]
+radius = 0.2
+height = 0.4
+radial_segments = 8
+rings = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5vcgp"]
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_o5q84"]
+size = Vector3(0.2, 0.5, 2.05)
+
+[sub_resource type="BoxMesh" id="BoxMesh_b88lx"]
+flip_faces = true
+size = Vector3(0.4, 0.7, 2.25)
+
+[sub_resource type="QuadMesh" id="QuadMesh_mpyeh"]
+size = Vector2(2, 5)
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_td8sy"]
+shading_mode = 0
+albedo_color = Color(1, 0.721569, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpahp"]
+shading_mode = 0
+albedo_color = Color(1, 0.721569, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_b1mhq"]
+material = SubResource("StandardMaterial3D_mpahp")
+radius = 1.34
+height = 0.001
+radial_segments = 16
+rings = 1
+is_hemisphere = true
+
+[sub_resource type="TorusMesh" id="TorusMesh_mpyeh"]
+inner_radius = 5.611
+outer_radius = 9.12
+rings = 24
+ring_segments = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1mhq"]
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_mpyeh"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.684659, 0.943182)
+colors = PackedColorArray(1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_td8sy"]
+gradient = SubResource("Gradient_mpyeh")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[node name="InterruptorBarrier" type="Node3D"]
+script = ExtResource("1_b88lx")
+
+[node name="Pole" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.999619, 0)
+visibility_range_end = 120.0
+mesh = SubResource("CapsuleMesh_o5q84")
+
+[node name="PoleOutline" type="MeshInstance3D" parent="Pole"]
+cast_shadow = 0
+visibility_range_end = 120.0
+mesh = SubResource("CapsuleMesh_b88lx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mpyeh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pole"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54039, 0)
+visibility_range_end = 75.0
+mesh = SubResource("CylinderMesh_mpyeh")
+surface_material_override/0 = SubResource("StandardMaterial3D_mpyeh")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Pole"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.17028, 0)
+visibility_range_end = 75.0
+mesh = SubResource("SphereMesh_td8sy")
+surface_material_override/0 = SubResource("StandardMaterial3D_5vcgp")
+
+[node name="BarrierPivot" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.935144, 0)
+
+[node name="Barrier" type="MeshInstance3D" parent="BarrierPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.16021)
+visibility_range_end = 120.0
+mesh = SubResource("BoxMesh_o5q84")
+surface_material_override/0 = ExtResource("2_mpyeh")
+
+[node name="BarrierOutline" type="MeshInstance3D" parent="BarrierPivot/Barrier"]
+cast_shadow = 0
+visibility_range_end = 120.0
+mesh = SubResource("BoxMesh_b88lx")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mpyeh")
+
+[node name="MinimapMesh" type="MeshInstance3D" parent="BarrierPivot/Barrier"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.36662, 0.947841)
+layers = 2
+cast_shadow = 0
+mesh = SubResource("QuadMesh_mpyeh")
+surface_material_override/0 = SubResource("StandardMaterial3D_td8sy")
+
+[node name="MinimapMeshCenter" type="MeshInstance3D" parent="BarrierPivot/Barrier"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.37529, -1.16021)
+layers = 2
+cast_shadow = 0
+mesh = SubResource("SphereMesh_b1mhq")
+skeleton = NodePath("../../..")
+
+[node name="Top" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.24835, 0)
+
+[node name="MinimapCircle" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.5603, 0)
+visible = false
+layers = 2
+cast_shadow = 0
+mesh = SubResource("TorusMesh_mpyeh")
+surface_material_override/0 = SubResource("StandardMaterial3D_b1mhq")
+
+[node name="Sprite3D" type="Sprite3D" parent="MinimapCircle"]
+transform = Transform3D(0.255, 0, 0, 0, 0.255, 0, 0, 0, 0.255, 0, -11.3904, 0)
+cast_shadow = 0
+billboard = 1
+fixed_size = true
+alpha_cut = 1
+texture = SubResource("GradientTexture2D_td8sy")

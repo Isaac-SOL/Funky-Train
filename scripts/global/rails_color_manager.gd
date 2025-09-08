@@ -19,7 +19,9 @@ func _ready() -> void:
 	next_gradient = previous_gradient.duplicate()
 	for i in range(5):
 		rails_gradient.set_color(i, previous_gradient[i])
-	await get_tree().process_frame
+
+func reconnect():
+	print("reconnect rails color manager")
 	Main.instance.rhythm_sync.beats(4).connect(_on_measure)
 
 # Félicitations btw

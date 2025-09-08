@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=5 format=3 uid="uid://bm35c5akw4erc"]
+
+[ext_resource type="PackedScene" uid="uid://d0wov6n4cqb15" path="res://objects/carriage_saxo.tscn" id="1_x8f0b"]
+[ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_ftkw2"]
+[ext_resource type="Texture2D" uid="uid://ew2w0423l4vw" path="res://assets/modele/2D/personnages/personnages_saxophone_contour.png" id="3_3x13a"]
+[ext_resource type="Texture2D" uid="uid://cuqobu1wxxdux" path="res://assets/modele/2D/personnages/personnages_saxophone_c_contour.png" id="4_331xi"]
+
+[resource]
+script = ExtResource("2_ftkw2")
+name = "start"
+sprite = ExtResource("3_3x13a")
+sprite_cadre = ExtResource("4_331xi")
+color = Color(0.556863, 0.898039, 0.854902, 1)
+carriage = ExtResource("1_x8f0b")
+track_id = 6
+instrument = "saxo"
+true_name = "Parker"
+metadata/_custom_type_script = "uid://rkfd1kwn018t"

@@ -25,8 +25,8 @@ config/icon="res://icon.svg"
 Global="*res://scripts/global/Global.gd"
 NodeAudio="*res://scenes/global/node_audio.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
-ImGuiRoot="*res://addons/imgui-godot/data/ImGuiRoot.tscn"
 RailsColorManager="*res://scripts/global/rails_color_manager.gd"
+ImGuiRoot="*res://addons/imgui-godot/data/ImGuiRoot.tscn"
 
 [dialogic]
 
@@ -45,21 +45,15 @@ directories/dch_directory={
 directories/dtl_directory={
 "timeline_basse": "res://dialog/timelines/timeline_basse.dtl",
 "timeline_batterie": "res://dialog/timelines/timeline_batterie.dtl",
-"timeline_batterie_cleared": "res://dialog/timelines/timeline_batterie_cleared.dtl",
 "timeline_blanc": "res://dialog/timelines/timeline_blanc.dtl",
 "timeline_cat": "res://dialog/timelines/timeline_cat.dtl",
 "timeline_clavier": "res://dialog/timelines/timeline_clavier.dtl",
 "timeline_guitar": "res://dialog/timelines/timeline_guitar.dtl",
-"timeline_guitarre_blocked": "res://dialog/timelines/timeline_guitarre_blocked.dtl",
 "timeline_rocket": "res://dialog/timelines/timeline_rocket.dtl",
 "timeline_saxo": "res://dialog/timelines/timeline_saxo.dtl",
-"timeline_saxo_blocked": "res://dialog/timelines/timeline_saxo_blocked.dtl",
-"timeline_team": "res://dialog/timelines/timeline_team.dtl",
 "timeline_triangle": "res://dialog/timelines/timeline_triangle.dtl",
 "timeline_trompette": "res://dialog/timelines/timeline_trompette.dtl",
-"timeline_tunnel_blocked": "res://dialog/timelines/timeline_tunnel_blocked.dtl",
-"timeline_vocoder": "res://dialog/timelines/timeline_vocoder.dtl",
-"timeline_vocoder_blocked": "res://dialog/timelines/timeline_vocoder_blocked.dtl"
+"timeline_vocoder": "res://dialog/timelines/timeline_vocoder.dtl"
 }
 variables={
 "first_time": {
@@ -83,7 +77,10 @@ variables={
 "has_triangle": false,
 "has_trompette": false,
 "has_vocoder": false
-}
+},
+"puzzle_mode": false,
+"random_choice": 0,
+"tb_powered": false
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.02
@@ -145,6 +142,7 @@ folder_colors={
 [global_group]
 
 group_locomotive=""
+Rails=""
 
 [input]
 
@@ -155,6 +153,30 @@ dialogic_default_action={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":88,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+]
+}
+left={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":113,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194319,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+right={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194321,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+faster={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":122,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194320,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+slower={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194322,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 

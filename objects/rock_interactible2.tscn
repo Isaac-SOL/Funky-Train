@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://60hd431sjqbt"]
+
+[ext_resource type="Script" uid="uid://c3ik2ibrnokvo" path="res://scripts/RockInteractible.gd" id="1_j7si6"]
+[ext_resource type="PackedScene" uid="uid://c5a7jo6o2nwer" path="res://assets/modele/3D/ruddy_rocks.tscn" id="2_j7si6"]
+[ext_resource type="AudioStream" uid="uid://df7j5qs3e6cfw" path="res://assets/sfx/HammerShovel2.ogg" id="3_bhwxm"]
+
+[node name="RockInteractible" type="PathFollow3D"]
+script = ExtResource("1_j7si6")
+
+[node name="RuddyRocks" parent="." instance=ExtResource("2_j7si6")]
+transform = Transform3D(7.815, 0, 0, 0, 7.815, 0, 0, 0, 7.815, 0, 0, 0)
+
+[node name="AudioBreak" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_bhwxm")
+volume_db = 7.0

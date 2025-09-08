@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnelb56tgsm4n"]
+
+[ext_resource type="PackedScene" uid="uid://ckvk1vpxrrfee" path="res://objects/carriage_triangle.tscn" id="1_uovap"]
+
+[node name="CarriageTrianglePuzzle" instance=ExtResource("1_uovap")]
+
+[node name="MeshInstance3D" parent="ChildRender/wagon_triangle/wagon_triangle_mesh" index="7"]
+visible = false
+
+[node name="MeshInstance3D5" parent="ChildRender/wagon_triangle/wagon_triangle_mesh" index="8"]
+visible = false
+
+[node name="MeshInstance3D6" parent="ChildRender/wagon_triangle/wagon_triangle_mesh" index="9"]
+visible = false
+
+[node name="MeshInstance3D4" parent="ChildRender/wagon_triangle/wagon_triangle_mesh" index="10"]
+visible = false
+
+[node name="MeshInstance3D2" parent="ChildRender/wagon_triangle/wagon_triangle_mesh" index="11"]
+visible = false
+
+[node name="MeshInstance3D3" parent="ChildRender/wagon_triangle/wagon_triangle_mesh" index="12"]
+visible = false
+
+[editable path="ChildRender/wagon_triangle"]
+[editable path="ChildRender/wagon_triangle/wagon_triangle_mesh"]

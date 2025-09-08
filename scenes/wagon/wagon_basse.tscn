@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dqclrpibg0m2f" path="res://scripts/wagon/wagon.gd" id="1_5ctgp"]
 [ext_resource type="PackedScene" uid="uid://bhagvhexhfxfk" path="res://assets/modele/3D/wagon/wagons_basse_mesh.tscn" id="2_yvuhh"]
 [ext_resource type="Script" uid="uid://eoyxaxq2q24" path="res://scripts/personnage/personnage.gd" id="3_ipilb"]
-[ext_resource type="Texture2D" uid="uid://drpbgjbwdnthb" path="res://assets/modele/2D/personnages/basse-export.png" id="4_yvuhh"]
+[ext_resource type="Texture2D" uid="uid://dbx48ygyt2k4h" path="res://assets/modele/2D/personnages/basse-export_contour.png" id="4_yvuhh"]
 
 [node name="wagon_basse" type="Node3D"]
 script = ExtResource("1_5ctgp")

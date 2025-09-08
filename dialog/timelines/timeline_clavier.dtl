@@ -1,6 +1,22 @@
 [style name="default_portrait_style"]
-if {first_time.first_clavier} == true:
-	clavier: Welcome ! I'm Steve but everybody calls me Stevie. We should go see Pytha too ! I'm sure he would love to join \:)
-	set {first_time.first_clavier} = false
+if {puzzle_mode} == true:
+	if {first_time.first_clavier} == true:
+		clavier: Hey guys! I'm Steve but everybody calls me [color=#e948b2]Stevie[/color]. I hate chilis but I love raspberries!
+		set {first_time.first_clavier} = false
+	else:
+		set {random_choice} = range(0,3).pick_random()
+		if {random_choice} == 0.0:
+			clavier: I NEED MORE RASPBERRIES
+		elif {random_choice} == 1.0:
+			clavier: Who planted all those chili peppers?
+		elif {random_choice} == 2.0:
+			if {first_time.first_trompette} == true:
+				clavier: We can go find [color=#db5e3d]Pytha[/color], but I'll need [color=#3e8548]Kim's[/color] help if we want to reach his place.
+			else:
+				clavier: We've almost found everyone! Just a little further!
 else:
-	clavier: You're back !
+	if {first_time.first_clavier} == true:
+		clavier: Hey guys! I'm Steve but everybody calls me [color=#e948b2]Stevie[/color]. We should go see [color=#a53f24]Pytha[/color] too ! I'm sure he would love to join \:)
+		set {first_time.first_clavier} = false
+	else:
+		clavier: You're back !

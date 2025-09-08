@@ -9,8 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://bq4hqqiapqltb" path="res://assets/modele/3D/cross.tscn" id="7_yfycn"]
 
 [sub_resource type="Curve3D" id="Curve3D_x140k"]
+resource_local_to_scene = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0),
+"points": PackedVector3Array(-0.975713, 0, 0.0207178, 1, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 8, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -37,21 +38,23 @@ script/source = "extends Node3D
 func _ready() -> void:
 	await get_tree().process_frame
 	Main.instance.rhythm_sync.beat.connect(func(_b):
-		if visible:
+		if is_visible_in_tree():
 			scale = 1.2 * Vector3.ONE
 			var tween := create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
 			tween.tween_property(self, \"scale\", Vector3.ONE, 0.6)
 	)
 "
 
-[node name="Rail" type="Path3D"]
+[node name="Rail" type="Path3D" groups=["Rails"]]
 curve = SubResource("Curve3D_x140k")
 script = ExtResource("1_x140k")
+metadata/_edit_group_ = true
 
 [node name="BakedRailsMesh" type="MeshInstance3D" parent="." node_paths=PackedStringArray("path")]
 unique_name_in_owner = true
 layers = 3
 cast_shadow = 0
+visibility_range_end = 150.0
 mesh = ExtResource("2_ottr3")
 skeleton = NodePath("../..")
 script = ExtResource("2_e7jeh")
@@ -65,6 +68,7 @@ visible = false
 layers = 3
 material_override = ExtResource("4_e7jeh")
 cast_shadow = 0
+visibility_range_end = 100.0
 mesh = SubResource("ArrayMesh_x140k")
 skeleton = NodePath("../..")
 
@@ -84,7 +88,7 @@ width = 3.0
 minimap = true
 
 [node name="CrossFollow" type="PathFollow3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(-4.37113e-08, 0, -0.999998, 0, 1, 0, 0.999998, 0, -4.37113e-08, 0, 0, 0)
 
 [node name="CrossTween" type="Node3D" parent="CrossFollow"]
 unique_name_in_owner = true
@@ -95,3 +99,5 @@ script = SubResource("GDScript_yfycn")
 
 [node name="Cross" parent="CrossFollow/CrossTween/CrossCenter" instance=ExtResource("7_yfycn")]
 transform = Transform3D(-8.74228e-10, 0, -0.02, 0, 0.02, 0, 0.02, 0, -8.74228e-10, 0, -0.570411, 0)
+
+[connection signal="visibility_changed" from="CrossFollow/CrossTween/CrossCenter" to="CrossFollow/CrossTween/CrossCenter" method="_on_visibility_changed"]

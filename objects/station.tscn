@@ -1,10 +1,15 @@
-[gd_scene load_steps=10 format=4 uid="uid://dcpxd04n7oj0i"]
+[gd_scene load_steps=15 format=4 uid="uid://dcpxd04n7oj0i"]
 
 [ext_resource type="Script" uid="uid://d2yldh1vs7co5" path="res://scripts/station.gd" id="1_x4hb3"]
 [ext_resource type="PackedScene" uid="uid://27kfdujhj7rp" path="res://objects/gamjam_2025_gare.tscn" id="2_a8vm7"]
 [ext_resource type="Script" uid="uid://bkjd1l8ao2cge" path="res://scripts/vibing_node.gd" id="3_110lq"]
 [ext_resource type="Texture2D" uid="uid://qii11fokxfim" path="res://assets/modele/2D/personnages/personnages_batterie.png" id="3_a8vm7"]
 [ext_resource type="Texture2D" uid="uid://rc5jc45ge0wp" path="res://assets/textures/gamjam2025_UI_menu_curseur_inter.png" id="5_110lq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5dxd1"]
+resource_local_to_scene = true
+transparency = 4
+shading_mode = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7uw5n"]
 albedo_color = Color(0.588235, 1, 0, 1)
@@ -30,43 +35,97 @@ _surfaces = [{
 shading_mode = 0
 albedo_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ttfy"]
+transparency = 4
+albedo_color = Color(0.625023, 0.10416, 0.151708, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_110lq"]
+radius = 1.0
+height = 2.0
+radial_segments = 16
+rings = 8
+
+[sub_resource type="SphereMesh" id="SphereMesh_7x54m"]
+flip_faces = true
+radius = 1.1
+height = 2.2
+radial_segments = 16
+rings = 8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7ttfy"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 3.5
+
 [node name="Station" type="PathFollow3D"]
 script = ExtResource("1_x4hb3")
+mark_mat = SubResource("StandardMaterial3D_5dxd1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8028, 0.290532, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24874, 0.290532, 0)
 visible = false
 mesh = SubResource("BoxMesh_1x2nj")
 
 [node name="gamjam2025_gare2" parent="." instance=ExtResource("2_a8vm7")]
-transform = Transform3D(-8.74228e-10, 0, 0.02, 0, 0.02, 0, -0.02, 0, -8.74228e-10, 2.43655, -0.133456, -1.06505e-07)
+transform = Transform3D(-8.74228e-10, 0, 0.02, 0, 0.02, 0, -0.02, 0, -8.74228e-10, 2.88249, -0.133456, -1.06505e-07)
+
+[node name="gare" parent="gamjam2025_gare2" index="0"]
+visibility_range_end = 200.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="gamjam2025_gare2/gare" index="0"]
+cast_shadow = 0
+visibility_range_end = 200.0
 mesh = SubResource("ArrayMesh_110lq")
 surface_material_override/0 = SubResource("StandardMaterial3D_7x54m")
 
 [node name="gare_aiguille" parent="gamjam2025_gare2" index="1"]
 layers = 1
+visibility_range_end = 40.0
+surface_material_override/0 = SubResource("StandardMaterial3D_7ttfy")
 
 [node name="gare_aiguille_001" parent="gamjam2025_gare2" index="2"]
 layers = 1
+visibility_range_end = 40.0
+surface_material_override/0 = SubResource("StandardMaterial3D_7ttfy")
 
 [node name="VibingNode" type="Node3D" parent="."]
-transform = Transform3D(0.991576, 0, -0.129523, 0, 1, 0, 0.129523, 0, 0.991576, 0.916999, 0.0848985, 0.0502111)
+transform = Transform3D(0.991576, 0, -0.129523, 0, 1, 0, 0.129523, 0, 0.991576, 1.36294, 0.0848985, 0.0502111)
 script = ExtResource("3_110lq")
 
 [node name="CharacterSprite" type="Sprite3D" parent="VibingNode"]
 unique_name_in_owner = true
 transform = Transform3D(0.165, 0, 0, 0, 0.165, 0, 0, 0, 0.165, 0, 0.832408, 0)
+visibility_range_end = 100.0
 texture = ExtResource("3_a8vm7")
+
+[node name="Sphere" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.605, 0, 0, 0, 0.605, 0, 0, 0, 0.605, 2.8145, 3.55108, -1.54234)
+visibility_range_end = 125.0
+mesh = SubResource("SphereMesh_110lq")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_5dxd1")
+
+[node name="SphereOutline" type="MeshInstance3D" parent="Sphere"]
+cast_shadow = 0
+visibility_range_end = 125.0
+mesh = SubResource("SphereMesh_7x54m")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_7x54m")
+
+[node name="SpherePole" type="MeshInstance3D" parent="Sphere"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.11352, 0)
+visibility_range_end = 65.0
+mesh = SubResource("CylinderMesh_7ttfy")
+surface_material_override/0 = SubResource("StandardMaterial3D_7x54m")
 
 [node name="CameraPos" type="Marker3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.995539, 0.0179142, -0.0926353, 0, 0.98181, 0.189867, 0.0943516, -0.18902, 0.97743, 0.68805, 0.755459, 1.63165)
+transform = Transform3D(0.995539, 0.0179142, -0.0926353, 0, 0.98181, 0.189867, 0.0943516, -0.18902, 0.97743, 1.13399, 0.755459, 1.63165)
 
 [node name="SpriteMinimap" type="Sprite3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(3, 0, 0, 0, -1.31134e-07, 3, 0, -3, -1.31134e-07, 2.42132, 4.02721, -1.76035e-07)
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, 3, 0, -3, -1.31134e-07, 2.86726, 4.02721, -1.76035e-07)
 visible = false
 layers = 2
 texture = ExtResource("5_110lq")

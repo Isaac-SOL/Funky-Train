@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://beebjq314o3af"]
+
+[ext_resource type="PackedScene" uid="uid://ddei87jmflwu2" path="res://scenes/main_scene_base.tscn" id="1_udwn0"]
+[ext_resource type="PackedScene" uid="uid://c4d348fgt0nne" path="res://scenes/maze.tscn" id="2_38b5k"]
+[ext_resource type="PackedScene" uid="uid://c5reoqr8wys2w" path="res://objects/signals/signal_no_stevie.tscn" id="3_aycq8"]
+[ext_resource type="PackedScene" uid="uid://d1kmxrqref527" path="res://objects/signals/signal_double_stevie.tscn" id="4_lu4ag"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_aycq8"]
+viewport_path = NodePath("SubViewport")
+
+[node name="PathMaze" instance=ExtResource("1_udwn0")]
+
+[node name="Maze" parent="." index="2" instance=ExtResource("2_38b5k")]
+
+[node name="Ground" parent="." index="3"]
+transform = Transform3D(3.94145, 0, 0, 0, 1, 0, 0, 0, 2.66728, 31.181, -0.024, 16.972)
+visible = true
+
+[node name="CameraShaker" parent="." index="4"]
+transform = Transform3D(0.447119, 0, -0.894475, 0, 1, 0, 0.894474, 0, 0.447119, -12.6081, 1.11152, -7.90356)
+
+[node name="StartCamera" parent="." index="5"]
+transform = Transform3D(0.447119, 0, -0.894475, 0, 1, 0, 0.894475, 0, 0.447119, -12.6081, 1.11152, -7.90356)
+
+[node name="Map" parent="CanvasLayer/GameUI/MinimapUI/MinimapParent/Mask" index="0"]
+texture = SubResource("ViewportTexture_aycq8")
+
+[node name="SignalNoStevie" parent="." index="14" instance=ExtResource("3_aycq8")]
+transform = Transform3D(0.413247, 0, -0.910619, 0, 1, 0, 0.910619, 0, 0.413247, 50.2989, -1.90735e-06, -1.65529)
+
+[node name="SignalNoStevie2" parent="." index="15" instance=ExtResource("3_aycq8")]
+transform = Transform3D(-0.0285321, 0, 0.999593, 0, 1, 0, -0.999593, 0, -0.0285321, 70.4593, -2.38419e-06, -13.0767)
+
+[node name="SignalDoubleStevie" parent="." index="16" instance=ExtResource("4_lu4ag")]
+transform = Transform3D(-0.199949, 0, -0.979806, 0, 1, 0, 0.979806, 0, -0.199949, 84.1566, -4.76837e-07, 16.6058)
+
+[editable path="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonPuzzle"]
+[editable path="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonJam"]

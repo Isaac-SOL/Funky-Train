@@ -15,6 +15,8 @@ static var instance: Main
 @export var quick_dialogue_scene: PackedScene
 @export var rhythm_sync: RhythmNotifier
 @export var rails_outline_material: ShaderMaterial
+@export var two_options: bool = true
+@export var other_map: PackedScene
 @export_group("Cursor")
 @export var direction_cursor: Texture
 @export var speed_cursor: Texture
@@ -24,16 +26,14 @@ static var instance: Main
 var active_station: Station
 var signals_up: bool = false
 @onready var camera: Camera3D = %MainCamera
-@onready var camera_follow_pos: Node3D = %CameraFollowPos
-@onready var camera_pivot_x: Node3D = %CameraPivotX
-@onready var camera_pivot_y: Node3D = %CameraPivotY
-@onready var camera_loop_pos: Node3D = %CameraLoopPos
-@onready var camera_end_pos: Node3D = %EndPos
 var dragging_camera: bool = false
 var ended: bool = false
 var on_end_screen: bool = false
 var cursor_start_drag_pos: Vector2
 var camera_speed_tween: Tween
+var biome_color_tween: Tween
+var on_menu: bool = true
+var sky_mat: ProceduralSkyMaterial
 
 func _ready() -> void:
 	instance = self
@@ -41,8 +41,15 @@ func _ready() -> void:
 	Input.set_custom_mouse_cursor(speed_cursor, Input.CURSOR_BDIAGSIZE, Vector2(32, 32))
 	Input.set_custom_mouse_cursor(can_grab_cursor, Input.CURSOR_DRAG, Vector2(32, 32))
 	Input.set_custom_mouse_cursor(grabbing_cursor, Input.CURSOR_POINTING_HAND, Vector2(32, 32))
+	sky_mat = $WorldEnvironment.environment.sky.sky_material
 	#Preload Diologic timeline by starting a blanc timeline
 	Dialogic.start("timeline_blanc")
+	Dialogic.VAR.set_variable("puzzle_mode", not two_options)
+	await get_tree().process_frame
+	%CameraShakerMap.target_node = Locomotive.instance.get_minimap_pos()
+	%VBoxContainerTwoOptions.visible = two_options
+	%ButtonStart.visible = not two_options
+	Locomotive.instance.tb_powered.connect(_on_tb_powered)
 
 func stop_at_station(station: Station):
 	active_station = station
@@ -90,7 +97,7 @@ func update_characters_ui():
 func leave_station():
 	Locomotive.instance.restart()
 	active_station = null
-	%CameraShaker.target_node = camera_follow_pos
+	%CameraShaker.target_node = Locomotive.instance.get_camera_follow_pos()
 
 func get_character(character_name: String) -> CharacterInfo:
 	for char: CharacterInfo in character_list:
@@ -99,6 +106,7 @@ func get_character(character_name: String) -> CharacterInfo:
 	return null
 
 func set_single_signal(reqs: Array[String], parent_node: Control):
+	return
 	for r: String in reqs:
 		var char_name: String = r
 		var forbidden: bool = false
@@ -107,10 +115,13 @@ func set_single_signal(reqs: Array[String], parent_node: Control):
 			forbidden = true
 		var new_signal: CharacterSignalisation = character_signalisation_scene.instantiate()
 		parent_node.add_child(new_signal)
-		new_signal.load_character(get_character(char_name))
+		var char := get_character(char_name)
+		if char:
+			new_signal.load_character(char)
 		new_signal.set_forbidden(forbidden)
 
 func set_signals(reqs_left: Array[String], reqs_right: Array[String]):
+	return # Removed function
 	set_single_signal(reqs_left, %SignalisationLeft)
 	set_single_signal(reqs_right, %SignalisationRight)
 	signals_up = true
@@ -132,10 +143,13 @@ func talk(npc_name: String):
 		Dialogic.start("timeline_"+npc_name)
 
 func _unhandled_input(event: InputEvent) -> void:
+	var follow_pos := Locomotive.instance.get_camera_follow_pos()
+	var pivot_x := Locomotive.instance.get_camera_pivot_x()
+	var pivot_y := Locomotive.instance.get_camera_pivot_y()
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			dragging_camera = true
-			cursor_start_drag_pos = event.position
+			cursor_start_drag_pos = event.position * Util.current_viewport_factor(self)
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		elif event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
 			dragging_camera = false
@@ -143,15 +157,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			await get_tree().process_frame
 			Input.warp_mouse(cursor_start_drag_pos)
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			camera_follow_pos.position.z += zoom_sensitivity
+			follow_pos.position.z += zoom_sensitivity
 		elif event.button_index == MOUSE_BUTTON_WHEEL_UP:
-			camera_follow_pos.position.z -= zoom_sensitivity
-		camera_follow_pos.position.z = clampf(camera_follow_pos.position.z, 2.5, 10.0)
+			follow_pos.position.z -= zoom_sensitivity
+		follow_pos.position.z = clampf(follow_pos.position.z, 2.5, 10.0)
 	elif event is InputEventMouseMotion:
 		if dragging_camera:
-			camera_pivot_y.rotate_y(-event.relative.x * camera_sensitivity.y)
-			camera_pivot_x.rotate_x(-event.relative.y * camera_sensitivity.x)
-			camera_pivot_x.rotation_degrees.x = clampf(camera_pivot_x.rotation_degrees.x, -45.0, 10.0)
+			pivot_y.rotate_y(-event.relative.x * camera_sensitivity.y)
+			pivot_x.rotate_x(-event.relative.y * camera_sensitivity.x)
+			pivot_x.rotation_degrees.x = clampf(Locomotive.instance.get_camera_pivot_x().rotation_degrees.x, -45.0, 10.0)
 
 func _on_button_prendre_pressed() -> void:
 	close_add_character()
@@ -197,7 +211,7 @@ func _on_character_leave_pressed(carriage: Carriage):
 
 func _on_area_loop_area_entered(area: Area3D) -> void:
 	if area.is_in_group("group_locomotive") and not on_end_screen:
-		%CameraShaker.target_node = camera_loop_pos
+		%CameraShaker.target_node = Locomotive.instance.get_camera_loop_pos()
 		if camera_speed_tween:
 			camera_speed_tween.kill()
 		camera_speed_tween = create_tween().set_parallel()
@@ -209,7 +223,7 @@ func _on_area_loop_area_exited(area: Area3D) -> void:
 	if area.is_in_group("group_locomotive") and not on_end_screen:
 		%CameraShaker.move_speed = 8.0
 		%CameraShaker.rotation_speed = 8.0
-		%CameraShaker.target_node = camera_follow_pos
+		%CameraShaker.target_node = Locomotive.instance.get_camera_follow_pos()
 
 func character_attached(new_character: CharacterInfo):
 	%AudioStreamPlayerAttachDetach.play()
@@ -237,8 +251,29 @@ func _on_h_slider_volume_value_changed(value: float) -> void:
 func _on_button_start_pressed() -> void:
 	%ControlStart.visible = false
 	%GameUI.visible = true
-	%CameraShaker.target_node = camera_follow_pos
+	%CameraShaker.target_node = Locomotive.instance.get_camera_follow_pos()
+	on_menu = false
 	game_started.emit()
+
+func switch_biome_color(info: BiomeColor):
+	if biome_color_tween:
+		biome_color_tween.kill()
+	biome_color_tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+	biome_color_tween.set_parallel()
+	biome_color_tween.tween_property(%Sun, "light_color", info.sun_color, 5.0)
+	biome_color_tween.tween_property(%Sun, "light_energy", info.sun_energy, 5.0)
+	biome_color_tween.tween_property(%ScreenEffect, "mesh:material:shader_parameter/depth_gradient_color",
+									 info.depth_gradient_color, 5.0)
+	biome_color_tween.tween_property(%ScreenEffect, "mesh:material:shader_parameter/depth_gradient_strength",
+									 info.depth_gradient_strength, 5.0)
+	biome_color_tween.tween_property(%ScreenEffect, "mesh:material:shader_parameter/cloud_gradient_strength",
+									 info.deep_depth_gradient_strength, 5.0)
+	biome_color_tween.tween_property(self, "sky_mat:sky_top_color", info.sky_top_color, 5.0)
+	biome_color_tween.tween_property(self, "sky_mat:sky_horizon_color", info.sky_bottom_color, 5.0)
+	biome_color_tween.tween_property(self, "sky_mat:ground_horizon_color", info.sky_bottom_color, 5.0)
+	var sun_sprite: Sprite3D = $"../Sky/Node3DClouds/Node3D/Sprite3D"
+	biome_color_tween.tween_property(sun_sprite, "modulate", info.sun_sprite_modulate, 5.0)
+	
 
 func start_end_screen():
 	ended = true
@@ -247,7 +282,7 @@ func start_end_screen():
 	await get_tree().process_frame
 	Locomotive.instance.set_speed_mode(Locomotive.SpeedMode.FAST)
 	Locomotive.instance.bypass = true
-	%CameraShaker.target_node = camera_end_pos
+	%CameraShaker.target_node = Locomotive.instance.get_end_pos()
 	%GameUI.visible = false
 	%ControlEnd.visible = true
 	
@@ -257,13 +292,13 @@ func start_end_screen():
 	await get_tree().create_timer(3.0).timeout
 	%LabelCredits.visible = false
 	await get_tree().create_timer(1.0).timeout
-	%LabelCredits.text = "A Loopy Game made by 6 friends\nin 96 hours"
+	%LabelCredits.text = "A Loopy Game made by 6 friends\n(mostly) in 96 hours"
 	%LabelCredits.visible = true
 	
 	await get_tree().create_timer(5.0).timeout
 	%LabelCredits.visible = false
 	await get_tree().create_timer(1.0).timeout
-	%LabelCredits.text = "Level Design:\nCryptal"
+	%LabelCredits.text = "Level Design:\nCryptal\nSaltyIsaac"
 	%LabelCredits.visible = true
 	
 	await get_tree().create_timer(3.0).timeout
@@ -293,7 +328,7 @@ func start_end_screen():
 	await get_tree().create_timer(3.0).timeout
 	%LabelCredits.visible = false
 	await get_tree().create_timer(1.0).timeout
-	%LabelCredits.text = "Terrain & Environments:\nArkatein"
+	%LabelCredits.text = "Terrain & Environments:\nArkatein\nSaltyIsaac"
 	%LabelCredits.visible = true
 	
 	await get_tree().create_timer(3.0).timeout
@@ -323,7 +358,7 @@ func start_end_screen():
 	
 	await get_tree().create_timer(5.0).timeout
 	%LabelCredits.visible = false
-	%CameraShaker.target_node = camera_follow_pos
+	%CameraShaker.target_node = Locomotive.instance.get_camera_follow_pos()
 	%GameUI.visible = true
 	%ControlEnd.visible = false
 	on_end_screen = false
@@ -339,3 +374,29 @@ func _on_rhythm_notifier_beat(current_beat: int) -> void:
 	tween.tween_method(rail_outline_beat, 0.27, 0.2, 0.66)
 	#tween.tween_method(rail_outline_beat, 0.15, 0.27, 0.03)
 	#tween.tween_method(rail_outline_beat, 0.27, 0.0, 0.53).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUAD)
+
+func _on_tb_powered():
+	for child in %HBoxContainerCharacters2.get_children():
+		if child is CharacterPortrait:
+			child.power_tb()
+
+func _on_start_button_puzzle_click_open() -> void:
+	%StartButtonPuzzle.open()
+	if %StartButtonJam.opened:
+		%StartButtonJam.close()
+
+
+func _on_start_button_puzzle_click_confirm() -> void:
+	# Open other scene
+	%AudioStreamPlayer.remove_filter()
+	get_tree().change_scene_to_packed(other_map)
+
+
+func _on_start_button_jam_click_open() -> void:
+	%StartButtonJam.open()
+	if %StartButtonPuzzle.opened:
+		%StartButtonPuzzle.close()
+
+
+func _on_start_button_jam_click_confirm() -> void:
+	_on_button_start_pressed()

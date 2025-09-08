@@ -1,5 +1,19 @@
-if {first_time.first_trompette} == true:
-	trompette: Hello dear, we won't slow you down but im afraid me and my fedora are a bit large.
-	set {first_time.first_trompette} = false
+[style name="default_portrait_style"]
+if {puzzle_mode} == true:
+	if {first_time.first_trompette} == true:
+		if {has.has_saxo}:
+			trompette: Hello dear! I'm ready to roll! [color=#8ee5da]Parker[/color] and I will play a funky tune you'll remember forever!
+		else:
+			trompette: Hello dear! I'm ready to roll! Is [color=#8ee5da]Parker[/color] here? I'd love to play music with him!
+		set {first_time.first_trompette} = false
+	else:
+		if {has.has_saxo}:
+			trompette: I wanna play music with [color=#8ee5da]Parker[/color]!
+		else:
+			trompette: Greetings to the crazy band!
 else:
-	trompette: Greetings the crazy band !
+	if {first_time.first_trompette} == true:
+		trompette: Hello dear, we won't slow you down but i'm afraid me and my fedora are quite a bit large!
+		set {first_time.first_trompette} = false
+	else:
+		trompette: Greetings to the crazy band!

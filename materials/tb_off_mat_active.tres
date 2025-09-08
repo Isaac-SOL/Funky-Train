@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://xx75ckrbkcfm"]
+
+[ext_resource type="Shader" uid="uid://bshkwxxibuicx" path="res://materials/vocoder_off.gdshader" id="1_hq0b7"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_hq0b7")

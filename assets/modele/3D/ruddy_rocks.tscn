@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5a7jo6o2nwer"]
+
+[ext_resource type="PackedScene" uid="uid://cjvl5md4tyy1" path="res://assets/modele/3D/Rocks.glb" id="1_tojv6"]
+[ext_resource type="Material" uid="uid://c3o720rsqhivm" path="res://materials/ruddy_rock_mat.tres" id="2_g63pn"]
+
+[node name="RuddyRocks" instance=ExtResource("1_tojv6")]
+
+[node name="Rock_3" parent="RootNode" index="0"]
+visibility_range_end = 100.0
+surface_material_override/0 = ExtResource("2_g63pn")

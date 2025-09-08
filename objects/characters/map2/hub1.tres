@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=5 format=3 uid="uid://dnmqq3t3k1aqk"]
+
+[ext_resource type="PackedScene" uid="uid://bx4jqw5nm562v" path="res://objects/carriage_basse.tscn" id="1_8l7cq"]
+[ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_rsrbi"]
+[ext_resource type="Texture2D" uid="uid://c4gmtk05f01rb" path="res://assets/modele/2D/personnages/basse-export2_contour.png" id="3_23y17"]
+[ext_resource type="Texture2D" uid="uid://dbx48ygyt2k4h" path="res://assets/modele/2D/personnages/basse-export_contour.png" id="4_5blgw"]
+
+[resource]
+script = ExtResource("2_rsrbi")
+name = "hub1"
+sprite = ExtResource("3_23y17")
+sprite_cadre = ExtResource("4_5blgw")
+color = Color(0.241739, 0.522138, 0.281041, 1)
+carriage = ExtResource("1_8l7cq")
+track_id = 2
+instrument = "basse"
+true_name = "Kim"
+metadata/_custom_type_script = "uid://rkfd1kwn018t"

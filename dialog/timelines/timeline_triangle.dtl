@@ -1,5 +1,13 @@
-if {first_time.first_triangle} == true:
-	triangle: Hi there ! My name is Pytha, I love rockets and all geometric shape with 3 edges.
-	set {first_time.first_triangle} = false
+[style name="default_portrait_style"]
+if {puzzle_mode} == true:
+	if {first_time.first_triangle} == true:
+		triangle: Woah, you guys are the first ones to ever come here! After me, of course. Can I join?
+		set {first_time.first_triangle} = false
+	else:
+		triangle: I'm helping! The triangle is quiet, but it's there!
 else:
-	triangle: Miss me ?
+	if {first_time.first_triangle} == true:
+		triangle: Hi there! My name is [color=#a53f24]Pytha[/color]. My rocket triangle car can make us go super fast!
+		set {first_time.first_triangle} = false
+	else:
+		triangle: Care to try the lightspeed ride again?

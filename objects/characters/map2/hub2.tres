@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=5 format=3 uid="uid://bj1gx6dijuuvl"]
+
+[ext_resource type="PackedScene" uid="uid://bpwff1f4x5ej" path="res://objects/carriage_batterie.tscn" id="1_f2laa"]
+[ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_shmao"]
+[ext_resource type="Texture2D" uid="uid://bju6janjpgefh" path="res://assets/modele/2D/personnages/personnages_batterie_contour.png" id="3_shmao"]
+[ext_resource type="Texture2D" uid="uid://cbu3t7hsx778u" path="res://assets/modele/2D/personnages/personnages_batterie_c_contour.png" id="4_ixjkm"]
+
+[resource]
+script = ExtResource("2_shmao")
+name = "hub2"
+sprite = ExtResource("3_shmao")
+sprite_cadre = ExtResource("4_ixjkm")
+color = Color(0.176471, 0.521569, 0.74902, 1)
+carriage = ExtResource("1_f2laa")
+track_id = 5
+instrument = "batterie"
+true_name = "Ruddy"
+metadata/_custom_type_script = "uid://rkfd1kwn018t"

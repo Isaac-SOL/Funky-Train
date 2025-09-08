@@ -9,6 +9,7 @@ enum SpeedMode {
 signal speed_mode_changed(new_speed: SpeedMode)
 signal character_attached(new_character: CharacterInfo)
 signal character_detached(new_character: CharacterInfo)
+signal tb_powered
 
 static var instance: Locomotive
 
@@ -32,7 +33,8 @@ var target_speed: float = 0.0
 var curr_section_length: float = 0.0
 var direction: bool = false
 var locked: bool = false
-var last_section: RailSection
+var section_history: Array[RailSection] = []
+var additional_properties: Array[String] = []
 
 func _ready() -> void:
 	instance = self
@@ -43,6 +45,8 @@ func _ready() -> void:
 	await get_tree().process_frame
 	update_characters()
 	Main.instance.rhythm_sync.beat.connect(_on_beat)
+	RailsColorManager.reconnect()
+	section_history.append(get_section())
 	
 	await Main.instance.game_started
 	update_rail_outlines()
@@ -57,28 +61,48 @@ func _process(delta: float) -> void:
 			if speed > target_speed:
 				speed = target_speed
 		if speed > target_speed:
-			speed -= normal_speed * delta / stop_time
+			var eff_stop_time := stop_time if speed <= 12.0 else (stop_time / 2.0)
+			speed -= normal_speed * delta / eff_stop_time
 			if speed < target_speed:
 				speed = target_speed
 	
-	# Stop at stations
+	# Moving code
 	
-	var next_station = get_section().get_next_station(progress)
+	var next_interactible = get_section().get_next_interactible(progress)
 	var temp_progress := progress + delta * speed
-	if speed_mode != SpeedMode.FAST and next_station and next_station.progress < temp_progress:
-		progress = next_station.progress
+	if speed_mode != SpeedMode.FAST and next_interactible is Station and next_interactible.progress < temp_progress:
+		# Stop at stations
+		progress = next_interactible.progress
 		speed = 0.0
 		locked = true
-		Main.instance.stop_at_station(next_station)
+		Main.instance.stop_at_station(next_interactible)
 	else:
+		if next_interactible and next_interactible.progress < temp_progress:
+			# Press interruptors
+			if next_interactible is Interruptor:
+				if next_interactible.broken:
+					if "hub2_hard" in get_properties():
+						next_interactible.fix()
+				if not next_interactible.broken:
+					next_interactible.press()
+					update_crosses()
+					update_rail_outlines()
+			# Take accelerators
+			if next_interactible is Accelerator:
+				speed = next_interactible.instant_speed
+				%AudioAcceleration.play()
+			# Apply other interactible effects
+			if next_interactible is GenericInteractible:
+				next_interactible.interact()
+		# Move forward
 		if temp_progress > curr_section_length:
 			temp_progress -= curr_section_length
-			change_section(next_section())
+			var section_to_change := next_section()
+			change_section(section_to_change, get_section().out_sections.find(section_to_change))
 		progress = temp_progress
-	var next_carriage_end := progress - (length / 2.0) - spacing
-	for carriage: Carriage in carriages:
-		carriage.set_carriage_progress(next_carriage_end - (carriage.length / 2.0), get_section())
-		next_carriage_end -= carriage.length + spacing
+	var carr_pos := calc_carriage_positions()
+	for i in range(carriages.size()):
+		carriages[i].set_carriage_progress(carr_pos[i].progress, carr_pos[i].section)
 	
 	# Show signals
 	
@@ -106,10 +130,13 @@ func set_speed_mode(new_speed: SpeedMode):
 	elif speed_mode == SpeedMode.NORMAL:
 		target_speed = normal_speed
 	elif speed_mode == SpeedMode.FAST:
-		if "F" in get_properties():
+		var props := get_properties()
+		if "F" in props or "hub1" in props:
 			target_speed = 12
 		else:
 			target_speed = fast_speed
+	update_rail_outlines()
+	update_crosses()
 	speed_mode_changed.emit(speed_mode)
 
 func check_requirements(req_list: Array[String]) -> bool:
@@ -120,6 +147,9 @@ func check_requirements(req_list: Array[String]) -> bool:
 		if req.begins_with("-"):
 			var rev_req := req.substr(1)
 			if rev_req in props:
+				# Saxophone
+				if rev_req == "start" and "cat" in props:
+					continue
 				return false
 		else:
 			if req not in props:
@@ -127,21 +157,32 @@ func check_requirements(req_list: Array[String]) -> bool:
 	return true
 
 func check_direction_valid() -> bool:
-	if direction:
-		return check_requirements(get_section().out_requirements_2)
+	if get_section().is_toggled:
+		return direction == get_section().current_direction_right
 	else:
-		return check_requirements(get_section().out_requirements_1)
+		if direction:
+			return check_requirements(get_section().out_requirements_2)
+		else:
+			return check_requirements(get_section().out_requirements_1)
 
 func set_main_directions_valid():
-	Main.instance.set_direction_valid(
-		check_requirements(get_section().out_requirements_1),
-		check_requirements(get_section().out_requirements_2)
-	)
+	if get_section().is_toggled:
+		Main.instance.set_direction_valid(
+			not get_section().current_direction_right,
+			get_section().current_direction_right
+		)
+	else:
+		Main.instance.set_direction_valid(
+			check_requirements(get_section().out_requirements_1),
+			check_requirements(get_section().out_requirements_2)
+		)
 
 func next_section() -> RailSection:
 	var out_sections := get_section().out_sections
 	if out_sections.size() == 1:
 		return out_sections[0]
+	if get_section().is_toggled:
+		return out_sections[1 if get_section().current_direction_right else 0]
 	var eff_out_sections: Array[RailSection] = []
 	if check_requirements(get_section().out_requirements_1):
 		eff_out_sections.append(out_sections[0])
@@ -155,42 +196,78 @@ func next_section() -> RailSection:
 func get_section() -> RailSection:
 	return get_parent()
 
+func add_section_history(section: RailSection):
+	section_history.insert(0, section)
+	if section_history.size() > 10:
+		section_history = section_history.slice(0, 10)
+
 func change_direction(new_direction: bool):
 	direction = new_direction
 	update_rail_outlines()
 	update_crosses()
 
-func change_section(new_section: RailSection):
+func change_section(new_section: RailSection, out_idx: int):
+	assert(out_idx != -1)
+	# Remove potential effects
+	var req_ref := get_section().out_requirements_1 if out_idx == 0 else get_section().out_requirements_2
+	var props := get_properties()
+	if "-start" in req_ref and "cat" in props: # Cat eats mice
+		req_ref.remove_at(req_ref.find("-start"))
+	if "hub2_hard" in req_ref: # Fix broken rails
+		req_ref.remove_at(req_ref.find("hub2_hard"))
+	if "hub2" in req_ref: # Break rocks
+		req_ref.remove_at(req_ref.find("hub2"))
+	
 	# Leave current section
-	get_section().clear_outline_await()
+	print("--- Change Section (leaving " + get_section().name + ") ---")
+	print("Current history (recent first): " + str(section_history))
+	if section_history.size() >= 2:
+		section_history[1].set_outline(false, false)
 	get_section().set_cross(false)
 	for section: RailSection in get_section().out_sections:
 		section.set_cross(false)
-	last_section = get_section()
 	
 	# Change section
+	print("--- Change Section (changing to " + new_section.name + ") ---")
 	get_parent().remove_child(self)
 	new_section.add_child(self)
 	curr_section_length = get_parent().curve.get_baked_length()
+	add_section_history(get_section())
 	Main.instance.reset_signals()
 	Main.instance.set_direction_valid(true, true)
 	update_rail_outlines()
 	update_crosses()
 
+func calc_carriage_positions() -> Array[CarriagePosition]:
+	var res: Array[CarriagePosition] = []
+	var curr_progress = progress - (length / 2.0) - spacing
+	var curr_section_idx = 0
+	for carriage: Carriage in carriages:
+		var new_pos := CarriagePosition.new()
+		curr_progress -= carriage.length / 2.0
+		new_pos.progress = curr_progress
+		while curr_progress < 0.0:
+			curr_section_idx += 1
+			curr_progress += section_history[curr_section_idx].length
+		new_pos.section = section_history[curr_section_idx]
+		curr_progress -= (carriage.length / 2.0) + spacing
+		res.append(new_pos)
+	return res
+
 func add_character(new_character: CharacterInfo):
 	var new_carriage: Carriage = new_character.carriage.instantiate()
 	new_carriage.character = new_character
 	carriages.append(new_carriage)
-	var last_carriage := carriages[carriages.size() - 1]
-	if last_carriage.get_section() != get_section() \
-			or last_carriage.progress - (last_carriage.length / 2) - (new_carriage.length / 2) < 0.0:
-		last_section.add_child(new_carriage)
-	else:
-		get_section().add_child(new_carriage)
+	var carr_pos := calc_carriage_positions()[-1]
+	carr_pos.section.add_child(new_carriage)
 	update_characters()
 	update_rail_outlines()
 	update_crosses()
+	if new_character.name == "hub2":
+		%chef_locomotive2.set_ruddy(true)
+	check_tb()
 	Main.instance.character_attached(new_character)
+	character_attached.emit(new_character)
 
 func remove_carriage(carriage: Carriage):
 	carriages.remove_at(carriages.find(carriage))
@@ -198,7 +275,25 @@ func remove_carriage(carriage: Carriage):
 	update_characters()
 	update_rail_outlines()
 	update_crosses()
+	if carriage.character.name == "hub2":
+		%chef_locomotive2.set_ruddy(false)
+	check_tb()
 	Main.instance.character_detached(carriage.character)
+	character_detached.emit(carriage.character)
+
+func check_tb():
+	if "tb_powered" not in additional_properties:
+		for i in range(1, carriages.size()):
+			if carriages[i].character.name == "hub2_hard" and carriages[i - 1].is_tb:
+				power_tb(carriages[i - 1])
+				return
+
+func power_tb(tb_carriage: Carriage):
+	additional_properties.append("tb_powered")
+	tb_carriage.power()
+	%AudioPowerup.play()
+	Dialogic.VAR.set_variable("tb_powered", true)
+	tb_powered.emit()
 
 func update_characters():
 	Main.instance.update_characters_ui()
@@ -212,8 +307,11 @@ func restart():
 func get_properties() -> Array[String]:
 	var props: Array[String] = []
 	for carriage in carriages:
+		if carriage.character.name in ["F", "hub1"]:
+			if speed_mode == SpeedMode.FAST:
+				props.append("superspeed")
 		props.append(carriage.character.name)
-	return props
+	return props + additional_properties
 
 func get_distance_to_section_end() -> float:
 	return curr_section_length - progress
@@ -224,6 +322,7 @@ func kick_up():
 	tween.tween_property(%MeshInstance3D, "scale", Vector3.ONE, 0.5)
 
 func update_rail_outlines():
+	print("=> Calling update_rail_outlines")
 	var next := next_section()
 	for section in get_section().out_sections:
 		section.set_outline(section == next)
@@ -246,6 +345,24 @@ func get_visible_center() -> Vector3:
 
 func get_visible_extent() -> Vector3:
 	return %VisibleExtent.global_position
+
+func get_camera_pivot_x() -> Node3D:
+	return %CameraPivotX
+
+func get_camera_pivot_y() -> Node3D:
+	return %CameraPivotY
+
+func get_camera_follow_pos() -> Node3D:
+	return %CameraFollowPos
+
+func get_camera_loop_pos() -> Node3D:
+	return %CameraLoopPos
+
+func get_minimap_pos() -> Node3D:
+	return %MinimapPos
+
+func get_end_pos() -> Node3D:
+	return %EndPos
 
 #func imgui():
 	#ImGui.Begin("Locomotive")

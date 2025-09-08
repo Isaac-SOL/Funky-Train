@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=5 format=3 uid="uid://c3mahnqd7iir1"]
+
+[ext_resource type="PackedScene" uid="uid://dkd36gxp7gqao" path="res://objects/carriage_trompette_puzzle.tscn" id="1_kc3kc"]
+[ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_aiuyu"]
+[ext_resource type="Texture2D" uid="uid://cjbp0kdkj24n6" path="res://assets/modele/2D/personnages/personnages_trompette_contour.png" id="3_cjr45"]
+[ext_resource type="Texture2D" uid="uid://q4c8n5jbgmkc" path="res://assets/modele/2D/personnages/personnages_trompette_c_contour.png" id="4_ggjkg"]
+
+[resource]
+script = ExtResource("2_aiuyu")
+name = "hub2_puzzle1"
+sprite = ExtResource("3_cjr45")
+sprite_cadre = ExtResource("4_ggjkg")
+color = Color(1, 0.856667, 0.14, 1)
+carriage = ExtResource("1_kc3kc")
+track_id = 8
+instrument = "trompette"
+true_name = "Louis"
+metadata/_custom_type_script = "uid://rkfd1kwn018t"
