@@ -1,6 +1,6 @@
 class_name ParkerGate extends GenericInteractible
 
-const base_scale := Vector3(1.59, 1.59, 1.59)
+const base_scale := Vector3.ONE * 1.33
 
 func _ready() -> void:
 	super._ready()

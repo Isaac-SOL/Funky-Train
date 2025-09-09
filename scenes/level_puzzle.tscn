@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://dxfmlf33ndxjm"]
+[gd_scene load_steps=63 format=3 uid="uid://dxfmlf33ndxjm"]
 
 [ext_resource type="Script" uid="uid://m2gs6g88kh3b" path="res://scripts/level.gd" id="1_34uqr"]
 [ext_resource type="Script" uid="uid://d3y48j1b2i22e" path="res://addons/zylann.hterrain/hterrain.gd" id="1_p00hf"]
@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://l2utvst2xqpe" path="res://assets/modele/2D/environment/nature/fleur3.png" id="27_wrssk"]
 [ext_resource type="Texture2D" uid="uid://348kbeug2g8s" path="res://assets/textures/gamjam2025_nuage1.png" id="28_jh2by"]
 [ext_resource type="PackedScene" uid="uid://c35f85t150sg4" path="res://objects/signals/signal_tunnel_kim.tscn" id="29_hakj6"]
+[ext_resource type="PackedScene" uid="uid://capa820ir3vho" path="res://scenes/level.tscn" id="29_yli11"]
 [ext_resource type="Texture2D" uid="uid://ddrm5trq6f4wd" path="res://assets/textures/gamjam2025_nuage2.png" id="29_yye0t"]
 [ext_resource type="PackedScene" uid="uid://d0uojyja66o5k" path="res://objects/signals/signal_montagne.tscn" id="30_jh2by"]
 [ext_resource type="Texture2D" uid="uid://cfk6v7prtt1ps" path="res://assets/textures/gamjam2025_nuage3.png" id="30_mfxbm"]
@@ -373,6 +374,7 @@ metadata/_editor_icon = ExtResource("14_mv16x")
 [node name="PathScene" parent="." instance=ExtResource("4_34uqr")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04, 0)
+other_map = ExtResource("29_yli11")
 
 [node name="water_shader" parent="." instance=ExtResource("14_7qtsq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -178.884, -1.95037, 332.979)
@@ -392,7 +394,7 @@ cast_shadow = 0
 billboard = 0
 
 [node name="rock_8" parent="rock_env" instance=ExtResource("18_mv16x")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 78.7624, 4.93765, 17.9424)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 78.7624, 9.02861, 17.9424)
 cast_shadow = 0
 billboard = 0
 
@@ -634,7 +636,7 @@ transform = Transform3D(0.937701, 0, 0.347443, 0, 1, 0, -0.347443, 0, 0.937701, 
 transform = Transform3D(0.912449, 0, -0.409191, 0, 1, 0, 0.409191, 0, 0.912449, -14.624, 0, 76.0165)
 
 [node name="SignalForet2" parent="Signals" instance=ExtResource("32_mfxbm")]
-transform = Transform3D(-0.838184, -0.183428, -0.513616, -0.213781, 0.976882, -5.88986e-08, 0.501742, 0.109801, -0.85802, 22.6536, 4.1241, -75.6418)
+transform = Transform3D(-0.838184, -0.183428, -0.513616, -0.213781, 0.976882, -5.79494e-08, 0.501742, 0.109801, -0.85802, 22.6536, 4.1241, -75.6418)
 
 [node name="Area3D_plane" type="Area3D" parent="."]
 

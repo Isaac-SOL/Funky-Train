@@ -1,7 +1,7 @@
 [style name="default_portrait_style"]
 if {puzzle_mode} == true:
 	if {first_time.first_saxo} == true:
-		saxo: Let's gather up everyone! The name's [color=#8ee5da]Parker[/color]. They'll let you through these gates if they see I'm with you.
+		saxo: The name's [color=#8ee5da]Parker[/color]. They'll let you through these gates if they see I'm with you. Let's find everyone!
 		set {first_time.first_saxo} = false
 	else:
 		if {first_time.first_guitar} == true:

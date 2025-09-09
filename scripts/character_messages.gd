@@ -55,12 +55,14 @@ func move_all_y():
 			continue
 		if y_tweens[i]:
 			y_tweens[i].kill()
-		y_tweens[i] = spawned_dialogues[i].create_tween()
+		var curr_dialogue := spawned_dialogues[i]
+		y_tweens[i] = curr_dialogue.create_tween()
 		y_tweens[i].set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
 		y_tweens[i].tween_method(func(val: float):
-				spawned_dialogues[i].position.y = val,
-			spawned_dialogues[i].position.y, y_offset, 0.5)
-		y_offset += spawned_dialogues[i].size.y + 10.0
+				if curr_dialogue:
+					curr_dialogue.position.y = val,
+			curr_dialogue.position.y, y_offset, 0.5)
+		y_offset += curr_dialogue.size.y + 10.0
 
 func kill_dialogue(dialogue: QuickDialogue):
 	assert(dialogue in spawned_dialogues)

@@ -1,36 +1,58 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbq7spgjrhdbx"]
+[gd_scene load_steps=6 format=3 uid="uid://bbq7spgjrhdbx"]
 
 [ext_resource type="Script" uid="uid://cvsg1qq1auukk" path="res://objects/parker_gate.gd" id="1_1i70p"]
-[ext_resource type="Texture2D" uid="uid://b4ynte4rpmwxe" path="res://assets/textures/half_gate.png" id="1_mthg4"]
+[ext_resource type="Texture2D" uid="uid://dbqa8ff2cicwn" path="res://assets/textures/gamjam2025_porte.png" id="2_ai744"]
 [ext_resource type="AudioStream" uid="uid://crfutv7u1ho0p" path="res://assets/sfx/gate.ogg" id="3_ai744"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ai744"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 1.28
+radial_segments = 8
+rings = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jfj0j"]
+albedo_color = Color(0.556863, 0.898039, 0.854902, 1)
 
 [node name="ParkerGate" type="PathFollow3D"]
 script = ExtResource("1_1i70p")
 
 [node name="Root" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1.59, 0, 0, 0, 1.59, 0, 0, 0, 1.59, 0, 0, -0.979735)
+transform = Transform3D(1.33, 0, 0, 0, 1.33, 0, 0, 0, 1.33, 0, 0, -0.979735)
 
 [node name="Pivot1" type="Node3D" parent="Root"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.648, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.770884, 0, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="Root/Pivot1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32403, 0.644453, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.405823, 0.644453, 0)
 visibility_range_end = 100.0
-alpha_cut = 2
-texture = ExtResource("1_mthg4")
+alpha_cut = 1
+texture = ExtResource("2_ai744")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Root/Pivot1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.662911, 0)
+visibility_range_end = 75.0
+mesh = SubResource("CylinderMesh_ai744")
+surface_material_override/0 = SubResource("StandardMaterial3D_jfj0j")
 
 [node name="Pivot2" type="Node3D" parent="Root"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.771, 0, 0)
 
 [node name="Sprite3D2" type="Sprite3D" parent="Root/Pivot2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.324, 0.644, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.406, 0.644, 0)
 visibility_range_end = 100.0
 flip_h = true
-alpha_cut = 2
-texture = ExtResource("1_mthg4")
+alpha_cut = 1
+texture = ExtResource("2_ai744")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Root/Pivot2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.662911, 0)
+visibility_range_end = 75.0
+mesh = SubResource("CylinderMesh_ai744")
+surface_material_override/0 = SubResource("StandardMaterial3D_jfj0j")
 
 [node name="AudioGate" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true

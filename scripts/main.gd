@@ -15,6 +15,7 @@ static var instance: Main
 @export var quick_dialogue_scene: PackedScene
 @export var rhythm_sync: RhythmNotifier
 @export var rails_outline_material: ShaderMaterial
+@export var puzzle_map: bool = false
 @export var two_options: bool = true
 @export var other_map: PackedScene
 @export_group("Cursor")
@@ -44,15 +45,14 @@ func _ready() -> void:
 	sky_mat = $WorldEnvironment.environment.sky.sky_material
 	#Preload Diologic timeline by starting a blanc timeline
 	Dialogic.start("timeline_blanc")
-	Dialogic.VAR.set_variable("puzzle_mode", not two_options)
+	Dialogic.VAR.set_variable("puzzle_mode", puzzle_map)
 	await get_tree().process_frame
 	%CameraShakerMap.target_node = Locomotive.instance.get_minimap_pos()
 	%VBoxContainerTwoOptions.visible = two_options
 	%ButtonStart.visible = not two_options
 	Locomotive.instance.tb_powered.connect(_on_tb_powered)
-	if two_options:
+	if not puzzle_map:
 		%AudioStreamPlayer.setVocoderState(true)
-		await get_tree().create_timer(5.0).timeout
 
 func stop_at_station(station: Station):
 	active_station = station
@@ -396,6 +396,13 @@ func _on_tb_powered():
 			child.power_tb()
 	%AudioStreamPlayer.setVocoderState(true)
 	%AudioStreamPlayer.setInstrument(MainMusicController.Track.VOCODER, true)
+	await get_tree().create_timer(1.5).timeout
+	var tb_dialogue := DialogueInfo.new()
+	tb_dialogue.character = get_character("hub3")
+	tb_dialogue.text = "P0WER 0NL1NE.\n1N1T1AT1NG S0NG R0UT1NE..."
+	tb_dialogue.time = 5.0
+	tb_dialogue.indentation = 0
+	spawn_dialogue(tb_dialogue)
 
 func _on_start_button_puzzle_click_open() -> void:
 	%StartButtonPuzzle.open()
@@ -404,10 +411,12 @@ func _on_start_button_puzzle_click_open() -> void:
 
 
 func _on_start_button_puzzle_click_confirm() -> void:
-	# Open other scene
-	%AudioStreamPlayer.remove_filter()
-	var err = get_tree().change_scene_to_packed(other_map)
-	print(err)
+	if puzzle_map:
+		_on_button_start_pressed()
+	else:
+		# Open other scene
+		%AudioStreamPlayer.remove_filter()
+		get_tree().change_scene_to_packed(other_map)
 
 
 func _on_start_button_jam_click_open() -> void:
@@ -417,4 +426,9 @@ func _on_start_button_jam_click_open() -> void:
 
 
 func _on_start_button_jam_click_confirm() -> void:
-	_on_button_start_pressed()
+	if not puzzle_map:
+		_on_button_start_pressed()
+	else:
+		# Open other scene
+		%AudioStreamPlayer.remove_filter()
+		get_tree().change_scene_to_packed(other_map)

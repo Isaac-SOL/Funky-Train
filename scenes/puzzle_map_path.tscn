@@ -17,7 +17,7 @@ viewport_path = NodePath("SubViewport")
 
 [node name="PathBaseScene" instance=ExtResource("1_12r1c")]
 character_list = Array[ExtResource("2_lejb3")]([ExtResource("3_6dm60"), ExtResource("4_e02kj"), ExtResource("5_7po1x"), ExtResource("9_8aj63"), ExtResource("7_j80nl"), ExtResource("8_hwnm8"), ExtResource("9_8aj63"), ExtResource("10_2w38h"), ExtResource("11_b7jfw")])
-two_options = false
+puzzle_map = true
 
 [node name="PuzzleMap" parent="." index="2" instance=ExtResource("2_mrouw")]
 

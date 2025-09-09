@@ -15,7 +15,7 @@ imgui/config="uid://w3qgqtnxvopv"
 [application]
 
 config/name="Funky Train"
-run/main_scene="uid://capa820ir3vho"
+run/main_scene="uid://dxfmlf33ndxjm"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/image="uid://bnq3r1df1n5b6"
 config/icon="res://icon.svg"
@@ -186,6 +186,8 @@ slower={
 3d_render/layer_2="Minimap"
 3d_physics/layer_1="Locomotive"
 3d_physics/layer_2="loop"
+3d_physics/layer_3="High Objects"
+3d_physics/layer_4="Tall Carriages"
 
 [rendering]
 

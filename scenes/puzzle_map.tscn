@@ -1171,8 +1171,8 @@ metadata/_custom_type_script = "uid://di4q8eju5txb1"
 [sub_resource type="Resource" id="Resource_3146n"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("209_mt8tr")
-text = "NEED... ENERGY...
-NEED... MY [color=#9e920e]JIMMY[/color]..."
+text = "NEED... C0NNECT1NG...
+NEED... MY [color=#9e920e]J1MMY[/color]..."
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -1898,8 +1898,8 @@ transform = Transform3D(-0.242185, 0, -0.970179, 0, 0.999968, 0, 0.970179, 0, -0
 progress = 3.33338
 
 [node name="ParkerGate" parent="PreHub1/PreHub1_Entrance" instance=ExtResource("36_58hlq")]
-transform = Transform3D(-0.297354, 0, -0.954766, 0, 1, 0, 0.954766, 0, -0.297354, 3.89313, 0, 0.5658)
-progress = 3.94713
+transform = Transform3D(-0.327938, 0, -0.944698, 0, 1, 0, 0.944698, 0, -0.327938, 4.19429, 0, 0.664871)
+progress = 4.26427
 
 [node name="PreHub1_Entrance_s" parent="PreHub1" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.1664, 0, -27.3578)
@@ -3662,7 +3662,7 @@ transform = Transform3D(0.745492, 0, -0.666514, 0, 1, 0, 0.666514, 0, 0.745492, 
 progress = 4.63914
 
 [node name="DialogInteractible" type="PathFollow3D" parent="Hub2/Hub2_Extras/Hub2_Extras3"]
-transform = Transform3D(0.995035, 0, -0.0995003, 0, 1, 0, 0.0995003, 0, 0.995035, 5.26407, 0, -4.66364)
+transform = Transform3D(0.995035, 0, -0.0995007, 0, 1, 0, 0.0995007, 0, 0.995035, 5.26407, 0, -4.66363)
 progress = 7.57514
 script = ExtResource("14_xcywb")
 trigger_once = true
