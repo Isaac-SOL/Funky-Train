@@ -18,6 +18,8 @@ func load_character(character: CharacterInfo):
 		%CharacterSprite.position.y = -33.0
 	if character.name == "hub3" and not "tb_powered" in Locomotive.instance.get_properties():
 		%AnimationPlayer.play("tb_no_power")
+	else:
+		%AnimationPlayer.play("RESET")
 
 func reset_character():
 	curr_character = null
