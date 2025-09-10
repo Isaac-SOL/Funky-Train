@@ -20,3 +20,12 @@ func interact():
 	tween.tween_interval(3.4)
 	tween.tween_property(%FruitRoot, "scale", Vector3.ONE, 1.5)
 	tween.tween_callback(func(): fully_grown = true)
+
+
+func _on_collision_area_entered(area: Area3D) -> void:
+	%AudioBonk.play()
+	var bonk_tween := create_tween()
+	bonk_tween.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUAD)
+	bonk_tween.tween_property(%Branche, "rotation_degrees:x", -15.0, 0.05)
+	bonk_tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
+	bonk_tween.tween_property(%Branche, "rotation_degrees:x", 13.1, 1.0)

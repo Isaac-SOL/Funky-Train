@@ -1,4 +1,4 @@
-[gd_scene load_steps=458 format=4 uid="uid://pxhdnm53147j"]
+[gd_scene load_steps=459 format=4 uid="uid://pxhdnm53147j"]
 
 [ext_resource type="Script" uid="uid://hcgv0grqqm7y" path="res://scripts/rails_master.tres.gd" id="1_7cvav"]
 [ext_resource type="PackedScene" uid="uid://c7adtd3m5hihf" path="res://objects/rail_section.tscn" id="2_vwg2y"]
@@ -634,7 +634,7 @@ point_count = 4
 [sub_resource type="Resource" id="Resource_a818s"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("50_h3suw")
-text = "Sorry, my rocket-car is way too tall for that tunnel."
+text = "Sorry, my rocket-car can't fit under these bridges."
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -1585,6 +1585,14 @@ point_count = 2
 resource_local_to_scene = true
 transparency = 4
 shading_mode = 0
+
+[sub_resource type="Resource" id="Resource_pgi33"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("50_h3suw")
+text = "Sorry, my rocket-car is way too tall to fit into that tunnel."
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Curve3D" id="Curve3D_b5inl"]
 resource_local_to_scene = true
@@ -3405,7 +3413,7 @@ transform = Transform3D(0.0242364, 0, -0.999706, 0, 1, 0, 0.999706, 0, 0.0242364
 progress = 6.46221
 script = ExtResource("14_xcywb")
 trigger_once = true
-requirements = Array[String](["hub2_puzzle1"])
+requirements = Array[String](["hub2_puzzle1", "-hub1"])
 dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_b5inl")])
 metadata/_custom_type_script = "uid://c3ryf37qhvdje"
 
@@ -4411,6 +4419,7 @@ material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Hub3/Hub3_Inner2_c_c" index="3"]
 transform = Transform3D(-0.992007, 0, 0.12616, 0, 1, 0, -0.12616, 0, -0.992007, -0.230692, 0, 4.10729)
+visible = false
 progress = 4.11938
 
 [node name="CrossCenter" parent="Hub3/Hub3_Inner2_c_c/CrossFollow/CrossTween" index="0"]
@@ -4439,6 +4448,7 @@ material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Hub3/Hub3_Inner2_c_s" index="3"]
 transform = Transform3D(-0.765542, 0, 0.643382, 0, 1, 0, -0.643382, 0, -0.765542, -1.44359, 0, 3.71496)
+visible = false
 progress = 4.08025
 
 [node name="CrossCenter" parent="Hub3/Hub3_Inner2_c_s/CrossFollow/CrossTween" index="0"]
@@ -4720,10 +4730,18 @@ mesh = ExtResource("261_lcjqk")
 transform = Transform3D(-0.447213, 0, 0.894425, 0, 1, 0, -0.894425, 0, -0.447213, 0, 0, 0)
 
 [node name="StationPeriph" parent="Periph/Periph2_s_c" instance=ExtResource("32_sxdtl")]
-transform = Transform3D(0.0139765, 0, 0.999885, 0, 1, 0, -0.999885, 0, 0.0139765, -85.1858, 0, 12.2165)
+transform = Transform3D(0.0139765, 0, 0.999884, 0, 1, 0, -0.999884, 0, 0.0139765, -85.1858, 0, 12.2165)
 progress = 86.6963
 waiting_character = ExtResource("261_58hlq")
 mark_mat = SubResource("StandardMaterial3D_i27ou")
+
+[node name="DialogInteractible" type="PathFollow3D" parent="Periph/Periph2_s_c"]
+transform = Transform3D(0.0366816, 0, 0.999327, 0, 1, 0, -0.999327, 0, 0.0366816, -93.1442, 0, 12.0167)
+progress = 94.6574
+script = ExtResource("14_xcywb")
+requirements = Array[String](["hub1"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_pgi33")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Periph/Periph2_s_c"]
 mesh = ExtResource("272_lwvo2")

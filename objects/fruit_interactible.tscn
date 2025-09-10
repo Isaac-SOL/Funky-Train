@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bn3q5e6cqd2y"]
+[gd_scene load_steps=7 format=3 uid="uid://bn3q5e6cqd2y"]
 
 [ext_resource type="Script" uid="uid://cnsaupww845y2" path="res://fruit_interactible.gd" id="1_54i3d"]
 [ext_resource type="PackedScene" uid="uid://brwc61f6bdoeg" path="res://assets/modele/3D/raspberry_stevie.tscn" id="2_0n3r5"]
 [ext_resource type="AudioStream" uid="uid://dwren3wafi884" path="res://assets/sfx/crunch.ogg" id="3_0n3r5"]
 [ext_resource type="PackedScene" uid="uid://c4w18gvibj2gb" path="res://objects/branche.tscn" id="4_e11fm"]
+[ext_resource type="AudioStream" uid="uid://c2653cllec4g7" path="res://assets/sfx/bonk.ogg" id="5_kdsxm"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qhbjt"]
 
 [node name="FruitInteractible" type="PathFollow3D"]
 script = ExtResource("1_54i3d")
@@ -19,9 +22,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.80197, 0)
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -1.35929, 0)
 
 [node name="Branche" parent="Node3D" instance=ExtResource("4_e11fm")]
+unique_name_in_owner = true
 transform = Transform3D(0.05, 0, 0, 0, 0.0486984, -0.0113343, 0, 0.0113343, 0.0486984, 0, -0.130891, -1.63437)
+
+[node name="Collision" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1854, 0)
+shape = SubResource("SphereShape3D_qhbjt")
 
 [node name="AudioCroc" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("3_0n3r5")
 volume_db = 10.0
+
+[node name="AudioBonk" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_kdsxm")
+
+[connection signal="area_entered" from="Collision" to="." method="_on_collision_area_entered"]

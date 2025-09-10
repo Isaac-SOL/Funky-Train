@@ -30,7 +30,7 @@ var signals_up: bool = false
 var dragging_camera: bool = false
 var ended: bool = false
 var on_end_screen: bool = false
-var cursor_start_drag_pos: Vector2
+var cursor_start_drag_pos: Vector2 = Vector2.ZERO
 var camera_speed_tween: Tween
 var biome_color_tween: Tween
 var on_menu: bool = true
@@ -158,7 +158,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			dragging_camera = false
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			await get_tree().process_frame
-			Input.warp_mouse(cursor_start_drag_pos)
+			if cursor_start_drag_pos != Vector2.ZERO:
+				Input.warp_mouse(cursor_start_drag_pos)
+				cursor_start_drag_pos = Vector2.ZERO
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			follow_pos.position.z += zoom_sensitivity
 		elif event.button_index == MOUSE_BUTTON_WHEEL_UP:
@@ -343,13 +345,19 @@ func start_end_screen():
 	await get_tree().create_timer(3.0).timeout
 	%LabelCredits.visible = false
 	await get_tree().create_timer(1.0).timeout
-	%LabelCredits.text = "Additinal SFX (freesound.org):\nandersmmg\nshyguy014\ndanielpodlovics\nadr1911"
+	%LabelCredits.text = "Additional Models (poly.pizza):\nCreativeTrio\n4444ESOUSA\nQuaternius\njeremy\nsirkitree\niPoly3D"
 	%LabelCredits.visible = true
 	
 	await get_tree().create_timer(3.0).timeout
 	%LabelCredits.visible = false
 	await get_tree().create_timer(1.0).timeout
-	%LabelCredits.text = "Additinal Icons (flaticon.com):\nVictoruler\nsonnycandra\nFreepik\nrsetiawan"
+	%LabelCredits.text = "Additional SFX (freesound.org):\nandersmmg\nshyguy014\ndanielpodlovics\nadr1911"
+	%LabelCredits.visible = true
+	
+	await get_tree().create_timer(3.0).timeout
+	%LabelCredits.visible = false
+	await get_tree().create_timer(1.0).timeout
+	%LabelCredits.text = "Additional Icons (flaticon.com):\nVictoruler\nsonnycandra\nFreepik\nrsetiawan"
 	%LabelCredits.visible = true
 	
 	await get_tree().create_timer(3.0).timeout

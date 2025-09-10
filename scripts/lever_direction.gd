@@ -38,7 +38,7 @@ func _on_gui_input(event: InputEvent) -> void:
 		if is_dragging:
 			drag_pos += event.screen_relative
 			var offset = -drag_pos.x if is_right else drag_pos.x
-			if offset > distance_to_switch:
+			if offset > distance_to_switch * Util.current_viewport_factor(self).x:
 				change_direction(not is_right)
 				if Locomotive.instance.get_distance_to_section_end() <= Locomotive.instance.show_signals_at_distance:
 					Locomotive.instance.set_main_directions_valid()

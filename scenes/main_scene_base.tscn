@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://ddei87jmflwu2"]
+[gd_scene load_steps=88 format=3 uid="uid://ddei87jmflwu2"]
 
 [ext_resource type="Script" uid="uid://rytmmqnltko8" path="res://scripts/main.gd" id="1_rk4p5"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_7tq10"]
@@ -46,6 +46,7 @@
 [ext_resource type="AudioStream" uid="uid://go73nlj4bcwu" path="res://assets/sfx/lever_3.ogg" id="38_k8pig"]
 [ext_resource type="StyleBox" uid="uid://0ucxhj7lfimq" path="res://assets/style_button_orange.tres" id="38_pi7hh"]
 [ext_resource type="StyleBox" uid="uid://cudo6djqnmi2b" path="res://assets/style_button_orange_normal.tres" id="39_c5b55"]
+[ext_resource type="Texture2D" uid="uid://s1gcpcf47rtb" path="res://assets/textures/UI/gamjam2025_UI_speed_sliderr2.png" id="39_fbblx"]
 [ext_resource type="AudioStream" uid="uid://bowmmerxjt5f6" path="res://assets/sfx/pop.ogg" id="42_6c0ht"]
 [ext_resource type="AudioStream" uid="uid://ck2dveafiotn7" path="res://assets/sounds/fin.ogg" id="45_m75v2"]
 [ext_resource type="PackedScene" uid="uid://c0ju0joxekhcn" path="res://objects/start_button.tscn" id="50_dwaao"]
@@ -341,7 +342,6 @@ mesh = SubResource("QuadMesh_2dsia")
 
 [node name="GameUI" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -630,6 +630,18 @@ texture = ExtResource("28_qvxoj")
 expand_mode = 1
 stretch_mode = 4
 script = ExtResource("14_ha36p")
+
+[node name="LeverSpeedHead" type="TextureRect" parent="CanvasLayer/GameUI/SpeedUI/LeverSpeed"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("39_fbblx")
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI"]
 visible = false
@@ -1081,6 +1093,8 @@ bus = &"SFX"
 [connection signal="mouse_entered" from="CanvasLayer/GameUI/DirectionUI/LeverPivot/LeverDirection" to="CanvasLayer/GameUI/DirectionUI/LeverPivot/LeverDirection" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/GameUI/DirectionUI/LeverPivot/LeverDirection" to="CanvasLayer/GameUI/DirectionUI/LeverPivot/LeverDirection" method="_on_mouse_exited"]
 [connection signal="gui_input" from="CanvasLayer/GameUI/SpeedUI/LeverSpeed" to="CanvasLayer/GameUI/SpeedUI/LeverSpeed" method="_on_gui_input"]
+[connection signal="mouse_entered" from="CanvasLayer/GameUI/SpeedUI/LeverSpeed" to="CanvasLayer/GameUI/SpeedUI/LeverSpeed" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/GameUI/SpeedUI/LeverSpeed" to="CanvasLayer/GameUI/SpeedUI/LeverSpeed" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/GameUI/MarginContainerStationGrab/HBoxContainer/ButtonPrendre" to="." method="_on_button_prendre_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameUI/MarginContainerStationGrab/HBoxContainer/ButtonLaisser" to="." method="_on_button_laisser_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameUI/PanelStationPut/MarginContainer/VBoxContainerPutChar/ButtonNoOne" to="." method="_on_button_no_one_pressed"]
