@@ -17,6 +17,7 @@ static var instance: Main
 @export var rails_outline_material: ShaderMaterial
 @export var puzzle_map: bool = false
 @export var two_options: bool = true
+@export var fallback_if_web: bool = true
 @export var other_map: PackedScene
 @export_group("Cursor")
 @export var direction_cursor: Texture
@@ -46,10 +47,17 @@ func _ready() -> void:
 	#Preload Diologic timeline by starting a blanc timeline
 	Dialogic.start("timeline_blanc")
 	Dialogic.VAR.set_variable("puzzle_mode", puzzle_map)
-	await get_tree().process_frame
-	%CameraShakerMap.target_node = Locomotive.instance.get_minimap_pos()
+	if fallback_if_web and Util.on_web():
+		two_options = false
 	%VBoxContainerTwoOptions.visible = two_options
 	%ButtonStart.visible = not two_options
+	%LanguageButtonOneOption.visible = not two_options
+	
+	if not TranslationServer.get_locale().begins_with("fr"):
+		TranslationServer.set_locale("en")
+	
+	await get_tree().process_frame
+	%CameraShakerMap.target_node = Locomotive.instance.get_minimap_pos()
 	Locomotive.instance.tb_powered.connect(_on_tb_powered)
 	if not puzzle_map:
 		%AudioStreamPlayer.setVocoderState(true)
@@ -146,7 +154,6 @@ func talk(npc_name: String):
 		Dialogic.start("timeline_"+npc_name)
 
 func _unhandled_input(event: InputEvent) -> void:
-	var follow_pos := Locomotive.instance.get_camera_follow_pos()
 	var pivot_x := Locomotive.instance.get_camera_pivot_x()
 	var pivot_y := Locomotive.instance.get_camera_pivot_y()
 	if event is InputEventMouseButton:
@@ -162,15 +169,15 @@ func _unhandled_input(event: InputEvent) -> void:
 				Input.warp_mouse(cursor_start_drag_pos)
 				cursor_start_drag_pos = Vector2.ZERO
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			follow_pos.position.z += zoom_sensitivity
+			pivot_x.target_position.z += zoom_sensitivity
 		elif event.button_index == MOUSE_BUTTON_WHEEL_UP:
-			follow_pos.position.z -= zoom_sensitivity
-		follow_pos.position.z = clampf(follow_pos.position.z, 2.5, 10.0)
+			pivot_x.target_position.z -= zoom_sensitivity
+		pivot_x.target_position.z = clampf(pivot_x.target_position.z, 2.5, 10.0)
 	elif event is InputEventMouseMotion:
 		if dragging_camera:
 			pivot_y.rotate_y(-event.relative.x * camera_sensitivity.y)
 			pivot_x.rotate_x(-event.relative.y * camera_sensitivity.x)
-			pivot_x.rotation_degrees.x = clampf(Locomotive.instance.get_camera_pivot_x().rotation_degrees.x, -45.0, 10.0)
+			pivot_x.rotation_degrees.x = clampf(pivot_x.rotation_degrees.x, -45.0, 10.0)
 
 func _on_button_prendre_pressed() -> void:
 	close_add_character()
@@ -357,7 +364,7 @@ func start_end_screen():
 	await get_tree().create_timer(3.0).timeout
 	%LabelCredits.visible = false
 	await get_tree().create_timer(1.0).timeout
-	%LabelCredits.text = "Additional Icons (flaticon.com):\nVictoruler\nsonnycandra\nFreepik\nrsetiawan"
+	%LabelCredits.text = "Additional Icons (flaticon.com):\nVictoruler\nsonnycandra\nFreepik\nrsetiawan\nKiranshastry"
 	%LabelCredits.visible = true
 	
 	await get_tree().create_timer(3.0).timeout
@@ -407,7 +414,7 @@ func _on_tb_powered():
 	await get_tree().create_timer(1.5).timeout
 	var tb_dialogue := DialogueInfo.new()
 	tb_dialogue.character = get_character("hub3")
-	tb_dialogue.text = "P0WER 0NL1NE.\n1N1T1AT1NG S0NG R0UT1NE..."
+	tb_dialogue.text = "PUZZ_TB_STARTUP"
 	tb_dialogue.time = 5.0
 	tb_dialogue.indentation = 0
 	spawn_dialogue(tb_dialogue)
@@ -440,3 +447,10 @@ func _on_start_button_jam_click_confirm() -> void:
 		# Open other scene
 		%AudioStreamPlayer.remove_filter()
 		get_tree().change_scene_to_packed(other_map)
+
+
+func _on_language_button_pressed() -> void:
+	if TranslationServer.get_locale().begins_with("fr"):
+		TranslationServer.set_locale("en")
+	else:
+		TranslationServer.set_locale("fr")

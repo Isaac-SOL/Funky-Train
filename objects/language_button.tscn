@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://chj2mloipisv0"]
+
+[ext_resource type="Script" uid="uid://ucklrr1b2raw" path="res://scripts/language_button.gd" id="1_miq55"]
+[ext_resource type="StyleBox" uid="uid://cfcw2825h4s6g" path="res://assets/style_box_play_normal.tres" id="2_7pn31"]
+[ext_resource type="StyleBox" uid="uid://duwjmwkx3ewy7" path="res://assets/style_box_play_highlighted.tres" id="3_c0e4b"]
+[ext_resource type="FontFile" uid="uid://drhhe5f5p7qgn" path="res://assets/Super Frosting.ttf" id="4_3tkvr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ne5e4"]
+font = ExtResource("4_3tkvr")
+font_size = 48
+font_color = Color(0.956863, 0.643137, 0.164706, 1)
+shadow_size = 0
+shadow_color = Color(0.901961, 0.462745, 0.164706, 1)
+shadow_offset = Vector2(5, 3)
+
+[node name="LanguageButton" type="CenterContainer"]
+script = ExtResource("1_miq55")
+
+[node name="TopContainer" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+metadata/_edit_pinned_properties_ = [&"custom_minimum_size"]
+
+[node name="Button" type="Button" parent="TopContainer"]
+layout_mode = 2
+theme_override_styles/focus = ExtResource("2_7pn31")
+theme_override_styles/disabled = ExtResource("2_7pn31")
+theme_override_styles/hover_pressed = ExtResource("3_c0e4b")
+theme_override_styles/hover = ExtResource("3_c0e4b")
+theme_override_styles/pressed = ExtResource("3_c0e4b")
+theme_override_styles/normal = ExtResource("2_7pn31")
+
+[node name="MarginContainer" type="MarginContainer" parent="TopContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 23
+
+[node name="LabelTitle" type="Label" parent="TopContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "LANG_NAME"
+label_settings = SubResource("LabelSettings_ne5e4")
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 1
+visible_characters_behavior = 1
+metadata/_edit_pinned_properties_ = [&"text"]
+
+[connection signal="pressed" from="TopContainer/Button" to="." method="_on_button_pressed"]

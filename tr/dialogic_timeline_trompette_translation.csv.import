@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://d2xkfuv015721"
+
+[deps]
+
+files=["res://tr/dialogic_timeline_trompette_translation.en.translation", "res://tr/dialogic_timeline_trompette_translation.fr.translation"]
+
+source_file="res://tr/dialogic_timeline_trompette_translation.csv"
+dest_files=["res://tr/dialogic_timeline_trompette_translation.en.translation", "res://tr/dialogic_timeline_trompette_translation.fr.translation"]
+
+[params]
+
+compress=true
+delimiter=0

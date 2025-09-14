@@ -1,17 +1,17 @@
 [style name="default_portrait_style"]
 if {puzzle_mode} == true:
 	if {first_time.first_basse} == true:
-		basse: Hello everyone, I'm [color=#3e8548]Kim[/color]! My car is a bit tall, but my rocket fuel can make us go [color=#3e8548]super fast[/color]!
+		basse: Hello everyone, I'm [color=#3e8548]Kim[/color]! My car is a bit tall, but my rocket fuel can make us go [color=#3e8548]super fast[/color]! #id:11
 		set {first_time.first_basse} = false
 	else:
 		set {random_choice} = range(0,2).pick_random()
 		if {random_choice} == 0.0:
-			basse: I heard there is a path we can only take if we are at maximum speed...
+			basse: I heard there is a path we can only take if we are at maximum speed... #id:12
 		elif {random_choice} == 1.0:
-			basse: Beware of any tunnels now!
+			basse: Beware of any tunnels now! #id:13
 else:
 	if {first_time.first_basse} == true:
-		basse: Hello, everyone! Is there any space for me? Don't worry, my car may look like a rocket, but it isn't actually one!
+		basse: Hello, everyone! Is there any space for me? Don't worry, my car may look like a rocket, but it isn't actually one! #id:14
 		set {first_time.first_basse} = false
 	else:
-		basse: To be honest, I was little bored without your company.
+		basse: To be honest, I was little bored without your company. #id:15

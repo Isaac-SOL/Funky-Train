@@ -150,9 +150,9 @@ script = ExtResource("1_p00hf")
 ambient_wind = 0.1
 _terrain_data = ExtResource("2_woq1o")
 chunk_size = 32
-collision_enabled = false
-collision_layer = 1
-collision_mask = 1
+collision_enabled = true
+collision_layer = 16
+collision_mask = 0
 shader_type = "Custom"
 custom_shader = ExtResource("5_0yji4")
 custom_globalmap_shader = null
@@ -636,7 +636,7 @@ transform = Transform3D(0.937701, 0, 0.347443, 0, 1, 0, -0.347443, 0, 0.937701, 
 transform = Transform3D(0.912449, 0, -0.409191, 0, 1, 0, 0.409191, 0, 0.912449, -14.624, 0, 76.0165)
 
 [node name="SignalForet2" parent="Signals" instance=ExtResource("32_mfxbm")]
-transform = Transform3D(-0.838184, -0.183428, -0.513616, -0.213781, 0.976882, -9.15986e-08, 0.501742, 0.109801, -0.85802, 22.6536, 4.1241, -75.6418)
+transform = Transform3D(-0.838184, -0.183428, -0.513616, -0.213781, 0.976882, -9.97632e-08, 0.501742, 0.109801, -0.85802, 22.6536, 4.1241, -75.6418)
 
 [node name="Area3D_plane" type="Area3D" parent="."]
 

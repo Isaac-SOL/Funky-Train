@@ -1,6 +1,6 @@
 [style name="default_portrait_style"]
 if {first_time.first_cat} == true:
-	cat: Meow,,,
+	cat: Meow,,, #id:1a
 	set {first_time.first_cat} = false
 else:
-	cat: Frrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+	cat: Frrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr #id:1b

@@ -107,6 +107,17 @@ layout/default_style=""
 glossary/default_case_sensitive=true
 portraits/position_suggestion_names="leftmost"
 portraits/default_portrait=""
+translation/enabled=true
+translation/original_locale="en"
+translation/file_mode=1
+translation/translation_folder="res://tr"
+translation/save_mode=0
+translation/add_separator=false
+translation/intern/save_mode=0
+translation/intern/file_mode=1
+translation/intern/translation_folder="res://tr"
+translation/id_counter=70
+translation/locales=[]
 
 [display]
 
@@ -180,6 +191,10 @@ slower={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://tr/dialogic_character_translations.en.translation", "res://tr/dialogic_timeline_basse_translation.en.translation", "res://tr/dialogic_timeline_basse_translation.fr.translation", "res://tr/dialogic_timeline_batterie_translation.en.translation", "res://tr/dialogic_timeline_batterie_translation.fr.translation", "res://tr/dialogic_timeline_cat_translation.en.translation", "res://tr/dialogic_timeline_cat_translation.fr.translation", "res://tr/dialogic_timeline_clavier_translation.en.translation", "res://tr/dialogic_timeline_clavier_translation.fr.translation", "res://tr/dialogic_timeline_guitar_translation.en.translation", "res://tr/dialogic_timeline_guitar_translation.fr.translation", "res://tr/dialogic_timeline_rocket_translation.en.translation", "res://tr/dialogic_timeline_saxo_translation.en.translation", "res://tr/dialogic_timeline_saxo_translation.fr.translation", "res://tr/dialogic_timeline_triangle_translation.en.translation", "res://tr/dialogic_timeline_triangle_translation.fr.translation", "res://tr/dialogic_timeline_trompette_translation.en.translation", "res://tr/dialogic_timeline_trompette_translation.fr.translation", "res://tr/dialogic_timeline_vocoder_translation.en.translation", "res://tr/dialogic_timeline_vocoder_translation.fr.translation", "res://tr/tr-all.en.translation", "res://tr/tr-all.fr.translation")
+
 [layer_names]
 
 3d_render/layer_1="Ingame"
@@ -188,6 +203,7 @@ slower={
 3d_physics/layer_2="loop"
 3d_physics/layer_3="High Objects"
 3d_physics/layer_4="Tall Carriages"
+3d_physics/layer_5="Terrain"
 
 [rendering]
 

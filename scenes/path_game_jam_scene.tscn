@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsk1xsmlmwn6o"]
+[gd_scene load_steps=4 format=3 uid="uid://bsk1xsmlmwn6o"]
 
 [ext_resource type="PackedScene" uid="uid://ddei87jmflwu2" path="res://scenes/main_scene_base.tscn" id="1_l88wu"]
 [ext_resource type="PackedScene" uid="uid://cq76mgiooqjlk" path="res://scenes/rails_gamejam.tscn" id="2_jgrak"]
@@ -8,6 +8,7 @@ viewport_path = NodePath("SubViewport")
 
 [node name="PathGameJamScene" instance=ExtResource("1_l88wu")]
 two_options = false
+fallback_if_web = false
 
 [node name="Rails" parent="." index="2" instance=ExtResource("2_jgrak")]
 

@@ -1,16 +1,16 @@
 [style name="default_portrait_style"]
 if {puzzle_mode} == true:
 	if {first_time.first_guitar} == true:
-		guitar: You found me, congrats! I can't play music, but my trusty wrench and I can help you [color=#9e920e]fix[/color] buttons and even entire rails! I have [color=#9e920e]a battery[/color] too, if anyone needs energy!
+		guitar: You found me, congrats! I can't play music, but my trusty wrench and I can help you [color=#9e920e]fix[/color] buttons and even entire rails! I have [color=#9e920e]a battery[/color] too, if anyone needs energy! #id:23
 		set {first_time.first_guitar} = false
 	else:
 		if {tb_powered} == false:
-			guitar: Needs fixing? Needs powering? I'm here for anything!
+			guitar: Needs fixing? Needs powering? I'm here for anything! #id:24
 		else:
-			guitar: Do you have everyone for the jam?
+			guitar: Do you have everyone for the jam? #id:25
 else:
 	if {first_time.first_guitar} == true:
-		guitar: Let's start the party! Let's gather everyone so we can all play together!
+		guitar: Let's start the party! Let's gather everyone so we can all play together! #id:26
 		set {first_time.first_guitar} = false
 	else:
-		guitar: Do you have everyone for the jam?
+		guitar: Do you have everyone for the jam? #id:27

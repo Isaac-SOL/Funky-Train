@@ -1,13 +1,13 @@
 [style name="default_portrait_style"]
 if {puzzle_mode} == true:
 	if {first_time.first_triangle} == true:
-		triangle: Woah, you guys are the first ones to ever come here! After me, of course. Can I join?
+		triangle: Woah, you guys are the first ones to ever come here! After me, of course. Can I join? #id:2e
 		set {first_time.first_triangle} = false
 	else:
-		triangle: I'm helping! The triangle is quiet, but it's there!
+		triangle: I'm helping! The triangle is quiet, but it's there! #id:2f
 else:
 	if {first_time.first_triangle} == true:
-		triangle: Hi there! My name is [color=#a53f24]Pytha[/color]. My rocket triangle car can make us go super fast!
+		triangle: Hi there! My name is [color=#a53f24]Pytha[/color]. My rocket triangle car can make us go super fast! #id:30
 		set {first_time.first_triangle} = false
 	else:
-		triangle: Care to try the lightspeed ride again?
+		triangle: Care to try the lightspeed ride again? #id:31

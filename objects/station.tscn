@@ -96,6 +96,7 @@ script = ExtResource("3_110lq")
 unique_name_in_owner = true
 transform = Transform3D(0.165, 0, 0, 0, 0.165, 0, 0, 0, 0.165, 0, 0.832408, 0)
 visibility_range_end = 100.0
+billboard = 2
 texture = ExtResource("3_a8vm7")
 
 [node name="Sphere" type="MeshInstance3D" parent="."]

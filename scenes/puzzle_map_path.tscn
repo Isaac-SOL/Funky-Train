@@ -18,7 +18,6 @@ viewport_path = NodePath("SubViewport")
 [node name="PathBaseScene" instance=ExtResource("1_12r1c")]
 character_list = Array[ExtResource("2_lejb3")]([ExtResource("3_6dm60"), ExtResource("4_e02kj"), ExtResource("5_7po1x"), ExtResource("9_8aj63"), ExtResource("7_j80nl"), ExtResource("8_hwnm8"), ExtResource("9_8aj63"), ExtResource("10_2w38h"), ExtResource("11_b7jfw")])
 puzzle_map = true
-two_options = false
 
 [node name="PuzzleMap" parent="." index="2" instance=ExtResource("2_mrouw")]
 
@@ -33,6 +32,14 @@ transform = Transform3D(-0.501843, 0, 0.864959, 0, 1, 0, -0.864959, 0, -0.501843
 
 [node name="Map" parent="CanvasLayer/GameUI/MinimapUI/MinimapParent/Mask" index="0"]
 texture = SubResource("ViewportTexture_1yk45")
+
+[node name="LabelDesc" parent="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonPuzzle/TopContainer/MarginContainer" index="1"]
+visible_characters = 0
+visible_ratio = 0.038961
+
+[node name="LabelDesc" parent="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonJam/TopContainer/MarginContainer" index="1"]
+visible_characters = 0
+visible_ratio = 0.0283688
 
 [editable path="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonPuzzle"]
 [editable path="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonJam"]

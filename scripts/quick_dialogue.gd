@@ -20,7 +20,7 @@ func spawn(dialogue_info: DialogueInfo):
 	#queue_free()
 
 func display_loop():
-	var time_to_display = %Label.text.length() / characters_per_second
+	var time_to_display = tr(%Label.text).length() / characters_per_second
 	var temp_timer := get_tree().create_timer(time_to_display)
 	while temp_timer:
 		%Label.visible_ratio = 1.0 - (temp_timer.time_left / time_to_display)

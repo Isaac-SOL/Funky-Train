@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b2gtvjpbbcs2j"]
+[gd_scene load_steps=9 format=3 uid="uid://b2gtvjpbbcs2j"]
 
 [ext_resource type="Script" uid="uid://dlylwsenxbljj" path="res://scripts/locomotive.gd" id="1_2c63q"]
 [ext_resource type="PackedScene" uid="uid://bo2gdx8joos8y" path="res://scenes/wagon/chef_locomotive.tscn" id="3_ue4hp"]
@@ -8,6 +8,17 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ue4hp"]
 radius = 2.77916
+
+[sub_resource type="GDScript" id="GDScript_mkonq"]
+script/source = "extends RayCast3D
+
+func _process(delta: float) -> void:
+	if is_colliding():
+		%CameraFollowPos.global_position = get_collision_point()
+	else:
+		%CameraFollowPos.position = target_position
+	%CameraFollowPos.rotation = Vector3.ZERO
+"
 
 [sub_resource type="GDScript" id="GDScript_ue4hp"]
 script/source = "extends Marker3D
@@ -51,15 +62,23 @@ cast_shadow = 0
 alpha_cut = 1
 texture = ExtResource("4_pcaac")
 
-[node name="CameraPivotY" type="Marker3D" parent="."]
+[node name="GlobalRotationLock" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CameraPivotY" type="Marker3D" parent="GlobalRotationLock"]
 unique_name_in_owner = true
 transform = Transform3D(0.917755, 0, 0.397148, 0, 1, 0, -0.397148, 0, 0.917755, 0, 2.2017, 0)
 
-[node name="CameraPivotX" type="Marker3D" parent="CameraPivotY"]
+[node name="CameraPivotX" type="RayCast3D" parent="GlobalRotationLock/CameraPivotY"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871557, 0, -0.0871557, 0.996195, 0, 0, 0)
+target_position = Vector3(-1.49017e-08, 0, 6.03638)
+collision_mask = 16
+hit_back_faces = false
+script = SubResource("GDScript_mkonq")
 
-[node name="CameraFollowPos" type="Marker3D" parent="CameraPivotY/CameraPivotX"]
+[node name="CameraFollowPos" type="Marker3D" parent="GlobalRotationLock/CameraPivotY/CameraPivotX"]
 unique_name_in_owner = true
 transform = Transform3D(1.00003, 0, 0, 0, 1.00004, 0, 0, 0, 1.00003, -1.49017e-08, 0, 6.03638)
 

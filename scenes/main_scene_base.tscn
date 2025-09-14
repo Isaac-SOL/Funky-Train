@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://ddei87jmflwu2"]
+[gd_scene load_steps=93 format=3 uid="uid://ddei87jmflwu2"]
 
 [ext_resource type="Script" uid="uid://rytmmqnltko8" path="res://scripts/main.gd" id="1_rk4p5"]
 [ext_resource type="Script" uid="uid://rkfd1kwn018t" path="res://scripts/character_info.gd" id="2_7tq10"]
@@ -47,9 +47,14 @@
 [ext_resource type="StyleBox" uid="uid://0ucxhj7lfimq" path="res://assets/style_button_orange.tres" id="38_pi7hh"]
 [ext_resource type="StyleBox" uid="uid://cudo6djqnmi2b" path="res://assets/style_button_orange_normal.tres" id="39_c5b55"]
 [ext_resource type="Texture2D" uid="uid://s1gcpcf47rtb" path="res://assets/textures/UI/gamjam2025_UI_speed_sliderr2.png" id="39_fbblx"]
+[ext_resource type="Texture2D" uid="uid://cr00f5lrjde1f" path="res://assets/textures/video-camera.png" id="40_fd7gc"]
+[ext_resource type="Script" uid="uid://ciwew3m0wrj2s" path="res://scripts/camera_lock_ui.gd" id="40_u33ad"]
+[ext_resource type="Texture2D" uid="uid://b5twj5l752a2p" path="res://assets/textures/lock_closed.png" id="41_nlusf"]
+[ext_resource type="Texture2D" uid="uid://b5f681gnhfghx" path="res://assets/textures/lock_open.png" id="41_x5x7g"]
 [ext_resource type="AudioStream" uid="uid://bowmmerxjt5f6" path="res://assets/sfx/pop.ogg" id="42_6c0ht"]
 [ext_resource type="AudioStream" uid="uid://ck2dveafiotn7" path="res://assets/sounds/fin.ogg" id="45_m75v2"]
 [ext_resource type="PackedScene" uid="uid://c0ju0joxekhcn" path="res://objects/start_button.tscn" id="50_dwaao"]
+[ext_resource type="PackedScene" uid="uid://chj2mloipisv0" path="res://objects/language_button.tscn" id="53_lpr3j"]
 [ext_resource type="AudioStream" uid="uid://cpn4i18btxv06" path="res://assets/sfx/squeaky.ogg" id="61_iojr1"]
 [ext_resource type="Script" uid="uid://bgvijcrqwruss" path="res://addons/rhythm_notifier/rhythm_notifier.gd" id="69_kdplm"]
 [ext_resource type="Texture2D" uid="uid://bhqvoqxf43frw" path="res://assets/textures/UI/gamjam2025_UI_menu_top.png" id="76_4t7rj"]
@@ -342,6 +347,7 @@ mesh = SubResource("QuadMesh_2dsia")
 
 [node name="GameUI" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -643,6 +649,51 @@ mouse_filter = 2
 texture = ExtResource("39_fbblx")
 expand_mode = 1
 
+[node name="CameraUI" type="Control" parent="CanvasLayer/GameUI"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -100.0
+offset_right = -100.0
+offset_bottom = -60.0
+grow_vertical = 0
+
+[node name="TextureCameraUIBG" type="TextureRect" parent="CanvasLayer/GameUI/CameraUI"]
+layout_mode = 0
+offset_left = -90.0
+offset_top = -31.0
+offset_right = 307.0
+offset_bottom = 96.0
+texture = ExtResource("30_sxppv")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("40_u33ad")
+texture_locked = ExtResource("41_nlusf")
+texture_unlocked = ExtResource("41_x5x7g")
+
+[node name="TextureCamera" type="TextureRect" parent="CanvasLayer/GameUI/CameraUI"]
+layout_mode = 0
+offset_left = 149.0
+offset_top = -6.0
+offset_right = 189.0
+offset_bottom = 34.0
+mouse_filter = 2
+texture = ExtResource("40_fd7gc")
+expand_mode = 1
+
+[node name="TextureLock" type="TextureRect" parent="CanvasLayer/GameUI/CameraUI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 200.0
+offset_top = -6.0
+offset_right = 240.0
+offset_bottom = 34.0
+mouse_filter = 2
+texture = ExtResource("41_x5x7g")
+expand_mode = 1
+
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameUI"]
 visible = false
 layout_mode = 0
@@ -806,7 +857,7 @@ theme_override_fonts/font = ExtResource("36_4kkmd")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/hover = ExtResource("38_pi7hh")
 theme_override_styles/normal = ExtResource("39_c5b55")
-text = "Take them"
+text = "UI_MEET_ACCEPT"
 
 [node name="ButtonLaisser" type="Button" parent="CanvasLayer/GameUI/MarginContainerStationGrab/HBoxContainer"]
 layout_mode = 2
@@ -816,7 +867,7 @@ theme_override_fonts/font = ExtResource("36_4kkmd")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/hover = ExtResource("38_pi7hh")
 theme_override_styles/normal = ExtResource("39_c5b55")
-text = "Leave them"
+text = "UI_MEET_REJECT"
 
 [node name="PanelStationPut" type="Panel" parent="CanvasLayer/GameUI"]
 unique_name_in_owner = true
@@ -851,7 +902,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/GameUI/PanelStationPut/MarginContainer/VBoxContainerPutChar"]
 layout_mode = 2
-text = "Who do we leave here ?"
+text = "UI_LEAVE_TITLE"
 label_settings = SubResource("LabelSettings_ajlx6")
 horizontal_alignment = 1
 
@@ -874,7 +925,7 @@ theme_override_fonts/font = ExtResource("36_4kkmd")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/hover = ExtResource("38_pi7hh")
 theme_override_styles/normal = ExtResource("39_c5b55")
-text = "No one"
+text = "UI_LEAVE_NOONE"
 
 [node name="VolumeUI" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -891,6 +942,7 @@ offset_left = -90.0
 offset_top = -31.0
 offset_right = 307.0
 offset_bottom = 96.0
+mouse_filter = 0
 texture = ExtResource("30_sxppv")
 expand_mode = 1
 stretch_mode = 4
@@ -961,13 +1013,29 @@ scale_factor = Vector2(1.2, 1.2)
 scale_duration_in = 0.2
 scale_duration_out = 0.6
 
+[node name="LanguageButtonOneOption" parent="CanvasLayer/ControlStart" instance=ExtResource("53_lpr3j")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -178.0
+offset_right = -160.0
+offset_bottom = -89.0
+grow_horizontal = 2
+grow_vertical = 0
+
 [node name="VBoxContainerTwoOptions" type="VBoxContainer" parent="CanvasLayer/ControlStart"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = -10.0
-offset_top = 369.0
+offset_top = 335.0
 offset_right = 740.0
-offset_bottom = 696.0
+offset_bottom = 662.0
 
 [node name="StartButtonPuzzle" parent="CanvasLayer/ControlStart/VBoxContainerTwoOptions" instance=ExtResource("50_dwaao")]
 unique_name_in_owner = true
@@ -985,10 +1053,9 @@ text = "Puzzle Quest"
 metadata/_edit_pinned_properties_ = [&"text"]
 
 [node name="LabelDesc" parent="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonPuzzle/TopContainer/MarginContainer" index="1"]
-text = "Gather up all 9 of your friends to play music together !
-A large, challenging map made for the Post-Jam Jam.
-Has more mechanics and is more puzzle-centric."
-visible_characters = 95
+text = "PUZZLE_DESC"
+visible_characters = 0
+visible_ratio = 0.038961
 metadata/_edit_pinned_properties_ = [&"text"]
 
 [node name="StartButtonJam" parent="CanvasLayer/ControlStart/VBoxContainerTwoOptions" instance=ExtResource("50_dwaao")]
@@ -1007,11 +1074,14 @@ text = "Jam Quest"
 metadata/_edit_pinned_properties_ = [&"text"]
 
 [node name="LabelDesc" parent="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonJam/TopContainer/MarginContainer" index="1"]
-text = "Gather up all 9 of your friends to play music together !
-An easier map initially made for the GMTK Game Jam.
-More of a chill, short adventure."
-visible_characters = 87
+text = "JAM_DESC"
+visible_characters = 0
+visible_ratio = 0.0283688
 metadata/_edit_pinned_properties_ = [&"text"]
+
+[node name="LanguageButton" parent="CanvasLayer/ControlStart/VBoxContainerTwoOptions" instance=ExtResource("53_lpr3j")]
+unique_name_in_owner = true
+layout_mode = 2
 
 [node name="ControlEnd" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -1095,6 +1165,7 @@ bus = &"SFX"
 [connection signal="gui_input" from="CanvasLayer/GameUI/SpeedUI/LeverSpeed" to="CanvasLayer/GameUI/SpeedUI/LeverSpeed" method="_on_gui_input"]
 [connection signal="mouse_entered" from="CanvasLayer/GameUI/SpeedUI/LeverSpeed" to="CanvasLayer/GameUI/SpeedUI/LeverSpeed" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/GameUI/SpeedUI/LeverSpeed" to="CanvasLayer/GameUI/SpeedUI/LeverSpeed" method="_on_mouse_exited"]
+[connection signal="gui_input" from="CanvasLayer/GameUI/CameraUI/TextureCameraUIBG" to="CanvasLayer/GameUI/CameraUI/TextureCameraUIBG" method="_on_gui_input"]
 [connection signal="pressed" from="CanvasLayer/GameUI/MarginContainerStationGrab/HBoxContainer/ButtonPrendre" to="." method="_on_button_prendre_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameUI/MarginContainerStationGrab/HBoxContainer/ButtonLaisser" to="." method="_on_button_laisser_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameUI/PanelStationPut/MarginContainer/VBoxContainerPutChar/ButtonNoOne" to="." method="_on_button_no_one_pressed"]
@@ -1104,10 +1175,12 @@ bus = &"SFX"
 [connection signal="mouse_entered" from="CanvasLayer/ControlStart/ButtonStart" to="CanvasLayer/ControlStart/ButtonStart" method="_on_hover" binds= [true]]
 [connection signal="mouse_exited" from="CanvasLayer/ControlStart/ButtonStart" to="CanvasLayer/ControlStart/ButtonStart" method="_on_hover" binds= [false]]
 [connection signal="pressed" from="CanvasLayer/ControlStart/ButtonStart" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="CanvasLayer/ControlStart/LanguageButtonOneOption" to="." method="_on_language_button_pressed"]
 [connection signal="click_confirm" from="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonPuzzle" to="." method="_on_start_button_puzzle_click_confirm"]
 [connection signal="click_open" from="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonPuzzle" to="." method="_on_start_button_puzzle_click_open"]
 [connection signal="click_confirm" from="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonJam" to="." method="_on_start_button_jam_click_confirm"]
 [connection signal="click_open" from="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonJam" to="." method="_on_start_button_jam_click_open"]
+[connection signal="pressed" from="CanvasLayer/ControlStart/VBoxContainerTwoOptions/LanguageButton" to="." method="_on_language_button_pressed"]
 [connection signal="beat" from="AudioStreamPlayer/RhythmNotifier" to="." method="_on_rhythm_notifier_beat"]
 
 [editable path="CanvasLayer/ControlStart/VBoxContainerTwoOptions/StartButtonPuzzle"]

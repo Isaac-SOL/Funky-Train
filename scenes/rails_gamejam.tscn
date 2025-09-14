@@ -110,7 +110,7 @@ shading_mode = 0
 [sub_resource type="Resource" id="Resource_uvcog"]
 script = ExtResource("7_165mx")
 character = ExtResource("8_phdhv")
-text = "Take a left! We're going for a ride!"
+text = "PYTHA_LOOPING"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -144,7 +144,7 @@ metadata/_custom_type_script = "uid://di4q8eju5txb1"
 [sub_resource type="Resource" id="Resource_1h62p"]
 script = ExtResource("7_165mx")
 character = ExtResource("12_pvikb")
-text = "LMA0000000000000000000000"
+text = "TB_LOL"
 time = 5.0
 indentation = 1
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -171,7 +171,7 @@ shading_mode = 0
 [sub_resource type="Resource" id="Resource_ajnxc"]
 script = ExtResource("7_165mx")
 character = ExtResource("17_wop8t")
-text = "We should go meet [color=#e948b2]Stevyyye![color=white] Take a ryyyght!"
+text = "RUDDY_MEET_STEVIE"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -186,7 +186,7 @@ point_count = 2
 [sub_resource type="Resource" id="Resource_3xitk"]
 script = ExtResource("7_165mx")
 character = ExtResource("20_c4c48")
-text = "Don't follow that twisty path please! My long carriage can't handle that."
+text = "PARKER_TWISTY"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -220,7 +220,7 @@ shading_mode = 0
 [sub_resource type="Resource" id="Resource_6c0ht"]
 script = ExtResource("7_165mx")
 character = ExtResource("12_pvikb")
-text = "N0 way 1'm climbing that h1ll 0n the r1ght"
+text = "TB_HILL"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -228,7 +228,7 @@ metadata/_custom_type_script = "uid://di4q8eju5txb1"
 [sub_resource type="Resource" id="Resource_bqn3m"]
 script = ExtResource("7_165mx")
 character = ExtResource("11_iln4g")
-text = "Come on dude, really?"
+text = "STEVIE_RESP_TB"
 time = 5.0
 indentation = 1
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -281,7 +281,7 @@ shading_mode = 0
 [sub_resource type="Resource" id="Resource_4kkmd"]
 script = ExtResource("7_165mx")
 character = ExtResource("11_iln4g")
-text = "Hey [color=#27592e]Kim[/color], we could clear that path on the right!"
+text = "TEAMUP_STEVIE_ON"
 time = 6.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -289,7 +289,7 @@ metadata/_custom_type_script = "uid://di4q8eju5txb1"
 [sub_resource type="Resource" id="Resource_m75v2"]
 script = ExtResource("7_165mx")
 character = ExtResource("5_p31lq")
-text = "Sure!"
+text = "TEAMUP_KIM_ON"
 time = 5.0
 indentation = 1
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -297,7 +297,7 @@ metadata/_custom_type_script = "uid://di4q8eju5txb1"
 [sub_resource type="Resource" id="Resource_xnq8m"]
 script = ExtResource("7_165mx")
 character = ExtResource("11_iln4g")
-text = "I could clear that right path with [color=#27592e]Kim[/color] if we found him!"
+text = "TEAMUP_STEVIE_OFF"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -305,7 +305,7 @@ metadata/_custom_type_script = "uid://di4q8eju5txb1"
 [sub_resource type="Resource" id="Resource_yqb2n"]
 script = ExtResource("7_165mx")
 character = ExtResource("5_p31lq")
-text = "I could clear the rightmost path, but I'm gonna need [color=#e948b2]Stevie's[/color] help for that."
+text = "TEAMUP_KIM_OFF"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -377,7 +377,7 @@ shading_mode = 0
 [sub_resource type="Resource" id="Resource_1n0wa"]
 script = ExtResource("7_165mx")
 character = ExtResource("5_p31lq")
-text = "That tunnel on the right is way too small for me."
+text = "TUNNEL_LOUIS"
 time = 7.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -385,7 +385,7 @@ metadata/_custom_type_script = "uid://di4q8eju5txb1"
 [sub_resource type="Resource" id="Resource_1u5kr"]
 script = ExtResource("7_165mx")
 character = ExtResource("51_cphn7")
-text = "Same, my carriage is way too big for that!"
+text = "TUNNEL_KIM_RESP"
 time = 6.0
 indentation = 1
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -393,7 +393,7 @@ metadata/_custom_type_script = "uid://di4q8eju5txb1"
 [sub_resource type="Resource" id="Resource_x6ept"]
 script = ExtResource("7_165mx")
 character = ExtResource("5_p31lq")
-text = "That tunnel on the right is way too small for me."
+text = "TUNNEL_LOUIS"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -401,7 +401,7 @@ metadata/_custom_type_script = "uid://di4q8eju5txb1"
 [sub_resource type="Resource" id="Resource_lin8e"]
 script = ExtResource("7_165mx")
 character = ExtResource("51_cphn7")
-text = "My carriage is way too big for that tunnel on the right!"
+text = "TUNNEL_KIM"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -433,7 +433,7 @@ shading_mode = 0
 [sub_resource type="Resource" id="Resource_pi7hh"]
 script = ExtResource("7_165mx")
 character = ExtResource("31_8nvo7")
-text = "We are NOT going to the left. That sand is gonna get everywhere."
+text = "SAND_JIMMY"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -812,9 +812,8 @@ radius = 15.0864
 height = 6.59155
 sides = 32
 
-[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="RailS5"]
+[node name="CSGBakedMeshInstance3D2" type="MeshInstance3D" parent="RailS5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0531931, 0)
-layers = 3
 mesh = ExtResource("32_gdtuo")
 
 [node name="RailS5_Plus" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]
@@ -1138,15 +1137,17 @@ height = 3.05957
 sides = 16
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="RailS3_S1/CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 85.9587, -0.892648, 14.6593)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 85.9587, -0.892648, 13.9984)
 operation = 2
 radius = 3.60986
+height = 3.32178
 sides = 16
 
 [node name="CSGCylinder3D3" type="CSGCylinder3D" parent="RailS3_S1/CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 77.7711, -2.38997, 14.6593)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 77.7711, -2.38997, 14.1169)
 operation = 2
 radius = 3.60986
+height = 4.45923
 sides = 16
 
 [node name="CSGCylinder3D4" type="CSGCylinder3D" parent="RailS3_S1/CSGCombiner3D"]
@@ -1158,7 +1159,6 @@ sides = 16
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="RailS3_S1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.075, 0)
-layers = 3
 mesh = ExtResource("62_udqb1")
 
 [node name="RailS10" parent="." node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("1_of01x")]

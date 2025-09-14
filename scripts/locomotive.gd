@@ -35,6 +35,8 @@ var direction: bool = false
 var locked: bool = false
 var section_history: Array[RailSection] = []
 var additional_properties: Array[String] = []
+var camera_locked: bool = false
+var camera_lock_angle: float = 0.0
 
 func _ready() -> void:
 	instance = self
@@ -112,6 +114,10 @@ func _process(delta: float) -> void:
 	
 	# Animation
 	Global.wheel_speed = floori(180 * speed)
+	
+	# Camera Lock
+	if camera_locked:
+		%GlobalRotationLock.global_rotation.y = camera_lock_angle
 	
 	#imgui()
 
@@ -346,7 +352,7 @@ func get_visible_center() -> Vector3:
 func get_visible_extent() -> Vector3:
 	return %VisibleExtent.global_position
 
-func get_camera_pivot_x() -> Node3D:
+func get_camera_pivot_x() -> RayCast3D:
 	return %CameraPivotX
 
 func get_camera_pivot_y() -> Node3D:
@@ -363,6 +369,10 @@ func get_minimap_pos() -> Node3D:
 
 func get_end_pos() -> Node3D:
 	return %EndPos
+
+func set_camera_locked(cam_locked: bool):
+	camera_locked = cam_locked
+	camera_lock_angle = %GlobalRotationLock.global_rotation.y
 
 #func imgui():
 	#ImGui.Begin("Locomotive")

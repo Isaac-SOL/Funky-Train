@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bsc748o2kijf3"
+
+[deps]
+
+files=["res://tr/dialogic_timeline_batterie_translation.en.translation", "res://tr/dialogic_timeline_batterie_translation.fr.translation"]
+
+source_file="res://tr/dialogic_timeline_batterie_translation.csv"
+dest_files=["res://tr/dialogic_timeline_batterie_translation.en.translation", "res://tr/dialogic_timeline_batterie_translation.fr.translation"]
+
+[params]
+
+compress=true
+delimiter=0

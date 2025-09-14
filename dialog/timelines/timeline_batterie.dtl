@@ -1,13 +1,13 @@
 [style name="default_portrait_style"]
 if {puzzle_mode} == true:
 	if {first_time.first_batterie} == true:
-		batterie: Heyyy, lets go on a ride! The sound of my drums can break even the hardest rocks!
+		batterie: Heyyy, lets go on a ride! The sound of my drums can break even the hardest rocks! #id:16
 		set {first_time.first_batterie} = false
 	else:
-		batterie: Did you miss me? Now let's break it!
+		batterie: Did you miss me? Now let's break it! #id:17
 else:
 	if {first_time.first_batterie} == true:
-		batterie: Heyyy lets go on a ride, my name's [color=#2d85bf]Ruddyyy[/color]. I like drummyyyes and my hair is cloudyyy!
+		batterie: Heyyy lets go on a ride, my name's [color=#2d85bf]Ruddyyy[/color]. I like drummyyyes and my hair is cloudyyy! #id:18
 		set {first_time.first_batterie} = false
 	else:
-		batterie: It's good to take a break.
+		batterie: It's good to take a break. #id:19

@@ -1,4 +1,4 @@
-[gd_scene load_steps=459 format=4 uid="uid://pxhdnm53147j"]
+[gd_scene load_steps=460 format=4 uid="uid://pxhdnm53147j"]
 
 [ext_resource type="Script" uid="uid://hcgv0grqqm7y" path="res://scripts/rails_master.tres.gd" id="1_7cvav"]
 [ext_resource type="PackedScene" uid="uid://c7adtd3m5hihf" path="res://objects/rail_section.tscn" id="2_vwg2y"]
@@ -321,7 +321,7 @@ point_count = 2
 [sub_resource type="Resource" id="Resource_tlgaq"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("33_lcjqk")
-text = "The gates shall open before me!"
+text = "PUZZ_PARKER_OPENDOOR"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -422,7 +422,7 @@ point_count = 2
 [sub_resource type="Resource" id="Resource_h85u6"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("33_lcjqk")
-text = "EW! I hate mice!!! Don't go there!"
+text = "PUZZ_PARKER_MICE1"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -459,7 +459,7 @@ point_count = 2
 [sub_resource type="Resource" id="Resource_xcywb"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("261_58hlq")
-text = "Meow!!!"
+text = "PUZZ_CAT_MEOW1"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -634,7 +634,7 @@ point_count = 4
 [sub_resource type="Resource" id="Resource_a818s"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("50_h3suw")
-text = "Sorry, my rocket-car can't fit under these bridges."
+text = "PUZZ_KIM_OBSTACLE1"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -666,7 +666,7 @@ point_count = 4
 [sub_resource type="Resource" id="Resource_uurin"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("50_h3suw")
-text = "There has to be a way for me to get through here..."
+text = "PUZZ_KIM_HINT1"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -698,7 +698,7 @@ point_count = 5
 [sub_resource type="Curve3D" id="Curve3D_8blpd"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector3Array(-0.975713, 0, 0.0207178, 1.54657, 0, 1.43608, 0, 0, 0, -0.600895, 0, -3.38688, 0.600895, 0, 3.38688, 2.61964, 0, 7.15857, -5.97297, 0, -5.80751, 5.97297, 0, 5.80751, 3.03228, 0, 30.1704, -2.82211, 0, 0, 2.82211, 0, 0, 22.3592, 0, 33.6641),
+"points": PackedVector3Array(-0.975713, 0, 0.0207178, 1.54657, 0, 1.43608, 0, 0, 0, 0.383127, 0, -4.627, -0.383127, 0, 4.627, 2.78623, 0, 8.79977, -5.97297, 0, -5.80751, 5.97297, 0, 5.80751, 3.03228, 0, 30.1704, -2.82211, 0, 0, 2.82211, 0, 0, 22.3592, 0, 33.6641),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
@@ -778,7 +778,7 @@ point_count = 3
 [sub_resource type="Resource" id="Resource_1h65u"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("117_tn0y3")
-text = "I've been trying to leave this place for a while. I hope you can find the way!"
+text = "PUZZ_STEVIE_LEAVE1"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -786,7 +786,7 @@ metadata/_custom_type_script = "uid://di4q8eju5txb1"
 [sub_resource type="Resource" id="Resource_crkdv"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("117_tn0y3")
-text = "Not touching that pepper, though."
+text = "PUZZ_STEVIE_LEAVE2"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -835,6 +835,14 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
+
+[sub_resource type="Resource" id="Resource_sno6v"]
+script = ExtResource("15_lwvo2")
+character = ExtResource("117_tn0y3")
+text = "PUZZ_STEVIE_WELLPLAYED"
+time = 5.0
+indentation = 0
+metadata/_custom_type_script = "uid://di4q8eju5txb1"
 
 [sub_resource type="Curve3D" id="Curve3D_qrku5"]
 resource_local_to_scene = true
@@ -985,7 +993,7 @@ point_count = 2
 [sub_resource type="Resource" id="Resource_0mxho"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("33_lcjqk")
-text = "MORE MICE??? NOPE!"
+text = "PUZZ_PARKER_MICE2"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -1046,7 +1054,7 @@ point_count = 3
 [sub_resource type="Resource" id="Resource_5im0h"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("175_tn0y3")
-text = "I could fix that button over there..."
+text = "PUZZ_JIMMY_FIXBUTTON_FAR1"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -1054,7 +1062,7 @@ metadata/_custom_type_script = "uid://di4q8eju5txb1"
 [sub_resource type="Resource" id="Resource_cq20m"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("175_tn0y3")
-text = "I want to fix things"
+text = "PUZZ_JIMMY_FIXBUTTON_FAR2"
 time = 5.0
 indentation = 1
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -1078,7 +1086,7 @@ point_count = 4
 [sub_resource type="Resource" id="Resource_b5inl"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("202_tn0y3")
-text = "It should be possible to get [color=#3e8548]Kim[/color] to come here, but it's pretty tricky..."
+text = "PUZZ_LOUIS_HINT_KIM"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -1094,7 +1102,7 @@ point_count = 2
 [sub_resource type="Resource" id="Resource_mobv5"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("261_58hlq")
-text = "Purrrr...."
+text = "PUZZ_CAT_PURR"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -1102,7 +1110,7 @@ metadata/_custom_type_script = "uid://di4q8eju5txb1"
 [sub_resource type="Resource" id="Resource_isr3w"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("33_lcjqk")
-text = "Finally, we can come here."
+text = "PUZZ_STEVIE_PASSMOUSE"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -1147,7 +1155,7 @@ shading_mode = 0
 [sub_resource type="Resource" id="Resource_e46uc"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("150_qjdxd")
-text = "The sound of my drums could break that bridge! That's a bad idea!"
+text = "PUZZ_RUDDY_BRIDGE"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -1163,7 +1171,7 @@ point_count = 3
 [sub_resource type="Resource" id="Resource_o7mru"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("175_tn0y3")
-text = "I know a friend who could help us here... I think."
+text = "PUZZ_JIMMY_HINT_TB"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -1171,8 +1179,7 @@ metadata/_custom_type_script = "uid://di4q8eju5txb1"
 [sub_resource type="Resource" id="Resource_3146n"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("209_mt8tr")
-text = "NEED... C0NNECT1NG...
-NEED... MY [color=#9e920e]J1MMY[/color]..."
+text = "PUZZ_TB_HINT_CONNECT"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -1196,7 +1203,7 @@ point_count = 3
 [sub_resource type="Resource" id="Resource_i064o"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("150_qjdxd")
-text = "Thanks! I'm free!"
+text = "PUZZ_RUDDY_FREE1"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -1228,7 +1235,7 @@ point_count = 4
 [sub_resource type="Resource" id="Resource_kluvy"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("175_tn0y3")
-text = "All fixed, and already pressed!"
+text = "PUZZ_JIMMY_FIXBUTTON"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -1252,7 +1259,7 @@ point_count = 2
 [sub_resource type="Resource" id="Resource_15ad7"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("50_h3suw")
-text = "We can go left if we go fast!"
+text = "PUZZ_KIM_GOFAST"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -1377,7 +1384,7 @@ point_count = 2
 [sub_resource type="Resource" id="Resource_7sd7f"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("117_tn0y3")
-text = "I said NO peppers!"
+text = "PUZZ_STEVIE_PEPPERS"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -1409,7 +1416,7 @@ point_count = 4
 [sub_resource type="Resource" id="Resource_l0182"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("117_tn0y3")
-text = "This one looks pretty tricky."
+text = "PUZZ_STEVIE_FLAVOR_HUB3"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -1589,7 +1596,7 @@ shading_mode = 0
 [sub_resource type="Resource" id="Resource_pgi33"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("50_h3suw")
-text = "Sorry, my rocket-car is way too tall to fit into that tunnel."
+text = "PUZZ_KIM_TUNNEL"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -1629,7 +1636,7 @@ point_count = 3
 [sub_resource type="Resource" id="Resource_ry1mc"]
 script = ExtResource("15_lwvo2")
 character = ExtResource("175_tn0y3")
-text = "I can fix anything!"
+text = "PUZZ_JIMMY_FIXRAIL1"
 time = 5.0
 indentation = 0
 metadata/_custom_type_script = "uid://di4q8eju5txb1"
@@ -2505,7 +2512,7 @@ rebake_with_tilt = true
 rebake_force_up = true
 
 [node name="CrossFollow" parent="Hub1/Hub1To2/Hub2To1" index="3"]
-transform = Transform3D(0.795784, 0.0102878, -0.605454, -0.0568116, 0.9967, -0.0577392, 0.602853, 0.0803468, 0.793776, 2.68301, 0.106366, -2.93)
+transform = Transform3D(0.795784, 0.0102878, -0.605454, -0.0568117, 0.9967, -0.0577392, 0.602853, 0.0803468, 0.793776, 2.68301, 0.106366, -2.93)
 progress = 3.97781
 
 [node name="CrossCenter" parent="Hub1/Hub1To2/Hub2To1/CrossFollow/CrossTween" index="0"]
@@ -2532,7 +2539,7 @@ mesh = ExtResource("91_ajgpd")
 material = SubResource("StandardMaterial3D_e7jeh")
 
 [node name="CrossFollow" parent="Hub1/Hub1To2/Hub1Inner_Bridge" index="3"]
-transform = Transform3D(-0.976098, 0, -0.21732, 0, 1, 0, 0.21732, 0, -0.976098, 2.11345, 0, 4.53365)
+transform = Transform3D(-0.969611, 0, -0.244632, 0, 0.999995, 0, 0.244633, 0, -0.969605, 2.47921, 0, 4.35444)
 progress = 5.0807
 
 [node name="CrossCenter" parent="Hub1/Hub1To2/Hub1Inner_Bridge/CrossFollow/CrossTween" index="0"]
@@ -2873,6 +2880,15 @@ mesh = ExtResource("90_1rqqb")
 [node name="CrossFollow" parent="Maze/RailMazeExitTrue" index="3"]
 transform = Transform3D(-0.0250914, 0, 0.999672, 0, 1, 0, -0.999672, 0, -0.0250914, -4.27575, 0, 0.0643684)
 progress = 4.27673
+
+[node name="DialogInteractible" type="PathFollow3D" parent="Maze/RailMazeExitTrue"]
+transform = Transform3D(-0.0229354, 0, 0.999736, 0, 1, 0, -0.999736, 0, -0.0229354, -16.257, 0, 0.389908)
+progress = 16.2619
+script = ExtResource("14_xcywb")
+trigger_once = true
+requirements = Array[String](["maze"])
+dialogues = Array[ExtResource("15_lwvo2")]([SubResource("Resource_sno6v")])
+metadata/_custom_type_script = "uid://c3ryf37qhvdje"
 
 [node name="RailEntranceToSecond" parent="Maze" node_paths=PackedStringArray("in_sections", "out_sections") instance=ExtResource("2_vwg2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.1418, 0, -0.0275548)
@@ -3670,7 +3686,7 @@ transform = Transform3D(0.745492, 0, -0.666514, 0, 1, 0, 0.666514, 0, 0.745492, 
 progress = 4.63914
 
 [node name="DialogInteractible" type="PathFollow3D" parent="Hub2/Hub2_Extras/Hub2_Extras3"]
-transform = Transform3D(0.995035, 0, -0.0995007, 0, 1, 0, 0.0995007, 0, 0.995035, 5.26407, 0, -4.66363)
+transform = Transform3D(0.995035, 0, -0.0995008, 0, 1, 0, 0.0995008, 0, 0.995035, 5.26407, 0, -4.66363)
 progress = 7.57514
 script = ExtResource("14_xcywb")
 trigger_once = true
@@ -4832,7 +4848,7 @@ progress = 7.05327
 script = SubResource("GDScript_yfycn")
 
 [node name="InteractibleSmoke" parent="Periph/Periph_toHub3" instance=ExtResource("158_ptu7g")]
-transform = Transform3D(0.973199, -1.80821e-12, -0.22996, 6.33263e-12, 1, 1.89368e-11, 0.22996, -1.98856e-11, 0.973199, -1.36351, -6.24714e-11, -8.0742)
+transform = Transform3D(0.973199, -1.80821e-12, -0.22996, 6.33264e-12, 1, 1.89368e-11, 0.22996, -1.98856e-11, 0.973199, -1.36351, -6.24714e-11, -8.0742)
 progress = 8.32073
 
 [node name="DialogInteractible" type="PathFollow3D" parent="Periph/Periph_toHub3"]
